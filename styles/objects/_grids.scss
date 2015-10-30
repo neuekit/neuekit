@@ -1,0 +1,164 @@
+/*----------------------------------------------*\
+	#Grid Structure
+\*----------------------------------------------*/
+
+.#{$rowClass} {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    position: relative;
+    max-width: rem($maxWidth);
+}
+
+.#{$rowClass}--max {
+    max-width: none;
+}
+
+.#{$edgeClass} > .#{$colClass} {
+    padding: 0;
+}
+
+.#{$rowClass} .#{$rowClass},
+.#{$rowClass}.#{$edgeClass} {
+    width: auto;
+    margin: 0 -1rem;
+    max-width: none;
+}
+
+.#{$rowClass}.#{$edgeClass},
+.#{$edgeClass} .#{$rowClass}{
+    margin: 0;
+}
+
+.#{$colClass} {
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0 1rem;
+    position: relative;
+}
+
+@each $breakclass, $breakpoint in $breakpoints {
+    
+    $i: index(map-keys($breakpoints), $breakclass);
+    
+    $screen: if(
+        $i == 1,
+        'only screen',
+        'only screen and (min-width: #{rem($breakpoint)})'
+    );
+    
+    @media #{$screen} {
+        
+        @for $grid from 0 through $columns {
+            .#{$breakclass}--#{$grid} {
+                flex-basis: floor(100% / $columns * ($grid * 100)) / 100;
+                width: floor(100% / $columns * ($grid * 100)) / 100;
+            }
+        }
+        
+        @for $inset from 1 through $columns {
+            .#{$breakclass}-inset--#{$inset} {
+                margin-left: round(100% / $columns * $inset);
+            }
+        }
+        
+        @for $outsetLeft from 1 through $columns {
+            .#{$breakclass}-outset-left--#{$outsetLeft} {
+                margin-left: round(-100% / $columns * $outsetLeft);
+            }
+        }
+        
+        @for $outsetRight from 1 through $columns {
+            .#{$breakclass}-outset-right--#{$outsetRight} {
+                margin-right: round(-100% / $columns * $outsetRight);
+            }
+        }
+        
+        .#{$rowClass}.#{$breakclass}--reverse {
+            flex-direction: row-reverse;
+            flex-wrap: row-reverse;
+        }
+        
+        .#{$colClass}.#{$breakclass}--reverse {
+            flex-direction: column-reverse;
+            flex-wrap: column-reverse;
+        }
+        
+        .#{$breakclass}--auto {
+            flex-grow: 1;
+            flex-basis: 0%;
+        }
+        
+        .#{$breakclass}--start {
+            justify-content: flex-start;
+            text-align: start;
+        }
+        
+        .#{$breakclass}--center {
+            justify-content: center;
+            margin: 0 auto;
+        }
+        
+        .#{$breakclass}--end {
+            justify-content: flex-end;
+            text-align: end;
+        }
+        
+        .#{$breakclass}--top {
+            align-items: flex-start;
+        }
+        
+        .#{$breakclass}--middle {
+            align-items: center;
+        }
+        
+        .#{$breakclass}--bottom {
+            align-items: flex-end;
+        }
+        
+        .#{$breakclass}--around {
+            justify-content: space-around;
+        }
+        
+        .#{$breakclass}--between {
+            justify-content: space-between;
+        }
+        
+        .#{$breakclass}--first {
+            order: -1;
+        }
+        
+        .#{$breakclass}--last {
+            order: 1;
+        }
+        
+        .#{$breakclass}--hide {
+            display: none;
+        }
+        
+        .#{$breakclass}--wrap {
+            flex-wrap: wrap;
+        }
+    }
+        
+    @if(length($breakpoints) > $i) {
+        
+        $screenOnly: null;
+        $nextBreakpoint: map-get($breakpoints, nth(map-keys($breakpoints), $i + 1));
+        
+        @if($i > 1) {
+            $screenOnly: 'only screen and (min-width: #{rem($breakpoint)}) and (max-width: #{rem(($nextBreakpoint)-1)})';
+        }
+        
+        @else {
+            $screenOnly: 'only screen and (max-width: #{rem(($nextBreakpoint)-1)})';
+        }
+        
+        @media #{$screenOnly} {
+            .#{$breakclass}-only--hide {
+                display: none;
+            }
+        }
+    }
+}
