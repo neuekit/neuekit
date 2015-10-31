@@ -1,11 +1,25 @@
+/*!---------------------------------------------------------------------------*\
+    
+	#CREATIVE LITTLE UI KIT
+	
+	- Version:      0.1
+	- Author:       Creative Little Dots
+	- Site:         http://creativelittle.uk/uikit
+	- Copyright:    2015, Creative Little Dots
+	– License:      MIT | http://goo.gl/p3bexl
+	
+\*----------------------------------------------------------------------------*/
+
+
+
 /*----------------------------------------------------------------------------*\
 	#SETTINGS
 	
 	Globally-available variables, settings & config switches.
 \*----------------------------------------------------------------------------*/
 
-@import 'settings/global';          // Globally-available variables & config.
-@import 'settings/colors';          // Colour code variables
+@import 'settings/global';              // Global variables & config.
+@import 'settings/colors';              // Colour code variables
 
 
 
@@ -15,8 +29,8 @@
 	Globally-available tools, public mixins & helper functions.
 \*----------------------------------------------------------------------------*/
 
-@import 'tools/functions';          // Useful functions.
-@import 'tools/mixins';             // Useful mixins.
+@import 'tools/functions';              // Useful functions.
+@import 'tools/mixins';                 // Useful mixins.
 
 
 
@@ -26,10 +40,10 @@
 	Ground-zero styles. Low-specificity, far-reaching.
 \*----------------------------------------------------------------------------*/
 
-@import 'generic/normalize';        // A level playing field.
-@import 'generic/box-sizing';       // Better default `box-sizing`.
-@import 'generic/icons';            // Vector icons includes.
-@import 'generic/shared';           // Shared global commonalities.
+@import 'generic/normalize';            // A level playing field.
+@import 'generic/box-sizing';           // Better default `box-sizing`.
+@import 'generic/icons';                // Vector icons includes.
+@import 'generic/shared';               // Shared global commonalities.
 
 
 
@@ -39,14 +53,14 @@
 	Unclassed HTML elements. Last layer we see type selectors (h1-h6, a).
 \*----------------------------------------------------------------------------*/
 
-@import 'base/page';                // Page-level styles (HTML, body elements).
-@import 'base/headings';            // H1–H6 styles.
-@import 'base/type';                // Misc type styles.
-@import 'base/links';               // Hyperlink styles.
-@import 'base/lists';               // List styles.
-@import 'base/images';              // Image stying.
-@import 'base/quotes';              // Styling for blockquotes, cite, etc.
-@import 'base/forms';               // Form inputs, textareas.
+@import 'base/page';                    // Page-level styles (HTML, body etc).
+@import 'base/headings';                // H1–H6 styles.
+@import 'base/type';                    // Misc type styles.
+@import 'base/links';                   // Hyperlink styles.
+@import 'base/lists';                   // List styles.
+@import 'base/images';                  // Image stying.
+@import 'base/quotes';                  // Blockquotes, cite, etc.
+@import 'base/forms';                   // Form inputs, textareas.
 
 
 
@@ -56,8 +70,8 @@
 	Design Patterns. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
-@import 'objects/grids';            // Wrapping and constraining elements.
-@import 'objects/wrappers';         // Responsive flexbox based layout engine.
+@import 'objects/grids';                // Flex based layout engine.
+@import 'objects/wrappers';             // Wrapping & constraining elements.
 
 
 
@@ -67,7 +81,7 @@
 	Third party styles that appear globally, such as sliders & modals.
 \*----------------------------------------------------------------------------*/
 
-//@import 'parties/slick';          // A responsive carousel plugin.
+//@import 'parties/slick';              // A responsive carousel plugin.
 
 
 
@@ -77,10 +91,10 @@
 	Designed pieces of UI. Only using classes. More explicit naming.
 \*----------------------------------------------------------------------------*/
 
-@import 'components/page-header';   // The page header.
-@import 'components/page-main';     // The page main.
-@import 'components/page-footer';   // The page footer.
-@import 'components/buttons';       // Button elements.
+@import 'components/page-header';       // The page header.
+@import 'components/page-main';         // The page main.
+@import 'components/page-footer';       // The page footer.
+@import 'components/buttons';           // Button elements.
 
 
 
@@ -90,6 +104,6 @@
 	Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
-@import 'trumps/clearfix';          // I can’t believe we still need this.
-@import 'trumps/spacing';           // Micro-level spacing.
-@import 'trumps/visibility';        // Helpers to show and side stuff.
+@import 'trumps/clearfix';              // I can’t believe we still need this.
+@import 'trumps/spacing';               // Micro-level spacing.
+@import 'trumps/visibility';            // Helpers to show and side stuff.
