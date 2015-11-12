@@ -42,15 +42,15 @@
 
 @import 'generic/normalize';            // A level playing field.
 @import 'generic/box-sizing';           // Better default `box-sizing`.
-@import 'generic/icons';                // Vector icons includes.
-@import 'generic/shared';               // Shared global commonalities.
+@import 'generic/keyframes';            // CSS Keyframe blocks.
+@import 'generic/fonts';                // Vector icons/fonts includes.
 
 
 
 /*----------------------------------------------------------------------------*\
 	#BASE
 	
-	Unclassed HTML elements. Last layer we see type selectors (h1-h6, a).
+	Last layer we see type selectors (h1-h6, a). Far-reaching shared classes.
 \*----------------------------------------------------------------------------*/
 
 @import 'base/page';                    // Page-level styles (HTML, body etc).
@@ -61,6 +61,7 @@
 @import 'base/images';                  // Image stying.
 @import 'base/quotes';                  // Blockquotes, cite, etc.
 @import 'base/forms';                   // Form inputs, textareas.
+@import 'base/shared';                  // Far-reaching shared classes.
 
 
 
@@ -70,8 +71,8 @@
 	Design Patterns. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
-@import 'objects/grids';                // Flex based layout engine.
 @import 'objects/wrappers';             // Wrapping & constraining elements.
+@import 'objects/grids';                // Flex based layout engine.
 
 
 
@@ -82,6 +83,7 @@
 \*----------------------------------------------------------------------------*/
 
 //@import 'parties/slick';              // A responsive carousel plugin.
+@import 'parties/select';               // A customisable select input.
 
 
 
@@ -104,6 +106,6 @@
 	Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
-@import 'trumps/clearfix';              // I can’t believe we still need this.
+@import 'trumps/validation';            // Form validation styles.
 @import 'trumps/spacing';               // Micro-level spacing.
 @import 'trumps/visibility';            // Helpers to show and side stuff.
