@@ -38,6 +38,10 @@
     position: relative;
 }
 
+.#{$colClass}--reflex {
+    display: flex;
+}
+
 @each $breakclass, $breakpoint in $breakpoints {
     
     $i: index(map-keys($breakpoints), $breakclass);
