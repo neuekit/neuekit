@@ -11,7 +11,7 @@
 	
 	- License:          MIT
 	- License URI:      https://github.com/CreativeLittleDots/creative-little-ui-kit/license.md
-	- Copyright:        2015, Creative Little Dots
+	- Copyright:        2016, Creative Little Dots
 	
 	- Version:          MK1
 	- Changelog:        https://github.com/CreativeLittleDots/creative-little-ui-kit/changelog.md
@@ -48,8 +48,8 @@
 	Ground-zero styles. Low-specificity, far-reaching.
 \*----------------------------------------------------------------------------*/
 
-@import 'generic/normalize';            // A level playing field.
 @import 'generic/box-sizing';           // Better default `box-sizing`.
+@import 'generic/normalize';            // A level playing field.
 @import 'generic/keyframes';            // CSS Keyframe blocks.
 @import 'generic/fonts';                // Vector icons/fonts includes.
 
