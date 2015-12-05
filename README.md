@@ -20,4 +20,8 @@ To get going with the framework you can:
 
 Coming soon...
 
+##Supported Browsers
+
+![Browsers](https://raw.githubusercontent.com/alrra/browser-logos/master/main-desktop.png)
+
 Copyright (c) 2016 Creative Little Dots, ltd.
