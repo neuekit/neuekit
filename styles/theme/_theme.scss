@@ -39,7 +39,8 @@
 	Ground-zero styles. Low-specificity, far-reaching.
 \*----------------------------------------------------------------------------*/
 
-@import 'generic/icons';                // Vector icons includes.
+@import 'generic/keyframes';            // CSS Keyframe blocks.
+@import 'generic/fonts';                // Vector icons/fonts includes.
 
 
 
@@ -47,7 +48,7 @@
 /*----------------------------------------------------------------------------*\
 	#BASE
 	
-	Last layer we see type selectors (h1-h6, a).
+	Last layer we see type selectors (h1-h6, a). Far-reaching shared classes.
 \*----------------------------------------------------------------------------*/
 
 @import 'base/page';                    // Page-level styles (HTML, body etc).
@@ -78,7 +79,8 @@
 	Third party styles that appear globally, such as sliders & modals.
 \*----------------------------------------------------------------------------*/
 
-//@import 'parties/slick';              // A responsive carousel plugin.
+@import 'parties/slick';                // A responsive carousel plugin.
+@import 'parties/select';               // A customisable select input.
 
 
 
@@ -88,7 +90,6 @@
 	Designed pieces of UI. Only using classes. More explicit naming.
 \*----------------------------------------------------------------------------*/
 
-@import 'components/buttons';           // Button elements.
 @import 'components/page-header';       // The page header.
 @import 'components/page-main';         // The page main.
 @import 'components/page-footer';       // The page footer.
@@ -101,7 +102,9 @@
 	Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
+@import 'trumps/modernizr';             // Modernizr enabled overrides.
 @import 'trumps/spacing';               // Micro-level spacing.
+@import 'trumps/validation';            // Form validation styles.
 @import 'trumps/visibility';            // Helpers to show and side stuff.
 
 

@@ -6,40 +6,22 @@
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
+    padding: 0 rem($gutter);
     position: relative;
     max-width: rem($maxWidth);
+    min-width: 100%;
 }
 
-.#{$rowClass}--max {
+.#{$maxClass} {
     max-width: none;
-}
-
-.#{$edgeClass} > .#{$colClass} {
-    padding: 0;
-}
-
-.#{$rowClass} .#{$rowClass},
-.#{$rowClass}.#{$edgeClass} {
-    width: auto;
-    margin: 0 -1rem;
-    max-width: none;
-}
-
-.#{$rowClass}.#{$edgeClass},
-.#{$edgeClass} .#{$rowClass}{
-    margin: 0;
 }
 
 .#{$colClass} {
     flex-direction: column;
     flex-grow: 0;
     flex-shrink: 0;
-    padding: 0 1rem;
+    padding: 0 rem($gutter);
     position: relative;
-}
-
-.#{$colClass}--reflex {
-    display: flex;
 }
 
 @each $breakclass, $breakpoint in $breakpoints {
@@ -56,8 +38,10 @@
         
         @for $grid from 0 through $columns {
             .#{$breakclass}--#{$grid} {
-                flex-basis: floor(100% / $columns * ($grid * 100)) / 100;
-                width: floor(100% / $columns * ($grid * 100)) / 100;
+                $widthCalc: floor(100% / $columns * ($grid * 100)) / 100;
+                flex-basis: $widthCalc;
+                max-width: $widthCalc;
+                width: $widthCalc;
             }
         }
         
@@ -79,12 +63,12 @@
             }
         }
         
-        .#{$rowClass}.#{$breakclass}--reverse {
+        .#{$breakclass}--row-reverse {
             flex-direction: row-reverse;
             flex-wrap: row-reverse;
         }
         
-        .#{$colClass}.#{$breakclass}--reverse {
+        .#{$breakclass}--column-reverse {
             flex-direction: column-reverse;
             flex-wrap: column-reverse;
         }
@@ -106,6 +90,7 @@
         
         .#{$breakclass}--end {
             justify-content: flex-end;
+            margin-left: auto;
             text-align: end;
         }
         
@@ -119,6 +104,18 @@
         
         .#{$breakclass}--bottom {
             align-items: flex-end;
+        }
+        
+        .#{$breakclass}--self-top {
+            align-self: flex-start;
+        }
+        
+        .#{$breakclass}--self-middle {
+            align-self: center;
+        }
+        
+        .#{$breakclass}--self-bottom {
+            align-self: flex-end;
         }
         
         .#{$breakclass}--around {
@@ -144,6 +141,10 @@
         .#{$breakclass}--wrap {
             flex-wrap: wrap;
         }
+        
+        .#{$breakclass}--reflex {
+            display: flex;
+        }
     }
         
     @if(length($breakpoints) > $i) {
@@ -165,4 +166,19 @@
             }
         }
     }
+}
+
+.#{$edgeClass},
+.#{$edgeClass} > .#{$colClass} {
+    padding: 0;
+}
+
+.#{$rowClass} .#{$rowClass} {
+    margin: 0 -#{rem($gutter)};
+    max-width: none;
+}
+
+.#{$rowClass}.#{$edgeClass},
+.#{$edgeClass} .#{$rowClass}{
+    margin: 0;
 }

@@ -2,19 +2,11 @@
     
 	#CREATIVE LITTLE UI KIT
 	
-	- Project Name:     Creative Little UI Kit
-	- Project URI:      http://creativeittle.uk/wpkit
-	- Description:      The Infamous Creative Little WP Kit
-	
-	- Author:           Creative Little Dots
-	- Author URI:       http://creativelittledots.co.uk
-	
-	- License:          MIT
-	- License URI:      https://github.com/CreativeLittleDots/creative-little-ui-kit/license.md
-	- Copyright:        2016, Creative Little Dots
-	
-	- Version:          MK1
-	- Changelog:        https://github.com/CreativeLittleDots/creative-little-ui-kit/changelog.md
+	- Version:      0.2
+	- Author:       Creative Little Dots
+	- Site:         http://creativelittle.uk/uikit
+	- Copyright:    2015, Creative Little Dots
+	– License:      MIT | http://goo.gl/p3bexl
 	
 \*----------------------------------------------------------------------------*/
 
@@ -27,7 +19,8 @@
 \*----------------------------------------------------------------------------*/
 
 @import 'settings/global';              // Global variables & config.
-@import 'settings/colors';              // Colour code variables
+@import 'settings/grid';                // Grid, breakpoint & width variables.
+@import 'settings/colors';              // Colour code variables.
 
 
 
@@ -48,8 +41,8 @@
 	Ground-zero styles. Low-specificity, far-reaching.
 \*----------------------------------------------------------------------------*/
 
-@import 'generic/box-sizing';           // Better default `box-sizing`.
 @import 'generic/normalize';            // A level playing field.
+@import 'generic/box-sizing';           // Better default `box-sizing`.
 @import 'generic/keyframes';            // CSS Keyframe blocks.
 @import 'generic/fonts';                // Vector icons/fonts includes.
 
@@ -90,7 +83,7 @@
 	Third party styles that appear globally, such as sliders & modals.
 \*----------------------------------------------------------------------------*/
 
-//@import 'parties/slick';              // A responsive carousel plugin.
+@import 'parties/slick';                // A responsive carousel plugin.
 @import 'parties/select';               // A customisable select input.
 
 
@@ -101,10 +94,8 @@
 	Designed pieces of UI. Only using classes. More explicit naming.
 \*----------------------------------------------------------------------------*/
 
-@import 'components/page-header';       // The page header.
-@import 'components/page-main';         // The page main.
-@import 'components/page-footer';       // The page footer.
-@import 'components/buttons';           // Button elements.
+@import 'components/buttons';           // Button styles.
+@import 'components/lists';             // List styles.
 
 
 
@@ -114,6 +105,9 @@
 	Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
-@import 'trumps/validation';            // Form validation styles.
+@import 'trumps/modernizr';             // Modernizr enabled overrides.
 @import 'trumps/spacing';               // Micro-level spacing.
+@import 'trumps/validation';            // Form validation styles.
 @import 'trumps/visibility';            // Helpers to show and side stuff.
+
+

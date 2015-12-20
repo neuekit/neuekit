@@ -1,0 +1,18 @@
+/*----------------------------------------------*\
+	#GRID SETTINGS
+\*----------------------------------------------*/
+
+$rowClass:      'grid';
+$colClass:      'grid__item';
+$edgeClass:     'grid--edge';
+$maxClass:      'grid--max';
+$columns:       12;
+$gutter:        8px;
+$maxWidth:      1380px;
+$breakpoints: (
+    s:      null, //iPhone
+    m:      641px, //iPad
+    l:      1025px, //Macbook
+    xl:     1201px, //Macbook Pro
+    xxl:    1601px //iMac
+);

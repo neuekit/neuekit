@@ -1,17 +1,5 @@
 /*----------------------------------------------*\
-	#GRID SETTINGS
+	#GLOBAL SETTINGS
 \*----------------------------------------------*/
 
-$rowClass: "grid";
-$colClass: "grid__item";
-$edgeClass: "grid--edge";
-$columns: 12;
-$breakpoints: (
-    s: null, //iPhone
-    m: 641px, //iPad
-    l: 1025px, //Macbook
-    xl: 1201px, //Macbook Pro
-    xxl: 1601px //iMac
-);
-$maxWidth: 1380px;
 $rootFontSize: 16px;
