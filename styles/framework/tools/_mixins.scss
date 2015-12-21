@@ -17,12 +17,13 @@
     @each $breakclass, $breakpoint in $breakpoints {
     
         $i: index(map-keys($breakpoints), $breakclass);
-        $break: $breakclass !global;
         
         
         /*  AND UP MEDIA QUERY LOOP  */
         
         @if($choice == null or $choice == up or $choice == both) {
+            
+            $break: $breakclass !global;
         
             $screen: if(
                 $i == 1,
@@ -41,6 +42,8 @@
         /*  ONLY MEDIA QUERY LOOP  */
         
         @if($choice == only or $choice == both) {
+            
+            $break: $breakclass + '-only' !global;
             
             @if(length($breakpoints) > $i) {
             
