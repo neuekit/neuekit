@@ -19,7 +19,7 @@
         $i: index(map-keys($breakpoints), $breakclass);
         
         
-        /*  AND UP MEDIA QUERY LOOP  */
+        //  AND UP MEDIA QUERY LOOP
         
         @if($choice == null or $choice == up or $choice == both) {
             
@@ -39,7 +39,7 @@
         }
         
         
-        /*  ONLY MEDIA QUERY LOOP  */
+        //  ONLY MEDIA QUERY LOOP
         
         @if($choice == only or $choice == both) {
             
