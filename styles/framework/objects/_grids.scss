@@ -24,148 +24,35 @@
     position: relative;
 }
 
-@each $breakclass, $breakpoint in $breakpoints {
+@include breakpoints(up) {
     
-    $i: index(map-keys($breakpoints), $breakclass);
-    
-    $screen: if(
-        $i == 1,
-        'only screen',
-        'only screen and (min-width: #{rem($breakpoint)})'
-    );
-    
-    @media #{$screen} {
-        
-        @for $grid from 0 through $columns {
-            .#{$breakclass}--#{$grid} {
-                $widthCalc: floor(100% / $columns * ($grid * 100)) / 100;
-                flex-basis: $widthCalc;
-                max-width: $widthCalc;
-                width: $widthCalc;
-            }
-        }
-        
-        @for $inset from 1 through $columns {
-            .#{$breakclass}-inset--#{$inset} {
-                margin-left: round(100% / $columns * $inset);
-            }
-        }
-        
-        @for $outsetLeft from 1 through $columns {
-            .#{$breakclass}-outset-left--#{$outsetLeft} {
-                margin-left: round(-100% / $columns * $outsetLeft);
-            }
-        }
-        
-        @for $outsetRight from 1 through $columns {
-            .#{$breakclass}-outset-right--#{$outsetRight} {
-                margin-right: round(-100% / $columns * $outsetRight);
-            }
-        }
-        
-        .#{$breakclass}--row-reverse {
-            flex-direction: row-reverse;
-            flex-wrap: row-reverse;
-        }
-        
-        .#{$breakclass}--column-reverse {
-            flex-direction: column-reverse;
-            flex-wrap: column-reverse;
-        }
-        
-        .#{$breakclass}--auto {
-            flex-grow: 1;
-            flex-basis: 0%;
-        }
-        
-        .#{$breakclass}--start {
-            justify-content: flex-start;
-            text-align: start;
-        }
-        
-        .#{$breakclass}--center {
-            justify-content: center;
-            margin: 0 auto;
-        }
-        
-        .#{$breakclass}--end {
-            justify-content: flex-end;
-            margin-left: auto;
-            text-align: end;
-        }
-        
-        .#{$breakclass}--top {
-            align-items: flex-start;
-        }
-        
-        .#{$breakclass}--middle {
-            align-items: center;
-        }
-        
-        .#{$breakclass}--bottom {
-            align-items: flex-end;
-        }
-        
-        .#{$breakclass}--self-top {
-            align-self: flex-start;
-        }
-        
-        .#{$breakclass}--self-middle {
-            align-self: center;
-        }
-        
-        .#{$breakclass}--self-bottom {
-            align-self: flex-end;
-        }
-        
-        .#{$breakclass}--around {
-            justify-content: space-around;
-        }
-        
-        .#{$breakclass}--between {
-            justify-content: space-between;
-        }
-        
-        .#{$breakclass}--first {
-            order: -1;
-        }
-        
-        .#{$breakclass}--last {
-            order: 1;
-        }
-        
-        .#{$breakclass}--hide {
-            display: none;
-        }
-        
-        .#{$breakclass}--wrap {
-            flex-wrap: wrap;
-        }
-        
-        .#{$breakclass}--reflex {
-            display: flex;
+    @for $grid from 0 through $columns {
+        .#{$break}--#{$grid} {
+            $widthCalc: floor(100% / $columns * ($grid * 100)) / 100;
+            flex-basis: $widthCalc;
+            max-width: $widthCalc;
+            width: $widthCalc;
         }
     }
-        
-    @if(length($breakpoints) > $i) {
-        
-        $screenOnly: null;
-        $nextBreakpoint: map-get($breakpoints, nth(map-keys($breakpoints), $i + 1));
-        
-        @if($i > 1) {
-            $screenOnly: 'only screen and (min-width: #{rem($breakpoint)}) and (max-width: #{rem(($nextBreakpoint)-1)})';
-        }
-        
-        @else {
-            $screenOnly: 'only screen and (max-width: #{rem(($nextBreakpoint)-1)})';
-        }
-        
-        @media #{$screenOnly} {
-            .#{$breakclass}-only--hide {
-                display: none;
-            }
+    
+    @for $inset from 1 through $columns {
+        .#{$break}-inset--#{$inset} {
+            margin-left: round(100% / $columns * $inset);
         }
     }
+    
+    @for $outsetLeft from 1 through $columns {
+        .#{$break}-outset-left--#{$outsetLeft} {
+            margin-left: round(-100% / $columns * $outsetLeft);
+        }
+    }
+    
+    @for $outsetRight from 1 through $columns {
+        .#{$break}-outset-right--#{$outsetRight} {
+            margin-right: round(-100% / $columns * $outsetRight);
+        }
+    }
+    
 }
 
 .#{$edgeClass},

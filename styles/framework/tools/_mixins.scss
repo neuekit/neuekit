@@ -1,7 +1,68 @@
 /*----------------------------------------------*\
-	#SIZE MIXIN
+	#SIZE
 \*----------------------------------------------*/
 
 @mixin size($height, $width: $height) {
 	height: $height; width: $width;
 }
+
+
+
+/*----------------------------------------------*\
+	#BREAKPOINT
+\*----------------------------------------------*/
+
+@mixin breakpoints($choice: up) {
+
+    @each $breakclass, $breakpoint in $breakpoints {
+    
+        $i: index(map-keys($breakpoints), $breakclass);
+        $break: $breakclass !global;
+        
+        
+        /*  AND UP MEDIA QUERY LOOP  */
+        
+        @if($choice == null or $choice == up or $choice == both) {
+        
+            $screen: if(
+                $i == 1,
+                'only screen',
+                'only screen and (min-width: #{rem($breakpoint)})'
+            );
+            
+            @media #{$screen} {
+            
+                @content;
+            
+            }
+        }
+        
+        
+        /*  ONLY MEDIA QUERY LOOP  */
+        
+        @if($choice == only or $choice == both) {
+            
+            @if(length($breakpoints) > $i) {
+            
+                $screenOnly: null;
+                $nextBreakpoint: map-get($breakpoints, nth(map-keys($breakpoints), $i + 1));
+                
+                @if($i > 1) {
+                    $screenOnly: 'only screen and (min-width: #{rem($breakpoint)}) and (max-width: #{rem(($nextBreakpoint)-1)})';
+                }
+                
+                @else {
+                    $screenOnly: 'only screen and (max-width: #{rem(($nextBreakpoint)-1)})';
+                }
+                
+                @media #{$screenOnly} {
+                
+                    @content;
+                
+                }
+            }
+        }
+    }
+}
+
+

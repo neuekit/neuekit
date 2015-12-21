@@ -105,6 +105,7 @@
 	Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
+@import 'trumps/flex-helpers';          // Give flex a helping hand.
 @import 'trumps/modernizr';             // Modernizr enabled overrides.
 @import 'trumps/spacing';               // Micro-level spacing.
 @import 'trumps/validation';            // Form validation styles.
