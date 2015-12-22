@@ -28,7 +28,7 @@
     
     @for $grid from 0 through $columns {
         .#{$break}--#{$grid} {
-            $widthCalc: floor(100% / $columns * ($grid * 100)) / 100;
+            $widthCalc: floor(100% / $columns * ($grid * 1000)) / 1000;
             flex-basis: $widthCalc;
             max-width: $widthCalc;
             width: $widthCalc;
