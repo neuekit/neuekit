@@ -1,0 +1,16 @@
+button {
+    appearance: none;
+    background: none;
+    border: none;
+}
+
+textarea {
+    resize: vertical;
+}
+
+button,
+textarea {
+    &:focus {
+		outline: none;
+	}
+}

@@ -1,0 +1,99 @@
+/*!---------------------------------------------------------------------------*\
+    
+	#YOUR PROJECT NAME
+	
+	- Version:      1.0
+	- Author:       YOUR NAME
+	- Site:         http://YOUR_SITE
+	- Copyright:    2015, YOUR COMPANY
+	
+\*----------------------------------------------------------------------------*/
+
+
+
+/*----------------------------------------------------------------------------*\
+	#TOOLS
+	
+	Globally-available tools, public mixins & helper functions.
+\*----------------------------------------------------------------------------*/
+
+@import 'tools/functions';              // Useful functions.
+@import 'tools/mixins';                 // Useful mixins.
+
+
+
+/*----------------------------------------------------------------------------*\
+	#GENERIC
+	
+	Ground-zero styles. Low-specificity, far-reaching.
+\*----------------------------------------------------------------------------*/
+
+@import 'generic/keyframes';            // CSS Keyframe blocks.
+@import 'generic/fonts';                // Vector icons/fonts includes.
+
+
+
+
+/*----------------------------------------------------------------------------*\
+	#BASE
+	
+	Last layer we see type selectors (h1-h6, a). Far-reaching shared classes.
+\*----------------------------------------------------------------------------*/
+
+@import 'base/page';                    // Page-level styles (HTML, body etc).
+@import 'base/headings';                // H1–H6 styles.
+@import 'base/type';                    // Misc type styles.
+@import 'base/links';                   // Hyperlink styles.
+@import 'base/lists';                   // List styles.
+@import 'base/images';                  // Image stying.
+@import 'base/quotes';                  // Blockquotes, cite, etc.
+@import 'base/forms';                   // Form inputs, textareas.
+@import 'base/shared';                  // Shared global commonalities.
+
+
+
+/*----------------------------------------------------------------------------*\
+	#OBJECTS
+	
+	Design Patterns. No cosmetics. Start using agnostic classes only.
+\*----------------------------------------------------------------------------*/
+
+@import 'objects/wrappers';             // Wrapping & constraining elements.
+
+
+
+/*----------------------------------------------------------------------------*\
+	#PARTIES
+	
+	Third party styles that appear globally, such as sliders & modals.
+\*----------------------------------------------------------------------------*/
+
+@import 'parties/slick';                // A responsive carousel plugin.
+@import 'parties/select';               // A customisable select input.
+
+
+
+/*----------------------------------------------------------------------------*\
+	#COMPONENTS
+	
+	Designed pieces of UI. Only using classes. More explicit naming.
+\*----------------------------------------------------------------------------*/
+
+@import 'components/page-header';       // The page header.
+@import 'components/page-main';         // The page main.
+@import 'components/page-footer';       // The page footer.
+
+
+
+/*----------------------------------------------------------------------------*\
+	#TRUMPS
+	
+	Overrides, helpers, utilities. Only affect one item at a time.
+\*----------------------------------------------------------------------------*/
+
+@import 'trumps/modernizr';             // Modernizr enabled overrides.
+@import 'trumps/spacing';               // Micro-level spacing.
+@import 'trumps/validation';            // Form validation styles.
+@import 'trumps/visibility';            // Helpers to show and side stuff.
+
+

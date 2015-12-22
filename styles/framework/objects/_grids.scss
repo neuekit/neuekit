@@ -1,0 +1,71 @@
+/*----------------------------------------------*\
+	#Grid Structure
+\*----------------------------------------------*/
+
+.#{$rowClass} {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    padding: 0 rem($gutter);
+    position: relative;
+    max-width: rem($maxWidth);
+    min-width: 100%;
+}
+
+.#{$maxClass} {
+    max-width: none;
+}
+
+.#{$colClass} {
+    flex-direction: column;
+    flex-grow: 0;
+    flex-shrink: 0;
+    padding: 0 rem($gutter);
+    position: relative;
+}
+
+@include breakpoints(up) {
+    
+    @for $grid from 0 through $columns {
+        .#{$break}--#{$grid} {
+            $widthCalc: floor(100% / $columns * ($grid * 1000)) / 1000;
+            flex-basis: $widthCalc;
+            max-width: $widthCalc;
+            width: $widthCalc;
+        }
+    }
+    
+    @for $inset from 1 through $columns {
+        .#{$break}-inset--#{$inset} {
+            margin-left: round(100% / $columns * $inset);
+        }
+    }
+    
+    @for $outsetLeft from 1 through $columns {
+        .#{$break}-outset-left--#{$outsetLeft} {
+            margin-left: round(-100% / $columns * $outsetLeft);
+        }
+    }
+    
+    @for $outsetRight from 1 through $columns {
+        .#{$break}-outset-right--#{$outsetRight} {
+            margin-right: round(-100% / $columns * $outsetRight);
+        }
+    }
+    
+}
+
+.#{$edgeClass},
+.#{$edgeClass} > .#{$colClass} {
+    padding: 0;
+}
+
+.#{$rowClass} .#{$rowClass} {
+    margin: 0 -#{rem($gutter)};
+    max-width: none;
+}
+
+.#{$rowClass}.#{$edgeClass},
+.#{$edgeClass} .#{$rowClass}{
+    margin: 0;
+}

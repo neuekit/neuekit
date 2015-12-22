@@ -1,0 +1,84 @@
+@include breakpoints(both) {
+    .#{$break}--row-reverse {
+        flex-direction: row-reverse;
+        flex-wrap: row-reverse;
+    }
+    
+    .#{$break}--column-reverse {
+        flex-direction: column-reverse;
+        flex-wrap: column-reverse;
+    }
+    
+    .#{$break}--auto {
+        flex-grow: 1;
+        flex-basis: 0%;
+    }
+    
+    .#{$break}--start {
+        justify-content: flex-start;
+        text-align: start;
+    }
+    
+    .#{$break}--center {
+        justify-content: center;
+        margin: 0 auto;
+    }
+    
+    .#{$break}--end {
+        justify-content: flex-end;
+        margin-left: auto;
+        text-align: end;
+    }
+    
+    .#{$break}--top {
+        align-items: flex-start;
+    }
+    
+    .#{$break}--middle {
+        align-items: center;
+    }
+    
+    .#{$break}--bottom {
+        align-items: flex-end;
+    }
+    
+    .#{$break}--self-top {
+        align-self: flex-start;
+    }
+    
+    .#{$break}--self-middle {
+        align-self: center;
+    }
+    
+    .#{$break}--self-bottom {
+        align-self: flex-end;
+    }
+    
+    .#{$break}--around {
+        justify-content: space-around;
+    }
+    
+    .#{$break}--between {
+        justify-content: space-between;
+    }
+    
+    .#{$break}--first {
+        order: -1;
+    }
+    
+    .#{$break}--last {
+        order: 1;
+    }
+    
+    .#{$break}--wrap {
+        flex-wrap: wrap;
+    }
+    
+    .#{$break}--nowrap {
+        flex-wrap: nowrap;
+    }
+    
+    .#{$break}--reflex {
+        display: flex;
+    }
+}
