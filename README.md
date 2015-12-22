@@ -24,4 +24,4 @@ Coming soon...
 
 ![Browsers](https://raw.githubusercontent.com/alrra/browser-logos/master/main-desktop.png)
 
-Copyright (c) 2016 Creative Little Dots, ltd.
+Copyright © 2016 Creative Little Dots, ltd.
