@@ -61,7 +61,7 @@
 }
 
 .#{$rowClass} .#{$rowClass} {
-    margin: 0 -#{rem($gutter)};
+    margin: 0 #{rem(-$gutter)};
     max-width: none;
 }
 
