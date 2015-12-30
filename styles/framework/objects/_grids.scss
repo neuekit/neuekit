@@ -57,7 +57,8 @@
 
 .#{$edgeClass},
 .#{$edgeClass} > .#{$colClass} {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .#{$rowClass} .#{$rowClass} {
