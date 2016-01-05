@@ -12,6 +12,8 @@
     .#{$break}--auto {
         flex-grow: 1;
         flex-basis: 0%;
+        width: 100%;
+        max-width: 100%;
     }
     
     .#{$break}--start {
