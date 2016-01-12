@@ -9,7 +9,7 @@
     padding: 0 rem($gutter);
     position: relative;
     max-width: rem($maxWidth);
-    min-width: 100%;
+    width: 100%;
 }
 
 .#{$maxClass} {
