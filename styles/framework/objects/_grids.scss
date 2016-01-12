@@ -4,12 +4,12 @@
 
 .#{$rowClass} {
     display: flex;
+    flex-basis: 100%;
     flex-wrap: wrap;
+    max-width: rem($maxWidth);
     margin: 0 auto;
     padding: 0 rem($gutter);
-    position: relative;
-    max-width: rem($maxWidth);
-    min-width: 100%;
+    position: relative;    
 }
 
 .#{$maxClass} {
