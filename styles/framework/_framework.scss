@@ -2,7 +2,7 @@
     
 	#CREATIVE LITTLE UI KIT
 	
-	- Version:      0.4
+	- Version:      0.5
 	- Author:       Creative Little Dots
 	- Site:         http://creativelittle.uk/uikit
 	- Copyright:    2016, Creative Little Dots
@@ -29,7 +29,7 @@
 	Ground-zero styles. Low-specificity, far-reaching.
 \*----------------------------------------------------------------------------*/
 
-@import 'generic/normalize';            // A level playing field.
+//@import 'generic/normalize';          // A level playing field. Dead??
 @import 'generic/reboot';               // Better defaults.
 @import 'generic/keyframes';            // CSS Keyframe blocks.
 @import 'generic/fonts';                // Vector icons/fonts includes.
@@ -60,8 +60,8 @@
 	Design Patterns. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
-@import 'objects/wrappers';             // Wrapping & constraining elements.
 @import 'objects/grids';                // Flex based layout engine.
+@import 'objects/blocks';               // Flex based layout engine.
 
 
 
@@ -96,6 +96,7 @@
 @import 'trumps/flex-helpers';          // Give flex a helping hand.
 @import 'trumps/modernizr';             // Modernizr enabled overrides.
 @import 'trumps/spacing';               // Micro-level spacing.
+@import 'trumps/text-helpers';          // Handy text assistants.
 @import 'trumps/validation';            // Form validation styles.
 @import 'trumps/visibility';            // Helpers to show and side stuff.
 

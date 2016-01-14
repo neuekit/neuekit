@@ -1,11 +1,3 @@
-.flex {
-    display: flex;
-}
-
-.grow {
-    flex-grow: 1;
-}
-
 @include breakpoints(both) {
     .#{$break}--row-reverse {
         flex-direction: row-reverse;
@@ -86,5 +78,9 @@
     
     .#{$break}--nowrap {
         flex-wrap: nowrap;
+    }
+    
+    .#{$break}--reflex {
+        display: flex;
     }
 }

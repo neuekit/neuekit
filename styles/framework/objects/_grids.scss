@@ -5,11 +5,9 @@
 .#{$rowClass} {
     display: flex;
     flex-basis: 100%;
-    flex-wrap: wrap;
     margin: 0 auto;
     max-width: rem($maxWidth);
     padding: 0 rem($gutter);
-    position: relative;
 }
 
 .#{$maxClass} {
@@ -18,15 +16,13 @@
 
 .#{$colClass} {
     flex-direction: column;
-    flex-grow: 0;
-    flex-shrink: 0;
     padding: 0 rem($gutter);
-    position: relative;
 }
 
 @include breakpoints(up) {
     
     @for $grid from 0 through $columns {
+        
         .#{$break}--#{$grid} {
             $widthCalc: floor(100% / $columns * ($grid * 1000)) / 1000;
             flex-basis: $widthCalc;
@@ -36,23 +32,28 @@
     }
     
     @for $inset from 1 through $columns {
+        
         .#{$break}-inset--#{$inset} {
+            
             margin-left: round(100% / $columns * $inset);
         }
     }
     
     @for $outsetLeft from 1 through $columns {
+        
         .#{$break}-outset-left--#{$outsetLeft} {
+            
             margin-left: round(-100% / $columns * $outsetLeft);
         }
     }
     
     @for $outsetRight from 1 through $columns {
+        
         .#{$break}-outset-right--#{$outsetRight} {
+            
             margin-right: round(-100% / $columns * $outsetRight);
         }
     }
-    
 }
 
 .#{$edgeClass},
