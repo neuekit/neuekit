@@ -5,6 +5,7 @@
 .#{$rowClass} {
     display: flex;
     flex-basis: 100%;
+    flex-wrap: wrap;
     margin: 0 auto;
     max-width: rem($maxWidth);
     padding: 0 rem($gutter);
