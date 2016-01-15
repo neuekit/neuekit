@@ -4,9 +4,15 @@
 
 @include breakpoints(up) {
     
+    .size-auto#{$break} {
+        flex-grow: 1;
+        flex-basis: 0%;
+        max-width: 100%;
+    }
+    
     @for $grid from 0 through $columns {
         
-        .size-#{$grid}-#{$break} {
+        .size-#{$grid}#{$break} {
             flex-basis: floor(100% / $columns * ($grid * 1000)) / 1000;
         }
     }

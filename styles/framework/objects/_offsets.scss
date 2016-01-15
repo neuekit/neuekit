@@ -6,21 +6,21 @@
     
     @for $inset from 1 through $columns {
         
-        .inset-#{$inset}-#{$break} {
+        .inset-#{$inset}#{$break} {
             margin-left: round(100% / $columns * $inset);
         }
     }
     
     @for $outsetLeft from 1 through $columns {
         
-        .outset-left-#{$outsetLeft}-#{$break} {
+        .outset-left-#{$outsetLeft}#{$break} {
             margin-left: round(-100% / $columns * $outsetLeft);
         }
     }
     
     @for $outsetRight from 1 through $columns {
         
-        .outset-right-#{$outsetRight}-#{$break} {
+        .outset-right-#{$outsetRight}#{$break} {
             margin-right: round(-100% / $columns * $outsetRight);
         }
     }

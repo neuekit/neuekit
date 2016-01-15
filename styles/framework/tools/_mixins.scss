@@ -3,6 +3,7 @@
 \*----------------------------------------------*/
 
 @mixin size($height, $width: $height) {
+    
 	height: $height; width: $width;
 }
 
@@ -23,7 +24,11 @@
         
         @if($choice == null or $choice == up or $choice == both) {
             
-            $break: $breakclass !global;
+            $break: if(
+                $i == 1,
+                null,
+                '-' + $breakclass
+            ) !global;
         
             $screen: if(
                 $i == 1,
@@ -43,7 +48,7 @@
         
         @if($choice == only or $choice == both) {
             
-            $break: $breakclass + '-only' !global;
+            $break: '-' + $breakclass + '-only' !global;
             
             @if(length($breakpoints) > $i) {
             

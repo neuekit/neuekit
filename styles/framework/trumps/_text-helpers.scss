@@ -4,31 +4,31 @@
 
 @include breakpoints(both) {
     
-    .text-start-#{$break} {
+    .text-start#{$break} {
         text-align: start;
     }
     
-    .text-center-#{$break} {
+    .text-center#{$break} {
         text-align: center;
     }
     
-    .text-end-#{$break} {
+    .text-end#{$break} {
         text-align: end;
     }
     
-    .text-grow-#{$break} {
+    .text-grow#{$break} {
         font-size: 125%;
     }
     
-    .text-shrink-#{$break} {
+    .text-shrink#{$break} {
         font-size: 75%;
     }
     
-    .text-bold-#{$break} {
+    .text-bold#{$break} {
         font-size: bold;
     }
     
-    .text-light-#{$break} {
+    .text-light#{$break} {
         font-size: light;
     }
 }

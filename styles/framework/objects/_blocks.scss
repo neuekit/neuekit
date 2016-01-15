@@ -11,7 +11,7 @@
     
     @for $grid from 0 through $columns {
     
-        .blocks--#{$grid}-#{$break} .block {
+        .blocks--#{$grid}#{$break} .block {
             flex-basis: floor(100% / $columns * ($grid * 1000)) / 1000;
         }
     }
