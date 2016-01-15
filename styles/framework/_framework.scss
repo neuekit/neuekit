@@ -2,7 +2,7 @@
     
 	#CREATIVE LITTLE UI KIT
 	
-	- Version:      0.5
+	- Version:      0.6
 	- Author:       Creative Little Dots
 	- Site:         http://creativelittle.uk/uikit
 	- Copyright:    2016, Creative Little Dots
@@ -60,8 +60,11 @@
 	Design Patterns. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
-@import 'objects/grids';                // Flex based layout engine.
-@import 'objects/blocks';               // Flex based layout engine.
+@import 'objects/wrappers';             // Wrapping & constraining elements.
+@import 'objects/grids';                // Flex based grid layout.
+@import 'objects/blocks';               // Flex based block layout.
+@import 'objects/sizes';                // Flex based sizes.
+@import 'objects/offsets';              // Margin offsets for asymetric layouts.
 
 
 

@@ -1,17 +1,12 @@
 /*----------------------------------------------*\
-	#BLOCKS OBJECT STYLES
+	#SIZE OBJECT STYLES
 \*----------------------------------------------*/
 
-.blocks,
-.block {
-    padding: rem($gutter);
-}
-
-@include breakpoints(both) {
+@include breakpoints(up) {
     
     @for $grid from 0 through $columns {
-    
-        .blocks--#{$grid}-#{$break} .block {
+        
+        .size-#{$grid}-#{$break} {
             flex-basis: floor(100% / $columns * ($grid * 1000)) / 1000;
         }
     }

@@ -1,3 +1,7 @@
+/*----------------------------------------------*\
+	#BUTTON COMPONENT STYLES
+\*----------------------------------------------*/
+
 .button {
     background-color: black;
     box-shadow: inset 0 0 0 2px transparent;
@@ -7,7 +11,6 @@
     padding: 1rem;
     text-align: center;
     transition: all 0.25s ease;
-    vertical-align: middle;
     
     &:hover {
         background-color: white;
@@ -80,3 +83,5 @@
     background: none;
     color: black;
 }
+
+
