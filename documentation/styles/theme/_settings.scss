@@ -1,0 +1,9 @@
+/*----------------------------------------------------------------------------*\
+	#SETTINGS
+	
+	Globally-available variables, settings & config switches.
+\*----------------------------------------------------------------------------*/
+
+@import 'settings/global';              // Global variables & config.
+@import 'settings/grid';                // Grid & breakpoint variables.
+@import 'settings/colors';              // Colour code variables.

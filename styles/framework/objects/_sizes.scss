@@ -12,8 +12,14 @@
     
     @for $grid from 0 through $columns {
         
+        $width: if(
+            $grid == 0,
+            auto,
+            floor(100% / $columns * ($grid * 1000)) / 1000
+        );
+        
         .size-#{$grid}#{$break} {
-            flex-basis: floor(100% / $columns * ($grid * 1000)) / 1000;
+            flex-basis: $width;
         }
     }
 }

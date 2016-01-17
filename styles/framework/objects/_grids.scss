@@ -2,7 +2,7 @@
 	#GRID OBJECT STYLES
 \*----------------------------------------------*/
 
-.#{$rowClass} {
+.#{$gridClass} {
     display: flex;
     flex-basis: 100%;
     flex-wrap: wrap;
@@ -11,29 +11,33 @@
     padding: 0 rem($gutter);
 }
 
-.#{$maxClass} {
+.#{$gridClass}--#{$maxClass} {
     max-width: none;
 }
 
-.#{$colClass} {
+.#{$gridClass}--#{$axisClass} {
+    flex-direction: column;
+}
+
+.#{$gridClass}__#{$itemClass} {
     flex-basis: 100%;
     flex-direction: column;
     padding: 0 rem($gutter);
 }
 
-.#{$edgeClass},
-.#{$edgeClass} > .#{$colClass} {
+.#{$gridClass}--#{$edgeClass},
+.#{$gridClass}--#{$edgeClass} > .#{$gridClass}__#{$itemClass} {
     padding-left: 0;
     padding-right: 0;
 }
 
-.#{$rowClass} .#{$rowClass} {
+.#{$gridClass} .#{$gridClass} {
     margin: 0 #{rem(-$gutter)};
     max-width: none;
 }
 
-.#{$rowClass}.#{$edgeClass},
-.#{$edgeClass} .#{$rowClass} {
+.#{$gridClass}.#{$gridClass}--#{$edgeClass},
+.#{$gridClass}--#{$edgeClass} .#{$gridClass} {
     margin: 0;
 }
 

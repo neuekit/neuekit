@@ -1,0 +1,9 @@
+/*----------------------------------------------*\
+	#COMBINE BOTH THE FRAMEWORK AND THEME
+\*----------------------------------------------*/
+
+@import '../styles/framework/settings'; // DONT EDIT SKY WILL FALL
+@import 'theme/settings'; // EDIT AS YOU WISH
+
+@import '../styles/framework/framework';
+@import 'theme/theme';
