@@ -3,26 +3,52 @@
 <html class="no-js" lang="en">
 
     <head>
+        
+        <!--------------------------------------------------
+        //	Document: Setup
+        --------------------------------------------------->
     
         <meta charset="utf-8">
         
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
         <title> | Welcome</title>
         
-        <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <link rel="stylesheet" href="styles/style.css">
         
-        <script src="scripts/parties/modernizr.js"></script>
+        <!--------------------------------------------------
+        //	Document: Priority Resources
+        --------------------------------------------------->
+        
+        <link rel="stylesheet" href="/styles/style.css">
+        
+        <script src="/scripts/parties/modernizr.js"></script>
+        
+        
     
     </head>
 
     <body>
+        
+        <!--------------------------------------------------
+        //	Site: Header
+        --------------------------------------------------->
     
-        <header class="page-header">
+        <header class="page-header" role="banner">
         
             <div class="grid">
             
-                <div class="grid__item">
+                <div class="grid__item  size-12  size-12-m  size-12-l  size-12-xl">
+                    
+                    <nav role="navigation">
+                        
+                        <ul>
+                            
+                            <li><a href="#">Link</a></li>
+                            
+                        </ul>
+                        
+                    </nav>
                 
                 </div>
             
@@ -30,11 +56,17 @@
         
         </header>
         
-        <main class="page-main">
+        
+        
+        <!--------------------------------------------------
+        //	Site: Main
+        --------------------------------------------------->
+        
+        <main class="page-main" role="main">
         
             <div class="grid">
             
-                <div class="grid__item">
+                <div class="grid__item  size-12  size-12-m  size-12-l  size-12-xl">
                 
                 </div>
             
@@ -42,11 +74,17 @@
         
         </main>
         
-        <footer class="page-footer">
+        
+        
+        <!--------------------------------------------------
+        //	Site: Footer
+        --------------------------------------------------->
+        
+        <footer class="page-footer" role="contentinfo">
         
             <div class="grid">
             
-                <div class="grid__item">
+                <div class="grid__item  size-12  size-12-m  size-12-l  size-12-xl">
                 
                 </div>
             
@@ -54,19 +92,23 @@
         
         </footer>
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
         
-        <script>
-            if (typeof jQuery === 'undefined') {
-                document.write(unescape('%3Cscript%20src%3D%22scripts/parties/jquery-2.2.0.min.js%22%3E%3C/script%3E'));
-            }
-        </script>
         
-        <script src="scripts/parties/gsap.min.js"></script>
+        <!--------------------------------------------------
+        //	Document: Subservient Resources
+        --------------------------------------------------->
         
-        <script src="scripts/framework.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
         
-        <script src="scripts/app.min.js"></script>
+        <script>window.jQuery || document.write('<script src="/scripts/parties/jquery-2.2.2.min.js"><\/script>')</script>
+        
+        <script src="/scripts/parties/gsap.min.js"></script>
+        
+        <script src="/scripts/framework.min.js"></script>
+        
+        <script src="/scripts/app.min.js"></script>
+        
+        
     
     </body>
 
