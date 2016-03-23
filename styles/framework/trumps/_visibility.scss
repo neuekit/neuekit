@@ -1,5 +1,12 @@
+/*----------------------------------------------*\
+	#VISIBILITY OVERRIDES
+\*----------------------------------------------*/
+
 @include breakpoints(both) {
-    .#{$break}--hide {
+    
+    .hide#{$break} {
         display: none;
     }
 }
+
+

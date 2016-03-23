@@ -1,71 +1,54 @@
 /*----------------------------------------------*\
-	#Grid Structure
+	#GRID OBJECT STYLES
 \*----------------------------------------------*/
 
-.#{$rowClass} {
+
+/*  Blocks  */
+
+.#{$gridClass} { // .grid
     display: flex;
+    flex-basis: 100%;
     flex-wrap: wrap;
     margin: 0 auto;
-    padding: 0 rem($gutter);
-    position: relative;
     max-width: rem($maxWidth);
-    min-width: 100%;
-}
-
-.#{$maxClass} {
-    max-width: none;
-}
-
-.#{$colClass} {
-    flex-direction: column;
-    flex-grow: 0;
-    flex-shrink: 0;
     padding: 0 rem($gutter);
-    position: relative;
-}
-
-@include breakpoints(up) {
     
-    @for $grid from 0 through $columns {
-        .#{$break}--#{$grid} {
-            $widthCalc: floor(100% / $columns * ($grid * 1000)) / 1000;
-            flex-basis: $widthCalc;
-            max-width: $widthCalc;
-            width: $widthCalc;
-        }
+    #{&}:not(#{&}--#{$nestClass}), // .grid .grid:not(.grid--nest)
+    &--#{$unnestClass} { // .grid--unnest
+        margin: 0 #{rem(-$gutter*2)};
+        max-width: none;
     }
     
-    @for $inset from 1 through $columns {
-        .#{$break}-inset--#{$inset} {
-            margin-left: round(100% / $columns * $inset);
+    
+        /*  Elements  */
+        
+        &__#{$itemClass} { // .grid__item
+            flex-basis: 100%;
+            flex-direction: column;
+            padding: 0 rem($gutter);
         }
+    
+    
+    /*  Modifiers  */
+    
+    &--#{$maxClass} { // .grid--max
+        max-width: none;
     }
     
-    @for $outsetLeft from 1 through $columns {
-        .#{$break}-outset-left--#{$outsetLeft} {
-            margin-left: round(-100% / $columns * $outsetLeft);
-        }
+    &--#{$axisClass} { // .grid--vert
+        flex-direction: column;
     }
     
-    @for $outsetRight from 1 through $columns {
-        .#{$break}-outset-right--#{$outsetRight} {
-            margin-right: round(-100% / $columns * $outsetRight);
-        }
+    &--#{$edgeClass}, // .grid--edge
+    &--#{$edgeClass} > &__#{$itemClass} { // .grid--edge > .grid__item
+        padding-left: 0;
+        padding-right: 0;
     }
     
+    &#{&}--#{$edgeClass}, // .grid--edge
+    &--#{$edgeClass} .#{$gridClass} { // .grid--edge .grid
+        margin: 0;
+    }
 }
 
-.#{$edgeClass},
-.#{$edgeClass} > .#{$colClass} {
-    padding: 0;
-}
 
-.#{$rowClass} .#{$rowClass} {
-    margin: 0 -#{rem($gutter)};
-    max-width: none;
-}
-
-.#{$rowClass}.#{$edgeClass},
-.#{$edgeClass} .#{$rowClass}{
-    margin: 0;
-}

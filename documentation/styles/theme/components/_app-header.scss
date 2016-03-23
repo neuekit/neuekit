@@ -1,0 +1,21 @@
+.app-header {
+    align-items: center;
+    background-color: #111111;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    height: 4rem;
+    padding: 0 1rem;
+    
+    &__logo {
+        line-height: 1.2;
+        font-size: 1.125rem;
+    }
+    
+    &__logo-little {
+        font-size: 1rem;
+        letter-spacing: 0.3px;
+    }
+}
+
+

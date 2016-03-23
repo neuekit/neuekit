@@ -1,84 +1,86 @@
+/*----------------------------------------------*\
+	#FLEX BASED HELPERS
+\*----------------------------------------------*/
+
+.flex {
+    display: flex;
+}
+
+.grow {
+    flex-grow: 1;
+}
+
 @include breakpoints(both) {
-    .#{$break}--row-reverse {
-        flex-direction: row-reverse;
-        flex-wrap: row-reverse;
+    
+    .row-reverse#{$break} {
+        flex-flow: row-reverse;
     }
     
-    .#{$break}--column-reverse {
-        flex-direction: column-reverse;
-        flex-wrap: column-reverse;
+    .column-reverse#{$break} {
+        flex-flow: column-reverse;
     }
     
-    .#{$break}--auto {
-        flex-grow: 1;
-        flex-basis: 0%;
-    }
-    
-    .#{$break}--start {
+    .justify-start#{$break} {
         justify-content: flex-start;
-        text-align: start;
     }
     
-    .#{$break}--center {
+    .justify-center#{$break} {
         justify-content: center;
         margin: 0 auto;
     }
     
-    .#{$break}--end {
+    .justify-end#{$break} {
         justify-content: flex-end;
         margin-left: auto;
-        text-align: end;
     }
     
-    .#{$break}--top {
+    .align-start#{$break} {
         align-items: flex-start;
     }
     
-    .#{$break}--middle {
+    .align-center#{$break} {
         align-items: center;
     }
     
-    .#{$break}--bottom {
+    .align-end#{$break} {
         align-items: flex-end;
     }
     
-    .#{$break}--self-top {
+    .align-self-start#{$break} {
         align-self: flex-start;
     }
     
-    .#{$break}--self-middle {
+    .align-self-center#{$break} {
         align-self: center;
     }
     
-    .#{$break}--self-bottom {
+    .align-self-end#{$break} {
         align-self: flex-end;
     }
     
-    .#{$break}--around {
+    .around#{$break} {
         justify-content: space-around;
     }
     
-    .#{$break}--between {
+    .between#{$break} {
         justify-content: space-between;
     }
     
-    .#{$break}--first {
+    .first#{$break} {
         order: -1;
     }
     
-    .#{$break}--last {
+    .last#{$break} {
         order: 1;
     }
     
-    .#{$break}--wrap {
+    .wrap#{$break} {
         flex-wrap: wrap;
     }
     
-    .#{$break}--nowrap {
+    .nowrap#{$break} {
         flex-wrap: nowrap;
     }
-    
-    .#{$break}--reflex {
-        display: flex;
-    }
 }
+
+

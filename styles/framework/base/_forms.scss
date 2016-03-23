@@ -1,16 +1,52 @@
-button {
-    appearance: none;
-    background: none;
-    border: none;
+/*----------------------------------------------*\
+	#FORM BASE STYLES
+\*----------------------------------------------*/
+
+fieldset {
+    border: 2px solid lightgrey;
+}
+
+label {
+    
+}
+
+legend {
+    padding: 0 0.5rem;
+}
+
+select {
+    background-repeat: repeat;
 }
 
 textarea {
     resize: vertical;
 }
 
-button,
-textarea {
+textarea,
+[type="color"],
+[type="email"],
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"] {
+    border: 2px solid lightgrey;
+    height: 2.5rem;
+    display: block;
+    padding: 0 0.5rem;
+    width: 100%;
+    
     &:focus {
+        border: 2px solid $night;
 		outline: none;
 	}
 }
+
+
