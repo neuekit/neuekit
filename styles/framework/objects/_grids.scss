@@ -2,43 +2,52 @@
 	#GRID OBJECT STYLES
 \*----------------------------------------------*/
 
-.#{$gridClass} {
+
+/*  Blocks  */
+
+.#{$gridClass} { // .grid
     display: flex;
     flex-basis: 100%;
     flex-wrap: wrap;
     margin: 0 auto;
     max-width: rem($maxWidth);
     padding: 0 rem($gutter);
-}
-
-.#{$gridClass}--#{$maxClass} {
-    max-width: none;
-}
-
-.#{$gridClass}--#{$axisClass} {
-    flex-direction: column;
-}
-
-.#{$gridClass}__#{$itemClass} {
-    flex-basis: 100%;
-    flex-direction: column;
-    padding: 0 rem($gutter);
-}
-
-.#{$gridClass}--#{$edgeClass},
-.#{$gridClass}--#{$edgeClass} > .#{$gridClass}__#{$itemClass} {
-    padding-left: 0;
-    padding-right: 0;
-}
-
-.#{$gridClass} .#{$gridClass} {
-    margin: 0 #{rem(-$gutter)};
-    max-width: none;
-}
-
-.#{$gridClass}.#{$gridClass}--#{$edgeClass},
-.#{$gridClass}--#{$edgeClass} .#{$gridClass} {
-    margin: 0;
+    
+    #{&} { // .grid .grid
+        margin: 0 #{rem(-$gutter*2)};
+        max-width: none;
+    }
+    
+    
+        /*  Elements  */
+        
+        &__#{$itemClass} { // .grid__item
+            flex-basis: 100%;
+            flex-direction: column;
+            padding: 0 rem($gutter);
+        }
+    
+    
+    /*  Modifiers  */
+    
+    &--#{$maxClass} { // .grid--max
+        max-width: none;
+    }
+    
+    &--#{$axisClass} { // .grid--vert
+        flex-direction: column;
+    }
+    
+    &--#{$edgeClass}, // .grid--edge
+    &--#{$edgeClass} > &__#{$itemClass} { // .grid--edge > .grid__item
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    &--#{$edgeClass}, // .grid--edge
+    &--#{$edgeClass} .#{$gridClass} { // .grid--edge .grid
+        margin: 0;
+    }
 }
 
 
