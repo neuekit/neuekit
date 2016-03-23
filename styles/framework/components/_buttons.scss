@@ -36,61 +36,64 @@ button,
     }
 }
 
-.button--line {
-    background: none;
-    box-shadow: inset 0 0 0 2px $night;
-    color: $night;
-}
+.button {
 
-.button--expand {
-    display: block;
-    width: 100%;
-}
-
-.button--text {
-    background: none;
-    color: black;
-    
-    &:disabled {
+    &--line {
         background: none;
+        box-shadow: inset 0 0 0 2px $night;
+        color: $night;
     }
-}
-
-.button--round {
-    border-radius: 10rem;
-}
-
-.button--tiny {
-    font-size: 0.75rem;
-    padding: 0.5rem 0.625rem;
-}
-
-.button--small {
-    font-size: 0.88rem;
-    padding: 0.5rem 0.625rem;
-}
-
-.button--medium {
-    padding: 0.75rem 0.875rem;
-}
-
-.button--large {
-    padding: 1rem 1.125rem;
-}
-
-.button--xlarge {
-    font-size: 1.125rem;
-    padding: 1.25rem 1.375rem;
-}
-
-.button--xxlarge {
-    font-size: 1.25rem;
-    padding: 1.5rem 1.625rem;
-}
-
-.button--xxxlarge {
-    font-size: 1.5rem;
-    padding: 2rem 2.125rem;
+    
+    &--expand {
+        display: block;
+        width: 100%;
+    }
+    
+    &--text {
+        background: none;
+        color: black;
+        
+        &:disabled {
+            background: none;
+        }
+    }
+    
+    &--round {
+        border-radius: 10rem;
+    }
+    
+    &--tiny {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.625rem;
+    }
+    
+    &--small {
+        font-size: 0.88rem;
+        padding: 0.5rem 0.625rem;
+    }
+    
+    &--medium {
+        padding: 0.75rem 0.875rem;
+    }
+    
+    &--large {
+        padding: 1rem 1.125rem;
+    }
+    
+    &--xlarge {
+        font-size: 1.125rem;
+        padding: 1.25rem 1.375rem;
+    }
+    
+    &--xxlarge {
+        font-size: 1.25rem;
+        padding: 1.5rem 1.625rem;
+    }
+    
+    &--xxxlarge {
+        font-size: 1.5rem;
+        padding: 2rem 2.125rem;
+    }
 }
 
 
