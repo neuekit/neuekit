@@ -43,10 +43,18 @@
             }
             
             span {
-                background-color: lightgrey;
+                background-color: whitesmoke;
                 display: block;
-                padding: .5rem 1rem;
-                margin: .25rem 0;
+                padding: .5rem 0;
+                margin: .5rem 0;
+            }
+            
+            span span {
+                background-color: lightgrey;
+            }
+            
+            span span span {
+                background-color: whitesmoke;
             }
             
         </style>
@@ -85,295 +93,327 @@
         
         <main>
             
-            <section>
-                
-                <hr>
-                
-                <div class="grid grid--edge">
+            <div class="grid">
                     
-                    <div class="grid__item">
-                        
-                        inset
+                <div class="grid__item">
+            
+                    <section>
                 
-                        <div class="grid grid--edge">
+                        <hr>
+                
+                        <h3>Available columns</h3>
+                        
+                        <div class="grid">
+                            
+                            <div class="grid__item"><span>12</span></div>
+                            
+                        </div>
+                        
+                        <div class="grid">
+                            
+                            <div class="grid__item  size-11"><span>11</span></div>
+                            
+                            <div class="grid__item  size-1"><span>1</span></div>
+                            
+                        </div>
+                        
+                        <div class="grid">
+                            
+                            <div class="grid__item  size-10"><span>10</span></div>
+                            
+                            <div class="grid__item  size-2"><span>2</span></div>
+                            
+                        </div>
+                        
+                        <div class="grid">
+                            
+                            <div class="grid__item  size-9"><span>9</span></div>
+                            
+                            <div class="grid__item  size-3"><span>3</span></div>
+                            
+                        </div>
+                        
+                        <div class="grid">
+                            
+                            <div class="grid__item  size-8"><span>8</span></div>
+                            
+                            <div class="grid__item  size-4"><span>4</span></div>
+                            
+                        </div>
+                        
+                        <div class="grid">
+                            
+                            <div class="grid__item  size-7"><span>7</span></div>
+                            
+                            <div class="grid__item  size-5"><span>5</span></div>
+                            
+                        </div>
+                        
+                        <div class="grid">
+                            
+                            <div class="grid__item  size-6"><span>6</span></div>
+                            
+                            <div class="grid__item  size-6"><span>6</span></div>
+                            
+                        </div>
+                        
+                        <div class="grid">
+                            
+                            <div class="grid__item  size-5"><span>5</span></div>
+                            
+                            <div class="grid__item  size-7"><span>7</span></div>
+                            
+                        </div>
+                        
+                        <div class="grid">
+                            
+                            <div class="grid__item  size-4"><span>4</span></div>
+                            
+                            <div class="grid__item  size-8"><span>8</span></div>
+                            
+                        </div>
+                        
+                        <div class="grid">
+                            
+                            <div class="grid__item  size-3"><span>3</span></div>
+                            
+                            <div class="grid__item  size-9"><span>9</span></div>
+                            
+                        </div>
+                        
+                        <div class="grid">
+                            
+                            <div class="grid__item  size-2"><span>2</span></div>
+                            
+                            <div class="grid__item  size-10"><span>10</span></div>
+                            
+                        </div>
+                        
+                        <div class="grid">
+                            
+                            <div class="grid__item  size-1"><span>1</span></div>
+                            
+                            <div class="grid__item  size-11"><span>11</span></div>
+                            
+                        </div>
+                
+                        <hr>
+            
+                    </section>
+                    
+                    <section>
+                
+                        <hr>
+                
+                        <h3>Infinite Nesting</h3>
+                        
+                        <div class="grid">
                             
                             <div class="grid__item">
                                 
-                                not inset
-                        
-                                <h3>Available columns</h3>
+                                <span>
                                 
-                                <div class="grid">
-                                    
-                                    <div class="grid__item">inset</div>
-                                    
-                                </div>
+                                    Parent
                                 
-                                <div class="grid">
-                                    
-                                    <div class="grid__item"><span>12</span></div>
-                                    
-                                </div>
+                                    <div class="grid">
                                 
-                                <div class="grid">
-                                    
-                                    <div class="grid__item  size-11"><span>11</span></div>
-                                    
-                                    <div class="grid__item  size-1"><span>1</span></div>
-                                    
-                                </div>
+                                        <div class="grid__item">
+                                            
+                                            <span>
+                                                
+                                                Child
+                                                
+                                                <div class="grid">
                                 
-                                <div class="grid">
-                                    
-                                    <div class="grid__item  size-10"><span>10</span></div>
-                                    
-                                    <div class="grid__item  size-2"><span>2</span></div>
-                                    
-                                </div>
+                                                    <div class="grid__item">
+                                                        
+                                                        <span>
+                                                            
+                                                            Grand Child                                            
+                                                        
+                                                        </span>
+                                                        
+                                                    </div>
+                                                    
+                                                </div>
+                                            
+                                            </span>
+                                            
+                                        </div>
+                                        
+                                    </div>
                                 
-                                <div class="grid">
-                                    
-                                    <div class="grid__item  size-9"><span>9</span></div>
-                                    
-                                    <div class="grid__item  size-3"><span>3</span></div>
-                                    
-                                </div>
+                                </span>
                                 
-                                <div class="grid">
-                                    
-                                    <div class="grid__item  size-8"><span>8</span></div>
-                                    
-                                    <div class="grid__item  size-4"><span>4</span></div>
-                                    
-                                </div>
-                                
-                                <div class="grid">
-                                    
-                                    <div class="grid__item  size-7"><span>7</span></div>
-                                    
-                                    <div class="grid__item  size-5"><span>5</span></div>
-                                    
-                                </div>
-                                
-                                <div class="grid">
-                                    
-                                    <div class="grid__item  size-6"><span>6</span></div>
-                                    
-                                    <div class="grid__item  size-6"><span>6</span></div>
-                                    
-                                </div>
-                                
-                                <div class="grid">
-                                    
-                                    <div class="grid__item  size-5"><span>5</span></div>
-                                    
-                                    <div class="grid__item  size-7"><span>7</span></div>
-                                    
-                                </div>
-                                
-                                <div class="grid">
-                                    
-                                    <div class="grid__item  size-4"><span>4</span></div>
-                                    
-                                    <div class="grid__item  size-8"><span>8</span></div>
-                                    
-                                </div>
-                                
-                                <div class="grid">
-                                    
-                                    <div class="grid__item  size-3"><span>3</span></div>
-                                    
-                                    <div class="grid__item  size-9"><span>9</span></div>
-                                    
-                                </div>
-                                
-                                <div class="grid">
-                                    
-                                    <div class="grid__item  size-2"><span>2</span></div>
-                                    
-                                    <div class="grid__item  size-10"><span>10</span></div>
-                                    
-                                </div>
-                                
-                                <div class="grid">
-                                    
-                                    <div class="grid__item  size-1"><span>1</span></div>
-                                    
-                                    <div class="grid__item  size-11"><span>11</span></div>
-                                    
-                                </div>
-                        
                             </div>
                             
                         </div>
-                    
-                    </div>
+                        
+                    </section>
+                
+                    <form>
+                        
+                        <button>button</button>
+                        
+                        <hr>
+                        
+                        <datalist>
+                        
+                            <option>option 1</option>
+                            
+                            <option>option 2</option>
+                            
+                        </datalist>
+                        
+                        <hr>
+                        
+                        <fieldset>
+                            
+                            <legend>legend</legend>
+                            
+                        </fieldset>
+                        
+                        <hr>
+                        
+                        <input type="button" value="button">
+                        
+                        <hr>
+                        
+                        <input type="checkbox" name="cehckbox" checked>
+                        
+                        <input type="checkbox" name="checkbox">
+                        
+                        <hr>
+                        
+                        <input type="color" placeholder="color">
+                        
+                        <hr>
+                        
+                        <input type="date" placeholder="date">
+                        
+                        <hr>
+                        
+                        <input type="datetime" placeholder="datetime">
+                        
+                        <hr>
+                        
+                        <input type="email" placeholder="email">
+                        
+                        <hr>
+                        
+                        <input type="file">
+                        
+                        <hr>
+                        
+                        <input type="hidden">
+                        
+                        <hr>
+                        
+                        <input type="image">
+                        
+                        <hr>
+                        
+                        <input type="month" placeholder="month">
+                        
+                        <hr>
+                        
+                        <input type="number" placeholder="number">
+                        
+                        <hr>
+                        
+                        <input type="password" placeholder="password">
+                        
+                        <hr>
+                        
+                        <input type="radio" name="radio" checked>
+                        
+                        <input type="radio" name="radio">
+                        
+                        <hr>
+                        
+                        <input type="range">
+                        
+                        <hr>
+                        
+                        <input type="reset">
+                        
+                        <hr>
+                        
+                        <input type="search" placeholder="search">
+                        
+                        <hr>
+                        
+                        <input type="submit">
+                        
+                        <hr>
+                        
+                        <input type="tel" placeholder="tel">
+                        
+                        <hr>
+                        
+                        <input type="text" placeholder="text">
+                        
+                        <hr>
+                        
+                        <input type="time" placeholder="time">
+                        
+                        <hr>
+                        
+                        <input type="url" placeholder="url">
+                        
+                        <hr>
+                        
+                        <input type="week" placeholder="week">
+                        
+                        <hr>
+                        
+                        <keygen>
+                        
+                        <hr>
+                        
+                        <label>label</label>
+                        
+                        <hr>
+                        
+                        <meter></meter>
+                        
+                        <hr>
+                        
+                        <select>
+                            
+                            <optgroup>
+                            
+                                <option>option A1</option>
+                                
+                                <option>option A2</option>
+                                
+                            </optgroup>
+                            
+                            <optgroup>
+                            
+                                <option>option B1</option>
+                                
+                                <option>option B2</option>
+                                
+                            </optgroup>
+                            
+                        </select>
+                        
+                        <hr>
+                        
+                        <output>
+                        
+                        <hr>
+                        
+                        <progress></progress>
+                        
+                        <hr>
+                        
+                    </form>
                     
                 </div>
                 
-            <hr>
-            
-            </section>
-        
-            <form>
-                
-                <button>button</button>
-                
-                <hr>
-                
-                <datalist>
-                
-                    <option>option 1</option>
-                    
-                    <option>option 2</option>
-                    
-                </datalist>
-                
-                <hr>
-                
-                <fieldset>
-                    
-                    <legend>legend</legend>
-                    
-                </fieldset>
-                
-                <hr>
-                
-                <input type="button" value="button">
-                
-                <hr>
-                
-                <input type="checkbox" name="cehckbox" checked>
-                
-                <input type="checkbox" name="checkbox">
-                
-                <hr>
-                
-                <input type="color" placeholder="color">
-                
-                <hr>
-                
-                <input type="date" placeholder="date">
-                
-                <hr>
-                
-                <input type="datetime" placeholder="datetime">
-                
-                <hr>
-                
-                <input type="email" placeholder="email">
-                
-                <hr>
-                
-                <input type="file">
-                
-                <hr>
-                
-                <input type="hidden">
-                
-                <hr>
-                
-                <input type="image">
-                
-                <hr>
-                
-                <input type="month" placeholder="month">
-                
-                <hr>
-                
-                <input type="number" placeholder="number">
-                
-                <hr>
-                
-                <input type="password" placeholder="password">
-                
-                <hr>
-                
-                <input type="radio" name="radio" checked>
-                
-                <input type="radio" name="radio">
-                
-                <hr>
-                
-                <input type="range">
-                
-                <hr>
-                
-                <input type="reset">
-                
-                <hr>
-                
-                <input type="search" placeholder="search">
-                
-                <hr>
-                
-                <input type="submit">
-                
-                <hr>
-                
-                <input type="tel" placeholder="tel">
-                
-                <hr>
-                
-                <input type="text" placeholder="text">
-                
-                <hr>
-                
-                <input type="time" placeholder="time">
-                
-                <hr>
-                
-                <input type="url" placeholder="url">
-                
-                <hr>
-                
-                <input type="week" placeholder="week">
-                
-                <hr>
-                
-                <keygen>
-                
-                <hr>
-                
-                <label>label</label>
-                
-                <hr>
-                
-                <meter></meter>
-                
-                <hr>
-                
-                <select>
-                    
-                    <optgroup>
-                    
-                        <option>option A1</option>
-                        
-                        <option>option A2</option>
-                        
-                    </optgroup>
-                    
-                    <optgroup>
-                    
-                        <option>option B1</option>
-                        
-                        <option>option B2</option>
-                        
-                    </optgroup>
-                    
-                </select>
-                
-                <hr>
-                
-                <output>
-                
-                <hr>
-                
-                <progress></progress>
-                
-                <hr>
-                
-            </form>
+            </div>
         
         </main>
         
