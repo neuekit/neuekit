@@ -2,55 +2,8 @@
 	#FORM BASE STYLES
 \*----------------------------------------------*/
 
-button {
-    appearance: none;
-    background: none;
-    border: none;
-}
-
-textarea {
-    resize: vertical;
-}
-
-button,
-textarea {
-    &:focus {
-		outline: none;
-	}
-}
-
-[type="text"],
-[type="password"],
-[type="date"],
-[type="datetime"],
-[type="datetime-local"],
-[type="month"],
-[type="week"],
-[type="email"],
-[type="number"],
-[type="search"],
-[type="tel"],
-[type="time"],
-[type="url"],
-[type="color"],
-textarea {
-    
-}
-
 fieldset {
-    
-}
-
-form {
-    
-}
-
-input {
-    
-}
-
-isindex {
-    
+    border: 2px solid lightgrey;
 }
 
 label {
@@ -58,17 +11,42 @@ label {
 }
 
 legend {
-    
-}
-
-optgroup {
-    
-}
-
-option {
-    
+    padding: 0 0.5rem;
 }
 
 select {
-    
+    background-repeat: repeat;
 }
+
+textarea {
+    resize: vertical;
+}
+
+textarea,
+[type="color"],
+[type="email"],
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="month"],
+[type="number"],
+[type="password"],
+[type="search"],
+[type="tel"],
+[type="text"],
+[type="time"],
+[type="url"],
+[type="week"] {
+    border: 2px solid lightgrey;
+    height: 2.5rem;
+    display: block;
+    padding: 0 0.5rem;
+    width: 100%;
+    
+    &:focus {
+        border: 2px solid $night;
+		outline: none;
+	}
+}
+
+

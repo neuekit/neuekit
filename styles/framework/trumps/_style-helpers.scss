@@ -1,8 +1,9 @@
 /*----------------------------------------------*\
-	#GLOBAL SETTINGS
+	#STYLE/THEME HELPERS
 \*----------------------------------------------*/
 
-$rootFontSize:      16px;
-$radius:            4px;
-$speed:             0.25s;
+.radius {
+    border-radius: $radius;
+}
+
 

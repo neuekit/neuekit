@@ -98,6 +98,7 @@
 \*----------------------------------------------------------------------------*/
 
 @import 'trumps/flex-helpers';          // Give flex a helping hand.
+@import 'trumps/style-helpers';         // Adding component agnostic styles.
 @import 'trumps/modernizr';             // Modernizr enabled overrides.
 @import 'trumps/spacing';               // Micro-level spacing.
 @import 'trumps/text-helpers';          // Handy text assistants.

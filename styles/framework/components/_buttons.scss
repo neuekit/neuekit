@@ -2,76 +2,44 @@
 	#BUTTON COMPONENT STYLES
 \*----------------------------------------------*/
 
-.button {
-    background-color: black;
+button,
+.button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+    appearance: none;
+    background: $night;
+    border: none;
     box-shadow: inset 0 0 0 2px transparent;
     color: white;
     display: inline-block;
     line-height: 1;
-    padding: 1rem;
+    padding: 0.75rem 1rem;
     text-align: center;
-    transition: all 0.25s ease;
+    transition: all $speed ease;
+    
+    &:disabled {
+        background-color: lightgrey;
+        box-shadow: none;
+        color: grey;
+        pointer-events: none;
+    }
+    
+    &:focus {
+		outline: none;
+	}
     
     &:hover {
         background-color: white;
-        box-shadow: inset 0 0 0 2px black;
-        color: black;
+        box-shadow: inset 0 0 0 2px $night;
+        color: $night;
     }
-}
-
-.button--tiny {
-    font-size: 0.75rem;
-    padding: 0.5rem;
-}
-
-.button--small {
-    font-size: 0.88rem;
-    padding: 0.5rem;
-}
-
-.button--medium {
-    font-size: 1rem;
-    padding: 0.75rem;
-}
-
-.button--large {
-    font-size: 1rem;
-    padding: 1rem;
-}
-
-.button--xlarge {
-    font-size: 1.125rem;
-    padding: 1.25rem;
-}
-
-.button--xxlarge {
-    font-size: 1.25rem;
-    padding: 1.5rem;
-}
-
-.button--xxxlarge {
-    font-size: 1.5rem;
-    padding: 2rem;
-}
-
-.button--radius {
-    border-radius: 4px;
-}
-
-.button--round {
-    border-radius: 4rem;
-}
-
-.button--disabled {
-    color: grey;
-    cursor: not-allowed;
-    pointer-events: none;
 }
 
 .button--line {
     background: none;
-    box-shadow: inset 0 0 0 2px black;
-    color: black;
+    box-shadow: inset 0 0 0 2px $night;
+    color: $night;
 }
 
 .button--expand {
@@ -82,6 +50,47 @@
 .button--text {
     background: none;
     color: black;
+    
+    &:disabled {
+        background: none;
+    }
+}
+
+.button--round {
+    border-radius: 10rem;
+}
+
+.button--tiny {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.625rem;
+}
+
+.button--small {
+    font-size: 0.88rem;
+    padding: 0.5rem 0.625rem;
+}
+
+.button--medium {
+    padding: 0.75rem 0.875rem;
+}
+
+.button--large {
+    padding: 1rem 1.125rem;
+}
+
+.button--xlarge {
+    font-size: 1.125rem;
+    padding: 1.25rem 1.375rem;
+}
+
+.button--xxlarge {
+    font-size: 1.25rem;
+    padding: 1.5rem 1.625rem;
+}
+
+.button--xxxlarge {
+    font-size: 1.5rem;
+    padding: 2rem 2.125rem;
 }
 
 
