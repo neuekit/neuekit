@@ -18,6 +18,9 @@ button,
     text-align: center;
     transition: all $speed ease;
     
+    
+    /*  States  */
+    
     &:disabled {
         background-color: lightgrey;
         box-shadow: none;
@@ -37,11 +40,30 @@ button,
 }
 
 .button {
+    $block: &;
+    
+    /*  Modifiers: Styles  */
+    
+    &--light {
+        background-color: white;
+        color: $night;
+        
+        &:hover {
+            background-color: $night;
+            box-shadow: inset 0 0 0 2px transparent;
+            color: white;
+        }
+    }
 
     &--line {
         background: none;
         box-shadow: inset 0 0 0 2px $night;
         color: $night;
+        
+        &#{$block}--light {
+            box-shadow: inset 0 0 0 2px white;
+            color: white;
+        }
     }
     
     &--expand {
@@ -56,11 +78,18 @@ button,
         &:disabled {
             background: none;
         }
+        
+        &#{$block}--light {
+            color: white;
+        }
     }
     
     &--round {
         border-radius: 10rem;
     }
+    
+    
+    /*  Modifiers: Sizes  */
     
     &--tiny {
         font-size: 0.75rem;
