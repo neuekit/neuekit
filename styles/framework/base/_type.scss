@@ -25,19 +25,9 @@ hr {
 	#HEADING BASE STYLES
 \*----------------------------------------------*/
 
-@include headings(0.125rem);
+@include breakpoints {
+    
+    @include headings(rem(2px) * $breakindex);
 
-/* Tablet & up */
-@media only screen and (min-width: 40.063em) {
-	@include headings(0.25rem);
 }
 
-/* Laptop & up */
-@media only screen and (min-width: 64.063em) {
-	@include headings(0.375rem);
-}
-
-/* Desktop & up */
-@media only screen and (min-width: 90.063em) {
-	@include headings(0.5rem);
-}

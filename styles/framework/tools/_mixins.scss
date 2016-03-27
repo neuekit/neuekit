@@ -17,7 +17,7 @@
 
     @each $breakclass, $breakpoint in $breakpoints {
     
-        $i: index(map-keys($breakpoints), $breakclass);
+        $breakindex: index(map-keys($breakpoints), $breakclass) !global;
         
         
         //  AND UP MEDIA QUERY LOOP
@@ -25,13 +25,13 @@
         @if($choice == null or $choice == up or $choice == both) {
             
             $break: if(
-                $i == 1,
+                $breakindex == 1,
                 null,
                 '-' + $breakclass
             ) !global;
         
             $screen: if(
-                $i == 1,
+                $breakindex == 1,
                 'only screen',
                 'only screen and (min-width: #{rem($breakpoint)})'
             );
@@ -50,12 +50,12 @@
             
             $break: '-' + $breakclass + '-only' !global;
             
-            @if(length($breakpoints) > $i) {
+            @if(length($breakpoints) > $breakindex) {
             
                 $screenOnly: null;
-                $nextBreakpoint: map-get($breakpoints, nth(map-keys($breakpoints), $i + 1));
+                $nextBreakpoint: map-get($breakpoints, nth(map-keys($breakpoints), $breakindex + 1));
                 
-                @if($i > 1) {
+                @if($breakindex > 1) {
                     $screenOnly: 'only screen and (min-width: #{rem($breakpoint)}) and (max-width: #{rem(($nextBreakpoint)-1)})';
                 }
                 
