@@ -11,14 +11,10 @@ h4,
 h5,
 h6 {
     font-family: -apple-system, Arial, sans-serif;
+    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
 }
 
-hr {
-    background-color: lightgrey;
-    border: none;
-    height: 2px;
-}
 
 
 /*----------------------------------------------*\
@@ -27,7 +23,24 @@ hr {
 
 @include breakpoints {
     
-    @include headings(rem(2px) * $breakindex);
+    @include headings(rem(2px) * $breakindex) {
+        
+        line-height: initial;
+    
+    };
 
 }
+
+
+
+/*----------------------------------------------*\
+	#TYPE ACCESSORIES
+\*----------------------------------------------*/
+
+hr {
+    background-color: lightgrey;
+    border: none;
+    height: 2px;
+}
+
 
