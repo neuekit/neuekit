@@ -2,4 +2,20 @@
 	#BLOCKQUOTE BASE STYLES
 \*----------------------------------------------*/
 
+blockquote {
+    background-color: whitesmoke;
+    border-left: 4px solid $night;
+    margin: 0 0 1rem;
+    padding: 0.5rem 1rem;
+    
+    cite {
+        display: block;
+        text-align: end;
+        
+        &::before {
+            content: '- ';
+        }
+    }
+}
+
 
