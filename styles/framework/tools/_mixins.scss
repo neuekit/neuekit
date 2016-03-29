@@ -85,7 +85,6 @@
 
         h#{$i} {
             font-size: 1rem + ($jump * (6 - $i));
-            @content;
         }
     }
 }

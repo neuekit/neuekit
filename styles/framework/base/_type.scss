@@ -11,7 +11,6 @@ h4,
 h5,
 h6 {
     font-family: -apple-system, Arial, sans-serif;
-    line-height: 1.75;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -23,11 +22,7 @@ h6 {
 
 @include breakpoints {
     
-    @include headings(rem(2px) * $breakindex) {
-        
-        line-height: initial;
-    
-    };
+    @include headings(rem(2px) * $breakindex);
 
 }
 

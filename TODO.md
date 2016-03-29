@@ -5,3 +5,4 @@
 - [ ] Base: form elements
 - [ ] Component: Navigation 
 - [ ] Validation: trump
+- [ ] Remove pointless @media only screen first breakpoint
