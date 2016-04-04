@@ -16,6 +16,7 @@ legend {
 
 select {
     background-repeat: repeat;
+    border-radius: 0;
 }
 
 textarea {
@@ -38,6 +39,7 @@ textarea,
 [type="url"],
 [type="week"] {
     border: 2px solid lightgrey;
+    border-radius: 0;
     height: 2.5rem;
     display: block;
     padding: 0 0.5rem;
