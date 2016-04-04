@@ -6,3 +6,4 @@
 - [ ] Base: form elements
 - [ ] Component: Navigation 
 - [ ] Validation: trump
+- [ ] Extrapolate a new version of theme from framework that has the correct structure

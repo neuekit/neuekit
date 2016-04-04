@@ -37,19 +37,19 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#BASE
+	#ELEMENTS
 	
 	Last layer we see type selectors (h1-h6, a). Far-reaching shared classes.
 \*----------------------------------------------------------------------------*/
 
-@import 'base/page';                    // Page-level styles (HTML, body etc).
-@import 'base/type';                    // All type styles.
-@import 'base/links';                   // Hyperlink styles.
-@import 'base/lists';                   // List styles.
-@import 'base/images';                  // Image stying.
-@import 'base/quotes';                  // Blockquotes, cite, etc.
-@import 'base/forms';                   // Form inputs, textareas.
-@import 'base/shared';                  // Far-reaching shared classes.
+@import 'elements/page';                    // Page-level styles (HTML, body etc).
+@import 'elements/type';                    // All type styles.
+@import 'elements/links';                   // Hyperlink styles.
+@import 'elements/lists';                   // List styles.
+@import 'elements/images';                  // Image stying.
+@import 'elements/quotes';                  // Blockquotes, cite, etc.
+@import 'elements/forms';                   // Form inputs, textareas.
+@import 'elements/shared';                  // Far-reaching shared classes.
 
 
 
