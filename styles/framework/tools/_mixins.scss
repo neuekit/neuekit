@@ -22,31 +22,33 @@
         
         //  AND UP MEDIA QUERY LOOP
         
-        @if($choice == null or $choice == up or $choice == both) {
+        @if ($choice == null or $choice == up or $choice == both) {
             
-            $break: if(
-                $breakindex == 1,
-                null,
-                '-' + $breakclass
-            ) !global;
-        
-            $screen: if(
-                $breakindex == 1,
-                'only screen',
-                'only screen and (min-width: #{rem($breakpoint)})'
-            );
-            
-            @media #{$screen} {
-            
+            @if ( $breakindex == 1 ) {
+                
+                $break: null !global;
+                
                 @content;
+                
+            }
             
+            @else {
+                
+                $break: '-' + $breakclass !global;
+                $screen: 'only screen and (min-width: #{rem($breakpoint)})';
+                
+                @media #{$screen} {
+            
+                    @content;
+                
+                }
             }
         }
         
         
         //  ONLY MEDIA QUERY LOOP
         
-        @if($choice == only or $choice == both) {
+        @if ($choice == only or $choice == both) {
             
             $break: '-' + $breakclass + '-only' !global;
             
@@ -55,12 +57,16 @@
                 $screenOnly: null;
                 $nextBreakpoint: map-get($breakpoints, nth(map-keys($breakpoints), $breakindex + 1));
                 
-                @if($breakindex > 1) {
+                @if ($breakindex > 1) {
+                    
                     $screenOnly: 'only screen and (min-width: #{rem($breakpoint)}) and (max-width: #{rem(($nextBreakpoint)-1)})';
+                    
                 }
                 
                 @else {
+                    
                     $screenOnly: 'only screen and (max-width: #{rem(($nextBreakpoint)-1)})';
+                    
                 }
                 
                 @media #{$screenOnly} {
