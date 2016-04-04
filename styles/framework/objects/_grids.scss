@@ -5,7 +5,7 @@
 
 /*  Blocks  */
 
-.#{$gridClass} { // .grid
+.#{ $gridClass } { // .grid
     display: flex;
     flex-basis: 100%;
     flex-wrap: wrap;
@@ -13,40 +13,40 @@
     max-width: rem($maxWidth);
     padding: 0 rem($gutter);
     
-    #{&}:not(#{&}--#{$nestClass}), // .grid .grid:not(.grid--nest)
+    #{ & }:not(#{ & }--#{ $nestClass }), // .grid .grid:not(.grid--nest)
     &--#{$unnestClass} { // .grid--unnest
-        margin: 0 #{rem(-$gutter*2)};
+        margin: 0 #{ rem( -$gutter * 2 ) };
         max-width: none;
     }
     
     
         /*  Elements  */
         
-        &__#{$itemClass} { // .grid__item
+        &__#{ $itemClass } { // .grid__item
             flex-basis: 100%;
             flex-direction: column;
-            padding: 0 rem($gutter);
+            padding: 0 rem( $gutter );
         }
     
     
     /*  Modifiers  */
     
-    &--#{$maxClass} { // .grid--max
+    &--#{ $maxClass } { // .grid--max
         max-width: none;
     }
     
-    &--#{$axisClass} { // .grid--vert
+    &--#{ $axisClass } { // .grid--vert
         flex-direction: column;
     }
     
-    &--#{$edgeClass}, // .grid--edge
-    &--#{$edgeClass} > &__#{$itemClass} { // .grid--edge > .grid__item
+    &--#{ $edgeClass }, // .grid--edge
+    &--#{ $edgeClass } > &__#{ $itemClass } { // .grid--edge > .grid__item
         padding-left: 0;
         padding-right: 0;
     }
     
-    &#{&}--#{$edgeClass}, // .grid--edge
-    &--#{$edgeClass} .#{$gridClass} { // .grid--edge .grid
+    &#{ & }--#{ $edgeClass }, // .grid--edge
+    &--#{ $edgeClass} .#{ $gridClass } { // .grid--edge .grid
         margin: 0;
     }
 }

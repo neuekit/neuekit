@@ -4,15 +4,15 @@
 
 .blocks,
 .block {
-    padding: rem($gutter);
+    padding: rem( $gutter );
 }
 
-@include breakpoints(both) {
+@include breakpoints( both ) {
     
     @for $grid from 0 through $columns {
     
-        .blocks--#{$grid}#{$break} .block {
-            flex-basis: floor(100% / $columns * ($grid * 1000)) / 1000;
+        .blocks--#{ $grid }#{ $break } .block {
+            flex-basis: floor( 100% / $columns * ( $grid * 1000 ) ) / 1000;
         }
     }
 }

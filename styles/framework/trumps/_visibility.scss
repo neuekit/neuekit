@@ -2,9 +2,9 @@
 	#VISIBILITY OVERRIDES
 \*----------------------------------------------*/
 
-@include breakpoints(both) {
+@include breakpoints( both ) {
     
-    .hide#{$break} {
+    .hide#{ $break } {
         display: none;
     }
 }

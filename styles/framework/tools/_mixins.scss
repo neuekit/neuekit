@@ -2,7 +2,7 @@
 	#SIZE
 \*----------------------------------------------*/
 
-@mixin size($height, $width: $height) {
+@mixin size( $height, $width: $height ) {
     
 	height: $height; width: $width;
 }
@@ -13,16 +13,16 @@
 	#BREAKPOINT
 \*----------------------------------------------*/
 
-@mixin breakpoints($choice: up) {
+@mixin breakpoints( $choice: up ) {
 
     @each $breakclass, $breakpoint in $breakpoints {
     
-        $breakindex: index(map-keys($breakpoints), $breakclass) !global;
+        $breakindex: index( map-keys( $breakpoints ), $breakclass ) !global;
         
         
         //  AND UP MEDIA QUERY LOOP
         
-        @if ($choice == null or $choice == up or $choice == both) {
+        @if ( $choice == null or $choice == up or $choice == both ) {
             
             @if ( $breakindex == 1 ) {
                 
@@ -35,9 +35,9 @@
             @else {
                 
                 $break: '-' + $breakclass !global;
-                $screen: 'only screen and (min-width: #{rem($breakpoint)})';
+                $screen: 'only screen and (min-width: #{ rem( $breakpoint ) })';
                 
-                @media #{$screen} {
+                @media #{ $screen } {
             
                     @content;
                 
@@ -48,28 +48,28 @@
         
         //  ONLY MEDIA QUERY LOOP
         
-        @if ($choice == only or $choice == both) {
+        @if ( $choice == only or $choice == both ) {
             
             $break: '-' + $breakclass + '-only' !global;
             
-            @if(length($breakpoints) > $breakindex) {
+            @if ( length( $breakpoints ) > $breakindex ) {
             
                 $screenOnly: null;
-                $nextBreakpoint: map-get($breakpoints, nth(map-keys($breakpoints), $breakindex + 1));
+                $nextBreakpoint: map-get( $breakpoints, nth( map-keys( $breakpoints ), $breakindex + 1 ) );
                 
-                @if ($breakindex > 1) {
+                @if ( $breakindex > 1 ) {
                     
-                    $screenOnly: 'only screen and (min-width: #{rem($breakpoint)}) and (max-width: #{rem(($nextBreakpoint)-1)})';
+                    $screenOnly: 'only screen and (min-width: #{ rem( $breakpoint ) }) and (max-width: #{ rem( $nextBreakpoint - 1 ) })';
                     
                 }
                 
                 @else {
                     
-                    $screenOnly: 'only screen and (max-width: #{rem(($nextBreakpoint)-1)})';
+                    $screenOnly: 'only screen and (max-width: #{ rem( $nextBreakpoint - 1 ) })';
                     
                 }
                 
-                @media #{$screenOnly} {
+                @media #{ $screenOnly } {
                 
                     @content;
                 
