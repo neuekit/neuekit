@@ -20,9 +20,18 @@ h6 {
 	#HEADING BASE STYLES
 \*----------------------------------------------*/
 
-@include breakpoints {
+@if ( $responsiveType ) {
+
+    @include breakpoints {
+        
+        @include headings(rem(2px) * $breakindex);
     
-    @include headings(rem(2px) * $breakindex);
+    }
+}
+
+@else {
+    
+    @include headings(rem(6px));
 
 }
 
