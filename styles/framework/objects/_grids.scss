@@ -10,8 +10,8 @@
     flex-basis: 100%;
     flex-wrap: wrap;
     margin: 0 auto;
-    max-width: rem($maxWidth);
-    padding: 0 rem($gutter);
+    max-width: rem( $maxWidth );
+    padding: 0 rem( $gutter );
     
     #{ & }:not(#{ & }--#{ $nestClass }), // .grid .grid:not(.grid--nest)
     &--#{$unnestClass} { // .grid--unnest

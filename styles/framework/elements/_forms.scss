@@ -68,6 +68,7 @@ textarea,
             display: inline-block;
             @include size(1.125rem);
             margin-right: 0.5rem;
+            margin-top: 0.3125rem;
             text-align: center;
             transition: all $speed ease;
         }
