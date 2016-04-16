@@ -13,7 +13,7 @@
     max-width: rem( $maxWidth );
     padding: 0 rem( $gutter );
     
-    #{ & }:not(#{ & }--#{ $nestClass }), // .grid .grid:not(.grid--nest)
+    & &, // .grid .grid
     &--#{$unnestClass} { // .grid--unnest
         margin: 0 #{ rem( -$gutter * 2 ) };
         max-width: none;
@@ -30,6 +30,10 @@
     
     
     /*  Modifiers  */
+    
+    & &--#{ $nestClass } { // .grid--nest
+        margin: 0;
+    }
     
     &--#{ $maxClass } { // .grid--max
         max-width: none;

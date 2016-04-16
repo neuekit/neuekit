@@ -8,7 +8,7 @@ button,
 [type="reset"],
 [type="submit"] {
     appearance: none;
-    background: $night;
+    background: $primary;
     border: none;
     border-radius: 0;
     box-shadow: inset 0 0 0 2px transparent;
@@ -35,8 +35,8 @@ button,
     
     &:hover {
         background-color: white;
-        box-shadow: inset 0 0 0 2px $night;
-        color: $night;
+        box-shadow: inset 0 0 0 2px $primary;
+        color: $primary;
     }
 }
 
@@ -47,10 +47,10 @@ button,
     
     &--light {
         background-color: white;
-        color: $night;
+        color: $primary;
         
         &:hover {
-            background-color: $night;
+            background-color: $primary;
             box-shadow: inset 0 0 0 2px transparent;
             color: white;
         }
@@ -58,8 +58,8 @@ button,
 
     &--line {
         background: none;
-        box-shadow: inset 0 0 0 2px $night;
-        color: $night;
+        box-shadow: inset 0 0 0 2px $primary;
+        color: $primary;
         
         &#{ $block }--light {
             box-shadow: inset 0 0 0 2px white;
@@ -74,7 +74,7 @@ button,
     
     &--text {
         background: none;
-        color: black;
+        color: $primary;
         
         &:disabled {
             background: none;

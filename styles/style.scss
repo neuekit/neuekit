@@ -2,8 +2,8 @@
 	#COMBINE BOTH THE FRAMEWORK & THEME
 \*----------------------------------------------*/
 
-@import 'framework/settings'; // DONT EDIT SKY WILL FALL
-@import 'theme/settings'; // EDIT AS YOU WISH
+@import 'framework/settings';   // DONT EDIT SKY WILL FALL
+@import 'theme/settings';       // EDIT AS YOU WISH
 
-@import 'framework/framework';
-@import 'theme/theme';
+@import 'framework/framework';  // ITS BEST PRACTICE TO NOT EDIT THE CORE
+@import 'theme/theme';          // EDIT AS YOU WISH

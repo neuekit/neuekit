@@ -24,12 +24,12 @@ progress {
     &::-webkit-progress-bar {
         background-color: transparent;
         border-radius: 4rem;
-        border: 2px solid $night;
+        border: 2px solid $primary;
         height: 1.25rem;
     }
     
     &[value]::-webkit-progress-value {
-        background-color: $night;
+        background-color: $primary;
         border-radius: 4rem;
         height: 0.75rem;
         margin: 2px;
@@ -43,11 +43,11 @@ progress {
         appearance: none;
         background-color: transparent;
         border-radius: 4rem;
-        border: 2px solid $night;
+        border: 2px solid $primary;
         height: 1.25rem;
         
         &::-moz-progress-bar {
-            background-color: $night;
+            background-color: $primary;
             border-radius: 4rem;
             height: 0.75rem;
             margin: 2px;
@@ -59,7 +59,7 @@ progress {
 
 select {
     appearance: none;
-    background: $night url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'><polyline fill='white' points='46,15 25,36 4,15'/></svg>") no-repeat right 0.75rem center / 0.875rem;
+    background: $primary url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'><polyline fill='white' points='46,15 25,36 4,15'/></svg>") no-repeat right 0.75rem center / 0.875rem;
     border-radius: 0;
     border: none;
     color: white;
@@ -88,13 +88,13 @@ textarea,
 [type="week"] {
     border: 2px solid lightgrey;
     border-radius: 0;
-    height: 2.5rem;
+    height: 2.75rem;
     display: block;
     padding: 0 0.5rem;
     width: 100%;
     
     &:focus {
-        border: 2px solid $night;
+        border: 2px solid $primary;
 		outline: none;
 	}
 }
