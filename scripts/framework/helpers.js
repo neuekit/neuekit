@@ -298,7 +298,28 @@
                     return qs[1];
                     
                 }
-            };
+            };            
+            
+            
+            /*--------------------------------------------------*\
+            	#WAIT FUNCTION FOR USE WITH KEY EVENTS
+            	
+            	This function accepts callback & a time in ms.
+            \*--------------------------------------------------*/
+            
+            this.wait = (function(){
+        
+                var timer = 0;
+                
+                return function(callback, ms){
+                    
+                    clearTimeout (timer);
+                    
+                    timer = setTimeout(callback, ms);
+                    
+                };
+                
+            })();
             
             
             /*  Allow "chaining" of methods together  */
