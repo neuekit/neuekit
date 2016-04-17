@@ -1,3 +1,6 @@
+// @codekit-prepend "settings.js";
+// @codekit-prepend "helpers.js";
+
 /*--------------------------------------------------*\
 	#CREATIVE LITTLE UI-KIT | JS MAIN COMPONENTS
 	
@@ -23,9 +26,9 @@
     
     UIKIT.modernizr = (function() {
         
-        var support = [];
-        
         if ( Modernizr.inputtypes ) {
+            
+            var support = [];
         
             for ( var i in Modernizr.inputtypes) {
                 
