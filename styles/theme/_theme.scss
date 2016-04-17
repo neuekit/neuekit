@@ -37,18 +37,17 @@
 /*----------------------------------------------------------------------------*\
 	#ELEMENTS
 	
-	Last layer we see type selectors (h1-h6, a). Far-reaching shared classes.
+	Last layer for type selectors (h1-h6, a) & far-reaching shared selectors.
 \*----------------------------------------------------------------------------*/
 
-@import 'elements/page';                    // Page-level styles (HTML, body etc).
-@import 'elements/headings';                // H1–H6 styles.
-@import 'elements/type';                    // Misc type styles.
-@import 'elements/links';                   // Hyperlink styles.
-@import 'elements/lists';                   // List styles.
-@import 'elements/images';                  // Image stying.
-@import 'elements/quotes';                  // Blockquotes, cite, etc.
-@import 'elements/forms';                   // Form inputs, textareas.
-@import 'elements/shared';                  // Shared global commonalities.
+@import 'elements/shared';              // Shared global commonalities.
+@import 'elements/document';            // Page-level styles (HTML, body etc).
+@import 'elements/type';                // Misc type styles.
+@import 'elements/links';               // Hyperlink styles.
+@import 'elements/lists';               // List styles.
+@import 'elements/images';              // Image stying.
+@import 'elements/quotes';              // Blockquotes, cite, etc.
+@import 'elements/forms';               // Form inputs, textareas.
 
 
 
