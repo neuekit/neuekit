@@ -30,7 +30,6 @@
 \*----------------------------------------------------------------------------*/
 
 @import 'generic/normalize';            // A level playing field.
-@import 'generic/reboot';               // Better defaults.
 @import 'generic/keyframes';            // CSS Keyframe blocks.
 @import 'generic/fonts';                // Vector icons/fonts includes.
 
@@ -42,6 +41,7 @@
 	Last layer we see type selectors (h1-h6, a). Far-reaching shared classes.
 \*----------------------------------------------------------------------------*/
 
+@import 'elements/shared';              // Far-reaching shared classes.
 @import 'elements/page';                // Page-level styles (HTML, body etc).
 @import 'elements/type';                // All type styles.
 @import 'elements/links';               // Hyperlink styles.
@@ -49,7 +49,6 @@
 @import 'elements/images';              // Image stying.
 @import 'elements/quotes';              // Blockquotes, cite, etc.
 @import 'elements/forms';               // Form inputs, textareas.
-@import 'elements/shared';              // Far-reaching shared classes.
 
 
 

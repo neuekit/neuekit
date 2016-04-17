@@ -4,8 +4,9 @@
 
 html,
 body {
-    min-height: 100vh;
+    box-sizing: border-box;
     line-height: 1.75;
+    min-height: 100vh;
 }
 
 

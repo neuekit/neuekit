@@ -2,4 +2,12 @@
 	#SHARED BASE STYLES
 \*----------------------------------------------*/
 
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
 
