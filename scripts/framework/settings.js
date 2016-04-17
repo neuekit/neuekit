@@ -14,12 +14,18 @@
 	3. Lastly we ensure undefined really is undefined.
 \*--------------------------------------------------*/
 
-(function(UIKIT, $, undefined) {    
+(function(UIKIT, $, undefined) {
+    
+    /*  Shortform document object  */
+    
+    $.doc = $(document);
+    
     
     /* This is our global configuration. It will work across your js files */
+    
     UIKIT.settings = {
         debug: true,
-        speed: 250  
+        speed: 250
     };
     
     
