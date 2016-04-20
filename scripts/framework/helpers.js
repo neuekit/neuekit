@@ -28,9 +28,9 @@
     
     $.log = function(message) {
         
-        if (UIKIT.config.debug && (typeof window.console !== 'undefined' && typeof window.console.log !== 'undefined') && console.debug) {
+        if ( UIKIT.settings.debug ) {
             
-            console.debug(message);
+            console.log(message);
             
         }
     };
@@ -47,7 +47,7 @@
         
         return function(obj) {
             
-            if (obj === global) {
+            if ( obj === global ) {
                 
                 return 'global';
                 
@@ -69,7 +69,7 @@
     	a single point of access for functions.
     \*--------------------------------------------------*/
     
-    UIKIT.helper = (function () {
+    UIKIT.helper = (function() {
         
         function _helper() {
 
@@ -88,7 +88,7 @@
                 3. The number of days until the cookie expires.
             \*--------------------------------------------------*/
             
-            setCookie = function (name, value, days) {
+            setCookie = function(name, value, days) {
                 
                 var date = "",
                     expires = "";
@@ -114,7 +114,7 @@
                 1. The name of the cookie.
             \*--------------------------------------------------*/
             
-            getCookie = function (name) {
+            getCookie = function(name) {
                 
                 var nameEQ = name + "=",
                     i,
@@ -130,7 +130,7 @@
                         
                     }
                     
-                    if (c.indexOf(nameEQ) === 0) {
+                    if ( c.indexOf(nameEQ) === 0 ) {
                         
                         return c.substring(nameEQ.length, c.length);
                         
@@ -148,7 +148,7 @@
                 1. The name of the cookie.
             \*--------------------------------------------------*/
             
-            removeCookie = function (name) {
+            removeCookie = function(name) {
                 
                 setCookie(name, "", -1);
                 
@@ -164,9 +164,9 @@
                    Can be a string, integer, booleon, etc.
             \*--------------------------------------------------*/
             
-            this.setInfo = function (name, value) {
+            this.setInfo = function(name, value) {
                 
-                if (typeof window.localStorage !== 'undefined') {
+                if ( typeof window.localStorage !== 'undefined' ) {
                     
                     localStorage.setItem(name, value);
                     
@@ -187,11 +187,11 @@
                    even if localStorage is supported.
             \*--------------------------------------------------*/
             
-            this.getInfo = function (name, checkCookie) {
+            this.getInfo = function(name, checkCookie) {
                 
                 var value = "";
                 
-                if (typeof window.localStorage !== 'undefined') {
+                if ( typeof window.localStorage !== 'undefined' ) {
                     
                     value = localStorage.getItem(name);
                     
@@ -222,7 +222,7 @@
             
             this.removeInfo = function(name, checkCookie) {
                 
-                if (typeof window.localStorage !== 'undefined') {
+                if ( typeof window.localStorage !== 'undefined' ) {
                     
                     localStorage.removeItem(name);
                     
@@ -254,7 +254,7 @@
                 var port = '',
                     url = '';
 
-                if (window.location.port) {
+                if ( window.location.port ) {
                     
                     port = ':' + window.location.port;
                     
@@ -278,7 +278,7 @@
             
             this.getQueryString = function(key, default_) {
                 
-                if (default_ === null) {
+                if ( default_ === null ) {
                     
                     default_ = "";
                     
@@ -289,7 +289,7 @@
                 var regex = new RegExp("[\\?&]" + key + "=([^&#]*)"),
                     qs = regex.exec(window.location.href);
 
-                if (qs === null) {
+                if ( qs === null ) {
                     
                     return default_;
                     
@@ -324,7 +324,7 @@
             
             /*  Allow "chaining" of methods together  */
 
-            this.init = function () {
+            this.init = function() {
                 
                 _this.getDomain();
                 
