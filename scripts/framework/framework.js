@@ -1,5 +1,7 @@
 // @codekit-prepend "settings.js";
-// @codekit-prepend "helpers.js";
+// @codekit-prepend "modules/helpers.js";
+// @codekit-prepend "modules/modernizr.js";
+// @codekit-prepend "modules/modal.js";
 
 /*--------------------------------------------------*\
 	#CREATIVE LITTLE UI-KIT | JS MAIN COMPONENTS
@@ -23,70 +25,9 @@
     
     'use strict';
     
-    
-    UIKIT.modernizr = (function() {
         
-        if ( Modernizr.inputtypes ) {
-            
-            var support = [];
-        
-            for ( var i in Modernizr.inputtypes) {
-                
-                if ( Modernizr.inputtypes.hasOwnProperty(i) && ! Modernizr.inputtypes[i]) {
-                
-                    support.push('no-input-' + i);
-                
-                }
-                            
-            }
-            
-            document.documentElement.className = support.join(' ');
-            
-        }
-        
-    }());
-    
-    /*--------------------------------------------------*\
-    	#MODAL COMPONENT
-    \*--------------------------------------------------*/
-    
-    UIKIT.modal = (function() {
-            
-        function _modal() {
-
-            /*  Variablise 'this' to limit it to avoid scope conflicts  */
-            /* jshint validthis: true */
-            var _this = this;
-            
-            
-            /*--------------------------------------------------*\
-            	#MODAL CODE HERE
-            \*--------------------------------------------------*/
-            
-            
-
-
-            /*  Allow "chaining" of methods together  */
-            
-            this.init = function() {
-                
-                /*  'this' refers to UIKIT.modal  */
-                
-                return this; 
-            };
-            
-            
-            /*  This refers to UIKIT.modal.init()  */
-
-            return this.init(); /*initialize the init()*/
-        }
-        
-        /*  creating a new object of helper rather than a funtion */
-        
-        return new _modal();
-        
-    }());
-    
+   /* Your code here */
+       
     
 /* Lastly this checks if the namespace already exists & if not will assign it */
 

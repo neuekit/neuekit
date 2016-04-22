@@ -1,5 +1,5 @@
 // @codekit-prepend "settings.js";
-// @codekit-prepend "helpers.js";
+// @codekit-prepend "modules/helpers.js";
 
 /*--------------------------------------------------*\
 	#PROJECT NAME | JS MAIN COMPONENTS
