@@ -2,12 +2,12 @@
 	#TEXT HELPERS
 \*----------------------------------------------*/
     
-.text-bold {
-    font-weight: bold;
+.text-bolder {
+    font-weight: bolder;
 }
 
-.text-light {
-    font-weight: light;
+.text-lighter {
+    font-weight: lighter;
 }
 
 @include breakpoints( both ) {
