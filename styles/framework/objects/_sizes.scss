@@ -20,6 +20,8 @@
         
         .size-#{ $grid }#{ $break } {
             flex-basis: $width;
+            max-width: $width;
+            width: $width;
         }
     }
 }
