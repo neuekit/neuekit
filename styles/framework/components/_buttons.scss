@@ -10,7 +10,7 @@ button,
     appearance: none;
     background: $primary;
     border: none;
-    border-radius: 0;
+    border-radius: $btnRadius;
     box-shadow: inset 0 0 0 2px transparent;
     color: white;
     display: inline-block;
@@ -64,6 +64,16 @@ button,
         &#{ $block }--light {
             box-shadow: inset 0 0 0 2px white;
             color: white;
+            
+            &:hover {
+                background-color: white;
+                color: $primary;
+            }
+        }
+        
+        &:hover {
+            background-color: $primary;
+            color: white;
         }
     }
     
@@ -98,7 +108,7 @@ button,
     }
     
     &--small {
-        font-size: 0.88rem;
+        font-size: 0.875rem;
         padding: 0.5rem 0.625rem;
     }
     
