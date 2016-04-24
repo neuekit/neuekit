@@ -25,7 +25,7 @@
                             
             }
             
-            document.documentElement.className = support.join(' ');
+            document.documentElement.className += ' ' + support.join(' ');
             
         }
         
