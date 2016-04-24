@@ -67,10 +67,6 @@ select {
     padding: 0 1.125rem 0 1rem;
 }
 
-textarea {
-    resize: vertical;
-}
-
 textarea,
 [type="color"],
 [type="email"],
@@ -97,6 +93,11 @@ textarea,
         border: 2px solid $primary;
 		outline: none;
 	}
+}
+
+textarea {
+    height: auto;
+    resize: vertical;
 }
 
 [type="checkbox"],
