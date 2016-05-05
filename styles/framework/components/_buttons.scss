@@ -2,11 +2,11 @@
 	#BUTTON COMPONENT STYLES
 \*----------------------------------------------*/
 
-button,
-.button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+$btnSelectors: 'button, [role="button"], [type="button"], [type="reset"], [type="submit"],';
+$btnCondition: if($btnReset, $btnSelectors, null);
+
+#{$btnCondition}
+.button {
     appearance: none;
     background: $primary;
     border: none;
