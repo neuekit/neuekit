@@ -28,6 +28,13 @@
     
     /*  Modifiers  */
     
+    & &, // .grid .grid
+    &--#{$unnestClass} { // .grid--unnest
+        margin: 0 #{ rem( -$gutter * 2 ) };
+        max-width: none;
+        width: auto;
+    }
+    
     &--#{ $maxClass } { // .grid--max
         max-width: none;
     }
@@ -43,15 +50,8 @@
     
     & &--#{ $nestClass }, // .grid--nest
     &#{ & }--#{ $edgeClass }, // .grid--edge
-    &--#{ $edgeClass} .#{ $gridClass } { // .grid--edge .grid
+    &--#{ $edgeClass} .#{ $gridClass }:not(&--#{$unnestClass}) { // .grid--edge .grid
         margin: 0;
-    }
-    
-    & &, // .grid .grid
-    &--#{$unnestClass} { // .grid--unnest
-        margin: 0 #{ rem( -$gutter * 2 ) };
-        max-width: none;
-        width: auto;
     }
 }
 
