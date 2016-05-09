@@ -7,7 +7,6 @@
 
 .#{ $gridClass } { // .grid
     display: flex;
-    flex-basis: auto;
     flex-wrap: wrap;
     margin: 0 auto;
     max-width: rem( $maxWidth );
@@ -18,11 +17,10 @@
         /*  Elements  */
         
         &__#{ $itemClass } { // .grid__item
-            flex-basis: 100%;
             flex-direction: column;
+            flex-grow: 1;
             max-width: 100%;
             padding: 0 rem( $gutter );
-            width: 100%;
         }
     
     
@@ -37,10 +35,6 @@
     
     &--#{ $maxClass } { // .grid--max
         max-width: none;
-    }
-    
-    &--#{ $axisClass } { // .grid--vert
-        flex-direction: column;
     }
     
     &--#{ $edgeClass }, // .grid--edge
