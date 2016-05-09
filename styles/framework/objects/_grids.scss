@@ -14,12 +14,6 @@
     padding: 0 rem( $gutter );
     width: 100%;
     
-    & &, // .grid .grid
-    &--#{$unnestClass} { // .grid--unnest
-        margin: 0 #{ rem( -$gutter * 2 ) };
-        max-width: none;
-    }
-    
     
         /*  Elements  */
         
@@ -34,10 +28,6 @@
     
     /*  Modifiers  */
     
-    & &--#{ $nestClass } { // .grid--nest
-        margin: 0;
-    }
-    
     &--#{ $maxClass } { // .grid--max
         max-width: none;
     }
@@ -48,13 +38,20 @@
     
     &--#{ $edgeClass }, // .grid--edge
     &--#{ $edgeClass } > &__#{ $itemClass } { // .grid--edge > .grid__item
-        padding-left: 0;
-        padding-right: 0;
+        padding: 0;
     }
     
+    & &--#{ $nestClass }, // .grid--nest
     &#{ & }--#{ $edgeClass }, // .grid--edge
     &--#{ $edgeClass} .#{ $gridClass } { // .grid--edge .grid
         margin: 0;
+    }
+    
+    & &, // .grid .grid
+    &--#{$unnestClass} { // .grid--unnest
+        margin: 0 #{ rem( -$gutter * 2 ) };
+        max-width: none;
+        width: auto;
     }
 }
 

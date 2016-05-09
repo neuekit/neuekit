@@ -1,0 +1,30 @@
+/*----------------------------------------------*\
+    #BRICKS OBJECT STYLES
+\*----------------------------------------------*/
+
+[class*="bricks"] {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0 -0.5rem;
+}
+
+[class*="brick"] {
+    padding: rem($gutter);
+}
+
+
+@include breakpoints(up) {
+    
+    @for $grid from 1 through $columns {
+        
+        $width: floor((100% / $grid) * 1000) / 1000;
+            
+        .bricks-#{$grid}#{$break} .brick {
+            flex-basis: $width;
+            max-width: $width;
+        }
+    }
+}
+
+

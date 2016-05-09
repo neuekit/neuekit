@@ -3,17 +3,28 @@
 \*----------------------------------------------*/
 
 @function rem( $pixels, $context: $rootFontSize ) {
-  
-    @if ( unitless( $pixels ) ) {
+    
+    @if ( unit($pixels) == '%' ) {
         
-        $pixels: $pixels * 1px;
+        @return $pixels;
+        
     }
     
-    @if ( unitless( $context ) ) {
-        
-        $context: $context * 1px;
-    }
-    
-    @return $pixels / $context * 1rem;
+    @else {
   
+        @if ( unitless( $pixels ) ) {
+            
+            $pixels: $pixels * 1px;
+        }
+        
+        @if ( unitless( $context ) ) {
+            
+            $context: $context * 1px;
+        }
+        
+        @return $pixels / $context * 1rem;
+    
+    }
 }
+
+
