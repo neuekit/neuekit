@@ -28,7 +28,7 @@
     
 	#CREATIVE LITTLE UI KIT
 	
-	- Version:      0.8
+	- Version:      0.8.1
 	- Author:       Creative Little Dots
 	- Site:         http://creativelittle.uk/uikit
 	- Copyright:    2016, Creative Little Dots
@@ -47,8 +47,11 @@
 	#SIZE
 \*----------------------------------------------*/
 /*----------------------------------------------*\
-	#BREAKPOINT
+	#BREAKPOINTS LOOP
 \*----------------------------------------------*/
+/*--------------------------------------------------*\
+	#MEDIA QUERY MIXIN 
+\*--------------------------------------------------*/
 /*----------------------------------------------*\
 	#HEADING SIZES
 \*----------------------------------------------*/
@@ -748,30 +751,27 @@ textarea {
 /*  Blocks  */
 .grid {
   display: flex;
-  flex-basis: 100%;
   flex-wrap: wrap;
   margin: 0 auto;
   max-width: 86.25rem;
   padding: 0 0.5rem;
+  width: 100%;
   /*  Elements  */
   /*  Modifiers  */ }
+  .grid__item {
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 100%;
+    padding: 0 0.5rem; }
   .grid .grid, .grid--unnest {
     margin: 0 -1rem;
-    max-width: none; }
-  .grid__item {
-    flex-basis: 100%;
-    flex-direction: column;
-    padding: 0 0.5rem; }
-  .grid .grid--nest {
-    margin: 0; }
+    max-width: none;
+    width: auto; }
   .grid--max {
     max-width: none; }
-  .grid--vert {
-    flex-direction: column; }
   .grid--edge, .grid--edge > .grid__item {
-    padding-left: 0;
-    padding-right: 0; }
-  .grid.grid--edge, .grid--edge .grid {
+    padding: 0; }
+  .grid .grid--nest, .grid.grid--edge, .grid--edge .grid:not(.grid--unnest) {
     margin: 0; }
 
 /*----------------------------------------------*\
@@ -1061,285 +1061,209 @@ textarea {
 	#OFFSET OBJECT STYLES
 \*----------------------------------------------*/
 /*----------------------------------------------*\
-	#BLOCKS OBJECT STYLES
+    #BRICKS OBJECT STYLES
 \*----------------------------------------------*/
-.blocks,
-.block {
+[class*="bricks"] {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 -0.5rem; }
+
+[class*="brick"] {
   padding: 0.5rem; }
 
-.blocks--0 .block {
-  flex-basis: 0%; }
+.bricks-1 .brick {
+  flex-basis: 100%;
+  max-width: 100%; }
 
-.blocks--1 .block {
-  flex-basis: 8.333%; }
+.bricks-2 .brick {
+  flex-basis: 50%;
+  max-width: 50%; }
 
-.blocks--2 .block {
-  flex-basis: 16.666%; }
+.bricks-3 .brick {
+  flex-basis: 33.333%;
+  max-width: 33.333%; }
 
-.blocks--3 .block {
-  flex-basis: 25%; }
+.bricks-4 .brick {
+  flex-basis: 25%;
+  max-width: 25%; }
 
-.blocks--4 .block {
-  flex-basis: 33.333%; }
+.bricks-5 .brick {
+  flex-basis: 20%;
+  max-width: 20%; }
 
-.blocks--5 .block {
-  flex-basis: 41.666%; }
+.bricks-6 .brick {
+  flex-basis: 16.666%;
+  max-width: 16.666%; }
 
-.blocks--6 .block {
-  flex-basis: 50%; }
+.bricks-7 .brick {
+  flex-basis: 14.285%;
+  max-width: 14.285%; }
 
-.blocks--7 .block {
-  flex-basis: 58.333%; }
+.bricks-8 .brick {
+  flex-basis: 12.5%;
+  max-width: 12.5%; }
 
-.blocks--8 .block {
-  flex-basis: 66.666%; }
+.bricks-9 .brick {
+  flex-basis: 11.111%;
+  max-width: 11.111%; }
 
-.blocks--9 .block {
-  flex-basis: 75%; }
+.bricks-10 .brick {
+  flex-basis: 10%;
+  max-width: 10%; }
 
-.blocks--10 .block {
-  flex-basis: 83.333%; }
+.bricks-11 .brick {
+  flex-basis: 9.09%;
+  max-width: 9.09%; }
 
-.blocks--11 .block {
-  flex-basis: 91.666%; }
+.bricks-12 .brick {
+  flex-basis: 8.333%;
+  max-width: 8.333%; }
 
-.blocks--12 .block {
-  flex-basis: 100%; }
-
-@media only screen and (max-width: 40rem) {
-  .blocks--0-s-only .block {
-    flex-basis: 0%; }
-
-  .blocks--1-s-only .block {
-    flex-basis: 8.333%; }
-
-  .blocks--2-s-only .block {
-    flex-basis: 16.666%; }
-
-  .blocks--3-s-only .block {
-    flex-basis: 25%; }
-
-  .blocks--4-s-only .block {
-    flex-basis: 33.333%; }
-
-  .blocks--5-s-only .block {
-    flex-basis: 41.666%; }
-
-  .blocks--6-s-only .block {
-    flex-basis: 50%; }
-
-  .blocks--7-s-only .block {
-    flex-basis: 58.333%; }
-
-  .blocks--8-s-only .block {
-    flex-basis: 66.666%; }
-
-  .blocks--9-s-only .block {
-    flex-basis: 75%; }
-
-  .blocks--10-s-only .block {
-    flex-basis: 83.333%; }
-
-  .blocks--11-s-only .block {
-    flex-basis: 91.666%; }
-
-  .blocks--12-s-only .block {
-    flex-basis: 100%; } }
 @media only screen and (min-width: 40.0625rem) {
-  .blocks--0-m .block {
-    flex-basis: 0%; }
+  .bricks-1-m .brick {
+    flex-basis: 100%;
+    max-width: 100%; }
 
-  .blocks--1-m .block {
-    flex-basis: 8.333%; }
+  .bricks-2-m .brick {
+    flex-basis: 50%;
+    max-width: 50%; }
 
-  .blocks--2-m .block {
-    flex-basis: 16.666%; }
+  .bricks-3-m .brick {
+    flex-basis: 33.333%;
+    max-width: 33.333%; }
 
-  .blocks--3-m .block {
-    flex-basis: 25%; }
+  .bricks-4-m .brick {
+    flex-basis: 25%;
+    max-width: 25%; }
 
-  .blocks--4-m .block {
-    flex-basis: 33.333%; }
+  .bricks-5-m .brick {
+    flex-basis: 20%;
+    max-width: 20%; }
 
-  .blocks--5-m .block {
-    flex-basis: 41.666%; }
+  .bricks-6-m .brick {
+    flex-basis: 16.666%;
+    max-width: 16.666%; }
 
-  .blocks--6-m .block {
-    flex-basis: 50%; }
+  .bricks-7-m .brick {
+    flex-basis: 14.285%;
+    max-width: 14.285%; }
 
-  .blocks--7-m .block {
-    flex-basis: 58.333%; }
+  .bricks-8-m .brick {
+    flex-basis: 12.5%;
+    max-width: 12.5%; }
 
-  .blocks--8-m .block {
-    flex-basis: 66.666%; }
+  .bricks-9-m .brick {
+    flex-basis: 11.111%;
+    max-width: 11.111%; }
 
-  .blocks--9-m .block {
-    flex-basis: 75%; }
+  .bricks-10-m .brick {
+    flex-basis: 10%;
+    max-width: 10%; }
 
-  .blocks--10-m .block {
-    flex-basis: 83.333%; }
+  .bricks-11-m .brick {
+    flex-basis: 9.09%;
+    max-width: 9.09%; }
 
-  .blocks--11-m .block {
-    flex-basis: 91.666%; }
-
-  .blocks--12-m .block {
-    flex-basis: 100%; } }
-@media only screen and (min-width: 40.0625rem) and (max-width: 64rem) {
-  .blocks--0-m-only .block {
-    flex-basis: 0%; }
-
-  .blocks--1-m-only .block {
-    flex-basis: 8.333%; }
-
-  .blocks--2-m-only .block {
-    flex-basis: 16.666%; }
-
-  .blocks--3-m-only .block {
-    flex-basis: 25%; }
-
-  .blocks--4-m-only .block {
-    flex-basis: 33.333%; }
-
-  .blocks--5-m-only .block {
-    flex-basis: 41.666%; }
-
-  .blocks--6-m-only .block {
-    flex-basis: 50%; }
-
-  .blocks--7-m-only .block {
-    flex-basis: 58.333%; }
-
-  .blocks--8-m-only .block {
-    flex-basis: 66.666%; }
-
-  .blocks--9-m-only .block {
-    flex-basis: 75%; }
-
-  .blocks--10-m-only .block {
-    flex-basis: 83.333%; }
-
-  .blocks--11-m-only .block {
-    flex-basis: 91.666%; }
-
-  .blocks--12-m-only .block {
-    flex-basis: 100%; } }
+  .bricks-12-m .brick {
+    flex-basis: 8.333%;
+    max-width: 8.333%; } }
 @media only screen and (min-width: 64.0625rem) {
-  .blocks--0-l .block {
-    flex-basis: 0%; }
+  .bricks-1-l .brick {
+    flex-basis: 100%;
+    max-width: 100%; }
 
-  .blocks--1-l .block {
-    flex-basis: 8.333%; }
+  .bricks-2-l .brick {
+    flex-basis: 50%;
+    max-width: 50%; }
 
-  .blocks--2-l .block {
-    flex-basis: 16.666%; }
+  .bricks-3-l .brick {
+    flex-basis: 33.333%;
+    max-width: 33.333%; }
 
-  .blocks--3-l .block {
-    flex-basis: 25%; }
+  .bricks-4-l .brick {
+    flex-basis: 25%;
+    max-width: 25%; }
 
-  .blocks--4-l .block {
-    flex-basis: 33.333%; }
+  .bricks-5-l .brick {
+    flex-basis: 20%;
+    max-width: 20%; }
 
-  .blocks--5-l .block {
-    flex-basis: 41.666%; }
+  .bricks-6-l .brick {
+    flex-basis: 16.666%;
+    max-width: 16.666%; }
 
-  .blocks--6-l .block {
-    flex-basis: 50%; }
+  .bricks-7-l .brick {
+    flex-basis: 14.285%;
+    max-width: 14.285%; }
 
-  .blocks--7-l .block {
-    flex-basis: 58.333%; }
+  .bricks-8-l .brick {
+    flex-basis: 12.5%;
+    max-width: 12.5%; }
 
-  .blocks--8-l .block {
-    flex-basis: 66.666%; }
+  .bricks-9-l .brick {
+    flex-basis: 11.111%;
+    max-width: 11.111%; }
 
-  .blocks--9-l .block {
-    flex-basis: 75%; }
+  .bricks-10-l .brick {
+    flex-basis: 10%;
+    max-width: 10%; }
 
-  .blocks--10-l .block {
-    flex-basis: 83.333%; }
+  .bricks-11-l .brick {
+    flex-basis: 9.09%;
+    max-width: 9.09%; }
 
-  .blocks--11-l .block {
-    flex-basis: 91.666%; }
-
-  .blocks--12-l .block {
-    flex-basis: 100%; } }
-@media only screen and (min-width: 64.0625rem) and (max-width: 75rem) {
-  .blocks--0-l-only .block {
-    flex-basis: 0%; }
-
-  .blocks--1-l-only .block {
-    flex-basis: 8.333%; }
-
-  .blocks--2-l-only .block {
-    flex-basis: 16.666%; }
-
-  .blocks--3-l-only .block {
-    flex-basis: 25%; }
-
-  .blocks--4-l-only .block {
-    flex-basis: 33.333%; }
-
-  .blocks--5-l-only .block {
-    flex-basis: 41.666%; }
-
-  .blocks--6-l-only .block {
-    flex-basis: 50%; }
-
-  .blocks--7-l-only .block {
-    flex-basis: 58.333%; }
-
-  .blocks--8-l-only .block {
-    flex-basis: 66.666%; }
-
-  .blocks--9-l-only .block {
-    flex-basis: 75%; }
-
-  .blocks--10-l-only .block {
-    flex-basis: 83.333%; }
-
-  .blocks--11-l-only .block {
-    flex-basis: 91.666%; }
-
-  .blocks--12-l-only .block {
-    flex-basis: 100%; } }
+  .bricks-12-l .brick {
+    flex-basis: 8.333%;
+    max-width: 8.333%; } }
 @media only screen and (min-width: 75.0625rem) {
-  .blocks--0-xl .block {
-    flex-basis: 0%; }
+  .bricks-1-xl .brick {
+    flex-basis: 100%;
+    max-width: 100%; }
 
-  .blocks--1-xl .block {
-    flex-basis: 8.333%; }
+  .bricks-2-xl .brick {
+    flex-basis: 50%;
+    max-width: 50%; }
 
-  .blocks--2-xl .block {
-    flex-basis: 16.666%; }
+  .bricks-3-xl .brick {
+    flex-basis: 33.333%;
+    max-width: 33.333%; }
 
-  .blocks--3-xl .block {
-    flex-basis: 25%; }
+  .bricks-4-xl .brick {
+    flex-basis: 25%;
+    max-width: 25%; }
 
-  .blocks--4-xl .block {
-    flex-basis: 33.333%; }
+  .bricks-5-xl .brick {
+    flex-basis: 20%;
+    max-width: 20%; }
 
-  .blocks--5-xl .block {
-    flex-basis: 41.666%; }
+  .bricks-6-xl .brick {
+    flex-basis: 16.666%;
+    max-width: 16.666%; }
 
-  .blocks--6-xl .block {
-    flex-basis: 50%; }
+  .bricks-7-xl .brick {
+    flex-basis: 14.285%;
+    max-width: 14.285%; }
 
-  .blocks--7-xl .block {
-    flex-basis: 58.333%; }
+  .bricks-8-xl .brick {
+    flex-basis: 12.5%;
+    max-width: 12.5%; }
 
-  .blocks--8-xl .block {
-    flex-basis: 66.666%; }
+  .bricks-9-xl .brick {
+    flex-basis: 11.111%;
+    max-width: 11.111%; }
 
-  .blocks--9-xl .block {
-    flex-basis: 75%; }
+  .bricks-10-xl .brick {
+    flex-basis: 10%;
+    max-width: 10%; }
 
-  .blocks--10-xl .block {
-    flex-basis: 83.333%; }
+  .bricks-11-xl .brick {
+    flex-basis: 9.09%;
+    max-width: 9.09%; }
 
-  .blocks--11-xl .block {
-    flex-basis: 91.666%; }
-
-  .blocks--12-xl .block {
-    flex-basis: 100%; } }
+  .bricks-12-xl .brick {
+    flex-basis: 8.333%;
+    max-width: 8.333%; } }
 /*----------------------------------------------------------------------------*\
 	#PARTIES
 	
@@ -1359,11 +1283,8 @@ textarea {
 /*----------------------------------------------*\
 	#BUTTON COMPONENT STYLES
 \*----------------------------------------------*/
-button,
-.button,
-[type="button"],
-[type="reset"],
-[type="submit"] {
+button, [role="button"], [type="button"], [type="reset"], [type="submit"],
+.button {
   appearance: none;
   background: #1c1c1c;
   border: none;
@@ -1377,26 +1298,17 @@ button,
   text-align: center;
   transition: all 0.25s ease;
   /*  States  */ }
-  button:disabled,
-  .button:disabled,
-  [type="button"]:disabled,
-  [type="reset"]:disabled,
-  [type="submit"]:disabled {
+  button:disabled, [role="button"]:disabled, [type="button"]:disabled, [type="reset"]:disabled, [type="submit"]:disabled,
+  .button:disabled {
     background-color: lightgrey;
     box-shadow: none;
     color: grey;
     pointer-events: none; }
-  button:focus,
-  .button:focus,
-  [type="button"]:focus,
-  [type="reset"]:focus,
-  [type="submit"]:focus {
+  button:focus, [role="button"]:focus, [type="button"]:focus, [type="reset"]:focus, [type="submit"]:focus,
+  .button:focus {
     outline: none; }
-  button:hover,
-  .button:hover,
-  [type="button"]:hover,
-  [type="reset"]:hover,
-  [type="submit"]:hover {
+  button:hover, [role="button"]:hover, [type="button"]:hover, [type="reset"]:hover, [type="submit"]:hover,
+  .button:hover {
     background-color: white;
     box-shadow: inset 0 0 0 2px #1c1c1c;
     color: #1c1c1c; }
@@ -1424,9 +1336,6 @@ button,
     .button--line:hover {
       background-color: #1c1c1c;
       color: white; }
-  .button--expand {
-    display: block;
-    width: 100%; }
   .button--text {
     background: none;
     color: #1c1c1c; }

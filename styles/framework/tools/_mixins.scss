@@ -82,7 +82,7 @@
 
 
 /*--------------------------------------------------*\
-	#SINGLE BREAKPOINT
+	#MEDIA QUERY MIXIN 
 \*--------------------------------------------------*/
 
 @mixin media( $minbreak: null, $maxbreak: null, $type: 'screen' ) {
@@ -94,7 +94,7 @@
         $media: 'only #{ $type } and (min-width: #{ map-get($breakpoints, $minbreak) })';
     }
     
-    @else if ( ( $minbreak == null or 0 ) and $maxbreak != null ) {
+    @else if ( $minbreak == null and $maxbreak != null ) {
         
         $media: 'only #{ $type } and (max-width: #{ map-get($breakpoints, $maxbreak) })';
     }
