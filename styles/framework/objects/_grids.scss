@@ -7,6 +7,7 @@
 
 .#{ $gridClass } { // .grid
     display: flex;
+    flex-shrink: 0;
     flex-wrap: wrap;
     margin: 0 auto;
     max-width: rem( $maxWidth );
