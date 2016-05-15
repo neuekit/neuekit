@@ -2,6 +2,7 @@
 // @codekit-prepend "modules/helpers.js";
 // @codekit-prepend "modules/modernizr.js";
 // @codekit-prepend "modules/modal.js";
+// @codekit-prepend "modules/tabs.js";
 
 /*--------------------------------------------------*\
 	#CREATIVE LITTLE UI-KIT | JS MAIN COMPONENTS
