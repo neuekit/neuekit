@@ -20,7 +20,7 @@
             flex-direction: column;
             flex-grow: 1;
             max-width: 100%;
-            padding: 0 rem( $gutter );
+            padding: 0 rem( $gutterMobile );
         }
     
     
@@ -46,6 +46,13 @@
     &#{ & }--#{ $edgeClass }, // .grid--edge
     &--#{ $edgeClass} .#{ $gridClass }:not(&--#{$unnestClass}) { // .grid--edge .grid
         margin: 0;
+    }
+}
+
+@include media(m) {
+    
+    .#{ $gridClass }__#{ $itemClass } {
+        padding: 0 rem( $gutter );
     }
 }
 

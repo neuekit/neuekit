@@ -11,6 +11,7 @@ $maxClass:       'max'          !default;
 
 $columns:       12              !default;
 $gutter:        8px             !default;
+$gutterMobile:  $gutter / 2     !default;
 $maxWidth:      1380px          !default;
 $break:         null            !default;
 
