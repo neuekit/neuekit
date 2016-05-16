@@ -54,8 +54,8 @@
                     
                 /*  Find any active tabs & reset  */
                 
-                tab.active.className = config.tabClass;
-                tab.contentActive.className = config.tabContentClass;
+                tab.active.classList.remove(config.tabActiveClass);
+                tab.contentActive.classList.remove(config.tabContentActiveClass);
                 
                 /*  Add active to clicked tab & related content  */
                 
