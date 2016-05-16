@@ -19,7 +19,6 @@
                 config = UIKIT.settings.tabs;
             
             
-            
             /*--------------------------------------------------*\
             	#TABS CONFIG
             \*--------------------------------------------------*/
@@ -34,37 +33,65 @@
             };
             
             
-            
             /*--------------------------------------------------*\
             	#TABS
             \*--------------------------------------------------*/
             
+            var tab = {};
+            
             var tabClick = function(e) {
                 
-                //Prevent normal link behaviour
+                /*  Prevent normal link behaviour  */
                 
                 e.preventDefault();
                 
-                var tabLink           = this.getAttribute('href'),
-                    tabTitle          = this.getAttribute('title') ? this.getAttribute('title') : '',
-                    tabContent        = document.querySelector(tabLink),
-                    tabActive         = this.parentElement.getElementsByClassName(config.tabActiveClass)[0],
-                    tabContentActive  = tabContent.parentElement.getElementsByClassName(config.tabContentActiveClass)[0];
-
-                //Find any active tabs & reset
+                tab                = {};
+                tab.link           = this.getAttribute('href');
+                tab.title          = this.getAttribute('title');
+                tab.content        = document.querySelector(tab.link);
+                tab.active         = this.parentNode.getElementsByClassName(config.tabActiveClass)[0];
+                tab.contentActive  = tab.content.parentNode.getElementsByClassName(config.tabContentActiveClass)[0];
+                    
+                /*  Find any active tabs & reset  */
                 
-                tabActive.classList.remove(config.tabActiveClass);
-                tabContentActive.classList.remove(config.tabContentActiveClass);
+                tab.active.className = config.tabClass;
+                tab.contentActive.className = config.tabContentClass;
                 
-                //Add active to clicked tab & related content
+                /*  Add active to clicked tab & related content  */
                 
-                this.className += ' ' + config.tabActiveClass;
-                tabContent.className += ' ' + config.tabContentActiveClass;
+                this.classList.add(config.tabActiveClass);
+                tab.content.classList.add(config.tabContentActiveClass);
                
-                //Set hash to tab id
-                window.location.hash = tabLink;
-            
+                /*  Set hash to tab id  */
+                location.hash = tab.link;
+                
             };
+            
+            window.onpopstate = function() {
+                
+                /*  Push new page title and updated URL into history  */
+                
+                var moment = {
+                    tab: tab.link,
+                    title: document.title + ':' + tab.title,
+                    link: location.href
+                };
+                
+                //history.pushState( moment, moment.title, moment.url );
+            
+                var hash = location.hash;
+                    
+                document.querySelector('.' + config.tabActiveClass).classList.remove(config.tabActiveClass);
+                
+                document.querySelector('.' + config.tabContentActiveClass).classList.remove(config.tabContentActiveClass);
+                    
+                document.querySelector('[href="' + hash + '"]').classList.add(config.tabActiveClass);
+                
+                document.querySelector(hash).classList.add(config.tabContentActiveClass);
+                
+            };
+            
+            /*  Run tabClick on click of tabClass  */
             
             var tab = document.getElementsByClassName(config.tabClass);
             
