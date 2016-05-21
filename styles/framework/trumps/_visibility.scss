@@ -4,7 +4,7 @@
 
 @include breakpoints( both ) {
     
-    .hide#{ $break } {
+    .hide#{ $break }.hide#{ $break } {
         display: none;
     }
 }
