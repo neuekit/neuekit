@@ -1,6 +1,7 @@
 // @codekit-prepend "settings.js";
 // @codekit-prepend "modules/helpers.js";
 // @codekit-prepend "modules/modernizr.js";
+// @codekit-prepend "modules/navigation.js";
 // @codekit-prepend "modules/modal.js";
 // @codekit-prepend "modules/tabs.js";
 

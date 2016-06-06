@@ -1,0 +1,74 @@
+/*--------------------------------------------------*\
+	#NAVIGATION COMPONENT
+\*--------------------------------------------------*/
+
+.nav {
+    display: none;
+}    
+    
+    
+/* Navigation mobile toggle */
+
+.nav-toggle + label {
+    background-color: white;
+    display: block;
+    margin: 0;
+    text-align: center;
+    
+    &::before {
+        display: none;
+    }
+}
+
+.nav-toggle:checked ~ .nav {
+    display: block;
+}
+    
+    
+/* Menu */
+    
+.nav-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    
+        
+        /* Elements */ 
+    
+        &__link {
+            display: block;
+            padding: 0.5rem 0;
+        }
+        
+            
+    /* Modifiers */    
+        
+    &--nested {
+        background-color: #f1f1f1;
+    }
+}
+
+
+
+/* Media Queries */
+
+@include media(l) {
+    
+    .nav {
+        display: block;
+    }
+    
+    .nav-list {
+        display: flex;
+        justify-content: space-around;
+    }
+    
+    .nav-list--nested,
+    .nav-list__item-drop {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
