@@ -1,5 +1,5 @@
 /*----------------------------------------------*\
-	#FLEX BASED HELPERS
+    #FLEX BASED HELPERS
 \*----------------------------------------------*/
 
 .flex {
@@ -10,11 +10,15 @@
     flex-grow: 1;
 }
 
-.row {
-    flex-direction: row;
-}
-
 @include breakpoints( both ) {
+    
+    .row#{ $break } {
+        flex-direction: row;
+    }
+    
+    .column#{ $break } {
+        flex-direction: column;
+    }
     
     .row-reverse#{ $break } {
         flex-flow: row-reverse;
@@ -86,5 +90,3 @@
         flex-wrap: nowrap;
     }
 }
-
-
