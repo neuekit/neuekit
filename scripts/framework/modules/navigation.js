@@ -11,7 +11,7 @@
         
     UIKIT.nav = (function() {
             
-        function _nav() {
+        function Nav() {
 
             /*  Variablise 'this' to limit it to avoid scope conflicts  */
             /* jshint validthis: true */
@@ -58,7 +58,7 @@
         
         /*  creating a new object of helper rather than a funtion  */
         
-        return new _nav();
+        return new Nav();
         
     }());
     

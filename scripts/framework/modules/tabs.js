@@ -11,7 +11,7 @@
         
     UIKIT.tabs = (function() {
             
-        function _tabs() {
+        function Tabs() {
 
             /*  Variablise 'this' to limit it to avoid scope conflicts  */
             /* jshint validthis: true */
@@ -82,7 +82,7 @@
 
             /*  Allow "chaining" of methods together  */
             
-            this.init = function() {
+            _this.init = function() {
                 
                 /*  'this' refers to UIKIT.modal  */
                 
@@ -91,13 +91,13 @@
             
             /*  This refers to UIKIT.modal.init()  */
 
-            return this.init(); /*  initialize the init()  */
+            return _this.init(); /*  initialize the init()  */
         }
         
         
         /*  creating a new object of helper rather than a funtion  */
         
-        return new _tabs();
+        return new Tabs();
         
     }());
     

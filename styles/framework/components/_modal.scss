@@ -1,0 +1,59 @@
+/*--------------------------------------------------*\
+	#MODAL
+\*--------------------------------------------------*/
+
+/*  Block  */
+
+.modal {
+    background-color: rgba($primary, 0.8);
+    display: none;
+    flex-direction: column;
+    @include size(100%);
+    left: 0; top: 0;
+    padding: 1rem;
+    position: fixed;
+    
+        /*  Elements  */
+        
+        &__content {
+            background-color: white;
+            max-width: $maxWidth;
+            margin: auto;
+            padding: 1rem;
+        }
+        
+        &__close {
+            background: none;
+            float: right;
+            @include size(2rem);
+            padding: 0;
+            
+            &::before,
+            &::after {
+                background-color: $primary;
+                content: '';
+                display: block;
+                @include size(0.375rem, 100%);
+                left: 0; top: 50%;
+                position: absolute;
+                transform: translateY(-50%) rotate(45deg);
+                transform-origin: center;
+            }
+            
+            &::after{
+                transform: translateY(-50%) rotate(-45deg);
+            }
+            
+            &:hover {
+                box-shadow: none;
+            }
+        }
+    
+    
+    /*  Modifiers  */    
+    
+    &--visible {
+        display: flex;
+    }
+
+}

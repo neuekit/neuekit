@@ -11,23 +11,51 @@
         
     UIKIT.modal = (function() {
             
-        function _modal() {
+        function Modal() {
 
             /*  Variablise 'this' to limit it to avoid scope conflicts  */
             /* jshint validthis: true */
             var _this = this;
             
             
-            /*--------------------------------------------------*\
-            	#MODAL CODE HERE
-            \*--------------------------------------------------*/
+            _this.open = function(e) {
+                
+                e.preventDefault();
+                
+                var id = '#' + this.dataset.modal;
+                
+                document.querySelector(id).classList.add('modal--visible');
+                  
+            };
             
+            var modals = document.querySelectorAll('.js-modal');
             
-
+            UIKIT.helper.forEach(modals, function(i, el) {
+                
+                el.addEventListener('click', _this.open);
+            
+            });
+            
+            _this.close = function(e) {
+                
+                e.preventDefault();
+                
+                UIKIT.helper.closest(this, 'modal').classList.remove('modal--visible');
+                
+            };
+            
+            var close_modals = document.querySelectorAll('.js-modal__close');
+            
+            UIKIT.helper.forEach(close_modals, function(i, el) {
+                
+                el.addEventListener('click', _this.close);
+            
+            });
+            
 
             /*  Allow "chaining" of methods together  */
             
-            this.init = function() {
+            _this.init = function() {
                 
                 /*  'this' refers to UIKIT.modal  */
                 
@@ -37,12 +65,12 @@
             
             /*  This refers to UIKIT.modal.init()  */
 
-            return this.init(); /*initialize the init()*/
+            return _this.init(); /* initialize the init() */
         }
         
         /*  creating a new object of helper rather than a funtion */
         
-        return new _modal();
+        return new Modal();
         
     }());
     

@@ -71,7 +71,7 @@
     
     UIKIT.helper = (function() {
         
-        function _helper() {
+        function Helper() {
 
             /*  Variablise 'this' to limit it to avoid scope conflicts  */
             /* jshint validthis: true */
@@ -164,7 +164,7 @@
                    Can be a string, integer, booleon, etc.
             \*--------------------------------------------------*/
             
-            this.setInfo = function(name, value) {
+            _this.setInfo = function(name, value) {
                 
                 if ( typeof window.localStorage !== 'undefined' ) {
                     
@@ -187,7 +187,7 @@
                    even if localStorage is supported.
             \*--------------------------------------------------*/
             
-            this.getInfo = function(name, checkCookie) {
+            _this.getInfo = function(name, checkCookie) {
                 
                 var value = "";
                 
@@ -220,7 +220,7 @@
                    cookie even if localStorage is supported.
             \*--------------------------------------------------*/
             
-            this.removeInfo = function(name, checkCookie) {
+            _this.removeInfo = function(name, checkCookie) {
                 
                 if ( typeof window.localStorage !== 'undefined' ) {
                     
@@ -249,7 +249,7 @@
                    cookie even if localStorage is supported.
             \*--------------------------------------------------*/
             
-            this.getDomain = function() {
+            _this.getDomain = function() {
                 
                 var port = '',
                     url = '';
@@ -276,7 +276,7 @@
                    value or key does not exist.
             \*--------------------------------------------------*/
             
-            this.getQueryString = function(key, default_) {
+            _this.getQueryString = function(key, default_) {
                 
                 if ( default_ === null ) {
                     
@@ -307,7 +307,7 @@
             	This function accepts callback & a time in ms.
             \*--------------------------------------------------*/
             
-            this.wait = (function(){
+            _this.wait = (function(){
         
                 var timer = 0;
                 
@@ -322,9 +322,39 @@
             })();
             
             
+            /*--------------------------------------------------*\
+            	#FOREACH FUNCTION
+            	
+            	This function accepts callback & a time in ms.
+            \*--------------------------------------------------*/
+            
+            _this.forEach = function (array, callback, scope) {
+                
+                for (var i = 0; i < array.length; i++) {
+                    
+                    callback.call(scope, i, array[i]);
+                    
+                }
+            };
+            
+            
+            /*--------------------------------------------------*\
+            	#CLOSEST FUNCTION
+            	
+            	This function accepts 2 args, the start and end.
+            \*--------------------------------------------------*/
+            
+            _this.closest = function(el, cls) {
+                
+                while ((el = el.parentElement) && !el.classList.contains(cls));
+                
+                return el;
+            };
+            
+            
             /*  Allow "chaining" of methods together  */
 
-            this.init = function() {
+            _this.init = function() {
                 
                 _this.getDomain();
                 
@@ -337,13 +367,13 @@
             
             /*  This refers to UIKIT.helper.init()  */
             
-            return this.init();
+            return _this.init();
         }
         
         
         /*  creating a new object of helper rather than a funtion */
         
-        return new _helper();
+        return new Helper();
         
     }());
 
