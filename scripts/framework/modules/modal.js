@@ -18,17 +18,25 @@
             var _this = this;
             
             
+            
+            /*--------------------------------------------------*\
+            	#OPEN A MODAL
+            \*--------------------------------------------------*/
+            
             _this.open = function(e) {
                 
                 e.preventDefault();
                 
-                var id = '#' + this.dataset.modal;
+                var id = this.hash;
                 
                 document.querySelector(id).classList.add('modal--visible');
+                
+                document.querySelector('body').classList.add('locked');
                   
             };
             
-            var modals = document.querySelectorAll('.js-modal');
+            
+            var modals = document.querySelectorAll('.js-modal-open');
             
             UIKIT.helper.forEach(modals, function(i, el) {
                 
@@ -36,22 +44,37 @@
             
             });
             
+            
+            
+            /*--------------------------------------------------*\
+            	#CLOSE A MODAL
+            \*--------------------------------------------------*/
+            
+
             _this.close = function(e) {
                 
                 e.preventDefault();
+                
+                if ( document.querySelectorAll('.modal--visible').length === 1 ) {
+                
+                    document.querySelector('body').classList.remove('locked');
+                
+                }
                 
                 UIKIT.helper.closest(this, 'modal').classList.remove('modal--visible');
                 
             };
             
-            var close_modals = document.querySelectorAll('.js-modal__close');
+            
+            var close_modals = document.querySelectorAll('.js-modal-close');
             
             UIKIT.helper.forEach(close_modals, function(i, el) {
                 
                 el.addEventListener('click', _this.close);
             
             });
-            
+
+
 
             /*  Allow "chaining" of methods together  */
             

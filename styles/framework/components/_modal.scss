@@ -5,21 +5,29 @@
 /*  Block  */
 
 .modal {
+    $block: &;
+    
     background-color: rgba($primary, 0.8);
-    display: none;
+    display: flex;
     flex-direction: column;
     @include size(100%);
     left: 0; top: 0;
+    opacity: 0;
     padding: 1rem;
     position: fixed;
+    transition: opacity $speed ease;
+    visibility: hidden;
     
         /*  Elements  */
         
         &__content {
             background-color: white;
-            max-width: $maxWidth;
             margin: auto;
+            max-width: $maxWidth;
+            opacity: 0;
             padding: 1rem;
+            transform: translateY(10rem);
+            transition: all $speed ease;
         }
         
         &__close {
@@ -53,7 +61,20 @@
     /*  Modifiers  */    
     
     &--visible {
-        display: flex;
+        opacity: 1;
+        visibility: visible;
+        
+        #{$block}__content {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
-
+    
+    &--fullscreen {
+        padding: 0;
+        
+        #{$block}__content {
+            flex-grow: 1;
+        }
+    }
 }

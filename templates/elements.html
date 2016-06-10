@@ -83,9 +83,9 @@
                 
                 <ul>
                     
-                    <li><a href="#" class="js-modal" data-modal="m1">Link</a></li>
+                    <li><a href="#m1" class="js-modal-open">Link</a></li>
                     
-                    <li><a href="#">Link</a></li>
+                    <li><a href="#m2" class="js-modal-open">Link</a></li>
                     
                 </ul>
                 
@@ -549,9 +549,21 @@
             
             <div class="modal__content">
                 
-                <button class="modal__close  js-modal__close">&times;</button>
+                <button class="modal__close  js-modal-close">&times;</button>
                 
                 <h1>Hello I'm Modal number 1</h1>
+                
+            </div>
+            
+        </section>
+        
+        <section class="modal" id="m2">
+            
+            <div class="modal__content">
+                
+                <button class="modal__close  js-modal-close">&times;</button>
+                
+                <h1>Hello I'm Modal number 2</h1>
                 
             </div>
             
@@ -565,9 +577,9 @@
         
         <script src="/scripts/framework/parties/svg4everybody.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
         
-        <script>window.jQuery || document.write('<script src="/scripts/parties/jquery-2.2.4.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="/scripts/parties/jquery-3.0.0.min.js"><\/script>')</script>
         
         <script src="/scripts/framework/parties/gsap.min.js"></script>
         
