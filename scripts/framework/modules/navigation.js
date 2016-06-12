@@ -1,5 +1,10 @@
 /*--------------------------------------------------*\
 	#NAVIGATION COMPONENT
+	
+	This is the progressive enhancement of the
+	navigation component, creating a native feel.
+	
+	MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
 (function(UIKIT, $, undefined) {
@@ -14,7 +19,7 @@
         function Nav() {
 
             /*  Variablise 'this' to limit it to avoid scope conflicts  */
-            /* jshint validthis: true */
+
             var _this  = this;
              
              
@@ -65,6 +70,6 @@
     
 /*  Lastly this checks if the namespace already exists & if not will assign it  */
 
-}(window.UIKIT = window.UIKIT || {}, jQuery));
+}(window.UIKIT = window.UIKIT || {}));
 
 

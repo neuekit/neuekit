@@ -5,13 +5,7 @@
 	functions which we can use across our other
 	JS files.
 	
-	To start our script we wrap all of our code in a
-	self-executing anonymous function. We then pass
-	in 3 arguments to setup jQuery & our namespace.
-	
-	1. UIKIT is our namespace.
-	2. $ is defined for jQuery.
-	3. Lastly we ensure undefined really is undefined.
+	MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
 (function(UIKIT, $, undefined) {
@@ -19,46 +13,6 @@
     /*  'use strict' enforces correct syntax.  */
     
     'use strict';
-    
-    
-    
-    /*--------------------------------------------------*\
-    	#GLOBAL LOG FUNCTION
-    \*--------------------------------------------------*/
-    
-    $.log = function(message) {
-        
-        if ( UIKIT.settings.debug ) {
-            
-            console.log(message);
-            
-        }
-    };
-
-
-
-    /*--------------------------------------------------*\
-    	#GLOBAL BETTER TYPE CHECKER FUNCTION
-    	
-    	See why its better here: http://goo.gl/GtvsU
-    \*--------------------------------------------------*/
-    
-    $.toType = (function toType(global) {
-        
-        return function(obj) {
-            
-            if ( obj === global ) {
-                
-                return 'global';
-                
-            }
-            
-            return ({}).toString.call(obj).match(/\s([a-z|A-Z]+)/)[1].toLowerCase();
-            
-        };
-        
-    }(this));
-    
     
     
     /*--------------------------------------------------*\
@@ -74,7 +28,7 @@
         function Helper() {
 
             /*  Variablise 'this' to limit it to avoid scope conflicts  */
-            /* jshint validthis: true */
+
             var _this = this,
 
 
@@ -90,8 +44,8 @@
             
             setCookie = function(name, value, days) {
                 
-                var date = "",
-                    expires = "";
+                var date = '',
+                    expires = '';
 
                 if (days) {
                     
@@ -99,12 +53,14 @@
                     
                     date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
                     
-                    expires = "; expires=" + date.toGMTString();
+                    expires = '; expires=' + date.toGMTString();
                     
                 }
 
-                document.cookie = name + "=" + value + expires + "; path=/";
+                document.cookie = name + '=' + value + expires + '; path=/';
+                
             },
+
 
 
             /*--------------------------------------------------*\
@@ -116,30 +72,31 @@
             
             getCookie = function(name) {
                 
-                var nameEQ = name + "=",
-                    i,
-                    ca = document.cookie.split(';');
+                var nameEQ = name + '=',
+                    cookies = document.cookie.split(';');
                     
-                for (i = 0; i < ca.length; i += 1) {
+                for (var i = 0; i < cookies.length; i += 1) {
                     
-                    var c = ca[i];
+                    var cookie = cookies[i];
                     
-                    while (c.charAt(0) === ' ') {
+                    while (cookie.charAt(0) === ' ') {
                         
-                        c = c.substring(1, c.length);
+                        cookie = cookie.substring(1, cookie.length);
                         
                     }
                     
-                    if ( c.indexOf(nameEQ) === 0 ) {
+                    if ( cookie.indexOf(nameEQ) === 0 ) {
                         
-                        return c.substring(nameEQ.length, c.length);
+                        return cookie.substring(nameEQ.length, cookie.length);
                         
                     }
                 }
                 
                 return null;
+                
             },
             
+
 
             /*--------------------------------------------------*\
             	#REMOVE COOKIE
@@ -150,10 +107,11 @@
             
             removeCookie = function(name) {
                 
-                setCookie(name, "", -1);
+                setCookie(name, '', -1);
                 
             };
 
+            
             
             /*--------------------------------------------------*\
             	#SET LOCAL STORAGE PROPERTY
@@ -175,7 +133,9 @@
                     setCookie(name, value);
                     
                 }
+                
             };
+            
             
             
             /*--------------------------------------------------*\
@@ -189,7 +149,7 @@
             
             _this.getInfo = function(name, checkCookie) {
                 
-                var value = "";
+                var value = '';
                 
                 if ( typeof window.localStorage !== 'undefined' ) {
                     
@@ -208,7 +168,9 @@
                 }
                 
                 return value;
+                
             };
+            
             
             
             /*--------------------------------------------------*\
@@ -237,7 +199,9 @@
                     removeCookie(name);
                     
                 }
+                
             };
+            
             
             
             /*--------------------------------------------------*\
@@ -267,6 +231,7 @@
             };
             
             
+            
             /*--------------------------------------------------*\
             	#GET QUERY STRING FROM THE URL
             	
@@ -280,13 +245,13 @@
                 
                 if ( default_ === null ) {
                     
-                    default_ = "";
+                    default_ = '';
                     
                 }
 
-                key = key.replace(/\[/,"\\[").replace(/\]/,"\\]");
+                key = key.replace(/\[/,'\\[').replace(/\]/,'\\]');
                 
-                var regex = new RegExp("[\\?&]" + key + "=([^&#]*)"),
+                var regex = new RegExp('[\\?&]' + key + '=([^&#]*)'),
                     qs = regex.exec(window.location.href);
 
                 if ( qs === null ) {
@@ -298,13 +263,17 @@
                     return qs[1];
                     
                 }
+                
             };            
+            
             
             
             /*--------------------------------------------------*\
             	#WAIT FUNCTION FOR USE WITH KEY EVENTS
             	
-            	This function accepts callback & a time in ms.
+            	This function accepts 2 arguments:
+                1. A callback function.
+                2. A time in milliseconds.
             \*--------------------------------------------------*/
             
             _this.wait = (function(){
@@ -318,14 +287,18 @@
                     timer = setTimeout(callback, ms);
                     
                 };
-                
+
             })();
+            
             
             
             /*--------------------------------------------------*\
             	#FOREACH FUNCTION
             	
-            	This function accepts callback & a time in ms.
+            	This function accepts 3 arguments:
+                1. An node list.
+                2. A callback function.
+                3. A scope to limit to.
             \*--------------------------------------------------*/
             
             _this.forEach = function (array, callback, scope) {
@@ -335,21 +308,48 @@
                     callback.call(scope, i, array[i]);
                     
                 }
+                
             };
+            
             
             
             /*--------------------------------------------------*\
-            	#CLOSEST FUNCTION
+            	#DOCUMENT CLASSES
             	
-            	This function accepts 2 args, the start and end.
+            	This sets the classes on the HTML element.
             \*--------------------------------------------------*/
             
-            _this.closest = function(el, cls) {
+            _this.setDocClasses = function() {
                 
-                while ((el = el.parentElement) && !el.classList.contains(cls));
+                document.documentElement.classList.remove('no-js');
                 
-                return el;
+                document.documentElement.classList.add('js');
+                
             };
+            
+            
+            
+            /*--------------------------------------------------*\
+            	#INPUT TYPE DETECTION
+            	
+            	This function sets the real type on inputs.
+            \*--------------------------------------------------*/
+            
+            _this.setInputTypes = function() {
+            
+                var inputs = document.querySelectorAll('input');
+        
+                _this.forEach(inputs, function(i, el) {
+                    
+                    if(el.type !== el.getAttribute('type')) {
+                    
+                        el.dataset.type = el.type;
+                    }
+                    
+                });
+            
+            };
+            
             
             
             /*  Allow "chaining" of methods together  */
@@ -358,16 +358,21 @@
                 
                 _this.getDomain();
                 
+                _this.setDocClasses();
+                
+                _this.setInputTypes();
                 
                 /*  'this' refers to UIKIT.helper  */
                 
                 return this;
+                
             };
             
             
             /*  This refers to UIKIT.helper.init()  */
             
             return _this.init();
+            
         }
         
         
@@ -380,6 +385,6 @@
 
 /* Lastly this checks if the namespace already exists & if not will assign it */
 
-}(window.UIKIT = window.UIKIT || {}, jQuery));
+}(window.UIKIT = window.UIKIT || {}));
 
 

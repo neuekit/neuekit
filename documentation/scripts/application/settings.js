@@ -18,6 +18,8 @@
     
     /* This is our global configuration. It will work across your js files */
     
+    $.doc = $(document);
+    
     PROJECT.settings = {
         debug: true,
         speed: 250

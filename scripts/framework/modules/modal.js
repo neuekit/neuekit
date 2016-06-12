@@ -1,5 +1,11 @@
 /*--------------------------------------------------*\
-	#MODAL COMPONENT
+	#CREATIVE LITTLE UI-KIT | MODAL COMPONENT
+	
+	This script creates the modal interactions and
+	methods required for modals to function, such as
+	.opn and .close
+	
+	MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
 (function(UIKIT, $, undefined) {
@@ -14,7 +20,7 @@
         function Modal() {
 
             /*  Variablise 'this' to limit it to avoid scope conflicts  */
-            /* jshint validthis: true */
+
             var _this = this;
             
             
@@ -36,9 +42,9 @@
             };
             
             
-            var modals = document.querySelectorAll('.js-modal-open');
+            var open_modals = document.querySelectorAll('.js-modal-open');
             
-            UIKIT.helper.forEach(modals, function(i, el) {
+            UIKIT.helper.forEach(open_modals, function(i, el) {
                 
                 el.addEventListener('click', _this.open);
             
@@ -49,11 +55,12 @@
             /*--------------------------------------------------*\
             	#CLOSE A MODAL
             \*--------------------------------------------------*/
-            
 
-            _this.close = function(e) {
+            _this.close = function(e, el) {
                 
                 e.preventDefault();
+                
+                el = el === undefined ? UIKIT.helper.closest(this, 'modal') : el;
                 
                 if ( document.querySelectorAll('.modal--visible').length === 1 ) {
                 
@@ -61,8 +68,8 @@
                 
                 }
                 
-                UIKIT.helper.closest(this, 'modal').classList.remove('modal--visible');
-                
+                el.classList.remove('modal--visible');
+                                
             };
             
             
@@ -71,6 +78,23 @@
             UIKIT.helper.forEach(close_modals, function(i, el) {
                 
                 el.addEventListener('click', _this.close);
+            
+            });
+            
+            
+            var modals = document.querySelectorAll('.modal');
+            
+            UIKIT.helper.forEach(modals, function(i, el) {
+                
+                el.addEventListener('click', function(e){
+                    
+                    if ( this.classList.contains('modal') && e.target === this ) {
+                    
+                        _this.close(e, this);
+                    
+                    }
+                    
+                });
             
             });
 
@@ -100,6 +124,6 @@
     
 /* Lastly this checks if the namespace already exists & if not will assign it */
 
-}(window.UIKIT = window.UIKIT || {}, jQuery));
+}(window.UIKIT = window.UIKIT || {}));
 
 

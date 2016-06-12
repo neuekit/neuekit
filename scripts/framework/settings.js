@@ -13,13 +13,8 @@
 	2. $ is defined for jQuery.
 	3. Lastly we ensure undefined really is undefined.
 \*--------------------------------------------------*/
-
-(function(UIKIT, $, undefined) {
-    
-    /*  Shortform document object  */
-    
-    $.doc = $(document);
-    
+/*eslint-disable no-unused-vars*/
+(function(UIKIT, $, undefined) {    
     
     /* This is our global configuration. It will work across your js files */
     
@@ -29,8 +24,9 @@
     };
     
     
+    
 /* Lastly this checks if the namespace already exists & if not will assign it */
 
-}(window.UIKIT = window.UIKIT || {}, jQuery));
+}(window.UIKIT = window.UIKIT || {}));
 
 

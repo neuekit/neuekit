@@ -1,9 +1,14 @@
 .app-aside {
     background-color: #f7f7f7;
-    max-width: 18rem;
+    display: flex;
+    flex-direction: column;
+    @include size(calc(100vh - 4rem), 18rem);
     padding: 0;
+    position: fixed;
+    top: 4rem;
     
     &__content {
+        flex-grow: 1;
         overflow: auto;
         padding: 1rem;
         -webkit-overflow-scrolling: touch;
@@ -12,6 +17,7 @@
     &__footer {
         background-color: #222;
         color: white;
+        flex-shrink: 0;
         font-size: 0.88rem;
         padding: 1rem;
     }

@@ -1,5 +1,11 @@
 /*--------------------------------------------------*\
 	#MODAL COMPONENT
+	
+	This script contains modern tab functionality
+	used to not only change tab content but to set
+	historical states and support browser navigation.
+	
+	MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
 (function(UIKIT, $, undefined) {
@@ -14,7 +20,7 @@
         function Tabs() {
 
             /*  Variablise 'this' to limit it to avoid scope conflicts  */
-            /* jshint validthis: true */
+
             var _this  = this,
                 config = UIKIT.settings.tabs;
             
@@ -104,6 +110,6 @@
     
 /*  Lastly this checks if the namespace already exists & if not will assign it  */
 
-}(window.UIKIT = window.UIKIT || {}, jQuery));
+}(window.UIKIT = window.UIKIT || {}));
 
 
