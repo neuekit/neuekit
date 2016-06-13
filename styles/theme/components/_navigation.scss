@@ -1,73 +1,184 @@
 /*--------------------------------------------------*\
 	#NAVIGATION COMPONENT
 \*--------------------------------------------------*/
+        
+
+/* Nav JS & no-JS shared styles */
 
 .nav {
     display: none;
-}    
-    
-    
-/* Navigation mobile toggle */
-
-.nav-toggle + label {
-    background-color: white;
-    display: block;
-    margin: 0;
-    text-align: center;
-    
-    &::before {
-        display: none;
-    }
-}
-
-.nav-toggle:checked ~ .nav {
-    display: block;
-}
-    
-    
-/* Menu */
-    
-.nav-list {
     list-style: none;
     margin: 0;
+    overflow: auto;
     padding: 0;
     text-align: center;
-    
+    -webkit-overflow-scrolling: touch;
+
+        // Elements
         
-        /* Elements */ 
-    
         &__link {
             display: block;
-            padding: 0.5rem 0;
+            padding: 0.5rem;
+        }      
+
+}
+
+     
+/* No JS Mobile */
+
+.no-js  {
+    
+    // Toggle
+    
+    .nav-toggle:hover ~ .nav,
+    .nav--primary:hover { 
+        display: block;
+    }
+        
+    // Nav
+        
+    .nav {
+         
+            // Elements 
+    
+            &__item {
+                z-index: 1;
+            }   
+            
+        // Modifiers
+        
+        &--primary {
+            max-height: 70vh;
         }
         
-            
-    /* Modifiers */    
+        &--nest {
+            display: block;
+        } 
+    }
         
-    &--nested {
-        background-color: #f1f1f1;
+}
+
+
+/* JS Enabled Mobile */
+
+.js {
+
+    .nav-open {
+        overflow: hidden;
+    }
+    
+    // Nav
+    
+    .nav {
+        
+            // Elements
+        
+            &__item--drop {
+                position: static;
+            }
+        
+            &__link--close {
+                display: block;
+                padding: 0.5rem;
+            }
+        
+        // Modifiers
+        
+        &--primary {
+            bottom: 0;
+            box-shadow: 0 0 0 1000vmax rgba(black,0); //Remove bad perf.
+            display: block;
+            max-height: 60vh;
+            overflow-x: hidden;
+            position: fixed;
+            transform: translateY(60vh);
+            transition: transform $speed ease, box-shadow $speed ease; //Remove bad perf.
+            width: 100vw;
+            z-index: 10;
+            
+            /*
+            &::after {
+                box-shadow: 0 0 0 1000vmax rgba(black,0.5);
+                content: '';
+                @include size(100%);
+                opacity: 0;
+                position: absolute;
+                transition: opacity $speed ease;
+                z-index: -1;
+            }
+            */                
+                
+            &.nav--active {
+                box-shadow: 0 0 0 1000vmax rgba(black,0.6); //Remove bad perf.
+                transform: translateY(0);
+                
+                /*
+                &::after {
+                  opacity: 1;
+                }
+                */
+            }
+        }
+        
+        &--nest {
+            display: block;
+            @include size(60vh,100vw);
+            left: 0; top: 0;
+            overflow-x: hidden;
+            position: absolute;
+            transform: translateX(100vw);
+            transition: transform $speed ease;
+            z-index: 1;
+        }
+        
+        // States
+        
+        &__item--drop-active {
+            
+            > .nav--nest {
+                transform: translateX(0);
+            }
+        }
     }
 }
 
 
-
-/* Media Queries */
+/* Large & Up */
 
 @include media(l) {
-    
+        
     .nav {
-        display: block;
-    }
-    
-    .nav-list {
         display: flex;
-        justify-content: space-around;
-    }
-    
-    .nav-list--nested,
-    .nav-list__item-drop {
-        display: flex;
-        flex-direction: column;
+        overflow: visible;
+        
+            // Elements
+            
+            &__item {
+                flex: 1 0 0; 
+            
+                &--drop {
+                    display: flex;
+                    flex-direction: column;
+                    
+                    &:hover > .nav--nest {
+                        display: block;
+                    }
+                    
+                    .nav__item--drop:hover > .nav--nest {
+                        left: 100%; top: 0;
+                    }
+                }
+            }
+        
+        // Modifiers
+        
+        &--nest {
+            display: none;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+            z-index: 10;
+        }
     }
 }
 

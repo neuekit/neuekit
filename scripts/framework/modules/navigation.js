@@ -19,21 +19,84 @@
              
              
              
-            function navToggle(e) {
+            /*--------------------------------------------------*\
+            	#TOGGLE MOBILE NAVIGATION
+            \*--------------------------------------------------*/
+
+            function navigation(e) {
                 
                 e.preventDefault();
                 
+                var classes = nav.classList,
+                    body = document.getElementsByTagName('body')[0],
+                    bodyClasses = body.classList;
+            
+                bodyClasses.contains('nav-open') ? bodyClasses.remove('nav-open') : bodyClasses.add('nav-open');
                 
+                classes.contains('nav--active') ? classes.remove('nav--active') : classes.add('nav--active');
+                                 
+            }
+            
+            var navTog  = document.querySelector('.js-nav-toggle'),
+                nav     = document.querySelector('.js-nav--primary');
+           
+            if ( navTog && nav ) {
+                
+                navTog.addEventListener("click", navigation);
                 
             }
             
-            var navLink = document.getElementsByClassName('nav-list__item-drop');
             
-            for ( var i = 0; i < navLink.length; i++ ) {
+            
+            /*--------------------------------------------------*\
+            	#TOGGLE MOBILE SUB NAVIGATION
+            \*--------------------------------------------------*/
+
+            function subNav(e) {
                 
-                navLink[i].addEventListener("click", navToggle);
+                e.preventDefault();
+                
+                var itemDrop    = this.parentElement,
+                    classes     = itemDrop.classList,
+                    activeClass = 'nav__item--drop-active',
+                    subNav      = itemDrop.getElementsByClassName('nav--nest')[0],
+                    parentNav   = findParent(itemDrop, 'nav');
+                
+                classes.contains(activeClass) ? classes.remove(activeClass) : classes.add(activeClass);
+                
+                classes.contains(activeClass) ? parentNav.css.overflow = Hidden : parentNav.css.overflow = auto;
+
+            }
+            
+            function subNavClose(e) {
+                
+                e.preventDefault();
+                
+                var itemDrop    = findParent(this, 'nav__item--drop'),
+                    classes     = itemDrop.classList,
+                    activeClass = 'nav__item--drop-active';
+                
+                classes.contains(activeClass) ? classes.remove(activeClass) : classes.add(activeClass);
+
+            }
+
+            var navItem = document.querySelectorAll('.nav__item--drop'),
+                close   = document.querySelectorAll('.nav__link--close');
+                
+            for ( var i = 0; i < navItem.length; i++ ) {
+                
+                var navLink = navItem[i].getElementsByClassName('nav__link')[0];
+                
+                navLink.addEventListener("click", subNav);
                 
             }
+            
+            for ( var i = 0; i < close.length; i++ ) {
+
+                close[i].addEventListener("click", subNavClose);
+                
+            }
+
 
 
 
