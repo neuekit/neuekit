@@ -97,6 +97,18 @@
 }
 
 
+body::after {
+    background-color: rgba(black, 0.5);
+    content: '';
+    @include size(100vh, 100vw);
+    left: 0; top: 0;
+    position: absolute;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity $speed ease;
+    will-change: opacity;
+}
+
 // Tablet Down
 
 @include media(null, l) {
@@ -105,10 +117,14 @@
         
         .nav {
             
-            // Lock body scroll
+            // Nav open body class
             
             &-open {
                 overflow: hidden;
+                
+                &::after {
+                    opacity: 1;
+                }
             }
             
                 // Elements
@@ -127,19 +143,17 @@
             &--primary {
                 background-color: white;
                 bottom: 0; left: 0;
-                box-shadow: 0 0 0 1000vmax rgba(black,0);
                 display: block;
                 max-height: 60vh;
                 overflow-x: hidden;
                 position: fixed;
                 transform: translateY(60vh);
-                transition: transform $speed ease, box-shadow $speed ease;      
+                transition: transform $speed ease;      
                 width: 100vw;
                 z-index: 10;
                 
                     
                 &.nav--active {
-                    box-shadow: 0 0 0 1000vmax rgba(black,0.6);
                     transform: translateY(0);
                 }
             } 
