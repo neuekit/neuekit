@@ -1,7 +1,6 @@
 /*--------------------------------------------------*\
 	#NAVIGATION COMPONENT
 \*--------------------------------------------------*/
-        
 
 /* Nav JS & no-JS shared styles */
 
@@ -9,6 +8,7 @@
     display: none;
     list-style: none;
     margin: 0;
+    max-height: 70vh;
     overflow: auto;
     padding: 0;
     text-align: center;
@@ -19,55 +19,79 @@
         &__link {
             display: block;
             padding: 0.5rem;
-        }      
-
+        }
+              
+    &--nest {
+        display: block;
+    }
 }
 
-     
-/* No JS Mobile */
+//Desktop Up
+
+@include media(l) {
+        
+    .nav {
+        display: flex;
+        overflow: visible;
+                
+            // Elements
+            
+            &__item {
+                flex: 1 0 0; 
+            
+                &--drop {
+                    display: flex;
+                    flex-direction: column;
+                    
+                    /*
+&:hover > .nav--nest {
+                        display: block;
+                    }
+*/
+                    
+                    .nav__item--drop:hover > .nav--nest {
+                        left: 100%; top: 0;
+                    }
+                }
+            }
+        
+        // Modifiers
+        
+        &--primary {
+            align-items: center;
+        }
+        
+        &--nest {
+            display: none;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+            z-index: 10;
+        }
+    }
+}
+
+
+
+/* No JS */
 
 .no-js  {
     
-    // Toggle
+    // Toggle rule only for no-js
     
     .nav-toggle:hover ~ .nav,
     .nav--primary:hover { 
         display: block;
     }
-        
-    // Nav
-        
-    .nav {
-         
-            // Elements 
-    
-            &__item {
-                z-index: 1;
-            }   
-            
-        // Modifiers
-        
-        &--primary {
-            max-height: 70vh;
-        }
-        
-        &--nest {
-            display: block;
-        } 
-    }
-        
 }
+
 
 
 /* JS Enabled Mobile */
 
 .js {
-
-    .nav-open {
-        overflow: hidden;
-    }
     
-    // Nav
+    //Mobile Up
     
     .nav {
         
@@ -86,42 +110,24 @@
         
         &--primary {
             bottom: 0;
-            box-shadow: 0 0 0 1000vmax rgba(black,0); //Remove bad perf.
+            box-shadow: 0 0 0 1000vmax rgba(black,0);
             display: block;
             max-height: 60vh;
             overflow-x: hidden;
             position: fixed;
             transform: translateY(60vh);
-            transition: transform $speed ease, box-shadow $speed ease; //Remove bad perf.
+            transition: transform $speed ease, box-shadow $speed ease;      
             width: 100vw;
             z-index: 10;
             
-            /*
-            &::after {
-                box-shadow: 0 0 0 1000vmax rgba(black,0.5);
-                content: '';
-                @include size(100%);
-                opacity: 0;
-                position: absolute;
-                transition: opacity $speed ease;
-                z-index: -1;
-            }
-            */                
                 
             &.nav--active {
-                box-shadow: 0 0 0 1000vmax rgba(black,0.6); //Remove bad perf.
+                box-shadow: 0 0 0 1000vmax rgba(black,0.6);
                 transform: translateY(0);
-                
-                /*
-                &::after {
-                  opacity: 1;
-                }
-                */
             }
         }
         
         &--nest {
-            display: block;
             @include size(60vh,100vw);
             left: 0; top: 0;
             overflow-x: hidden;
@@ -140,49 +146,22 @@
             }
         }
     }
-}
 
-
-/* Large & Up */
-
-@include media(l) {
+    //Tablet Up
+    
+    //Desktop Up
+    
+    @include media(l) {
         
-    .nav {
-        display: flex;
-        overflow: visible;
-        
-        &--primary {
-            position: relative;
-        }
-        
-            // Elements
+        .nav {
             
-            &__item {
-                flex: 1 0 0; 
-            
-                &--drop {
-                    display: flex;
-                    flex-direction: column;
-                    
-                    &:hover > .nav--nest {
-                        display: block;
-                    }
-                    
-                    .nav__item--drop:hover > .nav--nest {
-                        left: 100%; top: 0;
-                    }
-                }
+            &--primary {
+                display: flex;
+                position: relative;
+                transform: translateY(0);
             }
-        
-        // Modifiers
-        
-        &--nest {
-            display: none;
-            position: absolute;
-            text-align: left;
-            width: 100%;
-            z-index: 10;
         }
+        
     }
 }
 
