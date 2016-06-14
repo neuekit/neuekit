@@ -14,6 +14,16 @@
         
         <title>NAVIGATION</title>
         
+        
+        <!--------------------------------------------------
+        //	Document: Priority Resources
+        --------------------------------------------------->
+        
+        <link rel="stylesheet" href="/styles/style.css">
+        
+        <script src="/scripts/framework/parties/modernizr.min.js"></script>
+        
+        
         <style>
             
             
@@ -33,23 +43,33 @@
                 text-align: right;
             }
             
-            .nav-list {
+            .nav,
+            .nav-toggle {
                 background-color: white;
+            }
+            
+            .nav-toggle {
+                display: block;
+                text-align: center;
+            }
+            
+            .nav--nest {
+                background-color: #f1f1f1;
             }
             
             .page-main {
                 padding: 1rem 0;
             }
             
+            @media only screen and (min-width: 63.063rem) {
+                
+                .nav--nest {
+                    background-color: white;
+                }
+                
+            }
+            
         </style>
-        
-        <!--------------------------------------------------
-        //	Document: Priority Resources
-        --------------------------------------------------->
-        
-        <link href="/styles/style.css" rel="stylesheet">
-        
-        <script src="/scripts/framework/parties/modernizr.min.js"></script>
         
         
     </head>
@@ -86,44 +106,189 @@
             
             
         
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <label class="hide-l" for="nav-toggle">MENU</label>
             
-            <nav class="nav" role="navigation">
+            
+            <nav role="navigation">
                 
-                <ul class="nav-list">
+                <a class="nav-toggle  js-nav-toggle  hide-l" href="#">MENU</a>
+                
+                <ul class="nav  nav--primary  js-nav--primary">
                     
-                    <li class="nav-list__item"><a class="nav-list__link" href="#">Link</a></li>
+                    <li class="nav__item"><a class="nav__link" href="#">Home</a></li>
                     
-                    <li class="nav-list__item  nav-list__item-drop"><a class="nav-list__link" href="#">Link Drop</a>
+                    <li class="nav__item  nav__item--drop">
                     
-                        <ul class="nav-list  nav-list--nested">
+                        <a class="nav__link" href="/">The Studio</a>
+                    
+                    
+                    
+                        <ul class="nav  nav--nest">
                             
-                            <li class="nav-list__sub-item  nav-list__item-drop"><a class="nav-list__link" href="#">Sub Link Drop</a>
+                            <li class="nav__item  nav__item--drop">
                             
-                                <ul class="nav-list  nav-list--nested">
+                                <a class="nav__link" href="#">The Team</a>
+                            
+                            
+                            
+                                <ul class="nav  nav--nest">
                                     
-                                    <li class="nav-list__item"><a class="nav-list__link" href="#">Sub Sub Link</a></li>
+                                    <li class="nav__item"><a class="nav__link" href="#">Matt</a></li>
+                                    
+                                    <li class="nav__item"><a class="nav__link" href="#">Chris</a></li>
+                                    
+                                    <li class="nav__item">
+                                        
+                                        <a href="#" class="nav__link--close">Back</a>
+                                    
+                                    </li>
                                     
                                 </ul>
+                                
+                                
                             
                             </li>
                             
-                            <li class="nav-list__sub-item"><a class="nav-list__link" href="#">Sub Link</a></li>
+                            <li class="nav__item">
+                                
+                                <a class="nav__link" href="#">More To Test</a>
+                                
+                            </li>
+                    
+                            <li class="nav__item">
+                                
+                                <a class="nav__link" href="#">More To Test</a>
+                                
+                            </li>
+
+                            <li class="nav__item">
+                                
+                                <a class="nav__link" href="#">More To Test</a>
+                                
+                            </li>
+                            
+                            <li class="nav__item">
+                                
+                                <a class="nav__link" href="#">More To Test</a>
+                                
+                            </li>
+                            
+                            <li class="nav__item">
+                                
+                                <a class="nav__link" href="#">More To Test</a>
+                                
+                            </li>
+                            
+                            <li class="nav__item  nav__item--drop">
+                            
+                                <a class="nav__link" href="#">The Office</a>
+                            
+                            
+                            
+                                <ul class="nav  nav--nest">
+                                    
+                                    <li class="nav__item  nav__item--drop"><a class="nav__link" href="#">Office Consoles</a>
+                                    
+                                        <ul class="nav  nav--nest">
+                                            
+                                            <li class="nav__item"><a class="nav__link" href="#">Ps3</a></li>
+                                            
+                                            <li class="nav__item">
+                                            
+                                                <a href="#" class="nav__link--close">Back</a>
+                                                
+                                            </li>
+                                            
+                                        </ul>
+                                    
+                                    </li>
+                                    
+                                    <li class="nav__item"><a class="nav__link" href="#">The Coffee</a></li>
+                                    
+                                    <li class="nav__item"><a class="nav__link" href="#">The Culture</a></li>
+                                    
+                                    <li class="nav__item">
+                                        
+                                        <a href="#" class="nav__link--close">Back</a>
+                                    
+                                    </li>
+                                    
+                                </ul>
+                                
+                                
+                            
+                            </li>
+                            
+                            <li class="nav__item">
+                            
+                                <a class="nav__link" href="#">About Us</a>
+                                
+                            </li>
+                            
+                            <li class="nav__item">
+                            
+                                <a href="#" class="nav__link--close">Back</a>
+                                
+                            </li>
                             
                         </ul>
+                        
+                        
                     
                     </li>
                     
-                    <li class="nav-list__item"><a class="nav-list__link" href="#">Link</a></li>
+                    <li class="nav__item">
+                        
+                        <a class="nav__link" href="#">The Web</a>
+                        
+                    </li>
                     
-                    <li class="nav-list__item"><a class="nav-list__link" href="#">Link</a></li>
+                    <li class="nav__item">
+                        
+                        <a class="nav__link" href="#">The Brands</a>
+                        
+                    </li>
                     
-                    <li class="nav-list__item"><a class="nav-list__link" href="#">Link</a></li>
+                    <li class="nav__item">
+                        
+                        <a class="nav__link" href="#">The Labs</a>
+                        
+                    </li>
                     
-                    <li class="nav-list__item"><a class="nav-list__link" href="#">Link</a></li>
+                    <li class="nav__item">
+                        
+                        <a class="nav__link" href="#">The Blog</a>
+                        
+                    </li>
                     
-                    <li class="nav-list__item"><a class="nav-list__link" href="#">Link</a></li>
+                    <li class="nav__item">
+                        
+                        <a class="nav__link" href="#">Contact</a>
+                        
+                    </li>
+                    
+                    <li class="nav__item">
+                        
+                        <a class="nav__link" href="#">More To Test</a>
+                        
+                    </li>
+                    
+                    <li class="nav__item">
+                        
+                        <a class="nav__link" href="#">More To Test</a>
+                        
+                    </li>
+                    
+                    <li class="nav__item">
+                        
+                        <a class="nav__link" href="#">More To Test</a>
+                        
+                    </li>
+                    
+                    <li class="nav__item">
+                        
+                        <a class="nav__link" href="#">More To Test</a>
+                        
+                    </li>
                     
                 </ul>
                 
