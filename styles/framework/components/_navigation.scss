@@ -43,11 +43,9 @@
                     display: flex;
                     flex-direction: column;
                     
-                    /*
-&:hover > .nav--nest {
+                    &:hover > .nav--nest {
                         display: block;
                     }
-*/
                     
                     .nav__item--drop:hover > .nav--nest {
                         left: 100%; top: 0;
