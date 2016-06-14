@@ -17,8 +17,8 @@
             /* jshint validthis: true */
             var _this  = this;
              
-             
-             
+
+
             /*--------------------------------------------------*\
             	#TOGGLE MOBILE NAVIGATION
             \*--------------------------------------------------*/
@@ -30,11 +30,15 @@
                 var classes = nav.classList,
                     body = document.getElementsByTagName('body')[0],
                     bodyClasses = body.classList;
-            
-                bodyClasses.contains('nav-open') ? bodyClasses.remove('nav-open') : bodyClasses.add('nav-open');
                 
-                classes.contains('nav--active') ? classes.remove('nav--active') : classes.add('nav--active');
-                                 
+                if ( window.outerWidth < UIKIT.settings.mobNavBreak ) {
+                    
+                    bodyClasses.contains('nav-open') ? bodyClasses.remove('nav-open') : bodyClasses.add('nav-open');
+                
+                    classes.contains('nav--active') ? classes.remove('nav--active') : classes.add('nav--active');
+                    
+                } 
+                       
             }
             
             var navTog  = document.querySelector('.js-nav-toggle'),
@@ -62,18 +66,23 @@
                     subNav      = itemDrop.getElementsByClassName('nav--nest')[0],
                     parentNav   = itemDrop.closest('.nav');
                 
-                if ( classes.contains(activeClass) ) {
+                if ( window.outerWidth < UIKIT.settings.mobNavBreak ) {
                     
-                    classes.remove(activeClass);
+                    if ( classes.contains(activeClass) ) {
+                        
+                        classes.remove(activeClass);
+                        
+                        parentNav.style.overflow = "hidden";
+                        
+                    } else {
+                        
+                        classes.add(activeClass);
+                        
+                        parentNav.style.overflow = "auto";
+                    }
                     
-                    parentNav.style.overflow = "hidden";
-                    
-                } else {
-                    
-                    classes.add(activeClass);
-                    
-                    parentNav.style.overflow = "auto";
                 }
+  
             }
             
             function subNavClose(e) {
@@ -85,10 +94,14 @@
                     activeClass      = 'nav__item--drop-active',
                     grandParentNav   = itemDrop.parentElement.closest('.nav');
                 
-                grandParentNav.style.overflowY = "auto";
+                if ( window.outerWidth < UIKIT.settings.mobNavBreak ) {
+                    
+                    grandParentNav.style.overflowY = "auto";
                 
-                classes.contains(activeClass) ? classes.remove(activeClass) : classes.add(activeClass);
-                
+                    classes.contains(activeClass) ? classes.remove(activeClass) : classes.add(activeClass);
+                    
+                }
+
             }
 
             var navItem = document.querySelectorAll('.nav__item--drop'),

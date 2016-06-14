@@ -25,7 +25,8 @@
     
     UIKIT.settings = {
         debug: true,
-        speed: 250
+        speed: 250,
+        mobNavBreak: 962
     };
     
     
