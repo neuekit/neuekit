@@ -60,7 +60,7 @@
                     classes     = itemDrop.classList,
                     activeClass = 'nav__item--drop-active',
                     subNav      = itemDrop.getElementsByClassName('nav--nest')[0],
-                    parentNav   = findParent(itemDrop, 'nav');
+                    parentNav   = itemDrop.closest('nav');
                 
                 classes.contains(activeClass) ? classes.remove(activeClass) : classes.add(activeClass);
                 
@@ -72,7 +72,7 @@
                 
                 e.preventDefault();
                 
-                var itemDrop    = findParent(this, 'nav__item--drop'),
+                var itemDrop    = this.closest('nav__item--drop'),
                     classes     = itemDrop.classList,
                     activeClass = 'nav__item--drop-active';
                 

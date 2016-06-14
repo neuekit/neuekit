@@ -151,6 +151,10 @@
         display: flex;
         overflow: visible;
         
+        &--primary {
+            position: relative;
+        }
+        
             // Elements
             
             &__item {
