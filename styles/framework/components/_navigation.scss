@@ -97,13 +97,8 @@
 /* JS Enabled Mobile */
 
 
-/*--------------------------------------------------*\
-	#REPLACE AND REFACTOR THIS TO NOT USE BODY
-\*--------------------------------------------------*/
-
-nav::after {
+.nav-overlay {
     background-color: rgba(black, 0.5);
-    content: '';
     @include size(100vh, 100vw);
     left: 0; top: 0;
     position: fixed;
@@ -115,7 +110,7 @@ nav::after {
 
 @supports (will-change: opacity) {
     
-    nav::after {
+    .nav-overlay {
         will-change: opacity;
     }
     
@@ -123,15 +118,11 @@ nav::after {
 
 @supports not (will-change: opacity) {
     
-    nav::after {
+    .nav-overlay {
         backface-visibility: hidden;
     }
     
 }
-
-/*--------------------------------------------------*\
-	#
-\*--------------------------------------------------*/
 
 
 // Tablet Down
@@ -147,8 +138,9 @@ nav::after {
             &-open {
                 overflow: hidden;
                 
-                nav::after {
+                .nav-overlay {
                     opacity: 1;
+                    pointer-events: all;
                 }
             }
             

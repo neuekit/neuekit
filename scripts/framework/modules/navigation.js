@@ -41,12 +41,31 @@
                        
             }
             
+            function navClose(e) {
+                
+                var classes = nav.classList,
+                    body = document.getElementsByTagName('body')[0],
+                    bodyClasses = body.classList;
+                
+                if ( e.target != nav && window.outerWidth < UIKIT.settings.mobNavBreak ) {
+                    
+                    bodyClasses.contains('nav-open') ? bodyClasses.remove('nav-open') : bodyClasses.add('nav-open');
+                
+                    classes.contains('nav--active') ? classes.remove('nav--active') : classes.add('nav--active');
+                    
+                }
+                
+            }
+            
             var navTog  = document.querySelector('.js-nav-toggle'),
-                nav     = document.querySelector('.js-nav--primary');
+                nav     = document.querySelector('.js-nav--primary'),
+                navOverlay = document.querySelector('.js-nav-overlay');
            
             if ( navTog && nav ) {
                 
                 navTog.addEventListener("click", navigation);
+                
+                navOverlay.addEventListener("click", navClose);
                 
             }
             
