@@ -78,7 +78,7 @@
                         
                         classes.add(activeClass);
                         
-                        parentNav.style.overflow = "auto";
+                        parentNav.style.overflowY = "auto";
                     }
                     
                 }

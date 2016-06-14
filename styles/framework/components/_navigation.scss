@@ -101,20 +101,21 @@
 	#REPLACE AND REFACTOR THIS TO NOT USE BODY
 \*--------------------------------------------------*/
 
-body::after {
+nav::after {
     background-color: rgba(black, 0.5);
     content: '';
     @include size(100vh, 100vw);
     left: 0; top: 0;
-    position: absolute;
+    position: fixed;
     pointer-events: none;
     opacity: 0;
     transition: opacity $speed ease;
+    z-index: 1001;
 }
 
 @supports (will-change: opacity) {
     
-    body::after {
+    nav::after {
         will-change: opacity;
     }
     
@@ -122,7 +123,7 @@ body::after {
 
 @supports not (will-change: opacity) {
     
-    body::after {
+    nav::after {
         backface-visibility: hidden;
     }
     
@@ -146,7 +147,7 @@ body::after {
             &-open {
                 overflow: hidden;
                 
-                &::after {
+                nav::after {
                     opacity: 1;
                 }
             }
@@ -174,7 +175,7 @@ body::after {
                 transform: translateY(60vh);
                 transition: transform $speed ease;      
                 width: 100vw;
-                z-index: 10;
+                z-index: 10001;
                 
                     
                 &.nav--active {
