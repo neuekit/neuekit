@@ -64,6 +64,8 @@
                 
                 classes.contains(activeClass) ? classes.remove(activeClass) : classes.add(activeClass);
                 
+                
+                
                 classes.contains(activeClass) ? parentNav.style.overflow = "hidden" : parentNav.style.overflow = "auto";
 
             }
@@ -72,12 +74,15 @@
                 
                 e.preventDefault();
                 
-                var itemDrop    = this.closest('.nav__item--drop'),
-                    classes     = itemDrop.classList,
-                    activeClass = 'nav__item--drop-active';
+                var itemDrop         = this.closest('.nav__item--drop'),
+                    classes          = itemDrop.classList,
+                    activeClass      = 'nav__item--drop-active',
+                    grandParentNav   = itemDrop.parentElement.closest('.nav');
+                
+                grandParentNav.style.overflowY = "auto";
                 
                 classes.contains(activeClass) ? classes.remove(activeClass) : classes.add(activeClass);
-
+                
             }
 
             var navItem = document.querySelectorAll('.nav__item--drop'),
