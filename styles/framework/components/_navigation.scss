@@ -14,6 +14,10 @@
     text-align: center;
     -webkit-overflow-scrolling: touch;
 
+    &-toggle {
+        display: none;
+    }
+
         // Elements
         
         &__link {
@@ -78,6 +82,10 @@
     
     // Toggle rule only for no-js
     
+    .nav-toggle {
+        display: block;
+    }
+    
     .nav-toggle:hover ~ .nav,
     .nav--primary:hover { 
         display: block;
@@ -88,14 +96,10 @@
 
 /* JS Enabled Mobile */
 
-.js {
-            
-    .nav {
-        
-        
-    }    
-}
 
+/*--------------------------------------------------*\
+	#REPLACE AND REFACTOR THIS TO NOT USE BODY
+\*--------------------------------------------------*/
 
 body::after {
     background-color: rgba(black, 0.5);
@@ -106,8 +110,28 @@ body::after {
     pointer-events: none;
     opacity: 0;
     transition: opacity $speed ease;
-    will-change: opacity;
 }
+
+@supports (will-change: opacity) {
+    
+    body::after {
+        will-change: opacity;
+    }
+    
+}
+
+@supports not (will-change: opacity) {
+    
+    body::after {
+        backface-visibility: hidden;
+    }
+    
+}
+
+/*--------------------------------------------------*\
+	#
+\*--------------------------------------------------*/
+
 
 // Tablet Down
 

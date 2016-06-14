@@ -62,12 +62,18 @@
                     subNav      = itemDrop.getElementsByClassName('nav--nest')[0],
                     parentNav   = itemDrop.closest('.nav');
                 
-                classes.contains(activeClass) ? classes.remove(activeClass) : classes.add(activeClass);
-                
-                
-                
-                classes.contains(activeClass) ? parentNav.style.overflow = "hidden" : parentNav.style.overflow = "auto";
-
+                if ( classes.contains(activeClass) ) {
+                    
+                    classes.remove(activeClass);
+                    
+                    parentNav.style.overflow = "hidden";
+                    
+                } else {
+                    
+                    classes.add(activeClass);
+                    
+                    parentNav.style.overflow = "auto";
+                }
             }
             
             function subNavClose(e) {
