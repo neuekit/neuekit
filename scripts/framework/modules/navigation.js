@@ -139,7 +139,7 @@
                 
             }
             
-            for ( var i = 0; i < close.length; i++ ) {
+            for ( i = 0; i < close.length; i++ ) {
 
                 close[i].addEventListener("click", subNavClose);
                 
