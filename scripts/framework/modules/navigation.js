@@ -22,23 +22,129 @@
 
             var _this  = this;
              
-             
-             
-            function navToggle(e) {
+
+
+            /*--------------------------------------------------*\
+            	#TOGGLE MOBILE NAVIGATION
+            \*--------------------------------------------------*/
+
+            function navigation(e) {
                 
                 e.preventDefault();
                 
+                var classes = nav.classList,
+                    body = document.getElementsByTagName('body')[0],
+                    bodyClasses = body.classList;
                 
+                if ( window.outerWidth < UIKIT.settings.mobNavBreak ) {
+                    
+                    bodyClasses.contains('nav-open') ? bodyClasses.remove('nav-open') : bodyClasses.add('nav-open');
+                
+                    classes.contains('nav--active') ? classes.remove('nav--active') : classes.add('nav--active');
+                    
+                } 
+                       
+            }
+            
+            function navClose(e) {
+                
+                var classes = nav.classList,
+                    body = document.getElementsByTagName('body')[0],
+                    bodyClasses = body.classList;
+                
+                if ( e.target != nav && window.outerWidth < UIKIT.settings.mobNavBreak ) {
+                    
+                    bodyClasses.contains('nav-open') ? bodyClasses.remove('nav-open') : bodyClasses.add('nav-open');
+                
+                    classes.contains('nav--active') ? classes.remove('nav--active') : classes.add('nav--active');
+                    
+                }
                 
             }
             
-            var navLink = document.getElementsByClassName('nav-list__item-drop');
-            
-            for ( var i = 0; i < navLink.length; i++ ) {
+            var navTog  = document.querySelector('.js-nav-toggle'),
+                nav     = document.querySelector('.js-nav--primary'),
+                navOverlay = document.querySelector('.js-nav-overlay');
+           
+            if ( navTog && nav ) {
                 
-                navLink[i].addEventListener("click", navToggle);
+                navTog.addEventListener("click", navigation);
+                
+                navOverlay.addEventListener("click", navClose);
                 
             }
+            
+            
+            
+            /*--------------------------------------------------*\
+            	#TOGGLE MOBILE SUB NAVIGATION
+            \*--------------------------------------------------*/
+
+            function subNav(e) {
+                
+                e.preventDefault();
+                
+                var itemDrop    = this.parentElement,
+                    classes     = itemDrop.classList,
+                    activeClass = 'nav__item--drop-active',
+                    subNav      = itemDrop.getElementsByClassName('nav--nest')[0],
+                    parentNav   = itemDrop.closest('.nav');
+                
+                if ( window.outerWidth < UIKIT.settings.mobNavBreak ) {
+                    
+                    if ( classes.contains(activeClass) ) {
+                        
+                        classes.remove(activeClass);
+                        
+                        parentNav.style.overflow = "hidden";
+                        
+                    } else {
+                        
+                        classes.add(activeClass);
+                        
+                        parentNav.style.overflowY = "auto";
+                    }
+                    
+                }
+  
+            }
+            
+            function subNavClose(e) {
+                
+                e.preventDefault();
+                
+                var itemDrop         = this.closest('.nav__item--drop'),
+                    classes          = itemDrop.classList,
+                    activeClass      = 'nav__item--drop-active',
+                    grandParentNav   = itemDrop.parentElement.closest('.nav');
+                
+                if ( window.outerWidth < UIKIT.settings.mobNavBreak ) {
+                    
+                    grandParentNav.style.overflowY = "auto";
+                
+                    classes.contains(activeClass) ? classes.remove(activeClass) : classes.add(activeClass);
+                    
+                }
+
+            }
+
+            var navItem = document.querySelectorAll('.nav__item--drop'),
+                close   = document.querySelectorAll('.nav__link--close');
+                
+            for ( var i = 0; i < navItem.length; i++ ) {
+                
+                var navLink = navItem[i].getElementsByClassName('nav__link')[0];
+                
+                navLink.addEventListener("click", subNav);
+                
+            }
+            
+            for ( var i = 0; i < close.length; i++ ) {
+
+                close[i].addEventListener("click", subNavClose);
+                
+            }
+
 
 
 

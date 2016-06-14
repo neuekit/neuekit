@@ -14,6 +14,16 @@
         
         <title>NAVIGATION</title>
         
+        
+        <!--------------------------------------------------
+        //	Document: Priority Resources
+        --------------------------------------------------->
+        
+        <link rel="stylesheet" href="/styles/style.css">
+        
+        <script src="/scripts/framework/parties/modernizr.min.js"></script>
+        
+        
         <style>
             
             
@@ -22,7 +32,7 @@
             }
             
             
-            .header {
+            .page-header {
                 background-color: #48ADF5;
                 padding: 0.5rem 0;
             }
@@ -33,21 +43,32 @@
                 text-align: right;
             }
             
-            .nav-list {
-                background-color: white;
+            .nav-toggle {
+                text-align: center;
+            }
+            
+            .nav--nest {
+                background-color: #f1f1f1;
             }
             
             .page-main {
                 padding: 1rem 0;
             }
             
+            @media only screen and (min-width: 63.063rem) {
+                
+                .nav {
+                    color: white;
+                }
+                
+                .nav--nest {
+                    background-color: white;
+                    color: #2d2d2d;
+                }
+                
+            }
+            
         </style>
-        
-        <!--------------------------------------------------
-        //	Document: Priority Resources
-        --------------------------------------------------->
-        
-        <link href="/styles/style.css" rel="stylesheet">
         
         
     </head>
@@ -59,76 +80,149 @@
         --------------------------------------------------->
     
         <header class="page-header" role="banner">
-            
-            
-            
-            <div class="header">
+
+            <div class="grid  between  align-center">
                 
-                <div class="grid  between  align-center">
-                    
-                    <div class="grid__item">
-                        
-                        <img class="logo" src="http://placehold.it/40/80">
-                        
-                    </div>
-                    
-                    <div class="grid__item">
-                        
-                        <p class="white">App</p>
-                        
-                    </div>
-                    
-                </div>
+                <img class="logo" src="http://placehold.it/40/80">                
                 
+                <nav class="grow" role="navigation">
+                    
+                    <div class="js-nav-overlay  nav-overlay"></div>
+                    
+                    <a class="nav-toggle  hide-l" href="#">MENU</a>
+                    
+                    <ul class="nav  nav--primary  js-nav--primary">
+                        
+                        <li class="nav__item"><a class="nav__link" href="#">Home</a></li>
+                        
+                        <li class="nav__item  nav__item--drop">
+                        
+                            <a class="nav__link" href="/">The Studio</a>
+                        
+                        
+                        
+                            <ul class="nav  nav--nest">
+                                
+                                <li class="nav__item  nav__item--drop">
+                                
+                                    <a class="nav__link" href="#">The Team</a>
+                                
+                                
+                                
+                                    <ul class="nav  nav--nest">
+                                        
+                                        <li class="nav__item"><a class="nav__link" href="#">Matt</a></li>
+                                        
+                                        <li class="nav__item"><a class="nav__link" href="#">Chris</a></li>
+                                        
+                                        <li class="nav__item">
+                                            
+                                            <a href="#" class="nav__link--close">Back</a>
+                                        
+                                        </li>
+                                        
+                                    </ul>
+                                    
+                                    
+                                
+                                </li>
+                                
+                                <li class="nav__item  nav__item--drop">
+                                
+                                    <a class="nav__link" href="#">The Office</a>
+                                
+                                
+                                
+                                    <ul class="nav  nav--nest">
+                                        
+                                        <li class="nav__item  nav__item--drop"><a class="nav__link" href="#">Office Consoles</a>
+                                        
+                                            <ul class="nav  nav--nest">
+                                                
+                                                <li class="nav__item"><a class="nav__link" href="#">Ps3</a></li>
+                                                
+                                                <li class="nav__item">
+                                                
+                                                    <a href="#" class="nav__link--close">Back</a>
+                                                    
+                                                </li>
+                                                
+                                            </ul>
+                                        
+                                        </li>
+                                        
+                                        <li class="nav__item"><a class="nav__link" href="#">The Coffee</a></li>
+                                        
+                                        <li class="nav__item"><a class="nav__link" href="#">The Culture</a></li>
+                                        
+                                        <li class="nav__item">
+                                            
+                                            <a href="#" class="nav__link--close">Back</a>
+                                        
+                                        </li>
+                                        
+                                    </ul>
+                                    
+                                    
+                                
+                                </li>
+                                
+                                <li class="nav__item">
+                                
+                                    <a class="nav__link" href="#">About Us</a>
+                                    
+                                </li>
+                                
+                                <li class="nav__item">
+                                
+                                    <a href="#" class="nav__link--close">Back</a>
+                                    
+                                </li>
+                                
+                            </ul>
+                            
+                            
+                        
+                        </li>
+                        
+                        <li class="nav__item">
+                            
+                            <a class="nav__link" href="#">The Web</a>
+                            
+                        </li>
+                        
+                        <li class="nav__item">
+                            
+                            <a class="nav__link" href="#">The Brands</a>
+                            
+                        </li>
+                        
+                        <li class="nav__item">
+                            
+                            <a class="nav__link" href="#">The Labs</a>
+                            
+                        </li>
+                        
+                        <li class="nav__item">
+                            
+                            <a class="nav__link" href="#">The Blog</a>
+                            
+                        </li>
+                        
+                        <li class="nav__item">
+                            
+                            <a class="nav__link" href="#">Contact</a>
+                            
+                        </li>
+                        
+                    </ul>
+                    
+                </nav>
+                                  
+                <a class="white  js-nav-toggle" href="#">Js Toggle</a>
+
             </div>
-            
-            
-        
-            <input type="checkbox" id="nav-toggle" class="nav-toggle">
-            <label class="hide-l" for="nav-toggle">MENU</label>
-            
-            <nav class="nav" role="navigation">
-                
-                <ul class="nav-list">
-                    
-                    <li class="nav-list__item"><a class="nav-list__link" href="#">Link</a></li>
-                    
-                    <li class="nav-list__item  nav-list__item-drop"><a class="nav-list__link" href="#">Link Drop</a>
-                    
-                        <ul class="nav-list  nav-list--nested">
-                            
-                            <li class="nav-list__sub-item  nav-list__item-drop"><a class="nav-list__link" href="#">Sub Link Drop</a>
-                            
-                                <ul class="nav-list  nav-list--nested">
-                                    
-                                    <li class="nav-list__item"><a class="nav-list__link" href="#">Sub Sub Link</a></li>
-                                    
-                                </ul>
-                            
-                            </li>
-                            
-                            <li class="nav-list__sub-item"><a class="nav-list__link" href="#">Sub Link</a></li>
-                            
-                        </ul>
-                    
-                    </li>
-                    
-                    <li class="nav-list__item"><a class="nav-list__link" href="#">Link</a></li>
-                    
-                    <li class="nav-list__item"><a class="nav-list__link" href="#">Link</a></li>
-                    
-                    <li class="nav-list__item"><a class="nav-list__link" href="#">Link</a></li>
-                    
-                    <li class="nav-list__item"><a class="nav-list__link" href="#">Link</a></li>
-                    
-                    <li class="nav-list__item"><a class="nav-list__link" href="#">Link</a></li>
-                    
-                </ul>
-                
-            </nav>
-            
-            
-        
+
         </header>
         
         
@@ -175,13 +269,13 @@
         //	Document: Subservient Resources
         --------------------------------------------------->
         
-        <script src="/scripts/application/parties/svg4everybody.min.js"></script>
+        <script src="/scripts/framework/parties/svg4everybody.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
         
-        <script>window.jQuery || document.write('<script src="/scripts/application/parties/jquery-3.0.0.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="/scripts/parties/jquery-2.2.4.min.js"><\/script>')</script>
         
-        <script src="/scripts/application/parties/gsap.min.js"></script>
+        <script src="/scripts/framework/parties/gsap.min.js"></script>
         
         <script src="/scripts/framework/framework.min.js"></script>
         
