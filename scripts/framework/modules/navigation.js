@@ -60,11 +60,11 @@
                     classes     = itemDrop.classList,
                     activeClass = 'nav__item--drop-active',
                     subNav      = itemDrop.getElementsByClassName('nav--nest')[0],
-                    parentNav   = itemDrop.closest('nav');
+                    parentNav   = itemDrop.closest('.nav');
                 
                 classes.contains(activeClass) ? classes.remove(activeClass) : classes.add(activeClass);
                 
-                classes.contains(activeClass) ? parentNav.css.overflow = Hidden : parentNav.css.overflow = auto;
+                classes.contains(activeClass) ? parentNav.style.overflow = "hidden" : parentNav.style.overflow = "auto";
 
             }
             
@@ -72,7 +72,7 @@
                 
                 e.preventDefault();
                 
-                var itemDrop    = this.closest('nav__item--drop'),
+                var itemDrop    = this.closest('.nav__item--drop'),
                     classes     = itemDrop.classList,
                     activeClass = 'nav__item--drop-active';
                 
