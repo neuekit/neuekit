@@ -31,6 +31,7 @@
 @include media(l) {
         
     .nav {
+        background-color: transparent;
         display: flex;
         overflow: visible;
                 
@@ -88,71 +89,104 @@
 /* JS Enabled Mobile */
 
 .js {
-    
-    //Mobile Up
-    
+            
     .nav {
         
-            // Elements
         
-            &__item--drop {
-                position: static;
+    }    
+}
+
+
+// Tablet Down
+
+@include media(null, l) {
+    
+    .js {
+        
+        .nav {
+            
+            //Lock body scroll
+            
+            &-open {
+                overflow: hidden;
             }
-        
-            &__link--close {
+            
+                // Elements
+            
+                &__item--drop {
+                    position: static;
+                }
+            
+                &__link--close {
+                    display: block;
+                    padding: 0.5rem;
+                }
+            
+            // Modifiers
+            
+            &--primary {
+                background-color: white;
+                bottom: 0; left: 0;
+                box-shadow: 0 0 0 1000vmax rgba(black,0);
                 display: block;
-                padding: 0.5rem;
-            }
-        
-        // Modifiers
-        
-        &--primary {
-            bottom: 0;
-            box-shadow: 0 0 0 1000vmax rgba(black,0);
-            display: block;
-            max-height: 60vh;
-            overflow-x: hidden;
-            position: fixed;
-            transform: translateY(60vh);
-            transition: transform $speed ease, box-shadow $speed ease;      
-            width: 100vw;
-            z-index: 10;
-            
+                max-height: 60vh;
+                overflow-x: hidden;
+                position: fixed;
+                transform: translateY(60vh);
+                transition: transform $speed ease, box-shadow $speed ease;      
+                width: 100vw;
+                z-index: 10;
                 
-            &.nav--active {
-                box-shadow: 0 0 0 1000vmax rgba(black,0.6);
-                transform: translateY(0);
+                    
+                &.nav--active {
+                    box-shadow: 0 0 0 1000vmax rgba(black,0.6);
+                    transform: translateY(0);
+                }
+            } 
+                    
+            &--nest {
+                @include size(60vh,100vw);
+                left: 0; top: 0;
+                overflow-x: hidden;
+                overflow-y: auto;
+                position: absolute;
+                transform: translateX(100vw);
+                transition: transform $speed ease;
+                z-index: 1;
             }
-        }
-        
-        &--nest {
-            @include size(60vh,100vw);
-            left: 0; top: 0;
-            overflow-x: hidden;
-            overflow-y: auto;
-            position: absolute;
-            transform: translateX(100vw);
-            transition: transform $speed ease;
-            z-index: 1;
-        }
-        
-        // States
-        
-        &__item--drop-active {
             
-            > .nav--nest {
-                transform: translateX(0);
+            // States
+            
+            &__item--drop-active {
+                
+                > .nav--nest {
+                    transform: translateX(0);
+                }
             }
         }
     }
+}
 
-    //Tablet Up
+
+//Desktop Up
+
+@include media(l) {
     
-    //Desktop Up
-    
-    @include media(l) {
+    .js {
         
         .nav {
+            
+                // Elements
+                
+                &__item--drop {
+                    position: relative;
+                }
+                
+                &__link--close {
+                    display: none;
+                }
+            
+            // Modifiers
             
             &--primary {
                 display: flex;
@@ -160,8 +194,5 @@
                 transform: translateY(0);
             }
         }
-        
     }
 }
-
-

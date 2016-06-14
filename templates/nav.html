@@ -32,7 +32,7 @@
             }
             
             
-            .header {
+            .page-header {
                 background-color: #48ADF5;
                 padding: 0.5rem 0;
             }
@@ -43,7 +43,6 @@
                 text-align: right;
             }
             
-            .nav,
             .nav-toggle {
                 background-color: white;
             }
@@ -81,221 +80,147 @@
         --------------------------------------------------->
     
         <header class="page-header" role="banner">
-            
-            
-            
-            <div class="header">
-                
-                <div class="grid  between  align-center">
-                    
-                    <div class="grid__item">
-                        
-                        <img class="logo" src="http://placehold.it/40/80">
-                        
-                    </div>
-                    
-                    <div class="grid__item">
-                        
-                        <p class="white">App</p>
-                        
-                    </div>
-                    
-                </div>
-                
-            </div>
-            
-            
-        
-            
-            
-            <nav role="navigation">
-                
-                <a class="nav-toggle  js-nav-toggle  hide-l" href="#">MENU</a>
-                
-                <ul class="nav  nav--primary  js-nav--primary">
-                    
-                    <li class="nav__item"><a class="nav__link" href="#">Home</a></li>
-                    
-                    <li class="nav__item  nav__item--drop">
-                    
-                        <a class="nav__link" href="/">The Studio</a>
-                    
-                    
-                    
-                        <ul class="nav  nav--nest">
-                            
-                            <li class="nav__item  nav__item--drop">
-                            
-                                <a class="nav__link" href="#">The Team</a>
-                            
-                            
-                            
-                                <ul class="nav  nav--nest">
-                                    
-                                    <li class="nav__item"><a class="nav__link" href="#">Matt</a></li>
-                                    
-                                    <li class="nav__item"><a class="nav__link" href="#">Chris</a></li>
-                                    
-                                    <li class="nav__item">
-                                        
-                                        <a href="#" class="nav__link--close">Back</a>
-                                    
-                                    </li>
-                                    
-                                </ul>
-                                
-                                
-                            
-                            </li>
-                            
-                            <li class="nav__item">
-                                
-                                <a class="nav__link" href="#">More To Test</a>
-                                
-                            </li>
-                    
-                            <li class="nav__item">
-                                
-                                <a class="nav__link" href="#">More To Test</a>
-                                
-                            </li>
 
-                            <li class="nav__item">
-                                
-                                <a class="nav__link" href="#">More To Test</a>
-                                
-                            </li>
-                            
-                            <li class="nav__item">
-                                
-                                <a class="nav__link" href="#">More To Test</a>
-                                
-                            </li>
-                            
-                            <li class="nav__item">
-                                
-                                <a class="nav__link" href="#">More To Test</a>
-                                
-                            </li>
-                            
-                            <li class="nav__item  nav__item--drop">
-                            
-                                <a class="nav__link" href="#">The Office</a>
-                            
-                            
-                            
-                                <ul class="nav  nav--nest">
-                                    
-                                    <li class="nav__item  nav__item--drop"><a class="nav__link" href="#">Office Consoles</a>
-                                    
-                                        <ul class="nav  nav--nest">
-                                            
-                                            <li class="nav__item"><a class="nav__link" href="#">Ps3</a></li>
-                                            
-                                            <li class="nav__item">
-                                            
-                                                <a href="#" class="nav__link--close">Back</a>
-                                                
-                                            </li>
-                                            
-                                        </ul>
-                                    
-                                    </li>
-                                    
-                                    <li class="nav__item"><a class="nav__link" href="#">The Coffee</a></li>
-                                    
-                                    <li class="nav__item"><a class="nav__link" href="#">The Culture</a></li>
-                                    
-                                    <li class="nav__item">
-                                        
-                                        <a href="#" class="nav__link--close">Back</a>
-                                    
-                                    </li>
-                                    
-                                </ul>
-                                
-                                
-                            
-                            </li>
-                            
-                            <li class="nav__item">
-                            
-                                <a class="nav__link" href="#">About Us</a>
-                                
-                            </li>
-                            
-                            <li class="nav__item">
-                            
-                                <a href="#" class="nav__link--close">Back</a>
-                                
-                            </li>
-                            
-                        </ul>
-                        
-                        
-                    
-                    </li>
-                    
-                    <li class="nav__item">
-                        
-                        <a class="nav__link" href="#">The Web</a>
-                        
-                    </li>
-                    
-                    <li class="nav__item">
-                        
-                        <a class="nav__link" href="#">The Brands</a>
-                        
-                    </li>
-                    
-                    <li class="nav__item">
-                        
-                        <a class="nav__link" href="#">The Labs</a>
-                        
-                    </li>
-                    
-                    <li class="nav__item">
-                        
-                        <a class="nav__link" href="#">The Blog</a>
-                        
-                    </li>
-                    
-                    <li class="nav__item">
-                        
-                        <a class="nav__link" href="#">Contact</a>
-                        
-                    </li>
-                    
-                    <li class="nav__item">
-                        
-                        <a class="nav__link" href="#">More To Test</a>
-                        
-                    </li>
-                    
-                    <li class="nav__item">
-                        
-                        <a class="nav__link" href="#">More To Test</a>
-                        
-                    </li>
-                    
-                    <li class="nav__item">
-                        
-                        <a class="nav__link" href="#">More To Test</a>
-                        
-                    </li>
-                    
-                    <li class="nav__item">
-                        
-                        <a class="nav__link" href="#">More To Test</a>
-                        
-                    </li>
-                    
-                </ul>
+            <div class="flex  between  align-center">
                 
-            </nav>
-            
-            
-        
+                <img class="logo" src="http://placehold.it/40/80">                
+                
+                <nav class="grow" role="navigation">
+                    
+                    <a class="nav-toggle  js-nav-toggle  hide-l" href="#">MENU</a>
+                    
+                    <ul class="nav  nav--primary  js-nav--primary">
+                        
+                        <li class="nav__item"><a class="nav__link" href="#">Home</a></li>
+                        
+                        <li class="nav__item  nav__item--drop">
+                        
+                            <a class="nav__link" href="/">The Studio</a>
+                        
+                        
+                        
+                            <ul class="nav  nav--nest">
+                                
+                                <li class="nav__item  nav__item--drop">
+                                
+                                    <a class="nav__link" href="#">The Team</a>
+                                
+                                
+                                
+                                    <ul class="nav  nav--nest">
+                                        
+                                        <li class="nav__item"><a class="nav__link" href="#">Matt</a></li>
+                                        
+                                        <li class="nav__item"><a class="nav__link" href="#">Chris</a></li>
+                                        
+                                        <li class="nav__item">
+                                            
+                                            <a href="#" class="nav__link--close">Back</a>
+                                        
+                                        </li>
+                                        
+                                    </ul>
+                                    
+                                    
+                                
+                                </li>
+                                
+                                <li class="nav__item  nav__item--drop">
+                                
+                                    <a class="nav__link" href="#">The Office</a>
+                                
+                                
+                                
+                                    <ul class="nav  nav--nest">
+                                        
+                                        <li class="nav__item  nav__item--drop"><a class="nav__link" href="#">Office Consoles</a>
+                                        
+                                            <ul class="nav  nav--nest">
+                                                
+                                                <li class="nav__item"><a class="nav__link" href="#">Ps3</a></li>
+                                                
+                                                <li class="nav__item">
+                                                
+                                                    <a href="#" class="nav__link--close">Back</a>
+                                                    
+                                                </li>
+                                                
+                                            </ul>
+                                        
+                                        </li>
+                                        
+                                        <li class="nav__item"><a class="nav__link" href="#">The Coffee</a></li>
+                                        
+                                        <li class="nav__item"><a class="nav__link" href="#">The Culture</a></li>
+                                        
+                                        <li class="nav__item">
+                                            
+                                            <a href="#" class="nav__link--close">Back</a>
+                                        
+                                        </li>
+                                        
+                                    </ul>
+                                    
+                                    
+                                
+                                </li>
+                                
+                                <li class="nav__item">
+                                
+                                    <a class="nav__link" href="#">About Us</a>
+                                    
+                                </li>
+                                
+                                <li class="nav__item">
+                                
+                                    <a href="#" class="nav__link--close">Back</a>
+                                    
+                                </li>
+                                
+                            </ul>
+                            
+                            
+                        
+                        </li>
+                        
+                        <li class="nav__item">
+                            
+                            <a class="nav__link" href="#">The Web</a>
+                            
+                        </li>
+                        
+                        <li class="nav__item">
+                            
+                            <a class="nav__link" href="#">The Brands</a>
+                            
+                        </li>
+                        
+                        <li class="nav__item">
+                            
+                            <a class="nav__link" href="#">The Labs</a>
+                            
+                        </li>
+                        
+                        <li class="nav__item">
+                            
+                            <a class="nav__link" href="#">The Blog</a>
+                            
+                        </li>
+                        
+                        <li class="nav__item">
+                            
+                            <a class="nav__link" href="#">Contact</a>
+                            
+                        </li>
+                        
+                    </ul>
+                    
+                </nav>
+                                  
+                <p class="white">App</p>
+
+            </div>
+
         </header>
         
         
