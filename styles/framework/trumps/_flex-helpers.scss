@@ -30,16 +30,20 @@
     
     .justify-start#{ $break } {
         justify-content: flex-start;
+        margin-left: 0;
+        margin-right: auto;
     }
     
     .justify-center#{ $break } {
         justify-content: center;
-        margin: 0 auto;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .justify-end#{ $break } {
         justify-content: flex-end;
         margin-left: auto;
+        margin-right: 0;
     }
     
     .align-start#{ $break } {

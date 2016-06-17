@@ -18,10 +18,12 @@
         /*  Elements  */
         
         &__#{ $itemClass } { // .grid__item
+            @if(not($auto)) { flex-basis: 100%; }
             flex-direction: column;
-            flex-grow: 1;
+            @if($auto) { flex-grow: 1; }
             max-width: 100%;
             padding: 0 rem( $gutterMobile );
+            @if(not($auto)) { width: 100%; }
         }
     
     
