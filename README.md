@@ -20,7 +20,7 @@ To get going with the framework you can:
 
 In progress...
 
-https://creativelittledots.github.io/UIKit/
+<a href="https://creativelittledots.github.io/UIKit/" target="_blank">https://creativelittledots.github.io/UIKit/</a>
 
 ##Supported Browsers
 
