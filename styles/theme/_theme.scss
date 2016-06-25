@@ -1,12 +1,11 @@
 /*!---------------------------------------------------------------------------*\
     
-	#YOUR PROJECT NAME
+	#Creative Little Framework Documentation
 	
 	- Version:      1.0
-	- Author:       YOUR NAME
+	- Author:       Matt Pilott
 	- Site:         http://YOUR_SITE
 	- Copyright:    2016, YOUR COMPANY
-	– License:      YOUR LICENSE
 	
 \*----------------------------------------------------------------------------*/
 
@@ -36,19 +35,20 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#ELEMENTS
+	#BASE
 	
-	Last layer for type selectors (h1-h6, a) & far-reaching shared selectors.
+	Last layer we see type selectors (h1-h6, a). Far-reaching shared classes.
 \*----------------------------------------------------------------------------*/
 
-@import 'elements/shared';              // Shared global commonalities.
-@import 'elements/document';            // Page-level styles (HTML, body etc).
-@import 'elements/type';                // Misc type styles.
-@import 'elements/links';               // Hyperlink styles.
-@import 'elements/lists';               // List styles.
-@import 'elements/images';              // Image stying.
-@import 'elements/quotes';              // Blockquotes, cite, etc.
-@import 'elements/forms';               // Form inputs, textareas.
+@import 'base/page';                    // Page-level styles (HTML, body etc).
+@import 'base/headings';                // H1–H6 styles.
+@import 'base/type';                    // Misc type styles.
+@import 'base/links';                   // Hyperlink styles.
+@import 'base/lists';                   // List styles.
+@import 'base/images';                  // Image stying.
+@import 'base/quotes';                  // Blockquotes, cite, etc.
+@import 'base/forms';                   // Form inputs, textareas.
+@import 'base/shared';                  // Shared global commonalities.
 
 
 
@@ -58,7 +58,7 @@
 	Design Patterns. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
-@import 'objects/wrappers';             // Wrapping & constraining elements.
+@import 'objects/app';             // Wrapping & constraining elements.
 
 
 
@@ -69,6 +69,7 @@
 \*----------------------------------------------------------------------------*/
 
 @import 'parties/slick';                // A responsive carousel plugin.
+@import 'parties/select';               // A customisable select input.
 
 
 
@@ -78,9 +79,10 @@
 	Designed pieces of UI. Only using classes. More explicit naming.
 \*----------------------------------------------------------------------------*/
 
-@import 'components/page-header';       // The page header.
-@import 'components/page-main';         // The page main.
-@import 'components/page-footer';       // The page footer.
+@import 'components/app-aside';        // The page aside.
+@import 'components/app-header';       // The page header.
+@import 'components/app-main';         // The page main.
+@import 'components/app-footer';       // The page footer.
 
 
 
