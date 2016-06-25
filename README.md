@@ -16,11 +16,9 @@ To get going with the framework you can:
   * Download the latest release
   * That's it!
 
-## Documentation
+## [Documentation](https://creativelittledots.github.io/UIKit)
 
 In progress...
-
-<a href="https://creativelittledots.github.io/UIKit/" target="_blank">https://creativelittledots.github.io/UIKit/</a>
 
 ##Supported Browsers
 
