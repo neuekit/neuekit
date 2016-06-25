@@ -18,7 +18,9 @@ To get going with the framework you can:
 
 ## Documentation
 
-Coming soon...
+In progress...
+
+https://creativelittledots.github.io/UIKit/
 
 ##Supported Browsers
 
