@@ -31,11 +31,11 @@
     
     PROJECT.helper = (function() {
         
-        function _helper() {
+        function Helper() {
 
             /*  Variablise 'this' to limit it to avoid scope conflicts  */
             /* jshint validthis: true */
-            var _this = this;
+            var $this = this;
 
 
 
@@ -52,7 +52,7 @@
             
             /*  Allow "chaining" of methods together  */
 
-            this.init = function() {
+            $this.init = function() {
                 
                 
                 
@@ -65,13 +65,13 @@
             
             /*  This refers to PROJECT.helper.init()  */
             
-            return this.init();
+            return $this.init();
         }
         
         
         /*  creating a new object of helper rather than a funtion */
         
-        return new _helper();
+        return new Helper();
         
     }());
 

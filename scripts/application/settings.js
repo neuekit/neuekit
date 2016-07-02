@@ -18,12 +18,11 @@
     
     /* This is our global configuration. It will work across your js files */
     
-    $.doc = $(document);
-    
     PROJECT.settings = {
         debug: true,
         speed: 250
     };
+    
     
     
 /* Lastly this checks if the namespace already exists & if not will assign it */
