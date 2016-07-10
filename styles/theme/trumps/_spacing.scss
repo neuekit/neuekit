@@ -1,0 +1,15 @@
+.col-1 {
+    column-count: 1;
+}
+
+@include media(m) {
+    .col-2-m {
+        column-count: 2;
+    }
+}
+
+@include media(l) {
+    .col-3-l {
+        column-count: 3;
+    }
+}

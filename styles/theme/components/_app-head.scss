@@ -8,15 +8,16 @@
     padding: 0 1rem;
     position: fixed;
     width: 100%;
+    z-index: 1;
     
     &__logo {
-        line-height: 1.2;
+        line-height: 1.25;
         font-size: 1.125rem;
     }
     
     &__logo-little {
         font-size: 1rem;
-        letter-spacing: 0.3px;
+        letter-spacing: 1px;
     }
 }
 
