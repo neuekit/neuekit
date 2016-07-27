@@ -14,6 +14,7 @@ $gutter:        8px             !default;
 $gutterMobile:  $gutter / 2     !default;
 $maxWidth:      1380px          !default;
 $break:         null            !default;
+$auto:          false           !default;
 
 $breakpoints: (
     s:          null,           //Smartphone
