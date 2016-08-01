@@ -31,6 +31,7 @@
             \*--------------------------------------------------*/
 
             config = {
+                dot: '.',
                 tabsClass: 'tabs',
                 tabClass: 'tab',
                 tabActiveClass: 'tab--active',
@@ -39,6 +40,40 @@
                 tabContentActiveClass: 'tab-content--active'
             };
             
+            
+            
+            /*--------------------------------------------------*\
+            	#INITIAL TAB CHECK
+            \*--------------------------------------------------*/
+            
+            _this.tabCheck = function() {
+                
+                if ( document.getElementById(location.hash.substr(1)) ) {
+                        
+                    document.querySelector('[href="' + location.hash + '"]').classList.add(config.tabActiveClass);
+                    
+                    document.querySelector(location.hash).classList.add(config.tabContentActiveClass);
+                    
+                }
+                
+                var tab_modules = document.querySelectorAll(config.dot + config.tabsClass);
+            
+                UIKIT.helper.forEach(tab_modules, function(i, el) {
+                    
+                    if ( el.querySelectorAll(config.dot + config.tabActiveClass).length === 0 ) {
+                        
+                        var firstTab        = el.querySelector(config.dot + config.tabClass);
+                        var firstTabHash    = firstTab.getAttribute('href');
+                        
+                        firstTab.classList.add(config.tabActiveClass);
+                        
+                        document.querySelector(firstTabHash).classList.add(config.tabContentActiveClass);
+                        
+                    }
+                
+                });
+                
+            };
             
             
             /*--------------------------------------------------*\
@@ -59,8 +94,8 @@
 
                 //Find any active tabs & reset
                 
-                tabActive.classList.remove(config.tabActiveClass);
-                tabContentActive.classList.remove(config.tabContentActiveClass);
+                tabActive ? tabActive.classList.remove(config.tabActiveClass) : null;
+                tabContentActive ? tabContentActive.classList.remove(config.tabContentActiveClass) : null;
                 
                 //Add active to clicked tab & related content
                 
@@ -90,6 +125,8 @@
             
             _this.init = function() {
                 
+                _this.tabCheck();
+                
                 /*  'this' refers to UIKIT.modal  */
                 
                 return this; 
@@ -101,7 +138,7 @@
         }
         
         
-        /*  creating a new object of helper rather than a funtion  */
+        /*  Creating a new object of helper rather than a function  */
         
         return new Tabs();
         
