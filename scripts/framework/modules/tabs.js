@@ -48,7 +48,7 @@
             
             _this.tabCheck = function() {
                 
-                if ( document.getElementById(location.hash.substr(1)) ) {
+                if ( document.getElementById(location.hash.substr(1)) && document.getElementById(location.hash.substr(1)).classList.contains(config.tabContentClass) ) {
                         
                     document.querySelector('[href="' + location.hash + '"]').classList.add(config.tabActiveClass);
                     
