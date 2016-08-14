@@ -10,6 +10,10 @@
     flex-grow: 1;
 }
 
+.no-grow {
+    flex-grow: 0;
+}
+
 @include breakpoints( both ) {
     
     .row#{ $break } {
