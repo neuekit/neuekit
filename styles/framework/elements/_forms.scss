@@ -20,6 +20,7 @@ meter {
 
 progress {
     appearance: none;
+    color: $primary;
     
     &::-webkit-progress-bar {
         background-color: transparent;
@@ -89,6 +90,7 @@ textarea,
     display: block;
     padding: 0 0.5rem;
     width: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
     
     &:focus {
         border: 2px solid $primary;
