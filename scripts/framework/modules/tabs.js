@@ -34,7 +34,7 @@
                 dot: '.',
                 tabsClass: 'tabs',
                 tabClass: 'tab',
-                tabActiveClass: 'tab--active',
+                tabActiveClass: 'on-edge-bottom--active',
                 tabContentsClass: 'tab-contents',
                 tabContentClass: 'tab-content',
                 tabContentActiveClass: 'tab-content--active'
@@ -103,8 +103,8 @@
                 tabContent.className += ' ' + config.tabContentActiveClass;
                
                 //Set hash to tab id
-                window.location.hash = tabLink;
-            
+                history.pushState(null, null, tabLink);
+				
             };
             
             var tab = document.getElementsByClassName(config.tabClass);
