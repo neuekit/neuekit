@@ -22,12 +22,17 @@
             flex-direction: column;
             @if($auto) { flex-grow: 1; }
             max-width: 100%;
-            padding: 0 rem( $gutterMobile );
+            padding: 0 rem( $gutterSmall );
             @if(not($auto)) { width: 100%; }
         }
     
     
     /*  Modifiers  */
+    
+    &--#{ $itemClass } { // .grid--item
+        flex-direction: column;
+        padding: 0 rem( $gutter + $gutterSmall );
+    }
     
     & &, // .grid .grid
     &--#{$unnestClass} { // .grid--unnest
@@ -54,8 +59,12 @@
 
 @include media(m) {
     
-    .#{ $gridClass }__#{ $itemClass } {
+    .#{ $gridClass }__#{ $itemClass } { // .grid__item
         padding: 0 rem( $gutter );
+    }
+    
+    .#{ $gridClass }--#{ $itemClass } { // .grid__item
+        padding: 0 rem( $gutter * 2 );
     }
 }
 
