@@ -1,22 +1,16 @@
 /*----------------------------------------------*\
-	#LIST COMPONENT STYLES
+	#INLINE OBJECT
 \*----------------------------------------------*/
 
-.list--inline {
+.inline {
     display: flex;
     list-style: none;
     padding: 0;
     margin: 0;
     
-    .list__item {
+    .inline__item {
         flex-grow: 1;
     }
-}
-
-.list--no {
-    list-style: none;
-    margin: 0;
-    padding: 0;
 }
 
 

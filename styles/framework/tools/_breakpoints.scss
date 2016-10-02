@@ -1,15 +1,4 @@
 /*----------------------------------------------*\
-	#SIZE
-\*----------------------------------------------*/
-
-@mixin size( $height, $width: $height ) {
-    
-	height: $height; width: $width;
-}
-
-
-
-/*----------------------------------------------*\
 	#BREAKPOINTS LOOP
 \*----------------------------------------------*/
 
@@ -34,7 +23,7 @@
             
             @else {
                 
-                $break: '-' + $breakclass !global;
+                $break: '\\@' + $breakclass !global;
                 $screen: 'only screen and (min-width: #{ rem( $breakpoint ) })';
                 
                 @media #{ $screen } {
@@ -50,7 +39,7 @@
         
         @if ( $choice == only or $choice == both ) {
             
-            $break: '-' + $breakclass + '-only' !global;
+            $break: '\\@' + $breakclass + '-only' !global;
             
             @if ( length( $breakpoints ) > $breakindex ) {
             
@@ -79,74 +68,5 @@
     }
 }
 
-
-
-/*--------------------------------------------------*\
-	#MEDIA QUERY MIXIN 
-\*--------------------------------------------------*/
-
-@mixin media( $minbreak: null, $maxbreak: null, $type: 'screen' ) {
-    
-    $media: '';
-    
-    @if ( $maxbreak == null ) {
-        
-        $media: 'only #{ $type } and (min-width: #{ map-get($breakpoints, $minbreak) })';
-    }
-    
-    @else if ( $minbreak == null and $maxbreak != null ) {
-        
-        $media: 'only #{ $type } and (max-width: #{ map-get($breakpoints, $maxbreak) })';
-    }
-    
-    @else if ( $type == 'print' ) {
-        
-        $media: 'only #{ $type }';
-    }
-    
-    @else {
-        
-        $media: 'only #{ $type } and (min-width: #{ map-get($breakpoints, $minbreak) }) and (max-width: #{ map-get($breakpoints, $maxbreak) })';
-    }
-    
-    @media #{ $media } {
-            
-        @content;
-    }
-}
-
-
-
-/*----------------------------------------------*\
-	#HEADING SIZES
-\*----------------------------------------------*/
-
-@mixin headings($jump) {
-    
-    @for $i from 1 through 6 {
-
-        h#{$i},
-        .h#{$i} {
-            font-size: 1rem + ($jump * (6 - $i));
-        }
-        
-        .s#{$i} {
-            font-size: 1rem + ($jump * (6 - $i)) - 0.25rem;
-        }
-    }
-}
-
-
-
-/*--------------------------------------------------*\
-	#SVG FILL FIX
-\*--------------------------------------------------*/
-
-@mixin fill($colour) {
-    &,
-    use > svg {
-        fill: $colour;
-    }  
-}
 
 

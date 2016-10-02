@@ -2,7 +2,7 @@
     
 	#CREATIVE LITTLE UI KIT
 	
-	- Version:      0.9.5
+	- Version:      0.9.6
 	- Author:       Creative Little Dots
 	- Site:         http://creativelittle.uk/uikit
 	- Copyright:    2016, Creative Little Dots
@@ -18,8 +18,13 @@
 	Globally-available tools, public mixins & helper functions.
 \*----------------------------------------------------------------------------*/
 
-@import 'tools/functions';              // Useful functions.
-@import 'tools/mixins';                 // Useful mixins.
+@import 'tools/rem';                    // Pixels to rem function.
+
+@import 'tools/area';                   // Height & width shorthand mixin.
+@import 'tools/breakpoints';            // Breakpoint generator mixin.
+@import 'tools/headings';               // Heading sizes mixin.
+@import 'tools/media';                  // Media query shorthand mixin.
+@import 'tools/svg';                    // SVG fill fix mixin.
 
 
 
@@ -30,23 +35,25 @@
 \*----------------------------------------------------------------------------*/
 
 @import 'generic/normalize';            // A level playing field.
+@import 'generic/shared';               // Far-reaching shared styles.
 
 
 
 /*----------------------------------------------------------------------------*\
 	#ELEMENTS
 	
-	Last layer for type selectors (h1-h6, a) & far-reaching shared selectors.
+	Last layer for type selectors (h1-h6, a).
 \*----------------------------------------------------------------------------*/
 
-@import 'elements/shared';              // Far-reaching shared styles.
+
 @import 'elements/document';            // Page-level styles (HTML, body etc).
-@import 'elements/type';                // All type styles.
+@import 'elements/forms';               // Form inputs, textareas.
+@import 'elements/images';              // Image stying.
 @import 'elements/links';               // Hyperlink styles.
 @import 'elements/lists';               // List styles.
-@import 'elements/images';              // Image stying.
 @import 'elements/quotes';              // Blockquotes, cite, etc.
-@import 'elements/forms';               // Form inputs, textareas.
+@import 'elements/type';                // All type styles.
+
 
 
 
@@ -56,20 +63,12 @@
 	Design Patterns. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
-@import 'objects/grids';                // Flex based grid layout.
-@import 'objects/sizes';                // Flex based sizes.
-@import 'objects/offsets';              // Margin offsets for asymetric layouts.
 @import 'objects/bricks';               // Flex based block layout.
-
-
-
-/*----------------------------------------------------------------------------*\
-	#PARTIES
-	
-	Third party styles that appear globally, such as sliders & modals.
-\*----------------------------------------------------------------------------*/
-
-
+@import 'objects/grids';                // Flex based grid layout.
+@import 'objects/inline';               // Flex based inliner.
+@import 'objects/offsets';              // Margin offsets for asymetric layouts.
+@import 'objects/sizes';                // Flex based sizes.
+@import 'objects/unlist';               // Strip list styles.
 
 
 
@@ -80,7 +79,6 @@
 \*----------------------------------------------------------------------------*/
 
 @import 'components/buttons';           // Button styles.
-@import 'components/lists';             // List styles.
 @import 'components/menus';             // Menu styles.
 @import 'components/modal';             // Modal styles.
 @import 'components/navigation';        // Responsive navigation component.
@@ -95,9 +93,8 @@
 \*----------------------------------------------------------------------------*/
 
 @import 'trumps/flex-helpers';          // Give flex a helping hand.
-@import 'trumps/style-helpers';         // Adding component agnostic styles.
-@import 'trumps/modernizr';             // Modernizr enabled overrides.
 @import 'trumps/spacing';               // Micro-level spacing.
+@import 'trumps/style-helpers';         // Adding component agnostic styles.
 @import 'trumps/text-helpers';          // Handy text assistants.
 @import 'trumps/validation';            // Form validation styles.
 @import 'trumps/visibility';            // Helpers to show and side stuff.

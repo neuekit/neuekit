@@ -1,5 +1,10 @@
 /*----------------------------------------------*\
-	#MODERNIZR TRIGGERED OVERRIDES
+	#SIZE
 \*----------------------------------------------*/
+
+@mixin size( $height, $width: $height ) {
+    
+	height: $height; width: $width;
+}
 
 
