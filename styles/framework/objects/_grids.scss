@@ -7,8 +7,7 @@
 
 .#{ $gridClass } { // .grid
     display: flex;
-    flex-shrink: 0;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     margin: 0 auto;
     max-width: rem( $maxWidth );
     padding: 0 rem( $gutter );
@@ -19,7 +18,6 @@
         
         &__#{ $itemClass } { // .grid__item
             @if(not($auto)) { flex-basis: 100%; }
-            flex-direction: column;
             @if($auto) { flex-grow: 1; }
             max-width: 100%;
             padding: 0 rem( $gutterSmall );
@@ -31,7 +29,6 @@
     
     &--#{ $itemClass } { // .grid--item
         display: block;
-        flex-direction: column;
         padding: 0 rem( $gutter + $gutterSmall );
     }
     
