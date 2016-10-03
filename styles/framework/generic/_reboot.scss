@@ -25,7 +25,7 @@
 	background-repeat: no-repeat;   /* 1 */
 	box-sizing: inherit;            /* 2 */
 	flex-flow: column;              /* 3 */
-	flex-shrink: 0;                 /* 4 */
+    flex-shrink: 0;                 /* 4 */
 	position: relative;             /* 5 */
 }
 
@@ -61,19 +61,6 @@ html {
 }
 
 
-/*----------------------------------------------------------------------------*\
-	Hide hidden elements for slightly improved rendeering (opinionated).
-\*----------------------------------------------------------------------------*/
-
-head,
-link,
-meta,
-script,
-style,
-template,
-title {
-    display: none;
-}
 
 /*----------------------------------------------------------------------------*\
 	Remove the margin in all browsers (opinionated).
@@ -81,21 +68,6 @@ title {
 
 body {
 	margin: 0;
-	overflow: auto;
-}
-
-
-
-/*----------------------------------------------------------------------------*\
-	Restore inline display to text elements (opinionated).
-\*----------------------------------------------------------------------------*/
-
-b,
-em,
-i,
-span,
-strong {
-    display: inline;
 }
 
 
@@ -201,16 +173,15 @@ sub,
 sup {
 	font-size: 83.3333%; /* 1 */
 	line-height: 0;
-	position: relative;
 	vertical-align: baseline;
 }
 
 sub {
-	bottom: -.25em;
+	bottom: -0.25em;
 }
 
 sup {
-	top: -.5em;
+	top: -0.5em;
 }
 
 
@@ -220,16 +191,18 @@ sup {
     1. Restore the coloring undone by defining the text shadow (opinionated).
 \*----------------------------------------------------------------------------*/
 
-::-moz-selection {
+%selection {
 	background-color: #b3d4fc;  /* 1 */
 	color: #000000;             /* 1 */
 	text-shadow: none;
 }
 
+::-moz-selection {
+	@extend %selection;
+}
+
 ::selection {
-	background-color: #b3d4fc;  /* 1 */
-	color: #000000;             /* 1 */
-	text-shadow: none;
+	@extend %selection;
 }
 
 
@@ -464,6 +437,17 @@ button,
 
 
 /*----------------------------------------------------------------------------*\
+	Add the correct display in IE 10-.
+\*----------------------------------------------------------------------------*/
+
+template,
+[hidden] {
+	display: none;
+}
+
+
+
+/*----------------------------------------------------------------------------*\
 	Correct the focus styles unset by the previous rule.
 \*----------------------------------------------------------------------------*/
 
@@ -532,16 +516,6 @@ button,
 
 a:hover {
 	outline-width: 0;
-}
-
-
-
-/*----------------------------------------------------------------------------*\
-	Add the correct display in IE 10-.
-\*----------------------------------------------------------------------------*/
-
-[hidden] {
-	display: none;
 }
 
 
