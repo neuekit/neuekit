@@ -1,6 +1,6 @@
-/*----------------------------------------------*\
-	#FORM BASE STYLES
-\*----------------------------------------------*/
+/*----------------------------------------------------------------------------*\
+	#FORM ELEMENT STYLES
+\*----------------------------------------------------------------------------*/
 
 fieldset {
     border: 2px solid lightgrey;
@@ -121,7 +121,7 @@ textarea {
         &::before {
             box-shadow: inset 0 0 0 2px lightgrey;
             content: '';
-            @include size(1.125rem);
+            @include area(1.125rem);
             margin-right: 0.75rem;
             text-align: center;
             transition: all $speed ease;

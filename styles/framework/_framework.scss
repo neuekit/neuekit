@@ -13,18 +13,26 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#TOOLS
+	#FUNCTIONS
 	
-	Globally-available tools, public mixins & helper functions.
+	Globally-available functions.
 \*----------------------------------------------------------------------------*/
 
-@import 'tools/rem';                    // Pixels to rem function.
+@import 'functions/rem';                // Pixels to rem function.
 
-@import 'tools/area';                   // Height & width shorthand mixin.
-@import 'tools/breakpoints';            // Breakpoint generator mixin.
-@import 'tools/headings';               // Heading sizes mixin.
-@import 'tools/media';                  // Media query shorthand mixin.
-@import 'tools/svg';                    // SVG fill fix mixin.
+
+
+/*----------------------------------------------------------------------------*\
+	#MIXINS
+	
+	Globally-available mixins.
+\*----------------------------------------------------------------------------*/
+
+@import 'mixins/area';                  // Height & width shorthand mixin.
+@import 'mixins/breakpoints';           // Breakpoint generator mixin.
+@import 'mixins/headings';              // Heading sizes mixin.
+@import 'mixins/media';                 // Media query shorthand mixin.
+@import 'mixins/svg';                   // SVG fill fix mixin.
 
 
 
@@ -35,7 +43,7 @@
 \*----------------------------------------------------------------------------*/
 
 @import 'generic/reboot';               // A modern level playing field.
-@import 'generic/shared';               // Far-reaching shared styles.
+@import 'generic/shared';               // Shared global commonalities.
 
 
 
@@ -56,18 +64,15 @@
 
 
 
-
 /*----------------------------------------------------------------------------*\
 	#OBJECTS
 	
-	Design Patterns. No cosmetics. Start using agnostic classes only.
+	Design Patterns. Layout. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
 @import 'objects/bricks';               // Flex based block layout.
 @import 'objects/grids';                // Flex based grid layout.
 @import 'objects/inline';               // Flex based inliner.
-@import 'objects/offsets';              // Margin offsets for asymetric layouts.
-@import 'objects/sizes';                // Flex based sizes.
 @import 'objects/unlist';               // Strip list styles.
 
 
@@ -79,6 +84,7 @@
 \*----------------------------------------------------------------------------*/
 
 @import 'components/buttons';           // Button styles.
+@import 'components/loadr';             // Loading indicator component.
 @import 'components/menus';             // Menu styles.
 @import 'components/modal';             // Modal styles.
 @import 'components/navigation';        // Responsive navigation component.
@@ -87,16 +93,27 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#TRUMPS
+	#HELPERS
 	
 	Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
-@import 'trumps/flex-helpers';          // Give flex a helping hand.
-@import 'trumps/spacing';               // Micro-level spacing.
-@import 'trumps/style-helpers';         // Adding component agnostic styles.
-@import 'trumps/text-helpers';          // Handy text assistants.
-@import 'trumps/validation';            // Form validation styles.
-@import 'trumps/visibility';            // Helpers to show and side stuff.
+@import 'helpers/flex';                 // Give flex a helping hand.
+@import 'helpers/offsets';              // Margin offsets for asymetric layouts.
+@import 'helpers/sizes';                // Flex based sizes.
+@import 'helpers/spacing';              // Micro-level spacing.
+@import 'helpers/text';                 // Handy text assistants.
+@import 'helpers/visibility';           // Helpers to show and side stuff.
+
+
+
+/*----------------------------------------------------------------------------*\
+	#OVERRIDES
+	
+	Overrides, helpers, utilities. Only affect one item at a time.
+\*----------------------------------------------------------------------------*/
+
+@import 'overrides/validation';         // Form validation styles.
+@import 'overrides/visibility';         // Helpers to show and side stuff.
 
 

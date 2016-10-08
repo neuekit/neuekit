@@ -1,6 +1,6 @@
-/*----------------------------------------------*\
-	#TOOLTIPS
-\*----------------------------------------------*/
+/*----------------------------------------------------------------------------*\
+	#TOOLTIP COMPONENT
+\*----------------------------------------------------------------------------*/
 
 .tooltip {
     $tipSize: 0.25rem;
@@ -18,7 +18,7 @@
         border-right: $tipSize solid transparent;
         border-top: $tipSize solid $primary;
         content: '';
-        @include size(0);
+        @include area(0);
         transform: translate(-50%, $tipSize);
     }
     
