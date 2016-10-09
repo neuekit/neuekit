@@ -29,6 +29,15 @@
             display: inline-block;
         }
     }
+    
+    &--right {
+        left: auto; right: 0;
+        transform: translateX(100%);
+        
+        &:target + .canvas {
+            transform: translateX(-20rem);
+        }
+    }
 }
 
 .close-off-canvas {
