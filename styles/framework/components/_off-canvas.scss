@@ -1,0 +1,38 @@
+/*----------------------------------------------------------------------------*\
+	#OFF CANVAS
+\*----------------------------------------------------------------------------*/
+
+.canvas {
+    transition: transform $speed ease;
+}
+
+.off-canvas {
+    background-color: $secondary;
+    @include area(100vh, 20rem);
+    left: 0; top: 0;
+    position: fixed;
+    transform: translateX(-100%);
+    transition: transform $speed ease;
+    
+    &:target {
+        transform: translateX(0);
+    }
+    
+    &:target + .canvas {
+        transform: translateX(20rem);
+        
+        .open-off-canvas {
+            display: none;
+        }
+        
+        .close-off-canvas {
+            display: inline-block;
+        }
+    }
+}
+
+.close-off-canvas {
+    display: none;
+}
+
+
