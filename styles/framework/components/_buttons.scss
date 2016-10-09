@@ -24,7 +24,7 @@ $btnCondition: if($btnReset, $btnSelectors, null);
     /*  States  */
     
     &:disabled {
-        background-color: lightgrey;
+        background-color: $secondary;
         box-shadow: none;
         color: grey;
         pointer-events: none;
