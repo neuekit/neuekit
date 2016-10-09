@@ -164,7 +164,6 @@ textarea {
         
         
         &::before {
-            box-shadow: inset 0 0 0 2px lightgrey;
             content: '';
             @include area(1.125rem);
             margin-right: 0.75rem;
@@ -177,8 +176,8 @@ textarea {
 [type="checkbox"] {
     
     + label::before {
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M31.74,7.14L27.63,3A0.88,0.88,0,0,0,26.5,3L10.38,19.11l-4.93-5a0.81,0.81,0,0,0-1.13,0L0.21,18.29a0.76,0.76,0,0,0-.21.57,0.7,0.7,0,0,0,.21.51L9.81,29a0.79,0.79,0,0,0,.57.26h0.05A0.55,0.55,0,0,0,10.94,29L31.74,8.22A0.79,0.79,0,0,0,32,7.65,0.63,0.63,0,0,0,31.74,7.14Z" /></svg>') no-repeat center 1.125rem / 0.75rem;
-        border-radius: $radius/2;
+        background: $secondary url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M31.74,7.14L27.63,3A0.88,0.88,0,0,0,26.5,3L10.38,19.11l-4.93-5a0.81,0.81,0,0,0-1.13,0L0.21,18.29a0.76,0.76,0,0,0-.21.57,0.7,0.7,0,0,0,.21.51L9.81,29a0.79,0.79,0,0,0,.57.26h0.05A0.55,0.55,0,0,0,10.94,29L31.74,8.22A0.79,0.79,0,0,0,32,7.65,0.63,0.63,0,0,0,31.74,7.14Z" /></svg>') no-repeat center 1.125rem / 0.75rem;
+        border-radius: $radius;
     }
     
     &:checked + label::before {
@@ -189,12 +188,13 @@ textarea {
 [type="radio"] {
     
     + label::before {
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" />></svg>') no-repeat center / 0;
+        background: radial-gradient(ellipse at center, $primary 50%, $secondary 50%);
         border-radius: 50%;
+        box-shadow: inset 0 0 0 1rem $secondary;
     }
     
     &:checked + label::before {
-        background-size: 0.75rem;
+        box-shadow: inset 0 0 0 0.3125rem $secondary;
     }
 }
 
