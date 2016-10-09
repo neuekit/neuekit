@@ -3,11 +3,7 @@
 \*----------------------------------------------------------------------------*/
 
 fieldset {
-    border: 2px solid lightgrey;
-}
-
-label {
-    
+    border: 2px solid $secondary;
 }
 
 legend {
@@ -16,43 +12,91 @@ legend {
 
 meter {
     appearance: none;
+    
+    &::-webkit-meter-bar,
+    &::-webkit-meter-optimum-value,
+    &::-webkit-meter-suboptimum-value,
+    &::-webkit-meter-even-less-good-value {
+        border-radius: 1rem;
+    }
+    
+    &::-webkit-meter-bar {
+        background: $secondary;
+        height: 0.5rem;
+    }
+    
+    &::-webkit-meter-optimum-value {
+        background: $success;
+    }
+    
+    &::-webkit-meter-suboptimum-value {
+        background: $warn;
+    }
+    
+    &::-webkit-meter-even-less-good-value {
+        background: $error;
+    }
+}
+
+@-moz-document url-prefix() {
+    
+    meter {
+        background: $secondary;
+        border-radius: 1rem;
+        height: 0.5rem;
+        
+        &::-moz-meter-bar {
+            border-radius: 1rem;
+        }
+        
+        &:-moz-meter-optimum::-moz-meter-bar {
+            background: $success;
+        }
+        
+        &:-moz-meter-sub-optimum::-moz-meter-bar {
+            background: $warn;
+        }
+        
+        &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+            background: $error;
+        }
+    }
 }
 
 progress {
     appearance: none;
     color: $primary;
     
+    &::-webkit-progress-bar,
+    &[value]::-webkit-progress-value {
+        border: none;
+        border-radius: 1rem;
+        height: 0.5rem;
+    }
+    
     &::-webkit-progress-bar {
-        background-color: transparent;
-        border-radius: 4rem;
-        border: 2px solid $primary;
-        height: 1.25rem;
+        background-color: $secondary;
     }
     
     &[value]::-webkit-progress-value {
         background-color: $primary;
-        border-radius: 4rem;
-        height: 0.75rem;
-        margin: 2px;
-        max-width: calc(100% - 4px);
     }
 }
 
 @-moz-document url-prefix() {
     
+    progress[value],
+    progress[value]::-moz-progress-bar {
+        border: none;
+        border-radius: 1rem;
+        height: 0.5rem;
+    }
+    
     progress[value] {
-        appearance: none;
-        background-color: transparent;
-        border-radius: 4rem;
-        border: 2px solid $primary;
-        height: 1.25rem;
+        background-color: $secondary;
         
         &::-moz-progress-bar {
             background-color: $primary;
-            border-radius: 4rem;
-            height: 0.75rem;
-            margin: 2px;
-            max-width: calc(100% - 4px);
         }
     }
     
@@ -61,7 +105,7 @@ progress {
 select {
     appearance: none;
     background: $primary url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'><polyline fill='white' points='46,15 25,36 4,15'/></svg>") no-repeat right 0.75rem center / 0.875rem;
-    border-radius: 0;
+    border-radius: $radius;
     border: none;
     color: white;
     height: 2.5rem;
@@ -85,23 +129,20 @@ textarea,
 [type="url"],
 [type="week"],
 [data-type="text"] {
-    border: 2px solid lightgrey;
-    border-radius: 0;
-    height: 2.75rem;
+    background-color: $secondary;
+    border-radius: $radius;
+    height: 2.5rem;
     display: block;
-    padding: 0 0.5rem;
+    padding: 0 0.75rem;
+    transition: background-color $speed ease;
     width: 100%;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     
     &:focus {
-        border: 2px solid $primary;
+        background-color: white;
+        box-shadow: inset 0 0 0 2px $secondary;
 		outline: none;
 	}
-}
-
-textarea {
-    height: auto;
-    resize: vertical;
 }
 
 [type="checkbox"],

@@ -4,9 +4,9 @@
 
     <head>
         
-        <!--------------------------------------------------
-        //	Document: Setup
-        --------------------------------------------------->
+        <!--------------------------------------------------------->
+        <!--  Document: Setup  -->
+        <!--------------------------------------------------------->
     
         <meta charset="utf-8">
         
@@ -24,9 +24,9 @@
         
         
         
-        <!--------------------------------------------------
-        //	Document: Priority Resources
-        --------------------------------------------------->
+        <!--------------------------------------------------------->
+        <!--  Document: Priority Resources  -->
+        <!--------------------------------------------------------->
         
         <base href="/">
         
@@ -34,9 +34,9 @@
         
         
         
-        <!--------------------------------------------------
-        //	Styles: Element Testing css
-        --------------------------------------------------->
+        <!--------------------------------------------------------->
+        <!--  Styles: Element Testing css  -->
+        <!--------------------------------------------------------->
         
         <style>
             
@@ -71,31 +71,35 @@
 
     <body>
         
-        <!--------------------------------------------------
-        //	Site: Header
-        --------------------------------------------------->
+        <!--------------------------------------------------------->
+        <!--  Site: Header  -->
+        <!--------------------------------------------------------->
     
         <header>
+            
+            <div class="grid  grid--item">
                     
-            <nav>
-                
-                <ul>
+                <nav role="navigation">
+                        
+                    <a href="#">Link</a>
                     
-                    <li><a href="#m1" class="js-modal-open">Link</a></li>
+                    <nav role="navigation">
+                        
+                        <a href="#">Link</a>
+                        
+                    </nav>
                     
-                    <li><a href="#m2" class="js-modal-open">Link</a></li>
-                    
-                </ul>
-                
-            </nav>
+                </nav>
+            
+            </div>
                     
         </header>
         
         
         
-        <!--------------------------------------------------
-        //	Site: Main
-        --------------------------------------------------->
+        <!--------------------------------------------------------->
+        <!--  Site: Main  -->
+        <!--------------------------------------------------------->
         
         <main>
             
@@ -109,15 +113,27 @@
                         
                         <h1 class="tooltip  tooltip--right" title="Hey this is a tooltip!">This is a heading</h1>
                         
+                        <h1 class="s1">This is a heading</h1>
+                        
                         <h2>This is a heading</h2>
+                        
+                        <h2 class="s2">This is a heading</h2>
                         
                         <h3>This is a heading</h3>
                         
+                        <h3 class="s3">This is a heading</h3>
+                        
                         <h4>This is a heading</h4>
+                        
+                        <h4 class="s4">This is a heading</h4>
                         
                         <h5>This is a heading</h5>
                         
+                        <h5 class="s5">This is a heading</h5>
+                        
                         <h6>This is a heading</h6>
+                        
+                        <h6 class="s6">This is a heading</h6>
                         
                         <div class="grid justify-center">
                             
@@ -171,7 +187,29 @@
                             
                                 List item
                             
-                                <ol>/* maybe make this go 1A, 1B, 1C etc. */
+                                <ol>
+                            
+                                    <li>List item</li>
+                                    
+                                    <li>List item</li>
+                                    
+                                    <li>List item</li>
+                                    
+                                    <li>List item</li>
+                                    
+                                    <li>List item</li>
+                                    
+                                </ol>
+                                
+                            </li>
+                            
+                            <li>List item</li>
+                            
+                            <li>
+                            
+                                List item
+                                
+                                <ol>
                             
                                     <li>List item</li>
                                     
@@ -191,10 +229,6 @@
                             
                             <li>List item</li>
                             
-                            <li>List item</li>
-                            
-                            <li>List item</li>
-                            
                         </ol>
                         
                         <blockquote>
@@ -206,10 +240,10 @@
                         </blockquote>
                         
                     </section>
+                    
+                    <hr>
             
                     <section>
-                
-                        <hr>
                 
                         <h3>Available columns</h3>
                         
@@ -306,14 +340,12 @@
                             <div class="grid__item  size-11"><span>11</span></div>
                             
                         </div>
-                
-                        <hr>
             
                     </section>
                     
+                    <hr>
+                    
                     <section>
-                
-                        <hr>
                 
                         <h3>Infinite Nesting</h3>
                         
@@ -360,166 +392,172 @@
                         </div>
                         
                     </section>
+                    
+                    <hr>
+                    
+                    <section>
                 
-                    <form>
-                        
-                        <button>button</button>
-                        
-                        <hr>
-                        
-                        <datalist>
-                        
-                            <option>option 1</option>
+                        <form>
                             
-                            <option>option 2</option>
+                            <button>button</button>
                             
-                        </datalist>
-                        
-                        <hr>
-                        
-                        <fieldset>
+                            <hr>
                             
-                            <legend>legend</legend>
+                            <input type="text" list="list">
                             
-                        </fieldset>
-                        
-                        <hr>
-                        
-                        <input type="button" value="button" class="button--light">
-                        
-                        <hr>
-                        
-                        <input type="checkbox" name="checkbox" id="ch1" checked>
-                        
-                        <label for="ch1">Checkbox!</label>
-                        
-                        <input type="checkbox" name="checkbox" id="ch2">
-                        
-                        <label for="ch2">Checkbox!</label>
-                        
-                        <hr>
-                        
-                        <input type="color" placeholder="color">
-                        
-                        <hr>
-                        
-                        <input type="date" placeholder="date">
-                        
-                        <hr>
-                        
-                        <input type="datetime" placeholder="datetime">
-                        
-                        <hr>
-                        
-                        <input type="email" placeholder="email">
-                        
-                        <hr>
-                        
-                        <input type="file">
-                        
-                        <hr>
-                        
-                        <input type="hidden">
-                        
-                        <hr>
-                        
-                        <input type="month" placeholder="month">
-                        
-                        <hr>
-                        
-                        <input type="number" placeholder="number">
-                        
-                        <hr>
-                        
-                        <input type="password" placeholder="password">
-                        
-                        <hr>
-                        
-                        <input type="radio" name="radio" id="ra1" checked>
-                        
-                        <label for="ra1">Radio!</label>
-                        
-                        <input type="radio" name="radio" id="ra2">
-                        
-                        <label for="ra2">Radio!</label>
-                        
-                        <hr>
-                        
-                        <input type="range">
-                        
-                        <hr>
-                        
-                        <input type="reset">
-                        
-                        <hr>
-                        
-                        <input type="search" placeholder="search">
-                        
-                        <hr>
-                        
-                        <input type="submit">
-                        
-                        <hr>
-                        
-                        <input type="tel" placeholder="tel">
-                        
-                        <hr>
-                        
-                        <input type="text" placeholder="text">
-                        
-                        <hr>
-                        
-                        <input type="time" placeholder="time">
-                        
-                        <hr>
-                        
-                        <input type="url" placeholder="url">
-                        
-                        <hr>
-                        
-                        <input type="week" placeholder="week">
-                        
-                        <hr>
-                        
-                        <label>label</label>
-                        
-                        <hr>
-                        
-                        <meter value="33" max="100"></meter>
-                        
-                        <hr>
-                        
-                        <select>
+                            <datalist id="list">
                             
-                            <optgroup>
-                            
-                                <option>option A1</option>
+                                <option>option 1</option>
                                 
-                                <option>option A2</option>
+                                <option>option 2</option>
                                 
-                            </optgroup>
+                            </datalist>
                             
-                            <optgroup>
+                            <hr>
                             
-                                <option>option B1</option>
+                            <fieldset>
                                 
-                                <option>option B2</option>
+                                <legend>legend</legend>
                                 
-                            </optgroup>
+                            </fieldset>
                             
-                        </select>
-                        
-                        <hr>
-                        
-                        <output>
-                        
-                        <hr>
-                        
-                        <progress value="50" max="100"></progress>
-                        
-                        <hr>
-                        
-                    </form>
+                            <hr>
+                            
+                            <textarea></textarea>
+                            
+                            <hr>
+                            
+                            <input type="button" value="button" class="button--light">
+                            
+                            <hr>
+                            
+                            <input type="checkbox" name="checkbox" id="ch1" checked>
+                            
+                            <label for="ch1">Checkbox!</label>
+                            
+                            <input type="checkbox" name="checkbox" id="ch2">
+                            
+                            <label for="ch2">Checkbox!</label>
+                            
+                            <hr>
+                            
+                            <input type="color" placeholder="color">
+                            
+                            <hr>
+                            
+                            <input type="date" placeholder="date">
+                            
+                            <hr>
+                            
+                            <input type="datetime" placeholder="datetime">
+                            
+                            <hr>
+                            
+                            <input type="email" placeholder="email">
+                            
+                            <hr>
+                            
+                            <input type="file">
+                            
+                            <hr>
+                            
+                            <input type="hidden">
+                            
+                            <hr>
+                            
+                            <input type="month" placeholder="month">
+                            
+                            <hr>
+                            
+                            <input type="number" placeholder="number">
+                            
+                            <hr>
+                            
+                            <input type="password" placeholder="password">
+                            
+                            <hr>
+                            
+                            <input type="radio" name="radio" id="ra1" checked>
+                            
+                            <label for="ra1">Radio!</label>
+                            
+                            <input type="radio" name="radio" id="ra2">
+                            
+                            <label for="ra2">Radio!</label>
+                            
+                            <hr>
+                            
+                            <input type="range">
+                            
+                            <hr>
+                            
+                            <input type="reset">
+                            
+                            <hr>
+                            
+                            <input type="search" placeholder="search">
+                            
+                            <hr>
+                            
+                            <input type="submit">
+                            
+                            <hr>
+                            
+                            <input type="tel" placeholder="tel">
+                            
+                            <hr>
+                            
+                            <input type="text" placeholder="text" autocomplete="on">
+                            
+                            <hr>
+                            
+                            <input type="time" placeholder="time">
+                            
+                            <hr>
+                            
+                            <input type="url" placeholder="url">
+                            
+                            <hr>
+                            
+                            <input type="week" placeholder="week">
+                            
+                            <hr>
+                            
+                            <label>label</label>
+                            
+                            <hr>
+                            
+                            <meter min="0" max="100" low="25" high="75" optimum="100" value="20"></meter>
+                            
+                            <hr>
+                            
+                            <progress value="50" max="100"></progress>
+                            
+                            <hr>
+                            
+                            <select>
+                                
+                                <optgroup>
+                                
+                                    <option>option A1</option>
+                                    
+                                    <option>option A2</option>
+                                    
+                                </optgroup>
+                                
+                                <optgroup>
+                                
+                                    <option>option B1</option>
+                                    
+                                    <option>option B2</option>
+                                    
+                                </optgroup>
+                                
+                            </select>
+                            
+                        </form>
+                    
+                    </section>
                     
                 </div>
                 
@@ -529,9 +567,9 @@
         
         
         
-        <!--------------------------------------------------
-        //	Site: Footer
-        --------------------------------------------------->
+        <!--------------------------------------------------------->
+        <!--  Site: Footer  -->
+        <!--------------------------------------------------------->
         
         <footer>
         
@@ -541,9 +579,9 @@
         
         
         
-        <!--------------------------------------------------
-        //	Site: Modal
-        --------------------------------------------------->
+        <!--------------------------------------------------------->
+        <!--  Site: Modal  -->
+        <!--------------------------------------------------------->
         
         <section class="modal" id="m1">
             
@@ -577,15 +615,15 @@
         
         
         
-        <!--------------------------------------------------
-        //	Document: Subservient Resources
-        --------------------------------------------------->
+        <!--------------------------------------------------------->
+        <!--  Document: Subservient Resources  -->
+        <!--------------------------------------------------------->
         
         <script src="/scripts/application/parties/svg4everybody.min.js"></script>
         
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
         
-        <script>window.jQuery || document.write('<script src="/scripts/application/parties/jquery-3.1.1.min.js"><\/script>')</script>
+        <script>window.jQuery || document.write('<script src="/scripts/application/parties/jquery.min.js"><\/script>')</script>
         
         <script src="/scripts/framework/framework.min.js"></script>
         

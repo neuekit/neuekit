@@ -2,4 +2,26 @@
 	#LIST ELEMENT STYLES
 \*----------------------------------------------------------------------------*/
 
+ol,
+ul {
+    padding-left: 1.5rem;
+}
+
+ol {
+    counter-reset: item;
+    
+    > li {
+        counter-increment: item;
+    }
+    
+    ol > li {
+        display: block;
+        
+        &::before {
+            content: counters(item, '.') '. ';
+            margin-left: -1.25rem;
+        }
+    }
+}
+
 

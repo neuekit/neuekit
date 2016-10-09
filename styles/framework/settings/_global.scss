@@ -3,7 +3,7 @@
 \*----------------------------------------------------------------------------*/
 
 $radius:            3px         !default;
-$btnRadius:         0           !default;
+$btnRadius:         $radius     !default;
 $btnReset:          true        !default;
 $speed:             0.25s       !default;
 

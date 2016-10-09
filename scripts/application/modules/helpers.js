@@ -35,7 +35,7 @@
 
             /*  Variablise 'this' to limit it to avoid scope conflicts  */
             /* jshint validthis: true */
-            var $this = this;
+            var _this = this;
 
 
 
@@ -52,7 +52,7 @@
             
             /*  Allow "chaining" of methods together  */
 
-            $this.init = function() {
+            _this.init = function() {
                 
                 
                 
@@ -65,7 +65,7 @@
             
             /*  This refers to PROJECT.helper.init()  */
             
-            return $this.init();
+            return _this.init();
         }
         
         

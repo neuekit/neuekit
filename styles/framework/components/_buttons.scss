@@ -2,7 +2,7 @@
 	#BUTTON COMPONENT STYLES
 \*----------------------------------------------------------------------------*/
 
-$btnSelectors: 'button, [role="button"], [type="button"], [type="reset"], [type="submit"],';
+$btnSelectors: 'button, [role="button"], [type="button"], [type="reset"], [type="submit"], [type="file"]::-webkit-file-upload-button, ';
 $btnCondition: if($btnReset, $btnSelectors, null);
 
 #{$btnCondition}

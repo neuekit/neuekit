@@ -20,7 +20,7 @@
 
             /*  Variablise 'this' to limit it to avoid scope conflicts  */
 
-            var _this  = this;
+            var _this = this;
              
 
 
