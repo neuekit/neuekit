@@ -64,18 +64,23 @@ meter {
 }
 
 progress {
+    animation: animate-progress 1s linear infinite;
     appearance: none;
+    background: linear-gradient(to right, $primary 0%, lighten($primary, 25%) 45%, lighten($primary, 25%) 55%, $primary 100%) repeat;
+    border-radius: 1rem;
     color: $primary;
+    height: 0.5rem;
     
+    &[value],
     &::-webkit-progress-bar,
     &[value]::-webkit-progress-value {
+        background: none;
         border: none;
         border-radius: 1rem;
-        height: 0.5rem;
     }
     
-    &::-webkit-progress-bar {
-        background-color: $secondary;
+    &[value]::-webkit-progress-bar {
+        background: $secondary;
     }
     
     &[value]::-webkit-progress-value {
@@ -99,7 +104,6 @@ progress {
             background-color: $primary;
         }
     }
-    
 }
 
 select {
