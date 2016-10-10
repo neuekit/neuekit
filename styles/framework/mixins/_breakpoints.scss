@@ -23,7 +23,7 @@
             
             @else {
                 
-                $break: '\\@' + $breakclass !global;
+                $break: $mediaClass + $breakclass !global;
                 $screen: 'only screen and (min-width: #{ rem( $breakpoint ) })';
                 
                 @media #{ $screen } {
@@ -39,7 +39,7 @@
         
         @if ( $choice == only or $choice == both ) {
             
-            $break: '\\@' + $breakclass + '-only' !global;
+            $break: $mediaClass + $breakclass + '-only' !global;
             
             @if ( length( $breakpoints ) > $breakindex ) {
             

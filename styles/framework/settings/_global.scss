@@ -7,4 +7,16 @@ $btnRadius:         $radius     !default;
 $btnReset:          true        !default;
 $speed:             0.25s       !default;
 
+$breakpoints: (
+    s:              null,                 //Smartphone
+    m:              641px,                //Tablet
+    l:              1025px,               //Notebook
+    xl:             1201px,               //Laptop
+    //xxl:            1601px                //Desktop
+)                               !default;
+
+$offsets:           false       !default; //Turns grid offset classes on/off
+
+$mediaClass:        '\\@'       !default;
+
 
