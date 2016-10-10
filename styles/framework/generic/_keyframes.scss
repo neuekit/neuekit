@@ -4,7 +4,9 @@
 
 @keyframes animate-progress {
     
-    100% { background-position-x: 160px; }
+    50% { background-position-x: -100%; }
+    
+    100% { background-position-x: 0%; }
     
 }
 

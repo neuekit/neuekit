@@ -11,7 +11,7 @@ legend {
 }
 
 meter {
-    appearance: none;
+    width: 100%;
     
     &::-webkit-meter-bar,
     &::-webkit-meter-optimum-value,
@@ -64,12 +64,19 @@ meter {
 }
 
 progress {
-    animation: animate-progress 1s linear infinite;
+    animation: animate-progress 2s ease infinite;
     appearance: none;
-    background: linear-gradient(to right, $primary 0%, lighten($primary, 25%) 45%, lighten($primary, 25%) 55%, $primary 100%) repeat;
+    background: linear-gradient(
+        to right,
+        $primary 5%,
+        $secondary 5%,
+        $secondary 95%,
+        $primary 95%
+    ) repeat;
+    background-size: 200% 100%;
     border-radius: 1rem;
     color: $primary;
-    height: 0.5rem;
+    @include area(0.5rem, 100%);
     
     &[value],
     &::-webkit-progress-bar,
@@ -108,13 +115,13 @@ progress {
 
 select {
     appearance: none;
-    background: $primary url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'><polyline fill='white' points='46,15 25,36 4,15'/></svg>") no-repeat right 0.75rem center / 0.875rem;
+    background: $primary url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'><polyline fill='white' points='46,15 25,36 4,15'/></svg>") no-repeat right 0.675rem center / 0.75rem;
     border-radius: $radius;
     border: none;
     color: white;
     height: 2.5rem;
     line-height: 2.25;
-    padding: 0 1.125rem 0 1rem;
+    padding: 0 0.75rem 0 1rem;
 }
 
 textarea,
@@ -137,6 +144,8 @@ textarea,
     border-radius: $radius;
     height: 2.5rem;
     display: block;
+    flex-flow: row;
+    font-family: inherit;
     padding: 0 0.75rem;
     transition: background-color $speed ease;
     width: 100%;
