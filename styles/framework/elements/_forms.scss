@@ -162,6 +162,15 @@ textarea {
     padding: 0.6875rem 0.75rem;
 }
 
+[type="search"] {
+    &::-webkit-search-cancel-button {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 62"><path d="M32,1A31,31,0,1,0,63,32,31,31,0,0,0,32,1ZM48.26,42.61a4,4,0,0,1-5.66,5.66L32,37.68,21.41,48.28a4,4,0,0,1-5.66-5.66L26.36,32,15.74,21.39a4,4,0,0,1,0-5.66h0a4,4,0,0,1,5.66,0L32,26.36,42.63,15.76a4,4,0,0,1,5.66,5.66L37.68,32Z" transform="translate(-1.02 -1.02)" style="fill:#{darken($secondary,25%)}"/></svg>');
+        cursor: pointer;
+        @include area(1rem);
+        opacity: 0.8;
+    }
+}
+
 [type="checkbox"],
 [type="radio"] {
     left: -100vw;
