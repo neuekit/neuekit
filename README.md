@@ -16,7 +16,7 @@ To get going with the framework you can:
   * Download the latest release
   * That's it!
 
-## [Documentation](https://creativelittledots.github.io/UIKit)
+## [Documentation](https://creativelittledots.github.io/ui-kit/)
 
 In progress...
 
