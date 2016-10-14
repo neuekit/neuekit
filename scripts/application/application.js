@@ -22,21 +22,8 @@
     
     'use strict';
     
-    var obj = {
-        
-        1:'a',
-        2:'b',
-        3:'c'
-    };
-    
     
     /* Your code here */
-    setTimeout(function(){
-        
-        UIKIT.notify.log(obj);
-        
-    }, 2000);
-    
     
     
 /* Lastly this checks if the namespace already exists & if not will assign it */
