@@ -12,7 +12,11 @@
 // @codekit-prepend "modules/polyfills.js";
 // @codekit-prepend "modules/helpers.js";
 
+// Tools
+
+
 // Components
-// @codekit-prepend "modules/navigation.js";
 // @codekit-prepend "modules/modal.js";
+// @codekit-prepend "modules/navigation.js";
+// @codekit-prepend "modules/notify.js";
 // @codekit-prepend "modules/tabs.js";

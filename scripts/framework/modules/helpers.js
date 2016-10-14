@@ -29,7 +29,7 @@
 
             /*  Variablise 'this' to limit it to avoid scope conflicts  */
 
-            var _this = this,
+            var _this = this;
 
 
             /*--------------------------------------------------*\
@@ -42,7 +42,7 @@
                 3. The number of days until the cookie expires.
             \*--------------------------------------------------*/
             
-            setCookie = function(name, value, days) {
+            var setCookie = function(name, value, days) {
                 
                 var date = '',
                     expires = '';
@@ -59,7 +59,7 @@
 
                 document.cookie = name + '=' + value + expires + '; path=/';
                 
-            },
+            };
 
 
 
@@ -70,7 +70,7 @@
                 1. The name of the cookie.
             \*--------------------------------------------------*/
             
-            getCookie = function(name) {
+            var getCookie = function(name) {
                 
                 var nameEQ = name + '=',
                     cookies = document.cookie.split(';');
@@ -94,7 +94,7 @@
                 
                 return null;
                 
-            },
+            };
             
 
 
@@ -105,7 +105,7 @@
                 1. The name of the cookie.
             \*--------------------------------------------------*/
             
-            removeCookie = function(name) {
+            var removeCookie = function(name) {
                 
                 setCookie(name, '', -1);
                 
