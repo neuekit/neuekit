@@ -1,4 +1,4 @@
-# <a href="http://creativelittle.uk/uikit" target="_blank">UI Kit</a> (MK 1)
+# <a href="http://creativelittle.uk/uikit" target="_blank">UI Kit</a> - M1
 
 The Creative Little UI Kit is a performance focused, ITCSS based super scaleable front-end framework. It's built for the modern web and only supports modern browsers, that's right we've left IE10- out in the cold, all for the benefit of web users everywhere.
 
