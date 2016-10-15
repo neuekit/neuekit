@@ -25,6 +25,8 @@
     
     /* Your code here */
     
+    document.querySelector('.werty').classList.add('he');
+    
     
 /* Lastly this checks if the namespace already exists & if not will assign it */
 

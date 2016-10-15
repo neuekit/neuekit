@@ -1,0 +1,25 @@
+/* TEAM */
+
+Name: Matt Pilott
+Title: Front-end Engineer
+Email: matt@creativelittledots.co.uk
+Site: http://creativelittledots.co.uk
+Twitter: @LittleDotMatt
+
+
+
+/* THANKS */
+
+Name: Harry Roberts
+For: ITCSS
+Twitter: @csswizardry
+		
+
+
+/* SITE */
+
+Last update:2016/10/15
+Standards: HTML5, CSS3, ES6
+Software: Coda, CodeKit, Tower
+
+

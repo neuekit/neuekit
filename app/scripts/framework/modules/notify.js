@@ -28,7 +28,7 @@
             	#NOTIFY LOG METHOD
             \*--------------------------------------------------*/
             
-            _this.log = function( body, title ) {
+            _this.log = function( body, title, type ) {
                 
                 /*  Create a variable to store the last notification.  */
                 
@@ -37,7 +37,9 @@
                 
                 /*  Check if a title has been supplied, if not use default.  */
                 
-                title = title || "UI Kit Console Log"
+                title = title || "UI Kit Console Log";
+                
+                type = type || 'log';
                 
                 var options = {
                     
@@ -75,14 +77,37 @@
                     });
                 }
                 
-                console.log(body);
+                console[type](body);
             };
+            
+            
+            /*--------------------------------------------------*\
+            	#NOTIFY ERROR LISTENER
+            \*--------------------------------------------------*/
+            
+            var errorTracking = function( e ) {
+                
+                var errFile = e.filename ? e.filename : '';
+                
+                var errLine = e.lineno ? e.lineno : '';
+                
+                var errStr = 'ERROR: ' + e.error + ', LOCATION: ' + errFile + ', LINE NUMBER:' + errLine;
+                
+                _this.log(e.error + 'Location: ' + errFile + 'Line Number: ' + errLine, 'UI Kit Console Error', 'error');
+                
+                e.preventDefault();
+                
+            };
+            
+            window.addEventListener( "error", errorTracking, false );
             
             
 
             /*  Allow "chaining" of methods together.  */
             
             _this.init = function() {
+                
+                errorTracking();
                 
                 /*  'this' refers to UIKIT.modal  */
                 
