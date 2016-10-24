@@ -8,37 +8,21 @@
 	MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
-(function(UIKIT, $, undefined) {
+/*  'use strict' enforces correct syntax.  */
+
+'use strict';
+
+
+/*  Declare IIFE & Namespace  */
+
+((UIKIT) => {
     
-    /*  'use strict' enforces correct syntax.  */
-    
-    'use strict';
-    
-        
-    UIKIT.tabs = (function() {
+    UIKIT.tabs = (() => {
             
         function Tabs() {
-
-            /*  Variablise 'this' to limit it to avoid scope conflicts  */
-
-            var _this  = this,
-                config = UIKIT.settings.tabs;
             
-            
-            
-            /*--------------------------------------------------*\
-            	#TABS CONFIG
-            \*--------------------------------------------------*/
-
-            config = {
-                dot: '.',
-                tabsClass: 'tabs',
-                tabClass: 'tab',
-                tabActiveClass: 'on-edge-bottom--active',
-                tabContentsClass: 'tab-contents',
-                tabContentClass: 'tab-content',
-                tabContentActiveClass: 'tab-content--active'
-            };
+            const _this = this;
+            const config = UIKIT.settings.tabs;
             
             
             
@@ -46,74 +30,63 @@
             	#INITIAL TAB CHECK
             \*--------------------------------------------------*/
             
-            _this.tabCheck = function() {
+            _this.tabCheck = () => {
                 
-                if ( document.getElementById(location.hash.substr(1)) && document.getElementById(location.hash.substr(1)).classList.contains(config.tabContentClass) ) {
+                if ( $(location.hash.substr(1)) && $(location.hash.substr(1)).hasClass(config.tabContentClass) ) {
                         
-                    document.querySelector('[href="' + location.hash + '"]').classList.add(config.tabActiveClass);
+                    $(`[href="${location.hash}"]`).addClass(config.tabActiveClass);
                     
-                    document.querySelector(location.hash).classList.add(config.tabContentActiveClass);
-                    
+                    $(location.hash).addClass(config.tabContentActiveClass);   
                 }
                 
-                var tab_modules = document.querySelectorAll(config.dot + config.tabsClass);
-            
-                UIKIT.helper.forEach(tab_modules, function(i, el) {
+                $(`.${config.tabsClass}`).forEach(function(){
                     
-                    if ( el.querySelectorAll(config.dot + config.tabActiveClass).length === 0 ) {
+                    if ( $(this).find(`.${config.tabActiveClass}`).length === 0 ) {
                         
-                        var firstTab        = el.querySelector(config.dot + config.tabClass);
-                        var firstTabHash    = firstTab.getAttribute('href');
+                        const firstTab = $(this).find(`.${config.tabsClass}`);
+                        const firstTabHash = firstTab.attr('href');
                         
-                        firstTab.classList.add(config.tabActiveClass);
+                        firstTab.addClass(config.tabActiveClass);
                         
-                        document.querySelector(firstTabHash).classList.add(config.tabContentActiveClass);
-                        
+                        $(firstTabHash).addClass(config.tabContentActiveClass);
                     }
-                
                 });
-                
             };
+            
             
             
             /*--------------------------------------------------*\
             	#TABS
             \*--------------------------------------------------*/
             
-            var tabClick = function(e) {
+            const tabClick = function(e) {
                 
                 //Prevent normal link behaviour
                 
                 e.preventDefault();
                 
-                var tabLink           = this.getAttribute('href'),
-                    tabTitle          = this.getAttribute('title') ? this.getAttribute('title') : '',
-                    tabContent        = document.querySelector(tabLink),
-                    tabActive         = this.parentElement.getElementsByClassName(config.tabActiveClass)[0],
-                    tabContentActive  = tabContent.parentElement.getElementsByClassName(config.tabContentActiveClass)[0];
+                const $this             = $(this);
+                const tabLink           = $this.attr('href');
+                const tabContent        = $(tabLink);
+                const tabActive         = $this.siblings(`.${config.tabActiveClass}`);
+                const tabContentActive  = tabContent.siblings(`.${config.tabContentActiveClass}`);
 
                 //Find any active tabs & reset
                 
-                tabActive ? tabActive.classList.remove(config.tabActiveClass) : null;
-                tabContentActive ? tabContentActive.classList.remove(config.tabContentActiveClass) : null;
+                tabActive && tabActive.removeClass(config.tabActiveClass);
+                tabContentActive && tabContentActive.removeClass(config.tabContentActiveClass);
                 
                 //Add active to clicked tab & related content
                 
-                this.className += ' ' + config.tabActiveClass;
-                tabContent.className += ' ' + config.tabContentActiveClass;
+                $this.addClass(config.tabActiveClass);
+                tabContent.addClass(config.tabContentActiveClass);
                
                 //Set hash to tab id
                 history.pushState(null, null, tabLink);
 				
             };
             
-            var tab = document.getElementsByClassName(config.tabClass);
-            
-            for (var i = 0; i < tab.length; i++ ) {
-                
-                tab[i].addEventListener("click", tabClick);
-            
-            }
+            $(document).on('click', `.${config.tabClass}`, tabClick);
 
 
 
@@ -142,11 +115,11 @@
         
         return new Tabs();
         
-    }());
+    })();
     
     
-/*  Lastly this checks if the namespace already exists & if not will assign it  */
+/* Checks if the namespace already exists & if not assign it */
 
-}(window.UIKIT = window.UIKIT || {}));
+})(window.UIKIT = window.UIKIT || {});
 
 

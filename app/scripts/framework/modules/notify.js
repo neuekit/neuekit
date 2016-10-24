@@ -7,44 +7,45 @@
 	MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
-(function(UIKIT, $, undefined) {
+/*  'use strict' enforces correct syntax.  */
+
+'use strict';
+
+
+/*  Declare IIFE & Namespace  */
+
+((UIKIT) => {
     
-    /*  'use strict' enforces correct syntax.  */
+    /*--------------------------------------------------*\
+    	#UIKIT HELPER METHOD
+    	
+    	This is a 'singleton' which isolates the code
+    	inside from the global namespace, providing
+    	a single point of access for functions.
+    \*--------------------------------------------------*/
     
-    'use strict';
-    
+    UIKIT.notify = (body, title = 'Notification', type) => {
         
-    UIKIT.notify = (function() {
-            
         function Notify() {
-
-            /*  Variablise 'this' to limit it to avoid scope conflicts.  */
-
-            var _this = this;
             
-            
+            const _this = this;
             
             /*--------------------------------------------------*\
             	#NOTIFY LOG METHOD
             \*--------------------------------------------------*/
             
-            _this.log = function( body, title, type ) {
+            (() => {
                 
                 /*  Create a variable to store the last notification.  */
                 
-                var instance;
+                let instance;
                 
                 
-                /*  Check if a title has been supplied, if not use default.  */
+                /*  Set the options  */
                 
-                title = title || "UI Kit Console Log";
-                
-                type = type || 'log';
-                
-                var options = {
+                const options = {
                     
-                    body: JSON.stringify(body),
-                    icon: UIKIT.icon
+                    body: JSON.stringify(body)
                 };
                 
                 
@@ -52,7 +53,7 @@
                 
                 if ( !( "Notification" in window ) ) {
                     
-                    alert("Oh crumbs, looks like theres no support for notifications here.");
+                    alert(body);
                 }
                 
                 
@@ -77,58 +78,19 @@
                     });
                 }
                 
-                console[type](body);
-            };
-            
-            
-            /*--------------------------------------------------*\
-            	#NOTIFY ERROR LISTENER
-            \*--------------------------------------------------*/
-            
-            var errorTracking = function( e ) {
+                type && console[type](`${title}: ${body}`);
                 
-                var errFile = e.filename ? e.filename : '';
-                
-                var errLine = e.lineno ? e.lineno : '';
-                
-                var errStr = 'ERROR: ' + e.error + ', LOCATION: ' + errFile + ', LINE NUMBER:' + errLine;
-                
-                _this.log(e.error + 'Location: ' + errFile + 'Line Number: ' + errLine, 'UI Kit Console Error', 'error');
-                
-                e.preventDefault();
-                
-            };
-            
-            window.addEventListener( "error", errorTracking, false );
-            
-            
-
-            /*  Allow "chaining" of methods together.  */
-            
-            _this.init = function() {
-                
-                errorTracking();
-                
-                /*  'this' refers to UIKIT.modal  */
-                
-                return this; 
-            };
-            
-            
-            /*  This refers to UIKIT.modal.init()  */
-
-            return _this.init(); /* initialize the init() */
+            })();
         }
         
         /*  creating a new object of helper rather than a funtion */
         
         return new Notify();
         
-    }());
-    
+    };
     
 /* Lastly this checks if the namespace already exists & if not will assign it */
 
-}(window.UIKIT = window.UIKIT || {}));
+})(window.UIKIT = window.UIKIT || {});
 
 

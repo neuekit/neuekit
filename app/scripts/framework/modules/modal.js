@@ -8,47 +8,36 @@
 	MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
-(function(UIKIT, $, undefined) {
+/*  'use strict' enforces correct syntax.  */
+
+'use strict';
+
+
+/*  Declare IIFE & Namespace  */
+
+((UIKIT) => {
     
-    /*  'use strict' enforces correct syntax.  */
-    
-    'use strict';
-    
-        
-    UIKIT.modal = (function() {
+    UIKIT.modal = (() => {
             
         function Modal() {
-
-            /*  Variablise 'this' to limit it to avoid scope conflicts  */
-
-            var _this = this;
             
-            
+            const _this = this;
             
             /*--------------------------------------------------*\
             	#OPEN A MODAL
             \*--------------------------------------------------*/
             
-            _this.open = function(e) {
+            _this.open = function(event) {
                 
-                e.preventDefault();
+                event.preventDefault();
                 
-                var id = this.hash;
+                $(this.hash).addClass('modal--visible');
                 
-                document.querySelector(id).classList.add('modal--visible');
-                
-                document.querySelector('body').classList.add('locked');
+                $('body').addClass('locked');
                   
             };
             
-            
-            var open_modals = document.querySelectorAll('.js-modal-open');
-            
-            UIKIT.helper.forEach(open_modals, function(i, el) {
-                
-                el.addEventListener('click', _this.open);
-            
-            });
+            $(document).on('click', '.js-modal--open', _this.open);
             
             
             
@@ -56,74 +45,40 @@
             	#CLOSE A MODAL
             \*--------------------------------------------------*/
 
-            _this.close = function(e, el) {
+            _this.close = function(event, length, element = this) {
                 
-                e.preventDefault();
+                event.preventDefault();
                 
-                el = el === undefined ? UIKIT.helper.closest(this, 'modal') : el;
+                if ( $('.modal--visible').length === 1 ) {
                 
-                if ( document.querySelectorAll('.modal--visible').length === 1 ) {
-                
-                    document.querySelector('body').classList.remove('locked');
-                
+                    $('body').removeClass('locked');
                 }
                 
-                el.classList.remove('modal--visible');
-                                
+                $(element).closest('.modal').removeClass('modal--visible');
             };
             
             
-            var close_modals = document.querySelectorAll('.js-modal-close');
+            $(document).on('click', '.js-modal--close', _this.close);
             
-            UIKIT.helper.forEach(close_modals, function(i, el) {
+            
+            $(document).on('click', '.modal', function(event) {
                 
-                el.addEventListener('click', _this.close);
-            
+                if ( $(this).hasClass('modal') && event.target === this ) {
+                
+                    _this.close(event, 1, this);
+                }
             });
             
-            
-            var modals = document.querySelectorAll('.modal');
-            
-            UIKIT.helper.forEach(modals, function(i, el) {
-                
-                el.addEventListener('click', function(e){
-                    
-                    if ( this.classList.contains('modal') && e.target === this ) {
-                    
-                        _this.close(e, this);
-                    
-                    }
-                    
-                });
-            
-            });
-
-
-
-            /*  Allow "chaining" of methods together  */
-            
-            _this.init = function() {
-                
-                /*  'this' refers to UIKIT.modal  */
-                
-                return this; 
-            };
-            
-            
-            /*  This refers to UIKIT.modal.init()  */
-
-            return _this.init(); /* initialize the init() */
         }
         
         /*  creating a new object of helper rather than a funtion */
         
         return new Modal();
         
-    }());
+    })();
     
     
-/* Lastly this checks if the namespace already exists & if not will assign it */
-
-}(window.UIKIT = window.UIKIT || {}));
-
+/* Checks if the namespace already exists & if not assign it */
+    
+})(window.UIKIT = window.UIKIT || {});
 
