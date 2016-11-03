@@ -6,7 +6,7 @@ Email: matt@creativelittledots.co.uk
 Site: http://creativelittledots.co.uk
 Twitter: @LittleDotMatt
 
-Name: Chris Pilott
+Name: Chris Myers
 Title: Front-end Engineer
 Email: chris@creativelittledots.co.uk
 Site: http://creativelittledots.co.uk
