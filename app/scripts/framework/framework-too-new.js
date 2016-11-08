@@ -29,10 +29,10 @@ import getUrl from './helpers/urls';
 
 /*  Declare IIFE & Namespace  */
 
-((UIKIT) => {
+((UIKit) => {
     
     console.log(getUrl());
     
-})(window.UIKIT = UIKIT || {});
+})(window.UIKit = UIKit || {});
 
 

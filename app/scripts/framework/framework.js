@@ -13,6 +13,17 @@
 
 
 /*----------------------------------------------------------------------------*\
+	#PARTIES/POLYFILLS
+	
+	Micro libraries to bootstrap the UI Kit (Dont panic its only 6.68kb GZipped)
+\*----------------------------------------------------------------------------*/
+
+// codekit-append "parties/domtastic.min.12.3.js";
+// @codekit-append "parties/fetch.min.js";
+
+
+
+/*----------------------------------------------------------------------------*\
 	#SETTINGS
 	
 	Global and module configurations, this comes.
@@ -20,17 +31,6 @@
 
 // @codekit-append "settings/global.js";   Pixels to rem function.
 // @codekit-append "settings/tabs.js";
-
-
-
-/*----------------------------------------------------------------------------*\
-	#PARTIES
-	
-	Micro libraries to bootstrap the UI Kit (Dont panic its only 6.68kb GZipped)
-\*----------------------------------------------------------------------------*/
-
-// @codekit-append "parties/domtastic.min.js";
-// @codekit-append "parties/fetch.min.js";
 
 
 

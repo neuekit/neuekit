@@ -14,17 +14,17 @@
 
 /*  Declare IIFE & Namespace  */
 
-((UIKIT) => {
+((UIKit) => {
     
     /*--------------------------------------------------*\
-    	#UIKIT HELPER METHOD
+    	#UIKit HELPER METHOD
     	
     	This is a 'singleton' which isolates the code
     	inside from the global namespace, providing
     	a single point of access for functions.
     \*--------------------------------------------------*/
     
-    UIKIT.notify = (body, title = 'Notification', type) => {
+    UIKit.notify = (body, title = 'Notification', type) => {
         
         function Notify() {
             
@@ -91,6 +91,6 @@
     
 /* Lastly this checks if the namespace already exists & if not will assign it */
 
-})(window.UIKIT = window.UIKIT || {});
+})(window.UIKit = window.UIKit || {});
 
 

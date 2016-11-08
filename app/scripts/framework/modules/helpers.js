@@ -15,17 +15,17 @@
 
 /*  Declare IIFE & Namespace  */
 
-((UIKIT) => {
+((UIKit) => {
     
     /*--------------------------------------------------*\
-    	#UIKIT HELPER METHOD
+    	#UIKit HELPER METHOD
     	
     	This is a 'singleton' which isolates the code
     	inside from the global namespace, providing
     	a single point of access for functions.
     \*--------------------------------------------------*/
     
-    UIKIT.helper = (() => {
+    UIKit.helper = (() => {
         
         function Helper() {
             
@@ -78,7 +78,7 @@
             
             _this.setDocClasses = () => {
                 
-                $('html').removeClass('no-js');
+                $('html').toggleClass('no-js js');
             };
             
             
@@ -114,14 +114,14 @@
                 
                 this.setInputTypes();
                 
-                /*  'this' refers to UIKIT.helper & allows chaining  */
+                /*  'this' refers to UIKit.helper & allows chaining  */
                 
                 return this;
             };
             
             
             
-            /*  This refers to UIKIT.helper.init()  */
+            /*  This refers to UIKit.helper.init()  */
             
             return _this.init();
             
@@ -136,6 +136,6 @@
 
 /* Checks if the namespace already exists & if not assign it */
     
-})(window.UIKIT = window.UIKIT || {});
+})(window.UIKit = window.UIKit || {});
 
 

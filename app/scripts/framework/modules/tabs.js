@@ -15,14 +15,14 @@
 
 /*  Declare IIFE & Namespace  */
 
-((UIKIT) => {
+((UIKit) => {
     
-    UIKIT.tabs = (() => {
+    UIKit.tabs = (() => {
             
         function Tabs() {
             
             const _this = this;
-            const config = UIKIT.settings.tabs;
+            const config = UIKit.settings.tabs;
             
             
             
@@ -100,12 +100,12 @@
                 
                 _this.tabCheck();
                 
-                /*  'this' refers to UIKIT.modal  */
+                /*  'this' refers to UIKit.modal  */
                 
                 return this; 
             };
             
-            /*  This refers to UIKIT.modal.init()  */
+            /*  This refers to UIKit.modal.init()  */
 
             return _this.init(); /*  initialize the init()  */
         }
@@ -120,6 +120,6 @@
     
 /* Checks if the namespace already exists & if not assign it */
 
-})(window.UIKIT = window.UIKIT || {});
+})(window.UIKit = window.UIKit || {});
 
 

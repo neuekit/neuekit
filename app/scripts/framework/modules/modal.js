@@ -15,9 +15,9 @@
 
 /*  Declare IIFE & Namespace  */
 
-((UIKIT) => {
+((UIKit) => {
     
-    UIKIT.modal = (() => {
+    UIKit.modal = (() => {
             
         function Modal() {
             
@@ -30,6 +30,8 @@
             _this.open = function(event) {
                 
                 event.preventDefault();
+                
+                
                 
                 $(this.hash).addClass('modal--visible');
                 
@@ -45,7 +47,7 @@
             	#CLOSE A MODAL
             \*--------------------------------------------------*/
 
-            _this.close = function(event, length, element = this) {
+            _this.close = function(event, element) {
                 
                 event.preventDefault();
                 
@@ -65,7 +67,7 @@
                 
                 if ( $(this).hasClass('modal') && event.target === this ) {
                 
-                    _this.close(event, 1, this);
+                    _this.close(event, this);
                 }
             });
             
@@ -80,5 +82,5 @@
     
 /* Checks if the namespace already exists & if not assign it */
     
-})(window.UIKIT = window.UIKIT || {});
+})(window.UIKit = window.UIKit || {});
 
