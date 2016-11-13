@@ -1,0 +1,21 @@
+{
+  "name": "ui-kit",
+  "version": "0.9.7",
+  "description": "The Creative Little UI Kit is a fully responsive framework crafted for unbeatable performance. Based on the ITCSS methodology this front-end springboard is super scaleable, lightweight, and built for the future.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://matt3224@github.com/CreativeLittleDots/Creative-Little-UI-Kit.git"
+  },
+  "author": "Matt Pilott",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CreativeLittleDots/Creative-Little-UI-Kit/issues"
+  },
+  "homepage": "https://github.com/CreativeLittleDots/Creative-Little-UI-Kit#readme",
+  "devDependencies": {
+    "babel-preset-es2015-rollup": "^1.2.0",
+    "rollup": "^0.36.3",
+    "rollup-plugin-babel": "^2.6.1",
+    "rollup-plugin-uglify": "^1.0.1"
+  }
+}

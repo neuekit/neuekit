@@ -11,6 +11,7 @@ legend {
 }
 
 meter {
+    border: none;
     width: 100%;
     
     &::-webkit-meter-bar,
@@ -74,6 +75,7 @@ progress {
         $primary 95%
     ) repeat;
     background-size: 200% 100%;
+    border: none;
     border-radius: 1rem;
     color: $primary;
     @include area(0.5rem, 100%);

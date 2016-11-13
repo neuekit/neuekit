@@ -4,3 +4,4 @@ codekit3.config
 config.codekit3
 .DS_Store
 .config.codekit3
+/node_modules

@@ -62,7 +62,7 @@
         }
         
         
-        /*  creating a new object of helper rather than a funtion */
+        /*  creating a new object of helper rather than a function */
         
         return new Helper();
         
