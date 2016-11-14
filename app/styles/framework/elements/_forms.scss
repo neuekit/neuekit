@@ -136,10 +136,18 @@ select {
     height: 2.5rem;
     line-height: 2.25;
     padding: 0 0.75rem 0 1rem;
+    
+    &:focus {
+        outline: none;
+    }
+    
+    &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 white;
+    }
 }
 
 textarea,
-[type="color"],
 [type="email"],
 [type="date"],
 [type="datetime"],
@@ -152,8 +160,7 @@ textarea,
 [type="text"],
 [type="time"],
 [type="url"],
-[type="week"],
-[data-type="text"] {
+[type="week"] {
     background-color: $secondary;
     border-radius: $radius;
     height: 2.5rem;
@@ -234,4 +241,93 @@ textarea {
     }
 }
 
+[type="color"] {
+    border-radius: 50%;
+    @include area(2.5rem);
+    overflow: hidden;
+    padding: 0;
+    
+    &:focus {
+        outline: none;
+    }
+    
+    &::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+    
+    &::-webkit-color-swatch {
+        border: 2px solid $secondary;
+        border-radius: 50%;
+    }
+    
+    &::-moz-color-swatch {
+        border: 2px solid $secondary;
+        border-radius: 50%;
+    }
+}
 
+@mixin track {
+  animate: 0.2s;
+  background: $secondary;
+  border-radius: 1rem;
+  cursor: pointer;
+  @include area(0.5rem, 100%);
+}
+
+@mixin thumb {
+  background: $primary;
+  border-radius: 50%;
+  cursor: pointer;
+  cursor: grab;
+  @include area(1rem);
+}
+
+[type="range"] {
+    appearance: none;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+    }
+    
+    &::-moz-focus-outer {
+        border: none;
+    }
+    
+    &::-webkit-slider-runnable-track {
+        @include track;
+    }
+
+    &::-moz-range-track {
+        @include track;
+    }
+
+    &::-ms-track {
+        @include track;
+        background: none;
+        border-color: transparent;
+        border-width: 0.25rem 0;
+        color: transparent;
+    }
+    
+    &::-ms-fill-lower,
+    &::-ms-fill-upper {
+        background: $secondary;
+        border-radius: 1rem;
+    }
+    
+    &::-webkit-slider-thumb {
+        @include thumb;
+        -webkit-appearance: none;
+        margin-top: -0.25rem;
+    }
+    
+    &::-moz-range-thumb {
+        @include thumb;
+        border: none;
+    }
+
+    &::-ms-thumb {
+        @include thumb;
+    }
+}
