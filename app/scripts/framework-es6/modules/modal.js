@@ -58,7 +58,10 @@
             };
             
             
-            $(document).on('click', '.js-modal--close', _this.close);
+            $(document).on('click', '.js-modal--close', function(event) {
+                
+                _this.close(event, this);
+            });
             
             
             $(document).on('click', '.modal', function(event) {

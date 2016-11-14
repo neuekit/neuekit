@@ -18,6 +18,7 @@ meter {
     &::-webkit-meter-optimum-value,
     &::-webkit-meter-suboptimum-value,
     &::-webkit-meter-even-less-good-value {
+        border: none;
         border-radius: 1rem;
     }
     
@@ -65,7 +66,6 @@ meter {
 }
 
 progress {
-    animation: animate-progress 2s ease infinite;
     appearance: none;
     background: linear-gradient(
         to right,
@@ -79,6 +79,10 @@ progress {
     border-radius: 1rem;
     color: $primary;
     @include area(0.5rem, 100%);
+    
+    &::-ms-fill {
+        animation-name: none;
+    }
     
     &[value],
     &::-webkit-progress-bar,
@@ -95,9 +99,17 @@ progress {
     &[value]::-webkit-progress-value {
         background-color: $primary;
     }
+    
+    &:not([value]) {
+        animation: animate-progress 2s ease infinite;
+    }
 }
 
 @-moz-document url-prefix() {
+    
+    progress::-moz-progress-bar {
+        background-color: transparent;
+    }
     
     progress[value],
     progress[value]::-moz-progress-bar {
