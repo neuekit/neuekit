@@ -39,7 +39,7 @@
                     $(location.hash).addClass(config.tabContentActiveClass);   
                 }
                 
-                $(`.${config.tabsClass}`).forEach(function(){
+                $(`.${config.tabsClass}`).each(function(){
                     
                     if ( $(this).find(`.${config.tabActiveClass}`).length === 0 ) {
                         

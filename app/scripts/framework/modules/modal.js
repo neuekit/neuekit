@@ -50,7 +50,7 @@
                 event.preventDefault();
                 
                 if ( $('.modal--visible').length === 1 ) {
-                console.log(event);
+                
                     $('body').removeClass('locked');
                 }
                 
