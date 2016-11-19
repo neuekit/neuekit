@@ -707,8 +707,6 @@
         <!--  Document: Subservient Resources  -->
         <!--------------------------------------------------------->
         
-        <script src="../app/scripts/framework/parties/domtastic.min.js"></script>
-        
         <script src="../app/scripts/framework/framework.min.js"></script>
         
         <script src="../app/scripts/application/parties/svg4everybody.min.js"></script>
@@ -719,17 +717,21 @@
             
             var i = 1;
             
-/*
             setInterval(function() {
-            
-                document.querySelector('meter').value = i;
+                    
+                var element = document.querySelector('meter');
                 
-                i = i === 100 ? 0 : i;
-                
-                i++;
+                if ( typeof(element) != 'undefined' && element != null ) {
             
-            }, 33.333);
-*/
+                    document.querySelector('meter').value = i;
+                    
+                    i = i === 100 ? 0 : i;
+                    
+                    i++;
+                
+                }
+            
+            }, 33.33);
             
         </script>
         

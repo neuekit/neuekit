@@ -15,11 +15,12 @@
 /*----------------------------------------------------------------------------*\
 	#PARTIES/POLYFILLS
 	
-	Micro libraries to bootstrap the UI Kit (Dont panic its only 6.68kb GZipped)
+	Micro libraries to bootstrap the UI Kit (Dont panic its only 7.6kb GZipped)
 \*----------------------------------------------------------------------------*/
 
-// @codekit-append "parties/fetch.min.js";
-// codekit-append "parties/domtastic.min.js";
+import './parties/promise';
+import './parties/fetch';
+import './parties/domtastic';
 
 
 
@@ -29,8 +30,8 @@
 	Global and module configurations, this comes.
 \*----------------------------------------------------------------------------*/
 
-// @codekit-append "settings/global.js";   
-// @codekit-append "settings/tabs.js";
+import './settings/global';   
+import './settings/tabs';
 
 
 
@@ -40,7 +41,7 @@
 	Single concern functions and utilities to help you out.
 \*----------------------------------------------------------------------------*/
 
-// @codekit-append "modules/helpers.js";
+import './modules/helpers';
 
 
 
@@ -50,8 +51,8 @@
 	Designed pieces of UI. Only using classes. More explicit naming.
 \*----------------------------------------------------------------------------*/
 
-// @codekit-append "modules/modal.js";
-// @codekit-append "modules/notify.js";
-// @codekit-append "modules/tabs.js";
+import './modules/modal';
+import './modules/notify';
+import './modules/tabs';
 
 
