@@ -84,6 +84,7 @@
 	Designed pieces of UI. Only using classes. More explicit naming.
 \*----------------------------------------------------------------------------*/
 
+@import 'components/adjacent';          // Adjacent input styles.
 @import 'components/buttons';           // Button styles.
 @import 'components/loadr';             // Loading indicator component.
 @import 'components/menus';             // Menu styles.
