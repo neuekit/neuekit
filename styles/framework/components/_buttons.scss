@@ -1,8 +1,8 @@
-/*----------------------------------------------*\
+/*----------------------------------------------------------------------------*\
 	#BUTTON COMPONENT STYLES
-\*----------------------------------------------*/
+\*----------------------------------------------------------------------------*/
 
-$btnSelectors: 'button, [role="button"], [type="button"], [type="reset"], [type="submit"],';
+$btnSelectors: 'button, [role="button"], [type="button"], [type="reset"], [type="submit"], [type="file"]::-webkit-file-upload-button, ';
 $btnCondition: if($btnReset, $btnSelectors, null);
 
 #{$btnCondition}
@@ -24,7 +24,7 @@ $btnCondition: if($btnReset, $btnSelectors, null);
     /*  States  */
     
     &:disabled {
-        background-color: lightgrey;
+        background-color: $secondary;
         box-shadow: none;
         color: grey;
         pointer-events: none;
@@ -35,7 +35,7 @@ $btnCondition: if($btnReset, $btnSelectors, null);
 	}
     
     &:hover {
-        background-color: white;
+        background-color: transparent;
         box-shadow: inset 0 0 0 2px $primary;
         color: $primary;
     }

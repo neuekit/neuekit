@@ -4,21 +4,16 @@
 	This script contains all the helper/utility
 	functions which we can use across our other
 	JS files.
-	
-	To start our script we wrap all of our code in a
-	self-executing anonymous function. We then pass
-	in 3 arguments to setup jQuery & our namespace.
-	
-	1. PROJECT is our namespace.
-	2. $ is defined for jQuery.
-	3. Lastly we ensure undefined really is undefined.
 \*--------------------------------------------------*/
 
-(function(PROJECT, $, undefined) {
-    
-    /*  'use strict' enforces correct syntax.  */
-    
-    'use strict';
+/*  'use strict' enforces correct syntax.  */
+
+'use strict';
+
+
+/*  Declare IIFE & Namespace  */
+
+((PROJECT) => {
     
     
     /*--------------------------------------------------*\
@@ -29,13 +24,11 @@
     	a single point of access for functions.
     \*--------------------------------------------------*/
     
-    PROJECT.helper = (function() {
+    PROJECT.helper = (() => {
         
-        function _helper() {
-
-            /*  Variablise 'this' to limit it to avoid scope conflicts  */
-            /* jshint validthis: true */
-            var _this = this;
+        function Helper() {
+            
+            const _this = this;
 
 
 
@@ -52,12 +45,12 @@
             
             /*  Allow "chaining" of methods together  */
 
-            this.init = function() {
+            _this.init = () => {
                 
                 
                 
                 
-                /*  'this' refers to PROJECT.helper  */
+                /*  'this' refers to PROJECT.helper & allows chaining  */
                 
                 return this;
             };
@@ -65,19 +58,19 @@
             
             /*  This refers to PROJECT.helper.init()  */
             
-            return this.init();
+            return _this.init();
         }
         
         
-        /*  creating a new object of helper rather than a funtion */
+        /*  creating a new object of helper rather than a function */
         
-        return new _helper();
+        return new Helper();
         
-    }());
+    })();
 
 
-/* Lastly this checks if the namespace already exists & if not will assign it */
+/* Checks if the namespace already exists & if not assign it */
 
-}(window.PROJECT = window.PROJECT || {}, jQuery));
+})(window.PROJECT = window.PROJECT || {});
 
 

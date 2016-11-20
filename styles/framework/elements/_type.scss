@@ -1,6 +1,6 @@
-/*----------------------------------------------*\
-	#TYPE BASE STYLES
-\*----------------------------------------------*/
+/*----------------------------------------------------------------------------*\
+	#TYPE ELEMENT STYLES
+\*----------------------------------------------------------------------------*/
 
 html,
 body,
@@ -10,8 +10,18 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: -apple-system, Arial, sans-serif;
+    font-family: -apple-system,
+                 BlinkMacSystemFont,
+                 'Segoe UI',
+                 Roboto,
+                 Helvetica,
+                 Arial,
+                 sans-serif,
+                 'Apple Color Emoji',
+                 'Segoe UI Emoji',
+                 'Segoe UI Symbol';
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 
@@ -35,6 +45,15 @@ h6 {
 
 }
 
+.s1,
+.s2,
+.s3,
+.s4,
+.s5,
+.s6 {
+    font-weight: 400;
+}
+
 
 
 /*----------------------------------------------*\
@@ -42,7 +61,7 @@ h6 {
 \*----------------------------------------------*/
 
 hr {
-    background-color: lightgrey;
+    background-color: $secondary;
     border: none;
     height: 2px;
 }

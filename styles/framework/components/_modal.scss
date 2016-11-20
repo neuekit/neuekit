@@ -1,15 +1,16 @@
-/*--------------------------------------------------*\
+/*----------------------------------------------------------------------------*\
 	#MODAL
-\*--------------------------------------------------*/
+\*----------------------------------------------------------------------------*/
 
 /*  Block  */
 
 .modal {
     $block: &;
     
+    align-items: center;
     background-color: rgba($primary, 0.8);
     display: flex;
-    @include size(100%);
+    @include area(100%);
     left: 0; top: 0;
     opacity: 0;
     padding: 1rem;
@@ -22,8 +23,10 @@
         &__content {
             background-color: white;
             margin: auto;
+            max-height: calc(100vh - 2rem);
             max-width: $maxWidth;
             opacity: 0;
+            overflow: auto;
             padding: 1rem;
             transform: translateY(10rem);
             transition: all $speed ease;
@@ -32,7 +35,7 @@
         &__close {
             background: none;
             float: right;
-            @include size(2rem);
+            @include area(2rem);
             padding: 0;
             
             &::before,
@@ -40,7 +43,7 @@
                 background-color: $primary;
                 content: '';
                 display: block;
-                @include size(0.375rem, 100%);
+                @include area(0.375rem, 100%);
                 left: 0; top: 50%;
                 position: absolute;
                 transform: translateY(-50%) rotate(45deg);
@@ -77,3 +80,5 @@
         }
     }
 }
+
+

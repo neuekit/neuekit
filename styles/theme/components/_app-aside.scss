@@ -2,13 +2,13 @@
     background-color: #f7f7f7;
     display: flex;
     flex-direction: column;
-    @include size(calc(100vh - 4rem), 18rem);
+    @include area(calc(100vh - 4rem), 18rem);
     padding: 0;
     position: fixed;
     top: 4rem;
     
     &__content {
-        flex-grow: 1;
+        flex: 1 1;
         overflow: auto;
         padding: 1rem;
         -webkit-overflow-scrolling: touch;

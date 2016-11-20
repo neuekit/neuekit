@@ -1,228 +1,53 @@
-/*--------------------------------------------------*\
+/*----------------------------------------------------------------------------*\
 	#NAVIGATION COMPONENT
-\*--------------------------------------------------*/
+\*----------------------------------------------------------------------------*/
 
-/* Nav JS & no-JS shared styles */
-
-.nav {
-    display: none;
-    list-style: none;
-    margin: 0;
-    max-height: 70vh;
-    overflow: auto;
-    padding: 0;
-    text-align: center;
-    -webkit-overflow-scrolling: touch;
-
-    &-toggle {
-        display: none;
-    }
-
-        // Elements
-        
+.js .nav {
+    bottom: 0; left: 0;
+    box-sizing: content-box;
+    cursor: pointer;
+    display: block;
+    max-height: 50vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+    position: fixed;
+    width: 100%;
+    
+        &__close {
+            background-color: rgba(black, 0.25);
+            display: block;
+            @include area(100%);
+            left: 0; top: 0;
+            position: fixed;
+        }
+    
         &__link {
             display: block;
-            padding: 0.5rem;
-        }
-              
-    &--nest {
-        display: block;
-    }
-}
-
-// Desktop Up
-
-@include media(l) {
-        
-    .nav {
-        background-color: transparent;
-        display: flex;
-        overflow: visible;
-                
-            // Elements
+            padding: 0.25rem 0.75rem;
             
-            &__item {
-                flex: 1 0 0; 
-            
-                &--drop {
-                    display: flex;
-                    flex-direction: column;
-                    
-                    &:hover > .nav--nest {
-                        display: block;
-                    }
-                    
-                    .nav__item--drop:hover > .nav--nest {
-                        left: 100%; top: 0;
-                    }
-                }
-            }
-        
-        // Modifiers
-        
-        &--primary {
-            align-items: center;
-        }
-        
-        &--nest {
-            display: none;
-            position: absolute;
-            text-align: left;
-            width: 100%;
-            z-index: 10;
-        }
-    }
-}
-
-
-
-/* No JS */
-
-.no-js  {
-    
-    // Toggle rule only for no-js
-    
-    .nav-toggle {
-        display: block;
-    }
-    
-    .nav-toggle:hover ~ .nav,
-    .nav--primary:hover { 
-        display: block;
-    }
-}
-
-
-
-/* JS Enabled Mobile */
-
-
-.nav-overlay {
-    background-color: rgba(black, 0.5);
-    @include size(100vh, 100vw);
-    left: 0; top: 0;
-    position: fixed;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity $speed ease;
-    z-index: 1001;
-}
-
-@supports (will-change: opacity) {
-    
-    .nav-overlay {
-        will-change: opacity;
-    }
-    
-}
-
-@supports not (will-change: opacity) {
-    
-    .nav-overlay {
-        backface-visibility: hidden;
-    }
-    
-}
-
-
-// Tablet Down
-
-@include media(null, l) {
-    
-    .js {
-        
-        .nav {
-            
-            // Nav open body class
-            
-            &-open {
-                overflow: hidden;
-                
-                .nav-overlay {
-                    opacity: 1;
-                    pointer-events: all;
-                }
-            }
-            
-                // Elements
-            
-                &__item--drop {
-                    position: static;
-                }
-            
-                &__link--close {
-                    display: block;
-                    padding: 0.5rem;
-                }
-            
-            // Modifiers
-            
-            &--primary {
-                background-color: white;
-                bottom: 0; left: 0;
-                display: block;
-                max-height: 60vh;
-                overflow-x: hidden;
-                position: fixed;
-                transform: translateY(60vh);
-                transition: transform $speed ease;      
-                width: 100vw;
-                z-index: 10001;
-                
-                    
-                &.nav--active {
-                    transform: translateY(0);
-                }
-            } 
-                    
-            &--nest {
-                @include size(60vh,100vw);
-                left: 0; top: 0;
-                overflow-x: hidden;
-                overflow-y: auto;
+            + .nav-sub {
+                background-color: lavender;
+                left: 0;
+                margin-top: -1px;
                 position: absolute;
-                transform: translateX(100vw);
+                transform: translate(100vw);
                 transition: transform $speed ease;
+                width: 100%;
                 z-index: 1;
+                
+                &:hover {
+                    transform: translate(0);
+                }
             }
             
-            // States
-            
-            &__item--drop-active {
+            &:hover {
+                background-color: whitesmoke;
                 
-                > .nav--nest {
-                    transform: translateX(0);
+                + .nav-sub {
+                    transform: translate(0);
                 }
             }
         }
-    }
 }
 
 
-// Desktop Up
-
-@include media(l) {
-    
-    .js {
-        
-        .nav {
-            
-                // Elements
-                
-                &__item--drop {
-                    position: relative;
-                }
-                
-                &__link--close {
-                    display: none;
-                }
-            
-            // Modifiers
-            
-            &--primary {
-                display: flex;
-                position: relative;
-            }
-        }
-    }
-}

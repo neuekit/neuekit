@@ -8,35 +8,49 @@
 	MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
-(function(UIKIT, $, undefined) {
+/*  'use strict' enforces correct syntax.  */
+
+'use strict';
+
+
+/*  Declare IIFE & Namespace  */
+
+((UIKit) => {
     
-    /*  'use strict' enforces correct syntax.  */
-    
-    'use strict';
-    
-        
-    UIKIT.tabs = (function() {
+    UIKit.tabs = (() => {
             
         function Tabs() {
-
-            /*  Variablise 'this' to limit it to avoid scope conflicts  */
-
-            var _this  = this,
-                config = UIKIT.settings.tabs;
+            
+            const _this = this;
+            const config = UIKit.settings.tabs;
             
             
             
             /*--------------------------------------------------*\
-            	#TABS CONFIG
+            	#INITIAL TAB CHECK
             \*--------------------------------------------------*/
-
-            config = {
-                tabsClass: 'tabs',
-                tabClass: 'tab',
-                tabActiveClass: 'tab--active',
-                tabContentsClass: 'tab-contents',
-                tabContentClass: 'tab-content',
-                tabContentActiveClass: 'tab-content--active'
+            
+            _this.tabCheck = () => {
+                
+                if ( $(location.hash.substr(1)) && $(location.hash.substr(1)).hasClass(config.tabContentClass) ) {
+                        
+                    $(`[href="${location.hash}"]`).addClass(config.tabActiveClass);
+                    
+                    $(location.hash).addClass(config.tabContentActiveClass);   
+                }
+                
+                $(`.${config.tabsClass}`).each(function(){
+                    
+                    if ( $(this).find(`.${config.tabActiveClass}`).length === 0 ) {
+                        
+                        const firstTab = $(this).find(`.${config.tabsClass}`);
+                        const firstTabHash = firstTab.attr('href');
+                        
+                        firstTab.addClass(config.tabActiveClass);
+                        
+                        $(firstTabHash).addClass(config.tabContentActiveClass);
+                    }
+                });
             };
             
             
@@ -45,40 +59,34 @@
             	#TABS
             \*--------------------------------------------------*/
             
-            var tabClick = function(e) {
+            const tabClick = function(e) {
                 
                 //Prevent normal link behaviour
                 
                 e.preventDefault();
                 
-                var tabLink           = this.getAttribute('href'),
-                    tabTitle          = this.getAttribute('title') ? this.getAttribute('title') : '',
-                    tabContent        = document.querySelector(tabLink),
-                    tabActive         = this.parentElement.getElementsByClassName(config.tabActiveClass)[0],
-                    tabContentActive  = tabContent.parentElement.getElementsByClassName(config.tabContentActiveClass)[0];
+                const $this             = $(this);
+                const tabLink           = $this.attr('href');
+                const tabContent        = $(tabLink);
+                const tabActive         = $this.siblings(`.${config.tabActiveClass}`);
+                const tabContentActive  = tabContent.siblings(`.${config.tabContentActiveClass}`);
 
                 //Find any active tabs & reset
                 
-                tabActive.classList.remove(config.tabActiveClass);
-                tabContentActive.classList.remove(config.tabContentActiveClass);
+                tabActive && tabActive.removeClass(config.tabActiveClass);
+                tabContentActive && tabContentActive.removeClass(config.tabContentActiveClass);
                 
                 //Add active to clicked tab & related content
                 
-                this.className += ' ' + config.tabActiveClass;
-                tabContent.className += ' ' + config.tabContentActiveClass;
+                $this.addClass(config.tabActiveClass);
+                tabContent.addClass(config.tabContentActiveClass);
                
                 //Set hash to tab id
-                window.location.hash = tabLink;
-            
+                history.pushState(null, null, tabLink);
+				
             };
             
-            var tab = document.getElementsByClassName(config.tabClass);
-            
-            for (var i = 0; i < tab.length; i++ ) {
-                
-                tab[i].addEventListener("click", tabClick);
-            
-            }
+            $(document).on('click', `.${config.tabClass}`, tabClick);
 
 
 
@@ -90,26 +98,28 @@
             
             _this.init = function() {
                 
-                /*  'this' refers to UIKIT.modal  */
+                _this.tabCheck();
+                
+                /*  'this' refers to UIKit.modal  */
                 
                 return this; 
             };
             
-            /*  This refers to UIKIT.modal.init()  */
+            /*  This refers to UIKit.modal.init()  */
 
             return _this.init(); /*  initialize the init()  */
         }
         
         
-        /*  creating a new object of helper rather than a funtion  */
+        /*  Creating a new object of helper rather than a function  */
         
         return new Tabs();
         
-    }());
+    })();
     
     
-/*  Lastly this checks if the namespace already exists & if not will assign it  */
+/* Checks if the namespace already exists & if not assign it */
 
-}(window.UIKIT = window.UIKIT || {}));
+})(window.UIKit = window.UIKit || {});
 
 

@@ -4,17 +4,17 @@
 
     <head>
         
-        <!--------------------------------------------------
-        //	Document: Setup
-        --------------------------------------------------->
-        
+        <!--------------------------------------------------------->
+        <!--  Docuent: Setup  -->
+        <!--------------------------------------------------------->
+    
         <meta charset="utf-8">
         
-        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
         
-        <title>Creative Little UI Kit | Welcome</title>
+        <title>UI Kit</title>
         
         <meta name="description" content="A modernist structured User Interface Kit for building responsive scalable web projects">
         
@@ -23,10 +23,57 @@
         <meta name="format-detection" content="telephone=no">
         
         
+        <!--  Standard Favicons  -->
         
-        <!--------------------------------------------------
-        //	Document: Priority Resources
-        --------------------------------------------------->
+        <link rel="icon" type="image/png" href="images/icons/favicon-32x32.png" sizes="32x32">
+        
+        <link rel="icon" type="image/png" href="images/icons/favicon-16x16.png" sizes="16x16">
+        
+        <link rel="shortcut icon" href="images/icons/favicon.ico">
+    
+    
+        <!--  Google Meta  -->
+        <meta name="mobile-web-app-capable" content="yes">
+        
+        <meta name="application-name" content="UI Kit">
+        
+        <meta name="theme-color" content="#2F3BA2">
+        
+        <link rel="icon" sizes="192x192" href="images/icons/chrome-touch-icon-192x192.png">
+    
+    
+        <!--  Apple Meta  -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        
+        <meta name="apple-mobile-web-app-title" content="UI Kit">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
+        
+        <link rel="mask-icon" href="images/icons/safari-pinned-tab.svg" color="#212226">
+        
+    
+        <!--  Windows Meta  -->
+        <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+        
+        <meta name="msapplication-TileColor" content="#2F3BA2">
+        
+        <meta name="msapplication-tap-highlight" content="no">
+        
+        <meta name="msapplication-config" content="images/icons/browserconfig.xml">
+        
+        
+        <!--  Web Application Manifest  -->
+        <link rel="manifest" href="manifest.json">
+        
+        
+        
+        
+        
+        <!--------------------------------------------------------->
+        <!--  Document: Priority Resources  -->
+        <!--------------------------------------------------------->
         
         <link href="styles/style.css" rel="stylesheet">
         
@@ -44,25 +91,17 @@
             //	Site: Header
             --------------------------------------------------->
         
-            <header class="app-header">
-            
-                <div class="grid">
-                
-                    <div class="grid__item  flex  align-center">
+            <header class="app-head" role="banner">
                         
-                        <a class="app-header__logo" href="#">
-                            
-                            <span class="text-bolder">CREATIVE</span>
-                            
-                            <br>
-                            
-                            <span class="pacifico  app-header__logo-little">little</span> UI Kit
-                            
-                        </a>
+                <a class="app-head__logo" href="#">
                     
-                    </div>
-                
-                </div>
+                    <span class="text-bolder">CREATIVE</span>
+                    
+                    <br>
+                    
+                    <span class="pacifico  app-head__logo-little">little</span> UI Kit
+                    
+                </a>
             
             </header>
             
@@ -76,7 +115,7 @@
                 
                 <section class="app-aside__content">
                     
-                    <nav>
+                    <nav role="navigation">
                                 
                         <ul class="menu">
                             
@@ -226,13 +265,13 @@
             //	Site: Main
             --------------------------------------------------->
                 
-            <main class="app-main">
+            <main class="app-main" role="main">
                 
                 <section id="getstarted">
             
                     <div class="grid">
                     
-                        <div class="grid__item  size-10-l  justify-center">
+                        <div class="grid__item  size-10@l  justify-center">
                             
                             <br><br>
                             
@@ -296,7 +335,7 @@
             
                     <div class="grid">
                     
-                        <div class="grid__item  size-10-l  justify-center">
+                        <div class="grid__item  size-10@l  justify-center">
                             
                             <h4>ITCSS</h4>
                             
@@ -324,13 +363,13 @@
                             
                             <p>For the rest of you here's a quick rundown of how to get started using ITCSS in your next project. The system works by having a main SCSS stylesheet purely for including partials. It is ordered based on specificity and begins with files that don't output and code, these would be your mixins, functions and variables.</p>
                             
-                            <p>Our first level after settings and tools is our generic level. This level is used to declare things such as fonts, keyframes and most importantly shared styles using psuedos and wildcard selectors. (*, ::selection, etc.)
+                            <p>Our first level after settings and tools is our generic level. This level is used to declare things such as fonts, keyframes and most importantly shared styles using psuedos and wildcard selectors. (*, ::selection, etc.)</p>
                             
                             <p>Following those we create any element level styles using tag selectors (input, h1, img, etc.) these are low specificity so they come before our classes. Any code in this level should be considered global or default for the tag selectors.</p>
                             
                             <p>Next up we have the object level, this is similar to components but with one key difference, objects have no aesthetics, they are used to create layouts and bind elements to the page, the grid for example is an object.</p>
                             
-                            <p>Before we get to components, we add in our third party CSS from any plugins we need so we can override them in components without being too specific. It's worth noting that in some cases it may be better to switch components and parties if the third party CSS is already very specific (Uses selectors like this: #myElem > * > p > a.hello).
+                            <p>Before we get to components, we add in our third party CSS from any plugins we need so we can override them in components without being too specific. It's worth noting that in some cases it may be better to switch components and parties if the third party CSS is already very specific (Uses selectors like this: #myElem > * > p > a.hello).</p>
                             
                             <p>Components! Finally, this where you'll spend most of your time. Keep your components dry and don't attach them to locations. For example creating a component that can only live on a specific page such as "contact" is not reusable!</p>
                             
@@ -350,7 +389,7 @@
             
                     <div class="grid">
                     
-                        <div class="grid__item  size-10-l  justify-center">
+                        <div class="grid__item  size-10@l  justify-center">
                             
                             <h4>Settings</h4>
                             
@@ -376,7 +415,7 @@ $speed:             0.25s       !default;
             
                     <div class="grid">
                     
-                        <div class="grid__item  size-10-l  justify-center">
+                        <div class="grid__item  size-10@l  justify-center">
                             
                             <h4>Tools</h4>
                         
@@ -390,7 +429,7 @@ $speed:             0.25s       !default;
             
                     <div class="grid">
                     
-                        <div class="grid__item  size-10-l  justify-center">
+                        <div class="grid__item  size-10@l  justify-center">
                             
                             <h4>Elements</h4>
                         
@@ -404,7 +443,7 @@ $speed:             0.25s       !default;
             
                     <div class="grid">
                     
-                        <div class="grid__item  size-10-l  justify-center">
+                        <div class="grid__item  size-10@l  justify-center">
                             
                             <h4>Objects</h4>
                         
@@ -418,7 +457,7 @@ $speed:             0.25s       !default;
             
                     <div class="grid">
                     
-                        <div class="grid__item  size-10-l  justify-center">
+                        <div class="grid__item  size-10@l  justify-center">
                             
                             <h4>Parties</h4>
                         
@@ -432,7 +471,7 @@ $speed:             0.25s       !default;
             
                     <div class="grid">
                     
-                        <div class="grid__item  size-10-l  justify-center">
+                        <div class="grid__item  size-10@l  justify-center">
                             
                             <h4>Components</h4>
                         
@@ -446,7 +485,7 @@ $speed:             0.25s       !default;
             
                     <div class="grid">
                     
-                        <div class="grid__item  size-10-l  justify-center">
+                        <div class="grid__item  size-10@l  justify-center">
                             
                             <h4>Trumps</h4>
                         
@@ -464,7 +503,7 @@ $speed:             0.25s       !default;
             //	Site: Footer
             --------------------------------------------------->
             
-            <footer class="app-footer">
+            <footer class="app-foot" role="contentinfo">
             
                 <div class="grid">
                 
@@ -486,13 +525,9 @@ $speed:             0.25s       !default;
         
         <script src="scripts/application/parties/svg4everybody.min.js"></script>
         
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-        
-        <script>window.jQuery || document.write('<script src="scripts/application/parties/jquery-3.0.0.min.js"><\/script>')</script>
-        
         <script src="scripts/application/parties/prism.js"></script>
         
-        <script src="../scripts/framework/framework.min.js"></script>
+        <script src="scripts/framework/framework.min.js"></script>
         
         <script src="scripts/application/application.min.js"></script>
         

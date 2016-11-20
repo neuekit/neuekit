@@ -1,13 +1,9 @@
-/*----------------------------------------------*\
-	#FORM BASE STYLES
-\*----------------------------------------------*/
+/*----------------------------------------------------------------------------*\
+	#FORM ELEMENT STYLES
+\*----------------------------------------------------------------------------*/
 
 fieldset {
-    border: 2px solid lightgrey;
-}
-
-label {
-    
+    border: 2px solid $secondary;
 }
 
 legend {
@@ -15,60 +11,143 @@ legend {
 }
 
 meter {
-    appearance: none;
-}
-
-progress {
-    appearance: none;
+    border: none;
+    width: 100%;
     
-    &::-webkit-progress-bar {
-        background-color: transparent;
-        border-radius: 4rem;
-        border: 2px solid $primary;
-        height: 1.25rem;
+    &::-webkit-meter-bar,
+    &::-webkit-meter-optimum-value,
+    &::-webkit-meter-suboptimum-value,
+    &::-webkit-meter-even-less-good-value {
+        border: none;
+        border-radius: 1rem;
     }
     
-    &[value]::-webkit-progress-value {
-        background-color: $primary;
-        border-radius: 4rem;
-        height: 0.75rem;
-        margin: 2px;
-        max-width: calc(100% - 4px);
+    &::-webkit-meter-bar {
+        background: $secondary;
+        height: 0.5rem;
+    }
+    
+    &::-webkit-meter-optimum-value {
+        background: $success;
+    }
+    
+    &::-webkit-meter-suboptimum-value {
+        background: $warn;
+    }
+    
+    &::-webkit-meter-even-less-good-value {
+        background: $error;
     }
 }
 
 @-moz-document url-prefix() {
     
-    progress[value] {
-        appearance: none;
+    meter {
+        background: $secondary;
+        border-radius: 1rem;
+        height: 0.5rem;
+        
+        &::-moz-meter-bar {
+            border-radius: 1rem;
+        }
+        
+        &:-moz-meter-optimum::-moz-meter-bar {
+            background: $success;
+        }
+        
+        &:-moz-meter-sub-optimum::-moz-meter-bar {
+            background: $warn;
+        }
+        
+        &:-moz-meter-sub-sub-optimum::-moz-meter-bar {
+            background: $error;
+        }
+    }
+}
+
+progress {
+    appearance: none;
+    background: linear-gradient(
+        to right,
+        $primary 5%,
+        $secondary 5%,
+        $secondary 95%,
+        $primary 95%
+    ) repeat;
+    background-size: 200% 100%;
+    border: none;
+    border-radius: 1rem;
+    color: $primary;
+    @include area(0.5rem, 100%);
+    
+    &::-ms-fill {
+        animation-name: none;
+    }
+    
+    &[value],
+    &::-webkit-progress-bar,
+    &[value]::-webkit-progress-value {
+        background: none;
+        border: none;
+        border-radius: 1rem;
+    }
+    
+    &[value]::-webkit-progress-bar {
+        background: $secondary;
+    }
+    
+    &[value]::-webkit-progress-value {
+        background-color: $primary;
+    }
+    
+    &:not([value]) {
+        animation: animate-progress 2s ease infinite;
+    }
+}
+
+@-moz-document url-prefix() {
+    
+    progress::-moz-progress-bar {
         background-color: transparent;
-        border-radius: 4rem;
-        border: 2px solid $primary;
-        height: 1.25rem;
+    }
+    
+    progress[value],
+    progress[value]::-moz-progress-bar {
+        border: none;
+        border-radius: 1rem;
+        height: 0.5rem;
+    }
+    
+    progress[value] {
+        background-color: $secondary;
         
         &::-moz-progress-bar {
             background-color: $primary;
-            border-radius: 4rem;
-            height: 0.75rem;
-            margin: 2px;
-            max-width: calc(100% - 4px);
         }
     }
-    
 }
 
 select {
     appearance: none;
-    background: $primary url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'><polyline fill='white' points='46,15 25,36 4,15'/></svg>") no-repeat right 0.75rem center / 0.875rem;
-    border-radius: 0;
+    background: $primary url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'><polyline fill='white' points='46,15 25,36 4,15'/></svg>") no-repeat right 0.675rem center / 0.75rem;
+    border-radius: $radius;
     border: none;
     color: white;
     height: 2.5rem;
-    padding: 0 1.125rem 0 1rem;
+    line-height: 2.25;
+    padding: 0 0.75rem 0 1rem;
+    
+    &:focus {
+        outline: none;
+    }
+    
+    &:-moz-focusring {
+        color: transparent;
+        text-shadow: 0 0 0 white;
+    }
 }
 
 textarea,
-[type="color"],
 [type="email"],
 [type="date"],
 [type="datetime"],
@@ -81,24 +160,37 @@ textarea,
 [type="text"],
 [type="time"],
 [type="url"],
-[type="week"],
-[data-type="text"] {
-    border: 2px solid lightgrey;
-    border-radius: 0;
-    height: 2.75rem;
+[type="week"] {
+    background-color: $secondary;
+    border-radius: $radius;
+    height: 2.5rem;
     display: block;
-    padding: 0 0.5rem;
+    flex-flow: row;
+    font-family: inherit;
+    padding: 0 0.75rem;
+    transition: background-color $speed ease;
     width: 100%;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
     
     &:focus {
-        border: 2px solid $primary;
+        background-color: white;
+        box-shadow: inset 0 0 0 2px $secondary;
 		outline: none;
 	}
 }
 
 textarea {
     height: auto;
-    resize: vertical;
+    padding: 0.6875rem 0.75rem;
+}
+
+[type="search"] {
+    &::-webkit-search-cancel-button {
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 62"><path d="M32,1A31,31,0,1,0,63,32,31,31,0,0,0,32,1ZM48.26,42.61a4,4,0,0,1-5.66,5.66L32,37.68,21.41,48.28a4,4,0,0,1-5.66-5.66L26.36,32,15.74,21.39a4,4,0,0,1,0-5.66h0a4,4,0,0,1,5.66,0L32,26.36,42.63,15.76a4,4,0,0,1,5.66,5.66L37.68,32Z" transform="translate(-1.02 -1.02)" style="fill:#{darken($secondary,25%)}"/></svg>');
+        cursor: pointer;
+        @include area(1rem);
+        opacity: 0.8;
+    }
 }
 
 [type="checkbox"],
@@ -110,14 +202,14 @@ textarea {
     + label {
         align-items: center;
         cursor: pointer;
-        display: flex;
-        margin-bottom: 1rem;
+        display: inline-flex;
+        flex-flow: row wrap;
+        margin: 0 1rem 1rem 0;
         
         
         &::before {
-            box-shadow: inset 0 0 0 2px lightgrey;
             content: '';
-            @include size(1.125rem);
+            @include area(1.125rem);
             margin-right: 0.75rem;
             text-align: center;
             transition: all $speed ease;
@@ -128,8 +220,8 @@ textarea {
 [type="checkbox"] {
     
     + label::before {
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M31.74,7.14L27.63,3A0.88,0.88,0,0,0,26.5,3L10.38,19.11l-4.93-5a0.81,0.81,0,0,0-1.13,0L0.21,18.29a0.76,0.76,0,0,0-.21.57,0.7,0.7,0,0,0,.21.51L9.81,29a0.79,0.79,0,0,0,.57.26h0.05A0.55,0.55,0,0,0,10.94,29L31.74,8.22A0.79,0.79,0,0,0,32,7.65,0.63,0.63,0,0,0,31.74,7.14Z" /></svg>') no-repeat center 1.125rem / 0.75rem;
-        border-radius: $radius/2;
+        background: $secondary url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M31.74,7.14L27.63,3A0.88,0.88,0,0,0,26.5,3L10.38,19.11l-4.93-5a0.81,0.81,0,0,0-1.13,0L0.21,18.29a0.76,0.76,0,0,0-.21.57,0.7,0.7,0,0,0,.21.51L9.81,29a0.79,0.79,0,0,0,.57.26h0.05A0.55,0.55,0,0,0,10.94,29L31.74,8.22A0.79,0.79,0,0,0,32,7.65,0.63,0.63,0,0,0,31.74,7.14Z" /></svg>') no-repeat center 1.125rem / 0.75rem;
+        border-radius: $radius;
     }
     
     &:checked + label::before {
@@ -140,13 +232,103 @@ textarea {
 [type="radio"] {
     
     + label::before {
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><circle cx="16" cy="16" r="10" />></svg>') no-repeat center / 0;
+        background: radial-gradient(ellipse at center, $primary 50%, $secondary 50%);
         border-radius: 50%;
+        box-shadow: inset 0 0 0 1rem $secondary;
     }
     
     &:checked + label::before {
-        background-size: 0.75rem;
+        box-shadow: inset 0 0 0 0.3125rem $secondary;
     }
 }
 
+[type="color"] {
+    border-radius: 50%;
+    @include area(2.5rem);
+    overflow: hidden;
+    padding: 0;
+    
+    &:focus {
+        outline: none;
+    }
+    
+    &::-webkit-color-swatch-wrapper {
+        padding: 0;
+    }
+    
+    &::-webkit-color-swatch {
+        border: 2px solid $secondary;
+        border-radius: 50%;
+    }
+    
+    &::-moz-color-swatch {
+        border: 2px solid $secondary;
+        border-radius: 50%;
+    }
+}
 
+@mixin track {
+  animate: 0.2s;
+  background: $secondary;
+  border-radius: 1rem;
+  cursor: pointer;
+  @include area(0.5rem, 100%);
+}
+
+@mixin thumb {
+  background: $primary;
+  border-radius: 50%;
+  cursor: pointer;
+  cursor: grab;
+  @include area(1rem);
+}
+
+[type="range"] {
+    appearance: none;
+    width: 100%;
+
+    &:focus {
+        outline: none;
+    }
+    
+    &::-moz-focus-outer {
+        border: none;
+    }
+    
+    &::-webkit-slider-runnable-track {
+        @include track;
+    }
+
+    &::-moz-range-track {
+        @include track;
+    }
+
+    &::-ms-track {
+        @include track;
+        background: none;
+        border-color: transparent;
+        border-width: 0.25rem 0;
+        color: transparent;
+    }
+    
+    &::-ms-fill-lower,
+    &::-ms-fill-upper {
+        background: $secondary;
+        border-radius: 1rem;
+    }
+    
+    &::-webkit-slider-thumb {
+        @include thumb;
+        -webkit-appearance: none;
+        margin-top: -0.25rem;
+    }
+    
+    &::-moz-range-thumb {
+        @include thumb;
+        border: none;
+    }
+
+    &::-ms-thumb {
+        @include thumb;
+    }
+}

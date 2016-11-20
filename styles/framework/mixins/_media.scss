@@ -1,0 +1,35 @@
+/*----------------------------------------------------------------------------*\
+	#MEDIA QUERY MIXIN 
+\*----------------------------------------------------------------------------*/
+
+@mixin media( $minbreak: null, $maxbreak: null, $type: 'screen' ) {
+    
+    $media: '';
+    
+    @if ( $maxbreak == null ) {
+        
+        $media: 'only #{ $type } and (min-width: #{ map-get($breakpoints, $minbreak) })';
+    }
+    
+    @else if ( $minbreak == null and $maxbreak != null ) {
+        
+        $media: 'only #{ $type } and (max-width: #{ map-get($breakpoints, $maxbreak) })';
+    }
+    
+    @else if ( $type == 'print' ) {
+        
+        $media: 'only #{ $type }';
+    }
+    
+    @else {
+        
+        $media: 'only #{ $type } and (min-width: #{ map-get($breakpoints, $minbreak) }) and (max-width: #{ map-get($breakpoints, $maxbreak) })';
+    }
+    
+    @media #{ $media } {
+            
+        @content;
+    }
+}
+
+

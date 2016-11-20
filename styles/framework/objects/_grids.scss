@@ -1,14 +1,13 @@
-/*----------------------------------------------*\
-	#GRID OBJECT STYLES
-\*----------------------------------------------*/
+/*----------------------------------------------------------------------------*\
+	#GRID OBJECT
+\*----------------------------------------------------------------------------*/
 
 
 /*  Blocks  */
 
 .#{ $gridClass } { // .grid
     display: flex;
-    flex-shrink: 0;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     margin: 0 auto;
     max-width: rem( $maxWidth );
     padding: 0 rem( $gutter );
@@ -19,15 +18,19 @@
         
         &__#{ $itemClass } { // .grid__item
             @if(not($auto)) { flex-basis: 100%; }
-            flex-direction: column;
             @if($auto) { flex-grow: 1; }
             max-width: 100%;
-            padding: 0 rem( $gutterMobile );
+            padding: 0 rem( $gutterSmall );
             @if(not($auto)) { width: 100%; }
         }
     
     
     /*  Modifiers  */
+    
+    &--#{ $itemClass } { // .grid--item
+        display: block;
+        padding: 0 rem( $gutter + $gutterSmall );
+    }
     
     & &, // .grid .grid
     &--#{$unnestClass} { // .grid--unnest
@@ -54,8 +57,12 @@
 
 @include media(m) {
     
-    .#{ $gridClass }__#{ $itemClass } {
+    .#{ $gridClass }__#{ $itemClass } { // .grid__item
         padding: 0 rem( $gutter );
+    }
+    
+    .#{ $gridClass }--#{ $itemClass } { // .grid__item
+        padding: 0 rem( $gutter * 2 );
     }
 }
 

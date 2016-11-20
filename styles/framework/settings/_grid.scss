@@ -1,6 +1,6 @@
-/*----------------------------------------------*\
+/*----------------------------------------------------------------------------*\
 	#GRID SETTINGS
-\*----------------------------------------------*/
+\*----------------------------------------------------------------------------*/
 
 $gridClass:      'grid'         !default;
 $itemClass:      'item'         !default;
@@ -11,19 +11,9 @@ $maxClass:       'max'          !default;
 
 $columns:       12              !default;
 $gutter:        8px             !default;
-$gutterMobile:  $gutter / 2     !default;
+$gutterSmall:  $gutter / 2      !default;
 $maxWidth:      1380px          !default;
 $break:         null            !default;
 $auto:          false           !default;
-
-$breakpoints: (
-    s:          null,           //Smartphone
-    m:          641px,          //Tablet
-    l:          1025px,         //Notebook
-    xl:         1201px,         //Laptop
-    //xxl:        1601px          //Desktop
-) !default;
-
-$offsets:       false           !default; //Turns grid offset classes on/off
 
 
