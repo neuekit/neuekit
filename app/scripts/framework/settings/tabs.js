@@ -16,7 +16,7 @@
 
 /*eslint-disable no-unused-vars*/
 
-((UIKit) => {  
+((UIKit, $) => {  
     
     /* This is our global configuration. It will work across your js files */
     
@@ -33,6 +33,6 @@
     
 /* Checks if the namespace already exists & if not assign it */
 
-})(window.UIKit = window.UIKit || {});
+})(window.UIKit = window.UIKit || {}, window.jQuery = window.jQuery || window.$);
 
 

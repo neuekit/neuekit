@@ -13,7 +13,7 @@
 
 /*  Declare IIFE & Namespace  */
 
-((PROJECT) => {
+((PROJECT, $) => {
     
     
     /*--------------------------------------------------*\
@@ -71,6 +71,6 @@
 
 /* Checks if the namespace already exists & if not assign it */
 
-})(window.PROJECT = window.PROJECT || {});
+})(window.UIKit = window.UIKit || {}, window.jQuery = window.jQuery || window.$);
 
 

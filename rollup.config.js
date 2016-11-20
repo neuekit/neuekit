@@ -9,16 +9,13 @@ export default {
     moduleName: 'UIKit',
     moduleContext: {
         './app/scripts/framework/parties/promise.js' : 'window',
-        './app/scripts/framework/parties/fetch.js' : 'window',
-        './app/scripts/framework/parties/domtastic.js' : 'window'
+        './app/scripts/framework/parties/fetch.js' : 'window'
     },
     plugins: [
         babel({
             exclude: ['./node_modules/**', './app/scripts/framework/parties/**'],
             presets: ['es2015-rollup']
         }),
-        uglify({
-            reserved: ['UIKit']
-        })
+        uglify()
     ]
 };

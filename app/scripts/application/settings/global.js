@@ -6,7 +6,7 @@
 	repeated values & values that may change later.
 \*--------------------------------------------------*/
 
-((PROJECT) => {
+((PROJECT, $) => {
     
     /* This is our global configuration. It will work across your js files */
     
@@ -19,6 +19,6 @@
     
 /* Checks if the namespace already exists & if not assign it */
 
-})(window.PROJECT = window.PROJECT || {});
+})(window.UIKit = window.UIKit || {}, window.jQuery = window.jQuery || window.$);
 
 

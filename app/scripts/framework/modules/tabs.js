@@ -15,7 +15,7 @@
 
 /*  Declare IIFE & Namespace  */
 
-((UIKit) => {
+((UIKit, $) => {
     
     UIKit.tabs = (() => {
             
@@ -127,6 +127,6 @@
     
 /* Checks if the namespace already exists & if not assign it */
 
-})(window.UIKit = window.UIKit || {});
+})(window.UIKit = window.UIKit || {}, window.jQuery = window.jQuery || window.$);
 
 

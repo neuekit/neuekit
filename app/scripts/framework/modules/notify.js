@@ -14,7 +14,7 @@
 
 /*  Declare IIFE & Namespace  */
 
-((UIKit) => {
+((UIKit, $) => {
     
     /*--------------------------------------------------*\
     	#UIKit HELPER METHOD
@@ -91,6 +91,6 @@
     
 /* Lastly this checks if the namespace already exists & if not will assign it */
 
-})(window.UIKit = window.UIKit || {});
+})(window.UIKit = window.UIKit || {}, window.jQuery = window.jQuery || window.$);
 
 

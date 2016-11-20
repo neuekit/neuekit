@@ -18,7 +18,7 @@
 
 /*  Declare IIFE & Namespace  */
 
-((PROJECT) => {
+((PROJECT, $) => {
     
     
     /* Your code here */
@@ -27,6 +27,6 @@
     
 /* Checks if the namespace already exists & if not assign it */
 
-})(window.PROJECT = window.PROJECT || {});
+})(window.UIKit = window.UIKit || {}, window.jQuery = window.jQuery || window.$);
 
 
