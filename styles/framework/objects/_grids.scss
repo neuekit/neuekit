@@ -32,8 +32,12 @@
         padding: 0 rem( $gutter + $gutterSmall );
     }
     
+    #{ & }#{ & }--#{ $itemClass } { // .grid.grid--item
+        display: block;
+    }
+    
     & &, // .grid .grid
-    &--#{$unnestClass} { // .grid--unnest
+    &--#{ $unnestClass } { // .grid--unnest
         margin: 0 #{ rem( -$gutter * 2 ) };
         max-width: none;
         width: auto;
