@@ -44,12 +44,12 @@
                 }
                 
                 else {
-                
+                    
                     $(`.${config.tabsClass}`).each(function(){
                         
                         if ( $(this).find(`.${config.tabActiveClass}`).length === 0 ) {
                             
-                            const firstTab = $(this).find(`.${config.tabsClass}`);
+                            const firstTab = $(this).find(`.${config.tabClass}`).eq(0);
                             const firstTabHash = firstTab.attr('href');
                             
                             firstTab.addClass(config.tabActiveClass);
