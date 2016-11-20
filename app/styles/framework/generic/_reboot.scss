@@ -14,9 +14,7 @@
 /*----------------------------------------------------------------------------*\
 	1. Remove repeating backgrounds in all browsers (opinionated).
     2. Add box sizing inheritence in all browsers (opinionated).
-    3. Add flex flow column in all browsers (opinionated).
-    4. Add flex shrink 0 in all browsers (opinionated).
-    5. Add relative positioning (opinionated).
+    3. Add relative positioning (opinionated).
 \*----------------------------------------------------------------------------*/
 
 *,
@@ -24,9 +22,7 @@
 ::after {
 	background-repeat: no-repeat;   /* 1 */
 	box-sizing: inherit;            /* 2 */
-	flex-flow: column;              /* 3 */
-    flex-shrink: 0;                 /* 4 */
-	position: relative;             /* 5 */
+	position: relative;             /* 3 */
 }
 
 

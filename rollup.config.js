@@ -17,6 +17,8 @@ export default {
             exclude: ['./node_modules/**', './app/scripts/framework/parties/**'],
             presets: ['es2015-rollup']
         }),
-        uglify()
+        uglify({
+            reserved: ['UIKit']
+        })
     ]
 };

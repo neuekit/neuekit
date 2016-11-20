@@ -32,25 +32,32 @@
             
             _this.tabCheck = () => {
                 
-                if ( $(location.hash.substr(1)) && $(location.hash.substr(1)).hasClass(config.tabContentClass) ) {
-                        
+                if ( location.hash.substr(1) && $(location.hash).hasClass(config.tabContentClass) ) {
+                    
+                    $(`[href="${location.hash}"]`).closest(`.${config.tabsClass}`).find(`.${config.tabClass}`).removeClass(config.tabActiveClass);
+                    
+                    $(location.hash).closest(`.${config.tabContentsClass}`).find(`.${config.tabContentClass}`).removeClass(config.tabContentActiveClass);
+                    
                     $(`[href="${location.hash}"]`).addClass(config.tabActiveClass);
                     
                     $(location.hash).addClass(config.tabContentActiveClass);   
                 }
                 
-                $(`.${config.tabsClass}`).each(function(){
-                    
-                    if ( $(this).find(`.${config.tabActiveClass}`).length === 0 ) {
+                else {
+                
+                    $(`.${config.tabsClass}`).each(function(){
                         
-                        const firstTab = $(this).find(`.${config.tabsClass}`);
-                        const firstTabHash = firstTab.attr('href');
-                        
-                        firstTab.addClass(config.tabActiveClass);
-                        
-                        $(firstTabHash).addClass(config.tabContentActiveClass);
-                    }
-                });
+                        if ( $(this).find(`.${config.tabActiveClass}`).length === 0 ) {
+                            
+                            const firstTab = $(this).find(`.${config.tabsClass}`);
+                            const firstTabHash = firstTab.attr('href');
+                            
+                            firstTab.addClass(config.tabActiveClass);
+                            
+                            $(firstTabHash).addClass(config.tabContentActiveClass);
+                        }
+                    });
+                }
             };
             
             
