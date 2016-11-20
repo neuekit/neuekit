@@ -91,11 +91,11 @@
             
             _this.setInputTypes = () => {
                 
-                $('input').each((input) => {
+                $('input').each(function() {
                     
-                    if(input.type !== $(input).attr('type')) {
+                    if(this.type !== $(this).attr('type')) {
                         
-                        $(input).attr('type', input.type);
+                        $(this).attr('type', this.type);
                     }
                 });
             };
