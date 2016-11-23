@@ -13,12 +13,6 @@
     
     /* UI Kit overrides and config */
     
-    UIKit.settings.tabs.tabActiveClass = 'on-edge-bottom--active';
-    
-    
-    /*  Reinitialise modules after config  */
-    
-    UIKit.tabs.init();
 
     
 /* Checks if the namespace already exists & if not assign it */

@@ -2,33 +2,33 @@
 	#TEXT HELPERS
 \*----------------------------------------------------------------------------*/
     
-.text-bolder {
+.text-bolder.text-bolder {
     font-weight: bolder;
 }
 
-.text-lighter {
+.text-lighter.text-lighter {
     font-weight: lighter;
 }
 
 @include breakpoints( both ) {
     
-    .text-start#{ $break } {
+    .text-start#{ $break }.text-start#{ $break } {
         text-align: start;
     }
     
-    .text-center#{ $break } {
+    .text-center#{ $break }.text-center#{ $break } {
         text-align: center;
     }
     
-    .text-end#{ $break } {
+    .text-end#{ $break }.text-end#{ $break } {
         text-align: end;
     }
     
-    .text-grow#{ $break } {
+    .text-grow#{ $break }.text-grow#{ $break } {
         font-size: 125%;
     }
     
-    .text-shrink#{ $break } {
+    .text-shrink#{ $break }.text-shrink#{ $break } {
         font-size: 75%;
     }
 }
