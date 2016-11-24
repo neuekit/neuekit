@@ -26,7 +26,7 @@ import './parties/fetch';
 /*----------------------------------------------------------------------------*\
 	#SETTINGS
 	
-	Global and module configurations, this comes.
+	Global and module configurations.
 \*----------------------------------------------------------------------------*/
 
 import './settings/global';   
