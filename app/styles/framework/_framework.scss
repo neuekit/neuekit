@@ -101,9 +101,9 @@
 	Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
+@import 'helpers/sizes';                // Flex based sizes.
 @import 'helpers/flex';                 // Give flex a helping hand.
 @import 'helpers/offsets';              // Margin offsets for asymetric layouts.
-@import 'helpers/sizes';                // Flex based sizes.
 @import 'helpers/spacing';              // Micro-level spacing.
 @import 'helpers/text';                 // Handy text assistants.
 @import 'helpers/visibility';           // Helpers to show and side stuff.
