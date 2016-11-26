@@ -71,6 +71,30 @@
             
             
             /*--------------------------------------------------*\
+            	#WAIT FUNCTION FOR USE WITH KEY EVENTS
+            	
+            	This function accepts 2 arguments:
+                1. A callback function.
+                2. A time in milliseconds.
+            \*--------------------------------------------------*/
+            
+            _this.wait = (() => {
+        
+                let timer = 0;
+                
+                return function(callback, ms){
+                    
+                    clearTimeout (timer);
+                    
+                    timer = setTimeout(callback, ms);
+                    
+                };
+
+            })();
+            
+            
+            
+            /*--------------------------------------------------*\
             	#DOCUMENT CLASSES
             	
             	This sets the classes on the HTML element.
