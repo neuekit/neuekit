@@ -161,7 +161,9 @@ textarea,
 [type="time"],
 [type="url"],
 [type="week"] {
-    background-color: $secondary;
+    @if(not($boringInputs)) {
+        background-color: $secondary;
+    }
     border-radius: $radius;
     height: 2.5rem;
     display: block;
@@ -169,7 +171,6 @@ textarea,
     font-family: inherit;
     padding: 0 0.75rem;
     transition: background-color $speed ease;
-    width: 100%;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     
     &:focus {
