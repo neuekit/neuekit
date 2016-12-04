@@ -41,6 +41,7 @@
     
     & &, // .grid .grid
     &--#{$unnestClass} { // .grid--unnest
+        flex-shrink: 1;
         margin: 0 #{ rem( -$gutter * 2 ) };
         max-width: none;
         width: auto;
