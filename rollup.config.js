@@ -1,6 +1,7 @@
 // Rollup plugins
 import babel from 'rollup-plugin-babel';
 import uglify from 'rollup-plugin-uglify';
+import { minify } from 'uglify-js';
 
 export default {
     entry: './app/scripts/framework/framework.js',
@@ -14,10 +15,20 @@ export default {
     plugins: [
         babel({
             exclude: ['./node_modules/**', './app/scripts/framework/parties/**'],
-            presets: ['es2015-rollup']
+            "presets": [[
+                "env", {
+                    "targets": {
+                        "browsers": ["> 1%", "last 2 versions", "Firefox ESR", "not ie_mob <= 12"]
+                    },
+                    "modules": false
+                }
+            ]],
+            "plugins": [
+                "external-helpers"
+            ]
         }),
         uglify({
             screwIE8: true
-        })
+        }, minify)
     ]
 };
