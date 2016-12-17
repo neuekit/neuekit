@@ -133,13 +133,19 @@ progress {
 
 select {
     appearance: none;
-    background: $primary url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'%3E%3Cpolyline fill='white' points='46,15 25,36 4,15'/%3E%3C/svg%3E") no-repeat right 0.675rem center / 0.75rem;
+    background: $secondary url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'%3E%3Cpolyline fill='black' points='46,15 25,36 4,15'/%3E%3C/svg%3E") no-repeat right 0.675rem center / 0.75rem;
     border-radius: $radius;
     border: none;
-    color: white;
     height: 2.5rem;
     line-height: 2.25;
-    padding: 0 0.75rem 0 1rem;
+    padding: 0 1.75rem 0 1rem;
+    
+    [disabled],
+    option[disabled],
+    option [disabled] {
+        background: black;
+        color: red;
+    }
     
     &:focus {
         outline: none;
