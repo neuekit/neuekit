@@ -2,6 +2,10 @@
 	#FORM ELEMENT STYLES
 \*----------------------------------------------------------------------------*/
 
+::-webkit-file-upload-button {
+    font-size: 0.75rem;
+}
+
 fieldset {
     border: 2px solid $secondary;
 }
@@ -165,7 +169,7 @@ textarea,
         background-color: $secondary;
     }
     border-radius: $radius;
-    height: 2.5rem;
+    min-height: 2.5rem;
     display: block;
     flex-flow: row;
     font-family: inherit;
@@ -333,3 +337,5 @@ textarea {
         @include thumb;
     }
 }
+
+
