@@ -218,6 +218,7 @@ textarea {
         
         &::before {
             content: '';
+            display: block;
             @include area(1.125rem);
             margin-right: 0.75rem;
             text-align: center;
