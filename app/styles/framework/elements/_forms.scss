@@ -2,8 +2,33 @@
 	#FORM ELEMENT STYLES
 \*----------------------------------------------------------------------------*/
 
+::-webkit-date-and-time-value {
+    margin: 0;
+}
+
 ::-webkit-file-upload-button {
     font-size: 0.75rem;
+}
+
+::-webkit-inner-spin-button {
+    display: none;
+}
+
+::-webkit-search-cancel-button {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 62 62'%3E%3Cpath d='M32,1A31,31,0,1,0,63,32,31,31,0,0,0,32,1ZM48.26,42.61a4,4,0,0,1-5.66,5.66L32,37.68,21.41,48.28a4,4,0,0,1-5.66-5.66L26.36,32,15.74,21.39a4,4,0,0,1,0-5.66h0a4,4,0,0,1,5.66,0L32,26.36,42.63,15.76a4,4,0,0,1,5.66,5.66L37.68,32Z' fill='#{$tertiary}' transform='translate(-1.02 -1.02)'/%3E%3C/svg%3E");
+    cursor: pointer;
+    @include area(1rem);
+    opacity: 0.8;
+}
+
+
+::-webkit-file-upload-button,
+[type="file"] {
+    cursor: pointer;
+}
+
+button {
+    cursor: pointer;
 }
 
 fieldset {
@@ -133,19 +158,13 @@ progress {
 
 select {
     appearance: none;
-    background: $secondary url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='50px' height='50px'%3E%3Cpolyline fill='black' points='46,15 25,36 4,15'/%3E%3C/svg%3E") no-repeat right 0.675rem center / 0.75rem;
+    background: $secondary url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-916.724 629.245 16.039 9.434'%3E%3Cpath fill='none' stroke='black' stroke-width='2' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(161.405 63.202)'/%3E%3C/svg%3E") no-repeat right 0.625rem center / 0.625rem;
     border-radius: $radius;
     border: none;
-    height: 2.5rem;
+    cursor: pointer;
+    height: 2.25rem;
     line-height: 2.25;
-    padding: 0 1.75rem 0 1rem;
-    
-    [disabled],
-    option[disabled],
-    option [disabled] {
-        background: black;
-        color: red;
-    }
+    padding: 0 2rem 0 1rem;
     
     &:focus {
         outline: none;
@@ -153,7 +172,7 @@ select {
     
     &:-moz-focusring {
         color: transparent;
-        text-shadow: 0 0 0 white;
+        text-shadow: 0 0 0 $primary;
     }
     
     &::-ms-expand {
@@ -175,12 +194,13 @@ textarea,
 [type="time"],
 [type="url"],
 [type="week"] {
+    appearance: none;
     @if(not($boringInputs)) {
         background-color: $secondary;
     }
     border-radius: $radius;
-    min-height: 2.5rem;
-    display: block;
+    min-height: 2.25rem;
+    display: flex;
     flex-flow: row;
     font-family: inherit;
     padding: 0 0.75rem;
@@ -199,13 +219,18 @@ textarea {
     padding: 0.6875rem 0.75rem;
 }
 
-[type="search"] {
-    &::-webkit-search-cancel-button {
-        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 62 62'%3E%3Cpath d='M32,1A31,31,0,1,0,63,32,31,31,0,0,0,32,1ZM48.26,42.61a4,4,0,0,1-5.66,5.66L32,37.68,21.41,48.28a4,4,0,0,1-5.66-5.66L26.36,32,15.74,21.39a4,4,0,0,1,0-5.66h0a4,4,0,0,1,5.66,0L32,26.36,42.63,15.76a4,4,0,0,1,5.66,5.66L37.68,32Z' transform='translate(-1.02 -1.02)' style='fill:%23{darken($secondary,25%)}'/%3E%3C/svg%3E");
-        cursor: pointer;
-        @include area(1rem);
-        opacity: 0.8;
-    }
+[type="date"],
+[type="datetime"],
+[type="datetime-local"],
+[type="time"],
+[type="week"] {
+    max-width: 100%;
+    width: 219px;
+}
+
+[type="number"] {
+    appearance: none;
+    background: $secondary url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-916.724 608.538 16.039 30.141'%3E%3Cdefs%3E%3Cstyle%3E.a{fill:none;stroke:%23000;stroke-width:2px;}%3C/style%3E%3C/defs%3E%3Cg transform='translate(-1436)'%3E%3Cpath class='a' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(1597.405 63.202)'/%3E%3Cpath class='a' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(-542.814 1184.015) rotate(180)'/%3E%3C/g%3E%3C/svg%3E") no-repeat right 0.625rem center / 0.625rem;
 }
 
 [type="checkbox"],

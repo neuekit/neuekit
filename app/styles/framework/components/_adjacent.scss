@@ -8,11 +8,12 @@
      
      #{&}__item {
           flex-shrink: 1;
+          min-width: 0;
      }
      
      #{&}__end {
           align-items: center;
-          background-color: $primary;
+          background-color: $tertiary;
           color: white;
           display: flex;
           flex-flow: row;
