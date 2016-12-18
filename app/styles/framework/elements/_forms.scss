@@ -2,6 +2,58 @@
 	#FORM ELEMENT STYLES
 \*----------------------------------------------------------------------------*/
 
+@mixin input {
+    appearance: none;
+    @if(not($boringInputs)) {
+        background-color: $secondary;
+    }
+    border: none;
+    border-radius: $radius;
+    min-height: 2.25rem;
+    display: flex;
+    flex-flow: row;
+    font-family: inherit;
+    padding: 0 0.75rem;
+    transition: background-color $speed ease;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    
+    &:focus {
+        background-color: white;
+        box-shadow: inset 0 0 0 2px $secondary;
+		outline: none;
+	}
+}
+
+@mixin track {
+    animate: 0.2s;
+    background: $secondary;
+    border-radius: 1rem;
+    cursor: pointer;
+    @include area(0.5rem, 100%);
+}
+
+@mixin thumb {
+    background: $primary;
+    border-radius: 50%;
+    cursor: pointer;
+    cursor: grab;
+    @include area(1rem);
+}
+
+::-ms-value {
+    @include input;
+}
+
+::-ms-browse {
+    background-color: $primary;
+    border: none;
+    border-radius: $radius;
+    color: white;
+    margin-left: 0.25rem;
+    min-height: 2.25rem;
+    padding: 0.625rem 0.75rem 0.5rem;
+}
+
 ::-webkit-date-and-time-value {
     margin: 0;
 }
@@ -11,7 +63,8 @@
 }
 
 ::-webkit-inner-spin-button {
-    display: none;
+    cursor: pointer;
+    opacity: 0;
 }
 
 ::-webkit-search-cancel-button {
@@ -20,7 +73,6 @@
     @include area(1rem);
     opacity: 0.8;
 }
-
 
 ::-webkit-file-upload-button,
 [type="file"] {
@@ -194,24 +246,7 @@ textarea,
 [type="time"],
 [type="url"],
 [type="week"] {
-    appearance: none;
-    @if(not($boringInputs)) {
-        background-color: $secondary;
-    }
-    border-radius: $radius;
-    min-height: 2.25rem;
-    display: flex;
-    flex-flow: row;
-    font-family: inherit;
-    padding: 0 0.75rem;
-    transition: background-color $speed ease;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
-    
-    &:focus {
-        background-color: white;
-        box-shadow: inset 0 0 0 2px $secondary;
-		outline: none;
-	}
+    @include input;
 }
 
 textarea {
@@ -229,8 +264,14 @@ textarea {
 }
 
 [type="number"] {
-    appearance: none;
     background: $secondary url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-916.724 608.538 16.039 30.141'%3E%3Cdefs%3E%3Cstyle%3E.a{fill:none;stroke:%23000;stroke-width:2px;}%3C/style%3E%3C/defs%3E%3Cg transform='translate(-1436)'%3E%3Cpath class='a' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(1597.405 63.202)'/%3E%3Cpath class='a' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(-542.814 1184.015) rotate(180)'/%3E%3C/g%3E%3C/svg%3E") no-repeat right 0.625rem center / 0.625rem;
+}
+
+@-moz-document url-prefix() {
+    
+    [type="number"] {
+        background: $secondary;
+    }
 }
 
 [type="checkbox"],
@@ -306,22 +347,6 @@ textarea {
         border: 2px solid $secondary;
         border-radius: 50%;
     }
-}
-
-@mixin track {
-  animate: 0.2s;
-  background: $secondary;
-  border-radius: 1rem;
-  cursor: pointer;
-  @include area(0.5rem, 100%);
-}
-
-@mixin thumb {
-  background: $primary;
-  border-radius: 50%;
-  cursor: pointer;
-  cursor: grab;
-  @include area(1rem);
 }
 
 [type="range"] {
