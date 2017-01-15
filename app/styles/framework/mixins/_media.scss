@@ -23,7 +23,7 @@
     
     @else {
         
-        $media: 'only #{ $type } and (min-width: #{ map-get($breakpoints, $minbreak) }) and (max-width: #{ map-get($breakpoints, $maxbreak) })';
+        $media: 'only #{ $type } and (min-width: #{ map-get($breakpoints, $minbreak) }) and (max-width: #{ map-get($breakpoints, $maxbreak) - 1px })';
     }
     
     @media #{ $media } {
