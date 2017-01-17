@@ -63,17 +63,6 @@
     }
 }
 
-@include media(null, m) {
-    .#{ $gridClass }--overflow {
-        padding: 0;
-        
-        > .#{ $gridClass }__#{ $itemClass } {
-            padding: 0 rem( $gutter );
-        }
-    }
-}
-
-
 @include media(m) {
     
     .#{ $gridClass }__#{ $itemClass } { // .grid__item
@@ -81,10 +70,6 @@
     }
     
     .#{ $gridClass }--#{ $itemClass } { // .grid__item
-        padding: 0 rem( $gutter * 2 );
-    }
-    
-    &--overflow  > #{ $gridClass }__#{ $itemClass } {
         padding: 0 rem( $gutter * 2 );
     }
 }
