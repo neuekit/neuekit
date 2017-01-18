@@ -10,7 +10,9 @@
 }
 
 [class*="brick"] {
+    flex-basis: 100%;
     padding: rem($gutter);
+    max-width: 100%;
 }
 
 
