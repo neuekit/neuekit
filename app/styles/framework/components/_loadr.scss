@@ -13,23 +13,28 @@
 
 .loading {
     color: transparent !important;
-    min-height: 1.5rem;
+    @include area(1.5rem);
     pointer-events: none;
     position: relative;
-}
     
-.loading::after {
-    animation: loading 0.6s infinite linear;
-    border: 3px solid $primary;
-    border-radius: 0.75rem;
-    border-right-color: transparent;
-    border-top-color: transparent;
-    content: '';
-    display: block;
-    @include area(1.5rem);
-    left: 50%; top: 50%;
-    margin: -0.75rem 0 0 -0.75rem;
-    position: absolute;
+    &::after {
+        animation: loading 0.6s infinite linear;
+        border: 3px solid $primary;
+        border-radius: 0.75rem;
+        border-right-color: transparent;
+        border-top-color: transparent;
+        content: '';
+        display: block;
+        @include area(1.5rem);
+        left: 50%; top: 50%;
+        margin: -0.75rem 0 0 -0.75rem;
+        position: absolute;
+    }
+    
+    &--light::after {
+        border-bottom-color: white;
+        border-left-color: white;
+    }
 }
 
 

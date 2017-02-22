@@ -13,10 +13,10 @@
   },
   "homepage": "https://github.com/CreativeLittleDots/Creative-Little-UI-Kit#readme",
   "devDependencies": {
-    "babel-plugin-external-helpers": "^6.18.0",
-    "babel-preset-env": "0.0.9",
-    "rollup": "^0.36.3",
-    "rollup-plugin-babel": "^2.6.1",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.1.8",
+    "rollup": "^0.41.4",
+    "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-uglify": "^1.0.1"
   }
 }
