@@ -22,6 +22,7 @@
         
         &__content {
             background-color: white;
+            border-radius: $radius;
             margin: auto;
             max-height: calc(100vh - 2rem);
             max-width: $maxWidth;
