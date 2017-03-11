@@ -5,7 +5,7 @@
 @mixin input {
     appearance: none;
     @if(not($boringInputs)) {
-        background-color: $secondary;
+        background-color: $input;
     }
     border: none;
     border-radius: $radius;
@@ -16,17 +16,18 @@
     padding: 0 0.75rem;
     transition: background-color $speed ease;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
+    width: 100%;
     
     &:focus {
         background-color: white;
-        box-shadow: inset 0 0 0 2px $secondary;
+        box-shadow: inset 0 0 0 2px $input;
 		outline: none;
 	}
 }
 
 @mixin track {
     animate: 0.2s;
-    background: $secondary;
+    background: $input;
     border-radius: 1rem;
     cursor: pointer;
     @include area(0.5rem, 100%);
@@ -84,7 +85,7 @@ button {
 }
 
 fieldset {
-    border: 2px solid $secondary;
+    border: 2px solid $input;
 }
 
 legend {
@@ -104,7 +105,7 @@ meter {
     }
     
     &::-webkit-meter-bar {
-        background: $secondary;
+        background: $input;
         height: 0.5rem;
     }
     
@@ -124,7 +125,7 @@ meter {
 @-moz-document url-prefix() {
     
     meter {
-        background: $secondary;
+        background: $input;
         border-radius: 1rem;
         height: 0.5rem;
         
@@ -151,8 +152,8 @@ progress {
     background: linear-gradient(
         to right,
         $primary 5%,
-        $secondary 5%,
-        $secondary 95%,
+        $input 5%,
+        $input 95%,
         $primary 95%
     ) repeat;
     background-size: 200% 100%;
@@ -174,7 +175,7 @@ progress {
     }
     
     &[value]::-webkit-progress-bar {
-        background: $secondary;
+        background: $input;
     }
     
     &[value]::-webkit-progress-value {
@@ -200,7 +201,7 @@ progress {
     }
     
     progress[value] {
-        background-color: $secondary;
+        background-color: $input;
         
         &::-moz-progress-bar {
             background-color: $primary;
@@ -210,7 +211,7 @@ progress {
 
 select {
     appearance: none;
-    background: $secondary url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-916.724 629.245 16.039 9.434'%3E%3Cpath fill='none' stroke='black' stroke-width='2' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(161.405 63.202)'/%3E%3C/svg%3E") no-repeat right 0.625rem center / 0.625rem;
+    background: $input url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-916.724 629.245 16.039 9.434'%3E%3Cpath fill='none' stroke='black' stroke-width='2' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(161.405 63.202)'/%3E%3C/svg%3E") no-repeat right 0.625rem center / 0.625rem;
     border-radius: $radius;
     border: none;
     cursor: pointer;
@@ -264,13 +265,13 @@ textarea {
 }
 
 [type="number"] {
-    background: $secondary url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-916.724 608.538 16.039 30.141'%3E%3Cdefs%3E%3Cstyle%3E.a{fill:none;stroke:%23000;stroke-width:2px;}%3C/style%3E%3C/defs%3E%3Cg transform='translate(-1436)'%3E%3Cpath class='a' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(1597.405 63.202)'/%3E%3Cpath class='a' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(-542.814 1184.015) rotate(180)'/%3E%3C/g%3E%3C/svg%3E") no-repeat right 0.625rem center / 0.625rem;
+    background: $input url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-916.724 608.538 16.039 30.141'%3E%3Cdefs%3E%3Cstyle%3E.a{fill:none;stroke:%23000;stroke-width:2px;}%3C/style%3E%3C/defs%3E%3Cg transform='translate(-1436)'%3E%3Cpath class='a' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(1597.405 63.202)'/%3E%3Cpath class='a' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(-542.814 1184.015) rotate(180)'/%3E%3C/g%3E%3C/svg%3E") no-repeat right 0.625rem center / 0.625rem;
 }
 
 @-moz-document url-prefix() {
     
     [type="number"] {
-        background: $secondary;
+        background: $input;
     }
 }
 
@@ -302,7 +303,7 @@ textarea {
 [type="checkbox"] {
     
     + label::before {
-        background: $secondary url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M31.74,7.14L27.63,3A0.88,0.88,0,0,0,26.5,3L10.38,19.11l-4.93-5a0.81,0.81,0,0,0-1.13,0L0.21,18.29a0.76,0.76,0,0,0-.21.57,0.7,0.7,0,0,0,.21.51L9.81,29a0.79,0.79,0,0,0,.57.26h0.05A0.55,0.55,0,0,0,10.94,29L31.74,8.22A0.79,0.79,0,0,0,32,7.65,0.63,0.63,0,0,0,31.74,7.14Z' /%3E%3C/svg%3E") no-repeat center 1.125rem / 0.75rem;
+        background: $input url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M31.74,7.14L27.63,3A0.88,0.88,0,0,0,26.5,3L10.38,19.11l-4.93-5a0.81,0.81,0,0,0-1.13,0L0.21,18.29a0.76,0.76,0,0,0-.21.57,0.7,0.7,0,0,0,.21.51L9.81,29a0.79,0.79,0,0,0,.57.26h0.05A0.55,0.55,0,0,0,10.94,29L31.74,8.22A0.79,0.79,0,0,0,32,7.65,0.63,0.63,0,0,0,31.74,7.14Z' /%3E%3C/svg%3E") no-repeat center 1.125rem / 0.75rem;
         border-radius: $radius;
     }
     
@@ -314,13 +315,13 @@ textarea {
 [type="radio"] {
     
     + label::before {
-        background: radial-gradient(ellipse at center, $primary 50%, $secondary 50%);
+        background: radial-gradient(ellipse at center, $primary 50%, $input 50%);
         border-radius: 50%;
-        box-shadow: inset 0 0 0 1rem $secondary;
+        box-shadow: inset 0 0 0 1rem $input;
     }
     
     &:checked + label::before {
-        box-shadow: inset 0 0 0 0.3125rem $secondary;
+        box-shadow: inset 0 0 0 0.3125rem $input;
     }
 }
 
@@ -339,12 +340,12 @@ textarea {
     }
     
     &::-webkit-color-swatch {
-        border: 2px solid $secondary;
+        border: 2px solid $input;
         border-radius: 50%;
     }
     
     &::-moz-color-swatch {
-        border: 2px solid $secondary;
+        border: 2px solid $input;
         border-radius: 50%;
     }
 }
@@ -379,7 +380,7 @@ textarea {
     
     &::-ms-fill-lower,
     &::-ms-fill-upper {
-        background: $secondary;
+        background: $input;
         border-radius: 1rem;
     }
     
