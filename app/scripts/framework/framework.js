@@ -2,7 +2,7 @@
     
 	#CREATIVE LITTLE UI KIT
 	
-	- Version:      0.9.7
+	- Version:      0.9.8
 	- Author:       Creative Little Dots
 	- Site:         http://creativelittle.uk/uikit
 	- Copyright:    2016, Creative Little Dots
@@ -53,5 +53,6 @@ import './modules/helpers';
 import './modules/modal';
 import './modules/notify';
 import './modules/tabs';
+import './modules/gallery';
 
 

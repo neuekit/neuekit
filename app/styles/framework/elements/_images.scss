@@ -2,14 +2,18 @@
 	#IMAGE & SVG ELEMENT STYLES
 \*----------------------------------------------------------------------------*/
 
-img {
-    height: auto;
-}
-
 img,
 svg {
     display: block;
     max-width: 100%;
+}
+
+img {
+    height: auto;
+}
+
+figure {
+    margin: 0;
 }
 
 
