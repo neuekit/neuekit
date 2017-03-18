@@ -53,6 +53,5 @@ import './modules/helpers';
 import './modules/modal';
 import './modules/notify';
 import './modules/tabs';
-import './modules/gallery';
 
 
