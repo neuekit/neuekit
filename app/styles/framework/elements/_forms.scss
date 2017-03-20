@@ -151,10 +151,10 @@ progress {
     appearance: none;
     background: linear-gradient(
         to right,
-        $primary 5%,
-        $input 5%,
-        $input 95%,
-        $primary 95%
+        $primary 0%,
+        $input 0%,
+        $input 100%,
+        $primary 100%
     ) repeat;
     background-size: 200% 100%;
     border: none;
