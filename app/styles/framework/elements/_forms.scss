@@ -42,8 +42,7 @@
 }
 
 ::-ms-value {
-    @include input;
-    background-color: inherit;
+    background-color: transparent;
 }
 
 ::-ms-browse {
