@@ -6,4 +6,56 @@
     margin: 0;
 }
 
+@mixin paddingHelpers(
+    $responsive: true,
+    $steps: 5,
+    $directions: (
+        top, bottom, left
+    )
+) {
+    
+    @if $responsive == true {
+        
+        @include breakpoints( both ) {
+            
+            @for $step from 1 through $steps {
+            
+                .p-#{ $step }#{ $break } {
+                    padding: #{ $step }rem;
+                }
+                
+                .p-#{ $step }-0#{ $break } {
+                    padding: #{ $step }rem 0;
+                }
+                            
+                @each $direction in $directions {
+                    
+                    $dir: str-slice($direction, 1, 1);
+                    
+                    .p-#{ $dir }-#{ $step }#{ $break } {
+                        padding-#{ $direction }: #{ $step }rem;
+                    }
+                    
+                }
+                
+            }
+        
+        }
 
+    } @else {
+
+        @for $step from 1 through $steps {
+            
+            .p-#{ $step } {
+                padding: #{ $step }rem;
+            }
+            
+            .p-#{ $step }-0 {
+                padding: #{ $step }rem 0;
+            }
+            
+        }
+    
+    }
+
+}
