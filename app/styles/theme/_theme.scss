@@ -88,7 +88,35 @@
 	Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
-@include paddingHelpers();              // Padding helpers from framework.
+
+@include helpers-spacing(               // Padding helpers from framework.
+/*
+    $attrs: ( padding, margin ),
+    $responsive: $responsive,
+    $steps: 5,
+    $directions: (
+        top,
+        bottom,
+        left,
+        right,
+        top-bottom
+    )
+*/
+);
+@include helpers-text(                  // Text helpers from framework.
+/*
+    $responsive: $responsive,
+    $helpers: (
+        text-start,
+        text-center,
+        text-end,
+        text-grow,
+        text-shrink,
+        text-bolder,
+        text-lighter
+    )
+*/
+)
 @import 'helpers/spacing';              // Micro-level spacing.
 
 

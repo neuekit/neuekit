@@ -2,60 +2,108 @@
 	#SPACING HELPERS
 \*----------------------------------------------------------------------------*/
 
-.no-margin.no-margin {
-    margin: 0;
-}
-
-@mixin paddingHelpers(
-    $responsive: true,
-    $steps: 5,
-    $directions: (
-        top, bottom, left, right
+@mixin helpers-spacing(
+    $attrs: ( padding, margin ),    // Values: margin, padding
+    $responsive: $responsive,       // Values: false, both, up, only
+    $steps: 5,                      // Value must be an integer
+    $directions: (                  // Values: top, bottom, left, right, top-bottom, left-right
+        top,
+        bottom,
+        left,
+        right,
+        top-bottom
     )
 ) {
-    
-    @if $responsive == true {
+
+    // Check first if we need to provide responsive helpers
+    @if $responsive != false {
+
+        @include breakpoints( $responsive ) {
+            
+            @include create-helpers-spacing( $attrs, $steps, $directions, $break );
         
-        @include breakpoints( both ) {
+        }
+        
+
+    // If not responsive, just run the general loop
+    } @else {
+
+        @include create-helpers-spacing( $attrs, $steps, $directions, $break: '' );
+    
+    }
+
+}
+
+@mixin create-helpers-spacing( $attrs, $steps, $directions, $break ) {
+    
+    // Create helpers for each step defined
+    @for $step from 0 through $steps {
+    
+    
+        // Iterate through each attribute (padding, margin)
+        @each $attr in $attrs {
             
-            @for $step from 1 through $steps {
             
-                .p-#{ $step }#{ $break } {
-                    padding: #{ $step }rem;
-                }
+            // Get the first character of the attribute for our helper classes (ie. 'p' from 'padding')
+            $attrClass: str-slice($attr, 1, 1);
+    
+            // ie. .p-1@m
+            .#{ $attrClass }-#{ $step }#{ $break } {
+                #{ $attr }: #{ $step }rem; // ie. padding: 1rem;
+            }
+            
+    
+            // Iterate through each direction
+            @each $direction in $directions {
                 
-                .p-#{ $step }-0#{ $break } {
-                    padding: #{ $step }rem 0;
-                }
-                            
-                @each $direction in $directions {
+                
+                // Get the first character of the direction (ie. 'l' from 'left')
+                $dir: str-slice($direction, 1, 1);
+                
+                
+                // If direction is top & bottom
+                @if $direction == top-bottom {
                     
-                    $dir: str-slice($direction, 1, 1);
                     
-                    .p-#{ $dir }-#{ $step }#{ $break } {
-                        padding-#{ $direction }: #{ $step }rem;
+                    // Make sure the step is greater than 0, to prevent p-0-0 output
+                    @if $step > 0 {
+                        
+                        // ie. .p-1-0@m
+                        .#{ $attrClass }-#{ $step }-0#{ $break } {
+                            #{ $attr }: #{ $step }rem 0; // ie. padding: 1rem 0
+                        }
+                        
+                    }
+    
+                // If direction is left & right
+                } @else if $direction == left-right {
+                    
+                    
+                    // Make sure the step is greater than 0, to prevent p-0-0 output
+                    @if $step > 0 {
+
+                        // ie. .p-0-1@em
+                        .#{ $attrClass }-0-#{ $step }#{ $break } {
+                            #{ $attr }: 0 #{ $step }rem; // ie. padding: 0 1rem
+                        }
+                        
+                    }
+                    
+                // All others
+                } @else {
+                    
+                    // ie. .p-l-1@m
+                    .#{ $attrClass }-#{ $dir }-#{ $step }#{ $break } {
+                        #{ $attr }-#{ $direction }: #{ $step }rem; // ie. padding-left: 1rem
                     }
                     
                 }
                 
             }
-        
-        }
-
-    } @else {
-
-        @for $step from 1 through $steps {
             
-            .p-#{ $step } {
-                padding: #{ $step }rem;
-            }
-            
-            .p-#{ $step }-0 {
-                padding: #{ $step }rem 0;
-            }
             
         }
-    
+
     }
-
+    
 }

@@ -1,36 +1,97 @@
 /*----------------------------------------------------------------------------*\
 	#TEXT HELPERS
 \*----------------------------------------------------------------------------*/
+
+@mixin helpers-text(
+    $responsive: $responsive,
+    $helpers: (
+        text-start,
+        text-center,
+        text-end,
+        text-grow,
+        text-shrink,
+        text-bolder,
+        text-lighter
+    )
+) {
     
-.text-bolder.text-bolder {
-    font-weight: bolder;
+    @if index($helpers, text-bolder) {
+
+        .text-bolder.text-bolder {
+            font-weight: bolder;
+        }
+
+    }
+   
+    @if index($helpers, text-lighter) {
+        
+        .text-lighter.text-lighter {
+            font-weight: lighter;
+        }
+        
+    }
+   
+    // Check first if we need to provide responsive helpers
+    @if $responsive != false {
+
+        @include breakpoints( $responsive ) {
+            
+            @include create-helpers-text( $helpers, $break );
+        
+        }
+        
+
+    // If not responsive, just run the general loop
+    } @else {
+
+        @include create-helpers-text( $helpers, $break: '' );
+    
+    }
+
+    
 }
 
-.text-lighter.text-lighter {
-    font-weight: lighter;
+@mixin create-helpers-text( $helpers, $break ) {
+    
+
+    @if index($helpers, text-start) {
+        
+        .text-start#{ $break }.text-start#{ $break } {
+            text-align: start;
+        }
+        
+    }
+    
+    @if index($helpers, text-center) {
+    
+        .text-center#{ $break }.text-center#{ $break } {
+            text-align: center;
+        }
+        
+    }
+    
+    @if index($helpers, text-end) {
+
+        .text-end#{ $break }.text-end#{ $break } {
+            text-align: end;
+        }
+        
+    }
+    
+    @if index($helpers, text-grow) {
+    
+        .text-grow#{ $break }.text-grow#{ $break } {
+            font-size: 125%;
+        }
+        
+    }
+    
+    @if index($helpers, text-shrink) {
+    
+        .text-shrink#{ $break }.text-shrink#{ $break } {
+            font-size: 75%;
+        }
+        
+    }
+    
 }
-
-@include breakpoints( both ) {
-    
-    .text-start#{ $break }.text-start#{ $break } {
-        text-align: start;
-    }
-    
-    .text-center#{ $break }.text-center#{ $break } {
-        text-align: center;
-    }
-    
-    .text-end#{ $break }.text-end#{ $break } {
-        text-align: end;
-    }
-    
-    .text-grow#{ $break }.text-grow#{ $break } {
-        font-size: 125%;
-    }
-    
-    .text-shrink#{ $break }.text-shrink#{ $break } {
-        font-size: 75%;
-    }
-}
-
-
