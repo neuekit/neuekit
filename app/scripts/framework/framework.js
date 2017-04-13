@@ -20,6 +20,7 @@
 
 import './parties/promise';
 import './parties/fetch';
+import './parties/stickyfill';
 
 
 

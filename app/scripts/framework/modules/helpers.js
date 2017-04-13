@@ -132,11 +132,31 @@
             	This function sets the real type on inputs.
             \*--------------------------------------------------*/
             
+            _this.sticky = () => {
+            
+                const elems = document.getElementsByClassName('sticky');
+    
+                for ( let i = elems.length - 1; i >= 0; i-- ) {
+                    
+                    Stickyfill.add(elems[i]);
+                }
+            }
+            
+            
+            
+            /*--------------------------------------------------*\
+            	#INITIALISATION
+            	
+            	This function calls methods on init.
+            \*--------------------------------------------------*/
+            
             _this.init = () => {
                 
                 this.setDocClasses();
                 
                 this.setInputTypes();
+                
+                this.sticky();
                 
                 /*  'this' refers to UIKit.helper & allows chaining  */
                 
