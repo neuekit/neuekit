@@ -2,10 +2,10 @@
     
 	#REBOOT BROWSER STYLES
 	
-	- Version:      1.0
+	- Version:      1.1
 	- Author:       Creative Little Dots
 	- Site:         http://creativelittle.uk/reboot
-	- Copyright:    2016, Creative Little Dots
+	- Copyright:    2017, Creative Little Dots
 	– License:      MIT | http://goo.gl/p3bexl
 	- Mentions:     Based on sanitize https://goo.gl/a3DzGd
 	
@@ -50,7 +50,6 @@
 html {
 	box-sizing: border-box;             /* 1 */
 	cursor: default;                    /* 2 */
-	font-family: sans-serif;            /* 3 */
 	line-height: 1.75;                  /* 3 */
 	-ms-text-size-adjust: 100%;         /* 4 */
 	-webkit-text-size-adjust: 100%;     /* 4 */
@@ -62,7 +61,8 @@ html {
 	Remove the margin in all browsers (opinionated).
 \*----------------------------------------------------------------------------*/
 
-body {
+body,
+optgroup {
 	margin: 0;
 }
 
@@ -70,13 +70,31 @@ body {
 
 /*----------------------------------------------------------------------------*\
     1. Add correct display in Edge, IE, & Firefox.
-    2. Add correct display in IE.
 \*----------------------------------------------------------------------------*/
 
 details,    /* 1 */
-main,       /* 2 */
-summary {   /* 1 */
+menu {      /* 1 */
 	display: block;
+}
+
+
+
+/*----------------------------------------------------------------------------*\
+    Add the correct display in all browsers.
+\*----------------------------------------------------------------------------*/
+
+summary {
+	display: list-item;
+}
+
+
+
+/*----------------------------------------------------------------------------*\
+    Add the correct display in IE.
+\*----------------------------------------------------------------------------*/
+
+template {
+	display: none;
 }
 
 
@@ -88,7 +106,7 @@ summary {   /* 1 */
 
 h1 {
 	font-size: 2em;
-	margin: 0.67em 0;
+	margin: 0.6875em 0;
 }
 
 
@@ -109,13 +127,14 @@ samp {
 
 
 /*----------------------------------------------------------------------------*\
-	1. Correct the height in Firefox.
-    2. Add visible overflow in Edge and IE.
+	1. Add the correct box sizing in Firefox.
+    2. Show the overflow in Edge and IE.
 \*----------------------------------------------------------------------------*/
 
 hr {
-	height: 0;          /* 1 */
-	overflow: visible;  /* 2 */
+	box-sizing: content-box; /* 1 */
+	height: 0; /* 1 */
+	overflow: visible; /* 2 */
 }
 
 
@@ -219,16 +238,6 @@ video {
 
 
 /*----------------------------------------------------------------------------*\
-	Remove the border on images inside links in IE 10-.
-\*----------------------------------------------------------------------------*/
-
-img {
-	border-style: none;
-}
-
-
-
-/*----------------------------------------------------------------------------*\
 	Change the fill color to match the text color in all browsers (opinionated).
 \*----------------------------------------------------------------------------*/
 
@@ -244,7 +253,6 @@ svg {
 
 table {
 	border-collapse: collapse;
-	border-spacing: 0;
 }
 
 
@@ -276,9 +284,11 @@ fieldset {
 	1. Correct the text wrapping in Edge and IE.
     2. Remove the padding so developers are not caught out when they zero out
        `fieldset` elements in all browsers.
+    3. Correct the color inheritance from `fieldset` elements in IE.
 \*----------------------------------------------------------------------------*/
 
 legend {
+    color: inherit;         /* 3 */
 	display: table;         /* 1 */
 	max-width: 100%;        /* 1 */
 	padding: 0;             /* 2 */
@@ -387,7 +397,8 @@ textarea {
 	background-color: transparent;  /* 1 */
 	border-style: none;             /* 1 */
 	color: inherit;                 /* 1 */
-	font-size: 1em;                 /* 1 */
+	font-size: inherit;             /* 1 */
+	line-height: inherit;           /* 1 */
 	margin: 0;                      /* 2 */
 }
 
@@ -433,33 +444,11 @@ button,
 
 
 /*----------------------------------------------------------------------------*\
-	Add the correct display in IE 10-.
-\*----------------------------------------------------------------------------*/
-
-template,
-[hidden] {
-	display: none;
-}
-
-
-
-/*----------------------------------------------------------------------------*\
 	Correct the focus styles unset by the previous rule.
 \*----------------------------------------------------------------------------*/
 
 :-moz-focusring {
 	outline: 1px dotted ButtonText;
-}
-
-
-
-/*----------------------------------------------------------------------------*\
-	Remove the padding in IE 10-.
-\*----------------------------------------------------------------------------*/
-
-[type="checkbox"],
-[type="radio"] {
-	padding: 0;
 }
 
 
@@ -517,13 +506,25 @@ a:hover {
 
 
 /*----------------------------------------------------------------------------*\
-	1. Add a bordered underline effect in all browsers.
-    2. Remove text decoration in Firefox 40+.
+	1. Remove the bottom border in Firefox 39-.
+    2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
 \*----------------------------------------------------------------------------*/
 
 abbr[title] {
-	border-bottom: 1px dotted;  /* 1 */
-	text-decoration: none;      /* 2 */
+    border-bottom: none; /* 1 */
+	text-decoration: underline; /* 2 */
+	text-decoration: underline dotted; /* 2 */
+}
+
+
+
+/*----------------------------------------------------------------------------*\
+    Remove the list style on navigation lists in all browsers (opinionated).
+\*----------------------------------------------------------------------------*/
+
+nav ol,
+nav ul {
+	list-style: none;
 }
 
 
