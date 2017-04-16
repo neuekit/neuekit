@@ -52,9 +52,10 @@
 
 @import 'elements/document';            // Page-level styles (HTML, body etc).
 @import 'elements/forms';               // Form inputs, textareas.
-@import 'elements/images';              // Image stying.
-@import 'elements/links';               // Hyperlink styles.
-@import 'elements/lists';               // List styles.
+@import 'elements/interactive';         // Interactive elements.
+@import 'elements/links';               // Hyperlinks.
+@import 'elements/lists';               // Lists.
+@import 'elements/media';               // Media elements, img, svg, video, etc.
 @import 'elements/quotes';              // Blockquotes, cite, etc.
 @import 'elements/type';                // All type styles.
 

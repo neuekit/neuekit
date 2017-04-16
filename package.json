@@ -14,7 +14,7 @@
   "homepage": "https://github.com/CreativeLittleDots/Creative-Little-UI-Kit#readme",
   "devDependencies": {
     "babel-plugin-external-helpers": "^6.22.0",
-    "babel-preset-env": "^1.3.3",
+    "babel-preset-env": "^1.4.0",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-uglify": "^1.0.1"
