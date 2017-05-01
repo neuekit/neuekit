@@ -27,14 +27,11 @@
             	#OPEN A MODAL
             \*--------------------------------------------------*/
             
-            _this.open = function(event) {
+            _this.open = function() {
                 
-                event.preventDefault();
-                
-                $(this.hash).addClass('modal--visible');
+                $(this.hash).addClass('modal--visible').trigger('modal:open');
                 
                 $('body').addClass('locked');
-                  
             };
             
             $(document).on('click', '.js-modal--open', _this.open);
@@ -45,30 +42,32 @@
             	#CLOSE A MODAL
             \*--------------------------------------------------*/
 
-            _this.close = function(event, element) {
-                
-                event.preventDefault();
+            _this.close = function(element) {
                 
                 if ( $('.modal--visible').length === 1 ) {
                 
                     $('body').removeClass('locked');
                 }
                 
-                $(element).closest('.modal').removeClass('modal--visible');
+                $(element).closest('.modal').removeClass('modal--visible').trigger('modal:close');
             };
             
             
             $(document).on('click', '.js-modal--close', function(event) {
                 
-                _this.close(event, this);
+                event.preventDefault();
+                
+                _this.close(this);
             });
             
             
             $(document).on('click', '.modal', function(event) {
                 
                 if ( $(this).hasClass('modal') && event.target === this ) {
+                    
+                    event.preventDefault();
                 
-                    _this.close(event, this);
+                    _this.close(this);
                 }
             });
             
