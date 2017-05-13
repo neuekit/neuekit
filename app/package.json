@@ -1,17 +1,8 @@
 {
-  "name": "ui-kit",
-  "version": "0.9.8",
-  "description": "The Creative Little UI Kit is a fully responsive framework crafted for unbeatable performance. Based on the ITCSS methodology this front-end springboard is super scaleable, lightweight, and built for the future.",
-  "repository": {
-    "type": "git",
-    "url": "git+https://matt3224@github.com/CreativeLittleDots/Creative-Little-UI-Kit.git"
-  },
-  "author": "Matt Pilott",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/CreativeLittleDots/Creative-Little-UI-Kit/issues"
-  },
-  "homepage": "https://github.com/CreativeLittleDots/Creative-Little-UI-Kit#readme",
+  "name": "PROJECT",
+  "version": "1.0.0",
+  "description": "YOUR PROJECT DESCRIPTION HERE",
+  "author": "Creative Little Dots",
   "devDependencies": {
     "autoprefixer": "^7.0.1",
     "babel-plugin-external-helpers": "^6.22.0",
@@ -46,13 +37,13 @@
     "not blackberry <= 7"
   ],
   "scripts": {
-    "autoprefixer": "postcss --use autoprefixer --replace ./app/styles/style.css --no-map",
-    "scss": "node-sass --omit-source-map-url --recursive --output-style compressed --output ./app/styles ./app/styles",
-    "lint-scss": "stylelint ./app/styles/*.scss --syntax scss || true",
+    "autoprefixer": "postcss --use autoprefixer --replace ./styles/style.css --no-map",
+    "scss": "node-sass --omit-source-map-url --recursive --output-style compressed --output ./styles ./styles",
+    "lint-scss": "stylelint ./styles/*.scss --syntax scss || true",
     "build:css": "yarn run lint-scss --silent && yarn run scss --silent && yarn run autoprefixer --silent",
     "build:js": "rollup --config",
-    "serve": "browser-sync start --server './app/' --https --no-notify --files './app/styles/**/*.css, ./app/**/*.html, !node_modules/**/*.html'",
-    "watch:css": "onchange './app/styles/**/*.scss' -- yarn run build:css --silent",
+    "serve": "browser-sync start --server --https --no-notify --files './styles/**/*.css, ./**/*.html, !node_modules/**/*.html'",
+    "watch:css": "onchange './styles/**/*.scss' -- yarn run build:css --silent",
     "watch:js": "rollup --config --watch",
     "watch:all": "parallelshell 'yarn run serve --silent' 'yarn run watch:css --silent' 'yarn run watch:js --silent'",
     "postinstall": "yarn run watch:all --silent",

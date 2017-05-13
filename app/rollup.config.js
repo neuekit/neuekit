@@ -4,17 +4,13 @@ import uglify from 'rollup-plugin-uglify';
 import { minify } from 'uglify-js';
 
 export default {
-    entry : './app/scripts/framework/framework.js',
-    dest : './app/scripts/framework/framework.min.js',
+    entry : './scripts/application/application.js',
+    dest : './scripts/application/application.min.js',
     format : 'iife',
-    moduleName : 'UIKit',
-    moduleContext : {
-        './app/scripts/framework/parties/promise.js' : 'window',
-        './app/scripts/framework/parties/fetch.js' : 'window'
-    },
+    moduleName : 'PROJECT',
     plugins: [
         babel({
-            exclude : ['./node_modules/**', './app/scripts/framework/parties/**'],
+            exclude : ['./node_modules/**', './scripts/application/parties/**'],
             presets : [[
                 "env", {
                     "modules" : false

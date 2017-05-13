@@ -5,7 +5,7 @@
 	- Version:      0.9.8
 	- Author:       Creative Little Dots
 	- Site:         http://creativelittle.uk/uikit
-	- Copyright:    2016, Creative Little Dots
+	- Copyright:    2017, Creative Little Dots
 	– License:      MIT | http://goo.gl/p3bexl
 	
 \*----------------------------------------------------------------------------*/

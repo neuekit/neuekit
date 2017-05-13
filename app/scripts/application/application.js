@@ -1,33 +1,46 @@
-// @codekit-prepend "settings/uikit.js";
-// @codekit-prepend "settings/global.js";
-// @codekit-prepend "modules/helpers.js";
-
-/*--------------------------------------------------*\
-	#PROJECT NAME | JS MAIN COMPONENTS
+/*!---------------------------------------------------------------------------*\
+    
+	#PROJECT
 	
-	This script contains your standard jQuery shiz,
-	functions, ui components & any other js magic.
+	- Version:      1.0.0
+	- Author:       Creative Little Dots
+	- Site:         http://creativelittle.uk/
+	- Copyright:    2017, Creative Little Dots
+	– License:      MIT | http://goo.gl/p3bexl
 	
-	To start our script we wrap all of our code in a
-	self-executing anonymous function.
-\*--------------------------------------------------*/
-
-/*  'use strict' enforces correct syntax.  */
-
-'use strict';
+\*----------------------------------------------------------------------------*/
 
 
-/*  Declare IIFE & Namespace  */
 
-((PROJECT, $) => {
-    
-    
-    /* Your code here */
-    
-    
-    
-/* Checks if the namespace already exists & if not assign it */
+/*----------------------------------------------------------------------------*\
+	#SETTINGS
+	
+	Global and module configurations.
+\*----------------------------------------------------------------------------*/
 
-})(window.PROJECT = window.PROJECT || {}, window.jQuery = window.jQuery || window.$);
+import './settings/uikit.js';
+import './settings/global';
+
+
+
+/*----------------------------------------------------------------------------*\
+	#HELPERS
+	
+	Single concern functions and utilities to help you out.
+\*----------------------------------------------------------------------------*/
+
+import './modules/helpers';
+
+
+
+/*----------------------------------------------------------------------------*\
+	#MODULES
+	
+	Designed pieces of UI. Only using classes. More explicit naming.
+\*----------------------------------------------------------------------------*/
+
+
+
+
 
 
