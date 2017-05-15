@@ -1,21 +1,21 @@
 /*!---------------------------------------------------------------------------*\
     
-	#YOUR PROJECT NAME
-	
-	- Version:      1.0
-	- Author:       YOUR NAME
-	- Site:         http://YOUR_SITE
-	- Copyright:    2016, YOUR COMPANY
-	– License:      YOUR LICENSE
-	
+    #YOUR PROJECT NAME
+    
+    - Version:      1.0
+    - Author:       YOUR NAME
+    - Site:         http://YOUR_SITE
+    - Copyright:    2016, YOUR COMPANY
+    – License:      YOUR LICENSE
+    
 \*----------------------------------------------------------------------------*/
 
 
 
 /*----------------------------------------------------------------------------*\
-	#FUNCTIONS
-	
-	Globally-available functions.
+    #FUNCTIONS
+    
+    Globally-available functions.
 \*----------------------------------------------------------------------------*/
 
 @import 'functions/function';           // Example function.
@@ -23,9 +23,9 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#MIXINS
-	
-	Globally-available mixins.
+    #MIXINS
+    
+    Globally-available mixins.
 \*----------------------------------------------------------------------------*/
 
 @import 'mixins/mixin';                 // Example Mixin.
@@ -33,9 +33,9 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#GENERIC
-	
-	Ground-zero styles. Low-specificity, far-reaching.
+    #GENERIC
+    
+    Ground-zero styles. Low-specificity, far-reaching.
 \*----------------------------------------------------------------------------*/
 
 @import 'generic/keyframes';            // CSS Keyframe blocks.
@@ -45,9 +45,9 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#ELEMENTS
-	
-	Last layer for type selectors (h1-h6, a).
+    #ELEMENTS
+    
+    Last layer for type selectors (h1-h6, a).
 \*----------------------------------------------------------------------------*/
 
 @import 'elements/document';            // Page-level styles (HTML, body etc).
@@ -62,9 +62,9 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#OBJECTS
-	
-	Design Patterns. Layout. No cosmetics. Start using agnostic classes only.
+    #OBJECTS
+    
+    Design Patterns. Layout. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
 @import 'objects/object';               // Example object for layout only.
@@ -72,9 +72,9 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#COMPONENTS
-	
-	Designed pieces of UI. Only using classes. More explicit naming.
+    #COMPONENTS
+    
+    Designed pieces of UI. Only using classes. More explicit naming.
 \*----------------------------------------------------------------------------*/
 
 @import 'components/app-head';          // The page header.
@@ -84,9 +84,9 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#HELPERS
-	
-	Overrides, helpers, utilities. Only affect one item at a time.
+    #HELPERS
+    
+    Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
 
@@ -123,9 +123,9 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#OVERRIDES
-	
-	Overrides, helpers, utilities. Only affect one item at a time.
+    #OVERRIDES
+    
+    Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
 @import 'overrides/validation';         // Form validation styles.

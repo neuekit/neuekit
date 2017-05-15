@@ -1,10 +1,10 @@
 /*----------------------------------------------------------------------------*\
-	#AREA MIXIN
+    #AREA MIXIN
 \*----------------------------------------------------------------------------*/
 
 @mixin area( $height, $width: $height ) {
     
-	height: $height; width: $width;
+    height: $height; width: $width;
 }
 
 

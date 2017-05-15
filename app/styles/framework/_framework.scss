@@ -1,21 +1,21 @@
 /*!---------------------------------------------------------------------------*\
     
-	#CREATIVE LITTLE UI KIT
-	
-	- Version:      0.9.8
-	- Author:       Creative Little Dots
-	- Site:         http://creativelittle.uk/uikit
-	- Copyright:    2016, Creative Little Dots
-	– License:      MIT | http://goo.gl/p3bexl
-	
+    #CREATIVE LITTLE UI KIT
+    
+    - Version:      0.9.8
+    - Author:       Creative Little Dots
+    - Site:         http://creativelittle.uk/uikit
+    - Copyright:    2016, Creative Little Dots
+    – License:      MIT | http://goo.gl/p3bexl
+    
 \*----------------------------------------------------------------------------*/
 
 
 
 /*----------------------------------------------------------------------------*\
-	#FUNCTIONS
-	
-	Globally-available functions.
+    #FUNCTIONS
+    
+    Globally-available functions.
 \*----------------------------------------------------------------------------*/
 
 @import 'functions/rem';                // Pixels to rem function.
@@ -23,9 +23,9 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#MIXINS
-	
-	Globally-available mixins.
+    #MIXINS
+    
+    Globally-available mixins.
 \*----------------------------------------------------------------------------*/
 
 @import 'mixins/area';                  // Height & width shorthand mixin.
@@ -37,9 +37,9 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#GENERIC
-	
-	Ground-zero styles. Low-specificity, far-reaching.
+    #GENERIC
+    
+    Ground-zero styles. Low-specificity, far-reaching.
 \*----------------------------------------------------------------------------*/
 
 @import 'generic/keyframes';            // CSS Keyframe blocks.
@@ -48,9 +48,9 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#ELEMENTS
-	
-	Last layer for type selectors (h1-h6, a).
+    #ELEMENTS
+    
+    Last layer for type selectors (h1-h6, a).
 \*----------------------------------------------------------------------------*/
 
 
@@ -66,9 +66,9 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#OBJECTS
-	
-	Design Patterns. Layout. No cosmetics. Start using agnostic classes only.
+    #OBJECTS
+    
+    Design Patterns. Layout. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
 @import 'objects/bricks';               // Flex based block layout.
@@ -79,9 +79,9 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#COMPONENTS
-	
-	Designed pieces of UI. Only using classes. More explicit naming.
+    #COMPONENTS
+    
+    Designed pieces of UI. Only using classes. More explicit naming.
 \*----------------------------------------------------------------------------*/
 
 @import 'components/adjacent';          // Adjacent input styles.
@@ -96,9 +96,9 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#HELPERS
-	
-	Overrides, helpers, utilities. Only affect one item at a time.
+    #HELPERS
+    
+    Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
 @import 'helpers/sizes';                // Flex based sizes.
@@ -111,9 +111,9 @@
 
 
 /*----------------------------------------------------------------------------*\
-	#OVERRIDES
-	
-	Overrides, helpers, utilities. Only affect one item at a time.
+    #OVERRIDES
+    
+    Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
 @import 'overrides/validation';         // Form validation styles.

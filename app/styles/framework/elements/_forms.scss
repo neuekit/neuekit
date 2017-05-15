@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------------*\
-	#FORM ELEMENT STYLES
+    #FORM ELEMENT STYLES
 \*----------------------------------------------------------------------------*/
 
 @mixin input {
@@ -21,8 +21,8 @@
     &:focus {
         background-color: white;
         box-shadow: inset 0 0 0 2px $input;
-		outline: none;
-	}
+        outline: none;
+    }
 }
 
 @mixin track {
@@ -230,8 +230,8 @@ select {
     }
     
     &::-ms-expand {
-		display: none;
-	}
+        display: none;
+    }
 }
 
 textarea,

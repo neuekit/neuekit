@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------------*\
-	#BUTTON COMPONENT STYLES
+    #BUTTON COMPONENT STYLES
 \*----------------------------------------------------------------------------*/
 
 $btnSelectors: 'button, [role="button"], [type="button"], [type="reset"], [type="submit"], ';
@@ -31,8 +31,8 @@ $btnCondition: if($btnReset, $btnSelectors, null);
     }
     
     &:focus {
-		outline: none;
-	}
+        outline: none;
+    }
     
     &:hover {
         background-color: darken($primary, 20);
