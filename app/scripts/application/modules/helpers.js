@@ -1,9 +1,9 @@
 /*--------------------------------------------------*\
-	#PROJECT | JS HELPERS
-	
-	This script contains all the helper/utility
-	functions which we can use across our other
-	JS files.
+    #PROJECT | JS HELPERS
+    
+    This script contains all the helper/utility
+    functions which we can use across our other
+    JS files.
 \*--------------------------------------------------*/
 
 /*  'use strict' enforces correct syntax.  */
@@ -17,11 +17,11 @@
     
     
     /*--------------------------------------------------*\
-    	#PROJECT HELPER METHOD
-    	
-    	This is a 'singleton' which isolates the code
-    	inside from the global namespace, providing
-    	a single point of access for functions.
+        #PROJECT HELPER METHOD
+        
+        This is a 'singleton' which isolates the code
+        inside from the global namespace, providing
+        a single point of access for functions.
     \*--------------------------------------------------*/
     
     PROJECT.helper = (() => {
@@ -35,7 +35,7 @@
 
             
             /*--------------------------------------------------*\
-            	#YOUR HELPER FUNCTIONS HERE
+                #YOUR HELPER FUNCTIONS HERE
             \*--------------------------------------------------*/
             
             

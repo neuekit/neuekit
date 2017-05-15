@@ -1,5 +1,5 @@
 /*--------------------------------------------------*\
-	#PROJECT | UI Kit Settings
+    #PROJECT | UI Kit Settings
 \*--------------------------------------------------*/
 
 /*  'use strict' enforces correct syntax.  */

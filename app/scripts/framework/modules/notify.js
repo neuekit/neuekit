@@ -1,10 +1,10 @@
 /*--------------------------------------------------*\
-	#CREATIVE LITTLE UI-KIT | NOTIFY LOGS TOOL
-	
-	This script allows you to use the browser
-	notification system to display console.logs
-	
-	MK1 @ Version 1.0
+    #CREATIVE LITTLE UI-KIT | NOTIFY LOGS TOOL
+    
+    This script allows you to use the browser
+    notification system to display console.logs
+    
+    MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
 /*  'use strict' enforces correct syntax.  */
@@ -17,11 +17,11 @@
 ((UIKit, $) => {
     
     /*--------------------------------------------------*\
-    	#UIKit HELPER METHOD
-    	
-    	This is a 'singleton' which isolates the code
-    	inside from the global namespace, providing
-    	a single point of access for functions.
+        #UIKit HELPER METHOD
+        
+        This is a 'singleton' which isolates the code
+        inside from the global namespace, providing
+        a single point of access for functions.
     \*--------------------------------------------------*/
     
     UIKit.notify = (body, title = 'Notification', type) => {
@@ -31,7 +31,7 @@
             const _this = this;
             
             /*--------------------------------------------------*\
-            	#NOTIFY LOG METHOD
+                #NOTIFY LOG METHOD
             \*--------------------------------------------------*/
             
             (() => {

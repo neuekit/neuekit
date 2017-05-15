@@ -1,11 +1,11 @@
 /*--------------------------------------------------*\
-	#CREATIVE LITTLE UI-KIT | MODAL COMPONENT
-	
-	This script creates the modal interactions and
-	methods required for modals to function, such as
-	.opn and .close
-	
-	MK1 @ Version 1.0
+    #CREATIVE LITTLE UI-KIT | MODAL COMPONENT
+    
+    This script creates the modal interactions and
+    methods required for modals to function, such as
+    .opn and .close
+    
+    MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
 /*  'use strict' enforces correct syntax.  */
@@ -24,7 +24,7 @@
             const _this = this;
             
             /*--------------------------------------------------*\
-            	#OPEN A MODAL
+                #OPEN A MODAL
             \*--------------------------------------------------*/
             
             _this.open = function() {
@@ -39,7 +39,7 @@
             
             
             /*--------------------------------------------------*\
-            	#CLOSE A MODAL
+                #CLOSE A MODAL
             \*--------------------------------------------------*/
 
             _this.close = function(element) {

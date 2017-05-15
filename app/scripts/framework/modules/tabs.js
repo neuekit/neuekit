@@ -1,11 +1,11 @@
 /*--------------------------------------------------*\
-	#MODAL COMPONENT
-	
-	This script contains modern tab functionality
-	used to not only change tab content but to set
-	historical states and support browser navigation.
-	
-	MK1 @ Version 1.0
+    #MODAL COMPONENT
+    
+    This script contains modern tab functionality
+    used to not only change tab content but to set
+    historical states and support browser navigation.
+    
+    MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
 /*  'use strict' enforces correct syntax.  */
@@ -27,7 +27,7 @@
             
             
             /*--------------------------------------------------*\
-            	#INITIAL TAB CHECK
+                #INITIAL TAB CHECK
             \*--------------------------------------------------*/
             
             _this.tabCheck = () => {
@@ -63,7 +63,7 @@
             
             
             /*--------------------------------------------------*\
-            	#TABS
+                #TABS
             \*--------------------------------------------------*/
             
             const tabClick = function(e) {
@@ -90,7 +90,7 @@
                
                 //Set hash to tab id
                 history.pushState(null, null, tabLink);
-				
+                
             };
             
             $(document).on('click', `.${config.tabClass}`, tabClick);
@@ -98,7 +98,7 @@
 
 
             /*--------------------------------------------------*\
-            	#INIT
+                #INIT
             \*--------------------------------------------------*/
 
             /*  Allow "chaining" of methods together  */

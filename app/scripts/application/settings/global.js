@@ -1,9 +1,9 @@
 /*--------------------------------------------------*\
-	#PROJECT | JS SETTINGS
-	
-	This script contains all the reusable data such
-	as urls, error messages, html created by JS &
-	repeated values & values that may change later.
+    #PROJECT | JS SETTINGS
+    
+    This script contains all the reusable data such
+    as urls, error messages, html created by JS &
+    repeated values & values that may change later.
 \*--------------------------------------------------*/
 
 ((PROJECT, $) => {

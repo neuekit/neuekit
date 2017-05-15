@@ -1,11 +1,11 @@
 /*--------------------------------------------------*\
-	#CREATIVE LITTLE UI-KIT | JS HELPERS
-	
-	This script contains all the helper/utility
-	functions which we can use across our other
-	JS files.
-	
-	MK1 @ Version 1.0
+    #CREATIVE LITTLE UI-KIT | JS HELPERS
+    
+    This script contains all the helper/utility
+    functions which we can use across our other
+    JS files.
+    
+    MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
 /*  'use strict' enforces correct syntax.  */
@@ -18,11 +18,11 @@
 ((UIKit, $) => {
     
     /*--------------------------------------------------*\
-    	#UIKit HELPER METHOD
-    	
-    	This is a 'singleton' which isolates the code
-    	inside from the global namespace, providing
-    	a single point of access for functions.
+        #UIKit HELPER METHOD
+        
+        This is a 'singleton' which isolates the code
+        inside from the global namespace, providing
+        a single point of access for functions.
     \*--------------------------------------------------*/
     
     UIKit.helper = (() => {
@@ -32,9 +32,9 @@
             const _this = this;
             
             /*--------------------------------------------------*\
-            	#GET DOMAIN
-            	
-            	This fetches the url including protocol and port
+                #GET DOMAIN
+                
+                This fetches the url including protocol and port
             \*--------------------------------------------------*/
             
             _this.getUrl = () => {
@@ -49,9 +49,9 @@
             
             
             /*--------------------------------------------------*\
-            	#GET QUERY STRING FROM THE URL
-            	
-            	This function accepts 2 arguments:
+                #GET QUERY STRING FROM THE URL
+                
+                This function accepts 2 arguments:
                 1. The key of the query property.
                 2. The default value thats returned if they is no
                    value or key does not exist.
@@ -71,9 +71,9 @@
             
             
             /*--------------------------------------------------*\
-            	#WAIT FUNCTION FOR USE WITH KEY EVENTS
-            	
-            	This function accepts 2 arguments:
+                #WAIT FUNCTION FOR USE WITH KEY EVENTS
+                
+                This function accepts 2 arguments:
                 1. A callback function.
                 2. A time in milliseconds.
             \*--------------------------------------------------*/
@@ -95,9 +95,9 @@
             
             
             /*--------------------------------------------------*\
-            	#DOCUMENT CLASSES
-            	
-            	This sets the classes on the HTML element.
+                #DOCUMENT CLASSES
+                
+                This sets the classes on the HTML element.
             \*--------------------------------------------------*/
             
             _this.setDocClasses = () => {
@@ -108,9 +108,9 @@
             
             
             /*--------------------------------------------------*\
-            	#INPUT TYPE DETECTION
-            	
-            	This function sets the real type on inputs.
+                #INPUT TYPE DETECTION
+                
+                This function sets the real type on inputs.
             \*--------------------------------------------------*/
             
             _this.setInputTypes = () => {
@@ -127,9 +127,9 @@
             
             
             /*--------------------------------------------------*\
-            	#INPUT TYPE DETECTION
-            	
-            	This function sets the real type on inputs.
+                #INPUT TYPE DETECTION
+                
+                This function sets the real type on inputs.
             \*--------------------------------------------------*/
             
             _this.sticky = () => {
@@ -145,9 +145,9 @@
             
             
             /*--------------------------------------------------*\
-            	#INITIALISATION
-            	
-            	This function calls methods on init.
+                #INITIALISATION
+                
+                This function calls methods on init.
             \*--------------------------------------------------*/
             
             _this.init = () => {
