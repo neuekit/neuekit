@@ -51,7 +51,7 @@
     "lint-scss": "stylelint ./app/styles/*.scss --syntax scss || true",
     "build:css": "yarn run lint-scss --silent && yarn run scss --silent && yarn run autoprefixer --silent",
     "build:js": "rollup --config",
-    "serve": "browser-sync start --server './app/' --https --no-notify --files './app/styles/**/*.css, ./app/**/*.html, !node_modules/**/*.html'",
+    "serve": "browser-sync start --server --https --no-notify --files './app/styles/**/*.css, ./app/**/*.html, !node_modules/**/*.html'",
     "watch:css": "onchange './app/styles/**/*.scss' -- yarn run build:css --silent",
     "watch:js": "rollup --config --watch",
     "watch:all": "parallelshell 'yarn run serve --silent' 'yarn run watch:css --silent' 'yarn run watch:js --silent'",
