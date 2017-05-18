@@ -57,6 +57,7 @@
     @if index($helpers, text-start) {
         
         .text-start#{ $break }.text-start#{ $break } {
+            text-align: left;
             text-align: start;
         }
         
@@ -73,6 +74,7 @@
     @if index($helpers, text-end) {
 
         .text-end#{ $break }.text-end#{ $break } {
+            text-align: right;
             text-align: end;
         }
         
@@ -95,3 +97,5 @@
     }
     
 }
+
+

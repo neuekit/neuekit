@@ -38,6 +38,10 @@
     #{ & }#{ & }--#{ $itemClass } { // .grid.grid--item
         display: block;
     }
+
+    #{ & }--#{ $itemClass }.flex { // .grid.grid--item
+        display: flex;
+    }
     
     & &, // .grid .grid
     &--#{$unnestClass} { // .grid--unnest
