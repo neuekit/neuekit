@@ -13,12 +13,12 @@
   },
   "homepage": "https://github.com/CreativeLittleDots/Creative-Little-UI-Kit#readme",
   "devDependencies": {
-    "autoprefixer": "^7.0.1",
+    "autoprefixer": "^7.1.1",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-env": "^1.4.0",
-    "browser-sync": "^2.18.8",
-    "node-sass": "^4.5.2",
+    "babel-preset-env": "^1.5.0",
+    "browser-sync": "^2.18.11",
+    "node-sass": "^4.5.3",
     "onchange": "^3.2.1",
     "parallelshell": "^2.0.0",
     "postcss-cli": "^4.0.0",
@@ -28,7 +28,7 @@
     "rollup-plugin-uglify": "^1.0.2",
     "rollup-watch": "^3.2.2",
     "stylelint": "^7.10.1",
-    "uglify-es": "^3.0.4"
+    "uglify-es": "^3.0.10"
   },
   "stylelint": {
     "rules": {

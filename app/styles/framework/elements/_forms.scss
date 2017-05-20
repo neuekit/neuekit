@@ -283,10 +283,8 @@ textarea {
     position: absolute;
     
     + label {
-        align-items: center;
         cursor: pointer;
         display: inline-flex;
-        flex-wrap: wrap;
         margin: 0 1rem 1rem 0;
         
         
@@ -295,6 +293,7 @@ textarea {
             display: block;
             @include area(1.125rem);
             margin-right: 0.75rem;
+            margin-top: 0.3125rem;
             text-align: center;
             transition: all $speed ease;
         }
