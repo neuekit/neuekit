@@ -4,22 +4,22 @@
   "description": "YOUR PROJECT DESCRIPTION HERE",
   "author": "Creative Little Dots",
   "devDependencies": {
-    "autoprefixer": "^7.0.1",
+    "autoprefixer": "^7.1.1",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-env": "^1.4.0",
-    "browser-sync": "^2.18.8",
-    "node-sass": "^4.5.2",
+    "babel-preset-env": "^1.5.1",
+    "browser-sync": "^2.18.12",
+    "node-sass": "^4.5.3",
     "onchange": "^3.2.1",
     "parallelshell": "^2.0.0",
     "postcss-cli": "^4.0.0",
     "rollup": "^0.41.6",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-eslint": "^3.0.0",
-    "rollup-plugin-uglify": "^1.0.2",
+    "rollup-plugin-uglify": "^2.0.1",
     "rollup-watch": "^3.2.2",
     "stylelint": "^7.10.1",
-    "uglify-es": "^3.0.4"
+    "uglify-es": "^3.0.11"
   },
   "stylelint": {
     "rules": {
@@ -37,9 +37,10 @@
     "not blackberry <= 7"
   ],
   "scripts": {
-    "autoprefixer": "postcss --use autoprefixer --replace ./styles/style.css --no-map",
     "scss": "node-sass --omit-source-map-url --recursive --output-style compressed --output ./styles ./styles",
     "lint-scss": "stylelint ./styles/*.scss --syntax scss || true",
+    "autoprefixer": "postcss --use autoprefixer --replace ./styles/style.css --no-map",
+    "cleancss": "cleancss --skip-restructuring -o ./styles/style.css ./styles/style.css",
     "build:css": "yarn run lint-scss --silent && yarn run scss --silent && yarn run autoprefixer --silent",
     "build:js": "rollup --config",
     "serve": "browser-sync start --server --https --no-notify --files './styles/**/*.css, ./**/*.html, !node_modules/**/*.html'",

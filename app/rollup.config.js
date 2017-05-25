@@ -1,7 +1,7 @@
 // Rollup plugins
 import babel from 'rollup-plugin-babel';
 import uglify from 'rollup-plugin-uglify';
-import { minify } from 'uglify-js';
+import { minify } from 'uglify-es';
 
 export default {
     entry : './scripts/application/application.js',
@@ -22,7 +22,7 @@ export default {
             ]
         }),
         uglify({
-            screwIE8 : true
+            sourceMap : false
         }, minify)
     ]
 };
