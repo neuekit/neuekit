@@ -18,7 +18,7 @@
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.5.1",
     "browser-sync": "^2.18.12",
-    "clean-css": "=3.4.26",
+    "clean-css": "~3.4.26",
     "node-sass": "^4.5.3",
     "onchange": "^3.2.1",
     "parallelshell": "^2.0.0",
@@ -47,11 +47,11 @@
     "not blackberry <= 7"
   ],
   "scripts": {
-    "scss": "node-sass --omit-source-map-url --recursive --output-style compressed --output ./app/styles ./app/styles",
     "lint-scss": "stylelint ./app/styles/*.scss --syntax scss || true",
+    "scss": "node-sass --omit-source-map-url --recursive --output-style compressed --output ./app/styles ./app/styles",
     "autoprefixer": "postcss --use autoprefixer --replace ./app/styles/style.css --no-map",
     "cleancss": "cleancss --skip-restructuring -o ./app/styles/style.css ./app/styles/style.css",
-    "build:css": "yarn run lint-scss --silent && yarn run scss --silent && yarn run autoprefixer --silent",
+    "build:css": "yarn run lint-scss --silent && yarn run scss --silent && yarn run autoprefixer --silent && yarn run cleancss --silent",
     "build:js": "rollup --config",
     "serve": "browser-sync start --server --https --no-notify --files './app/styles/**/*.css, ./app/**/*.html, !node_modules/**/*.html'",
     "watch:css": "onchange './app/styles/**/*.scss' -- yarn run build:css --silent",
