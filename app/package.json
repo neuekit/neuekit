@@ -42,7 +42,7 @@
     "scss": "node-sass --omit-source-map-url --recursive --output-style compressed --output ./styles ./styles",
     "autoprefixer": "postcss --use autoprefixer --replace ./styles/style.css --no-map",
     "cleancss": "cleancss --skip-restructuring -o ./styles/style.css ./styles/style.css",
-    "build:css": "yarn run lint-scss --silent | yarn run scss --silent | yarn run autoprefixer --silent | yarn run cleancss --silent",
+    "build:css": "yarn run lint-scss --silent && yarn run scss --silent && yarn run autoprefixer --silent && yarn run cleancss --silent",
     "build:js": "rollup --config",
     "serve": "browser-sync start --server --https --no-notify --files './styles/**/*.css, ./**/*.html, !node_modules/**/*.html'",
     "watch:css": "onchange './styles/**/*.scss' -- yarn run build:css --silent",
