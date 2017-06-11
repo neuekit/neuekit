@@ -7,3 +7,4 @@ config.codekit3
 /node_modules
 node_modules
 .vscode
+/app/yarn.lock
