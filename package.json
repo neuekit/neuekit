@@ -20,8 +20,8 @@
     "browser-sync": "^2.18.12",
     "clean-css": "~3.4.26",
     "node-sass": "^4.5.3",
+    "npm-run-all": "^4.0.2",
     "onchange": "^3.2.1",
-    "parallelshell": "^2.0.0",
     "postcss-cli": "^4.1.0",
     "rollup": "^0.42.0",
     "rollup-plugin-babel": "^2.7.1",
@@ -56,7 +56,7 @@
     "serve": "browser-sync start --server --no-notify --files './app/styles/**/*.css, ./app/**/*.html, !node_modules/**/*.html'",
     "watch:css": "onchange './app/styles/**/*.scss' -- yarn run build:css --silent",
     "watch:js": "rollup --config --watch",
-    "watch:all": "parallelshell 'yarn run serve --silent' 'yarn run watch:css --silent' 'yarn run watch:js --silent'",
+    "watch:all": "npm-run-all --parallel 'serve --silent' 'watch:css --silent' 'watch:js --silent'",
     "postinstall": "yarn run watch:all --silent",
     "go": "yarn run postinstall --silent"
   }
