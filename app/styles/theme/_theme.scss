@@ -67,7 +67,7 @@
     Design Patterns. Layout. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
-@import 'objects/object';               // Example object for layout only.
+@import 'objects/app';               // Core UI Wrapper.
 
 
 
@@ -77,9 +77,9 @@
     Designed pieces of UI. Only using classes. More explicit naming.
 \*----------------------------------------------------------------------------*/
 
-@import 'components/app-head';          // The page header.
-@import 'components/app-main';          // The page main.
-@import 'components/app-foot';          // The page footer.
+@import 'components/app-head';          // Core header.
+@import 'components/app-main';          // Core main.
+@import 'components/app-foot';          // Core footer.
 
 
 
@@ -104,6 +104,7 @@
     )
 */
 );
+
 @include helpers-text(                  // Text helpers from framework.
 /*
     $responsive: $responsive,
@@ -117,7 +118,8 @@
         text-lighter
     )
 */
-)
+);
+
 @import 'helpers/spacing';              // Micro-level spacing.
 
 
