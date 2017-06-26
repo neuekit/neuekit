@@ -28,8 +28,8 @@
     "rollup-plugin-eslint": "^3.0.0",
     "rollup-plugin-uglify": "^2.0.1",
     "rollup-watch": "^4.0.0",
-    "stylelint": "^7.11.0",
-    "uglify-es": "^3.0.15"
+    "stylelint": "^7.11.1",
+    "uglify-es": "^3.0.20"
   },
   "stylelint": {
     "rules": {
