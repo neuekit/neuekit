@@ -1,32 +1,25 @@
 {
   "name": "PROJECT",
   "version": "1.0.0",
+  "license": "MIT",
   "description": "YOUR PROJECT DESCRIPTION HERE",
   "author": "Creative Little Dots",
   "devDependencies": {
-    "autoprefixer": "^7.1.1",
+    "autoprefixer": "^7.1.2",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-env": "^1.5.2",
+    "babel-preset-env": "^1.6.0",
     "browser-sync": "^2.18.12",
-    "clean-css": "~3.4.26",
     "node-sass": "^4.5.3",
     "npm-run-all": "^4.0.2",
     "onchange": "^3.2.1",
     "postcss-cli": "^4.1.0",
-    "rollup": "^0.43.0",
+    "rollup": "^0.45.2",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-eslint": "^4.0.0",
     "rollup-plugin-uglify": "^2.0.1",
-    "rollup-watch": "^4.0.0",
-    "stylelint": "^7.12.0",
-    "uglify-es": "^3.0.23"
-  },
-  "stylelint": {
-    "rules": {
-      "indentation": 4,
-      "number-leading-zero": null
-    }
+    "rollup-watch": "^4.3.1",
+    "uglify-es": "^3.0.24"
   },
   "browserslist": [
     "> 1%",
@@ -38,11 +31,9 @@
     "not blackberry <= 7"
   ],
   "scripts": {
-    "lint-scss": "stylelint ./styles/*.scss --syntax scss || true",
     "scss": "node-sass --omit-source-map-url --recursive --output-style compressed --output ./styles ./styles",
     "autoprefixer": "postcss --use autoprefixer --replace ./styles/style.css --no-map",
-    "cleancss": "cleancss --skip-restructuring -o ./styles/style.css ./styles/style.css",
-    "build:css": "npm run lint-scss --silent && npm run scss --silent && npm run autoprefixer --silent && npm run cleancss --silent",
+    "build:css": "npm run scss --silent && npm run autoprefixer --silent",
     "build:js": "rollup --config",
     "serve": "browser-sync start --server --no-notify --files './styles/**/*.css, ./**/*.html, !node_modules/**/*.html'",
     "watch:css": "onchange './styles/**/*.scss' -- npm run build:css --silent",

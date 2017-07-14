@@ -1,41 +1,33 @@
 {
   "name": "ui-kit",
   "version": "0.9.8",
+  "license": "MIT",
   "description": "The Creative Little UI Kit is a fully responsive framework crafted for unbeatable performance. Based on the ITCSS methodology this front-end springboard is super scaleable, lightweight, and built for the future.",
   "repository": {
     "type": "git",
     "url": "git+https://matt3224@github.com/CreativeLittleDots/Creative-Little-UI-Kit.git"
   },
   "author": "Matt Pilott",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/CreativeLittleDots/Creative-Little-UI-Kit/issues"
   },
   "homepage": "https://github.com/CreativeLittleDots/Creative-Little-UI-Kit#readme",
   "devDependencies": {
-    "autoprefixer": "^7.1.1",
+    "autoprefixer": "^7.1.2",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
-    "babel-preset-env": "^1.5.2",
+    "babel-preset-env": "^1.6.0",
     "browser-sync": "^2.18.12",
-    "clean-css": "~3.4.26",
     "node-sass": "^4.5.3",
     "npm-run-all": "^4.0.2",
     "onchange": "^3.2.1",
     "postcss-cli": "^4.1.0",
-    "rollup": "^0.43.0",
+    "rollup": "^0.45.2",
     "rollup-plugin-babel": "^2.7.1",
     "rollup-plugin-eslint": "^4.0.0",
     "rollup-plugin-uglify": "^2.0.1",
-    "rollup-watch": "^4.0.0",
-    "stylelint": "^7.12.0",
-    "uglify-es": "^3.0.23"
-  },
-  "stylelint": {
-    "rules": {
-      "indentation": 4,
-      "number-leading-zero": null
-    }
+    "rollup-watch": "^4.3.1",
+    "uglify-es": "^3.0.24"
   },
   "browserslist": [
     "> 1%",
@@ -47,11 +39,9 @@
     "not blackberry <= 7"
   ],
   "scripts": {
-    "lint-scss": "stylelint ./app/styles/*.scss --syntax scss || true",
     "scss": "node-sass --omit-source-map-url --recursive --output-style compressed --output ./app/styles ./app/styles",
     "autoprefixer": "postcss --use autoprefixer --replace ./app/styles/style.css --no-map",
-    "cleancss": "cleancss --skip-restructuring -o ./app/styles/style.css ./app/styles/style.css",
-    "build:css": "yarn run lint-scss --silent && yarn run scss --silent && yarn run autoprefixer --silent && yarn run cleancss --silent",
+    "build:css": "yarn run scss --silent && yarn run autoprefixer --silent",
     "build:js": "rollup --config",
     "serve": "browser-sync start --server --no-notify --files './app/styles/**/*.css, ./app/**/*.html, !node_modules/**/*.html'",
     "watch:css": "onchange './app/styles/**/*.scss' -- yarn run build:css --silent",
