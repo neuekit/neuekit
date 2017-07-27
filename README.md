@@ -8,7 +8,9 @@ The kit includes a flex based fluid grid, common comprehendible Javascript plugi
 
 This is a Sass based framework and you'll need something to compile all that sassy code. In-house we use npm/yarn scripts to watch for, check, compile, minify and display code changes fast.
 
-All style properties are autoprefixed where required, all js code is transpiled using Babel, bundled using Rollup and minified using Uglify. Finally code changes are served to the browser whilst you develop your codebase in realtime using Browsersync.
+All style properties are autoprefixed where required, all JavaScript code is transpiled using Babel, bundled using Rollup and minified using Uglify. Finally code changes are served to the browser whilst you develop your codebase in realtime using Browsersync.
+
+The JavaScript setup here means you can code in whatever Babel supports and browser support for both the transpiled JavaScript and compiled CSS is based on the Browserlist array in package.json. This ensures that your JS & CSS code support the same browsers!
 
 ## Setup
 
@@ -25,11 +27,11 @@ In future sessions where you already have the dependancies you can just run `yar
 
 In progress...
 
-##Supported Browsers
+## Supported Browsers
 
 ![Browsers](https://creativelittledots.github.io/ui-kit/images/browsers.svg)
 
-##Supported Platforms
+## Supported Platforms
 
 ![Browsers](https://creativelittledots.github.io/ui-kit/images/platforms.svg)
 
