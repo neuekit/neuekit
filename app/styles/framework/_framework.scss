@@ -1,58 +1,42 @@
 /*!---------------------------------------------------------------------------*\
-    
+
     #CREATIVE LITTLE UI KIT
-    
-    - Version:      0.9.8
+
+    - Version:      0.9.9
     - Author:       Creative Little Dots
     - Site:         http://creativelittle.uk/uikit
-    - Copyright:    2016, Creative Little Dots
+    - Copyright:    2017, Creative Little Dots
     – License:      MIT | http://goo.gl/p3bexl
-    
+
 \*----------------------------------------------------------------------------*/
 
 
 
 /*----------------------------------------------------------------------------*\
-    #FUNCTIONS
-    
-    Globally-available functions.
+    #UTILITIES
+
+    Globally-available functions and mixins.
 \*----------------------------------------------------------------------------*/
 
-@import 'functions/rem';                // Pixels to rem function.
-
-
-
-/*----------------------------------------------------------------------------*\
-    #MIXINS
-    
-    Globally-available mixins.
-\*----------------------------------------------------------------------------*/
-
-@import 'mixins/area';                  // Height & width shorthand mixin.
-@import 'mixins/breakpoints';           // Breakpoint generator mixin.
-@import 'mixins/headings';              // Heading sizes mixin.
-@import 'mixins/media';                 // Media query shorthand mixin.
-@import 'mixins/svg';                   // SVG fill fix mixin.
+@import 'utilities';                    // Functions & mixins.
 
 
 
 /*----------------------------------------------------------------------------*\
     #GENERIC
-    
+
     Ground-zero styles. Low-specificity, far-reaching.
 \*----------------------------------------------------------------------------*/
 
-@import 'generic/keyframes';            // CSS Keyframe blocks.
 @import 'generic/reboot';               // A modern level playing field.
 @import 'generic/shared';               // Shared global commonalities.
 
 
 /*----------------------------------------------------------------------------*\
     #ELEMENTS
-    
+
     Last layer for type selectors (h1-h6, a).
 \*----------------------------------------------------------------------------*/
-
 
 @import 'elements/document';            // Page-level styles (HTML, body etc).
 @import 'elements/forms';               // Form inputs, textareas.
@@ -67,12 +51,12 @@
 
 /*----------------------------------------------------------------------------*\
     #OBJECTS
-    
+
     Design Patterns. Layout. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
 @import 'objects/bricks';               // Flex based block layout.
-@import 'objects/grids';                // Flex based grid layout.
+@import 'objects/grid';                 // Flex based grid layout.
 @import 'objects/inline';               // Flex based inliner.
 @import 'objects/unlist';               // Strip list styles.
 
@@ -80,30 +64,29 @@
 
 /*----------------------------------------------------------------------------*\
     #COMPONENTS
-    
+
     Designed pieces of UI. Only using classes. More explicit naming.
 \*----------------------------------------------------------------------------*/
 
 @import 'components/adjacent';          // Adjacent input styles.
-@import 'components/buttons';           // Button styles.
-@import 'components/loadr';             // Loading indicator component.
-@import 'components/menus';             // Menu styles.
+@import 'components/button';            // Button styles.
+@import 'components/loading';           // Loading indicator component.
 @import 'components/modal';             // Modal styles.
 @import 'components/navigation';        // Responsive navigation component.
 @import 'components/off-canvas';        // Pure CSS off canvas panel.
-@import 'components/tooltips';          // Tooltips component.
+@import 'components/tooltip';           // Tooltips component.
 
 
 
 /*----------------------------------------------------------------------------*\
     #HELPERS
-    
+
     Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
-@import 'helpers/sizes';                // Flex based sizes.
+@import 'helpers/size';                 // Flex based sizes.
 @import 'helpers/flex';                 // Give flex a helping hand.
-@import 'helpers/offsets';              // Margin offsets for asymetric layouts.
+@import 'helpers/offset';               // Margin offsets for asymetric layouts.
 @import 'helpers/spacing';              // Micro-level spacing.
 @import 'helpers/text';                 // Handy text assistants.
 @import 'helpers/visibility';           // Helpers to show and side stuff.
@@ -112,7 +95,7 @@
 
 /*----------------------------------------------------------------------------*\
     #OVERRIDES
-    
+
     Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 

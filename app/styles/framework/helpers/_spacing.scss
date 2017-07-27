@@ -2,7 +2,7 @@
     #SPACING HELPERS
 \*----------------------------------------------------------------------------*/
 
-@mixin helpers-spacing(
+@mixin ui-helpers__spacing(
     $attrs: ( padding, margin ),    // Values: margin, padding
     $responsive: $responsive,       // Values: false, both, up, only
     $steps: 5,                      // Value must be an integer
@@ -19,7 +19,7 @@
     @if $responsive != false {
 
         @include breakpoints( $responsive ) {
-            
+
             @include create-helpers-spacing( $attrs, $steps, $directions, $break );
         }
 
@@ -31,42 +31,42 @@
 }
 
 @mixin create-helpers-spacing( $attrs, $steps, $directions, $break ) {
-    
+
     // Create helpers for each step defined
     @for $step from 0 through $steps {
-    
+
         // Iterate through each attribute (padding, margin)
         @each $attr in $attrs {
-            
+
             // Get the first character of the attribute for our helper classes (ie. 'p' from 'padding')
             $attrClass: str-slice($attr, 1, 1);
-    
+
             // ie. .p-1@m
             .#{ $attrClass }-#{ $step }#{ $break } {
                 #{ $attr }: #{ $step }rem; // ie. padding: 1rem;
             }
-            
+
             // Iterate through each direction
             @each $direction in $directions {
-                
+
                 // Get the first character of the direction (ie. 'l' from 'left')
                 $dir: str-slice($direction, 1, 1);
-                
+
                 // If direction is top & bottom
                 @if $direction == top-bottom {
-                    
+
                     // Make sure the step is greater than 0, to prevent p-0-0 output
                     @if $step > 0 {
-                        
+
                         // ie. .p-1-0@m
                         .#{ $attrClass }-#{ $step }-0#{ $break } {
                             #{ $attr }: #{ $step }rem 0; // ie. padding: 1rem 0
                         }
                     }
-    
+
                 // If direction is left & right
                 } @else if $direction == left-right {
-                    
+
                     // Make sure the step is greater than 0, to prevent p-0-0 output
                     @if $step > 0 {
 
@@ -75,10 +75,10 @@
                             #{ $attr }: 0 #{ $step }rem; // ie. padding: 0 1rem
                         }
                     }
-                    
+
                 // All others
                 } @else {
-                    
+
                     // ie. .p-l-1@m
                     .#{ $attrClass }-#{ $dir }-#{ $step }#{ $break } {
                         #{ $attr }-#{ $direction }: #{ $step }rem; // ie. padding-left: 1rem

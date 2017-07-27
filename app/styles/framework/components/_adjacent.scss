@@ -2,40 +2,43 @@
     #INPUT PREFIX AND POSTFIX COMPONENT STYLES
 \*----------------------------------------------------------------------------*/
 
-.adjacent {
-     display: flex;
-     flex-flow: row;
-     
-     #{&}__item {
-          flex-shrink: 1;
-          min-width: 0;
-     }
-     
-     #{&}__end {
-          align-items: center;
-          background-color: $tertiary;
-          color: white;
-          display: flex;
-          flex-flow: row;
-          padding: 0 1rem;
-     }
-     
-     #{&}__item,
-     #{&}__end {
-          &:nth-child(1){
-               border-radius: $radius 0 0 $radius;
-          }
-     
-          &:nth-child(2),
-          &:last-child {
-               border-radius: 0 $radius $radius 0;
-          }
+@mixin ui-component__adjacent() {
 
-          &:nth-last-child(2) {
-               border-top-right-radius: 0;
-               border-bottom-right-radius: 0;
-          }
-     }
+    .adjacent {
+         display: flex;
+         flex-flow: row;
+
+         #{&}__item {
+              flex-shrink: 1;
+              min-width: 0;
+         }
+
+         #{&}__end {
+              align-items: center;
+              background-color: $tertiary;
+              color: white;
+              display: flex;
+              flex-flow: row;
+              padding: 0 1rem;
+         }
+
+         #{&}__item,
+         #{&}__end {
+              &:nth-child(1){
+                   border-radius: $radius 0 0 $radius;
+              }
+
+              &:nth-child(2),
+              &:last-child {
+                   border-radius: 0 $radius $radius 0;
+              }
+
+              &:nth-last-child(2) {
+                   border-top-right-radius: 0;
+                   border-bottom-right-radius: 0;
+              }
+         }
+    }
 }
 
 

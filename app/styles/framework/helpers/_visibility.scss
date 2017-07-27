@@ -1,21 +1,24 @@
 /*----------------------------------------------------------------------------*\
-    #STYLE/THEME HELPERS
+    #VISIBILITY HELPERS
 \*----------------------------------------------------------------------------*/
 
-.radius {
-    border-radius: $radius;
-}
+@mixin ui-helpers__visibility() {
 
-.sticky {
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1;
-    
-    &::before,
-    &::after {
-        content: '';
-        display: table;
+    .radius {
+        border-radius: $radius;
+    }
+
+    .sticky {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+
+        &::before,
+        &::after {
+            content: '';
+            display: table;
+        }
     }
 }
 

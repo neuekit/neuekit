@@ -2,29 +2,32 @@
     #BRICKS OBJECT
 \*----------------------------------------------------------------------------*/
 
-[class*="bricks"] {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin: 0 -0.5rem;
-}
+@mixin ui-object__bricks() {
 
-[class*="brick"] {
-    flex-basis: 100%;
-    padding: rem($gutter);
-    max-width: calc(100% + 1rem);
-}
+    [class*="bricks"] {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0 -0.5rem;
+    }
+
+    [class*="brick"] {
+        flex-basis: 100%;
+        padding: rem($gutter);
+        max-width: calc(100% + 1rem);
+    }
 
 
-@include breakpoints(up) {
-    
-    @for $grid from 1 through $columns {
-        
-        $width: floor((100% / $grid) * 1000) / 1000;
-            
-        .bricks-#{$grid}#{$break} .brick {
-            flex-basis: $width;
-            max-width: $width;
+    @include breakpoints(up) {
+
+        @for $grid from 1 through $columns {
+
+            $width: floor((100% / $grid) * 1000) / 1000;
+
+            .bricks-#{$grid}#{$break} .brick {
+                flex-basis: $width;
+                max-width: $width;
+            }
         }
     }
 }

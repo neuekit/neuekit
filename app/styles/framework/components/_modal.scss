@@ -2,82 +2,85 @@
     #MODAL
 \*----------------------------------------------------------------------------*/
 
-/*  Block  */
+@mixin ui-component__modal() {
 
-.modal {
-    $block: &;
-    
-    align-items: center;
-    background-color: rgba($primary, 0.8);
-    display: flex;
-    @include area(100%);
-    left: 0; top: 0;
-    opacity: 0;
-    padding: 1rem;
-    position: fixed;
-    transition: opacity $speed ease;
-    visibility: hidden;
-    
-        /*  Elements  */
-        
-        &__content {
-            background-color: white;
-            border-radius: $radius;
-            margin: auto;
-            max-height: calc(100vh - 2rem);
-            max-width: $maxWidth;
-            opacity: 0;
-            overflow: auto;
-            padding: 1rem;
-            transform: translateY(10rem);
-            transition: all $speed ease;
-        }
-        
-        &__close {
-            background: none;
-            float: right;
-            @include area(2rem);
-            padding: 0;
-            
-            &::before,
-            &::after {
-                background-color: $primary;
-                content: '';
-                display: block;
-                @include area(0.375rem, 100%);
-                left: 0; top: 50%;
-                position: absolute;
-                transform: translateY(-50%) rotate(45deg);
-                transform-origin: center;
+    /*  Block  */
+
+    .modal {
+        $block: &;
+
+        align-items: center;
+        background-color: rgba($primary, 0.8);
+        display: flex;
+        @include area(100%);
+        left: 0; top: 0;
+        opacity: 0;
+        padding: 1rem;
+        position: fixed;
+        transition: opacity $speed ease;
+        visibility: hidden;
+
+            /*  Elements  */
+
+            &__content {
+                background-color: white;
+                border-radius: $radius;
+                margin: auto;
+                max-height: calc(100vh - 2rem);
+                max-width: $maxWidth;
+                opacity: 0;
+                overflow: auto;
+                padding: 1rem;
+                transform: translateY(10rem);
+                transition: all $speed ease;
             }
-            
-            &::after{
-                transform: translateY(-50%) rotate(-45deg);
+
+            &__close {
+                background: none;
+                float: right;
+                @include area(2rem);
+                padding: 0;
+
+                &::before,
+                &::after {
+                    background-color: $primary;
+                    content: '';
+                    display: block;
+                    @include area(0.375rem, 100%);
+                    left: 0; top: 50%;
+                    position: absolute;
+                    transform: translateY(-50%) rotate(45deg);
+                    transform-origin: center;
+                }
+
+                &::after{
+                    transform: translateY(-50%) rotate(-45deg);
+                }
+
+                &:hover {
+                    box-shadow: none;
+                }
             }
-            
-            &:hover {
-                box-shadow: none;
-            }
-        }
-    
-    
-    /*  Modifiers  */    
-    
-    &--visible {
-        opacity: 1;
-        visibility: visible;
-        
-        #{$block}__content {
+
+
+        /*  Modifiers  */
+
+        &--visible {
             opacity: 1;
-            transform: translateY(0);
+            visibility: visible;
+
+            #{$block}__content {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-    }
-    
-    &--fullscreen {
-        padding: 0;
-        
-        #{$block}__content {
-            flex-grow: 1;
+
+        &--fullscreen {
+            padding: 0;
+
+            #{$block}__content {
+                flex-grow: 1;
+            }
         }
     }
 }

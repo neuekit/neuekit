@@ -2,7 +2,7 @@
     #TEXT HELPERS
 \*----------------------------------------------------------------------------*/
 
-@mixin helpers-text(
+@mixin ui-helpers__text(
     $responsive: $responsive,
     $helpers: (
         text-start,
@@ -11,57 +11,114 @@
         text-grow,
         text-shrink,
         text-bolder,
-        text-lighter
+        text-lighter,
+        text-justify,
+        text-success,
+        text-warn,
+        text-error,
+        text-disabled,
+        text-lower,
+        text-upper,
+        text-caps,
+        text-nowrap
     )
 ) {
-    
+
     @if index($helpers, text-bolder) {
 
         .text-bolder.text-bolder {
             font-weight: bolder;
         }
     }
-   
+
     @if index($helpers, text-lighter) {
-        
+
         .text-lighter.text-lighter {
             font-weight: lighter;
         }
     }
-   
+
+    @if index($helpers, text-success) {
+
+        .text-success#{ $break }.text-success#{ $break } {
+            color: $success;
+        }
+    }
+
+    @if index($helpers, text-warn) {
+
+        .text-warn#{ $break }.text-warn#{ $break } {
+            color: $warn;
+        }
+    }
+
+    @if index($helpers, text-error) {
+
+        .text-error#{ $break }.text-error#{ $break } {
+            color: $error;
+        }
+    }
+
+    @if index($helpers, text-disabled) {
+
+        .text-disabled#{ $break }.text-disabled#{ $break } {
+            color: $disabled;
+        }
+    }
+
+    @if index($helpers, text-lower) {
+
+        .text-lower#{ $break }.text-lower#{ $break } {
+            text-transform: lowercase;
+        }
+    }
+
+    @if index($helpers, text-upper) {
+
+        .text-upper#{ $break }.text-upper#{ $break } {
+            text-transform: uppercase;
+        }
+    }
+
+    @if index($helpers, text-caps) {
+
+        .text-caps#{ $break }.text-caps#{ $break } {
+            text-transform: capitalize;
+        }
+    }
+
     // Check first if we need to provide responsive helpers
     @if $responsive != false {
 
         @include breakpoints( $responsive ) {
-            
+
             @include create-helpers-text( $helpers, $break );
-        
         }
-        
-    // If not responsive, just run the general loop
-    } @else {
+    }
+
+    @else { // If not responsive, just run the general loop
 
         @include create-helpers-text( $helpers, $break: '' );
     }
 }
 
 @mixin create-helpers-text( $helpers, $break ) {
-    
+
     @if index($helpers, text-start) {
-        
+
         .text-start#{ $break }.text-start#{ $break } {
             text-align: left;
             text-align: start;
         }
     }
-    
+
     @if index($helpers, text-center) {
-    
+
         .text-center#{ $break }.text-center#{ $break } {
             text-align: center;
         }
     }
-    
+
     @if index($helpers, text-end) {
 
         .text-end#{ $break }.text-end#{ $break } {
@@ -69,19 +126,33 @@
             text-align: end;
         }
     }
-    
+
+    @if index($helpers, text-justify) {
+
+        .text-justify#{ $break }.text-justify#{ $break } {
+            text-align: justify;
+        }
+    }
+
     @if index($helpers, text-grow) {
-    
+
         .text-grow#{ $break }.text-grow#{ $break } {
             font-size: 125%;
         }
     }
-    
+
     @if index($helpers, text-shrink) {
-    
+
         .text-shrink#{ $break }.text-shrink#{ $break } {
             font-size: 75%;
-        }   
+        }
+    }
+
+    @if index($helpers, text-nowrap) {
+
+        .text-nowrap#{ $break }.text-nowrap#{ $break } {
+            white-space: nowrap;
+        }
     }
 }
 

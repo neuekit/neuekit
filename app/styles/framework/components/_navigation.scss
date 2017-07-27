@@ -2,52 +2,55 @@
     #NAVIGATION COMPONENT
 \*----------------------------------------------------------------------------*/
 
-.js .nav {
-    bottom: 0; left: 0;
-    box-sizing: content-box;
-    cursor: pointer;
-    display: block;
-    max-height: 50vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    position: fixed;
-    width: 100%;
-    
-        &__close {
-            background-color: rgba(black, 0.25);
-            display: block;
-            @include area(100%);
-            left: 0; top: 0;
-            position: fixed;
-        }
-    
-        &__link {
-            display: block;
-            padding: 0.25rem 0.75rem;
-            
-            + .nav-sub {
-                background-color: lavender;
-                left: 0;
-                margin-top: -1px;
-                position: absolute;
-                transform: translate(100vw);
-                transition: transform $speed ease;
-                width: 100%;
-                z-index: 1;
-                
-                &:hover {
-                    transform: translate(0);
-                }
+@mixin ui-component__navigation() {
+
+    .js .nav {
+        bottom: 0; left: 0;
+        box-sizing: content-box;
+        cursor: pointer;
+        display: block;
+        max-height: 50vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        position: fixed;
+        width: 100%;
+
+            &__close {
+                background-color: rgba(black, 0.25);
+                display: block;
+                @include area(100%);
+                left: 0; top: 0;
+                position: fixed;
             }
-            
-            &:hover {
-                background-color: whitesmoke;
-                
+
+            &__link {
+                display: block;
+                padding: 0.25rem 0.75rem;
+
                 + .nav-sub {
-                    transform: translate(0);
+                    background-color: lavender;
+                    left: 0;
+                    margin-top: -1px;
+                    position: absolute;
+                    transform: translate(100vw);
+                    transition: transform $speed ease;
+                    width: 100%;
+                    z-index: 1;
+
+                    &:hover {
+                        transform: translate(0);
+                    }
+                }
+
+                &:hover {
+                    background-color: whitesmoke;
+
+                    + .nav-sub {
+                        transform: translate(0);
+                    }
                 }
             }
-        }
+    }
 }
 
 

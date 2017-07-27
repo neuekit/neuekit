@@ -1,17 +1,17 @@
 {
   "name": "ui-kit",
-  "version": "0.9.8",
+  "version": "0.9.9",
   "license": "MIT",
   "description": "The Creative Little UI Kit is a fully responsive framework crafted for unbeatable performance. Based on the ITCSS methodology this front-end springboard is super scaleable, lightweight, and built for the future.",
   "repository": {
     "type": "git",
-    "url": "git+https://matt3224@github.com/CreativeLittleDots/Creative-Little-UI-Kit.git"
+    "url": "git+https://github.com/creativelittledots/ui-kit.git"
   },
   "author": "Matt Pilott",
   "bugs": {
-    "url": "https://github.com/CreativeLittleDots/Creative-Little-UI-Kit/issues"
+    "url": "https://github.com/creativelittledots/ui-kit/issues"
   },
-  "homepage": "https://github.com/CreativeLittleDots/Creative-Little-UI-Kit#readme",
+  "homepage": "https://github.com/creativelittledots/ui-kit#readme",
   "devDependencies": {
     "autoprefixer": "^7.1.2",
     "babel-plugin-external-helpers": "^6.22.0",
@@ -43,7 +43,7 @@
     "autoprefixer": "postcss --use autoprefixer --replace ./app/styles/style.css --no-map",
     "build:css": "yarn run scss --silent && yarn run autoprefixer --silent",
     "build:js": "rollup --config",
-    "serve": "browser-sync start --server --no-notify --files './app/styles/**/*.css, ./app/**/*.html, !node_modules/**/*.html'",
+    "serve": "browser-sync start --server --no-notify --files './app/styles/**/*.css, ./app/scripts/**/*.js, ./app/**/*.html, !node_modules/**/*.html'",
     "watch:css": "onchange './app/styles/**/*.scss' -- yarn run build:css --silent",
     "watch:js": "rollup --config --watch",
     "watch:all": "npm-run-all --parallel 'serve --silent' 'watch:css --silent' 'watch:js --silent'",

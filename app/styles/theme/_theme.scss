@@ -1,20 +1,20 @@
 /*!---------------------------------------------------------------------------*\
-    
+
     #YOUR PROJECT NAME
-    
+
     - Version:      1.0
     - Author:       YOUR NAME
     - Site:         http://YOUR_SITE
-    - Copyright:    2016, YOUR COMPANY
+    - Copyright:    2017, YOUR COMPANY
     – License:      YOUR LICENSE
-    
+
 \*----------------------------------------------------------------------------*/
 
 
 
 /*----------------------------------------------------------------------------*\
     #FUNCTIONS
-    
+
     Globally-available functions.
 \*----------------------------------------------------------------------------*/
 
@@ -24,7 +24,7 @@
 
 /*----------------------------------------------------------------------------*\
     #MIXINS
-    
+
     Globally-available mixins.
 \*----------------------------------------------------------------------------*/
 
@@ -34,7 +34,7 @@
 
 /*----------------------------------------------------------------------------*\
     #GENERIC
-    
+
     Ground-zero styles. Low-specificity, far-reaching.
 \*----------------------------------------------------------------------------*/
 
@@ -46,7 +46,7 @@
 
 /*----------------------------------------------------------------------------*\
     #ELEMENTS
-    
+
     Last layer for type selectors (h1-h6, a).
 \*----------------------------------------------------------------------------*/
 
@@ -63,7 +63,7 @@
 
 /*----------------------------------------------------------------------------*\
     #OBJECTS
-    
+
     Design Patterns. Layout. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
@@ -73,7 +73,7 @@
 
 /*----------------------------------------------------------------------------*\
     #COMPONENTS
-    
+
     Designed pieces of UI. Only using classes. More explicit naming.
 \*----------------------------------------------------------------------------*/
 
@@ -85,40 +85,9 @@
 
 /*----------------------------------------------------------------------------*\
     #HELPERS
-    
+
     Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
-
-
-@include helpers-spacing(               // Padding helpers from framework.
-/*
-    $attrs: ( padding, margin ),
-    $responsive: $responsive,
-    $steps: 5,
-    $directions: (
-        top,
-        bottom,
-        left,
-        right,
-        top-bottom
-    )
-*/
-);
-
-@include helpers-text(                  // Text helpers from framework.
-/*
-    $responsive: $responsive,
-    $helpers: (
-        text-start,
-        text-center,
-        text-end,
-        text-grow,
-        text-shrink,
-        text-bolder,
-        text-lighter
-    )
-*/
-);
 
 @import 'helpers/spacing';              // Micro-level spacing.
 
@@ -126,7 +95,7 @@
 
 /*----------------------------------------------------------------------------*\
     #OVERRIDES
-    
+
     Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
