@@ -35,6 +35,7 @@
     "autoprefixer": "postcss --use autoprefixer --replace ./styles/style.css --no-map",
     "build:css": "npm run scss --silent && npm run autoprefixer --silent",
     "build:js": "rollup --config",
+    "build": "yarn run build:css --silent && yarn run build:js --silent",
     "serve": "browser-sync start --server --no-notify --files './styles/**/*.css, ./styles/**/*.js, ./**/*.html, !node_modules/**/*.html'",
     "watch:css": "onchange './styles/**/*.scss' -- npm run build:css --silent",
     "watch:js": "rollup --config --watch",
