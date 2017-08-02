@@ -34,7 +34,7 @@
         &--#{ $itemClass } { // .grid--item
             display: block;
             flex-direction: column;
-            padding: 0 rem( $gutter + $gutterSmall );
+            padding: 0 rem( $gutterSmall * 2 );
         }
 
         #{ & }#{ & }--#{ $itemClass } { // .grid.grid--item
@@ -80,4 +80,5 @@
         }
     }
 }
+
 
