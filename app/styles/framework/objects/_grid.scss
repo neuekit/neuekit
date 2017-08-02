@@ -13,7 +13,7 @@
         justify-content: center;
         margin: 0 auto;
         max-width: rem( $maxWidth );
-        padding: 0 rem( $gutter );
+        padding: 0 rem( $gutterSmall );
         width: 100%;
 
 
@@ -48,7 +48,7 @@
         & &, // .grid .grid
         &--#{$unnestClass} { // .grid--unnest
             flex-shrink: 1;
-            margin: 0 #{ rem( -$gutter * 2 ) };
+            margin: 0 #{ rem( -$gutterSmall * 2 ) };
             max-width: none;
             width: auto;
         }
@@ -71,12 +71,21 @@
 
     @include media(m) {
 
+        .#{ $gridClass } { // .grid
+            padding: 0 rem( $gutter );
+        }
+
         .#{ $gridClass }__#{ $itemClass } { // .grid__item
             padding: 0 rem( $gutter );
         }
 
-        .#{ $gridClass }--#{ $itemClass } { // .grid__item
+        .#{ $gridClass }--#{ $itemClass } { // .grid--item
             padding: 0 rem( $gutter * 2 );
+        }
+
+        & &, // .grid .grid
+        &--#{$unnestClass} { // .grid--unnest
+            margin: 0 #{ rem( -$gutter * 2 ) };
         }
     }
 }
