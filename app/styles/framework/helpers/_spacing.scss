@@ -42,7 +42,7 @@
             $attrClass: str-slice($attr, 1, 1);
 
             // ie. .p-1@m
-            .#{ $attrClass }-#{ $step }#{ $break } {
+            .#{ $attrClass }-#{ $step }#{ $break }.#{ $attrClass }-#{ $step }#{ $break } {
                 #{ $attr }: #{ $step }rem; // ie. padding: 1rem;
             }
 
@@ -59,7 +59,7 @@
                     @if $step > 0 {
 
                         // ie. .p-1-0@m
-                        .#{ $attrClass }-#{ $step }-0#{ $break } {
+                        .#{ $attrClass }-#{ $step }-0#{ $break }.#{ $attrClass }-#{ $step }-0#{ $break } {
                             #{ $attr }: #{ $step }rem 0; // ie. padding: 1rem 0
                         }
                     }
@@ -71,7 +71,7 @@
                     @if $step > 0 {
 
                         // ie. .p-0-1@em
-                        .#{ $attrClass }-0-#{ $step }#{ $break } {
+                        .#{ $attrClass }-0-#{ $step }#{ $break }.#{ $attrClass }-0-#{ $step }#{ $break } {
                             #{ $attr }: 0 #{ $step }rem; // ie. padding: 0 1rem
                         }
                     }
@@ -80,7 +80,7 @@
                 } @else {
 
                     // ie. .p-l-1@m
-                    .#{ $attrClass }-#{ $dir }-#{ $step }#{ $break } {
+                    .#{ $attrClass }-#{ $dir }-#{ $step }#{ $break }.#{ $attrClass }-#{ $dir }-#{ $step }#{ $break } {
                         #{ $attr }-#{ $direction }: #{ $step }rem; // ie. padding-left: 1rem
                     }
                 }
