@@ -1,10 +1,9 @@
-/*!
- * Stickyfill -- `position: sticky` polyfill
- * v. 1.1.4 | https://github.com/wilddeer/stickyfill
- * Copyright Oleg Korsunsky | http://wd.dizaina.net/
- *
- * MIT License
- */
+/*----------------------------------------------------------------------------*\
+    #STICKYFILL v1.1.4 // https://github.com/wilddeer/stickyfill
+
+    'position: sticky' polyfill
+\*----------------------------------------------------------------------------*/
+
 (function(doc, win) {
     var watchArray = [],
         scroll,
@@ -74,7 +73,7 @@
             rebuild();
             return;
         }
-        
+
         if (win.pageYOffset != scroll.top) {
             updateScrollPos();
             recalcAllPos();
@@ -274,7 +273,7 @@
             },
             nodeOffset = getElementOffset(node),
             parentOffset = getElementOffset(parentNode),
-            
+
             parent = {
                 node: parentNode,
                 css: {
@@ -390,11 +389,11 @@
         if (!initialized) return;
 
         deinitAll();
-        
+
         for (var i = watchArray.length - 1; i >= 0; i--) {
             watchArray[i] = getElementParams(watchArray[i].node);
         }
-        
+
         initAll();
     }
 
@@ -412,7 +411,7 @@
 
     function stop() {
         pause();
-        deinitAll(); 
+        deinitAll();
     }
 
     function kill() {

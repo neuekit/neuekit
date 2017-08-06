@@ -15,12 +15,13 @@
 /*----------------------------------------------------------------------------*\
     #PARTIES/POLYFILLS
 
-    Micro libraries to bootstrap the UI Kit (Dont panic its only 7.6kb GZipped)
+    Micro libraries to bootstrap the UI Kit (Dont panic its only 5.9kb GZipped)
 \*----------------------------------------------------------------------------*/
 
-import './parties/promise';
-import './parties/fetch';
-import './parties/stickyfill';
+import './polyfills/promise';
+import './polyfills/fetch';
+import './polyfills/stickyfill';
+import './polyfills/svg4everybody';
 
 
 

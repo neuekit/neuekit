@@ -1,3 +1,9 @@
+/*----------------------------------------------------------------------------*\
+    #PROMISE POLYFILL v6.0.2 // https://github.com/taylorhakes/promise-polyfill
+
+    Lightweight ES6 Promise polyfill for the browser and node. A+ Compliant
+\*----------------------------------------------------------------------------*/
+
 (function (root) {
 
   // Store setTimeout reference so promise-polyfill will be unaffected by
@@ -5,7 +11,7 @@
   var setTimeoutFunc = setTimeout;
 
   function noop() {}
-  
+
   // Polyfill for Function.prototype.bind
   function bind(fn, thisArg) {
     return function () {
@@ -223,7 +229,7 @@
   Promise._setUnhandledRejectionFn = function _setUnhandledRejectionFn(fn) {
     Promise._unhandledRejectionFn = fn;
   };
-  
+
   if (typeof module !== 'undefined' && module.exports) {
     module.exports = Promise;
   } else if (!root.Promise) {

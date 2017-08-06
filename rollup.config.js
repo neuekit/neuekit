@@ -9,12 +9,14 @@ export default {
     format : 'iife',
     moduleName : 'UIKit',
     moduleContext : {
-        './app/scripts/framework/parties/promise.js' : 'window',
-        './app/scripts/framework/parties/fetch.js' : 'window'
+        './app/scripts/framework/polyfills/promise.js' : 'window',
+        './app/scripts/framework/polyfills/fetch.js' : 'window',
+        './app/scripts/framework/polyfills/stickyfill.js' : 'window',
+        './app/scripts/framework/polyfills/svg4everybody.js' : 'window'
     },
     plugins: [
         babel({
-            exclude : ['./node_modules/**', './app/scripts/framework/parties/**'],
+            exclude : ['./node_modules/**', './app/scripts/framework/polyfills/**'],
             presets : [[
                 "env", {
                     "modules" : false
