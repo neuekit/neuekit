@@ -12,6 +12,12 @@ Email: chris@creativelittledots.co.uk
 Site: http://creativelittledots.co.uk
 Twitter: @LittleDotChris
 
+Name: Darby Manning
+Title: Front-end Engineer
+Email: darby@creativelittledots.co.uk
+Site: http://creativelittledots.co.uk
+Twitter: @LittleDotDarby
+
 
 
 /* THANKS */
@@ -19,13 +25,13 @@ Twitter: @LittleDotChris
 Name: Harry Roberts
 For: ITCSS
 Twitter: @csswizardry
-		
+
 
 
 /* SITE */
 
-Last update: Friday 21st, October 2016 
-Standards: HTML5, CSS3, ES6
-Software: Coda, CodeKit, Tower
+Last update: Sunday 6th, August 2017
+Standards: HTML5, CSS3, ES2015
+Software: Atom, Yarn, Tower
 
 

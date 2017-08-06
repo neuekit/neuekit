@@ -2,7 +2,7 @@
   "name": "ui-kit",
   "version": "0.9.9",
   "license": "MIT",
-  "description": "The Creative Little UI Kit is a fully responsive framework crafted for unbeatable performance. Based on the ITCSS methodology this front-end springboard is super scaleable, lightweight, and built for the future.",
+  "description": "The Creative Little UI Kit is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with, and built for the future.",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/creativelittledots/ui-kit.git"

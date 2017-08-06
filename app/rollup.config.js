@@ -10,7 +10,7 @@ export default {
     moduleName : 'PROJECT',
     plugins: [
         babel({
-            exclude : ['./node_modules/**', './scripts/application/parties/**'],
+            exclude : ['./node_modules/**', './scripts/parties/**'],
             presets : [[
                 "env", {
                     "modules" : false

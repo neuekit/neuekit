@@ -3,102 +3,102 @@
 <html class="no-js" lang="en">
 
     <head>
-    
+
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
         <!--  Document: Setup  -->
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-    
+
         <meta charset="utf-8">
-        
+
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        
+
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <title>Test Tabs</title>
-        
+
         <meta name="description" content="A modernist structured User Interface Kit for building responsive scalable web projects">
-        
+
         <meta name="coverage" content="Worldwide">
-        
+
         <meta name="format-detection" content="telephone=no">
-        
-        
+
+
         <!-- Standard Favicons -->
-        
+
         <link rel="icon" type="image/png" href="../app/images/icons/favicon-32x32.png" sizes="32x32">
-        
+
         <link rel="icon" type="image/png" href="../app/images/icons/favicon-16x16.png" sizes="16x16">
-        
+
         <link rel="shortcut icon" href="../app/images/icons/favicon.ico">
-    
-    
+
+
         <!-- Google Meta -->
         <meta name="mobile-web-app-capable" content="yes">
-        
+
         <meta name="application-name" content="UI Kit">
-        
+
         <meta name="theme-color" content="#2F3BA2">
-        
+
         <link rel="icon" sizes="192x192" href="../app/images/icons/chrome-touch-icon-192x192.png">
-    
-    
+
+
         <!-- Apple Meta -->
         <meta name="apple-mobile-web-app-capable" content="yes">
-        
+
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-        
+
         <meta name="apple-mobile-web-app-title" content="UI Kit">
-        
+
         <link rel="apple-touch-icon" sizes="180x180" href="../app/images/icons/apple-touch-icon.png">
-        
+
         <link rel="mask-icon" href="../app/images/icons/safari-pinned-tab.svg" color="#212226">
-        
-    
+
+
         <!-- Windows Meta -->
         <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-        
+
         <meta name="msapplication-TileColor" content="#2F3BA2">
-        
+
         <meta name="msapplication-tap-highlight" content="no">
-        
+
         <meta name="msapplication-config" content="images/icons/browserconfig.xml">
-        
-        
+
+
         <!-- Web Application Manifest -->
         <link rel="manifest" href="../app/manifest.json">
-        
-        
-        
+
+
+
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
         <!--  Document: Priority Resources  -->
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-        
+
         <link href="../app/styles/style.css" rel="stylesheet">
-        
+
         <style>
-    
-            
+
+
             .tabs {
                 display: flex;
             }
-            
+
             .tab {
                 box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5);
                 flex-grow: 1;
                 padding: 1rem 0;
                 text-align: center;
                 transition: background 0.25s ease;
-            }   
+            }
                 .tab--active {
                     box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5),
                                 inset 0 -4px 0 0 rgba(0, 0, 0, 0.15);
                 }
-            
-            
+
+
             .tab-contents {
                 margin-bottom: 1rem;
             }
-            
+
             .tab-content {
                 padding: 1rem;
                 position: absolute;
@@ -110,10 +110,10 @@
                     position: relative;
                     z-index: 1;
                 }
-            
-            
-            
-            
+
+
+
+
             .tab {
                 background-color: thistle;
                 color: black;
@@ -122,131 +122,129 @@
                 .tab:hover {
                     background-color: white;
                 }
-            
-            
+
+
             .tab-content {
                 background-color: white;
             }
-            
+
         </style>
-    
+
     </head>
 
     <body>
-        
+
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
         <!--  Site: Header  -->
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-    
+
         <header class="page-header" role="banner">
-        
+
             <div class="grid">
-            
+
                 <div class="grid__item">
-                    
+
                     <img src="http://unsplash.it/1400/400?random">
-                    
+
                     <div class="tabs">
-                    
+
                         <a class="tab" href="#tab1" aria-role="tab" title="The first tab">Tab 1</a>
-                        
+
                         <a class="tab" href="#tab2" aria-role="tab" title="The second tab">Tab 2</a>
-                        
+
                         <a class="tab" href="#tab3" aria-role="tab" title="The last tab">Tab 3</a>
-                    
+
                     </div>
-                    
+
                     <div class="tab-contents">
-                        
+
                         <div class="tab-content" id="tab1" aria-role="tabpanel">
-                    
+
                             <!-- Content -->
                             <p>This is the first panel</p>
-                    
+
                             <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-                    
+
                         </div>
-                    
+
                         <div class="tab-content" id="tab2" aria-role="tabpanel">
-                    
+
                             <!-- Content -->
                             <p>This is the second panel</p>
-                    
+
                             <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-                    
+
                         </div>
-                    
+
                         <div class="tab-content" id="tab3" aria-role="tabpanel">
-                    
+
                             <!-- Content -->
                             <p>This is the last panel</p>
-                    
+
                             <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
-                    
+
                         </div>
-                        
+
                     </div>
-                
+
                 </div>
-            
+
             </div>
-        
+
         </header>
-        
-        
-        
+
+
+
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
         <!--  Site: Main  -->
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-        
+
         <main class="page-main" role="main">
-        
+
             <div class="grid">
-            
+
                 <div class="grid__item">
-                    
-                    
-                
+
+
+
                 </div>
-            
+
             </div>
-        
+
         </main>
-        
-        
-        
+
+
+
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
         <!--  Site: Footer  -->
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-        
+
         <footer class="page-footer" role="contentinfo">
-        
+
             <div class="grid">
-            
+
                 <div class="grid__item  size-12">
-                
+
                 </div>
-            
+
             </div>
-        
+
         </footer>
-        
-        
-        
+
+
+
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
         <!--  Document: Subservient Resources  -->
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-        
-        <script src="../app/scripts/framework/parties/domtastic.min.js"></script>
-        
+
+        <script src="../app/scripts/parties/domtastic.min.js"></script>
+
         <script src="../app/scripts/framework/framework.min.js"></script>
-        
-        <script src="../app/scripts/application/parties/svg4everybody.min.js"></script>
-        
+
         <script src="../app/scripts/application/application.min.js"></script>
-        
-        
-    
+
+
+
     </body>
 
 </html>
