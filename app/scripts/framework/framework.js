@@ -13,13 +13,14 @@
 
 
 /*----------------------------------------------------------------------------*\
-    #PARTIES/POLYFILLS
+    #POLYFILLS
 
-    Micro libraries to bootstrap the UI Kit (Dont panic its only 5.9kb GZipped)
+    The features of tomorrow today! (Dont panic its only 6.71kb GZipped)
 \*----------------------------------------------------------------------------*/
 
 import './polyfills/promise';
 import './polyfills/fetch';
+import './polyfills/smoothscroll';
 import './polyfills/stickyfill';
 import './polyfills/svg4everybody';
 
