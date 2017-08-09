@@ -67,7 +67,7 @@
     Design Patterns. Layout. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
-@import 'objects/app';               // Core UI Wrapper.
+@import 'objects/app';                  // Core UI Wrapper.
 
 
 
@@ -77,9 +77,9 @@
     Designed pieces of UI. Only using classes. More explicit naming.
 \*----------------------------------------------------------------------------*/
 
-@import 'components/app-head';          // Core header.
-@import 'components/app-main';          // Core main.
-@import 'components/app-foot';          // Core footer.
+@import 'components/core/head';         // Core header.
+@import 'components/core/main';         // Core main.
+@import 'components/core/foot';         // Core footer.
 
 
 
