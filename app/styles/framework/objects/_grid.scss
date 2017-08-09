@@ -57,7 +57,7 @@
             max-width: none;
         }
 
-        &--#{ $edgeClass }, // .grid--edge
+        #{ & }#{ & }--#{ $edgeClass }, // .grid.grid--edge
         &--#{ $edgeClass } > &__#{ $itemClass } { // .grid--edge > .grid__item
             padding: 0;
         }
