@@ -45,7 +45,7 @@
     "build:css": "yarn run scss --silent && yarn run autoprefixer --silent",
     "build:js": "rollup --config",
     "build": "yarn run build:css --silent && yarn run build:js --silent",
-    "serve": "browser-sync start --server --no-notify --files './app/styles/**/*.css, ./app/scripts/**/*.js, ./app/**/*.html, !node_modules/**/*.html'",
+    "serve": "browser-sync start --server --no-notify --files './app/styles/**/*.css, ./app/scripts/**/*.js, ./**/*.html, !node_modules/**/*.html'",
     "watch:css": "onchange './app/styles/**/*.scss' -- yarn run build:css --silent",
     "watch:js": "rollup --config --watch",
     "watch:all": "npm-run-all --parallel 'serve --silent' 'watch:css --silent' 'watch:js --silent'",
