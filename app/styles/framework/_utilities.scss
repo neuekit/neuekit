@@ -4,8 +4,9 @@
     Globally-available functions.
 \*----------------------------------------------------------------------------*/
 
-@import 'functions/rem';                // Pixels to rem function.
 @import 'functions/deep-get';           // Map deep get.
+@import 'functions/rem';                // Pixels to rem function.
+@import 'functions/size';               // Coloumn size percentage.
 
 
 
