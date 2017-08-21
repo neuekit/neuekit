@@ -23,7 +23,7 @@
     "npm-run-all": "^4.0.2",
     "onchange": "^3.2.1",
     "postcss-cli": "^4.1.0",
-    "rollup": "^0.47.6",
+    "rollup": "^0.48.2",
     "rollup-plugin-babel": "^3.0.2",
     "rollup-plugin-eslint": "^4.0.0",
     "rollup-plugin-uglify": "^2.0.1",
