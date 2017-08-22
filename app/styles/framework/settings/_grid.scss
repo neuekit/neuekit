@@ -2,13 +2,6 @@
     #GRID SETTINGS
 \*----------------------------------------------------------------------------*/
 
-$gridClass:      'grid'         !default;
-$itemClass:      'item'         !default;
-$edgeClass:      'edge'         !default;
-$nestClass:      'nest'         !default;
-$unnestClass:    'unnest'       !default;
-$maxClass:       'max'          !default;
-
 $columns:       12              !default;
 $gutter:        8px             !default;
 $gutterSmall:   $gutter / 2     !default;

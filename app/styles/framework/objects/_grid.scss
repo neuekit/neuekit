@@ -6,7 +6,7 @@
 
     /*  Blocks  */
 
-    .#{ $gridClass } { // .grid
+    .grid { // .grid
         display: flex;
         flex-shrink: 0;
         flex-wrap: wrap;
@@ -18,7 +18,7 @@
 
             /*  Elements  */
 
-            &__#{ $itemClass } { // .grid__item
+            &__item { // .grid__item
                 @if(not($auto)) { flex-basis: 100%; }
                 flex-direction: column;
                 @if($auto) { flex-grow: 1; }
@@ -34,59 +34,59 @@
 
         /*  Modifiers  */
 
-        &--#{ $itemClass } { // .grid--item
+        &--item { // .grid--item
             display: block;
             flex-direction: column;
             padding: 0 rem( $gutterSmall * 2 );
         }
 
-        #{ & }#{ & }--#{ $itemClass } { // .grid.grid--item
+        &#{ & }--item { // .grid.grid--item
             display: block;
-        }
 
-        #{ & }--#{ $itemClass }.flex { // .grid.grid--item
-            display: flex;
+            &.flex {  // .grid.grid--item.flex
+                display: flex;
+            }
         }
 
         & &, // .grid .grid
-        &--#{$unnestClass} { // .grid--unnest
+        &--unnest { // .grid--unnest
             flex-shrink: 1;
             margin: 0 #{ rem( -$gutterSmall * 2 ) };
             max-width: none;
             width: auto;
         }
 
-        &--#{ $maxClass } { // .grid--max
+        &--max { // .grid--max
             max-width: none;
         }
 
-        #{ & }#{ & }--#{ $edgeClass }, // .grid.grid--edge
-        &--#{ $edgeClass } > &__#{ $itemClass } { // .grid--edge > .grid__item
+        &#{ & }--edge, // .grid.grid--edge
+        &--edge > &__item { // .grid--edge > .grid__item
             padding: 0;
         }
 
-        & &--#{ $nestClass }, // .grid--nest
-        &#{ & }--#{ $edgeClass }, // .grid--edge
-        &--#{ $edgeClass} .#{ $gridClass }:not(&--#{$unnestClass}) { // .grid--edge .grid
+        & &--nest, // .grid--nest
+        &#{ & }--edge, // .grid--edge
+        &--edge &:not(&--unnest) { // .grid--edge .grid
             margin: 0 auto;
         }
     }
 
     @include media(m) {
 
-        .#{ $gridClass } { // .grid
+        .grid { // .grid
             padding: 0 rem( $gutter );
 
-            &__#{ $itemClass } { // .grid__item
+            &__item { // .grid__item
                 padding: 0 rem( $gutter );
             }
 
-            &--#{ $itemClass } { // .grid--item
+            &--item { // .grid--item
                 padding: 0 rem( $gutter * 2 );
             }
 
             & &, // .grid .grid
-            &--#{$unnestClass} { // .grid--unnest
+            &--unnest { // .grid--unnest
                 margin: 0 #{ rem( -($gutter * 2) ) };
             }
         }
