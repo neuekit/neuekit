@@ -4,13 +4,18 @@ import uglify from 'rollup-plugin-uglify';
 import { minify } from 'uglify-es';
 
 export default {
-    entry : './scripts/application/application.js',
-    dest : './scripts/application/application.min.js',
-    format : 'iife',
-    moduleName : 'PROJECT',
-    plugins: [
+    input : './scripts/application/application.js',
+    output : {
+        file : './scripts/application/application.min.js',
+        format : 'iife',
+        name : 'PROJECT'
+    },
+    plugins : [
         babel({
-            exclude : ['./node_modules/**', './scripts/parties/**'],
+            exclude : [
+                './node_modules/**',
+                './scripts/parties/**'
+            ],
             presets : [[
                 "env", {
                     "modules" : false
