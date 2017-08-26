@@ -4,8 +4,11 @@
 
 @mixin input {
     appearance: none;
-    @if(not($boringInputs)) {
+    @if(not($alternateInputs)) {
         background-color: $input;
+    }
+    @else {
+        box-shadow: inset 0 0 0 2px $input;
     }
     border: none;
     border-radius: $radius;
@@ -20,7 +23,12 @@
 
     &:focus {
         background-color: white;
-        box-shadow: inset 0 0 0 2px $input;
+        @if(not($alternateInputs)) {
+            box-shadow: inset 0 0 0 2px $input;
+        }
+        @else {
+            box-shadow: inset 0 0 0 2px $tertiary;
+        }
         outline: none;
     }
 }

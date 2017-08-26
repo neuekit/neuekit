@@ -30,35 +30,45 @@
                 max-width: $maxWidth;
                 opacity: 0;
                 overflow: auto;
-                padding: 1rem;
+                padding: 2rem;
                 transform: translateY(10rem);
                 transition: all $speed ease;
             }
 
             &__close {
-                background: none;
-                float: right;
-                @include area(2rem);
-                padding: 0;
+                background-color: $quaternary;
+                border-radius: 50%;
+                display: block;
+                @include area(1.75rem);
+                position: absolute;
+                right: 0.75rem; top: 0.75rem;
+                transition: all $speed ease;
 
                 &::before,
                 &::after {
                     background-color: $primary;
+                    border-radius: 1rem;
                     content: '';
                     display: block;
-                    @include area(0.375rem, 100%);
-                    left: 0; top: 50%;
+                    @include area(0.1875rem, 0.875rem);
+                    left: 50%; top: 50%;
                     position: absolute;
-                    transform: translateY(-50%) rotate(45deg);
+                    transform: translate(-50%, -50%) rotate(45deg);
                     transform-origin: center;
+                    transition: all $speed ease;
                 }
 
                 &::after{
-                    transform: translateY(-50%) rotate(-45deg);
+                    transform: translate(-50%, -50%) rotate(-45deg);
                 }
 
                 &:hover {
-                    box-shadow: none;
+                    background-color: $tertiary;
+
+                    &::before,
+                    &::after {
+                        background-color: white;
+                    }
                 }
             }
 
