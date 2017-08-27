@@ -537,7 +537,15 @@
 
                                 <hr>
 
-                                <input type="password" placeholder="password">
+                                <div class="validate">
+
+                                    <input class="validate__input" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" id="password" name="password" required placeholder="Password">
+
+                                    <label class="validate__label" for="password">Password</label>
+
+                                    <div class="validate__message">Your password must be atleast 6 characters. It must also contain atleast 1 uppercase, 1 lowercase and 1 number character.</div>
+
+                                </div>
 
                                 <hr>
 
