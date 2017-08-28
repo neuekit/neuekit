@@ -6,11 +6,12 @@
 
     $media: '';
     $from: map-get($breakpoints, $minbreak);
+    $from: if( $from != null, $from + 1px, null );
     $to: map-get($breakpoints, $maxbreak);
 
-    @if ( $maxbreak == null ) {
+    @if ( $from != null and $maxbreak == null ) {
 
-        $media: '(min-width: #{ $from + 1px })';
+        $media: '(min-width: #{ $from })';
     }
 
     @else if ( ( $minbreak == null or $from == null ) and $maxbreak != null ) {
@@ -23,9 +24,14 @@
         $media: 'only #{ $type }';
     }
 
+    @else if ( $from != null and $to != null ) {
+
+        $media: '(min-width: #{ $from }) and (max-width: #{ $to })';
+    }
+
     @else {
 
-        $media: '(min-width: #{ $from + 1px }) and (max-width: #{ $to })';
+        $media: 'all';
     }
 
     @media #{ $media } {
