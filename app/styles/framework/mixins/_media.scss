@@ -2,18 +2,20 @@
     #MEDIA QUERY MIXIN
 \*----------------------------------------------------------------------------*/
 
-@mixin media( $minbreak: null, $maxbreak: null, $type: 'screen' ) {
+@mixin media( $minbreak: null, $maxbreak: null, $type: null ) {
 
     $media: '';
+    $from: map-get($breakpoints, $minbreak);
+    $to: map-get($breakpoints, $maxbreak);
 
     @if ( $maxbreak == null ) {
 
-        $media: 'only #{ $type } and (min-width: #{ map-get($breakpoints, $minbreak) + 1px })';
+        $media: '(min-width: #{ $from + 1px })';
     }
 
-    @else if ( $minbreak == null and $maxbreak != null ) {
+    @else if ( ( $minbreak == null or $from == null ) and $maxbreak != null ) {
 
-        $media: 'only #{ $type } and (max-width: #{ map-get($breakpoints, $maxbreak) })';
+        $media: '(max-width: #{ $to })';
     }
 
     @else if ( $type == 'print' ) {
@@ -23,7 +25,7 @@
 
     @else {
 
-        $media: 'only #{ $type } and (min-width: #{ map-get($breakpoints, $minbreak) + 1px }) and (max-width: #{ map-get($breakpoints, $maxbreak)})';
+        $media: '(min-width: #{ $from + 1px }) and (max-width: #{ $to })';
     }
 
     @media #{ $media } {
