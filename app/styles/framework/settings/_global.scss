@@ -9,10 +9,10 @@ $speed:             0.2s       !default;
 
 $breakpoints: (
     xs:              null,      // Phone
-    s:              769px,      // Tablet
-    m:              1025px,     // Notebook
-    l:              1201px,     // Laptop
-    xl:             1601px      // Desktop
+    s:              768px,      // Tablet
+    m:              1024px,     // Notebook
+    l:              1200px,     // Laptop
+    xl:             1600px      // Desktop
 )                               !default;
 
 $mediaClass:        '\\@'       !default;

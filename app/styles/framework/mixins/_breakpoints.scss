@@ -5,63 +5,63 @@
 @mixin breakpoints( $choice: up ) {
 
     @each $breakclass, $breakpoint in $breakpoints {
-    
+
         $breakindex: index( map-keys( $breakpoints ), $breakclass ) !global;
-        
-        
+
+
         //  AND UP MEDIA QUERY LOOP
-        
+
         @if ( $choice == null or $choice == up or $choice == both ) {
-            
+
             @if ( $breakindex == 1 ) {
-                
+
                 $break: null !global;
-                
+
                 @content;
-                
+
             }
-            
+
             @else {
-                
+
                 $break: $mediaClass + $breakclass !global;
-                $screen: 'only screen and (min-width: #{ rem( $breakpoint ) })';
-                
+                $screen: 'only screen and (min-width: #{ rem( $breakpoint + 1 ) })';
+
                 @media #{ $screen } {
-            
+
                     @content;
-                
+
                 }
             }
         }
-        
-        
+
+
         //  ONLY MEDIA QUERY LOOP
-        
+
         @if ( $choice == only or $choice == both ) {
-            
+
             $break: $mediaClass + $breakclass + '-only' !global;
-            
+
             @if ( length( $breakpoints ) > $breakindex ) {
-            
+
                 $screenOnly: null;
                 $nextBreakpoint: map-get( $breakpoints, nth( map-keys( $breakpoints ), $breakindex + 1 ) );
-                
+
                 @if ( $breakindex > 1 ) {
-                    
-                    $screenOnly: 'only screen and (min-width: #{ rem( $breakpoint ) }) and (max-width: #{ rem( $nextBreakpoint - 1 ) })';
-                    
+
+                    $screenOnly: 'only screen and (min-width: #{ rem( $breakpoint + 1 ) }) and (max-width: #{ rem( $nextBreakpoint ) })';
+
                 }
-                
+
                 @else {
-                    
-                    $screenOnly: 'only screen and (max-width: #{ rem( $nextBreakpoint - 1 ) })';
-                    
+
+                    $screenOnly: 'only screen and (max-width: #{ rem( $nextBreakpoint ) })';
+
                 }
-                
+
                 @media #{ $screenOnly } {
-                
+
                     @content;
-                
+
                 }
             }
         }
