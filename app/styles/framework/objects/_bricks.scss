@@ -8,13 +8,18 @@
         display: flex;
         flex-wrap: wrap;
         list-style: none;
-        margin: 0 -0.5rem;
+        margin: 0 auto;
     }
 
     [class*="brick"] {
         flex-basis: 100%;
-        padding: rem($gutter);
-        max-width: calc(100% + 1rem);
+        padding: rem($gutterSmall);
+    }
+
+    @include media(s) {
+        [class*="brick"] {
+            padding: rem($gutter);
+        }
     }
 
 
