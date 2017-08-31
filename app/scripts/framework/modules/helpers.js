@@ -145,7 +145,7 @@
 
                     Stickyfill.add(elems[i]);
                 }
-            }
+            };
 
 
 
@@ -156,10 +156,6 @@
             \*--------------------------------------------------*/
 
             _this.init = () => {
-
-                NodeList.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
-
-                HTMLCollection.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
 
                 this.setDocClasses();
 
