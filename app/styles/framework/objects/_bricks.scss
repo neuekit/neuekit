@@ -16,9 +16,18 @@
         padding: rem($gutterSmall);
     }
 
+    .grid [class*="bricks"] {
+        margin: 0 #{ rem( -$gutterSmall * 2 ) };
+    }
+
     @include media(s) {
+
         [class*="brick"] {
             padding: rem($gutter);
+        }
+
+        .grid [class*="bricks"] {
+            margin: 0 #{ rem( -$gutter * 2 ) };
         }
     }
 
