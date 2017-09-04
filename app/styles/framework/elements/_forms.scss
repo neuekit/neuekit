@@ -4,11 +4,12 @@
 
 @mixin input {
     appearance: none;
+    background-color: white;
     @if(not($alternateInputs)) {
-        background-color: $input;
+        box-shadow: inset 0 0 0 2px $input;
     }
     @else {
-        box-shadow: inset 0 0 0 2px $input;
+        box-shadow: inset 0 0 0 2px $tertiary;
     }
     border: none;
     border-radius: $radius;
@@ -16,22 +17,11 @@
     flex-flow: row;
     font-family: inherit;
     min-height: 2.5rem;
+    outline: none;
     padding: 0 0.75rem;
     transition: background-color $speed ease;
     -webkit-tap-highlight-color: rgba(0,0,0,0);
     width: 100%;
-
-    &:focus,
-    &:not(:placeholder-shown) {
-        background-color: white;
-        @if(not($alternateInputs)) {
-            box-shadow: inset 0 0 0 2px $input;
-        }
-        @else {
-            box-shadow: inset 0 0 0 2px $tertiary;
-        }
-        outline: none;
-    }
 }
 
 @mixin track {
@@ -276,6 +266,15 @@ textarea {
 
 [type="number"] {
     background: $input url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-916.724 608.538 16.039 30.141'%3E%3Cdefs%3E%3Cstyle%3E.a{fill:none;stroke:%23000;stroke-width:2px;}%3C/style%3E%3C/defs%3E%3Cg transform='translate(-1436)'%3E%3Cpath class='a' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(1597.405 63.202)'/%3E%3Cpath class='a' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(-542.814 1184.015) rotate(180)'/%3E%3C/g%3E%3C/svg%3E") no-repeat right 0.875rem center / 0.625rem;
+}
+
+input:placeholder-shown {
+    @if(not($alternateInputs)) {
+        background-color: $input;
+    }
+    @else {
+        box-shadow: inset 0 0 0 2px $input;
+    }
 }
 
 @-moz-document url-prefix() {
