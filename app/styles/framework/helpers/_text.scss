@@ -40,49 +40,49 @@
 
     @if index($helpers, text-success) {
 
-        .text-success#{ $break }.text-success#{ $break } {
+        .text-success.text-success {
             color: $success;
         }
     }
 
     @if index($helpers, text-warn) {
 
-        .text-warn#{ $break }.text-warn#{ $break } {
+        .text-warn.text-warn {
             color: $warn;
         }
     }
 
     @if index($helpers, text-error) {
 
-        .text-error#{ $break }.text-error#{ $break } {
+        .text-error.text-error {
             color: $error;
         }
     }
 
     @if index($helpers, text-disabled) {
 
-        .text-disabled#{ $break }.text-disabled#{ $break } {
+        .text-disabled.text-disabled {
             color: $disabled;
         }
     }
 
     @if index($helpers, text-lower) {
 
-        .text-lower#{ $break }.text-lower#{ $break } {
+        .text-lower.text-lower {
             text-transform: lowercase;
         }
     }
 
     @if index($helpers, text-upper) {
 
-        .text-upper#{ $break }.text-upper#{ $break } {
+        .text-upper.text-upper {
             text-transform: uppercase;
         }
     }
 
     @if index($helpers, text-caps) {
 
-        .text-caps#{ $break }.text-caps#{ $break } {
+        .text-caps.text-caps {
             text-transform: capitalize;
         }
     }
