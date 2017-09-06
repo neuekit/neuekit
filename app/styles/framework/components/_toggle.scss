@@ -1,0 +1,79 @@
+/*----------------------------------------------------------------------------*\
+    #OFF CANVAS
+\*----------------------------------------------------------------------------*/
+
+@mixin ui-component__toggle() {
+
+    .toggle {
+        $block: &;
+        $toggles: (
+            small: 1rem,
+            medium: 2rem,
+            large: 3rem,
+            xlarge: 4rem
+        );
+        $size: 1.5rem;
+        $gap: (round(($size / 3) * 1000) / 1000) / 2;
+
+        &__input {
+            @include area(0.1px);
+            opacity: 0;
+            position: absolute;
+
+            &:checked + #{$block}__label {
+                background-color: dodgerblue;
+
+                &::before {
+                    right: $gap;
+                }
+            }
+        }
+
+        &__label {
+            background-color: lightgrey;
+            border-radius: $size * 2;
+            cursor: pointer;
+            display: block;
+            @include area($size, $size * 2);
+            transition: background-color $speed ease;
+            user-select: none;
+
+            &::before {
+                background-color: white;
+                border-radius: 50%;
+                content: '';
+                display: block;
+                @include area($size - ($gap * 2));
+                right: calc(100% - #{$size - $gap}); top: $gap;
+                position: absolute;
+                transition: right $speed ease;
+            }
+        }
+
+        @each $class, $size in $toggles {
+
+            &--#{$class} {
+                $gap: (round(($size / 3) * 1000) / 1000) / 2;
+
+                #{$block} {
+
+                    &__input:checked + #{$block}__label::before {
+                        right: $gap;
+                    }
+
+                    &__label {
+                        border-radius: $size * 2;
+                        @include area($size, $size * 2);
+
+                        &::before {
+                            @include area($size - ($gap * 2));
+                            right: calc(100% - #{$size - $gap}); top: $gap;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+

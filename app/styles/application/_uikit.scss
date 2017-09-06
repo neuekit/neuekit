@@ -50,6 +50,9 @@
 // Pure CSS off canvas panel.
 @include ui-component__off-canvas();
 
+// Toggle for checkbox.
+@include ui-component__toggle();
+
 // Tooltips component.
 @include ui-component__tooltip();
 
