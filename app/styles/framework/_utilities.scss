@@ -4,10 +4,11 @@
     Globally-available functions.
 \*----------------------------------------------------------------------------*/
 
-@import 'functions/deep-get';           // Map deep get.
-@import 'functions/rem';                // Pixels to rem function.
-@import 'functions/replace';            // String replace.
-@import 'functions/size';               // Column size percentage.
+@import 'functions/chain';             // Chain classes to increase specificity.
+@import 'functions/deep-get';          // Map deep get.
+@import 'functions/rem';               // Pixels to rem function.
+@import 'functions/replace';           // String replace.
+@import 'functions/size';              // Column size percentage.
 
 
 
@@ -17,11 +18,11 @@
     Globally-available mixins.
 \*----------------------------------------------------------------------------*/
 
-@import 'mixins/area';                  // Height & width shorthand mixin.
-@import 'mixins/breakpoints';           // Breakpoint generator mixin.
-@import 'mixins/headings';              // Heading sizes mixin.
-@import 'mixins/media';                 // Media query shorthand mixin.
-@import 'mixins/svg';                   // SVG fill fix mixin.
-@import 'mixins/text';                  // Text mixins.
+@import 'mixins/area';                 // Height & width shorthand mixin.
+@import 'mixins/breakpoints';          // Breakpoint generator mixin.
+@import 'mixins/headings';             // Heading sizes mixin.
+@import 'mixins/media';                // Media query shorthand mixin.
+@import 'mixins/svg';                  // SVG fill fix mixin.
+@import 'mixins/text';                 // Text mixins.
 
 

@@ -1,0 +1,17 @@
+/*----------------------------------------------------------------------------*\
+    #CHAIN SELECTORS TO INCREASE SPECIFICITY
+\*----------------------------------------------------------------------------*/
+
+@function chain($class, $specificity: 2) {
+
+    $chain: '';
+
+    @for $i from 1 through $specificity {
+
+        $chain: $chain + $class;
+    }
+
+    @return $chain;
+}
+
+

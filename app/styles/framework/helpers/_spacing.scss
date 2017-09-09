@@ -44,7 +44,7 @@
             $classStep: str-replace(inspect($step / $fraction), '.');
 
             // ie. .p-1@m
-            .#{ $attrClass }-#{ $classStep }#{ $break }.#{ $attrClass }-#{ $classStep }#{ $break } {
+            #{chain('.' + $attrClass + '-' + $classStep + $break) } {
                 #{ $attr }: #{ $step / $fraction }rem; // ie. padding: 1rem;
             }
 
@@ -61,7 +61,8 @@
                     @if $step > 0 {
 
                         // ie. .p-1-0@m
-                        .#{ $attrClass }-#{ $classStep }-0#{ $break }.#{ $attrClass }-#{ $classStep }-0#{ $break } {
+
+                        #{chain('.' + $attrClass + '-' + $classStep + '-0' + $break) } {
                             #{ $attr }: #{ $step / $fraction }rem 0; // ie. padding: 1rem 0
                         }
                     }
@@ -73,7 +74,8 @@
                     @if $step > 0 {
 
                         // ie. .p-0-1@em
-                        .#{ $attrClass }-0-#{ $classStep }#{ $break }.#{ $attrClass }-0-#{ $classStep }#{ $break } {
+
+                        #{chain('.' + $attrClass + '-0-' + $classStep + $break) } {
                             #{ $attr }: 0 #{ $step / $fraction }rem; // ie. padding: 0 1rem
                         }
                     }
@@ -82,7 +84,8 @@
                 } @else {
 
                     // ie. .p-l-1@m
-                    .#{ $attrClass }-#{ $dir }-#{ $classStep }#{ $break }.#{ $attrClass }-#{ $dir }-#{ $classStep }#{ $break } {
+
+                    #{chain('.' + $attrClass + '-' + $dir + '-' + $classStep + $break) } {
                         #{ $attr }-#{ $direction }: #{ $step / $fraction }rem; // ie. padding-left: 1rem
                     }
                 }

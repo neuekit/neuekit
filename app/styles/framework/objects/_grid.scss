@@ -25,10 +25,6 @@
                 max-width: 100%;
                 padding: 0 rem( $gutterSmall );
                 @if(not($auto)) { width: 100%; }
-
-                &:only-of-type {
-                    margin: auto;
-                }
             }
 
 
@@ -49,7 +45,7 @@
         }
 
         & &, // .grid .grid
-        &--unnest { // .grid--unnest
+        &--unnest#{&}--unnest { // .grid--unnest
             flex-shrink: 1;
             margin: 0 #{ rem( -$gutterSmall * 2 ) };
             max-width: none;
@@ -65,7 +61,7 @@
             padding: 0;
         }
 
-        & &--nest, // .grid--nest
+        & &--nest#{&}--nest, // .grid--nest
         &#{ & }--edge, // .grid--edge
         &--edge &:not(&--unnest) { // .grid--edge .grid
             margin: 0 auto;

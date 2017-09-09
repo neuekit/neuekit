@@ -6,12 +6,12 @@
 
     @include breakpoints( both ) {
 
-        .hide#{ $break }.hide#{ $break } {
+        #{chain('.hide' + $break) } {
             display: none;
         }
     }
 
-    .locked.locked {
+    #{chain('.locked')} {
         overflow: hidden;
     }
 }

@@ -15,7 +15,7 @@
 
             @if ( $breakindex == 1 ) {
 
-                $break: null !global;
+                $break: '' !global;
 
                 @content;
 

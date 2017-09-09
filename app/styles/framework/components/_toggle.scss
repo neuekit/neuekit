@@ -2,18 +2,38 @@
     #OFF CANVAS
 \*----------------------------------------------------------------------------*/
 
-@mixin ui-component__toggle() {
+@mixin ui-component__toggle(
+
+    $colourOn: dodgerblue,
+    $colourOff: lightgrey,
+    $toggles: (
+        default: (
+            gap: 0.1875rem,
+            size: 1.25rem
+        ),
+        // small: (
+        //     gap: 0.125rem,
+        //     size: 1rem
+        // ),
+        // medium: (
+        //     gap: 0.25rem,
+        //     size: 2rem
+        // ),
+        // large: (
+        //     gap: 0.3125rem,
+        //     size: 3rem
+        // ),
+        // xlarge: (
+        //     gap: 0.4375rem,
+        //     size: 4rem
+        // )
+    )
+) {
 
     .toggle {
         $block: &;
-        $toggles: (
-            small: 1rem,
-            medium: 2rem,
-            large: 3rem,
-            xlarge: 4rem
-        );
-        $size: 1.5rem;
-        $gap: (round(($size / 3) * 1000) / 1000) / 2;
+        $size: map-deep-get($toggles, 'default', 'size');
+        $gap: map-deep-get($toggles, 'default', 'gap');
 
         &__input {
             @include area(0.1px);
@@ -21,53 +41,72 @@
             position: absolute;
 
             &:checked + #{$block}__label {
-                background-color: dodgerblue;
+                background-color: $colourOn;
 
                 &::before {
                     right: $gap;
                 }
+
+                &::after {
+                    content: attr(data-on);
+                }
             }
         }
 
-        &__label {
-            background-color: lightgrey;
+        &__label#{&}__label  {
+            background-color: $colourOff;
             border-radius: $size * 2;
             cursor: pointer;
             display: block;
             @include area($size, $size * 2);
+            margin: 0;
             transition: background-color $speed ease;
             user-select: none;
 
             &::before {
-                background-color: white;
+                background: white;
                 border-radius: 50%;
+                box-shadow: 0 $gap $size / 2 rgba(black, 0.1);
                 content: '';
                 display: block;
                 @include area($size - ($gap * 2));
+                margin: 0;
                 right: calc(100% - #{$size - $gap}); top: $gap;
                 position: absolute;
                 transition: right $speed ease;
             }
+
+            &::after {
+                content: attr(data-off);
+                font-size: 0.875rem;
+                left: calc(100% + 0.5rem); top: 50%;
+                position: absolute;
+                transform: translateY(-50%);
+            }
         }
 
-        @each $class, $size in $toggles {
+        @each $class, $map in $toggles {
 
-            &--#{$class} {
-                $gap: (round(($size / 3) * 1000) / 1000) / 2;
+            @if ( $class != 'default' ) {
 
-                #{$block} {
+                &--#{$class} {
+                    $size: map-get($map, 'size');
+                    $gap: map-get($map, 'gap');
 
-                    &__input:checked + #{$block}__label::before {
-                        right: $gap;
-                    }
+                    #{$block} {
 
-                    &__label {
-                        border-radius: $size * 2;
-                        @include area($size, $size * 2);
+                        &__input:checked + #{$block}__label::before {
+                            right: $gap;
+                        }
 
-                        &::before {
-                            @include area($size - ($gap * 2));
-                            right: calc(100% - #{$size - $gap}); top: $gap;
+                        &__label {
+                            border-radius: $size * 2;
+                            @include area($size, $size * 2);
+
+                            &::before {
+                                @include area($size - ($gap * 2));
+                                right: calc(100% - #{$size - $gap}); top: $gap;
+                            }
                         }
                     }
                 }
