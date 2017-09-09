@@ -13,6 +13,7 @@ export default {
     moduleContext : {
         './app/scripts/framework/polyfills/promise.js' : 'window',
         './app/scripts/framework/polyfills/fetch.js' : 'window',
+        './app/scripts/framework/polyfills/smoothscroll.js' : 'window',
         './app/scripts/framework/polyfills/stickyfill.js' : 'window',
         './app/scripts/framework/polyfills/svg4everybody.js' : 'window'
     },
