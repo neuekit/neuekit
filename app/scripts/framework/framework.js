@@ -18,22 +18,13 @@
     The features of tomorrow today! (Dont panic its only 6.71kb GZipped)
 \*----------------------------------------------------------------------------*/
 
+import './polyfills/closest';
+import './polyfills/customevent';
 import './polyfills/promise';
 import './polyfills/fetch';
 import './polyfills/smoothscroll';
 import './polyfills/stickyfill';
 import './polyfills/svg4everybody';
-
-
-
-/*----------------------------------------------------------------------------*\
-    #SETTINGS
-
-    Global and module configurations.
-\*----------------------------------------------------------------------------*/
-
-import './settings/global';
-import './settings/tabs';
 
 
 
@@ -50,11 +41,10 @@ import './modules/helpers';
 /*----------------------------------------------------------------------------*\
     #MODULES
 
-    Designed pieces of UI. Only using classes. More explicit naming.
+    User interface interactivity.
 \*----------------------------------------------------------------------------*/
 
 import './modules/modal';
-import './modules/notify';
 import './modules/tabs';
 
 

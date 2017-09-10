@@ -13,17 +13,6 @@
 
 
 /*----------------------------------------------------------------------------*\
-    #SETTINGS
-
-    Global and module configurations.
-\*----------------------------------------------------------------------------*/
-
-import './settings/uikit.js';
-import './settings/global';
-
-
-
-/*----------------------------------------------------------------------------*\
     #HELPERS
 
     Single concern functions and utilities to help you out.

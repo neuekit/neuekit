@@ -11,26 +11,24 @@ export default {
         name : 'UIKit'
     },
     moduleContext : {
-        './app/scripts/framework/polyfills/promise.js' : 'window',
-        './app/scripts/framework/polyfills/fetch.js' : 'window',
-        './app/scripts/framework/polyfills/smoothscroll.js' : 'window',
-        './app/scripts/framework/polyfills/stickyfill.js' : 'window',
-        './app/scripts/framework/polyfills/svg4everybody.js' : 'window'
+         './app/scripts/framework/polyfills/promise.js' : 'window',
+         './app/scripts/framework/polyfills/fetch.js' : 'window',
+         './app/scripts/framework/polyfills/svg4everybody.js' : 'window'
     },
     plugins : [
         babel({
             exclude : [
-                './node_modules/**',
+                'node_modules/**',
                 './app/scripts/framework/polyfills/**'
             ],
             presets : [[
-                "env", {
-                    "modules" : false
+                'env', {
+                    'modules' : false
                 }
             ]],
             plugins : [
-                "transform-object-rest-spread",
-                "external-helpers"
+                'transform-object-rest-spread',
+                'external-helpers'
             ]
         }),
         uglify({

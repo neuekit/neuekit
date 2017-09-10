@@ -1,132 +1,74 @@
-/*--------------------------------------------------*\
-    #MODAL COMPONENT
-    
-    This script contains modern tab functionality
-    used to not only change tab content but to set
-    historical states and support browser navigation.
-    
-    MK1 @ Version 1.0
-\*--------------------------------------------------*/
+// Module instantiation
+const Tabs = ((options) => {
+console.log('h');
+    // Default settings object
+    const defaults = {
+        animate: true,
+        before: null,
+        after: null
+    };
 
-/*  'use strict' enforces correct syntax.  */
+    // Merge passed in object with defaults
+    const settings = {
+        ...defaults,
+        ...options
+    };
 
-'use strict';
+    // Private setup method not returned
+    const setup = () => {
+console.log('h');
+        // Get all tab elements
+        const $tabs = document.getElementsByClassName('js-tab');
 
+        // Add click events to each tab
+        [...$tabs].map(($tab) => $tab.addEventListener('click', goto));
+    };
 
-/*  Declare IIFE & Namespace  */
+    // Public go to method returned
+    const goto = function(tab) {
 
-((UIKit, $) => {
-    
-    UIKit.tabs = (() => {
-            
-        function Tabs() {
-            
-            const _this = this;
-            const config = UIKit.settings.tabs;
-            
-            
-            
-            /*--------------------------------------------------*\
-                #INITIAL TAB CHECK
-            \*--------------------------------------------------*/
-            
-            _this.tabCheck = () => {
-                
-                if ( location.hash.substr(1) && $(location.hash).hasClass(config.tabContentClass) ) {
-                    
-                    $(`[href="${location.hash}"]`).closest(`.${config.tabsClass}`).find(`.${config.tabClass}`).removeClass(config.tabActiveClass);
-                    
-                    $(location.hash).closest(`.${config.tabContentsClass}`).find(`.${config.tabContentClass}`).removeClass(config.tabContentActiveClass);
-                    
-                    $(`[href="${location.hash}"]`).addClass(config.tabActiveClass);
-                    
-                    $(location.hash).addClass(config.tabContentActiveClass);   
-                }
-                
-                else {
-                    
-                    $(`.${config.tabsClass}`).each(function(){
-                        
-                        if ( $(this).find(`.${config.tabActiveClass}`).length === 0 ) {
-                            
-                            const firstTab = $(this).find(`.${config.tabClass}`).eq(0);
-                            const firstTabHash = firstTab.attr('href');
-                            
-                            firstTab.addClass(config.tabActiveClass);
-                            
-                            $(firstTabHash).addClass(config.tabContentActiveClass);
-                        }
-                    });
-                }
-            };
-            
-            
-            
-            /*--------------------------------------------------*\
-                #TABS
-            \*--------------------------------------------------*/
-            
-            const tabClick = function(e) {
-                
-                //Prevent normal link behaviour
-                
-                e.preventDefault();
-                
-                const $this             = $(this);
-                const tabLink           = $this.attr('href');
-                const tabContent        = $(tabLink);
-                const tabActive         = $this.siblings(`.${config.tabActiveClass}`);
-                const tabContentActive  = tabContent.siblings(`.${config.tabContentActiveClass}`);
+        // Define custom events
+        const before = new CustomEvent('tab:before');
+        const after = new CustomEvent('tab:after');
 
-                //Find any active tabs & reset
-                
-                tabActive && tabActive.removeClass(config.tabActiveClass);
-                tabContentActive && tabContentActive.removeClass(config.tabContentActiveClass);
-                
-                //Add active to clicked tab & related content
-                
-                $this.addClass(config.tabActiveClass);
-                tabContent.addClass(config.tabContentActiveClass);
-               
-                //Set hash to tab id
-                history.pushState(null, null, tabLink);
-                
-            };
-            
-            $(document).on('click', `.${config.tabClass}`, tabClick);
+        // Store tab elements for later use
+        const $tab = this;
+        const $tabs = $tab.closest('.js-tabs').getElementsByClassName('js-tab');
 
+        // Store tab content elements for later use
+        const $content = document.getElementById(tab.target.hash.substring(1));
+        const $contents = $content.closest('.js-tabs-contents').getElementsByClassName('js-tab-content');
 
+        // Check for before callback and run
+        typeof settings.before == 'function' && settings.before.call(this);
 
-            /*--------------------------------------------------*\
-                #INIT
-            \*--------------------------------------------------*/
+        // Dispatch the before event
+        document.dispatchEvent(before);
 
-            /*  Allow "chaining" of methods together  */
-            
-            _this.init = function() {
-                
-                _this.tabCheck();
-                
-                /*  'this' refers to UIKit.modal  */
-                
-                return this; 
-            };
-            
-            /*  This refers to UIKit.modal.init()  */
+        // Remove all active states from
+        [...$tabs, ...$contents].map(($el) => $el.classList.remove('active'));
 
-            return _this.init(); /*  initialize the init()  */
-        }
-        
-        
-        /*  Creating a new object of helper rather than a function  */
-        
-        return new Tabs();
-        
-    })();
-    
-    
-/* Checks if the namespace already exists & if not assign it */
+        // Add active class to selected tab and tab content
+        $tab.classList.add('active');
+        $content.classList.add('active');
 
-})(window.UIKit = window.UIKit || {}, window.jQuery = window.jQuery || window.$);
+        // Check for after callback and run
+        typeof settings.after == 'function' && settings.after.call(this);
+
+        // Dispatch the after event
+        document.dispatchEvent(after);
+    };
+
+    // Initialise public method immediately invoked in return
+    const init = () => {
+        setup();
+    };
+
+    // Return Object Which Makes Methods Available Publicly
+    return {
+        goto: goto,
+        init: init()
+    };
+})();
 
 

@@ -75,61 +75,6 @@
 
         <link href="../app/styles/style.css" rel="stylesheet">
 
-        <style>
-
-
-            .tabs {
-                display: flex;
-            }
-
-            .tab {
-                box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5);
-                flex-grow: 1;
-                padding: 1rem 0;
-                text-align: center;
-                transition: background 0.25s ease;
-            }
-                .tab--active {
-                    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.5),
-                                inset 0 -4px 0 0 rgba(0, 0, 0, 0.15);
-                }
-
-
-            .tab-contents {
-                margin-bottom: 1rem;
-            }
-
-            .tab-content {
-                padding: 1rem;
-                position: absolute;
-                top: 0;
-                width: 100%;
-                z-index: 0;
-            }
-                .tab-content--active {
-                    position: relative;
-                    z-index: 1;
-                }
-
-
-
-
-            .tab {
-                background-color: thistle;
-                color: black;
-                text-decoration: none;
-            }
-                .tab:hover {
-                    background-color: white;
-                }
-
-
-            .tab-content {
-                background-color: white;
-            }
-
-        </style>
-
     </head>
 
     <body>
@@ -142,46 +87,54 @@
 
             <div class="grid">
 
-                <div class="grid__item">
-
-                    <img src="http://unsplash.it/1400/400?random">
+                <div class="grid__item p-2-0">
 
                     <div class="tabs">
 
-                        <a class="tab" href="#tab1" aria-role="tab" title="The first tab">Tab 1</a>
+                        <div class="tabs__nav  js-tabs">
 
-                        <a class="tab" href="#tab2" aria-role="tab" title="The second tab">Tab 2</a>
+                            <a class="tabs__link  js-tab  active" href="#tab1" aria-role="tab" title="The first tab">Tab 1</a>
 
-                        <a class="tab" href="#tab3" aria-role="tab" title="The last tab">Tab 3</a>
+                            <a class="tabs__link  js-tab" href="#tab2" aria-role="tab" title="The second tab">Tab 2</a>
 
-                    </div>
-
-                    <div class="tab-contents">
-
-                        <div class="tab-content" id="tab1" aria-role="tabpanel">
-
-                            <!-- Content -->
-                            <p>This is the first panel</p>
-
-                            <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+                            <a class="tabs__link  js-tab" href="#tab3" aria-role="tab" title="The last tab">Tab 3</a>
 
                         </div>
 
-                        <div class="tab-content" id="tab2" aria-role="tabpanel">
+                        <div class="tabs__contents  js-tabs-contents">
 
-                            <!-- Content -->
-                            <p>This is the second panel</p>
+                            <div class="tabs__content  js-tab-content  active" id="tab1" aria-role="tabpanel">
 
-                            <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+                                <!-- Content -->
+                                <p>This is the first panel</p>
 
-                        </div>
+                                <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
 
-                        <div class="tab-content" id="tab3" aria-role="tabpanel">
+                            </div>
 
-                            <!-- Content -->
-                            <p>This is the last panel</p>
+                            <div class="tabs__content  js-tab-content" id="tab2" aria-role="tabpanel">
 
-                            <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+                                <!-- Content -->
+                                <p>This is the second panel</p>
+
+                                <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+
+                                <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+
+                            </div>
+
+                            <div class="tabs__content  js-tab-content" id="tab3" aria-role="tabpanel">
+
+                                <!-- Content -->
+                                <p>This is the last panel</p>
+
+                                <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+
+                                <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+
+                                <p>Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue. Cras mattis consectetur purus sit amet fermentum. Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.</p>
+
+                            </div>
 
                         </div>
 
