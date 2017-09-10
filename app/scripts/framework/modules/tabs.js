@@ -1,6 +1,6 @@
 // Module instantiation
 const Tabs = ((options) => {
-console.log('h');
+
     // Default settings object
     const defaults = {
         animate: true,
@@ -16,7 +16,7 @@ console.log('h');
 
     // Private setup method not returned
     const setup = () => {
-console.log('h');
+
         // Get all tab elements
         const $tabs = document.getElementsByClassName('js-tab');
 
