@@ -1,5 +1,6 @@
 // Rollup plugins
 import babel from 'rollup-plugin-babel';
+import resolve from 'rollup-plugin-node-resolve';
 import uglify from 'rollup-plugin-uglify';
 import { minify } from 'uglify-es';
 
@@ -27,10 +28,15 @@ export default {
                 }
             ]],
             plugins : [
+                'external-helpers',
                 'transform-object-rest-spread',
-                'external-helpers'
-            ]
+                ['transform-runtime', {
+                    'helpers': false
+                }]
+            ],
+            runtimeHelpers : true
         }),
+        resolve(),
         uglify({
             sourceMap : false
         }, minify)
