@@ -29,12 +29,8 @@ export default {
             ]],
             plugins : [
                 'external-helpers',
-                'transform-object-rest-spread',
-                ['transform-runtime', {
-                    'helpers': false
-                }]
-            ],
-            runtimeHelpers : true
+                'transform-object-rest-spread'
+            ]
         }),
         resolve(),
         uglify({
