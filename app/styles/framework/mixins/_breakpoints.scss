@@ -24,7 +24,7 @@
             @else {
 
                 $break: $mediaClass + $breakclass !global;
-                $screen: 'only screen and (min-width: #{ rem( $breakpoint + 1 ) })';
+                $screen: 'only screen and (min-width: #{ rem( $breakpoint ) })';
 
                 @media #{ $screen } {
 
@@ -48,13 +48,13 @@
 
                 @if ( $breakindex > 1 ) {
 
-                    $screenOnly: 'only screen and (min-width: #{ rem( $breakpoint + 1 ) }) and (max-width: #{ rem( $nextBreakpoint ) })';
+                    $screenOnly: 'only screen and (min-width: #{ rem( $breakpoint ) }) and (max-width: #{ rem( $nextBreakpoint - 1 ) })';
 
                 }
 
                 @else {
 
-                    $screenOnly: 'only screen and (max-width: #{ rem( $nextBreakpoint ) })';
+                    $screenOnly: 'only screen and (max-width: #{ rem( $nextBreakpoint - 1 ) })';
 
                 }
 
