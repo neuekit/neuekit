@@ -17,13 +17,13 @@ export default {
                 './scripts/parties/**'
             ],
             presets : [[
-                "env", {
-                    "modules" : false
+                'env', {
+                    'modules' : false
                 }
             ]],
             plugins : [
-                "transform-object-rest-spread",
-                "external-helpers"
+                'transform-object-rest-spread',
+                'external-helpers'
             ]
         }),
         uglify({

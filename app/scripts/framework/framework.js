@@ -18,6 +18,7 @@
     The features of tomorrow today! (Dont panic its only 6.71kb GZipped)
 \*----------------------------------------------------------------------------*/
 
+import './polyfills/array.from';
 import './polyfills/closest';
 import './polyfills/customevent';
 import './polyfills/promise';
