@@ -11,11 +11,13 @@
 }
 
 @mixin thumb {
-    background: $primary;
+    background: radial-gradient(ellipse at center, black 0%, black 48%, transparent 52%);
     border-radius: 50%;
+    box-sizing: content-box;
     cursor: pointer;
     cursor: grab;
-    @include area(1rem);
+    @include area(1.5rem);
+    pointer-events: all;
 }
 
 ::-ms-value {
@@ -367,6 +369,10 @@ textarea {
 
     &::-webkit-slider-runnable-track {
         @include track;
+
+        @include media(xs, s) {
+            pointer-events: none;
+        }
     }
 
     &::-moz-range-track {
@@ -390,7 +396,7 @@ textarea {
     &::-webkit-slider-thumb {
         @include thumb;
         -webkit-appearance: none;
-        margin-top: -0.25rem;
+        margin-top: -0.5rem;
     }
 
     &::-moz-range-thumb {
@@ -400,6 +406,10 @@ textarea {
 
     &::-ms-thumb {
         @include thumb;
+    }
+
+    @include media(xs, s) {
+        pointer-events: none;
     }
 }
 
