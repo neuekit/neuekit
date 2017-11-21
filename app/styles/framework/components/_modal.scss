@@ -29,7 +29,7 @@
                 max-height: calc(100vh - 2rem);
                 max-width: $maxWidth;
                 opacity: 0;
-                overflow: auto;
+                overflow: auto; -webkit-overflow-scrolling: touch;
                 padding: 2rem;
                 transform: translateY(10rem);
                 transition: all $speed ease;
