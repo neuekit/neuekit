@@ -1,0 +1,171 @@
+/*----------------------------------------------------------------------------*\
+	#CHRIS' NAVIGATION COMPONENT
+\*----------------------------------------------------------------------------*/
+
+$nav-max-height: 50vh !default;
+$nav-text-align: center !default;
+$nav-bg-color: white !default;
+$nav-sub-bg-color: $secondary !default;
+$nav-overlay-color: rgba(0, 0, 0, 0.5) !default;
+
+
+.nav {
+    $block: &;
+    background-color: $nav-bg-color;
+    bottom: 0; left: 0;
+    max-height: $nav-max-height;
+    overflow-x: hidden; overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    position: fixed;
+    text-align: $nav-text-align;
+    width: 100%;
+    transform: translateZ(0) translateY(100%);
+    transition: transform $speed ease;
+    z-index: 1002;
+
+    // Nav Overlay
+
+    &-overlay {
+        background-color: $nav-overlay-color;
+        cursor: pointer;
+        @include area(100%);
+        left: 0; top: 0;
+        position: fixed;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity $speed ease;
+        transform: translateZ(0);
+        z-index: 1001;
+    }
+
+        // Child Elements
+
+        &__link {
+            display: block;
+            padding: 0.5rem 0.75rem;
+
+            &.hover {
+                background-color: darken($nav-bg-color, 3);
+
+                + #{$block}--sub {
+                    transform: translateX(0);
+                }
+            }
+        }
+
+        &__sub-wrap {
+            display: block;
+            position: static;
+        }
+
+        &--sub {
+            background-color: $nav-sub-bg-color;
+            left: 0; top: 0;
+            overflow-x: hidden; overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            position: absolute;
+            transform: translateX(100vw);
+            transition: transform $speed ease;
+            height: 100%; width: 100%;
+            z-index: 1;
+
+            #{$block}__link:hover,
+            #{$block}__link.hover {
+                background-color: darken($nav-sub-bg-color, 3);
+            }
+        }
+
+    // States
+
+    // Active nav
+    &.active {
+        transform: translateZ(0) translateY(0%);
+    }
+
+    // Active nav overlay
+    &-overlay.active {
+        opacity: 1;
+        pointer-events: all
+    }
+
+    // Active subnavs
+    #{$block}__link.active + #{$block}--sub {
+        transform: translate(0);
+    }
+
+    // Back links
+    &__link--back {
+        @extend .nav__link;
+    }
+
+}
+
+@include media(l) {
+
+    .nav {
+        $block: &;
+        display: flex;
+        justify-content: space-around;
+        overflow: visible;
+        position: relative;
+        transform: translateZ(0) translateY(0);
+
+            // Child elements
+
+            %hover {
+                opacity: 1;
+                pointer-events: all;
+                transform: translateY(0);
+            }
+
+            &__link {
+                display: inline-block;
+                padding: 0.25rem 0.75rem;
+
+                &.hover {
+                    background-color: darken($nav-bg-color, 3);
+
+                    + #{$block}--sub {
+                        @extend %hover;
+                    }
+                }
+
+                &--back#{$block}__link--back {
+                    display: none;
+                }
+            }
+
+            &__sub-wrap {
+                display: initial;
+                position: relative;
+            }
+
+            &--sub {
+                height: auto; width: 16rem;
+                opacity: 0;
+                pointer-events: none;
+                top: 100%;
+                transform: translateY(1rem);
+                transition: opacity $speed ease, transform $speed ease;
+
+                &.hover {
+                    @extend %hover;
+                }
+
+                #{$block}__link {
+                    display: block;
+                }
+
+                #{$block}--sub #{$block}__link--back {
+                    display: block;
+                }
+            }
+
+        // Nav Overlay
+
+        &-overlay,
+        &-trigger {
+            display: none;
+        }
+    }
+}

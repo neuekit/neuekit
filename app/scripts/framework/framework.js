@@ -46,6 +46,7 @@ import './modules/helpers';
 \*----------------------------------------------------------------------------*/
 
 import './modules/modal';
+import './modules/navigation-chris';
 import './modules/tabs';
 
 
