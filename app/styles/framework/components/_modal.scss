@@ -75,13 +75,11 @@
 
         /*  Modifiers  */
 
-        &--visible {
-            opacity: 1;
-            visibility: visible;
+        &--fill {
+            padding: 0;
 
             #{$block}__content {
-                opacity: 1;
-                transform: translateY(0);
+                flex-grow: 1;
             }
         }
 
@@ -89,7 +87,24 @@
             padding: 0;
 
             #{$block}__content {
-                flex-grow: 1;
+                border-radius: 0;
+                @include area(100%);
+                margin: 0;
+                max-height: none;
+                max-width: none;
+                opacity: 1;
+                transform: translateY(100%);
+            }
+        }
+
+        &--visible {
+            opacity: 1;
+            visibility: visible;
+
+            #{$block}__content {
+                opacity: 1;
+                transform: translateY(0);
+                transition-delay: $speed;
             }
         }
     }
