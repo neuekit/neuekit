@@ -88,11 +88,11 @@ const nav = ((options) => {
 
         event.preventDefault();
 
+        const parentNav = link.closest('nav');
+
         // Checks if the clicked link is top level
 
-        // TODO: Maybe swap this condition around to make more sensicles.
-
-        if ( !link.closest('nav').classList.contains('nav') ){
+        if ( ! parentNav.classList.contains('nav') ) {
 
             // You are not at top level
 
@@ -103,6 +103,7 @@ const nav = ((options) => {
             if ( link.classList.contains(settings.backClass) ) {
 
                 parentLink.classList.remove('hover');
+                UIKit.helper.nthParent(parentNav, 2).classList.remove('scroll-lock');
             }
 
         } else {
@@ -114,19 +115,23 @@ const nav = ((options) => {
             });
         }
 
-        // Add hover to clicked link
+        // Add hover to clicked link & lock scroll for parent nav
         link.classList.toggle('hover');
+        parentNav.closest('nav').classList.toggle('scroll-lock');
 
     };
 
     const unHover = (link, event) => {
 
+        const parentNav = link.closest('nav');
+
         // Checks if the hovered link is top level
 
-        if ( !link.closest('nav').classList.contains('nav') ){
+        if ( ! parentNav.classList.contains('nav') ) {
 
+            // Add hover to clicked link & unlock scroll for parent nav
             link.classList.remove('hover');
-
+            parentNav.classList.remove('scroll-lock');
         }
     };
 
@@ -189,10 +194,7 @@ const nav = ((options) => {
 
         elements.nav.classList.add(settings.activeClass);
 
-        if( elements.overlay ) {
-
-            elements.overlay.classList.add(settings.activeClass);
-        }
+        if( elements.overlay ) { elements.overlay.classList.add(settings.activeClass); }
 
         settings.afterOpen(); // After open callback.
     };

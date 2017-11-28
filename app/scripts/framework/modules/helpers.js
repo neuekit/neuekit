@@ -150,6 +150,33 @@
 
 
             /*--------------------------------------------------*\
+                #nTH PARENT
+
+                This function loops through all parent elements
+                that match a selector up to a level specified as
+                a second argument.
+
+                Think of it as a better .closest();
+
+                =]
+
+            \*--------------------------------------------------*/
+
+            _this.nthParent = ($el, nth) => {
+
+                while(nth > 0) {
+
+                    $el = $el.parentNode;
+
+                    nth--;
+                }
+
+                return $el;
+            }
+
+
+
+            /*--------------------------------------------------*\
                 #INITIALISATION
 
                 This function calls methods on init.

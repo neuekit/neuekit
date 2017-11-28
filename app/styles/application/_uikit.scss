@@ -76,6 +76,9 @@
 // Give flex a helping hand.
 @include ui-helpers__offset();
 
+// Scroll locking helper
+@include ui-helpers__scroll();
+
 // Margin offsets for asymetric layouts.
 @include ui-helpers__size();
 
