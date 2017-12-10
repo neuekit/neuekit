@@ -107,7 +107,6 @@
                 if ( window.navigator.standalone == true || window.matchMedia('(display-mode: standalone)').matches ) {
                     $('html').addClass('standalone');
                 }
-
             };
 
 
