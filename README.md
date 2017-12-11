@@ -35,4 +35,4 @@ In progress...
 
 ![Browsers](https://creativelittledots.github.io/ui-kit/images/platforms.svg)
 
-Copyright © 2017 Creative Little Dots, ltd.
+Copyright © 2018 Creative Little Dots, ltd.
