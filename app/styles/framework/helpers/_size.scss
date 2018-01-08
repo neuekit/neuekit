@@ -2,7 +2,7 @@
     #SIZE HELPERS
 \*----------------------------------------------------------------------------*/
 
-@mixin ui-helpers__size() {
+@mixin ui-helper__size() {
 
     @include breakpoints( up ) {
 

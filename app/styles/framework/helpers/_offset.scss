@@ -2,7 +2,7 @@
     #OFFSET HELPERS
 \*----------------------------------------------------------------------------*/
 
-@mixin ui-helpers__offset() {
+@mixin ui-helper__offset() {
 
     @include breakpoints( both ) {
 

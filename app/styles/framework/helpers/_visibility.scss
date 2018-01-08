@@ -2,7 +2,7 @@
     #VISIBILITY HELPERS
 \*----------------------------------------------------------------------------*/
 
-@mixin ui-helpers__visibility() {
+@mixin ui-helper__visibility() {
 
     #{chain('.radius')} {
         border-radius: $radius;

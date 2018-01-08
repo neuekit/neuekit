@@ -2,18 +2,21 @@
     #IMAGE & SVG ELEMENT STYLES
 \*----------------------------------------------------------------------------*/
 
-img,
-svg {
-    display: block;
-    max-width: 100%;
-}
+@mixin ui-element__media() {
 
-img {
-    height: auto;
-}
+    img,
+    svg {
+        display: block;
+        max-width: 100%;
+    }
 
-figure {
-    margin: 0;
-}
+    img {
+        height: auto;
+    }
 
+    figure {
+        margin: 0;
+    }
+
+}
 
