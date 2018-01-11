@@ -38,8 +38,6 @@
     Ground-zero styles. Low-specificity, far-reaching.
 \*----------------------------------------------------------------------------*/
 
-@include ui-generic();                  // Include framework declarations.
-
 @import 'generic/keyframes';            // CSS Keyframe blocks.
 @import 'generic/fonts';                // Vector icons/fonts includes.
 @import 'generic/shared';               // Shared global commonalities.
@@ -51,8 +49,6 @@
 
     Last layer for type selectors (h1-h6, a).
 \*----------------------------------------------------------------------------*/
-
-@include ui-elements();                 // Include framework declarations.
 
 @import 'elements/document';            // Page-level styles (HTML, body etc).
 @import 'elements/forms';               // Form inputs, textareas.
@@ -72,8 +68,6 @@
     Design Patterns. Layout. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
-@include ui-objects();                  // Include framework declarations.
-
 @import 'objects/app';                  // Core UI Wrapper.
 
 
@@ -83,8 +77,6 @@
 
     Designed pieces of UI. Only using classes. More explicit naming.
 \*----------------------------------------------------------------------------*/
-
-@include ui-components();               // Include framework declarations.
 
 @import 'components/core/head';         // Core header.
 @import 'components/core/main';         // Core main.
@@ -98,8 +90,6 @@
     Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
-@include ui-helpers();                  // Include framework declarations.
-
 @import 'helpers/spacing';              // Micro-level spacing.
 
 
@@ -109,8 +99,6 @@
 
     Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
-
-@include ui-overrides();                // Include framework declarations.
 
 @import 'overrides/validation';         // Form validation styles.
 @import 'overrides/visibility';         // Helpers to show and side stuff.
