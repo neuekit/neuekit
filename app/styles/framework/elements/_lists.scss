@@ -2,26 +2,29 @@
     #LIST ELEMENT STYLES
 \*----------------------------------------------------------------------------*/
 
-ol,
-ul {
-    padding-left: 1.5rem;
-}
+@mixin ui-element__list() {
 
-ol {
-    counter-reset: item;
-    
-    > li {
-        counter-increment: item;
+    ol,
+    ul {
+        padding-left: 1.5rem;
     }
-    
-    ol > li {
-        display: block;
+
+    ol {
+        counter-reset: item;
         
-        &::before {
-            content: counters(item, '.') '. ';
-            margin-left: -1.25rem;
+        > li {
+            counter-increment: item;
+        }
+        
+        ol > li {
+            display: block;
+            
+            &::before {
+                content: counters(item, '.') '. ';
+                margin-left: -1.25rem;
+            }
         }
     }
-}
 
+}
 

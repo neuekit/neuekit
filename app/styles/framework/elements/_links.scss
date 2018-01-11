@@ -2,9 +2,12 @@
     #LINK ELEMENT STYLES
 \*----------------------------------------------------------------------------*/
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
+@mixin ui-element__link() {
 
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+}
 

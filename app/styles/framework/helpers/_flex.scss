@@ -2,7 +2,7 @@
     #FLEX HELPERS
 \*----------------------------------------------------------------------------*/
 
-@mixin ui-helpers__flex() {
+@mixin ui-helper__flex() {
 
     #{chain('.flex')} {
         display: flex;

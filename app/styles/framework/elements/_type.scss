@@ -2,61 +2,66 @@
     #TYPE ELEMENT STYLES
 \*----------------------------------------------------------------------------*/
 
-html {
-    color: $text;
-    font-family: $fontstack;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+@mixin ui-element__type() {
 
-
-
-/*----------------------------------------------*\
-    #HEADING BASE STYLES
-\*----------------------------------------------*/
-
-@if ( $headingMarginTop == false ) {
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        margin-top: 0;
+    html {
+        color: $text;
+        font-family: $fontstack;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
     }
-}
 
-@if ( $responsiveType ) {
 
-    @include breakpoints {
 
-        @include headings( rem( $headingIncrement ) * $breakindex );
+
+    /*----------------------------------------------*\
+        #HEADING BASE STYLES
+    \*----------------------------------------------*/
+
+    @if ( $headingMarginTop == false ) {
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            margin-top: 0;
+        }
+    }
+
+    @if ( $responsiveType ) {
+
+        @include breakpoints {
+
+            @include headings( rem( $headingIncrement ) * $breakindex );
+
+        }
+    }
+
+    @else {
+
+        @include headings( rem( $headingIncrement * 3 ) );
 
     }
-}
-
-@else {
-
-    @include headings( rem( $headingIncrement * 3 ) );
-
-}
 
 
 
-/*----------------------------------------------*\
-    #TYPE ACCESSORIES
-\*----------------------------------------------*/
+    /*----------------------------------------------*\
+        #TYPE ACCESSORIES
+    \*----------------------------------------------*/
 
-hr {
-    background-color: $secondary;
-    border: none;
-    height: 2px;
-}
-@if ( $paragraphMarginTop == false ) {
-
-    p {
-        margin-top: 0;
+    hr {
+        background-color: $secondary;
+        border: none;
+        height: 2px;
     }
+    @if ( $paragraphMarginTop == false ) {
+
+        p {
+            margin-top: 0;
+        }
+    }
+
 }
 

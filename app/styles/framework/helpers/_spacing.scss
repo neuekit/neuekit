@@ -2,7 +2,7 @@
     #SPACING HELPERS
 \*----------------------------------------------------------------------------*/
 
-@mixin ui-helpers__spacing(
+@mixin ui-helper__spacing(
     $attrs: ( padding, margin ),    // Values: margin, padding
     $responsive: $responsive,       // Values: false, both, up, only
     $steps: 5,                      // Value must be an integer

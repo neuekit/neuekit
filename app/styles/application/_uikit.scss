@@ -7,23 +7,47 @@
 
 
 /*----------------------------------------------------------------------------*\
+    #GENERIC
+
+    Ground-zero styles. Low-specificity, far-reaching.
+\*----------------------------------------------------------------------------*/
+
+@include ui-generic();
+
+// @include ui-generic__reboot();          // A modern level playing field.
+// @include ui-generic__shared();          // Shared global commonalities.
+
+
+/*----------------------------------------------------------------------------*\
+    #ELEMENTS
+
+    Last layer for type selectors (h1-h6, a).
+\*----------------------------------------------------------------------------*/
+
+@include ui-elements();
+
+// @include ui-element__document();        // Page-level styles (HTML, body etc).
+// @include ui-element__form();            // Form inputs, textareas.
+// @include ui-element__link();            // Hyperlinks.
+// @include ui-element__list();            // Lists.
+// @include ui-element__media();           // Media elements, img, svg, video, etc.
+// @include ui-element__quote();           // Blockquotes, cite, etc.
+// @include ui-element__table();           // Table element styles.
+// @include ui-element__type();            // All type styles.
+
+
+/*----------------------------------------------------------------------------*\
     #OBJECTS
 
     Design Patterns. Layout. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
-// Flex based block layout.
-@include ui-object__bricks();
+@include ui-objects();
 
-// Flex based grid layout.
-@include ui-object__grid();
-
-// Flex based inliner.
-@include ui-object__inline();
-
-// Strip list styles.
-@include ui-object__unlist();
-
+// @include ui-object__bricks();           // Flex based block layout.
+// @include ui-object__grid();             // Flex based grid layout.
+// @include ui-object__inline();           // Flex based inliner.
+// @include ui-object__unlist();           // Strip list styles.
 
 
 /*----------------------------------------------------------------------------*\
@@ -32,35 +56,18 @@
     Designed pieces of UI. Only using classes. More explicit naming.
 \*----------------------------------------------------------------------------*/
 
-// Adjacent input styles.
-@include ui-component__adjacent();
+@include ui-components();
 
-// Button styles.
-@include ui-component__button();
-
-// Loading indicator component.
-@include ui-component__loading();
-
-// Modal styles.
-@include ui-component__modal();
-
-// Responsive navigation component.
-@include ui-component__navigation();
-
-// Pure CSS off canvas panel.
-@include ui-component__off-canvas();
-
-// Tabs component.
-@include ui-component__tabs();
-
-// Toggle for checkbox.
-@include ui-component__toggle();
-
-// Tooltips component.
-@include ui-component__tooltip();
-
-// Input validation component.
-@include ui-component__validate();
+// @include ui-component__adjacent();      // Adjacent input styles.
+// @include ui-component__button();        // Button styles.
+// @include ui-component__loading();       // Loading indicator component.
+// @include ui-component__modal();         // Modal styles.
+// @include ui-component__navigation();    // Responsive navigation component.
+// @include ui-component__off-canvas();    // Pure CSS off canvas panel.
+// @include ui-component__tabs();          // Tabs component.
+// @include ui-component__toggle();        // Toggle for checkbox.
+// @include ui-component__tooltip();       // Tooltips component.
+// @include ui-component__validate();      // Input validation component.
 
 
 
@@ -70,23 +77,14 @@
     Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
-// Flex based sizes.
-@include ui-helpers__flex();
+@include ui-helpers();
 
-// Give flex a helping hand.
-@include ui-helpers__offset();
-
-// Margin offsets for asymetric layouts.
-@include ui-helpers__size();
-
-// Micro-level spacing.
-@include ui-helpers__spacing();
-
-// Handy text assistants.
-@include ui-helpers__text();
-
-// Helpers to show and side stuff.
-@include ui-helpers__visibility();
+// @include ui-helpers__flex();            // Flex based sizes.
+// @include ui-helpers__offset();          // Give flex a helping hand.
+// @include ui-helpers__size();            // Margin offsets for asymetric layouts.
+// @include ui-helpers__spacing();         // Micro-level spacing.
+// @include ui-helpers__text();            // Handy text assistants.
+// @include ui-helpers__visibility();      // Helpers to show and side stuff.
 
 
 
@@ -96,10 +94,7 @@
     Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
-// Form validation styles.
-@include ui-override__validation();
+@include ui-overrides();
 
-// Helpers to show and side stuff.
-@include ui-override__visibility();
-
-
+// @include ui-override__validation();     // Form validation styles.
+// @include ui-override__visibility();     // Helpers to show and side stuff.
