@@ -2,11 +2,11 @@
 
     #PROJECT
 
-    - Version:      1.0.0
-    - Author:       Creative Little Dots
-    - Site:         http://creativelittle.uk/
-    - Copyright:    2017, Creative Little Dots
-    – License:      MIT | http://goo.gl/p3bexl
+    - Version:      1.0
+    - Author:       YOUR NAME
+    - Site:         http://YOUR_SITE
+    - Copyright:    2018, YOUR COMPANY
+    – License:      YOUR LICENSE
 
 \*----------------------------------------------------------------------------*/
 

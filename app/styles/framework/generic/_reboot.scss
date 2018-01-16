@@ -1,30 +1,38 @@
 /*----------------------------------------------------------------------------*\
-    
+
     #REBOOT BROWSER STYLES
-    
-    - Version:      1.1
+
+    - Version:      1.2
     - Author:       Creative Little Dots
     - Site:         http://creativelittle.uk/reboot
-    - Copyright:    2017, Creative Little Dots
+    - Copyright:    2018, Creative Little Dots
     – License:      MIT | http://goo.gl/p3bexl
     - Mentions:     Based on sanitize https://goo.gl/a3DzGd
-    
+
 \*----------------------------------------------------------------------------*/
 
 @mixin ui-generic__reboot() {
-        
+
     /*----------------------------------------------------------------------------*\
-        1. Remove repeating backgrounds in all browsers (opinionated).
-        2. Add box sizing inheritence in all browsers (opinionated).
-        3. Add relative positioning (opinionated).
+        1. Set background size to cover in all browsers (opinionated).
+        2. Remove repeating backgrounds in all browsers (opinionated).
+        3. Set background position to center apart from to pseudos (opinionated).
+        4. Add box sizing inheritence in all browsers (opinionated).
+        5. Add relative positioning (opinionated).
     \*----------------------------------------------------------------------------*/
+
+
+    * {
+        background-size: cover;                         /* 1 */
+    }
 
     *,
     ::before,
     ::after {
-        background-repeat: no-repeat;   /* 1 */
-        box-sizing: inherit;            /* 2 */
-        position: relative;             /* 3 */
+        background-repeat: no-repeat;                   /* 2 */
+        background-position: center;                    /* 3 */
+        box-sizing: inherit;                            /* 4 */
+        position: relative;                             /* 5 */
     }
 
 
@@ -277,7 +285,7 @@
     fieldset {
         border: 1px solid #c0c0c0;
         margin: 0 2px;
-        padding: 0.35em 0.625em 0.75em;
+        padding: 0.35em 0.75em 0.625em;
     }
 
 
@@ -285,7 +293,7 @@
     /*----------------------------------------------------------------------------*\
         1. Correct the text wrapping in Edge and IE.
         2. Remove the padding so developers are not caught out when they zero out
-        `fieldset` elements in all browsers.
+           `fieldset` elements in all browsers.
         3. Correct the color inheritance from `fieldset` elements in IE.
     \*----------------------------------------------------------------------------*/
 
@@ -432,7 +440,7 @@
 
     /*----------------------------------------------------------------------------*\
         1. Prevent the WebKit bug where (2) destroys native `audio` and `video`
-        controls in Android 4.
+           controls in Android 4.
         2. Correct the inability to style clickable types in iOS and Safari.
     \*----------------------------------------------------------------------------*/
 
@@ -554,6 +562,5 @@
     [hidden][aria-hidden="false"]:focus {
         clip: auto;
     }
-
 }
 

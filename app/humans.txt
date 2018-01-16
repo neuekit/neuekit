@@ -7,19 +7,19 @@ Site: http://creativelittledots.co.uk
 Github: @matt3224
 Twitter: @LittleDotMatt
 
-Name: Chris Myers
-Title: Front-end Engineer
-Email: chris@creativelittledots.co.uk
-Site: http://creativelittledots.co.uk
-Github: @CreativeLittleChris
-Twitter: @LittleDotChris
-
 Name: Darby Manning
 Title: Front-end Engineer
 Email: darby@creativelittledots.co.uk
 Site: http://creativelittledots.co.uk
 Github: @darbymanning
 Twitter: @LittleDotDarby
+
+Name: Chris Myers
+Title: Front-end Engineer
+Email: chris@creativelittledots.co.uk
+Site: http://creativelittledots.co.uk
+Github: @CreativeLittleChris
+Twitter: @LittleDotChris
 
 
 
@@ -33,8 +33,8 @@ Twitter: @csswizardry
 
 /* SITE */
 
-Last update: Sunday 6th, August 2017
+Last update: January 16th, August 2018
 Standards: HTML5, CSS3, ES2015
-Software: Atom, Yarn, Tower
+Software: Atom, Yarn
 
 
