@@ -1,0 +1,76 @@
+/*----------------------------------------------------------------------------*\
+    #LOADING INDICATOR
+\*----------------------------------------------------------------------------*/
+
+@mixin ui-component__loading() {
+
+    @keyframes loading {
+
+        from {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        to {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+
+    .loading {
+        color: transparent !important;
+        @include area(rem(32));
+        pointer-events: none;
+        position: relative;
+
+        &::before,
+        &::after {
+            border: 3px solid $secondary;
+            border-radius: 50%;
+            content: '';
+            display: block;
+            @include area(100%);
+            left: 50%; top: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+
+        &::after {
+            animation: loading 0.6s infinite linear;
+            border-color: $primary;
+            border-right-color: transparent;
+            border-top-color: transparent;
+        }
+
+        &--light::after {
+            border-bottom-color: white;
+            border-left-color: white;
+        }
+
+        &--small {
+            @include area(rem(16));
+
+            &::before,
+            &::after {
+                border-width: 2px;
+            }
+        }
+
+        &--large {
+            @include area(rem(48));
+
+            &::before,
+            &::after {
+                border-width: 5px;
+            }
+        }
+
+        &--xlarge {
+            @include area(rem(64));
+
+            &::before,
+            &::after {
+                border-width: 7px;
+            }
+        }
+    }
+}
+

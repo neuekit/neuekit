@@ -1,32 +1,35 @@
-// @codekit-prepend "settings/global.js";
-// @codekit-prepend "modules/helpers.js";
+/*!---------------------------------------------------------------------------*\
 
-/*--------------------------------------------------*\
-	#PROJECT NAME | JS MAIN COMPONENTS
-	
-	This script contains your standard jQuery shiz,
-	functions, ui components & any other js magic.
-	
-	To start our script we wrap all of our code in a
-	self-executing anonymous function.
-\*--------------------------------------------------*/
+    #PROJECT
 
-/*  'use strict' enforces correct syntax.  */
+    - Version:      1.0
+    - Author:       YOUR NAME
+    - Site:         http://YOUR_SITE
+    - Copyright:    2018, YOUR COMPANY
+    – License:      YOUR LICENSE
 
-'use strict';
+\*----------------------------------------------------------------------------*/
 
 
-/*  Declare IIFE & Namespace  */
 
-((PROJECT) => {
-    
-    
-    /* Your code here */
-    
-    
-    
-/* Checks if the namespace already exists & if not assign it */
+/*----------------------------------------------------------------------------*\
+    #HELPERS
 
-})(window.PROJECT = window.PROJECT || {});
+    Single concern functions and utilities to help you out.
+\*----------------------------------------------------------------------------*/
+
+import './modules/helpers';
+
+
+
+/*----------------------------------------------------------------------------*\
+    #MODULES
+
+    Designed pieces of UI. Only using classes. More explicit naming.
+\*----------------------------------------------------------------------------*/
+
+
+
+
 
 

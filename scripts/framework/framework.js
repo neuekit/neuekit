@@ -1,44 +1,38 @@
 /*!---------------------------------------------------------------------------*\
-    
-	#CREATIVE LITTLE UI KIT
-	
-	- Version:      0.9.7
-	- Author:       Creative Little Dots
-	- Site:         http://creativelittle.uk/uikit
-	- Copyright:    2016, Creative Little Dots
-	– License:      MIT | http://goo.gl/p3bexl
-	
+
+    #CREATIVE LITTLE UI KIT
+
+    - Version:      0.9.9
+    - Author:       Creative Little Dots
+    - Site:         http://creativelittle.uk/uikit
+    - Copyright:    2018, Creative Little Dots
+    – License:      MIT | http://goo.gl/p3bexl
+
 \*----------------------------------------------------------------------------*/
 
 
 
 /*----------------------------------------------------------------------------*\
-	#PARTIES/POLYFILLS
-	
-	Micro libraries to bootstrap the UI Kit (Dont panic its only 7.6kb GZipped)
+    #POLYFILLS
+
+    The features of tomorrow today! (Dont panic its only 6.71kb GZipped)
 \*----------------------------------------------------------------------------*/
 
-import './parties/promise';
-import './parties/fetch';
-import './parties/domtastic';
+import './polyfills/array.from';
+import './polyfills/closest';
+import './polyfills/customevent';
+import './polyfills/promise';
+import './polyfills/fetch';
+import './polyfills/smoothscroll';
+import './polyfills/stickyfill';
+import './polyfills/svg4everybody';
 
 
 
 /*----------------------------------------------------------------------------*\
-	#SETTINGS
-	
-	Global and module configurations, this comes.
-\*----------------------------------------------------------------------------*/
+    #HELPERS
 
-import './settings/global';   
-import './settings/tabs';
-
-
-
-/*----------------------------------------------------------------------------*\
-	#HELPERS
-	
-	Single concern functions and utilities to help you out.
+    Single concern functions and utilities to help you out.
 \*----------------------------------------------------------------------------*/
 
 import './modules/helpers';
@@ -46,13 +40,12 @@ import './modules/helpers';
 
 
 /*----------------------------------------------------------------------------*\
-	#MODULES
-	
-	Designed pieces of UI. Only using classes. More explicit naming.
+    #MODULES
+
+    User interface interactivity.
 \*----------------------------------------------------------------------------*/
 
 import './modules/modal';
-import './modules/notify';
 import './modules/tabs';
 
 

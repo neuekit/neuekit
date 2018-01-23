@@ -1,12 +1,18 @@
 /*----------------------------------------------------------------------------*\
-	#COLOR SETTINGS
+    #COLOR SETTINGS
 \*----------------------------------------------------------------------------*/
 
-$primary:   #2E3133              !default;
-$secondary: #F3F3F3              !default;
+$primary:     #2E3133              !default;
+$secondary:   #F2F2F2              !default;
+$tertiary:    #7D7D80              !default;
+$quaternary:  #EDEDED              !default;
 
-$error:     #FF8080              !default;
-$warn:      #FAE57D              !default;
-$success:   #73E699              !default;
+$input:       #F2F2F2              !default;
+$text:        #2E3133              !default;
+
+$error:       #FF8080              !default;
+$warn:        #FAE57D              !default;
+$success:     #73E699              !default;
+$disabled:    #AAAAAA              !default;
 
 

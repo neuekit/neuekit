@@ -1,47 +1,50 @@
 /*----------------------------------------------------------------------------*\
-	#OFF CANVAS
+    #OFF CANVAS
 \*----------------------------------------------------------------------------*/
 
-.canvas {
-    transition: transform $speed ease;
-}
+@mixin ui-component__off-canvas() {
 
-.off-canvas {
-    background-color: $secondary;
-    @include area(100vh, 20rem);
-    left: 0; top: 0;
-    position: fixed;
-    transform: translateX(-100%);
-    transition: transform $speed ease;
-    
-    &:target {
-        transform: translateX(0);
+    .canvas {
+        transition: transform $speed ease;
     }
-    
-    &:target + .canvas {
-        transform: translateX(20rem);
-        
-        .open-off-canvas {
-            display: none;
+
+    .off-canvas {
+        background-color: $secondary;
+        @include area(100vh, rem(320));
+        left: 0; top: 0;
+        position: fixed;
+        transform: translateX(-100%);
+        transition: transform $speed ease;
+
+        &:target {
+            transform: translateX(0);
         }
-        
-        .close-off-canvas {
-            display: inline-block;
-        }
-    }
-    
-    &--right {
-        left: auto; right: 0;
-        transform: translateX(100%);
-        
+
         &:target + .canvas {
-            transform: translateX(-20rem);
+            transform: translateX(rem(320));
+
+            .open-off-canvas {
+                display: none;
+            }
+
+            .close-off-canvas {
+                display: inline-block;
+            }
+        }
+
+        &--right {
+            left: auto; right: 0;
+            transform: translateX(100%);
+
+            &:target + .canvas {
+                transform: translateX(rem(-320));
+            }
         }
     }
-}
 
-.close-off-canvas {
-    display: none;
+    .close-off-canvas {
+        display: none;
+    }
 }
 
 

@@ -1,35 +1,166 @@
 /*----------------------------------------------------------------------------*\
-	#TEXT HELPERS
+    #TEXT HELPERS
 \*----------------------------------------------------------------------------*/
-    
-.text-bolder {
-    font-weight: bolder;
+
+@mixin ui-helper__text(
+    $responsive: $responsive,
+    $helpers: (
+        text-start,
+        text-center,
+        text-end,
+        text-grow,
+        text-shrink,
+        text-bolder,
+        text-lighter,
+        text-strong,
+        text-justify,
+        text-success,
+        text-warn,
+        text-error,
+        text-disabled,
+        text-lower,
+        text-upper,
+        text-caps,
+        text-nowrap
+    )
+) {
+
+    @if index($helpers, text-bolder) {
+
+        #{chain('.text-bolder')} {
+            font-weight: bolder;
+        }
+    }
+
+    @if index($helpers, text-lighter) {
+
+        #{chain('.text-lighter')} {
+            font-weight: lighter;
+        }
+    }
+
+    @if index($helpers, text-strong) {
+
+        #{chain('.text-strong')} {
+            font-weight: 600;
+        }
+    }
+
+    @if index($helpers, text-success) {
+
+        #{chain('.text-success')} {
+            color: $success;
+        }
+    }
+
+    @if index($helpers, text-warn) {
+
+        #{chain('.text-warn')} {
+            color: $warn;
+        }
+    }
+
+    @if index($helpers, text-error) {
+
+        #{chain('.text-error')} {
+            color: $error;
+        }
+    }
+
+    @if index($helpers, text-disabled) {
+
+        #{chain('.text-disabled')} {
+            color: $disabled;
+        }
+    }
+
+    @if index($helpers, text-lower) {
+
+        #{chain('.text-lower')} {
+            text-transform: lowercase;
+        }
+    }
+
+    @if index($helpers, text-upper) {
+
+        #{chain('.text-upper')} {
+            text-transform: uppercase;
+        }
+    }
+
+    @if index($helpers, text-caps) {
+
+        #{chain('.text-caps')} {
+            text-transform: capitalize;
+        }
+    }
+
+    // Check first if we need to provide responsive helpers
+    @if $responsive != false {
+
+        @include breakpoints( $responsive ) {
+
+            @include create-helpers-text( $helpers, $break );
+        }
+    }
+
+    @else { // If not responsive, just run the general loop
+
+        @include create-helpers-text( $helpers, $break: '' );
+    }
 }
 
-.text-lighter {
-    font-weight: lighter;
-}
+@mixin create-helpers-text( $helpers, $break ) {
 
-@include breakpoints( both ) {
-    
-    .text-start#{ $break } {
-        text-align: start;
+    @if index($helpers, text-start) {
+
+        #{chain('.text-start' + $break)} {
+            text-align: left;
+            text-align: start;
+        }
     }
-    
-    .text-center#{ $break } {
-        text-align: center;
+
+    @if index($helpers, text-center) {
+
+        #{chain('.text-center' + $break)} {
+            text-align: center;
+        }
     }
-    
-    .text-end#{ $break } {
-        text-align: end;
+
+    @if index($helpers, text-end) {
+
+        #{chain('.text-end' + $break)} {
+            text-align: right;
+            text-align: end;
+        }
     }
-    
-    .text-grow#{ $break } {
-        font-size: 125%;
+
+    @if index($helpers, text-justify) {
+
+        #{chain('.text-justify' + $break)} {
+            text-align: justify;
+        }
     }
-    
-    .text-shrink#{ $break } {
-        font-size: 75%;
+
+    @if index($helpers, text-grow) {
+
+        #{chain('.text-grow' + $break)} {
+            font-size: 125%;
+        }
+    }
+
+    @if index($helpers, text-shrink) {
+
+        #{chain('.text-shrink' + $break)} {
+            font-size: 75%;
+        }
+    }
+
+    @if index($helpers, text-nowrap) {
+
+        #{chain('.text-nowrap' + $break)} {
+            white-space: nowrap;
+        }
     }
 }
 

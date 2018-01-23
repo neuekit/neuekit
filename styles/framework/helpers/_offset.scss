@@ -1,0 +1,32 @@
+/*----------------------------------------------------------------------------*\
+    #OFFSET HELPERS
+\*----------------------------------------------------------------------------*/
+
+@mixin ui-helper__offset() {
+
+    @include breakpoints( both ) {
+
+        @for $inset from 1 through $columns {
+
+            .inset-#{ $inset }#{ $break } {
+                margin-left: floor( 100% / $columns * ( $inset * 1000 ) ) / 1000;
+            }
+        }
+
+        @for $outsetLeft from 1 through $columns {
+
+            .outset-left-#{ $outsetLeft }#{ $break } {
+                margin-left: floor( -100% / $columns * ( $outsetLeft * 1000 ) ) / 1000;
+            }
+        }
+
+        @for $outsetRight from 1 through $columns {
+
+            .outset-right-#{ $outsetRight }#{ $break } {
+                margin-right: floor( -100% / $columns * ( $outsetRight * 1000 ) ) / 1000;
+            }
+        }
+    }
+}
+
+

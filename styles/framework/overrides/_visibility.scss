@@ -1,16 +1,19 @@
 /*----------------------------------------------------------------------------*\
-	#VISIBILITY OVERRIDES
+    #VISIBILITY OVERRIDES
 \*----------------------------------------------------------------------------*/
 
-@include breakpoints( both ) {
-    
-    .hide#{ $break }.hide#{ $break } {
-        display: none;
-    }
-}
+@mixin ui-override__visibility() {
 
-.locked {
-    overflow: hidden;
+    @include breakpoints( both ) {
+
+        #{chain('.hide' + $break) } {
+            display: none;
+        }
+    }
+
+    #{chain('.locked')} {
+        overflow: hidden;
+    }
 }
 
 

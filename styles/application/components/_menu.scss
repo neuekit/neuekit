@@ -1,0 +1,26 @@
+/*----------------------------------------------------------------------------*\
+	#MENU COMPONENT
+\*----------------------------------------------------------------------------*/
+
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    &__title {
+        background-color: #ededed;
+        display: block;
+        font-size: rem(14);
+        font-weight: 700;
+        padding: rem(12) rem(16);
+        text-transform: uppercase;
+    }
+
+    &__item {
+        font-size: rem(12);
+        margin: rem(16) 0 rem(16) rem(24);
+        text-transform: uppercase;
+    }
+}
+
+

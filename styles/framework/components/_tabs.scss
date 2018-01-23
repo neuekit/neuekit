@@ -1,0 +1,45 @@
+/*----------------------------------------------------------------------------*\
+    #NAVIGATION COMPONENT
+\*----------------------------------------------------------------------------*/
+
+@mixin ui-component__tabs() {
+
+    .tabs {
+        border: 1px solid $secondary;
+
+        &__nav {
+            display: flex;
+            border-bottom: 1px solid $secondary;
+        }
+
+        &__link {
+            flex: 1 1 auto;
+            padding: rem(8) rem(16);
+            text-align: center;
+            width: 0%;
+
+            & + & {
+                border-left: 1px solid $secondary;
+            }
+
+            &.active {
+                background-color: $secondary;
+            }
+        }
+
+        &__contents {
+
+        }
+
+        &__content {
+            display: none;
+            padding: rem(16);
+
+            &.active {
+                display: block;
+            }
+        }
+    }
+}
+
+

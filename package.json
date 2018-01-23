@@ -1,0 +1,47 @@
+{
+  "name": "PROJECT",
+  "version": "1.0.0",
+  "license": "MIT",
+  "description": "YOUR PROJECT DESCRIPTION HERE",
+  "author": "Creative Little Dots",
+  "devDependencies": {
+    "autoprefixer": "^7.2.5",
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.5",
+    "node-sass": "^4.7.2",
+    "npm-run-all": "^4.1.2",
+    "onchange": "^3.3.0",
+    "postcss-cli": "^4.1.1",
+    "rollup": "^0.55.0",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-plugin-uglify": "^3.0.0",
+    "rollup-watch": "^4.3.1",
+    "uglify-es": "^3.3.8"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "Firefox ESR",
+    "iOS 9",
+    "not ie_mob <= 12",
+    "not ie <= 10",
+    "not blackberry <= 7"
+  ],
+  "scripts": {
+    "scss": "node-sass --omit-source-map-url --recursive --output-style compressed --output ./styles ./styles",
+    "autoprefixer": "postcss --use autoprefixer --replace ./styles/style.css --no-map",
+    "build:css": "npm run scss --silent && npm run autoprefixer --silent",
+    "build:js": "rollup --config",
+    "build": "yarn run build:css --silent && yarn run build:js --silent",
+    "serve": "browser-sync start --server --no-notify --files './styles/**/*.css, ./scripts/**/*.js, ./**/*.html, !node_modules/**/*.html'",
+    "watch:css": "onchange './styles/**/*.scss' -- npm run build:css --silent",
+    "watch:js": "rollup --config --watch",
+    "watch:all": "npm-run-all --parallel 'serve --silent' 'watch:css --silent' 'watch:js --silent'",
+    "postinstall": "npm run watch:all --silent",
+    "go": "npm run postinstall --silent"
+  }
+}

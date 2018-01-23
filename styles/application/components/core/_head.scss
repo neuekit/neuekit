@@ -1,0 +1,28 @@
+/*----------------------------------------------------------------------------*\
+    #APP HEADER
+\*----------------------------------------------------------------------------*/
+
+.head {
+    background-color: #111111;
+    color: white;
+    display: flex;
+    height: rem(64);
+    flex-direction: row;
+    padding: 0 rem(16);
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+
+    &__logo {
+        line-height: 1.25;
+        font-size: rem(18);
+        margin: auto;
+    }
+
+    &__logo-little {
+        font-size: rem(16);
+        letter-spacing: 1px;
+    }
+}
+
+

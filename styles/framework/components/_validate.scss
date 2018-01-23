@@ -1,0 +1,54 @@
+/*----------------------------------------------------------------------------*\
+    #VALIDATE
+\*----------------------------------------------------------------------------*/
+
+@mixin ui-component__validate() {
+
+    /*  Block  */
+
+    .validate {
+        $block: &;
+
+        display: flex;
+        flex-direction: column;
+
+            /*  Elements  */
+
+            &__label {
+                margin-bottom: rem(12);
+                order: -1;
+            }
+
+            &__message {
+                color: $error;
+                font-weight: 500;
+                height: 0;
+                pointer-events: none;
+                opacity: 0;
+                transform: translateY(rem(4));
+                transition: all $speed ease;
+            }
+
+            &__input {
+                margin-bottom: rem(4);
+
+                &:valid {
+                    background-color: rgba($success, 0.1);
+                    box-shadow: inset 0 0 0 2px $success;
+                }
+
+                &:invalid:not(:placeholder-shown) {
+                    background-color: rgba($error, 0.1);
+                    box-shadow: inset 0 0 0 2px $error;
+
+                    ~ #{$block}__message {
+                        height: auto;
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            }
+    }
+}
+
+

@@ -1,0 +1,235 @@
+/*----------------------------------------------------------------------------*\
+    #BUTTON COMPONENT STYLES
+\*----------------------------------------------------------------------------*/
+
+@mixin ui-component__button(
+    $class: 'button',
+    $btnReset: false,
+    $btnRadius: $radius,
+    $styles: (
+        default: (
+            color: white,
+            colorDisabled: grey,
+            bgColor: $primary,
+            bgColorHover: darken($primary, 20),
+            bgColorDisabled: $secondary,
+            padding: rem(10) rem(16)
+        ),
+        secondary: (
+            color: white,
+            colorDisabled: grey,
+            bgColor: $secondary,
+            bgColorHover: darken($secondary, 20),
+            bgColorDisabled: $primary
+        ),
+        light: (
+            color: $primary,
+            colorHover: white,
+            bgColor: white,
+            bgColorHover: $primary
+        ),
+        line: (
+            color: $primary,
+            lightColor: white
+        ),
+        text: (
+            color: $primary,
+            lightColor: white
+        ),
+        round: ()
+    ),
+    $sizes: (
+        tiny: (
+            fontSize: rem(12),
+            padding: rem(8) rem(10)
+        ),
+        small: (
+            fontSize: rem(14),
+            padding: rem(8) rem(10)
+        ),
+        medium: (
+            padding: rem(10) rem(14)
+        ),
+        large: (
+            padding: rem(16) 1.125rem
+        ),
+        xlarge: (
+            fontSize: 1.125rem,
+            padding: rem(20) 1.375rem
+        ),
+        xxlarge: (
+            fontSize: rem(20),
+            padding: rem(24) 1.625rem
+        ),
+        xxxlarge: (
+            fontSize: rem(24),
+            padding: rem(32) 2.125rem
+        )
+    )
+) {
+
+    $btnSelectors: 'button, [role="button"], [type="button"], [type="reset"], [type="submit"], ';
+    $btnCondition: if($btnReset, $btnSelectors, null);
+
+    #{$btnCondition}
+    .#{$class} {
+        appearance: none;
+        border: none;
+        border-radius: $btnRadius;
+        box-shadow: inset 0 0 0 2px transparent;
+        cursor: pointer;
+        display: inline-block;
+        line-height: 1;
+        text-align: center;
+        transition: all $speed ease;
+        background: map-deep-get($styles, 'default', 'bgColor');
+        padding: map-deep-get($styles, 'default', 'padding');
+        color: map-deep-get($styles, 'default', 'color');
+
+
+        /*  States  */
+
+        &:disabled {
+            box-shadow: none;
+            pointer-events: none;
+
+            @if map-deep-get($styles, 'default', 'bgColorDisabled') {
+                background-color: map-deep-get($styles, 'default', 'bgColorDisabled');
+            }
+
+            @if map-deep-get($styles, 'default', 'colorDisabled') {
+                color: map-deep-get($styles, 'default', 'colorDisabled');
+            }
+        }
+
+        &:focus {
+    		outline: none;
+    	}
+
+        &:hover {
+            background-color: map-deep-get($styles, 'default', 'bgColorHover');
+
+            // Using a conditiomn here as by default the hover color is undefined
+            @if map-deep-get($styles, 'default', 'colorHover') {
+                color: map-deep-get($styles, 'default', 'colorHover');
+            }
+        }
+
+
+        /*  Modifiers: Styles  */
+
+        @if map-has-key($styles, light) {
+
+            &--light {
+
+                @if map-deep-get($styles, 'light', 'bgColor') {
+                    background-color: map-deep-get($styles, 'light', 'bgColor');
+                }
+
+                @if map-deep-get($styles, 'light', 'color') {
+                    color: map-deep-get($styles, 'light', 'color');
+                }
+
+                &:hover {
+                    box-shadow: inset 0 0 0 2px transparent;
+
+                    @if map-deep-get($styles, 'light', 'bgColorHover') {
+                        background-color: map-deep-get($styles, 'light', 'bgColorHover');
+                    }
+
+                    @if map-deep-get($styles, 'light', 'colorHover') {
+                        color: map-deep-get($styles, 'light', 'colorHover');
+                    }
+                }
+            }
+        }
+
+        @if map-has-key($styles, line) {
+
+            &--line {
+                background: none;
+                box-shadow: inset 0 0 0 2px map-deep-get($styles, 'line', 'color');
+                color: map-deep-get($styles, 'line', 'color');
+
+                &.#{$class}--light {
+                    box-shadow: inset 0 0 0 2px map-deep-get($styles, 'line', 'lightColor');
+                    color: map-deep-get($styles, 'line', 'lightColor');
+
+                    &:hover {
+                        background-color: map-deep-get($styles, 'line', 'lightColor');
+                        color: map-deep-get($styles, 'line', 'color');
+                    }
+                }
+
+                &:hover {
+                    background-color: map-deep-get($styles, 'line', 'color');
+                    color: map-deep-get($styles, 'line', 'lightColor');
+                }
+            }
+        }
+
+        @if map-has-key($styles, text) {
+
+            &--text {
+                background: none;
+                color: map-deep-get($styles, 'text', 'color');
+
+                &.#{$class}--secondary {
+                    background: none;
+                    color: map-deep-get($styles, 'secondary', 'bgColor');
+                }
+
+                &:disabled {
+                    background: none;
+                }
+
+                &:hover {
+                    color: map-deep-get($styles, 'text', 'lightColor');
+                    background: map-deep-get($styles, 'text', 'color');
+                }
+
+                &.#{$class}--light {
+                    color: map-deep-get($styles, 'text', 'lightColor');
+                }
+            }
+        }
+
+        @if map-has-key($styles, round) {
+
+            &--round {
+                border-radius: rem(160);
+            }
+        }
+
+        @if map-has-key($styles, secondary) {
+
+            &--secondary {
+                color: map-deep-get($styles, 'secondary', 'color');
+                background: map-deep-get($styles, 'secondary', 'bgColor');
+
+                &:hover {
+                    color: map-deep-get($styles, 'secondary', 'colorHover');
+                    background: map-deep-get($styles, 'secondary', 'bgColorHover');
+                }
+
+                &:disabled {
+                    color: map-deep-get($styles, 'secondary', 'colorDisabled');
+                    background: map-deep-get($styles, 'secondary', 'bgColorDisabled');
+                }
+            }
+        }
+
+
+        /*  Modifiers: Sizes  */
+
+        @each $size, $attrs in $sizes {
+
+            &--#{$size} {
+                font-size: map-get($attrs, fontSize);
+                padding: map-get($attrs, padding);
+            }
+        }
+    }
+}
+
+

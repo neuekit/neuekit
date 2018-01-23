@@ -1,9 +1,25 @@
 /*----------------------------------------------------------------------------*\
-	#STYLE/THEME HELPERS
+    #VISIBILITY HELPERS
 \*----------------------------------------------------------------------------*/
 
-.radius {
-    border-radius: $radius;
+@mixin ui-helper__visibility() {
+
+    #{chain('.radius')} {
+        border-radius: $radius;
+    }
+
+    #{chain('.sticky')} {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+
+        &:before,
+        &:after {
+            content: '';
+            display: table;
+        }
+    }
 }
 
 

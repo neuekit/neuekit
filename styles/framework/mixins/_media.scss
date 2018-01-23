@@ -1,33 +1,41 @@
 /*----------------------------------------------------------------------------*\
-	#MEDIA QUERY MIXIN 
+    #MEDIA QUERY MIXIN
 \*----------------------------------------------------------------------------*/
 
-@mixin media( $minbreak: null, $maxbreak: null, $type: 'screen' ) {
-    
+@mixin media( $minbreak: null, $maxbreak: null, $type: null ) {
+
     $media: '';
-    
-    @if ( $maxbreak == null ) {
-        
-        $media: 'only #{ $type } and (min-width: #{ map-get($breakpoints, $minbreak) })';
+    $from: map-get($breakpoints, $minbreak);
+    $from: if( $from != null, $from + 1px, null );
+    $to: map-get($breakpoints, $maxbreak);
+
+    @if ( $from != null and $maxbreak == null ) {
+
+        $media: '(min-width: #{ $from })';
     }
-    
-    @else if ( $minbreak == null and $maxbreak != null ) {
-        
-        $media: 'only #{ $type } and (max-width: #{ map-get($breakpoints, $maxbreak) })';
+
+    @else if ( ( $minbreak == null or $from == null ) and $maxbreak != null ) {
+
+        $media: '(max-width: #{ $to })';
     }
-    
+
     @else if ( $type == 'print' ) {
-        
+
         $media: 'only #{ $type }';
     }
-    
-    @else {
-        
-        $media: 'only #{ $type } and (min-width: #{ map-get($breakpoints, $minbreak) }) and (max-width: #{ map-get($breakpoints, $maxbreak) })';
+
+    @else if ( $from != null and $to != null ) {
+
+        $media: '(min-width: #{ $from }) and (max-width: #{ $to })';
     }
-    
+
+    @else {
+
+        $media: 'all';
+    }
+
     @media #{ $media } {
-            
+
         @content;
     }
 }

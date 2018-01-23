@@ -1,0 +1,26 @@
+/*----------------------------------------------------------------------------*\
+    #LINK ELEMENT STYLES
+\*----------------------------------------------------------------------------*/
+
+p a {
+    background-color: #D4E4F7;
+    border-radius: rem(3);
+    display: inline-block;
+    color: #3a85e0;
+    font-weight: 500;
+    line-height: 1.4;
+    padding: 0 rem(6);
+    transition: all $speed ease;
+
+    &:hover {
+        background-color: #f8d6dd;
+        color: #e13a61;
+        padding: 0 rem(8);
+    }
+
+    &:active {
+        transform: scale(0.95);
+    }
+}
+
+

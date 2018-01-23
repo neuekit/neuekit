@@ -1,0 +1,100 @@
+/*----------------------------------------------------------------------------*\
+    #TOOLTIP COMPONENT
+\*----------------------------------------------------------------------------*/
+
+@mixin ui-component__tooltip() {
+
+    .tooltip {
+        $tipSize: rem(4);
+
+        &::before,
+        &::after {
+            bottom: calc(100% + #{rem(2)}); left: 50%;
+            opacity: 0;
+            position: absolute;
+            transition: opacity $speed ease;
+        }
+
+        &::before {
+            border-left: $tipSize solid transparent;
+            border-right: $tipSize solid transparent;
+            border-top: $tipSize solid $primary;
+            content: '';
+            @include area(0);
+            transform: translate(-50%, $tipSize);
+        }
+
+        &::after {
+            background-color: $primary;
+            border-radius: $radius;
+            color: white;
+            content: attr(title);
+            display: block;
+            font-size: rem(16);
+            font-weight: 500;
+            letter-spacing: 0.25px;
+            padding: rem(2) rem(8);
+            transform: translateX(-50%);
+            white-space: nowrap;
+        }
+
+        &--bottom {
+
+            &::before,
+            &::after {
+                bottom: auto; top: calc(100% + #{rem(2)});
+            }
+
+            &::before {
+                transform: translate(-50%, -#{$tipSize}) rotate(180deg);
+            }
+        }
+
+        &--left,
+        &--right {
+
+            &::before,
+            &::after {
+                bottom: 50%;
+            }
+
+            &::after {
+                transform: translate(0, 50%);
+            }
+        }
+
+        &--left {
+
+            &::before,
+            &::after {
+                left: auto; right: calc(100% + #{rem(2)});
+            }
+
+            &::before {
+                transform: translate(rem(6), 50%) rotate(270deg);
+            }
+        }
+
+        &--right {
+
+            &::before,
+            &::after {
+                left: calc(100% + #{rem(2)});
+            }
+
+            &::before {
+                transform: translate(rem(-6), 50%) rotate(90deg);
+            }
+        }
+
+        &:hover {
+
+            &::before,
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
