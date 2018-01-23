@@ -25,7 +25,7 @@ In future sessions where you already have the dependancies you can just run `yar
 
 ## <a href="https://creativelittledots.github.io/ui-kit" target="_blank">Documentation</a>
 
-In progress...
+Still in progress...
 
 ## Supported Browsers
 
