@@ -7,10 +7,14 @@
     html {
         color: $text;
         font-family: $fontstack;
+        font-size: $htmlFontSize;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
 
+    body {
+        font-size: $baseFontSize;
+    }
 
 
 
@@ -19,7 +23,6 @@
     \*----------------------------------------------*/
 
     @if ( $headingMarginTop == false ) {
-
         h1,
         h2,
         h3,
@@ -35,14 +38,12 @@
         @include breakpoints {
 
             @include headings( rem( $headingIncrement ) * $breakindex );
-
         }
     }
 
     @else {
 
         @include headings( rem( $headingIncrement * 3 ) );
-
     }
 
 
@@ -56,12 +57,13 @@
         border: none;
         height: 2px;
     }
+
     @if ( $paragraphMarginTop == false ) {
 
         p {
             margin-top: 0;
         }
     }
-
 }
+
 

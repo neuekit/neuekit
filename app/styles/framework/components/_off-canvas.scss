@@ -10,7 +10,7 @@
 
     .off-canvas {
         background-color: $secondary;
-        @include area(100vh, 20rem);
+        @include area(100vh, rem(320));
         left: 0; top: 0;
         position: fixed;
         transform: translateX(-100%);
@@ -21,7 +21,7 @@
         }
 
         &:target + .canvas {
-            transform: translateX(20rem);
+            transform: translateX(rem(320));
 
             .open-off-canvas {
                 display: none;
@@ -37,7 +37,7 @@
             transform: translateX(100%);
 
             &:target + .canvas {
-                transform: translateX(-20rem);
+                transform: translateX(rem(-320));
             }
         }
     }

@@ -25,7 +25,7 @@
 
             &__link {
                 display: block;
-                padding: 0.25rem 0.75rem;
+                padding: rem(4) rem(12);
 
                 + .nav-sub {
                     background-color: lavender;

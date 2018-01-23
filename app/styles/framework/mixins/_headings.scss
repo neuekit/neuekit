@@ -3,16 +3,16 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin headings($jump) {
-    
+
     @for $i from 1 through 6 {
 
         h#{$i},
         .h#{$i} {
-            font-size: 1rem + ($jump * (6 - $i));
+            font-size: $baseFontSize + ($jump * (6 - $i));
         }
-        
+
         .s#{$i} {
-            font-size: 1rem + ($jump * (6 - $i)) - 0.25rem;
+            font-size: $baseFontSize + ($jump * (6 - $i)) - rem(4);
         }
     }
 }

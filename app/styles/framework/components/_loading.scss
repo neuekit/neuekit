@@ -17,7 +17,7 @@
 
     .loading {
         color: transparent !important;
-        @include area(2rem);
+        @include area(rem(32));
         pointer-events: none;
         position: relative;
 
@@ -46,7 +46,7 @@
         }
 
         &--small {
-            @include area(1rem);
+            @include area(rem(16));
 
             &::before,
             &::after {
@@ -55,7 +55,7 @@
         }
 
         &--large {
-            @include area(3rem);
+            @include area(rem(48));
 
             &::before,
             &::after {
@@ -64,7 +64,7 @@
         }
 
         &--xlarge {
-            @include area(4rem);
+            @include area(rem(64));
 
             &::before,
             &::after {

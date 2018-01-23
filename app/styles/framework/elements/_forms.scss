@@ -1,12 +1,13 @@
 /*----------------------------------------------------------------------------*\
     #FORM ELEMENT STYLES
 \*----------------------------------------------------------------------------*/
+
 @mixin ui-element__form-track() {
     animate: 0.2s;
     background: $input;
-    border-radius: 1rem;
+    border-radius: rem(16);
     cursor: pointer;
-    @include area(0.5rem, 100%);
+    @include area(rem(8), 100%);
 }
 
 @mixin ui-element__form-thumb() {
@@ -15,7 +16,7 @@
     box-sizing: content-box;
     cursor: pointer;
     cursor: grab;
-    @include area(1.5rem);
+    @include area(rem(24));
     pointer-events: all;
 }
 
@@ -30,9 +31,9 @@
         border: none;
         border-radius: $radius;
         color: white;
-        margin-left: 0.25rem;
-        min-height: 2.25rem;
-        padding: 0.625rem 0.75rem 0.5rem;
+        margin-left: rem(4);
+        min-height: rem(36);
+        padding: rem(10) rem(12) rem(8);
     }
 
     ::-webkit-date-and-time-value {
@@ -40,7 +41,7 @@
     }
 
     ::-webkit-file-upload-button {
-        font-size: 0.75rem;
+        font-size: rem(12);
     }
 
     ::-webkit-inner-spin-button {
@@ -51,7 +52,7 @@
     ::-webkit-search-cancel-button {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 62 62'%3E%3Cpath d='M32,1A31,31,0,1,0,63,32,31,31,0,0,0,32,1ZM48.26,42.61a4,4,0,0,1-5.66,5.66L32,37.68,21.41,48.28a4,4,0,0,1-5.66-5.66L26.36,32,15.74,21.39a4,4,0,0,1,0-5.66h0a4,4,0,0,1,5.66,0L32,26.36,42.63,15.76a4,4,0,0,1,5.66,5.66L37.68,32Z' fill='#{$tertiary}' transform='translate(-1.02 -1.02)'/%3E%3C/svg%3E");
         cursor: pointer;
-        @include area(1rem);
+        @include area(rem(16));
         opacity: 0.8;
     }
 
@@ -70,7 +71,7 @@
     }
 
     legend {
-        padding: 0 0.5rem;
+        padding: 0 rem(8);
     }
 
     meter {
@@ -82,12 +83,12 @@
         &::-webkit-meter-suboptimum-value,
         &::-webkit-meter-even-less-good-value {
             border: none;
-            border-radius: 1rem;
+            border-radius: rem(16);
         }
 
         &::-webkit-meter-bar {
             background: $input;
-            height: 0.5rem;
+            height: rem(8);
         }
 
         &::-webkit-meter-optimum-value {
@@ -107,11 +108,11 @@
 
         meter {
             background: $input;
-            border-radius: 1rem;
-            height: 0.5rem;
+            border-radius: rem(16);
+            height: rem(8);
 
             &::-moz-meter-bar {
-                border-radius: 1rem;
+                border-radius: rem(16);
             }
 
             &:-moz-meter-optimum::-moz-meter-bar {
@@ -139,9 +140,9 @@
         ) repeat;
         background-size: 200% 100%;
         border: none;
-        border-radius: 1rem;
+        border-radius: rem(16);
         color: $primary;
-        @include area(0.5rem, 100%);
+        @include area(rem(8), 100%);
 
         &::-ms-fill {
             animation-name: none;
@@ -152,7 +153,7 @@
         &[value]::-webkit-progress-value {
             background: none;
             border: none;
-            border-radius: 1rem;
+            border-radius: rem(16);
         }
 
         &[value]::-webkit-progress-bar {
@@ -177,8 +178,8 @@
         progress[value],
         progress[value]::-moz-progress-bar {
             border: none;
-            border-radius: 1rem;
-            height: 0.5rem;
+            border-radius: rem(16);
+            height: rem(8);
         }
 
         progress[value] {
@@ -192,13 +193,13 @@
 
     select {
         appearance: none;
-        background: $input url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-916.724 629.245 16.039 9.434'%3E%3Cpath fill='none' stroke='black' stroke-width='2' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(161.405 63.202)'/%3E%3C/svg%3E") no-repeat right 0.625rem center / 0.625rem;
+        background: $input url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-916.724 629.245 16.039 9.434'%3E%3Cpath fill='none' stroke='black' stroke-width='2' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(161.405 63.202)'/%3E%3C/svg%3E") no-repeat right #{rem(10)} center / #{rem(10)};
         border-radius: $radius;
         border: none;
         cursor: pointer;
-        height: 2.25rem;
+        height: rem(36);
         line-height: 2.25;
-        padding: 0 2rem 0 1rem;
+        padding: 0 rem(32) 0 rem(16);
 
         &:focus {
             outline: none;
@@ -241,9 +242,9 @@
         display: flex;
         flex-flow: row;
         font-family: inherit;
-        min-height: 2.5rem;
+        min-height: rem(40);
         outline: none;
-        padding: 0 0.75rem;
+        padding: 0 rem(12);
         transition: background-color $speed ease;
         -webkit-tap-highlight-color: rgba(0,0,0,0);
         width: 100%;
@@ -257,8 +258,8 @@
     }
 
     textarea {
-        height: 7.5rem;
-        padding: 0.375rem 0.75rem;
+        height: rem(120);
+        padding: rem(6) rem(12);
     }
 
     [type="date"],
@@ -271,8 +272,8 @@
 
     [type="number"] {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='-916.724 608.538 16.039 30.141'%3E%3Cdefs%3E%3Cstyle%3E.a{fill:none;stroke:%23000;stroke-width:2px;}%3C/style%3E%3C/defs%3E%3Cg transform='translate(-1436)'%3E%3Cpath class='a' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(1597.405 63.202)'/%3E%3Cpath class='a' d='M-1077.422,566.75l7.313,7.313,7.313-7.313' transform='translate(-542.814 1184.015) rotate(180)'/%3E%3C/g%3E%3C/svg%3E");
-        background-position: right 0.875rem center;
-        background-size: 0.625rem;
+        background-position: right rem(14) center;
+        background-size: rem(10);
     }
 
     @-moz-document url-prefix() {
@@ -291,15 +292,15 @@
         + label {
             cursor: pointer;
             display: inline-flex;
-            margin: 0 1rem 1rem 0;
+            margin: 0 rem(16) rem(16) 0;
 
 
             &::before {
                 content: '';
                 display: block;
-                @include area(1.125rem);
-                margin-right: 0.75rem;
-                margin-top: 0.3125rem;
+                @include area(rem(18));
+                margin-right: rem(12);
+                margin-top: rem(5);
                 text-align: center;
                 transition: all $speed ease;
             }
@@ -309,7 +310,7 @@
     [type="checkbox"] {
 
         + label::before {
-            background: $input url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M31.74,7.14L27.63,3A0.88,0.88,0,0,0,26.5,3L10.38,19.11l-4.93-5a0.81,0.81,0,0,0-1.13,0L0.21,18.29a0.76,0.76,0,0,0-.21.57,0.7,0.7,0,0,0,.21.51L9.81,29a0.79,0.79,0,0,0,.57.26h0.05A0.55,0.55,0,0,0,10.94,29L31.74,8.22A0.79,0.79,0,0,0,32,7.65,0.63,0.63,0,0,0,31.74,7.14Z' /%3E%3C/svg%3E") no-repeat center 1.125rem / 0.75rem;
+            background: $input url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32'%3E%3Cpath d='M31.74,7.14L27.63,3A0.88,0.88,0,0,0,26.5,3L10.38,19.11l-4.93-5a0.81,0.81,0,0,0-1.13,0L0.21,18.29a0.76,0.76,0,0,0-.21.57,0.7,0.7,0,0,0,.21.51L9.81,29a0.79,0.79,0,0,0,.57.26h0.05A0.55,0.55,0,0,0,10.94,29L31.74,8.22A0.79,0.79,0,0,0,32,7.65,0.63,0.63,0,0,0,31.74,7.14Z' /%3E%3C/svg%3E") no-repeat center #{rem(18)} / #{rem(12)};
             border-radius: $radius;
         }
 
@@ -323,17 +324,17 @@
         + label::before {
             background: radial-gradient(ellipse at center, $primary 50%, $input 50%);
             border-radius: 50%;
-            box-shadow: inset 0 0 0 1rem $input;
+            box-shadow: inset 0 0 0 rem(16) $input;
         }
 
         &:checked + label::before {
-            box-shadow: inset 0 0 0 0.3125rem $input;
+            box-shadow: inset 0 0 0 rem(5) $input;
         }
     }
 
     [type="color"] {
         border-radius: 50%;
-        @include area(2.5rem);
+        @include area(rem(40));
         overflow: hidden;
         padding: 0;
 
@@ -384,20 +385,20 @@
             @include ui-element__form-track;
             background: none;
             border-color: transparent;
-            border-width: 0.25rem 0;
+            border-width: rem(4) 0;
             color: transparent;
         }
 
         &::-ms-fill-lower,
         &::-ms-fill-upper {
             background: $input;
-            border-radius: 1rem;
+            border-radius: rem(16);
         }
 
         &::-webkit-slider-thumb {
             @include ui-element__form-thumb;
             -webkit-appearance: none;
-            margin-top: -0.5rem;
+            margin-top: rem(-8);
         }
 
         &::-moz-range-thumb {
@@ -413,5 +414,6 @@
             pointer-events: none;
         }
     }
-
 }
+
+

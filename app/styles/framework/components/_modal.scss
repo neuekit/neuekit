@@ -15,7 +15,7 @@
         @include area(100%);
         left: 0; top: 0;
         opacity: 0;
-        padding: 1rem;
+        padding: rem(16);
         position: fixed;
         transition: opacity $speed ease;
         visibility: hidden;
@@ -26,12 +26,12 @@
                 background-color: white;
                 border-radius: $radius;
                 margin: auto;
-                max-height: calc(100vh - 2rem);
+                max-height: calc(100vh - #{rem(32)});
                 max-width: $maxWidth;
                 opacity: 0;
                 overflow: auto; -webkit-overflow-scrolling: touch;
-                padding: 2rem;
-                transform: translateY(10rem);
+                padding: rem(32);
+                transform: translateY(rem(160));
                 transition: all $speed ease;
             }
 
@@ -39,18 +39,18 @@
                 background-color: $quaternary;
                 border-radius: 50%;
                 display: block;
-                @include area(1.75rem);
+                @include area(rem(28));
                 position: absolute;
-                right: 0.75rem; top: 0.75rem;
+                right: rem(12); top: rem(12);
                 transition: all $speed ease;
 
                 &::before,
                 &::after {
                     background-color: $primary;
-                    border-radius: 1rem;
+                    border-radius: rem(16);
                     content: '';
                     display: block;
-                    @include area(0.1875rem, 0.875rem);
+                    @include area(rem(3), rem(14));
                     left: 50%; top: 50%;
                     position: absolute;
                     transform: translate(-50%, -50%) rotate(45deg);

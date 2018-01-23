@@ -13,7 +13,7 @@
             bgColor: $primary,
             bgColorHover: darken($primary, 20),
             bgColorDisabled: $secondary,
-            padding: 0.625rem 1rem
+            padding: rem(10) rem(16)
         ),
         secondary: (
             color: white,
@@ -40,30 +40,30 @@
     ),
     $sizes: (
         tiny: (
-            fontSize: 0.75rem,
-            padding: 0.5rem 0.625rem
+            fontSize: rem(12),
+            padding: rem(8) rem(10)
         ),
         small: (
-            fontSize: 0.875rem,
-            padding: 0.5rem 0.625rem
+            fontSize: rem(14),
+            padding: rem(8) rem(10)
         ),
         medium: (
-            padding: 0.625rem 0.875rem
+            padding: rem(10) rem(14)
         ),
         large: (
-            padding: 1rem 1.125rem
+            padding: rem(16) 1.125rem
         ),
         xlarge: (
             fontSize: 1.125rem,
-            padding: 1.25rem 1.375rem
+            padding: rem(20) 1.375rem
         ),
         xxlarge: (
-            fontSize: 1.25rem,
-            padding: 1.5rem 1.625rem
+            fontSize: rem(20),
+            padding: rem(24) 1.625rem
         ),
         xxxlarge: (
-            fontSize: 1.5rem,
-            padding: 2rem 2.125rem
+            fontSize: rem(24),
+            padding: rem(32) 2.125rem
         )
     )
 ) {
@@ -197,7 +197,7 @@
         @if map-has-key($styles, round) {
 
             &--round {
-                border-radius: 10rem;
+                border-radius: rem(160);
             }
         }
 

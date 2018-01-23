@@ -7,8 +7,8 @@
         blockquote {
         background-color: whitesmoke;
         border-left: 4px solid $primary;
-        margin: 0 0 1rem;
-        padding: 0.5rem 1rem;
+        margin: 0 0 rem(16);
+        padding: rem(8) rem(16);
         
         cite {
             display: block;

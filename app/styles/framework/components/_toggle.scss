@@ -9,18 +9,18 @@
     $toggles: (
         default: (
             gap: 0.1875rem,
-            size: 1.25rem
+            size: rem(20)
         ),
         // small: (
         //     gap: 0.125rem,
-        //     size: 1rem
+        //     size: rem(16)
         // ),
         // medium: (
-        //     gap: 0.25rem,
-        //     size: 2rem
+        //     gap: rem(4),
+        //     size: rem(32)
         // ),
         // large: (
-        //     gap: 0.3125rem,
+        //     gap: rem(5),
         //     size: 3rem
         // ),
         // xlarge: (
@@ -78,8 +78,8 @@
 
             &::after {
                 content: attr(data-off);
-                font-size: 0.875rem;
-                left: calc(100% + 0.5rem); top: 50%;
+                font-size: rem(14);
+                left: calc(100% + #{rem(8)}); top: 50%;
                 position: absolute;
                 transform: translateY(-50%);
             }

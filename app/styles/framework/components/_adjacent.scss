@@ -20,7 +20,7 @@
               display: flex;
               flex-flow: row;
               flex-shrink: 0;
-              padding: 0 1rem;
+              padding: 0 rem(16);
          }
 
          #{&}__item,

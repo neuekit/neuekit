@@ -45,7 +45,7 @@
 
             // ie. .p-1@m
             #{chain('.' + $attrClass + '-' + $classStep + $break) } {
-                #{ $attr }: #{ $step / $fraction }rem; // ie. padding: 1rem;
+                #{ $attr }: #{ $step / $fraction }rem; // ie. padding: rem(16);
             }
 
             // Iterate through each direction
@@ -63,7 +63,7 @@
                         // ie. .p-1-0@m
 
                         #{chain('.' + $attrClass + '-' + $classStep + '-0' + $break) } {
-                            #{ $attr }: #{ $step / $fraction }rem 0; // ie. padding: 1rem 0
+                            #{ $attr }: #{ $step / $fraction }rem 0; // ie. padding: rem(16) 0
                         }
                     }
 
@@ -76,7 +76,7 @@
                         // ie. .p-0-1@em
 
                         #{chain('.' + $attrClass + '-0-' + $classStep + $break) } {
-                            #{ $attr }: 0 #{ $step / $fraction }rem; // ie. padding: 0 1rem
+                            #{ $attr }: 0 #{ $step / $fraction }rem; // ie. padding: 0 rem(16)
                         }
                     }
 
@@ -86,7 +86,7 @@
                     // ie. .p-l-1@m
 
                     #{chain('.' + $attrClass + '-' + $dir + '-' + $classStep + $break) } {
-                        #{ $attr }-#{ $direction }: #{ $step / $fraction }rem; // ie. padding-left: 1rem
+                        #{ $attr }-#{ $direction }: #{ $step / $fraction }rem; // ie. padding-left: rem(16)
                     }
                 }
             }
