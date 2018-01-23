@@ -29,10 +29,10 @@ Still in progress...
 
 ## Supported Browsers
 
-![Browsers](https://creativelittledots.github.io/ui-kit/images/browsers.svg)
+![Browsers](https://creativelittledots.github.io/ui-kit/images/browsers.svg?hello)
 
 ## Supported Platforms
 
-![Browsers](https://creativelittledots.github.io/ui-kit/images/platforms.svg)
+![Browsers](https://creativelittledots.github.io/ui-kit/images/platforms.svg?hello)
 
 Copyright © 2018 Creative Little Dots, ltd.
