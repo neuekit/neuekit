@@ -44,9 +44,9 @@
             // Get the first character of the attribute for our helper classes (ie. 'p' from 'padding')
             $attrClass: str-slice($attr, 1, 1);
 
-            // ie. .p-1@m
+            // ie. .p-8@m
             #{chain('.' + $attrClass + '-' + $step + $break) } {
-                #{ $attr }: rem($step); // ie. padding: rem(16);
+                #{ $attr }: rem($step); // ie. padding: rem(8);
             }
 
             // Iterate through each direction
@@ -61,10 +61,10 @@
                     // Make sure the step is greater than 0, to prevent p-0-0 output
                     @if $step > 0 {
 
-                        // ie. .p-1-0@m
+                        // ie. .p-8-0@m
 
                         #{chain('.' + $attrClass + '-' + $step + '-0' + $break) } {
-                            #{ $attr }: rem($step) 0; // ie. padding: rem(16) 0
+                            #{ $attr }: rem($step) 0; // ie. padding: rem(8) 0
                         }
                     }
 
@@ -74,20 +74,20 @@
                     // Make sure the step is greater than 0, to prevent p-0-0 output
                     @if $step > 0 {
 
-                        // ie. .p-0-1@em
+                        // ie. .p-0-8@m
 
                         #{chain('.' + $attrClass + '-0-' + $step + $break) } {
-                            #{ $attr }: 0 rem($step); // ie. padding: 0 rem(16)
+                            #{ $attr }: 0 rem($step); // ie. padding: 0 rem(8)
                         }
                     }
 
                 // All others
                 } @else {
 
-                    // ie. .p-l-1@m
+                    // ie. .p-l-8@m
 
                     #{chain('.' + $attrClass + '-' + $dir + '-' + $step + $break) } {
-                        #{ $attr }-#{ $direction }: rem($step); // ie. padding-left: rem(16)
+                        #{ $attr }-#{ $direction }: rem($step); // ie. padding-left: rem(8)
                     }
                 }
             }
