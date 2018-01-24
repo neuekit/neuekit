@@ -1,18 +1,16 @@
-/*----------------------------------------------------------------------------*\
-    #SPACING HELPERS
-\*----------------------------------------------------------------------------*/
-
 @mixin ui-helper__spacing(
     $attrs: ( padding, margin ),    // Values: margin, padding
     $responsive: $responsive,       // Values: false, both, up, only
-    $steps: 5,                      // Value must be an integer
-    $fraction: 2,
+    $steps: (                       // Array of integers
+        8, 16, 24, 32, 40, 48
+    ),
     $directions: (                  // Values: top, bottom, left, right, top-bottom, left-right
         top,
         bottom,
         left,
         right,
-        top-bottom
+        top-bottom,
+        left-right
     )
 ) {
 
@@ -21,31 +19,30 @@
 
         @include breakpoints( $responsive ) {
 
-            @include create-helpers-spacing( $attrs, $steps, $directions, $fraction, $break );
+            @include create-helpers-spacing( $attrs, $steps, $directions, $break );
         }
 
     // If not responsive, just run the general loop
     } @else {
 
-        @include create-helpers-spacing( $attrs, $steps, $directions, $fraction, $break: '' );
+        @include create-helpers-spacing( $attrs, $steps, $directions, $break: '' );
     }
 }
 
-@mixin create-helpers-spacing( $attrs, $steps, $directions, $fraction, $break ) {
+@mixin create-helpers-spacing( $attrs, $steps, $directions, $break ) {
 
     // Create helpers for each step defined
-    @for $step from 0 through $steps * $fraction {
+    @each $step in $steps {
 
         // Iterate through each attribute (padding, margin)
         @each $attr in $attrs {
 
             // Get the first character of the attribute for our helper classes (ie. 'p' from 'padding')
             $attrClass: str-slice($attr, 1, 1);
-            $classStep: str-replace(inspect($step / $fraction), '.');
 
             // ie. .p-1@m
-            #{chain('.' + $attrClass + '-' + $classStep + $break) } {
-                #{ $attr }: #{ $step / $fraction }rem; // ie. padding: rem(16);
+            #{chain('.' + $attrClass + '-' + $step + $break) } {
+                #{ $attr }: rem($step); // ie. padding: rem(16);
             }
 
             // Iterate through each direction
@@ -62,8 +59,8 @@
 
                         // ie. .p-1-0@m
 
-                        #{chain('.' + $attrClass + '-' + $classStep + '-0' + $break) } {
-                            #{ $attr }: #{ $step / $fraction }rem 0; // ie. padding: rem(16) 0
+                        #{chain('.' + $attrClass + '-' + $step + '-0' + $break) } {
+                            #{ $attr }: rem($step) 0; // ie. padding: rem(16) 0
                         }
                     }
 
@@ -75,8 +72,8 @@
 
                         // ie. .p-0-1@em
 
-                        #{chain('.' + $attrClass + '-0-' + $classStep + $break) } {
-                            #{ $attr }: 0 #{ $step / $fraction }rem; // ie. padding: 0 rem(16)
+                        #{chain('.' + $attrClass + '-0-' + $step + $break) } {
+                            #{ $attr }: 0 rem($step); // ie. padding: 0 rem(16)
                         }
                     }
 
@@ -85,13 +82,11 @@
 
                     // ie. .p-l-1@m
 
-                    #{chain('.' + $attrClass + '-' + $dir + '-' + $classStep + $break) } {
-                        #{ $attr }-#{ $direction }: #{ $step / $fraction }rem; // ie. padding-left: rem(16)
+                    #{chain('.' + $attrClass + '-' + $dir + '-' + $step + $break) } {
+                        #{ $attr }-#{ $direction }: rem($step); // ie. padding-left: rem(16)
                     }
                 }
             }
         }
     }
 }
-
-
