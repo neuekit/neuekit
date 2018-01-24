@@ -1,7 +1,11 @@
+/*----------------------------------------------------------------------------*\
+    #SPACING HELPERS
+\*----------------------------------------------------------------------------*/
+
 @mixin ui-helper__spacing(
     $attrs: ( padding, margin ),    // Values: margin, padding
     $responsive: $responsive,       // Values: false, both, up, only
-    $steps: (                       // Array of integers
+    $steps: (                       // Array of integers (pixel values)
         8, 16, 24, 32, 40, 48
     ),
     $directions: (                  // Values: top, bottom, left, right, top-bottom, left-right
