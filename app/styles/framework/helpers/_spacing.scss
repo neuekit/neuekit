@@ -61,9 +61,9 @@
                     // Make sure the step is greater than 0, to prevent p-0-0 output
                     @if $step > 0 {
 
-                        // ie. .p-8-h@m
+                        // ie. .p-h-8@m
 
-                        #{chain('.' + $attrClass + '-' + $step + '-h' + $break) } {
+                        #{chain('.' + $attrClass + '-h-' + $step + $break) } {
                             #{ $attr }: rem($step) 0; // ie. padding: rem(8) 0
                         }
                     }
@@ -74,9 +74,9 @@
                     // Make sure the step is greater than 0, to prevent p-0-0 output
                     @if $step > 0 {
 
-                        // ie. .p-8-v@m
+                        // ie. .p-v-8@m
 
-                        #{chain('.' + $attrClass + '-' + $step + '-v' + $break) } {
+                        #{chain('.' + $attrClass + '-v-' + $step + $break) } {
                             #{ $attr }: 0 rem($step); // ie. padding: 0 rem(8)
                         }
                     }
@@ -84,9 +84,9 @@
                 // All others
                 } @else {
 
-                    // ie. .p-8-l@m
+                    // ie. .p-l-8@m
 
-                    #{chain('.' + $attrClass + '-' + $step + '-' + $dir + $break) } {
+                    #{chain('.' + $attrClass + '-' + $dir + '-' + $step + $break) } {
                         #{ $attr }-#{ $direction }: rem($step); // ie. padding-left: rem(8)
                     }
                 }
