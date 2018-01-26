@@ -8,7 +8,7 @@ $btnReset:          false       !default;
 $speed:             0.2s       !default;
 
 $breakpoints: (
-    xs:              null,      // Phone
+    xs:             0,          // Phone
     s:              768px,      // Tablet
     m:              1024px,     // Notebook
     l:              1200px,     // Laptop
