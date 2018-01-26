@@ -6,15 +6,15 @@
     $attrs: ( padding, margin ),    // Values: margin, padding
     $responsive: $responsive,       // Values: false, both, up, only
     $steps: (                       // Array of integers (pixel values)
-        8, 16, 24, 32, 40, 48
+        0, 4, 8, 12, 16, 20, 24, 32, 40, 48
     ),
-    $directions: (                  // Values: top, bottom, left, right, top-bottom, left-right
+    $directions: (                  // Values: top, bottom, left, right, vertical, horizontal
         top,
         bottom,
         left,
         right,
-        top-bottom,
-        left-right
+        vertical,
+        horizontal
     )
 ) {
 
@@ -56,7 +56,7 @@
                 $dir: str-slice($direction, 1, 1);
 
                 // If direction is top & bottom
-                @if $direction == top-bottom {
+                @if $direction == vertical {
 
                     // Make sure the step is greater than 0, to prevent p-0-0 output
                     @if $step > 0 {
@@ -69,7 +69,7 @@
                     }
 
                 // If direction is left & right
-                } @else if $direction == left-right {
+                } @else if $direction == horizontal {
 
                     // Make sure the step is greater than 0, to prevent p-0-0 output
                     @if $step > 0 {
