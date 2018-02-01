@@ -23,7 +23,7 @@
             @else {
 
                 $break: $mediaClass + $breakclass !global;
-                $screen: 'only screen and (min-width: #{ rem( $breakpoint ) })';
+                $screen: 'only screen and (min-width: #{ em( $breakpoint ) })';
 
                 @media #{ $screen } {
 
@@ -46,12 +46,12 @@
 
                 @if ( $breakindex > 1 ) {
 
-                    $screenOnly: 'only screen and (min-width: #{ rem( $breakpoint ) }) and (max-width: #{ rem( $nextBreakpoint - 1 ) })';
+                    $screenOnly: 'only screen and (min-width: #{ em( $breakpoint ) }) and (max-width: #{ em( $nextBreakpoint - 1 ) })';
                 }
 
                 @else {
 
-                    $screenOnly: 'only screen and (max-width: #{ rem( $nextBreakpoint - 1 ) })';
+                    $screenOnly: 'only screen and (max-width: #{ em( $nextBreakpoint - 1 ) })';
                 }
 
                 @media #{ $screenOnly } {
