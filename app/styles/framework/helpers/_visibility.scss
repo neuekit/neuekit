@@ -4,18 +4,18 @@
 
 @mixin ui-helper__visibility() {
 
-    #{chain('.radius')} {
+    #{chain('.u-radius')} {
         border-radius: $radius;
     }
 
-    #{chain('.sticky')} {
-        position: -webkit-sticky;
+    #{chain('.u-sticky')} {
+        position: static;
         position: sticky;
         top: 0;
         z-index: 1;
 
-        &:before,
-        &:after {
+        &::before,
+        &::after {
             content: '';
             display: table;
         }
