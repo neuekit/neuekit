@@ -2,7 +2,11 @@
     #INPUT PREFIX AND POSTFIX COMPONENT STYLES
 \*----------------------------------------------------------------------------*/
 
-@mixin ui-component__adjacent() {
+@mixin ui-component__adjacent(
+    $radius: $radius,
+    $tertiary: $tertiary,
+    $color: white
+) {
 
     .c-adjacent {
          display: flex;
@@ -16,7 +20,7 @@
          &__end { // .c-adjacent__end
               align-items: center;
               background-color: $tertiary;
-              color: white;
+              color: $color;
               display: flex;
               flex-flow: row;
               flex-shrink: 0;
