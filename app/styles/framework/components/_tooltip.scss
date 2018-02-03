@@ -2,17 +2,26 @@
     #TOOLTIP COMPONENT
 \*----------------------------------------------------------------------------*/
 
-@mixin ui-component__tooltip() {
+@mixin ui-component__tooltip(
+    $tipSize: rem(4),
+    $speed: $speed,
+    $ease: $ease,
+    $primary: $primary,
+    $colour: white,
+    $fontSize: rem(16),
+    $fontWeight: 500,
+    $letterSpacing: 0.25,
+    $padding: rem(2) rem(8)
+) {
 
-    .tooltip {
-        $tipSize: rem(4);
+    .c-tooltip {
 
         &::before,
         &::after {
             bottom: calc(100% + #{rem(2)}); left: 50%;
             opacity: 0;
             position: absolute;
-            transition: opacity $speed ease;
+            transition: opacity $speed $ease;
         }
 
         &::before {
@@ -27,18 +36,18 @@
         &::after {
             background-color: $primary;
             border-radius: $radius;
-            color: white;
+            color: $colour;
             content: attr(title);
             display: block;
-            font-size: rem(16);
-            font-weight: 500;
-            letter-spacing: 0.25px;
-            padding: rem(2) rem(8);
+            font-size: $fontSize;
+            font-weight: $fontWeight;
+            letter-spacing: $letterSpacing;
+            padding: $padding;
             transform: translateX(-50%);
             white-space: nowrap;
         }
 
-        &--bottom {
+        &--bottom { // .c-tooltip--bottom
 
             &::before,
             &::after {
@@ -51,7 +60,7 @@
         }
 
         &--left,
-        &--right {
+        &--right { // .c-tooltip--left, .c-tooltip--right
 
             &::before,
             &::after {
@@ -63,7 +72,7 @@
             }
         }
 
-        &--left {
+        &--left { // .c-tooltip--left
 
             &::before,
             &::after {
@@ -75,7 +84,7 @@
             }
         }
 
-        &--right {
+        &--right { // .c-tooltip--right
 
             &::before,
             &::after {
@@ -87,7 +96,7 @@
             }
         }
 
-        &:hover {
+        &:hover { // .c-tooltip--bottom:hover
 
             &::before,
             &::after {
