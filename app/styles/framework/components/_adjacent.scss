@@ -4,16 +4,16 @@
 
 @mixin ui-component__adjacent() {
 
-    .adjacent {
+    .c-adjacent {
          display: flex;
          flex-flow: row;
 
-         #{&}__item {
+         &__item { // .c-adjacent__item
               flex-shrink: 1;
               min-width: 0;
          }
 
-         #{&}__end {
+         &__end { // .c-adjacent__end
               align-items: center;
               background-color: $tertiary;
               color: white;
@@ -23,8 +23,8 @@
               padding: 0 rem(16);
          }
 
-         #{&}__item,
-         #{&}__end {
+         &__item, // .c-adjacent__item, .c-adjacent__end
+         &__end {
               &:nth-child(1){
                    border-radius: $radius 0 0 $radius;
               }
