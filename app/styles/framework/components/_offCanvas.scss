@@ -1,0 +1,55 @@
+/*----------------------------------------------------------------------------*\
+    #OFF CANVAS
+\*----------------------------------------------------------------------------*/
+
+@mixin ui-component__off-canvas(
+    $size: rem(320),
+    $speed: $speed,
+    $ease: $ease,
+    $secondary: $secondary
+) {
+
+    .c-canvas { // .c-canvas
+        transition: transform $speed $ease;
+
+        &__trigger--close { // .c-canvas__trigger--close
+            display: none;
+        }
+    }
+
+    .c-offCanvas { // .c-offCanvas
+        background-color: $secondary;
+        @include area(100vh, $size);
+        left: 0; top: 0;
+        position: fixed;
+        transform: translateX(-100%);
+        transition: transform $speed ease;
+
+        &:target { // .c-offCanvas:target
+            transform: none;
+        }
+
+        &:target ~ .c-canvas { // .c-offCanvas:target ~ .c.canvas
+            transform: translateX($size);
+
+            .c-canvas__trigger { // .c-offCanvas:target ~ .c.canvas .c-canvas__trigger
+                display: none;
+            
+                &--close { // .c-offCanvas:target ~ .c.canvas .c-canvas__trigger--close
+                    display: inline-block;
+                }
+            }
+        }
+
+        &--right { // .c-offCanvas--right
+            left: auto; right: 0;
+            transform: translateX(100%);
+
+            &:target + .c-canvas { // .c-offCanvas--right:target + .c-canvas
+                transform: translateX(rem(-320));
+            }
+        }
+    }
+}
+
+
