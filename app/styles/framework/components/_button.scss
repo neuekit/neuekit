@@ -3,7 +3,6 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin ui-component__button(
-    $class: 'button',
     $btnReset: false,
     $btnRadius: $radius,
     $styles: (
@@ -51,19 +50,19 @@
             padding: rem(10) rem(14)
         ),
         large: (
-            padding: rem(16) 1.125rem
+            padding: rem(16) rem(18)
         ),
         xlarge: (
-            fontSize: 1.125rem,
-            padding: rem(20) 1.375rem
+            fontSize: rem(18),
+            padding: rem(20) rem(22)
         ),
         xxlarge: (
             fontSize: rem(20),
-            padding: rem(24) 1.625rem
+            padding: rem(24) rem(26)
         ),
         xxxlarge: (
             fontSize: rem(24),
-            padding: rem(32) 2.125rem
+            padding: rem(32) rem(34)
         )
     )
 ) {
@@ -72,7 +71,7 @@
     $btnCondition: if($btnReset, $btnSelectors, null);
 
     #{$btnCondition}
-    .#{$class} {
+    .c-button {
         appearance: none;
         border: none;
         border-radius: $btnRadius;
@@ -89,7 +88,7 @@
 
         /*  States  */
 
-        &:disabled {
+        &:disabled { // .c-button:disabled
             box-shadow: none;
             pointer-events: none;
 
@@ -102,11 +101,11 @@
             }
         }
 
-        &:focus {
+        &:focus { // .c-button:focus
     		outline: none;
     	}
 
-        &:hover {
+        &:hover { // .c-button:hover
             background-color: map-deep-get($styles, 'default', 'bgColorHover');
 
             // Using a conditiomn here as by default the hover color is undefined
@@ -120,7 +119,7 @@
 
         @if map-has-key($styles, light) {
 
-            &--light {
+            &--light { // .c-button--light
 
                 @if map-deep-get($styles, 'light', 'bgColor') {
                     background-color: map-deep-get($styles, 'light', 'bgColor');
@@ -130,7 +129,7 @@
                     color: map-deep-get($styles, 'light', 'color');
                 }
 
-                &:hover {
+                &:hover { // .c-button:hover
                     box-shadow: inset 0 0 0 2px transparent;
 
                     @if map-deep-get($styles, 'light', 'bgColorHover') {
@@ -146,22 +145,22 @@
 
         @if map-has-key($styles, line) {
 
-            &--line {
+            &--line { // .c-button--line
                 background: none;
                 box-shadow: inset 0 0 0 2px map-deep-get($styles, 'line', 'color');
                 color: map-deep-get($styles, 'line', 'color');
 
-                &.#{$class}--light {
+                &.c-button--light { // .c-button--line.c-button--light
                     box-shadow: inset 0 0 0 2px map-deep-get($styles, 'line', 'lightColor');
                     color: map-deep-get($styles, 'line', 'lightColor');
 
-                    &:hover {
+                    &:hover { // .c-button--line.c-button--light:hover
                         background-color: map-deep-get($styles, 'line', 'lightColor');
                         color: map-deep-get($styles, 'line', 'color');
                     }
                 }
 
-                &:hover {
+                &:hover { // .c-button--line:hover
                     background-color: map-deep-get($styles, 'line', 'color');
                     color: map-deep-get($styles, 'line', 'lightColor');
                 }
@@ -170,25 +169,25 @@
 
         @if map-has-key($styles, text) {
 
-            &--text {
+            &--text { // .c-button--text
                 background: none;
                 color: map-deep-get($styles, 'text', 'color');
 
-                &.#{$class}--secondary {
+                &.c-button--secondary { // .c-button--text.c-button--secondary
                     background: none;
                     color: map-deep-get($styles, 'secondary', 'bgColor');
                 }
 
-                &:disabled {
+                &:disabled { // .c-button--text:disabled
                     background: none;
                 }
 
-                &:hover {
+                &:hover { // .c-button--text:hover
                     color: map-deep-get($styles, 'text', 'lightColor');
                     background: map-deep-get($styles, 'text', 'color');
                 }
 
-                &.#{$class}--light {
+                &.c-button--light { // .c-button--text.c-button--light
                     color: map-deep-get($styles, 'text', 'lightColor');
                 }
             }
@@ -196,23 +195,23 @@
 
         @if map-has-key($styles, round) {
 
-            &--round {
+            &--round { // .c-button--round
                 border-radius: rem(160);
             }
         }
 
         @if map-has-key($styles, secondary) {
 
-            &--secondary {
+            &--secondary { // .c-button--secondary
                 color: map-deep-get($styles, 'secondary', 'color');
                 background: map-deep-get($styles, 'secondary', 'bgColor');
 
-                &:hover {
+                &:hover { // .c-button--secondary:hover
                     color: map-deep-get($styles, 'secondary', 'colorHover');
                     background: map-deep-get($styles, 'secondary', 'bgColorHover');
                 }
 
-                &:disabled {
+                &:disabled { // .c-button--secondary:disabled
                     color: map-deep-get($styles, 'secondary', 'colorDisabled');
                     background: map-deep-get($styles, 'secondary', 'bgColorDisabled');
                 }
