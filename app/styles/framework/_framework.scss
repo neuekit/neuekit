@@ -18,7 +18,7 @@
     Globally-available functions and mixins.
 \*----------------------------------------------------------------------------*/
 
-@import 'utilities';                    // Functions & mixins.
+@import 'tools';                    // Functions & mixins.
 
 
 
@@ -39,6 +39,7 @@
 }
 
 
+
 /*----------------------------------------------------------------------------*\
     #ELEMENTS
 
@@ -47,7 +48,6 @@
 
 @import 'elements/document';            // Page-level styles (HTML, body etc).
 @import 'elements/forms';               // Form inputs, textareas.
-@import 'elements/interactive';         // Interactive elements.
 @import 'elements/links';               // Hyperlinks.
 @import 'elements/lists';               // Lists.
 @import 'elements/media';               // Media elements, img, svg, video, etc.
@@ -65,8 +65,8 @@
     @include ui-element__quote();
     @include ui-element__table();
     @include ui-element__type();
-
 }
+
 
 
 /*----------------------------------------------------------------------------*\
@@ -86,8 +86,8 @@
     @include ui-object__grid();
     @include ui-object__inline();
     @include ui-object__unlist();
-
 }
+
 
 
 /*----------------------------------------------------------------------------*\
@@ -119,8 +119,8 @@
     @include ui-component__toggle();
     @include ui-component__tooltip();
     @include ui-component__validate();
-
 }
+
 
 
 /*----------------------------------------------------------------------------*\
@@ -144,8 +144,8 @@
     @include ui-helper__spacing();
     @include ui-helper__text();
     @include ui-helper__visibility();
-
 }
+
 
 
 /*----------------------------------------------------------------------------*\
@@ -161,6 +161,6 @@
 
     @include ui-override__validation();
     @include ui-override__visibility();
-
 }
+
 
