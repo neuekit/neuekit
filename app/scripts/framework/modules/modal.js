@@ -22,6 +22,8 @@
         function Modal() {
 
             const _this = this;
+            const baseClass = 'c-modal';
+            const triggerClass = 'js-modal';
 
             /*--------------------------------------------------*\
                 #OPEN A MODAL
@@ -29,12 +31,12 @@
 
             _this.open = function() {
 
-                $(this.hash).addClass('modal--visible').trigger('modal:open');
+                $(this.hash).addClass(`${baseClass}--visible`).trigger('modal:open');
 
                 $('body').addClass('locked');
             };
 
-            $(document).on('click', '.js-modal--open', _this.open);
+            $(document).on('click', `.${triggerClass}--open`, _this.open);
 
 
 
@@ -44,16 +46,16 @@
 
             _this.close = function(element) {
 
-                if ( $('.modal--visible').length === 1 ) {
+                if ( $(`.${baseClass}--visible`).length === 1 ) {
 
                     $('body').removeClass('locked');
                 }
 
-                $(element).closest('.modal').removeClass('modal--visible').trigger('modal:close');
+                $(element).closest(`.${baseClass}`).removeClass(`${baseClass}--visible`).trigger('modal:close');
             };
 
 
-            $(document).on('click', '.js-modal--close', function(event) {
+            $(document).on('click', `${triggerClass}--close`, function(event) {
 
                 event.preventDefault();
 
@@ -61,9 +63,9 @@
             });
 
 
-            $(document).on('click', '.modal', function(event) {
+            $(document).on('click', `.${baseClass}`, function(event) {
 
-                if ( $(this).hasClass('modal') && event.target === this ) {
+                if ( $(this).hasClass(`${baseClass}`) && event.target === this ) {
 
                     event.preventDefault();
 
@@ -83,4 +85,5 @@
 /* Checks if the namespace already exists & if not assign it */
 
 })(window.UIKit = window.UIKit || {}, window.jQuery = window.jQuery || window.$);
+
 
