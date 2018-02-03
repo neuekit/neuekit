@@ -3,7 +3,9 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin ui-component__loading(
-    $animation: loading 0.6s infinite linear
+    $animation: loading 0.6s infinite linear,
+    $primary: $primary
+    $secondary: $secondary
 ) {
 
     @keyframes loading {
