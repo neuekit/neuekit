@@ -2,11 +2,18 @@
     #MODAL
 \*----------------------------------------------------------------------------*/
 
-@mixin ui-component__modal() {
+@mixin ui-component__modal(
+    $primary: $primary,
+    $tertiary: $tertiary,
+    $quaternary: $quaternary,
+    $radius: $radius,
+    $speed: $speed,
+    $maxWidth: $maxWidth
+) {
 
     /*  Block  */
 
-    .modal {
+    .c-modal {
         $block: &;
 
         align-items: center;
@@ -22,7 +29,7 @@
 
             /*  Elements  */
 
-            &__content {
+            &__content { // .c-modal__content
                 background-color: white;
                 border-radius: $radius;
                 margin: auto;
@@ -35,7 +42,7 @@
                 transition: all $speed ease;
             }
 
-            &__close {
+            &__close { // .c-modal__close
                 background-color: $quaternary;
                 border-radius: 50%;
                 display: block;
@@ -58,7 +65,7 @@
                     transition: all $speed ease;
                 }
 
-                &::after{
+                &::after {
                     transform: translate(-50%, -50%) rotate(-45deg);
                 }
 
@@ -75,18 +82,18 @@
 
         /*  Modifiers  */
 
-        &--fill {
+        &--fill { // .c-modal--fill
             padding: 0;
 
-            #{$block}__content {
+            #{$block}__content { // .c-modal--fill .c-modal__content
                 flex-grow: 1;
             }
         }
 
-        &--fullscreen {
+        &--fullscreen { // .c-modal--fullscreen
             padding: 0;
 
-            #{$block}__content {
+            #{$block}__content { // .c-modal--fullscreen .c-modal__content
                 border-radius: 0;
                 @include area(100%);
                 margin: 0;
@@ -97,11 +104,11 @@
             }
         }
 
-        &--visible {
+        &--visible { // .c-modal--visible
             opacity: 1;
             visibility: visible;
 
-            #{$block}__content {
+            #{$block}__content { // .c-modal--visible .c-modal__content
                 opacity: 1;
                 transform: translateY(0);
                 transition-delay: $speed;
