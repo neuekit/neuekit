@@ -2,17 +2,51 @@
     #VISIBILITY OVERRIDES
 \*----------------------------------------------------------------------------*/
 
-@mixin ui-override__visibility() {
+@mixin ui-override__visibility(
+    $responsive: $responsive,
+    $overrides: (
+        hide,
+        block,
+        locked
+    )
+) {
 
-    @include breakpoints( both ) {
+    // Check first if we need to provide responsive overrides
+    @if $responsive != false {
 
+        @include breakpoints( $responsive ) {
+
+            @include _ui-override__visibility-create( $overrides, $break );
+        }
+    
+    // If not responsive, just run the general loop
+    } @else {
+
+        @include _ui-override__visibility-create( $overrides, $break: '' );
+    }
+}
+
+@mixin _ui-override__visibility-create( $overrides, $break ) {
+
+    @if index($overrides, hide) {
+    
         #{chain('.u-hide' + $break) } {
             display: none;
         }
     }
 
-    #{chain('.u-locked')} {
-        overflow: hidden;
+    @if index($overrides, block) {
+    
+        #{chain('.u-block' + $break) } {
+            display: none;
+        }
+    }
+
+    @if index($overrides, locked) {
+            
+        #{chain('.u-locked')} {
+            overflow: hidden;
+        }
     }
 }
 
