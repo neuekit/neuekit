@@ -23,17 +23,17 @@
 
         @include breakpoints( $responsive ) {
 
-            @include create-helpers-spacing( $attrs, $steps, $directions, $break );
+            @include _ui-helper__spacing-create( $attrs, $steps, $directions, $break );
         }
 
     // If not responsive, just run the general loop
     } @else {
 
-        @include create-helpers-spacing( $attrs, $steps, $directions, $break: '' );
+        @include _ui-helper__spacing-create( $attrs, $steps, $directions, $break: '' );
     }
 }
 
-@mixin create-helpers-spacing( $attrs, $steps, $directions, $break ) {
+@mixin _ui-helper__spacing-create( $attrs, $steps, $directions, $break ) {
 
     // Create helpers for each step defined
     @each $step in $steps {
