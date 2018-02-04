@@ -29,7 +29,7 @@ export default function(options) {
     };
 
     // Public:  Go to method
-    const goto = (id) => {
+    const goto = (id, push) => {
 
         // Store elements for later use
         const $this = id ? document.querySelector(`[href="#${id}"]`) : this;
@@ -66,6 +66,9 @@ export default function(options) {
         $this.classList.add('active');
         $content.classList.add('active');
 
+        //Update history states
+        !push && history.pushState({}, '', `#${id}`);
+
         // Check for after callback and run
         typeof _settings.after == 'function' && _settings.after.call(this);
 
@@ -93,11 +96,22 @@ export default function(options) {
     // Public: Initialise module
     const init = () => {
 
-        // Get all elements
+        // Get data
         const $tabs = document.getElementsByClassName('js-tab');
+        const hash = location.hash.substring(1);
 
         // Add click events to each link
         [...$tabs].map(($el) => $el.addEventListener('click', _clickGoto));
+
+        document.getElementById(hash).classList.contains('js-tab-content') && goto(hash);
+
+        // Popstate event listener
+        window.addEventListener('popstate', () => {
+
+            const hash = location.hash.substring(1);
+
+            document.getElementById(hash).classList.contains('js-tab-content') && goto(hash, true);
+        });
     };
 
     // Return public methods

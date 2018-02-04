@@ -56,8 +56,8 @@ export default function(options) {
     };
 
     // Public: Open method
-    const open = (id) => {
-
+    const open = (id, push) => {
+console.log(id);
         // Store target elements for later use
         const $modal = document.getElementById(id);
 
@@ -82,6 +82,9 @@ export default function(options) {
         // Add classes
         $modal.classList.add('active');
         document.body.classList.add('locked');
+
+        //Update history states
+        !push && history.pushState({}, '', `#${id}`);
 
         // Check for after callback and run
         typeof _settings.afterOpen == 'function' && _settings.afterOpen.call(this);
@@ -153,10 +156,26 @@ export default function(options) {
     // Public: Initialise module
     const init = () => {
 
+        // Get data
+        const hash = location.hash.substring(1);
+
+        console.log(document.getElementById(hash));
+
+        // Run check and open modal if successful
+        document.getElementById(hash).classList.contains('modal') && open(hash);
+
         // Add click events to each link
         [..._getEls.open].map(($link) => $link.addEventListener('click', _clickOpen));
         [..._getEls.close].map(($link) => $link.addEventListener('click', _clickClose));
         [..._getEls.modal].map(($link) => $link.addEventListener('click', _clickModal));
+
+        // Popstate event listener
+        window.addEventListener('popstate', () => {
+
+            const hash = location.hash.substring(1);
+
+            document.getElementById(hash).classList.contains('modal') && open(hash, true);
+        });
     };
 
     // Return public methods
