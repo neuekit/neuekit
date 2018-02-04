@@ -19,6 +19,7 @@
         position: fixed;
         transition: opacity $speed ease;
         visibility: hidden;
+        z-index: 1;
 
             /*  Elements  */
 
@@ -97,7 +98,7 @@
             }
         }
 
-        &--visible {
+        &.active {
             opacity: 1;
             visibility: visible;
 
