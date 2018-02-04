@@ -104,6 +104,116 @@ export const setInputTypes = () => {
 
 
 /*--------------------------------------------------*\
+    Cookie Management
+
+    Functions to get, set & remove cookies
+\*--------------------------------------------------*/
+
+export const setCookie = (name, value, days) => {
+
+    let expires = '';
+
+    if (days) {
+
+        const date = new Date();
+
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+
+        expires = `; expires=${date.toGMTString()}`;
+    }
+
+    document.cookie = `${name}=${value}${expires}; path=/`;
+};
+
+export const getCookie = (name) => {
+
+    let name = name + "=";
+    let cookies = document.cookie.split(';');
+
+    for (let i = 0; i < cookies.length; i += 1) {
+
+        let cookie = cookies[i];
+
+        while (cookie.charAt(0) === ' ') {
+
+            cookie = cookie.substring(1, cookie.length);
+        }
+
+        if (cookie.indexOf(name) === 0) {
+
+            return cookie.substring(name.length, cookie.length);
+        }
+    }
+
+    return null;
+};
+
+export const removeCookie = (name) => {
+
+    setCookie(name, '', -1);
+};
+
+
+
+/*--------------------------------------------------*\
+    Local Storage Management
+
+    Functions to get, set & remove local storage data
+\*--------------------------------------------------*/
+
+export const setStorage = function (name, value) {
+
+    if (typeof window.localStorage !== 'undefined') {
+
+        localStorage.setItem(name, value);
+    }
+
+    else {
+
+        setCookie(name, value);
+    }
+};
+
+export const getStorage = (name, checkCookie) => {
+
+    let value = '';
+
+    if (typeof window.localStorage !== 'undefined') {
+
+        value = localStorage.getItem(name);
+    }
+
+    else {
+
+        value = getCookie(name);
+    }
+
+    if (checkCookie === true) {
+
+        value = getCookie(name);
+    }
+
+    return value;
+};
+
+export const removeStorage = (name, checkCookie) => {
+
+    if (typeof window.localStorage !== 'undefined') {
+
+        localStorage.removeItem(name);
+    }
+
+    else {
+
+        removeCookie(name);
+    }
+
+    checkCookie === true && removeCookie(name);
+};
+
+
+
+/*--------------------------------------------------*\
     Sticky Position Polyfill Setup
 
     This function sets the real type on inputs.
