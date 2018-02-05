@@ -38,7 +38,7 @@
     @if index($overrides, block) {
     
         #{chain('.u-block' + $break) } {
-            display: none;
+            display: block;
         }
     }
 
