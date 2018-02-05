@@ -57,7 +57,7 @@ export default function(options) {
 
     // Public: Open method
     const open = (id, push) => {
-console.log(id);
+
         // Store target elements for later use
         const $modal = document.getElementById(id);
 
@@ -154,12 +154,10 @@ console.log(id);
     };
 
     // Public: Initialise module
-    const init = () => {
+    const init = (() => {
 
         // Get data
         const hash = location.hash.substring(1);
-
-        console.log(document.getElementById(hash));
 
         // Run check and open modal if successful
         document.getElementById(hash).classList.contains('c-modal') && open(hash);
@@ -176,7 +174,7 @@ console.log(id);
 
             document.getElementById(hash).classList.contains('c-modal') && open(hash, true);
         });
-    };
+    })();
 
     // Return public methods
     return {
@@ -184,7 +182,7 @@ console.log(id);
         close,
         destroy,
         reinit,
-        init: init()
+        init
     };
 }
 

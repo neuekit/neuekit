@@ -33,19 +33,19 @@ export default function(options) {
     };
 
     // Public: Initialise module
-    const init = () => {
+    const init = (() => {
 
         util.setDocClasses();
         util.setInputTypes();
         util.sticky();
         svg4everybody();
-    };
+    })();
 
     // Return public methods
     return {
         destroy,
         reinit,
-        init: init()
+        init
     };
 }
 
