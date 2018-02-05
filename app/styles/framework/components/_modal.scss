@@ -26,6 +26,7 @@
         position: fixed;
         transition: opacity $trans;
         visibility: hidden;
+        z-index: 1;
 
             /*  Elements  */
 
@@ -104,11 +105,11 @@
             }
         }
 
-        &--visible { // .c-modal--visible
+        &.active { // .c-modal.active
             opacity: 1;
             visibility: visible;
 
-            #{$block}__content { // .c-modal--visible .c-modal__content
+            #{$block}__content { // .c-modal.visible .c-modal__content
                 opacity: 1;
                 transform: translateY(0);
                 transition-delay: $speed;

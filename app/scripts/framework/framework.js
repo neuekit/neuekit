@@ -1,51 +1,67 @@
 /*!---------------------------------------------------------------------------*\
-
-    #CREATIVE LITTLE UI KIT
+    UI Kit
 
     - Version:      0.9.9
     - Author:       Creative Little Dots
     - Site:         http://creativelittle.uk/uikit
     - Copyright:    2018, Creative Little Dots
     – License:      MIT | http://goo.gl/p3bexl
-
 \*----------------------------------------------------------------------------*/
 
+/* Imports */
+
+import Core from './modules/core';
+import Modals from './modules/modals';
+import Tabs from './modules/tabs';
 
 
-/*----------------------------------------------------------------------------*\
-    #POLYFILLS
+/* UI Kit */
 
-    The features of tomorrow today! (Dont panic its only 6.71kb GZipped)
-\*----------------------------------------------------------------------------*/
+window.UIKit = function(options) {
 
-import './polyfills/array.from';
-import './polyfills/closest';
-import './polyfills/customevent';
-import './polyfills/promise';
-import './polyfills/fetch';
-import './polyfills/smoothscroll';
-import './polyfills/stickyfill';
-import './polyfills/svg4everybody';
+    // Private: Default settings object
+    const _defaults = {
+        core: {},
+        modals: {},
+        tabs: {}
+    };
 
+    // Private: Merge passed in object with defaults
+    const _settings = {
+        ..._defaults,
+        ...options
+    };
 
+    const _modules = {};
 
-/*----------------------------------------------------------------------------*\
-    #HELPERS
+    // Public: Destroy module instance
+    const destroy = () => {
 
-    Single concern functions and utilities to help you out.
-\*----------------------------------------------------------------------------*/
+        _modules.core.destroy();
+        _modules.modals.destroy();
+        _modules.tabs.destroy();
+    };
 
-import './modules/helpers';
+    // Public: Destroy module instance and run initialise again
+    const reinit = () => {
 
+        destroy();
+        init();
+    };
 
+    // Public: Initialise module
+    const init = () => {
 
-/*----------------------------------------------------------------------------*\
-    #MODULES
+        _modules.core = new Core(_settings.core);
+        _modules.modals = new Modals(_settings.modals);
+        _modules.tabs = new Tabs(_settings.tabs);
+    };
 
-    User interface interactivity.
-\*----------------------------------------------------------------------------*/
-
-import './modules/modal';
-import './modules/tabs';
+    return {
+        destroy,
+        reinit,
+        init: init()
+    }
+}
 
 
