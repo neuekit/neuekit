@@ -50,18 +50,18 @@ window.UIKit = function(options) {
     };
 
     // Public: Initialise module
-    const init = () => {
+    const init = (() => {
 
         _modules.core = new Core(_settings.core);
         _modules.modals = new Modals(_settings.modals);
         _modules.tabs = new Tabs(_settings.tabs);
-    };
+    })();
 
     return {
         destroy,
         reinit,
-        init: init()
+        init
     }
-}
+};
 
 

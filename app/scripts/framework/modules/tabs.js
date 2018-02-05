@@ -94,7 +94,7 @@ export default function(options) {
     };
 
     // Public: Initialise module
-    const init = () => {
+    const init = (() => {
 
         // Get data
         const $tabs = document.getElementsByClassName('js-tab');
@@ -112,14 +112,14 @@ export default function(options) {
 
             document.getElementById(hash).classList.contains('js-tab-content') && goto(hash, true);
         });
-    };
+    })();
 
     // Return public methods
     return {
         goto,
         destroy,
         reinit,
-        init: init()
+        init
     };
 }
 
