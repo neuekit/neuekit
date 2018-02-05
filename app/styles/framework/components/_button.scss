@@ -82,7 +82,7 @@
         display: inline-block;
         line-height: 1;
         text-align: center;
-        transition: all $speed $ease;
+        transition: all $trans;
         background: map-deep-get($styles, 'default', 'bgColor');
         padding: map-deep-get($styles, 'default', 'padding');
         color: map-deep-get($styles, 'default', 'color');
@@ -110,7 +110,7 @@
         &:hover { // .c-button:hover
             background-color: map-deep-get($styles, 'default', 'bgColorHover');
 
-            // Using a conditiomn here as by default the hover color is undefined
+            // Using a condition here as by default the hover color is undefined
             @if map-deep-get($styles, 'default', 'colorHover') {
                 color: map-deep-get($styles, 'default', 'colorHover');
             }
@@ -225,7 +225,7 @@
 
         @each $size, $attrs in $sizes {
 
-            &--#{$size} {
+            &--#{$size} { // .c-button--tiny
                 font-size: map-get($attrs, fontSize);
                 padding: map-get($attrs, padding);
             }

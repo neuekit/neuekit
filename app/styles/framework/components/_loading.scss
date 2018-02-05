@@ -24,8 +24,8 @@
         @include area(rem(32));
         pointer-events: none;
 
-        &::before,
-        &::after {
+        &::before, // .c-loading::before,
+        &::after { // .c-loading::after
             border: 3px solid $secondary;
             border-radius: 50%;
             content: '';
@@ -36,7 +36,7 @@
             transform: translate(-50%, -50%);
         }
 
-        &::after {
+        &::after { // .c-loading::after
             animation: $animation;
             border-color: $primary;
             border-right-color: transparent;
@@ -51,8 +51,8 @@
         &--small { // .c-loading--small
             @include area(rem(16));
 
-            &::before,
-            &::after {
+            &::before, // .c-loading--small::before,
+            &::after { // .c-loading--small::after
                 border-width: 2px;
             }
         }
@@ -60,8 +60,8 @@
         &--large { // .c-loading--large
             @include area(rem(48));
 
-            &::before,
-            &::after {
+            &::before, // .c-loading--large::before,
+            &::after { // .c-loading--large::after
                 border-width: 5px;
             }
         }
@@ -69,8 +69,8 @@
         &--xlarge { // .c-loading--xlarge
             @include area(rem(64));
 
-            &::before,
-            &::after {
+            &::before, // .c-loading--xlarge::before,
+            &::after { // .c-loading--xlarge::after
                 border-width: 7px;
             }
         }

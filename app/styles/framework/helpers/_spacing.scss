@@ -58,36 +58,25 @@
                 // If direction is top & bottom
                 @if $direction == vertical {
 
-                    // Make sure the step is greater than 0, to prevent p-0-0 output
-                    @if $step > 0 {
-
-                        // ie. .u-pH-8@m
-
-                        #{chain('.u-' + $attrClass + 'V-' + $step + $break) } {
-                            #{ $attr }-top: rem($step); // ie. padding-top: rem(8)
-                            #{ $attr }-bottom: rem($step); // ie. padding-bottom: rem(8)
-                        }
+                    // ie. .u-pH-8@m
+                    #{chain('.u-' + $attrClass + 'V-' + $step + $break) } {
+                        #{ $attr }-top: rem($step); // ie. padding-top: rem(8)
+                        #{ $attr }-bottom: rem($step); // ie. padding-bottom: rem(8)
                     }
 
                 // If direction is left & right
                 } @else if $direction == horizontal {
 
-                    // Make sure the step is greater than 0, to prevent p-0-0 output
-                    @if $step > 0 {
-
-                        // ie. .u-pV-8@m
-
-                        #{chain('.u-' + $attrClass + 'H-' + $step + $break) } {
-                            #{ $attr }-left: rem($step); // ie. padding-left: rem(8)
-                            #{ $attr }-right: rem($step); // ie. padding-right: rem(8)
-                        }
+                    // ie. .u-pV-8@m
+                    #{chain('.u-' + $attrClass + 'H-' + $step + $break) } {
+                        #{ $attr }-left: rem($step); // ie. padding-left: rem(8)
+                        #{ $attr }-right: rem($step); // ie. padding-right: rem(8)
                     }
 
                 // All others
                 } @else {
 
                     // ie. .u-pL-8@m
-
                     #{chain('.u-' + $attrClass + to-upper-case($dir) + '-' + $step + $break) } {
                         #{ $attr }-#{ $direction }: rem($step); // ie. padding-left: rem(8)
                     }

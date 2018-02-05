@@ -24,7 +24,7 @@
         opacity: 0;
         padding: rem(16);
         position: fixed;
-        transition: opacity $speed ease;
+        transition: opacity $trans;
         visibility: hidden;
 
             /*  Elements  */
@@ -39,7 +39,7 @@
                 overflow: auto; -webkit-overflow-scrolling: touch;
                 padding: rem(32);
                 transform: translateY(rem(160));
-                transition: all $speed ease;
+                transition: all $trans;
             }
 
             &__close { // .c-modal__close
@@ -49,10 +49,10 @@
                 @include area(rem(28));
                 position: absolute;
                 right: rem(12); top: rem(12);
-                transition: all $speed ease;
+                transition: all $trans;
 
-                &::before,
-                &::after {
+                &::before, // .c-modal__close::before,
+                &::after { // .c-modal__close::after
                     background-color: $primary;
                     border-radius: rem(16);
                     content: '';
@@ -62,18 +62,18 @@
                     position: absolute;
                     transform: translate(-50%, -50%) rotate(45deg);
                     transform-origin: center;
-                    transition: all $speed ease;
+                    transition: all $trans;
                 }
 
-                &::after {
+                &::after { // .c-modal__close::after
                     transform: translate(-50%, -50%) rotate(-45deg);
                 }
 
-                &:hover {
+                &:hover { // .c-modal__close:hover
                     background-color: $tertiary;
 
-                    &::before,
-                    &::after {
+                    &::before, // .c-modal__close:hover::before,
+                    &::after { // .c-modal__close:hover::after
                         background-color: white;
                     }
                 }

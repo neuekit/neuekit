@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------------*\
-    #OFF CANVAS
+    #TOGGLE
 \*----------------------------------------------------------------------------*/
 
 @mixin ui-component__toggle(
@@ -63,10 +63,10 @@
             display: block;
             @include area($size, $size * 2);
             margin: 0;
-            transition: background-color $speed $ease;
+            transition: background-color $trans;
             user-select: none;
 
-            &::before {
+            &::before { // .c-toggle__label.c-toggle__label::before
                 background: $handleColour;
                 border-radius: 50%;
                 box-shadow: 0 $gap $size / 2 rgba(black, 0.1);
@@ -76,10 +76,10 @@
                 margin: 0;
                 right: calc(100% - #{$size - $gap}); top: $gap;
                 position: absolute;
-                transition: right $speed $ease;
+                transition: right $trans;
             }
 
-            &::after {
+            &::after { // .c-toggle__label.c-toggle__label::after
                 content: attr(data-off);
                 font-size: rem(14);
                 left: calc(100% + #{rem(8)}); top: 50%;

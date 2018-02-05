@@ -14,8 +14,8 @@
         top: 0;
         z-index: 1;
 
-        &::before,
-        &::after {
+        &::before, // .u-sticky.u-sticky::before,
+        &::after { // .u-sticky.u-sticky::after
             content: '';
             display: table;
         }

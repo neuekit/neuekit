@@ -13,7 +13,7 @@
             display: block;
             text-align: end;
 
-            &::before {
+            &::before { // cite::before
                 content: '- ';
             }
         }

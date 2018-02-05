@@ -21,7 +21,7 @@
         width: 100%;
 
             &__close { // .js .c-nav__close
-                background-color: rgba(black, 0.25);
+                background-color: $closeBg;
                 display: block;
                 @include area(100%);
                 left: 0; top: 0;
@@ -33,12 +33,12 @@
                 padding: rem(4) rem(12);
 
                 + .nav-sub { // .js .c-nav__link + .nav-sub
-                    background-color: $navSubBg;
+                    background-color: $navLinkHoverBg;
                     left: 0;
                     margin-top: -1px;
                     position: absolute;
                     transform: translate(100vw);
-                    transition: transform $speed ease;
+                    transition: transform $trans;
                     width: 100%;
                     z-index: 1;
 

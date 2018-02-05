@@ -10,7 +10,7 @@
 ) {
 
     .c-canvas { // .c-canvas
-        transition: transform $speed $ease;
+        transition: transform $trans;
 
         &__trigger--close { // .c-canvas__trigger--close
             display: none;
@@ -23,19 +23,19 @@
         left: 0; top: 0;
         position: fixed;
         transform: translateX(-100%);
-        transition: transform $speed ease;
+        transition: transform $trans;
 
         &:target { // .c-offCanvas:target
             transform: none;
         }
 
-        &:target ~ .c-canvas { // .c-offCanvas:target ~ .c.canvas
+        &:target ~ .c-canvas { // .c-offCanvas:target ~ .c-canvas
             transform: translateX($size);
 
-            .c-canvas__trigger { // .c-offCanvas:target ~ .c.canvas .c-canvas__trigger
+            .c-canvas__trigger { // .c-offCanvas:target ~ .c-canvas .c-canvas__trigger
                 display: none;
             
-                &--close { // .c-offCanvas:target ~ .c.canvas .c-canvas__trigger--close
+                &--close { // .c-offCanvas:target ~ .c-canvas .c-canvas__trigger--close
                     display: inline-block;
                 }
             }

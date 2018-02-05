@@ -32,7 +32,7 @@
                 pointer-events: none;
                 opacity: 0;
                 transform: translateY(rem(4));
-                transition: all $speed $ease;
+                transition: all $trans;
             }
 
             &__input { // .c-validate__input
