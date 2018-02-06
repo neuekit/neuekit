@@ -1,0 +1,23 @@
+/*----------------------------------------------------------------------------*\
+    #BLOCKQUOTE AND CITE ELEMENT STYLES
+\*----------------------------------------------------------------------------*/
+
+@mixin sb-element__quote() {
+
+    blockquote {
+        border-left: 4px solid $primary;
+        margin: 0 0 rem(16);
+        padding: rem(8) rem(16);
+
+        cite {
+            display: block;
+            text-align: end;
+
+            &::before { // cite::before
+                content: '- ';
+            }
+        }
+    }
+}
+
+

@@ -1,17 +1,17 @@
 {
-  "name": "ui-kit",
+  "name": "springboard",
   "version": "0.9.9",
   "license": "MIT",
-  "description": "The Creative Little UI Kit is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with, and built for the future.",
+  "description": "The Creative Little SpringBoard is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with, and built for the future.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativelittledots/ui-kit.git"
+    "url": "git+https://github.com/creativelittledots/springboard.git"
   },
   "author": "Matt Pilott",
   "bugs": {
-    "url": "https://github.com/creativelittledots/ui-kit/issues"
+    "url": "https://github.com/creativelittledots/springboard/issues"
   },
-  "homepage": "https://github.com/creativelittledots/ui-kit#readme",
+  "homepage": "https://github.com/creativelittledots/springboard#readme",
   "devDependencies": {
     "autoprefixer": "^7.2.5",
     "babel-core": "^6.26.0",

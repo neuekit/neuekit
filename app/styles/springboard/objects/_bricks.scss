@@ -1,0 +1,54 @@
+/*----------------------------------------------------------------------------*\
+    #BRICKS OBJECT
+\*----------------------------------------------------------------------------*/
+
+@mixin sb-object__bricks(
+    $smallBreakpoint: s,
+    $gutter: $gutter,
+    $gutterSmall: $gutterSmall,
+    $columns: $columns
+) {
+
+    [class*="o-bricks"] {
+        display: flex;
+        flex-wrap: wrap;
+        list-style: none;
+        margin: 0 auto;
+    }
+
+    [class*="o-brick"] {
+        flex-basis: 100%;
+        padding: rem($gutterSmall);
+    }
+
+    .o-grid [class*="o-bricks"] {
+        margin: 0 #{ rem( -$gutterSmall * 2 ) };
+    }
+
+    @include media($smallBreakpoint) {
+
+        [class*="o-brick"] {
+            padding: rem($gutter);
+        }
+
+        .o-grid [class*="o-bricks"] {
+            margin: 0 #{ rem( -$gutter * 2 ) };
+        }
+    }
+
+
+    @include breakpoints(up) {
+
+        @for $grid from 1 through $columns {
+
+            $width: floor((100% / $grid) * 1000) / 1000;
+
+            .o-bricks-#{$grid}#{$break} .o-brick {
+                flex-basis: $width;
+                max-width: $width;
+            }
+        }
+    }
+}
+
+

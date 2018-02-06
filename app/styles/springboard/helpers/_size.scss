@@ -1,0 +1,33 @@
+/*----------------------------------------------------------------------------*\
+    #SIZE HELPERS
+\*----------------------------------------------------------------------------*/
+
+@mixin sb-helper__size() {
+
+    @include breakpoints( up ) {
+
+        .u-size-auto#{ $break } {
+            flex-grow: 1;
+            flex-basis: auto;
+            max-width: 100%;
+            width: 0%;
+        }
+
+        @for $grid from 0 through $columns {
+
+            $width: if(
+                $grid == 0,
+                auto,
+                floor( 100% / $columns * ( $grid * 1000 ) ) / 1000
+            );
+
+            .u-size-#{ $grid }#{ $break } {
+                flex-basis: $width;
+                max-width: $width;
+                width: $width;
+            }
+        }
+    }
+}
+
+

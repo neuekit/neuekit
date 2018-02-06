@@ -1,0 +1,105 @@
+/*----------------------------------------------------------------------------*\
+    #FLEX HELPERS
+\*----------------------------------------------------------------------------*/
+
+@mixin sb-helper__flex() {
+
+    #{chain('.u-flex')} {
+        display: flex;
+    }
+
+    #{chain('.u-grow')} {
+        flex-grow: 1;
+    }
+
+    #{chain('.u-noGrow')} {
+        flex-grow: 0;
+    }
+
+    @include breakpoints( both ) {
+
+        #{chain('.u-row' + $break)} {
+            flex-direction: row;
+        }
+
+        #{chain('.u-column' + $break)} {
+            flex-direction: column;
+        }
+
+        #{chain('.u-rowReverse' + $break)} {
+            flex-flow: row-reverse;
+        }
+
+        #{chain('.u-columnReverse' + $break)} {
+            flex-flow: column-reverse;
+        }
+
+        #{chain('.u-justifyStart' + $break)} {
+            justify-content: flex-start;
+            margin-left: 0;
+            margin-right: auto;
+        }
+
+        #{chain('.u-justifyCenter' + $break)} {
+            justify-content: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #{chain('.u-justifyEnd' + $break)} {
+            justify-content: flex-end;
+            margin-left: auto;
+            margin-right: 0;
+        }
+
+        #{chain('.u-alignStart' + $break)} {
+            align-items: flex-start;
+        }
+
+        #{chain('.u-alignCenter' + $break)} {
+            align-items: center;
+        }
+
+        #{chain('.u-alignEnd' + $break)} {
+            align-items: flex-end;
+        }
+
+        #{chain('.u-alignSelfStart' + $break)} {
+            align-self: flex-start;
+        }
+
+        #{chain('.u-alignSelfCenter' + $break)} {
+            align-self: center;
+        }
+
+        #{chain('.u-alignSelfEnd' + $break)} {
+            align-self: flex-end;
+        }
+
+        #{chain('.u-around' + $break)} {
+            justify-content: space-around;
+        }
+
+        #{chain('.u-between' + $break)} {
+            justify-content: space-between;
+        }
+
+        #{chain('.u-first' + $break)} {
+            order: -1;
+        }
+
+        #{chain('.u-last' + $break)} {
+            order: 1;
+        }
+
+        #{chain('.u-wrap' + $break)} {
+            flex-wrap: wrap;
+        }
+
+        #{chain('.u-noWrap' + $break)} {
+            flex-wrap: nowrap;
+        }
+    }
+}
+
+

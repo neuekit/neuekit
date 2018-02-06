@@ -1,0 +1,79 @@
+/*----------------------------------------------------------------------------*\
+    #LOADING INDICATOR
+\*----------------------------------------------------------------------------*/
+
+@mixin sb-component__loading(
+    $animation: loading 0.6s infinite linear,
+    $primary: $primary,
+    $secondary: $secondary
+) {
+
+    @keyframes loading {
+
+        from {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+
+        to {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
+
+    .c-loading {
+        color: transparent !important;
+        @include area(rem(32));
+        pointer-events: none;
+
+        &::before, // .c-loading::before,
+        &::after { // .c-loading::after
+            border: 3px solid $secondary;
+            border-radius: 50%;
+            content: '';
+            display: block;
+            @include area(100%);
+            left: 50%; top: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+        }
+
+        &::after { // .c-loading::after
+            animation: $animation;
+            border-color: $primary;
+            border-right-color: transparent;
+            border-top-color: transparent;
+        }
+
+        &--light::after { // .c-loading--light::after
+            border-bottom-color: white;
+            border-left-color: white;
+        }
+
+        &--small { // .c-loading--small
+            @include area(rem(16));
+
+            &::before, // .c-loading--small::before,
+            &::after { // .c-loading--small::after
+                border-width: 2px;
+            }
+        }
+
+        &--large { // .c-loading--large
+            @include area(rem(48));
+
+            &::before, // .c-loading--large::before,
+            &::after { // .c-loading--large::after
+                border-width: 5px;
+            }
+        }
+
+        &--xlarge { // .c-loading--xlarge
+            @include area(rem(64));
+
+            &::before, // .c-loading--xlarge::before,
+            &::after { // .c-loading--xlarge::after
+                border-width: 7px;
+            }
+        }
+    }
+}
+

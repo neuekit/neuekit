@@ -1,0 +1,25 @@
+/*----------------------------------------------------------------------------*\
+    #VISIBILITY HELPERS
+\*----------------------------------------------------------------------------*/
+
+@mixin sb-helper__visibility() {
+
+    #{chain('.u-radius')} {
+        border-radius: $radius;
+    }
+
+    #{chain('.u-sticky')} {
+        position: static;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+
+        &::before, // .u-sticky.u-sticky::before,
+        &::after { // .u-sticky.u-sticky::after
+            content: '';
+            display: table;
+        }
+    }
+}
+
+

@@ -20,11 +20,11 @@ export default [
         ]
     },
     {
-        input: './app/scripts/framework/framework.js',
+        input: './app/scripts/springboard/springboard.js',
         output: {
-            file: './app/scripts/framework/framework.min.js',
+            file: './app/scripts/springboard/springboard.min.js',
             format: 'iife',
-            name: 'UIKit'
+            name: 'SpringBoard'
         },
         plugins: [
             babel({

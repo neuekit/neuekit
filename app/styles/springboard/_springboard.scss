@@ -1,0 +1,166 @@
+/*!---------------------------------------------------------------------------*\
+
+    #CREATIVE LITTLE SPRINGBOARD
+
+    - Version:      0.9.9
+    - Author:       Creative Little Dots
+    - Site:         http://creativelittle.uk/springboard
+    - Copyright:    2018, Creative Little Dots
+    – License:      MIT | http://goo.gl/p3bexl
+
+\*----------------------------------------------------------------------------*/
+
+
+
+/*----------------------------------------------------------------------------*\
+    #UTILITIES
+
+    Globally-available functions and mixins.
+\*----------------------------------------------------------------------------*/
+
+@import 'tools';                    // Functions & mixins.
+
+
+
+/*----------------------------------------------------------------------------*\
+    #GENERIC
+
+    Ground-zero styles. Low-specificity, far-reaching.
+\*----------------------------------------------------------------------------*/
+
+@import 'generic/reboot';               // A modern level playing field.
+@import 'generic/shared';               // Shared global commonalities.
+
+@mixin sb-generic() {
+
+    @include sb-generic__reboot();
+    @include sb-generic__shared();
+
+}
+
+
+
+/*----------------------------------------------------------------------------*\
+    #ELEMENTS
+
+    Last layer for type selectors (h1-h6, a).
+\*----------------------------------------------------------------------------*/
+
+@import 'elements/document';            // Page-level styles (HTML, body etc).
+@import 'elements/forms';               // Form inputs, textareas.
+@import 'elements/links';               // Hyperlinks.
+@import 'elements/lists';               // Lists.
+@import 'elements/media';               // Media elements, img, svg, video, etc.
+@import 'elements/quotes';              // Blockquotes, cite, etc.
+@import 'elements/tables';              // Table element styles.
+@import 'elements/type';                // All type styles.
+
+@mixin sb-elements() {
+
+    @include sb-element__document();
+    @include sb-element__form();
+    @include sb-element__link();
+    @include sb-element__list();
+    @include sb-element__media();
+    @include sb-element__quote();
+    @include sb-element__table();
+    @include sb-element__type();
+}
+
+
+
+/*----------------------------------------------------------------------------*\
+    #OBJECTS
+
+    Design Patterns. Layout. No cosmetics. Start using agnostic classes only.
+\*----------------------------------------------------------------------------*/
+
+@import 'objects/bricks';               // Flex based block layout.
+@import 'objects/grid';                 // Flex based grid layout.
+@import 'objects/inline';               // Flex based inliner.
+@import 'objects/unlist';               // Strip list styles.
+
+@mixin sb-objects() {
+
+    @include sb-object__bricks();
+    @include sb-object__grid();
+    @include sb-object__inline();
+    @include sb-object__unlist();
+}
+
+
+
+/*----------------------------------------------------------------------------*\
+    #COMPONENTS
+
+    Designed pieces of UI. Only using classes. More explicit naming.
+\*----------------------------------------------------------------------------*/
+
+@import 'components/adjacent';          // Adjacent input styles.
+@import 'components/button';            // Button styles.
+@import 'components/loading';           // Loading indicator component.
+@import 'components/modal';             // Modal styles.
+@import 'components/navigation';        // Responsive navigation component.
+@import 'components/offCanvas';         // Pure CSS off canvas panel.
+@import 'components/tabs';              // Tabs component.
+@import 'components/toggle';            // Toggle component.
+@import 'components/tooltip';           // Tooltips component.
+@import 'components/validate';          // Form validation component.
+
+@mixin sb-components() {
+
+    @include sb-component__adjacent();
+    @include sb-component__button();
+    @include sb-component__loading();
+    @include sb-component__modal();
+    @include sb-component__navigation();
+    @include sb-component__off-canvas();
+    @include sb-component__tabs();
+    @include sb-component__toggle();
+    @include sb-component__tooltip();
+    @include sb-component__validate();
+}
+
+
+
+/*----------------------------------------------------------------------------*\
+    #HELPERS
+
+    Overrides, helpers, utilities. Only affect one item at a time.
+\*----------------------------------------------------------------------------*/
+
+@import 'helpers/size';                 // Flex based sizes.
+@import 'helpers/flex';                 // Give flex a helping hand.
+@import 'helpers/offset';               // Margin offsets for asymetric layouts.
+@import 'helpers/spacing';              // Micro-level spacing.
+@import 'helpers/text';                 // Handy text assistants.
+@import 'helpers/visibility';           // Helpers to show and side stuff.
+
+@mixin sb-helpers() {
+
+    @include sb-helper__size();
+    @include sb-helper__flex();
+    @include sb-helper__offset();
+    @include sb-helper__spacing();
+    @include sb-helper__text();
+    @include sb-helper__visibility();
+}
+
+
+
+/*----------------------------------------------------------------------------*\
+    #OVERRIDES
+
+    Overrides, helpers, utilities. Only affect one item at a time.
+\*----------------------------------------------------------------------------*/
+
+@import 'overrides/validation';         // Form validation styles.
+@import 'overrides/visibility';         // Helpers to show and side stuff.
+
+@mixin sb-overrides() {
+
+    @include sb-override__validation();
+    @include sb-override__visibility();
+}
+
+

@@ -13,9 +13,9 @@
 import * as util from './modules/utilities';
 
 
-/* UIKit */
+/* SpringBoard */
 
-const uikit = new UIKit();
+const springboard = new SpringBoard();
 
 
 /* Project Code */

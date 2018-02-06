@@ -1,0 +1,100 @@
+/*----------------------------------------------------------------------------*\
+    #SPRINGBOARD
+
+    SpringBoard objects, components, helpers & overrides. Comment to disable
+\*----------------------------------------------------------------------------*/
+
+
+
+/*----------------------------------------------------------------------------*\
+    #GENERIC
+
+    Ground-zero styles. Low-specificity, far-reaching.
+\*----------------------------------------------------------------------------*/
+
+@include sb-generic();
+
+// @include sb-generic__reboot();          // A modern level playing field.
+// @include sb-generic__shared();          // Shared global commonalities.
+
+
+/*----------------------------------------------------------------------------*\
+    #ELEMENTS
+
+    Last layer for type selectors (h1-h6, a).
+\*----------------------------------------------------------------------------*/
+
+@include sb-elements();
+
+// @include sb-element__document();        // Page-level styles (HTML, body etc).
+// @include sb-element__form();            // Form inputs, textareas.
+// @include sb-element__link();            // Hyperlinks.
+// @include sb-element__list();            // Lists.
+// @include sb-element__media();           // Media elements, img, svg, video, etc.
+// @include sb-element__quote();           // Blockquotes, cite, etc.
+// @include sb-element__table();           // Table element styles.
+// @include sb-element__type();            // All type styles.
+
+
+/*----------------------------------------------------------------------------*\
+    #OBJECTS
+
+    Design Patterns. Layout. No cosmetics. Start using agnostic classes only.
+\*----------------------------------------------------------------------------*/
+
+@include sb-objects();
+
+// @include sb-object__bricks();           // Flex based block layout.
+// @include sb-object__grid();             // Flex based grid layout.
+// @include sb-object__inline();           // Flex based inliner.
+// @include sb-object__unlist();           // Strip list styles.
+
+
+/*----------------------------------------------------------------------------*\
+    #COMPONENTS
+
+    Designed pieces of UI. Only using classes. More explicit naming.
+\*----------------------------------------------------------------------------*/
+
+@include sb-components();
+
+// @include sb-component__adjacent();      // Adjacent input styles.
+// @include sb-component__button();        // Button styles.
+// @include sb-component__loading();       // Loading indicator component.
+// @include sb-component__modal();         // Modal styles.
+// @include sb-component__navigation();    // Responsive navigation component.
+// @include sb-component__off-canvas();    // Pure CSS off canvas panel.
+// @include sb-component__tabs();          // Tabs component.
+// @include sb-component__toggle();        // Toggle for checkbox.
+// @include sb-component__tooltip();       // Tooltips component.
+// @include sb-component__validate();      // Input validation component.
+
+
+
+/*----------------------------------------------------------------------------*\
+    #HELPERS
+
+    Overrides, helpers, utilities. Only affect one item at a time.
+\*----------------------------------------------------------------------------*/
+
+@include sb-helpers();
+
+// @include sb-helpers__flex();            // Flex based sizes.
+// @include sb-helpers__offset();          // Give flex a helping hand.
+// @include sb-helpers__size();            // Margin offsets for asymetric layouts.
+// @include sb-helpers__spacing();         // Micro-level spacing.
+// @include sb-helpers__text();            // Handy text assistants.
+// @include sb-helpers__visibility();      // Helpers to show and side stuff.
+
+
+
+/*----------------------------------------------------------------------------*\
+    #OVERRIDES
+
+    Overrides, helpers, utilities. Only affect one item at a time.
+\*----------------------------------------------------------------------------*/
+
+@include sb-overrides();
+
+// @include sb-override__validation();     // Form validation styles.
+// @include sb-override__visibility();     // Helpers to show and side stuff.
