@@ -158,9 +158,13 @@ export default function(options) {
 
         // Get data
         const hash = location.hash.substring(1);
+        const $el = document.getElementById(hash);
 
         // Run check and open modal if successful
-        document.getElementById(hash).classList.contains('c-modal') && open(hash);
+        if ( $el && $el.classList.contains('c-modal') ) {
+
+            open(hash);
+        }
 
         // Add click events to each link
         [..._getEls.open].map(($link) => $link.addEventListener('click', _clickOpen));
@@ -171,8 +175,12 @@ export default function(options) {
         window.addEventListener('popstate', () => {
 
             const hash = location.hash.substring(1);
+            const $el = document.getElementById(hash);
 
-            document.getElementById(hash).classList.contains('c-modal') && open(hash, true);
+            if ( $el && $el.classList.contains('c-modal') ) {
+
+                open(hash, true);
+            }
         });
     })();
 

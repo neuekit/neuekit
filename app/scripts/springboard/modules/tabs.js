@@ -99,18 +99,26 @@ export default function(options) {
         // Get data
         const $tabs = document.getElementsByClassName('js-tab');
         const hash = location.hash.substring(1);
+        const $el = document.getElementById(hash);
 
         // Add click events to each link
         [...$tabs].map(($el) => $el.addEventListener('click', _clickGoto));
 
-        document.getElementById(hash).classList.contains('js-tab-content') && goto(hash);
+        if ( $el && $el.classList.contains('js-tab-content') ) {
+
+            goto(hash);
+        }
 
         // Popstate event listener
         window.addEventListener('popstate', () => {
 
             const hash = location.hash.substring(1);
+            const $el = document.getElementById(hash);
 
-            document.getElementById(hash).classList.contains('js-tab-content') && goto(hash, true);
+            if ( $el && $el.classList.contains('js-tab-content') ) {
+
+                goto(hash, true);
+            }
         });
     })();
 
