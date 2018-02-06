@@ -2,21 +2,21 @@
     #GLOBAL SETTINGS
 \*----------------------------------------------------------------------------*/
 
-$radius:            3px         !default;
-$btnRadius:         $radius     !default;
-$btnReset:          false       !default;
-$speed:             0.2s       !default;
+$radius:        3px             !default;
+$speed:         0.2s            !default;
+$ease:          ease            !default;
+$trans:         $speed $ease    !default;
 
 $breakpoints: (
-    xs:             0,          // Phone
-    s:              768px,      // Tablet
-    m:              1024px,     // Notebook
-    l:              1200px,     // Laptop
-    xl:             1600px      // Desktop
+    xs:         0,              // Phone
+    s:          768px,          // Tablet
+    m:          1024px,         // Notebook
+    l:          1200px,         // Laptop
+    xl:         1600px          // Desktop
 )                               !default;
 
-$mediaClass:        '\\@'       !default;
+$mediaClass:    '\\@'           !default;
 
-$direction:         column      !default;
+$direction:     column          !default;
 
-$responsive:        both        !default; // Used with mixins as a default for responsive elements. Values: false, both, up, only
+$responsive:    both            !default; // Used with mixins as a default for responsive elements. Values: false, both, up, only

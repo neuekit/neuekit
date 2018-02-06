@@ -2,39 +2,44 @@
     #INPUT PREFIX AND POSTFIX COMPONENT STYLES
 \*----------------------------------------------------------------------------*/
 
-@mixin ui-component__adjacent() {
+@mixin ui-component__adjacent(
+    $radius: $radius,
+    $tertiary: $tertiary,
+    $color: white
+) {
 
-    .adjacent {
+    .c-adjacent {
          display: flex;
          flex-flow: row;
 
-         #{&}__item {
+         &__item { // .c-adjacent__item
               flex-shrink: 1;
               min-width: 0;
          }
 
-         #{&}__end {
+         &__end { // .c-adjacent__end
               align-items: center;
               background-color: $tertiary;
-              color: white;
+              color: $color;
               display: flex;
               flex-flow: row;
               flex-shrink: 0;
               padding: 0 rem(16);
          }
 
-         #{&}__item,
-         #{&}__end {
-              &:nth-child(1){
+         &__item, // .c-adjacent__item,
+         &__end { // .c-adjacent__end
+
+              &:nth-child(1) { // .c-adjacent__item:nth-child(1), .c-adjacent__end:nth-child(1)
                    border-radius: $radius 0 0 $radius;
               }
 
-              &:nth-child(2),
-              &:last-child {
+              &:nth-child(2), // .c-adjacent__item:nth-child(2), .c-adjacent__end:nth-child(2),
+              &:last-child { // .c-adjacent__item:last-child, .c-adjacent__end:last-child
                    border-radius: 0 $radius $radius 0;
               }
 
-              &:nth-last-child(2) {
+              &:nth-last-child(2) { // .c-adjacent__item:nth-last-child(2), .c-adjacent__end:nth-last-child(2)
                    border-top-right-radius: 0;
                    border-bottom-right-radius: 0;
               }

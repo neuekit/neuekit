@@ -23,17 +23,17 @@
 
         @include breakpoints( $responsive ) {
 
-            @include create-helpers-spacing( $attrs, $steps, $directions, $break );
+            @include _ui-helper__spacing-create( $attrs, $steps, $directions, $break );
         }
 
     // If not responsive, just run the general loop
     } @else {
 
-        @include create-helpers-spacing( $attrs, $steps, $directions, $break: '' );
+        @include _ui-helper__spacing-create( $attrs, $steps, $directions, $break: '' );
     }
 }
 
-@mixin create-helpers-spacing( $attrs, $steps, $directions, $break ) {
+@mixin _ui-helper__spacing-create( $attrs, $steps, $directions, $break ) {
 
     // Create helpers for each step defined
     @each $step in $steps {
@@ -44,8 +44,8 @@
             // Get the first character of the attribute for our helper classes (ie. 'p' from 'padding')
             $attrClass: str-slice($attr, 1, 1);
 
-            // ie. .p-8@m
-            #{chain('.' + $attrClass + '-' + $step + $break) } {
+            // ie. .u-p8@m
+            #{chain('.u-' + $attrClass + $step + $break) } {
                 #{ $attr }: rem($step); // ie. padding: rem(8);
             }
 
@@ -58,35 +58,26 @@
                 // If direction is top & bottom
                 @if $direction == vertical {
 
-                    // Make sure the step is greater than 0, to prevent p-0-0 output
-                    @if $step > 0 {
-
-                        // ie. .p-h-8@m
-
-                        #{chain('.' + $attrClass + '-h-' + $step + $break) } {
-                            #{ $attr }: rem($step) 0; // ie. padding: rem(8) 0
-                        }
+                    // ie. .u-pH-8@m
+                    #{chain('.u-' + $attrClass + 'V-' + $step + $break) } {
+                        #{ $attr }-top: rem($step); // ie. padding-top: rem(8)
+                        #{ $attr }-bottom: rem($step); // ie. padding-bottom: rem(8)
                     }
 
                 // If direction is left & right
                 } @else if $direction == horizontal {
 
-                    // Make sure the step is greater than 0, to prevent p-0-0 output
-                    @if $step > 0 {
-
-                        // ie. .p-v-8@m
-
-                        #{chain('.' + $attrClass + '-v-' + $step + $break) } {
-                            #{ $attr }: 0 rem($step); // ie. padding: 0 rem(8)
-                        }
+                    // ie. .u-pV-8@m
+                    #{chain('.u-' + $attrClass + 'H-' + $step + $break) } {
+                        #{ $attr }-left: rem($step); // ie. padding-left: rem(8)
+                        #{ $attr }-right: rem($step); // ie. padding-right: rem(8)
                     }
 
                 // All others
                 } @else {
 
-                    // ie. .p-l-8@m
-
-                    #{chain('.' + $attrClass + '-' + $dir + '-' + $step + $break) } {
+                    // ie. .u-pL-8@m
+                    #{chain('.u-' + $attrClass + to-upper-case($dir) + '-' + $step + $break) } {
                         #{ $attr }-#{ $direction }: rem($step); // ie. padding-left: rem(8)
                     }
                 }
@@ -94,3 +85,5 @@
         }
     }
 }
+
+

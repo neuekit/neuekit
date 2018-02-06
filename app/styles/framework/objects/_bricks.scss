@@ -2,31 +2,36 @@
     #BRICKS OBJECT
 \*----------------------------------------------------------------------------*/
 
-@mixin ui-object__bricks() {
+@mixin ui-object__bricks(
+    $smallBreakpoint: s,
+    $gutter: $gutter,
+    $gutterSmall: $gutterSmall,
+    $columns: $columns
+) {
 
-    [class*="bricks"] {
+    [class*="o-bricks"] {
         display: flex;
         flex-wrap: wrap;
         list-style: none;
         margin: 0 auto;
     }
 
-    [class*="brick"] {
+    [class*="o-brick"] {
         flex-basis: 100%;
         padding: rem($gutterSmall);
     }
 
-    .grid [class*="bricks"] {
+    .o-grid [class*="o-bricks"] {
         margin: 0 #{ rem( -$gutterSmall * 2 ) };
     }
 
-    @include media(s) {
+    @include media($smallBreakpoint) {
 
-        [class*="brick"] {
+        [class*="o-brick"] {
             padding: rem($gutter);
         }
 
-        .grid [class*="bricks"] {
+        .o-grid [class*="o-bricks"] {
             margin: 0 #{ rem( -$gutter * 2 ) };
         }
     }
@@ -38,7 +43,7 @@
 
             $width: floor((100% / $grid) * 1000) / 1000;
 
-            .bricks-#{$grid}#{$break} .brick {
+            .o-bricks-#{$grid}#{$break} .o-brick {
                 flex-basis: $width;
                 max-width: $width;
             }

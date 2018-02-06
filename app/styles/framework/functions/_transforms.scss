@@ -1,0 +1,113 @@
+/*----------------------------------------------------------------------------*\
+    #STRING REPLACE
+
+    @param {String} $string - Initial string
+    @param {String} $search - Substring to replace
+    @param {String} $replace ('') - New value
+    @return {String} - Updated string
+\*----------------------------------------------------------------------------*/
+
+@function str-replace($string, $search, $replace: '') {
+
+    $index: str-index($string, $search);
+
+    @if $index {
+        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+
+
+/*----------------------------------------------------------------------------*\
+    #STRING CAPITALISE
+
+    @param {String} $string - Initial string
+    @return {String} $string - Updated string
+\*----------------------------------------------------------------------------*/
+
+@function str-capitalise($string) {
+
+    @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+}
+
+
+
+/*----------------------------------------------------------------------------*\
+    #UNCAPITALISE STRING
+
+    @param {String} $string - Initial string
+    @return {String} $string - Updated string
+\*----------------------------------------------------------------------------*/
+
+@function str-uncapitalise($string) {
+
+    @return to-lower-case(str-slice($string, 1, 1)) + str-slice($string, 2);
+}
+
+
+
+/*----------------------------------------------------------------------------*\
+    #CAPITALISE EACH WORD IN STRING
+
+    @param {String} $string - Initial string
+    @return {String} $string - Updated string
+\*----------------------------------------------------------------------------*/
+
+@function str-ucwords($string) {
+
+    $progress: $string;
+    $result: "";
+    $running: true;
+
+    @while $running {
+
+        $index: str-index($progress, " ");
+
+        @if $index {
+            $result: $result + str-capitalise(str-slice($progress, 1, $index));
+            $progress: str-slice($progress, ($index + 1));
+        }
+
+        @else {
+            $running: false;
+        }
+    }
+
+    @return str-capitalise($result) + str-capitalise($progress);
+}
+
+
+
+/*----------------------------------------------------------------------------*\
+    #CAMELISE STRING
+
+    @param {String} $string - Initial string
+    @return {String} $string - Updated string
+\*----------------------------------------------------------------------------*/
+
+@function camelise($string) {
+
+    $progress: $string;
+    $result: "";
+    $exclude: " ", "-", "–", "—", "_", ",", ";", ":", ".";
+    
+    @while str-length($progress) > 0 {
+
+        $char: str-slice($progress, 1, 1);
+
+        @if contain($exclude, $char) {
+            $progress: str-capitalise(str-slice($progress, 2, 2)) + str-slice($progress, 3);
+        }
+        
+        @else {
+            $result: $result + $char;
+            $progress: str-slice($progress, 2);
+        }
+    }
+    
+    @return $result;
+}
+
+

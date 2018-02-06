@@ -25,7 +25,7 @@ export default function(options) {
     const _getEls = {
         open: document.getElementsByClassName('js-modal__open'),
         close: document.getElementsByClassName('js-modal__close'),
-        modal: document.getElementsByClassName('modal')
+        modal: document.getElementsByClassName('c-modal')
     };
 
     // Private: Click event callback for open method
@@ -41,17 +41,17 @@ export default function(options) {
 
         event.preventDefault();
 
-        close(event.target.closest('.modal').id);
+        close(event.target.closest('.c-modal').id);
     };
 
     // Private: Click modal background event callback for close method
     const _clickModal = function(event) {
 
-        if ( this.classList.contains('modal') && event.target === this ) {
+        if ( this.classList.contains('c-modal') && event.target === this ) {
 
             event.preventDefault();
 
-            close(this.closest('.modal').id);
+            close(this.closest('.c-modal').id);
         }
     };
 
@@ -113,19 +113,19 @@ export default function(options) {
         // Dispatch the before event
         document.dispatchEvent(before);
 
-        if ( document.querySelectorAll('.modal.active').length === 1 ) {
+        if ( document.querySelectorAll('.c-modal.active').length === 1 ) {
 
-            document.body.classList.remove('locked');
+            document.body.classList.remove('u-locked');
         }
 
         if ( id ) {
 
-            document.getElementById(id).closest('.modal').classList.remove('active');
+            document.getElementById(id).closest('.c-modal').classList.remove('active');
         }
 
         else {
 
-            [...document.querySelectorAll('.modal')].map(($el) => $el.classList.remove('active'));
+            [...document.querySelectorAll('.c-modal')].map(($el) => $el.classList.remove('active'));
         }
 
         // Check for after callback and run
@@ -160,7 +160,7 @@ export default function(options) {
         const hash = location.hash.substring(1);
 
         // Run check and open modal if successful
-        document.getElementById(hash).classList.contains('modal') && open(hash);
+        document.getElementById(hash).classList.contains('c-modal') && open(hash);
 
         // Add click events to each link
         [..._getEls.open].map(($link) => $link.addEventListener('click', _clickOpen));
@@ -172,7 +172,7 @@ export default function(options) {
 
             const hash = location.hash.substring(1);
 
-            document.getElementById(hash).classList.contains('modal') && open(hash, true);
+            document.getElementById(hash).classList.contains('c-modal') && open(hash, true);
         });
     })();
 

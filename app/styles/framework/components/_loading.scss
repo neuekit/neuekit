@@ -2,7 +2,11 @@
     #LOADING INDICATOR
 \*----------------------------------------------------------------------------*/
 
-@mixin ui-component__loading() {
+@mixin ui-component__loading(
+    $animation: loading 0.6s infinite linear,
+    $primary: $primary,
+    $secondary: $secondary
+) {
 
     @keyframes loading {
 
@@ -15,14 +19,13 @@
         }
     }
 
-    .loading {
+    .c-loading {
         color: transparent !important;
         @include area(rem(32));
         pointer-events: none;
-        position: relative;
 
-        &::before,
-        &::after {
+        &::before, // .c-loading::before,
+        &::after { // .c-loading::after
             border: 3px solid $secondary;
             border-radius: 50%;
             content: '';
@@ -33,41 +36,41 @@
             transform: translate(-50%, -50%);
         }
 
-        &::after {
-            animation: loading 0.6s infinite linear;
+        &::after { // .c-loading::after
+            animation: $animation;
             border-color: $primary;
             border-right-color: transparent;
             border-top-color: transparent;
         }
 
-        &--light::after {
+        &--light::after { // .c-loading--light::after
             border-bottom-color: white;
             border-left-color: white;
         }
 
-        &--small {
+        &--small { // .c-loading--small
             @include area(rem(16));
 
-            &::before,
-            &::after {
+            &::before, // .c-loading--small::before,
+            &::after { // .c-loading--small::after
                 border-width: 2px;
             }
         }
 
-        &--large {
+        &--large { // .c-loading--large
             @include area(rem(48));
 
-            &::before,
-            &::after {
+            &::before, // .c-loading--large::before,
+            &::after { // .c-loading--large::after
                 border-width: 5px;
             }
         }
 
-        &--xlarge {
+        &--xlarge { // .c-loading--xlarge
             @include area(rem(64));
 
-            &::before,
-            &::after {
+            &::before, // .c-loading--xlarge::before,
+            &::after { // .c-loading--xlarge::after
                 border-width: 7px;
             }
         }

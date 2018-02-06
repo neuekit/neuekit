@@ -2,21 +2,21 @@
     #APP WRAPPER
 \*----------------------------------------------------------------------------*/
 
-.app {
+.o-app {
 
-    &__head {
-
-    }
-
-    &__main {
+    &__head { // .o-app__head
 
     }
 
-    &__aside {
+    &__main { // .o-app__main
+
+    }
+
+    &__aside { // .o-app__aside
         
     }
 
-    &__foot {
+    &__foot { // .o-app__foot
 
     }
 }

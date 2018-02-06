@@ -2,20 +2,29 @@
     #TOOLTIP COMPONENT
 \*----------------------------------------------------------------------------*/
 
-@mixin ui-component__tooltip() {
+@mixin ui-component__tooltip(
+    $tipSize: rem(4),
+    $speed: $speed,
+    $ease: $ease,
+    $primary: $primary,
+    $colour: white,
+    $fontSize: rem(16),
+    $fontWeight: 500,
+    $letterSpacing: 0.25,
+    $padding: rem(2) rem(8)
+) {
 
-    .tooltip {
-        $tipSize: rem(4);
+    .c-tooltip {
 
-        &::before,
-        &::after {
+        &::before, // .c-tooltip::before,
+        &::after { // .c-tooltip::after
             bottom: calc(100% + #{rem(2)}); left: 50%;
             opacity: 0;
             position: absolute;
-            transition: opacity $speed ease;
+            transition: opacity $trans;
         }
 
-        &::before {
+        &::before { // .c-tooltip::before
             border-left: $tipSize solid transparent;
             border-right: $tipSize solid transparent;
             border-top: $tipSize solid $primary;
@@ -24,73 +33,73 @@
             transform: translate(-50%, $tipSize);
         }
 
-        &::after {
+        &::after { // .c-tooltip::after
             background-color: $primary;
             border-radius: $radius;
-            color: white;
+            color: $colour;
             content: attr(title);
             display: block;
-            font-size: rem(16);
-            font-weight: 500;
-            letter-spacing: 0.25px;
-            padding: rem(2) rem(8);
+            font-size: $fontSize;
+            font-weight: $fontWeight;
+            letter-spacing: $letterSpacing;
+            padding: $padding;
             transform: translateX(-50%);
             white-space: nowrap;
         }
 
-        &--bottom {
+        &--bottom { // .c-tooltip--bottom
 
-            &::before,
-            &::after {
+            &::before, // .c-tooltip--bottom::before
+            &::after { // .c-tooltip--bottom::after
                 bottom: auto; top: calc(100% + #{rem(2)});
             }
 
-            &::before {
+            &::before { // .c-tooltip::before
                 transform: translate(-50%, -#{$tipSize}) rotate(180deg);
             }
         }
 
-        &--left,
-        &--right {
+        &--left, // .c-tooltip--left,
+        &--right { // .c-tooltip--right
 
-            &::before,
-            &::after {
+            &::before, // .c-tooltip--left::before, .c-tooltip--right::before,
+            &::after { // .c-tooltip--left::after, .c-tooltip--right::after
                 bottom: 50%;
             }
 
-            &::after {
+            &::after { // .c-tooltip--left::after, .c-tooltip--right::after
                 transform: translate(0, 50%);
             }
         }
 
-        &--left {
+        &--left { // .c-tooltip--left
 
-            &::before,
-            &::after {
+            &::before, // .c-tooltip--left::before,
+            &::after { // .c-tooltip--left::after
                 left: auto; right: calc(100% + #{rem(2)});
             }
 
-            &::before {
+            &::before { // .c-tooltip--left::before
                 transform: translate(rem(6), 50%) rotate(270deg);
             }
         }
 
-        &--right {
+        &--right { // .c-tooltip--right
 
-            &::before,
-            &::after {
+            &::before, // .c-tooltip--right::before,
+            &::after { // .c-tooltip--right::after
                 left: calc(100% + #{rem(2)});
             }
 
-            &::before {
+            &::before { // .c-tooltip--right::before
                 transform: translate(rem(-6), 50%) rotate(90deg);
             }
         }
 
-        &:hover {
+        &:hover { // .c-tooltip--bottom:hover
 
-            &::before,
-            &::after {
+            &::before, // .c-tooltip--bottom:hover::before,
+            &::after { // .c-tooltip--bottom:hover::after
                 opacity: 1;
             }
         }

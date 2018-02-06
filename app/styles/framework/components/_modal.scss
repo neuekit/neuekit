@@ -2,11 +2,18 @@
     #MODAL
 \*----------------------------------------------------------------------------*/
 
-@mixin ui-component__modal() {
+@mixin ui-component__modal(
+    $primary: $primary,
+    $tertiary: $tertiary,
+    $quaternary: $quaternary,
+    $radius: $radius,
+    $speed: $speed,
+    $maxWidth: $maxWidth
+) {
 
     /*  Block  */
 
-    .modal {
+    .c-modal {
         $block: &;
 
         align-items: center;
@@ -17,13 +24,13 @@
         opacity: 0;
         padding: rem(16);
         position: fixed;
-        transition: opacity $speed ease;
+        transition: opacity $trans;
         visibility: hidden;
         z-index: 1;
 
             /*  Elements  */
 
-            &__content {
+            &__content { // .c-modal__content
                 background-color: white;
                 border-radius: $radius;
                 margin: auto;
@@ -33,20 +40,20 @@
                 overflow: auto; -webkit-overflow-scrolling: touch;
                 padding: rem(32);
                 transform: translateY(rem(160));
-                transition: all $speed ease;
+                transition: all $trans;
             }
 
-            &__close {
+            &__close { // .c-modal__close
                 background-color: $quaternary;
                 border-radius: 50%;
                 display: block;
                 @include area(rem(28));
                 position: absolute;
                 right: rem(12); top: rem(12);
-                transition: all $speed ease;
+                transition: all $trans;
 
-                &::before,
-                &::after {
+                &::before, // .c-modal__close::before,
+                &::after { // .c-modal__close::after
                     background-color: $primary;
                     border-radius: rem(16);
                     content: '';
@@ -56,18 +63,18 @@
                     position: absolute;
                     transform: translate(-50%, -50%) rotate(45deg);
                     transform-origin: center;
-                    transition: all $speed ease;
+                    transition: all $trans;
                 }
 
-                &::after{
+                &::after { // .c-modal__close::after
                     transform: translate(-50%, -50%) rotate(-45deg);
                 }
 
-                &:hover {
+                &:hover { // .c-modal__close:hover
                     background-color: $tertiary;
 
-                    &::before,
-                    &::after {
+                    &::before, // .c-modal__close:hover::before,
+                    &::after { // .c-modal__close:hover::after
                         background-color: white;
                     }
                 }
@@ -76,18 +83,18 @@
 
         /*  Modifiers  */
 
-        &--fill {
+        &--fill { // .c-modal--fill
             padding: 0;
 
-            #{$block}__content {
+            #{$block}__content { // .c-modal--fill .c-modal__content
                 flex-grow: 1;
             }
         }
 
-        &--fullscreen {
+        &--fullscreen { // .c-modal--fullscreen
             padding: 0;
 
-            #{$block}__content {
+            #{$block}__content { // .c-modal--fullscreen .c-modal__content
                 border-radius: 0;
                 @include area(100%);
                 margin: 0;
@@ -98,11 +105,11 @@
             }
         }
 
-        &.active {
+        &.active { // .c-modal.active
             opacity: 1;
             visibility: visible;
 
-            #{$block}__content {
+            #{$block}__content { // .c-modal.visible .c-modal__content
                 opacity: 1;
                 transform: translateY(0);
                 transition-delay: $speed;

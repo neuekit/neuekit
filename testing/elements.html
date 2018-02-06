@@ -9,57 +9,42 @@
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
 
         <meta charset="utf-8">
-
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>Test Elements</title>
 
         <meta name="description" content="A modernist structured User Interface Kit for building responsive scalable web projects">
-
         <meta name="coverage" content="Worldwide">
-
         <meta name="format-detection" content="telephone=no">
 
 
         <!-- Standard Favicons -->
-
         <link rel="icon" type="image/png" href="../app/images/icons/favicon-32x32.png" sizes="32x32">
-
         <link rel="icon" type="image/png" href="../app/images/icons/favicon-16x16.png" sizes="16x16">
-
         <link rel="shortcut icon" href="../app/images/icons/favicon.ico">
 
 
         <!-- Google Meta -->
         <meta name="mobile-web-app-capable" content="yes">
-
         <meta name="application-name" content="UI Kit">
-
         <meta name="theme-color" content="#2F3BA2">
 
         <link rel="icon" sizes="192x192" href="../app/images/icons/chrome-touch-icon-192x192.png">
 
 
         <!-- Apple Meta -->
-
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
         <meta name="apple-mobile-web-app-title" content="UI Kit">
 
         <link rel="apple-touch-icon" sizes="180x180" href="../app/images/icons/apple-touch-icon.png">
-
         <link rel="mask-icon" href="../app/images/icons/safari-pinned-tab.svg" color="#212226">
 
 
         <!-- Windows Meta -->
         <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-
         <meta name="msapplication-TileColor" content="#2F3BA2">
-
         <meta name="msapplication-tap-highlight" content="no">
-
         <meta name="msapplication-config" content="images/icons/browserconfig.xml">
 
 
@@ -105,7 +90,7 @@
                 background-color: whitesmoke;
             }
 
-            .subhead {
+            .c-subhead {
                 background-color: white;
             }
 
@@ -121,14 +106,14 @@
         <!--  Site: Aside  -->
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
 
-        <aside id="aside" class="off-canvas">
+        <aside class="c-offCanvas" id="aside">
 
             <h1>hello</h1>
 
         </aside>
 
 
-        <div class="canvas">
+        <div class="c-canvas">
 
             <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
             <!--  Site: Header  -->
@@ -136,11 +121,11 @@
 
             <header>
 
-                <div class="grid  grid--item">
+                <div class="o-grid  o-grid--item">
 
-                    <a href="#aside" class="open-off-canvas  tooltip  tooltip--right" title="Open Menu">☰</a>
+                    <a href="#aside" class="c-canvas__trigger  c-tooltip  c-tooltip--right" title="Open Menu">☰</a>
 
-                    <a href="#" class="close-off-canvas  tooltip  tooltip--right" title="Close Menu">☰</a>
+                    <a href="#" class="c-canvas__trigger  c-canvas__trigger--close  c-tooltip  c-tooltip--right" title="Close Menu">☰</a>
 
                     <nav role="navigation">
 
@@ -166,15 +151,15 @@
 
             <main>
 
-                <div class="grid">
+                <div class="o-grid">
 
-                    <div class="grid__item">
+                    <div class="o-grid__item">
 
-                        <div class="loading"></div>
+                        <div class="c-loading"></div>
 
                         <section>
 
-                            <h1 class="subhead  sticky" >This is a heading</h1>
+                            <h1 class="c-subhead  u-sticky" >This is a heading</h1>
 
                             <h1 class="s1">This is a heading</h1>
 
@@ -198,9 +183,9 @@
 
                             <h6 class="s6">This is a heading</h6>
 
-                            <div class="grid  justify-center">
+                            <div class="o-grid  justify-center">
 
-                                <div class="grid__item  size-10@m size-8@l  size-7@xl">
+                                <div class="o-grid__item  u-size-10@m  u-size-8@l  u-size-7@xl">
 
                                     <p>Once upon a time there was a little dot, he was walking down the road when we was struck by lightning. "Ooooh i've been electrified"</p>
 
@@ -308,99 +293,99 @@
 
                         <section>
 
-                            <h3 class="subhead  sticky">Available columns</h3>
+                            <h3 class="c-subhead  u-sticky">Available columns</h3>
 
-                            <div class="grid  grid--item">
+                            <div class="o-grid  o-grid--item">
 
                                 <span>12</span>
 
                             </div>
 
-                            <div class="grid">
+                            <div class="o-grid">
 
-                                <div class="grid__item  size-11"><span>11</span></div>
+                                <div class="o-grid__item  u-size-11"><span>11</span></div>
 
-                                <div class="grid__item  size-1"><span>1</span></div>
-
-                            </div>
-
-                            <div class="grid">
-
-                                <div class="grid__item  size-10"><span>10</span></div>
-
-                                <div class="grid__item  size-2"><span>2</span></div>
+                                <div class="o-grid__item  u-size-1"><span>1</span></div>
 
                             </div>
 
-                            <div class="grid">
+                            <div class="o-grid">
 
-                                <div class="grid__item  size-9"><span>9</span></div>
+                                <div class="o-grid__item  u-size-10"><span>10</span></div>
 
-                                <div class="grid__item  size-3"><span>3</span></div>
-
-                            </div>
-
-                            <div class="grid">
-
-                                <div class="grid__item  size-8"><span>8</span></div>
-
-                                <div class="grid__item  size-4"><span>4</span></div>
+                                <div class="o-grid__item  u-size-2"><span>2</span></div>
 
                             </div>
 
-                            <div class="grid">
+                            <div class="o-grid">
 
-                                <div class="grid__item  size-7"><span>7</span></div>
+                                <div class="o-grid__item  u-size-9"><span>9</span></div>
 
-                                <div class="grid__item  size-5"><span>5</span></div>
-
-                            </div>
-
-                            <div class="grid">
-
-                                <div class="grid__item  size-6"><span>6</span></div>
-
-                                <div class="grid__item  size-6"><span>6</span></div>
+                                <div class="o-grid__item  u-size-3"><span>3</span></div>
 
                             </div>
 
-                            <div class="grid">
+                            <div class="o-grid">
 
-                                <div class="grid__item  size-5"><span>5</span></div>
+                                <div class="o-grid__item  u-size-8"><span>8</span></div>
 
-                                <div class="grid__item  size-7"><span>7</span></div>
-
-                            </div>
-
-                            <div class="grid">
-
-                                <div class="grid__item  size-4"><span>4</span></div>
-
-                                <div class="grid__item  size-8"><span>8</span></div>
+                                <div class="o-grid__item  u-size-4"><span>4</span></div>
 
                             </div>
 
-                            <div class="grid">
+                            <div class="o-grid">
 
-                                <div class="grid__item  size-3"><span>3</span></div>
+                                <div class="o-grid__item  u-size-7"><span>7</span></div>
 
-                                <div class="grid__item  size-9"><span>9</span></div>
-
-                            </div>
-
-                            <div class="grid">
-
-                                <div class="grid__item  size-2"><span>2</span></div>
-
-                                <div class="grid__item  size-10"><span>10</span></div>
+                                <div class="o-grid__item  u-size-5"><span>5</span></div>
 
                             </div>
 
-                            <div class="grid">
+                            <div class="o-grid">
 
-                                <div class="grid__item  size-1"><span>1</span></div>
+                                <div class="o-grid__item  u-size-6"><span>6</span></div>
 
-                                <div class="grid__item  size-11"><span>11</span></div>
+                                <div class="o-grid__item  u-size-6"><span>6</span></div>
+
+                            </div>
+
+                            <div class="o-grid">
+
+                                <div class="o-grid__item  u-size-5"><span>5</span></div>
+
+                                <div class="o-grid__item  u-size-7"><span>7</span></div>
+
+                            </div>
+
+                            <div class="o-grid">
+
+                                <div class="o-grid__item  u-size-4"><span>4</span></div>
+
+                                <div class="o-grid__item  u-size-8"><span>8</span></div>
+
+                            </div>
+
+                            <div class="o-grid">
+
+                                <div class="o-grid__item  u-size-3"><span>3</span></div>
+
+                                <div class="o-grid__item  u-size-9"><span>9</span></div>
+
+                            </div>
+
+                            <div class="o-grid">
+
+                                <div class="o-grid__item  u-size-2"><span>2</span></div>
+
+                                <div class="o-grid__item  u-size-10"><span>10</span></div>
+
+                            </div>
+
+                            <div class="o-grid">
+
+                                <div class="o-grid__item  u-size-1"><span>1</span></div>
+
+                                <div class="o-grid__item  u-size-11"><span>11</span></div>
 
                             </div>
 
@@ -410,27 +395,27 @@
 
                         <section>
 
-                            <h3 class="subhead  sticky">Infinite Nesting</h3>
+                            <h3 class="c-subhead  u-sticky">Infinite Nesting</h3>
 
-                            <div class="grid">
+                            <div class="o-grid">
 
-                                <div class="grid__item">
+                                <div class="o-grid__item">
 
                                     <span>
 
                                         Parent
 
-                                        <div class="grid">
+                                        <div class="o-grid">
 
-                                            <div class="grid__item">
+                                            <div class="o-grid__item">
 
                                                 <span>
 
                                                     Child
 
-                                                    <div class="grid">
+                                                    <div class="o-grid">
 
-                                                        <div class="grid__item">
+                                                        <div class="o-grid__item">
 
                                                             <span>
 
@@ -462,6 +447,16 @@
 
                             <form>
 
+                                <div class="c-toggle  c-toggle--small">
+
+                                    <input class="c-toggle__input" type="checkbox" id="toggle">
+
+                                    <label class="c-toggle__label" for="toggle" data-on="On" data-off="Off"></label>
+
+                                </div>
+
+                                <hr>
+
                                 <button>button</button>
 
                                 <hr>
@@ -490,7 +485,7 @@
 
                                 <hr>
 
-                                <input type="button" value="button" class="button">
+                                <input type="button" value="c-button" class="c-button">
 
                                 <hr>
 
@@ -536,13 +531,13 @@
 
                                 <hr>
 
-                                <div class="validate">
+                                <div class="c-validate">
 
-                                    <input class="validate__input" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" id="password" name="password" required placeholder="Password">
+                                    <input class="c-validate__input" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" type="password" id="password" name="password" required placeholder="Password">
 
-                                    <label class="validate__label" for="password">Password</label>
+                                    <label class="c-validate__label" for="password">Password</label>
 
-                                    <div class="validate__message">Your password must be atleast 6 characters. It must also contain atleast 1 uppercase, 1 lowercase and 1 number character.</div>
+                                    <div class="c-validate__message">Your password must be atleast 6 characters. It must also contain atleast 1 uppercase, 1 lowercase and 1 number character.</div>
 
                                 </div>
 
@@ -638,13 +633,13 @@
 
                                 <hr>
 
-                                <div class="adjacent">
+                                <div class="c-adjacent">
 
-                                     <div class="adjacent__end">https://</div>
+                                     <div class="c-adjacent__end">https://</div>
 
-                                     <input class="adjacent__item" type="text">
+                                     <input class="c-adjacent__item" type="text">
 
-                                     <div class="adjacent__end">Go</div>
+                                     <div class="c-adjacent__end">Go</div>
 
                                 </div>
 
@@ -678,39 +673,27 @@
             <!--  Site: Modal  -->
             <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
 
-            <div class="grid  grid--item">
+            <div class="o-grid  o-grid--item">
 
-                <a href="#m1" class="button js-modal__open">Open Modal</a>
+                <a href="#m1" class="c-button js-modal__open">Open Modal</a>
 
-                <a href="#m5" class="button js-modal__open">Open Modal</a>
+                <a href="#m5" class="c-button js-modal__open">Open Modal</a>
 
-                <a href="#m2" class="button js-modal__open">Open Modal</a>
+                <a href="#m2" class="c-button js-modal__open">Open Modal</a>
 
-                <a href="#m3" class="button js-modal__open">Open Modal</a>
+                <a href="#m3" class="c-button js-modal__open">Open Modal</a>
 
-                <a href="#m4" class="button js-modal__open">Open Modal</a>
+                <a href="#m4" class="c-button js-modal__open">Open Modal</a>
 
                 <hr>
 
             </div>
 
-            <section class="modal" id="m1">
+            <section class="c-modal" id="m1">
 
-                <div class="modal__content">
+                <div class="c-modal__content">
 
-                    <button class="modal__close  js-modal__close"></button>
-
-                    <h1>Hello I'm Modal number 1</h1>
-
-                </div>
-
-            </section>
-
-            <section class="modal  modal--fullscreen" id="m5">
-
-                <div class="modal__content">
-
-                    <button class="modal__close  js-modal__close"></button>
+                    <button class="c-modal__close  js-modal__close"></button>
 
                     <h1>Hello I'm Modal number 1</h1>
 
@@ -718,17 +701,29 @@
 
             </section>
 
-            <section class="modal" id="m2">
+            <section class="c-modal  c-modal--fullscreen" id="m5">
 
-                <div class="modal__content">
+                <div class="c-modal__content">
+
+                    <button class="c-modal__close  js-modal__close"></button>
+
+                    <h1>Hello I'm Modal number 1</h1>
+
+                </div>
+
+            </section>
+
+            <section class="c-modal" id="m2">
+
+                <div class="c-modal__content">
 
                     <h4>Hello I'm a dialog modal</h4>
 
-                    <div class="flex between">
+                    <div class="u-flex  u-between">
 
-                        <button class="js-modal__close  size-5">Cancel</button>
+                        <button class="js-modal__close  u-size-5">Cancel</button>
 
-                        <button class="js-modal__close  size-5">Continue</button>
+                        <button class="js-modal__close  u-size-5">Continue</button>
 
                     </div>
 
@@ -736,17 +731,17 @@
 
             </section>
 
-            <section class="modal" id="m3">
+            <section class="c-modal" id="m3">
 
-                <div class="modal__content">
+                <div class="c-modal__content">
 
                     <h4>Hello I'm a dialog modal</h4>
 
-                    <div class="flex between">
+                    <div class="u-flex  u-between">
 
-                        <button class="js-modal__close  size-5">Cancel</button>
+                        <button class="js-modal__close  u-size-5">Cancel</button>
 
-                        <button class="js-modal__close  size-5">Continue</button>
+                        <button class="js-modal__close  u-size-5">Continue</button>
 
                     </div>
 
@@ -754,17 +749,17 @@
 
             </section>
 
-            <section class="modal" id="m4">
+            <section class="c-modal" id="m4">
 
-                <div class="modal__content">
+                <div class="c-modal__content">
 
                     <h4>Hello I'm a dialog modal</h4>
 
-                    <div class="flex between">
+                    <div class="u-flex  u-between">
 
-                        <button class="js-modal__close  size-5">Cancel</button>
+                        <button class="js-modal__close  u-size-5">Cancel</button>
 
-                        <button class="js-modal__close  size-5">Continue</button>
+                        <button class="js-modal__close  u-size-5">Continue</button>
 
                     </div>
 

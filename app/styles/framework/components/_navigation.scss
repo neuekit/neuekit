@@ -2,9 +2,14 @@
     #NAVIGATION COMPONENT
 \*----------------------------------------------------------------------------*/
 
-@mixin ui-component__navigation() {
+@mixin ui-component__navigation(
+    $closeBg: rgba(black, 0.25),
+    $navSubBg: lavendar,
+    $navLinkHoverBg: whitesmoke,
+    $speed: $speed
+) {
 
-    .js .nav {
+    .js .c-nav {
         bottom: 0; left: 0;
         box-sizing: content-box;
         cursor: pointer;
@@ -15,37 +20,37 @@
         position: fixed;
         width: 100%;
 
-            &__close {
-                background-color: rgba(black, 0.25);
+            &__close { // .js .c-nav__close
+                background-color: $closeBg;
                 display: block;
                 @include area(100%);
                 left: 0; top: 0;
                 position: fixed;
             }
 
-            &__link {
+            &__link { // .js .c-nav__link
                 display: block;
                 padding: rem(4) rem(12);
 
-                + .nav-sub {
-                    background-color: lavender;
+                + .nav-sub { // .js .c-nav__link + .nav-sub
+                    background-color: $navLinkHoverBg;
                     left: 0;
                     margin-top: -1px;
                     position: absolute;
                     transform: translate(100vw);
-                    transition: transform $speed ease;
+                    transition: transform $trans;
                     width: 100%;
                     z-index: 1;
 
-                    &:hover {
+                    &:hover { // .js .c-nav__link + .nav-sub:hover
                         transform: translate(0);
                     }
                 }
 
-                &:hover {
-                    background-color: whitesmoke;
+                &:hover { // .js .c-nav__link:hover
+                    background-color: $navSubBg;
 
-                    + .nav-sub {
+                    + .nav-sub { // .js .c-nav__link:hover + .nav-sub
                         transform: translate(0);
                     }
                 }

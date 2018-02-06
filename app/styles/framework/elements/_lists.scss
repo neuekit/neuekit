@@ -12,14 +12,14 @@
     ol {
         counter-reset: item;
 
-        > li {
+        > li { // ol > li
             counter-increment: item;
         }
 
         ol > li {
             display: block;
 
-            &::before {
+            &::before { // ol > li::before
                 content: counters(item, '.') '. ';
                 margin-left: rem(-20);
             }

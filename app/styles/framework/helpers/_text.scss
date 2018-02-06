@@ -27,70 +27,70 @@
 
     @if index($helpers, text-bolder) {
 
-        #{chain('.text-bolder')} {
+        #{chain('.u-textBolder')} {
             font-weight: bolder;
         }
     }
 
     @if index($helpers, text-lighter) {
 
-        #{chain('.text-lighter')} {
+        #{chain('.u-textLighter')} {
             font-weight: lighter;
         }
     }
 
     @if index($helpers, text-strong) {
 
-        #{chain('.text-strong')} {
+        #{chain('.u-textStrong')} {
             font-weight: 600;
         }
     }
 
     @if index($helpers, text-success) {
 
-        #{chain('.text-success')} {
+        #{chain('.u-textSuccess')} {
             color: $success;
         }
     }
 
     @if index($helpers, text-warn) {
 
-        #{chain('.text-warn')} {
+        #{chain('.u-textWarn')} {
             color: $warn;
         }
     }
 
     @if index($helpers, text-error) {
 
-        #{chain('.text-error')} {
+        #{chain('.u-textError')} {
             color: $error;
         }
     }
 
     @if index($helpers, text-disabled) {
 
-        #{chain('.text-disabled')} {
+        #{chain('.u-textDisabled')} {
             color: $disabled;
         }
     }
 
     @if index($helpers, text-lower) {
 
-        #{chain('.text-lower')} {
+        #{chain('.u-textLower')} {
             text-transform: lowercase;
         }
     }
 
     @if index($helpers, text-upper) {
 
-        #{chain('.text-upper')} {
+        #{chain('.u-textUpper')} {
             text-transform: uppercase;
         }
     }
 
     @if index($helpers, text-caps) {
 
-        #{chain('.text-caps')} {
+        #{chain('.u-textCaps')} {
             text-transform: capitalize;
         }
     }
@@ -114,7 +114,7 @@
 
     @if index($helpers, text-start) {
 
-        #{chain('.text-start' + $break)} {
+        #{chain('.u-textStart' + $break)} {
             text-align: left;
             text-align: start;
         }
@@ -122,14 +122,14 @@
 
     @if index($helpers, text-center) {
 
-        #{chain('.text-center' + $break)} {
+        #{chain('.u-textCenter' + $break)} {
             text-align: center;
         }
     }
 
     @if index($helpers, text-end) {
 
-        #{chain('.text-end' + $break)} {
+        #{chain('.u-textEnd' + $break)} {
             text-align: right;
             text-align: end;
         }
@@ -137,28 +137,28 @@
 
     @if index($helpers, text-justify) {
 
-        #{chain('.text-justify' + $break)} {
+        #{chain('.u-textJustify' + $break)} {
             text-align: justify;
         }
     }
 
     @if index($helpers, text-grow) {
 
-        #{chain('.text-grow' + $break)} {
+        #{chain('.u-textGrow' + $break)} {
             font-size: 125%;
         }
     }
 
     @if index($helpers, text-shrink) {
 
-        #{chain('.text-shrink' + $break)} {
+        #{chain('.u-textShrink' + $break)} {
             font-size: 75%;
         }
     }
 
     @if index($helpers, text-nowrap) {
 
-        #{chain('.text-nowrap' + $break)} {
+        #{chain('.u-textNoWrap' + $break)} {
             white-space: nowrap;
         }
     }

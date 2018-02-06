@@ -1,11 +1,12 @@
 /*----------------------------------------------------------------------------*\
-    #OFF CANVAS
+    #TOGGLE
 \*----------------------------------------------------------------------------*/
 
 @mixin ui-component__toggle(
 
     $colourOn: dodgerblue,
     $colourOff: lightgrey,
+    $handleColour: white,
     $toggles: (
         default: (
             gap: 0.1875rem,
@@ -27,44 +28,46 @@
         //     gap: 0.4375rem,
         //     size: 4rem
         // )
-    )
+    ),
+    $speed: $speed,
+    $ease: $ease
 ) {
 
-    .toggle {
+    .c-toggle {
         $block: &;
         $size: map-deep-get($toggles, 'default', 'size');
         $gap: map-deep-get($toggles, 'default', 'gap');
 
-        &__input {
+        &__input { // .c-toggle__input
             @include area(0.1px);
             opacity: 0;
             position: absolute;
 
-            &:checked + #{$block}__label {
+            &:checked + #{$block}__label { // .c-toggle__input:checked + .c-toggle__label
                 background-color: $colourOn;
 
-                &::before {
+                &::before { // .c-toggle__input:checked + .c-toggle__label::before
                     right: $gap;
                 }
 
-                &::after {
+                &::after { // .c-toggle__input:checked + .c-toggle__label::after
                     content: attr(data-on);
                 }
             }
         }
 
-        &__label#{&}__label  {
+        &__label#{&}__label  { // .c-toggle__label.c-toggle__label
             background-color: $colourOff;
             border-radius: $size * 2;
             cursor: pointer;
             display: block;
             @include area($size, $size * 2);
             margin: 0;
-            transition: background-color $speed ease;
+            transition: background-color $trans;
             user-select: none;
 
-            &::before {
-                background: white;
+            &::before { // .c-toggle__label.c-toggle__label::before
+                background: $handleColour;
                 border-radius: 50%;
                 box-shadow: 0 $gap $size / 2 rgba(black, 0.1);
                 content: '';
@@ -73,10 +76,10 @@
                 margin: 0;
                 right: calc(100% - #{$size - $gap}); top: $gap;
                 position: absolute;
-                transition: right $speed ease;
+                transition: right $trans;
             }
 
-            &::after {
+            &::after { // .c-toggle__label.c-toggle__label::after
                 content: attr(data-off);
                 font-size: rem(14);
                 left: calc(100% + #{rem(8)}); top: 50%;
@@ -89,21 +92,21 @@
 
             @if ( $class != 'default' ) {
 
-                &--#{$class} {
+                &--#{$class} { // .c-toggle--small
                     $size: map-get($map, 'size');
                     $gap: map-get($map, 'gap');
 
-                    #{$block} {
+                    #{$block} { // .c-toggle--small .c-toggle
 
-                        &__input:checked + #{$block}__label::before {
+                        &__input:checked + #{$block}__label::before { // .c-toggle--small .c-toggle__input:checked + .c-toggle__label::before
                             right: $gap;
                         }
 
-                        &__label {
+                        &__label { // .c-toggle--small .c-toggle__label
                             border-radius: $size * 2;
                             @include area($size, $size * 2);
 
-                            &::before {
+                            &::before { // .c-toggle--small .c-toggle__label::before
                                 @include area($size - ($gap * 2));
                                 right: calc(100% - #{$size - $gap}); top: $gap;
                             }
