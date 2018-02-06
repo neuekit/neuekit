@@ -40,7 +40,7 @@
     "not blackberry <= 7"
   ],
   "scripts": {
-    "scss": "node-sass --omit-source-map-url --recursive --output-style compressed --output ./app/styles ./app/styles",
+    "scss": "node-sass --include-path node_modules/foundation-sites/scss --include-path node_modules/motion-ui/src --omit-source-map-url --recursive --output-style compressed --output ./app/styles ./app/styles",
     "autoprefixer": "postcss --use autoprefixer --replace ./app/styles/style.css --no-map",
     "build:css": "yarn run scss --silent && yarn run autoprefixer --silent",
     "build:js": "rollup --config",

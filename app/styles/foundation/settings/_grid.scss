@@ -1,0 +1,17 @@
+/*----------------------------------------------------------------------------*\
+    #GRID SETTINGS
+\*----------------------------------------------------------------------------*/
+
+$xy-grid:                   true;
+$grid-container:            $maxWidth;
+$grid-columns:              12;
+$grid-margin-gutters: (
+  xs: 20px,
+  m: 30px
+);
+$grid-padding-gutters:      $grid-margin-gutters;
+$grid-container-padding:    $grid-padding-gutters;
+$grid-container-max:        $maxWidth;
+$xy-block-grid-max:         8;
+
+

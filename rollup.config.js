@@ -20,9 +20,9 @@ export default [
         ]
     },
     {
-        input: './app/scripts/framework/framework.js',
+        input: './app/scripts/uikit/uikit.js',
         output: {
-            file: './app/scripts/framework/framework.min.js',
+            file: './app/scripts/uikit/uikit.min.js',
             format: 'iife',
             name: 'UIKit'
         },
