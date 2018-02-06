@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------------*\
     #SPRINGBOARD
 
-    SpringBoard objects, components, helpers & overrides. Comment to disable
+    SpringBoard objects, components, utilities & overrides. Comment to disable
 \*----------------------------------------------------------------------------*/
 
 
@@ -72,19 +72,19 @@
 
 
 /*----------------------------------------------------------------------------*\
-    #HELPERS
+    #UTILITIES
 
     Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
-@include sb-helpers();
+@include sb-utilities();
 
-// @include sb-helpers__flex();            // Flex based sizes.
-// @include sb-helpers__offset();          // Give flex a helping hand.
-// @include sb-helpers__size();            // Margin offsets for asymetric layouts.
-// @include sb-helpers__spacing();         // Micro-level spacing.
-// @include sb-helpers__text();            // Handy text assistants.
-// @include sb-helpers__visibility();      // Helpers to show and side stuff.
+// @include sb-utilities__flex();            // Flex based sizes.
+// @include sb-utilities__offset();          // Give flex a helping hand.
+// @include sb-utilities__size();            // Margin offsets for asymetric layouts.
+// @include sb-utilities__spacing();         // Micro-level spacing.
+// @include sb-utilities__text();            // Handy text assistants.
+// @include sb-utilities__visibility();      // Helpers to show and side stuff.
 
 
 

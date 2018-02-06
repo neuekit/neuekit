@@ -1,10 +1,10 @@
 /*----------------------------------------------------------------------------*\
-    #TEXT HELPERS
+    #TEXT UTILITIES
 \*----------------------------------------------------------------------------*/
 
 @mixin sb-helper__text(
     $responsive: $responsive,
-    $helpers: (
+    $utilities: (
         text-start,
         text-center,
         text-end,
@@ -25,94 +25,94 @@
     )
 ) {
 
-    @if index($helpers, text-bolder) {
+    @if index($utilities, text-bolder) {
 
         #{chain('.u-textBolder')} {
             font-weight: bolder;
         }
     }
 
-    @if index($helpers, text-lighter) {
+    @if index($utilities, text-lighter) {
 
         #{chain('.u-textLighter')} {
             font-weight: lighter;
         }
     }
 
-    @if index($helpers, text-strong) {
+    @if index($utilities, text-strong) {
 
         #{chain('.u-textStrong')} {
             font-weight: 600;
         }
     }
 
-    @if index($helpers, text-success) {
+    @if index($utilities, text-success) {
 
         #{chain('.u-textSuccess')} {
             color: $success;
         }
     }
 
-    @if index($helpers, text-warn) {
+    @if index($utilities, text-warn) {
 
         #{chain('.u-textWarn')} {
             color: $warn;
         }
     }
 
-    @if index($helpers, text-error) {
+    @if index($utilities, text-error) {
 
         #{chain('.u-textError')} {
             color: $error;
         }
     }
 
-    @if index($helpers, text-disabled) {
+    @if index($utilities, text-disabled) {
 
         #{chain('.u-textDisabled')} {
             color: $disabled;
         }
     }
 
-    @if index($helpers, text-lower) {
+    @if index($utilities, text-lower) {
 
         #{chain('.u-textLower')} {
             text-transform: lowercase;
         }
     }
 
-    @if index($helpers, text-upper) {
+    @if index($utilities, text-upper) {
 
         #{chain('.u-textUpper')} {
             text-transform: uppercase;
         }
     }
 
-    @if index($helpers, text-caps) {
+    @if index($utilities, text-caps) {
 
         #{chain('.u-textCaps')} {
             text-transform: capitalize;
         }
     }
 
-    // Check first if we need to provide responsive helpers
+    // Check first if we need to provide responsive utilities
     @if $responsive != false {
 
         @include breakpoints( $responsive ) {
 
-            @include create-helpers-text( $helpers, $break );
+            @include create-utilities-text( $utilities, $break );
         }
     }
 
     @else { // If not responsive, just run the general loop
 
-        @include create-helpers-text( $helpers, $break: '' );
+        @include create-utilities-text( $utilities, $break: '' );
     }
 }
 
-@mixin create-helpers-text( $helpers, $break ) {
+@mixin create-utilities-text( $utilities, $break ) {
 
-    @if index($helpers, text-start) {
+    @if index($utilities, text-start) {
 
         #{chain('.u-textStart' + $break)} {
             text-align: left;
@@ -120,14 +120,14 @@
         }
     }
 
-    @if index($helpers, text-center) {
+    @if index($utilities, text-center) {
 
         #{chain('.u-textCenter' + $break)} {
             text-align: center;
         }
     }
 
-    @if index($helpers, text-end) {
+    @if index($utilities, text-end) {
 
         #{chain('.u-textEnd' + $break)} {
             text-align: right;
@@ -135,28 +135,28 @@
         }
     }
 
-    @if index($helpers, text-justify) {
+    @if index($utilities, text-justify) {
 
         #{chain('.u-textJustify' + $break)} {
             text-align: justify;
         }
     }
 
-    @if index($helpers, text-grow) {
+    @if index($utilities, text-grow) {
 
         #{chain('.u-textGrow' + $break)} {
             font-size: 125%;
         }
     }
 
-    @if index($helpers, text-shrink) {
+    @if index($utilities, text-shrink) {
 
         #{chain('.u-textShrink' + $break)} {
             font-size: 75%;
         }
     }
 
-    @if index($helpers, text-nowrap) {
+    @if index($utilities, text-nowrap) {
 
         #{chain('.u-textNoWrap' + $break)} {
             white-space: nowrap;

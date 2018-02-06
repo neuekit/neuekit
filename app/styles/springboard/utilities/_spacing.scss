@@ -1,5 +1,5 @@
 /*----------------------------------------------------------------------------*\
-    #SPACING HELPERS
+    #SPACING UTILITIES
 \*----------------------------------------------------------------------------*/
 
 @mixin sb-helper__spacing(
@@ -18,7 +18,33 @@
     )
 ) {
 
-    // Check first if we need to provide responsive helpers
+    .safe-area-l {
+        padding-left: env(safe-area-inset-left);
+    }
+
+    .safe-area-r {
+        padding-right: env(safe-area-inset-right);
+    }
+
+    .safe-area-t {
+        padding-top: env(safe-area-inset-top);
+    }
+
+    .safe-area-b {
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .safe-area-h {
+        padding-left: env(safe-area-inset-left);
+        padding-right: env(safe-area-inset-right);
+    }
+
+    .safe-area-v {
+        padding-top: env(safe-area-inset-top);
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    // Check first if we need to provide responsive utilities
     @if $responsive != false {
 
         @include breakpoints( $responsive ) {
@@ -35,7 +61,7 @@
 
 @mixin _sb-helper__spacing-create( $attrs, $steps, $directions, $break ) {
 
-    // Create helpers for each step defined
+    // Create utilities for each step defined
     @each $step in $steps {
 
         // Iterate through each attribute (padding, margin)

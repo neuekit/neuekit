@@ -124,19 +124,19 @@
 
 
 /*----------------------------------------------------------------------------*\
-    #HELPERS
+    #UTILITIES
 
     Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
-@import 'helpers/size';                 // Flex based sizes.
-@import 'helpers/flex';                 // Give flex a helping hand.
-@import 'helpers/offset';               // Margin offsets for asymetric layouts.
-@import 'helpers/spacing';              // Micro-level spacing.
-@import 'helpers/text';                 // Handy text assistants.
-@import 'helpers/visibility';           // Helpers to show and side stuff.
+@import 'utilities/size';                 // Flex based sizes.
+@import 'utilities/flex';                 // Give flex a helping hand.
+@import 'utilities/offset';               // Margin offsets for asymetric layouts.
+@import 'utilities/spacing';              // Micro-level spacing.
+@import 'utilities/text';                 // Handy text assistants.
+@import 'utilities/visibility';           // Helpers to show and side stuff.
 
-@mixin sb-helpers() {
+@mixin sb-utilities() {
 
     @include sb-helper__size();
     @include sb-helper__flex();
