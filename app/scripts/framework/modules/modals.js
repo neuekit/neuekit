@@ -45,7 +45,7 @@ export default function(options) {
     };
 
     // Private: Click modal background event callback for close method
-    const _clickModal = function(event) {
+    const _clickOverlay = function(event) {
 
         if ( this.classList.contains('c-modal') && event.target === this ) {
 
@@ -143,7 +143,7 @@ export default function(options) {
         // Add click events to each link
         [..._getEls.open].map(($link) => $link.removeEventListener('click', _clickOpen));
         [..._getEls.close].map(($link) => $link.removeEventListener('click', _clickClose));
-        [..._getEls.modal].map(($link) => $link.removeEventListener('click', _clickModal));
+        [..._getEls.modal].map(($link) => $link.removeEventListener('click', _clickOverlay));
     };
 
     // Public: Destroy module instance and run initialise again
@@ -165,7 +165,7 @@ export default function(options) {
         // Add click events to each link
         [..._getEls.open].map(($link) => $link.addEventListener('click', _clickOpen));
         [..._getEls.close].map(($link) => $link.addEventListener('click', _clickClose));
-        [..._getEls.modal].map(($link) => $link.addEventListener('click', _clickModal));
+        [..._getEls.modal].map(($link) => $link.addEventListener('click', _clickOverlay));
 
         // Popstate event listener
         window.addEventListener('popstate', () => {
