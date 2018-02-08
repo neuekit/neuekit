@@ -135,6 +135,7 @@
 @import 'utilities/spacing';              // Micro-level spacing.
 @import 'utilities/text';                 // Handy text assistants.
 @import 'utilities/visibility';           // Helpers to show and side stuff.
+@import 'utilities/colours';              // Helpers to set either background or text colour.
 
 @mixin sb-utilities() {
 
@@ -144,6 +145,7 @@
     @include sb-helper__spacing();
     @include sb-helper__text();
     @include sb-helper__visibility();
+    @include sb-helper__colour();
 }
 
 

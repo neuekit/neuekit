@@ -1,0 +1,40 @@
+/*----------------------------------------------------------------------------*\
+    #COLOUR UTILITIES
+\*----------------------------------------------------------------------------*/
+
+@mixin sb-helper__colour(
+    $palette: $palette,
+    $lightnessTolerance: 50, // The lightness component, between 0% and 100%, or false/null
+    $lightnessColour: white, // Colour to set the text to if background colour is deemed to be dark
+    $utilities: (
+        background,
+        colour
+    )
+) {
+
+    @each $name, $colour in $palette {
+
+        // Capitalise our colour name (ie. red becomes Red)
+        $name: str-capitalise($name);
+
+        @if index($utilities, background) {
+
+            #{chain(".u-bg" + $name)} { // .u-bgRed
+                background-color: $colour;
+
+                @if ( $lightnessTolerance and lightness($colour) < $lightnessTolerance ) {
+                    color: $lightnessColour;
+                }
+            }
+        }
+
+        @if index($utilities, colour) {
+        
+            #{chain(".u-colour" + $name)} { // .u-colourRed
+                color: $colour;
+            }
+        }
+    }
+}
+
+
