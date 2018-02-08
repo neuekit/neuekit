@@ -15,4 +15,11 @@ $warn:        #FAE57D              !default;
 $success:     #73E699              !default;
 $disabled:    #AAAAAA              !default;
 
+$palette: (
+    'primary':      $primary,
+    'secondary':    $secondary,
+    'tertiary':     $tertiary,
+    'quaternary':   $quaternary
+)                                    !default;
+
 
