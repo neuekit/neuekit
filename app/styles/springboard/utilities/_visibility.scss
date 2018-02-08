@@ -2,22 +2,76 @@
     #VISIBILITY UTILITIES
 \*----------------------------------------------------------------------------*/
 
-@mixin sb\-utility__visibility() {
+@mixin sb-utility__visibility(
+    $responsive: $responsive,
+    $utilities: (
+        hide,
+        block,
+        locked,
+        radius,
+        sticky
+    )
+) {
 
-    #{chain('.u-radius')} {
-        border-radius: $radius;
+    // Check first if we need to provide responsive overrides
+    @if $responsive != false {
+
+        @include breakpoints( $responsive ) {
+
+            @include _sb-utility__visibility-create( $utilities, $break );
+        }
+    // If not responsive, just run the general loop
     }
 
-    #{chain('.u-sticky')} {
-        position: static;
-        position: sticky;
-        top: 0;
-        z-index: 1;
+    @else {
 
-        &::before, // .u-sticky.u-sticky::before,
-        &::after { // .u-sticky.u-sticky::after
-            content: '';
-            display: table;
+        @include _sb-utility__visibility-create( $utilities, $break: '' );
+    }
+}
+
+@mixin _sb-utility__visibility-create( $utilities, $break ) {
+
+    @if index($utilities, hide) {
+
+        #{chain('.u-hide' + $break) } {
+            display: none;
+        }
+    }
+
+    @if index($utilities, block) {
+
+        #{chain('.u-block' + $break) } {
+            display: block;
+        }
+    }
+
+    @if index($utilities, locked) {
+
+        #{chain('.u-locked')} {
+            overflow: hidden;
+        }
+    }
+
+    @if index($utilities, radius) {
+
+        #{chain('.u-radius')} {
+            border-radius: $radius;
+        }
+    }
+
+    @if index($utilities, sticky) {
+
+        #{chain('.u-sticky')} {
+            position: static;
+            position: sticky;
+            top: 0;
+            z-index: 1;
+
+            &::before, // .u-sticky.u-sticky::before,
+            &::after { // .u-sticky.u-sticky::after
+                content: '';
+                display: table;
+            }
         }
     }
 }

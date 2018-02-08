@@ -35,7 +35,6 @@
 
     @include sb-generic__reboot();
     @include sb-generic__shared();
-
 }
 
 
@@ -129,40 +128,23 @@
     Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
-@import 'utilities/size';                 // Flex based sizes.
+@import 'utilities/colours';              // Helpers to set either background or text colour.
 @import 'utilities/flex';                 // Give flex a helping hand.
 @import 'utilities/offset';               // Margin offsets for asymetric layouts.
+@import 'utilities/size';                 // Flex based sizes.
 @import 'utilities/spacing';              // Micro-level spacing.
 @import 'utilities/text';                 // Handy text assistants.
 @import 'utilities/visibility';           // Helpers to show and side stuff.
-@import 'utilities/colours';              // Helpers to set either background or text colour.
 
 @mixin sb-utilities() {
 
-    @include sb\-utility__size();
-    @include sb\-utility__flex();
-    @include sb\-utility__offset();
-    @include sb\-utility__spacing();
-    @include sb\-utility__text();
-    @include sb\-utility__visibility();
-    @include sb\-utility__colour();
-}
-
-
-
-/*----------------------------------------------------------------------------*\
-    #OVERRIDES
-
-    Overrides, helpers, utilities. Only affect one item at a time.
-\*----------------------------------------------------------------------------*/
-
-@import 'overrides/validation';         // Form validation styles.
-@import 'overrides/visibility';         // Helpers to show and side stuff.
-
-@mixin sb-overrides() {
-
-    @include sb-override__validation();
-    @include sb-override__visibility();
+    @include sb-utility__colour();
+    @include sb-utility__flex();
+    @include sb-utility__offset();
+    @include sb-utility__size();
+    @include sb-utility__spacing();
+    @include sb-utility__text();
+    @include sb-utility__visibility();
 }
 
 

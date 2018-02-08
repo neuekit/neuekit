@@ -18,7 +18,7 @@
     Globally-available functions.
 \*----------------------------------------------------------------------------*/
 
-@import 'functions/function';           // Example function.
+@import 'tools/functions/function';           // Example function.
 
 
 
@@ -28,7 +28,7 @@
     Globally-available mixins.
 \*----------------------------------------------------------------------------*/
 
-@import 'mixins/mixin';                 // Example Mixin.
+@import 'tools/mixins/mixin';                 // Example Mixin.
 
 
 
@@ -91,16 +91,5 @@
 \*----------------------------------------------------------------------------*/
 
 @import 'utilities/spacing';              // Micro-level spacing.
-
-
-
-/*----------------------------------------------------------------------------*\
-    #OVERRIDES
-
-    Overrides, helpers, utilities. Only affect one item at a time.
-\*----------------------------------------------------------------------------*/
-
-@import 'overrides/validation';         // Form validation styles.
-@import 'overrides/visibility';         // Helpers to show and side stuff.
 
 
