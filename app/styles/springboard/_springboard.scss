@@ -139,13 +139,13 @@
 
 @mixin sb-utilities() {
 
-    @include sb-helper__size();
-    @include sb-helper__flex();
-    @include sb-helper__offset();
-    @include sb-helper__spacing();
-    @include sb-helper__text();
-    @include sb-helper__visibility();
-    @include sb-helper__colour();
+    @include sb\-utility__size();
+    @include sb\-utility__flex();
+    @include sb\-utility__offset();
+    @include sb\-utility__spacing();
+    @include sb\-utility__text();
+    @include sb\-utility__visibility();
+    @include sb\-utility__colour();
 }
 
 

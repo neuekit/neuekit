@@ -2,7 +2,7 @@
     #FLEX UTILITIES
 \*----------------------------------------------------------------------------*/
 
-@mixin sb-helper__flex() {
+@mixin sb\-utility__flex() {
 
     #{chain('.u-flex')} {
         display: flex;

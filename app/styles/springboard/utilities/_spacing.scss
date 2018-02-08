@@ -2,7 +2,7 @@
     #SPACING UTILITIES
 \*----------------------------------------------------------------------------*/
 
-@mixin sb-helper__spacing(
+@mixin sb\-utility__spacing(
     $attrs: ( padding, margin ),    // Values: margin, padding
     $responsive: $responsive,       // Values: false, both, up, only
     $steps: (                       // Array of integers (pixel values)
@@ -49,17 +49,17 @@
 
         @include breakpoints( $responsive ) {
 
-            @include _sb-helper__spacing-create( $attrs, $steps, $directions, $break );
+            @include _sb\-utility__spacing-create( $attrs, $steps, $directions, $break );
         }
 
     // If not responsive, just run the general loop
     } @else {
 
-        @include _sb-helper__spacing-create( $attrs, $steps, $directions, $break: '' );
+        @include _sb\-utility__spacing-create( $attrs, $steps, $directions, $break: '' );
     }
 }
 
-@mixin _sb-helper__spacing-create( $attrs, $steps, $directions, $break ) {
+@mixin _sb\-utility__spacing-create( $attrs, $steps, $directions, $break ) {
 
     // Create utilities for each step defined
     @each $step in $steps {

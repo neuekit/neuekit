@@ -2,7 +2,7 @@
     #VISIBILITY UTILITIES
 \*----------------------------------------------------------------------------*/
 
-@mixin sb-helper__visibility() {
+@mixin sb\-utility__visibility() {
 
     #{chain('.u-radius')} {
         border-radius: $radius;
