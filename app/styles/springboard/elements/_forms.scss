@@ -2,7 +2,7 @@
     #FORM ELEMENT STYLES
 \*----------------------------------------------------------------------------*/
 
-@mixin sb-element__form-track() {
+@mixin _sb-element__form-track() {
     animate: 0.2s;
     background: $input;
     border-radius: rem(16);
@@ -10,7 +10,7 @@
     @include area(rem(8), 100%);
 }
 
-@mixin sb-element__form-thumb() {
+@mixin _sb-element__form-thumb() {
     background: radial-gradient(ellipse at center, black 0%, black 48%, transparent 52%);
     border-radius: 50%;
     box-sizing: content-box;
@@ -370,7 +370,7 @@
         }
 
         &::-webkit-slider-runnable-track { // [type="range"]::-webkit-slider-runnable-track
-            @include sb-element__form-track;
+            @include _sb-element__form-track;
 
             @include media(xs, s) {
                 pointer-events: none;
@@ -378,11 +378,11 @@
         }
 
         &::-moz-range-track { // [type="range"]::-moz-range-track
-            @include sb-element__form-track;
+            @include _sb-element__form-track;
         }
 
         &::-ms-track { // [type="range"]::-ms-track
-            @include sb-element__form-track;
+            @include _sb-element__form-track;
             background: none;
             border-color: transparent;
             border-width: rem(4) 0;
@@ -396,18 +396,18 @@
         }
 
         &::-webkit-slider-thumb { // [type="range"]::-webkit-slider-thumb
-            @include sb-element__form-thumb;
+            @include _sb-element__form-thumb;
             -webkit-appearance: none;
             margin-top: rem(-8);
         }
 
         &::-moz-range-thumb { // [type="range"]::-moz-range-thumb
-            @include sb-element__form-thumb;
+            @include _sb-element__form-thumb;
             border: none;
         }
 
         &::-ms-thumb { // [type="range"]::-ms-thumb
-            @include sb-element__form-thumb;
+            @include _sb-element__form-thumb;
         }
 
         @include media(xs, s) {

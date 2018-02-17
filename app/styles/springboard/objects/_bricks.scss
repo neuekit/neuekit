@@ -2,52 +2,89 @@
     #BRICKS OBJECT
 \*----------------------------------------------------------------------------*/
 
-@mixin sb-object__bricks(
-    $smallBreakpoint: s,
-    $gutter: $gutter,
-    $gutterSmall: $gutterSmall,
-    $columns: $columns
+@mixin _sb-object__bricks(
+    $smallBreakpoint:   s,
+    $gutter:            $gutter,
+    $gutterSmall:       $gutterSmall,
+    $columns:           $columns,
+    $gridClass:         'o-grid',
+    $bricksClass:       'o-bricks',
+    $brickClass:        'o-brick'
 ) {
 
-    [class*="o-bricks"] {
-        display: flex;
-        flex-wrap: wrap;
-        list-style: none;
-        margin: 0 auto;
-    }
+    // [class*="o-bricks"]
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0 auto;
 
-    [class*="o-brick"] {
-        flex-basis: 100%;
-        padding: rem($gutterSmall);
-    }
-
-    .o-grid [class*="o-bricks"] {
+    .#{$gridClass} & { // .o-grid [class*="o-bricks"]
         margin: 0 #{ rem( -$gutterSmall * 2 ) };
-    }
 
-    @include media($smallBreakpoint) {
-
-        [class*="o-brick"] {
-            padding: rem($gutter);
-        }
-
-        .o-grid [class*="o-bricks"] {
+        @include media($smallBreakpoint) {
             margin: 0 #{ rem( -$gutter * 2 ) };
         }
     }
-
-
+    
     @include breakpoints(up) {
 
         @for $grid from 1 through $columns {
 
             $width: floor((100% / $grid) * 1000) / 1000;
 
-            .o-bricks-#{$grid}#{$break} .o-brick {
+            @at-root .#{$bricksClass}-#{$grid}#{$break} .#{$brickClass} { // .o-bricks-4@m .o-brick
                 flex-basis: $width;
                 max-width: $width;
             }
         }
+    }
+}
+
+@mixin _sb-object__brick(
+    $smallBreakpoint: s,
+    $gutter: $gutter,
+    $gutterSmall: $gutterSmall
+) {
+
+    // [class*="o-brick"]
+    flex-basis: 100%;
+    padding: rem($gutterSmall);
+
+    @include media($smallBreakpoint) {
+        padding: rem($gutter);
+    }
+}
+
+@mixin sb-object__bricks(
+    $smallBreakpoint:   s,
+    $gutter:            $gutter,
+    $gutterSmall:       $gutterSmall,
+    $columns:           $columns,
+    $gridClass:         'o-grid',
+    $bricksClass:       'o-bricks',
+    $brickClass:        'o-brick'
+) {
+
+    [class*="o-bricks"] {
+
+        @include _sb-object__bricks(
+            $smallBreakpoint:   s,
+            $gutter:            $gutter,
+            $gutterSmall:       $gutterSmall,
+            $columns:           $columns,
+            $gridClass:         'o-grid',
+            $bricksClass:       'o-bricks',
+            $brickClass:        'o-brick'
+        );
+    }
+
+    [class*="o-brick"] {
+
+        @include _sb-object__brick(
+            $smallBreakpoint: s,
+            $gutter: $gutter,
+            $gutterSmall: $gutterSmall
+        );
     }
 }
 
