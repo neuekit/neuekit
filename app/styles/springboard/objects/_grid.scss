@@ -87,6 +87,19 @@
             }
         }
     }
+
+    @include breakpoints(up) {
+
+        @for $grid from 1 through $columns {
+
+            $width: floor((100% / $grid) * 1000) / 1000;
+
+            .o-grid--items-#{$grid}#{$break} .o-grid__item {
+                flex-basis: $width;
+                max-width: $width;
+            }
+        }
+    }
 }
 
 

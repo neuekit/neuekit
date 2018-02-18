@@ -74,14 +74,12 @@
     Design Patterns. Layout. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
-@import 'objects/bricks';               // Flex based block layout.
 @import 'objects/grid';                 // Flex based grid layout.
 @import 'objects/inline';               // Flex based inliner.
 @import 'objects/unlist';               // Strip list styles.
 
 @mixin sb-objects() {
 
-    @include sb-object__bricks();
     @include sb-object__grid();
     @include sb-object__inline();
     @include sb-object__unlist();

@@ -13,7 +13,7 @@
   },
   "homepage": "https://github.com/creativelittledots/springboard#readme",
   "devDependencies": {
-    "autoprefixer": "^7.2.5",
+    "autoprefixer": "^8.0.0",
     "babel-core": "^6.26.0",
     "babel-plugin-external-helpers": "^6.22.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
@@ -22,13 +22,13 @@
     "node-sass": "^4.7.2",
     "npm-run-all": "^4.1.2",
     "onchange": "^3.3.0",
-    "postcss-cli": "^4.1.1",
-    "rollup": "^0.55.3",
+    "postcss-cli": "^5.0.0",
+    "rollup": "^0.56.1",
     "rollup-plugin-babel": "^3.0.3",
-    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-plugin-node-resolve": "^3.0.3",
     "rollup-plugin-uglify": "^3.0.0",
     "rollup-watch": "^4.3.1",
-    "uglify-es": "^3.3.9"
+    "uglify-es": "^3.3.10"
   },
   "browserslist": [
     "> 1%",
@@ -40,8 +40,9 @@
     "not blackberry <= 7"
   ],
   "scripts": {
-    "clean:dev":"rm -rf ./node_modules",
-    "clean:app":"rm -rf ./app/node_modules",
+    "clean:dev": "rm -rf ./node_modules",
+    "clean:app": "rm -rf ./app/node_modules",
+    "reset": "yarn run clean:dev && yarn",
     "scss": "node-sass --omit-source-map-url --recursive --output-style compressed --output ./app/styles ./app/styles",
     "autoprefixer": "postcss --use autoprefixer --replace ./app/styles/style.css --no-map",
     "build:css": "yarn run scss --silent && yarn run autoprefixer --silent",

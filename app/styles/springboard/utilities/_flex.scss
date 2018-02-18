@@ -96,7 +96,7 @@
             flex-wrap: wrap;
         }
 
-        #{chain('.u-noWrap' + $break)} {
+        #{chain('.u-nowrap' + $break)} {
             flex-wrap: nowrap;
         }
     }
