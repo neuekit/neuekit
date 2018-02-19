@@ -5,61 +5,47 @@
     <head>
 
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-        <!--  Document: Setup  -->
+        <!--  Docuent: Setup  -->
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
 
         <meta charset="utf-8">
-
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-        <title>Test Tabs</title>
+        <title>Test Elements</title>
 
         <meta name="description" content="A modernist structured User Interface Kit for building responsive scalable web projects">
-
         <meta name="coverage" content="Worldwide">
-
         <meta name="format-detection" content="telephone=no">
 
 
         <!-- Standard Favicons -->
-
         <link rel="icon" type="image/png" href="../app/images/icons/favicon-32x32.png" sizes="32x32">
-
         <link rel="icon" type="image/png" href="../app/images/icons/favicon-16x16.png" sizes="16x16">
-
         <link rel="shortcut icon" href="../app/images/icons/favicon.ico">
 
 
         <!-- Google Meta -->
         <meta name="mobile-web-app-capable" content="yes">
-
         <meta name="application-name" content="SpringBoard">
-
         <meta name="theme-color" content="#2F3BA2">
 
         <link rel="icon" sizes="192x192" href="../app/images/icons/chrome-touch-icon-192x192.png">
 
 
         <!-- Apple Meta -->
-
         <meta name="apple-mobile-web-app-status-bar-style" content="black">
-
         <meta name="apple-mobile-web-app-title" content="SpringBoard">
+        <meta name="apple-mobile-web-app-capable" content="yes">
 
         <link rel="apple-touch-icon" sizes="180x180" href="../app/images/icons/apple-touch-icon.png">
-
         <link rel="mask-icon" href="../app/images/icons/safari-pinned-tab.svg" color="#212226">
 
 
         <!-- Windows Meta -->
         <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-
         <meta name="msapplication-TileColor" content="#2F3BA2">
-
         <meta name="msapplication-tap-highlight" content="no">
-
         <meta name="msapplication-config" content="images/icons/browserconfig.xml">
 
 
@@ -72,7 +58,17 @@
         <!--  Document: Priority Resources  -->
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
 
-        <link href="../app/styles/style.css" rel="stylesheet">
+        <link rel="stylesheet" href="../app/styles/style.css">
+
+
+
+        <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+        <!--  Document: Subservient Resources  -->
+        <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+
+        <script src="../app/scripts/polyfills/polyfills.min.js" defer></script>
+        <script src="../app/scripts/springboard/springboard.min.js" defer></script>
+        <script src="../app/scripts/application/application.min.js" defer></script>
 
     </head>
 
@@ -82,27 +78,27 @@
         <!--  Site: Header  -->
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
 
-        <header class="page-header" role="banner">
+        <header class="head" role="banner">
 
-            <div class="grid">
+            <div class="o-grid">
 
-                <div class="grid__item p-2-0">
+                <div class="o-grid__item u-p-2-0">
 
-                    <div class="tabs">
+                    <div class="c-tabs">
 
-                        <div class="tabs__nav  js-tabs">
+                        <div class="c-tabs__nav  js-tabs">
 
-                            <a class="tabs__link  js-tab  active" href="#taba1" aria-role="tab" title="The first tab">Tab 1</a>
+                            <a class="c-tabs__link  js-tab  active" href="#taba1" aria-role="tab" title="The first tab">Tab 1</a>
 
-                            <a class="tabs__link  js-tab" href="#taba2" aria-role="tab" title="The second tab">Tab 2</a>
+                            <a class="c-tabs__link  js-tab" href="#taba2" aria-role="tab" title="The second tab">Tab 2</a>
 
-                            <a class="tabs__link  js-tab" href="#taba3" aria-role="tab" title="The last tab">Tab 3</a>
+                            <a class="c-tabs__link  js-tab" href="#taba3" aria-role="tab" title="The last tab">Tab 3</a>
 
                         </div>
 
-                        <div class="tabs__contents  js-tabs-contents">
+                        <div class="c-tabs__contents  js-tabs-contents">
 
-                            <div class="tabs__content  js-tab-content  active" id="taba1" aria-role="tabpanel">
+                            <div class="c-tabs__content  js-tab-content  active" id="taba1" aria-role="tabpanel">
 
                                 <!-- Content -->
                                 <p>This is the first panel</p>
@@ -111,7 +107,7 @@
 
                             </div>
 
-                            <div class="tabs__content  js-tab-content" id="taba2" aria-role="tabpanel">
+                            <div class="c-tabs__content  js-tab-content" id="taba2" aria-role="tabpanel">
 
                                 <!-- Content -->
                                 <p>This is the second panel</p>
@@ -122,7 +118,7 @@
 
                             </div>
 
-                            <div class="tabs__content  js-tab-content" id="taba3" aria-role="tabpanel">
+                            <div class="c-tabs__content  js-tab-content" id="taba3" aria-role="tabpanel">
 
                                 <!-- Content -->
                                 <p>This is the last panel</p>
@@ -143,25 +139,27 @@
 
             </div>
 
-            <div class="grid">
+            <div class="o-grid">
 
-                <div class="grid__item p-2-0">
+                <div class="o-grid__item u-p-2-0">
 
-                    <div class="tabs">
+                    <div class="c-tabs">
 
-                        <div class="tabs__nav  js-tabs">
+                        <div class="c-tabs__nav  js-tabs">
 
-                            <a class="tabs__link  js-tab  active" href="#tabb1" aria-role="tab" title="The first tab">Tab 1</a>
+                            <a class="c-tabs__link  js-tab  active" href="#tabb1" aria-role="tab" title="The first tab">Tab 1</a>
 
-                            <a class="tabs__link  js-tab" href="#tabb2" aria-role="tab" title="The second tab">Tab 2</a>
+                            <a class="c-tabs__link  js-tab" href="#tabb2" aria-role="tab" title="The second tab">Tab 2</a>
 
-                            <a class="tabs__link  js-tab" href="#tabb3" aria-role="tab" title="The last tab">Tab 3</a>
+                            <a class="c-tabs__link  js-tab" href="#tabb3" aria-role="tab" title="The last tab">Tab 3</a>
 
                         </div>
 
-                        <div class="tabs__contents  js-tabs-contents">
+                        <div class="c-tabs__contents  js-tabs-contents">
 
-                            <div class="tabs__content  js-tab-content  active" id="tabb1" aria-role="tabpanel">
+                            <div class="c-tabs__content  js-tab-content  active" id="tabb1" aria-role="tabpanel">
+
+                                <a href="elements.html">ELEMENTS</a>
 
                                 <!-- Content -->
                                 <p>This is the first panel</p>
@@ -170,7 +168,7 @@
 
                             </div>
 
-                            <div class="tabs__content  js-tab-content" id="tabb2" aria-role="tabpanel">
+                            <div class="c-tabs__content  js-tab-content" id="tabb2" aria-role="tabpanel">
 
                                 <!-- Content -->
                                 <p>This is the second panel</p>
@@ -181,7 +179,7 @@
 
                             </div>
 
-                            <div class="tabs__content  js-tab-content" id="tabb3" aria-role="tabpanel">
+                            <div class="c-tabs__content  js-tab-content" id="tabb3" aria-role="tabpanel">
 
                                 <!-- Content -->
                                 <p>This is the last panel</p>
@@ -202,25 +200,25 @@
 
             </div>
 
-            <div class="grid">
+            <div class="o-grid">
 
-                <div class="grid__item p-2-0">
+                <div class="o-grid__item u-p-2-0">
 
-                    <div class="tabs">
+                    <div class="c-tabs">
 
-                        <div class="tabs__nav  js-tabs">
+                        <div class="c-tabs__nav  js-tabs">
 
-                            <a class="tabs__link  js-tab  active" href="#tabc1" aria-role="tab" title="The first tab">Tab 1</a>
+                            <a class="c-tabs__link  js-tab  active" href="#tabc1" aria-role="tab" title="The first tab">Tab 1</a>
 
-                            <a class="tabs__link  js-tab" href="#tabc2" aria-role="tab" title="The second tab">Tab 2</a>
+                            <a class="c-tabs__link  js-tab" href="#tabc2" aria-role="tab" title="The second tab">Tab 2</a>
 
-                            <a class="tabs__link  js-tab" href="#tabc3" aria-role="tab" title="The last tab">Tab 3</a>
+                            <a class="c-tabs__link  js-tab" href="#tabc3" aria-role="tab" title="The last tab">Tab 3</a>
 
                         </div>
 
-                        <div class="tabs__contents  js-tabs-contents">
+                        <div class="c-tabs__contents  js-tabs-contents">
 
-                            <div class="tabs__content  js-tab-content  active" id="tabc1" aria-role="tabpanel">
+                            <div class="c-tabs__content  js-tab-content  active" id="tabc1" aria-role="tabpanel">
 
                                 <!-- Content -->
                                 <p>This is the first panel</p>
@@ -229,7 +227,7 @@
 
                             </div>
 
-                            <div class="tabs__content  js-tab-content" id="tabc2" aria-role="tabpanel">
+                            <div class="c-tabs__content  js-tab-content" id="tabc2" aria-role="tabpanel">
 
                                 <!-- Content -->
                                 <p>This is the second panel</p>
@@ -240,7 +238,7 @@
 
                             </div>
 
-                            <div class="tabs__content  js-tab-content" id="tabc3" aria-role="tabpanel">
+                            <div class="c-tabs__content  js-tab-content" id="tabc3" aria-role="tabpanel">
 
                                 <!-- Content -->
                                 <p>This is the last panel</p>
@@ -269,11 +267,11 @@
         <!--  Site: Main  -->
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
 
-        <main class="page-main" role="main">
+        <main class="main" role="main">
 
-            <div class="grid">
+            <div class="o-grid">
 
-                <div class="grid__item">
+                <div class="o-grid__item">
 
 
 
@@ -289,29 +287,17 @@
         <!--  Site: Footer  -->
         <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
 
-        <footer class="page-footer" role="contentinfo">
+        <footer class="foot" role="contentinfo">
 
-            <div class="grid">
+            <div class="o-grid">
 
-                <div class="grid__item  size-12">
+                <div class="o-grid__item  u-size-12">
 
                 </div>
 
             </div>
 
         </footer>
-
-
-
-        <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-        <!--  Document: Subservient Resources  -->
-        <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-
-        <script src="../app/scripts/polyfills/polyfills.min.js"></script>
-
-        <script src="../app/scripts/springboard/springboard.min.js"></script>
-
-        <script src="../app/scripts/application/application.min.js"></script>
 
 
 

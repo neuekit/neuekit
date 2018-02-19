@@ -38,6 +38,7 @@ export default function(options) {
         util.setDocClasses();
         util.setInputTypes();
         util.sticky();
+        util.standaloneLinks();
         svg4everybody();
     })();
 
