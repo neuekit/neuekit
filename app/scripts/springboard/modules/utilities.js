@@ -52,7 +52,7 @@ export const getUrlQuery = (key, default_ = '') => {
     2. A time in milliseconds.
 \*--------------------------------------------------*/
 
-export const wait = (() => {
+export const wait = () => {
 
     let timer = 0;
 
@@ -62,7 +62,7 @@ export const wait = (() => {
 
         timer = setTimeout(callback, ms);
     };
-})();
+};
 
 
 
@@ -161,7 +161,7 @@ export const removeCookie = (name) => {
     Functions to get, set & remove local storage data
 \*--------------------------------------------------*/
 
-export const setStorage = function (name, value) {
+export const setStorage = function(name, value) {
 
     if (typeof window.localStorage !== 'undefined') {
 
@@ -225,6 +225,49 @@ export const sticky = () => {
 
         Stickyfill.add($el);
     })
+};
+
+
+
+/*--------------------------------------------------*\
+    Support for standalone links
+
+    This stops webapps jumping out to Safari on iOS
+\*--------------------------------------------------*/
+
+export const standaloneLinks = () => {
+
+    if ( ('standalone' in navigator) && navigator['standalone'] ) {
+
+        document.addEventListener('click', function(e) {
+
+            let target = e.target;
+            let location = document.location;
+            let stop = /^(a|html)$/i;
+
+            while (!(stop).test(target.nodeName)) {
+
+                target = target.parentNode;
+            }
+
+            if (
+                'href' in target
+                &&
+                (href = target.href).replace(location.href, '').indexOf('#')
+                &&
+                (
+                    !(/^[a-z\+\.\-]+:/i).test(href)
+                    ||
+                    href.indexOf(location.protocol + '//' + location.host) === 0
+                )
+            ) {
+
+                e.preventDefault();
+
+                location.href = target.href;
+            }
+        },false);
+    }
 };
 
 

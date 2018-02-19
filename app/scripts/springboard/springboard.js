@@ -10,9 +10,11 @@
 
 /* Imports */
 
-import Core from './modules/core';
-import Modals from './modules/modals';
-import Tabs from './modules/tabs';
+import Core     from './modules/core';
+import Fetcher  from './modules/fetcher';
+import Modals   from './modules/modals';
+import Tabs     from './modules/tabs';
+import Toggler  from './modules/toggler';
 
 
 /* SpringBoard */
@@ -22,8 +24,10 @@ window.SpringBoard = function(options) {
     // Private: Default settings object
     const _defaults = {
         core: {},
+        fetcher: {},
         modals: {},
-        tabs: {}
+        tabs: {},
+        toggler: {}
     };
 
     // Private: Merge passed in object with defaults
@@ -38,8 +42,10 @@ window.SpringBoard = function(options) {
     const destroy = () => {
 
         _modules.core.destroy();
+        _modules.fetcher.destroy();
         _modules.modals.destroy();
         _modules.tabs.destroy();
+        _modules.toggler.destroy();
     };
 
     // Public: Destroy module instance and run initialise again
@@ -52,9 +58,11 @@ window.SpringBoard = function(options) {
     // Public: Initialise module
     const init = (() => {
 
-        _modules.core = new Core(_settings.core);
-        _modules.modals = new Modals(_settings.modals);
-        _modules.tabs = new Tabs(_settings.tabs);
+        _modules.core     = new Core(_settings.core);
+        _modules.fetcher  = new Core(_settings.fetcher);
+        _modules.modals   = new Modals(_settings.modals);
+        _modules.tabs     = new Tabs(_settings.tabs);
+        _modules.toggler  = new Tabs(_settings.toggler);
     })();
 
     return {

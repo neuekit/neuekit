@@ -1,10 +1,8 @@
 /*--------------------------------------------------*\
-    Core Module
+    Toggler Module
 
     MK1 @ Version 1.0
 \*--------------------------------------------------*/
-
-import * as util from './utilities';
 
 export default function(options) {
 
@@ -35,11 +33,22 @@ export default function(options) {
     // Public: Initialise module
     const init = (() => {
 
-        util.setDocClasses();
-        util.setInputTypes();
-        util.sticky();
-        util.standaloneLinks();
-        svg4everybody();
+        const $els = document.getElementsByClassName('js-toggler');
+
+        [...$els].map(($el) => {
+
+            $el.addEventListener('click', (e) => {
+
+                e.preventDefault();
+
+                const $targets = document.querySelectorAll($el.dataset.toggleTarget);
+
+                [...$targets].map(($target) => {
+
+                    $target.classList.toggle($el.dataset.toggleClass);
+                });
+            });
+        });
     })();
 
     // Return public methods

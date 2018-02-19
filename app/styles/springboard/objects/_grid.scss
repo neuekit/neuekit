@@ -83,6 +83,19 @@
             margin: 0 #{ rem( -($gutter * 2) ) };
         }
     }
+
+    @include breakpoints(up) {
+
+        @for $grid from 1 through $columns {
+
+            $width: floor((100% / $grid) * 1000) / 1000;
+
+            &--items-#{$grid}#{$break} &__item { // .o-grid--items-2@m .o-grid__item
+                flex-basis: $width;
+                max-width: $width;
+            }
+        }
+    }
 }
 
 
