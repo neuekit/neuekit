@@ -3,117 +3,109 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin sb-component__modal(
-    $primary: $primary,
-    $tertiary: $tertiary,
-    $quaternary: $quaternary,
-    $radius: $radius,
-    $speed: $speed,
-    $maxWidth: $maxWidth
+    $primary:       $primary,
+    $tertiary:      $tertiary,
+    $quaternary:    $quaternary,
+    $radius:        $radius,
+    $trans:         $trans,
+    $maxWidth:      $maxWidth
 ) {
 
-    /*  Block  */
+    // .c-modal
+    $block: &;
 
-    .c-modal {
-        $block: &;
+    align-items: center;
+    background-color: rgba($primary, 0.8);
+    display: flex;
+    @include area(100%);
+    left: 0; top: 0;
+    opacity: 0;
+    padding: rem(16);
+    position: fixed;
+    transition: opacity $trans;
+    visibility: hidden;
+    z-index: 1;
 
-        align-items: center;
-        background-color: rgba($primary, 0.8);
-        display: flex;
-        @include area(100%);
-        left: 0; top: 0;
+    &__content { // .c-modal__content
+        background-color: white;
+        border-radius: $radius;
+        margin: auto;
+        max-height: calc(100vh - #{rem(32)});
+        max-width: $maxWidth;
         opacity: 0;
-        padding: rem(16);
-        position: fixed;
-        transition: opacity $trans;
-        visibility: hidden;
-        z-index: 1;
+        overflow: auto; -webkit-overflow-scrolling: touch;
+        padding: rem(32);
+        transform: translateY(rem(160));
+        transition: all $trans;
+    }
 
-            /*  Elements  */
+    &__close { // .c-modal__close
+        background-color: $quaternary;
+        border-radius: 50%;
+        display: block;
+        @include area(rem(28));
+        position: absolute;
+        right: rem(12); top: rem(12);
+        transition: all $trans;
 
-            &__content { // .c-modal__content
+        &::before, // .c-modal__close::before,
+        &::after { // .c-modal__close::after
+            background-color: $primary;
+            border-radius: rem(16);
+            content: '';
+            display: block;
+            @include area(rem(3), rem(14));
+            left: 50%; top: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%) rotate(45deg);
+            transform-origin: center;
+            transition: all $trans;
+        }
+
+        &::after { // .c-modal__close::after
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        &:hover { // .c-modal__close:hover
+            background-color: $tertiary;
+
+            &::before, // .c-modal__close:hover::before,
+            &::after { // .c-modal__close:hover::after
                 background-color: white;
-                border-radius: $radius;
-                margin: auto;
-                max-height: calc(100vh - #{rem(32)});
-                max-width: $maxWidth;
-                opacity: 0;
-                overflow: auto; -webkit-overflow-scrolling: touch;
-                padding: rem(32);
-                transform: translateY(rem(160));
-                transition: all $trans;
-            }
-
-            &__close { // .c-modal__close
-                background-color: $quaternary;
-                border-radius: 50%;
-                display: block;
-                @include area(rem(28));
-                position: absolute;
-                right: rem(12); top: rem(12);
-                transition: all $trans;
-
-                &::before, // .c-modal__close::before,
-                &::after { // .c-modal__close::after
-                    background-color: $primary;
-                    border-radius: rem(16);
-                    content: '';
-                    display: block;
-                    @include area(rem(3), rem(14));
-                    left: 50%; top: 50%;
-                    position: absolute;
-                    transform: translate(-50%, -50%) rotate(45deg);
-                    transform-origin: center;
-                    transition: all $trans;
-                }
-
-                &::after { // .c-modal__close::after
-                    transform: translate(-50%, -50%) rotate(-45deg);
-                }
-
-                &:hover { // .c-modal__close:hover
-                    background-color: $tertiary;
-
-                    &::before, // .c-modal__close:hover::before,
-                    &::after { // .c-modal__close:hover::after
-                        background-color: white;
-                    }
-                }
-            }
-
-
-        /*  Modifiers  */
-
-        &--fill { // .c-modal--fill
-            padding: 0;
-
-            #{$block}__content { // .c-modal--fill .c-modal__content
-                flex-grow: 1;
             }
         }
+    }
 
-        &--fullscreen { // .c-modal--fullscreen
-            padding: 0;
+    &--fill { // .c-modal--fill
+        padding: 0;
 
-            #{$block}__content { // .c-modal--fullscreen .c-modal__content
-                border-radius: 0;
-                @include area(100%);
-                margin: 0;
-                max-height: none;
-                max-width: none;
-                opacity: 1;
-                transform: translateY(100%);
-            }
+        #{$block}__content { // .c-modal--fill .c-modal__content
+            flex-grow: 1;
         }
+    }
 
-        &.active { // .c-modal.active
+    &--fullscreen { // .c-modal--fullscreen
+        padding: 0;
+
+        #{$block}__content { // .c-modal--fullscreen .c-modal__content
+            border-radius: 0;
+            @include area(100%);
+            margin: 0;
+            max-height: none;
+            max-width: none;
             opacity: 1;
-            visibility: visible;
+            transform: translateY(100%);
+        }
+    }
 
-            #{$block}__content { // .c-modal.visible .c-modal__content
-                opacity: 1;
-                transform: translateY(0);
-                transition-delay: $speed;
-            }
+    &.active { // .c-modal.active
+        opacity: 1;
+        visibility: visible;
+
+        #{$block}__content { // .c-modal.visible .c-modal__content
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: $trans;
         }
     }
 }

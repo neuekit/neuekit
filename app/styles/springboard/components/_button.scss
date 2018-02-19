@@ -65,15 +65,14 @@
             padding: rem(32) rem(34)
         )
     ),
-    $speed: $speed,
-    $ease: $ease
+    $trans: $trans
 ) {
 
     $btnSelectors: 'button, [role="button"], [type="button"], [type="reset"], [type="submit"], ';
     $btnCondition: if($btnReset, $btnSelectors, null);
 
     #{$btnCondition}
-    .c-button {
+    & { // .c-button
         appearance: none;
         border: none;
         border-radius: $btnRadius;
@@ -104,8 +103,8 @@
         }
 
         &:focus { // .c-button:focus
-    		outline: none;
-    	}
+            outline: none;
+        }
 
         &:hover { // .c-button:hover
             background-color: map-deep-get($styles, 'default', 'bgColorHover');

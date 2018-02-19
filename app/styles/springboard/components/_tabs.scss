@@ -3,39 +3,38 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin sb-component__tabs(
-    $secondary: $secondary
+    $tabColour: $secondary
 ) {
 
-    .c-tabs {
-        border: 1px solid $secondary;
+    // .c-tabs
+    border: 1px solid $tabColour;
 
-        &__nav { // .c-tabs__nav
-            display: flex;
-            border-bottom: 1px solid $secondary;
+    &__nav { // .c-tabs__nav
+        display: flex;
+        border-bottom: 1px solid $tabColour;
+    }
+
+    &__link { // .c-tabs__link
+        flex: 1 1 auto;
+        padding: rem(8) rem(16);
+        text-align: center;
+        width: 0%;
+
+        & + & { // .c-tabs__link + .c-tabs__link
+            border-left: 1px solid $tabColour;
         }
 
-        &__link { // .c-tabs__link
-            flex: 1 1 auto;
-            padding: rem(8) rem(16);
-            text-align: center;
-            width: 0%;
-
-            & + & { // .c-tabs__link + .c-tabs__link
-                border-left: 1px solid $secondary;
-            }
-
-            &.active { // .c-tabs__link.active
-                background-color: $secondary;
-            }
+        &.active { // .c-tabs__link.active
+            background-color: $tabColour;
         }
+    }
 
-        &__content { // .c-tabs__content
-            display: none;
-            padding: rem(16);
+    &__content { // .c-tabs__content
+        display: none;
+        padding: rem(16);
 
-            &.active { // .c-tabs__content.active
-                display: block;
-            }
+        &.active { // .c-tabs__content.active
+            display: block;
         }
     }
 }

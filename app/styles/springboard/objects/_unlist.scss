@@ -4,11 +4,10 @@
 
 @mixin sb-object__unlist() {
 
-    .o-unlist {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
+    // .o-unlist
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 

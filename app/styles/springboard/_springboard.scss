@@ -80,9 +80,17 @@
 
 @mixin sb-objects() {
 
-    @include sb-object__grid();
-    @include sb-object__inline();
-    @include sb-object__unlist();
+    .o-grid { // Flex based grid layout.
+        @include sb-object__grid();
+    }
+
+    .o-inline { // Flex based inliner.
+        @include sb-object__inline();
+    }
+
+    .o-unlist { // Strip list styles.
+        @include sb-object__unlist();
+    }
 }
 
 
@@ -106,16 +114,49 @@
 
 @mixin sb-components() {
 
-    @include sb-component__adjacent();
-    @include sb-component__button();
-    @include sb-component__loading();
-    @include sb-component__modal();
-    @include sb-component__navigation();
-    @include sb-component__off-canvas();
-    @include sb-component__tabs();
-    @include sb-component__toggle();
-    @include sb-component__tooltip();
-    @include sb-component__validate();
+    .c-adjacent { // Adjacent input styles.
+        @include sb-component__adjacent();
+    }
+
+    .c-button { // Button styles.
+        @include sb-component__button();
+    }
+
+    .c-loading { // Loading indicator component.
+        @include sb-component__loading();
+    }
+
+    .c-modal { // Modal styles.
+        @include sb-component__modal();
+    }
+
+    .js .c-nav { // Responsive navigation component.
+        @include sb-component__navigation();
+    }
+
+    .c-canvas { // Pure CSS off canvas panel.
+        @include sb-component__canvas();
+    }
+
+    .c-offCanvas { // Pure CSS off canvas panel.
+        @include sb-component__offCanvas();
+    }
+
+    .c-tabs { // Tabs component.
+        @include sb-component__tabs();
+    }
+
+    .c-toggle { // Toggle component.
+        @include sb-component__toggle();
+    }
+    
+    .c-tooltip { // Tooltips component.
+        @include sb-component__tooltip();
+    }
+
+    .c-validate { // Form validation component.
+        @include sb-component__validate();
+    }
 }
 
 

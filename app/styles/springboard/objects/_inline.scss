@@ -4,16 +4,15 @@
 
 @mixin sb-object__inline() {
 
-    .o-inline {
-        display: flex;
-        flex-flow: row wrap;
-        list-style: none;
-        padding: 0;
-        margin: 0;
+    // .o-inline
+    display: flex;
+    flex-flow: row wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
 
-        &__item { // .o-inline__item
-            flex-grow: 1;
-        }
+    &__item { // .o-inline__item
+        flex-grow: 1;
     }
 }
 

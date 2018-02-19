@@ -2,52 +2,56 @@
     #OFF CANVAS
 \*----------------------------------------------------------------------------*/
 
-@mixin sb-component__off-canvas(
-    $size: rem(320),
-    $speed: $speed,
-    $ease: $ease,
-    $secondary: $secondary
+@mixin sb-component__canvas(
+    $trans: $trans
 ) {
 
-    .c-canvas { // .c-canvas
-        transition: transform $trans;
+    // .c-canvas
+    transition: transform $trans;
 
-        &__trigger--close { // .c-canvas__trigger--close
+    &__trigger--close { // .c-canvas__trigger--close
+        display: none;
+    }
+}
+
+
+@mixin sb-component__offCanvas(
+    $size:          rem(320),
+    $trans:         $trans,
+    $secondary:     $secondary,
+    $canvasClass:   'c-canvas'
+) {
+
+    // .c-offCanvas
+    background-color: $secondary;
+    @include area(100vh, $size);
+    left: 0; top: 0;
+    position: fixed;
+    transform: translateX(-100%);
+    transition: transform $trans;
+
+    &:target { // .c-offCanvas:target
+        transform: none;
+    }
+
+    &:target ~ .#{$canvasClass} { // .c-offCanvas:target ~ .c-canvas
+        transform: translateX($size);
+
+        .#{$canvasClass}__trigger { // .c-offCanvas:target ~ .c-canvas .c-canvas__trigger
             display: none;
+        
+            &--close { // .c-offCanvas:target ~ .c-canvas .c-canvas__trigger--close
+                display: inline-block;
+            }
         }
     }
 
-    .c-offCanvas { // .c-offCanvas
-        background-color: $secondary;
-        @include area(100vh, $size);
-        left: 0; top: 0;
-        position: fixed;
-        transform: translateX(-100%);
-        transition: transform $trans;
+    &--right { // .c-offCanvas--right
+        left: auto; right: 0;
+        transform: translateX(100%);
 
-        &:target { // .c-offCanvas:target
-            transform: none;
-        }
-
-        &:target ~ .c-canvas { // .c-offCanvas:target ~ .c-canvas
-            transform: translateX($size);
-
-            .c-canvas__trigger { // .c-offCanvas:target ~ .c-canvas .c-canvas__trigger
-                display: none;
-            
-                &--close { // .c-offCanvas:target ~ .c-canvas .c-canvas__trigger--close
-                    display: inline-block;
-                }
-            }
-        }
-
-        &--right { // .c-offCanvas--right
-            left: auto; right: 0;
-            transform: translateX(100%);
-
-            &:target + .c-canvas { // .c-offCanvas--right:target + .c-canvas
-                transform: translateX(rem(-320));
-            }
+        &:target + .#{$canvasClass} { // .c-offCanvas--right:target + .c-canvas
+            transform: translateX(rem(-320));
         }
     }
 }
