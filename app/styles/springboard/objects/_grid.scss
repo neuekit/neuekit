@@ -2,7 +2,7 @@
     #GRID OBJECT
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-object__grid(
+@mixin sb-object__grid(
     $maxWidth:          $maxWidth,
     $gutter:            $gutter,
     $gutterSmall:       $gutterSmall,
@@ -95,26 +95,6 @@
                 max-width: $width;
             }
         }
-    }
-}
-
-
-
-@mixin sb-object__grid(
-    $maxWidth:          $maxWidth,
-    $gutter:            $gutter,
-    $gutterSmall:       $gutterSmall,
-    $mediumBreakpoint:  m
-) {
-
-    .o-grid {
-
-        @include _sb-object__grid(
-            $maxWidth:          $maxWidth,
-            $gutter:            $gutter,
-            $gutterSmall:       $gutterSmall,
-            $mediumBreakpoint:  $mediumBreakpoint
-        );
     }
 }
 

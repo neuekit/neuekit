@@ -2,7 +2,7 @@
     #MODAL
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__modal(
+@mixin sb-component__modal(
     $primary:       $primary,
     $tertiary:      $tertiary,
     $quaternary:    $quaternary,
@@ -107,28 +107,6 @@
             transform: translateY(0);
             transition-delay: $trans;
         }
-    }
-}
-
-@mixin sb-component__modal(
-    $primary:       $primary,
-    $tertiary:      $tertiary,
-    $quaternary:    $quaternary,
-    $radius:        $radius,
-    $trans:         $trans,
-    $maxWidth:      $maxWidth
-) {
-
-    .c-modal {
-
-        @include _sb-component__modal(
-            $primary:       $primary,
-            $tertiary:      $tertiary,
-            $quaternary:    $quaternary,
-            $radius:        $radius,
-            $trans:         $trans,
-            $maxWidth:      $maxWidth
-        );
     }
 }
 

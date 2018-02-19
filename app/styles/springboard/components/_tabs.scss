@@ -2,7 +2,7 @@
     #TABS COMPONENT
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__tabs(
+@mixin sb-component__tabs(
     $tabColour: $secondary
 ) {
 
@@ -36,19 +36,6 @@
         &.active { // .c-tabs__content.active
             display: block;
         }
-    }
-}
-
-
-@mixin sb-component__tabs(
-    $tabColour: $secondary
-) {
-
-    .c-tabs {
-
-        @include _sb-component__tabs(
-            $tabColour: $tabColour
-        );
     }
 }
 

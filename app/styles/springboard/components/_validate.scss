@@ -2,7 +2,7 @@
     #VALIDATE
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__validate(
+@mixin sb-component__validate(
     $success:       $success,
     $error:         $error,
     $trans:         $trans,
@@ -50,25 +50,6 @@
                 transform: translateY(0);
             }
         }
-    }
-}
-
-
-@mixin sb-component__validate(
-    $success:       $success,
-    $error:         $error,
-    $trans:         $trans,
-    $fontWeight:    500
-) {
-
-    .c-validate {
-
-        @include _sb-component__validate(
-            $success:       $success,
-            $error:         $error,
-            $trans:         $trans,
-            $fontWeight:    $fontWeight
-        );
     }
 }
 

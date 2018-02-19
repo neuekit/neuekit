@@ -2,7 +2,7 @@
     #TOOLTIP COMPONENT
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__tooltip(
+@mixin sb-component__tooltip(
     $tipSize:       rem(4),
     $trans:         $trans,
     $primary:       $primary,
@@ -100,33 +100,6 @@
         &::after { // .c-tooltip--bottom:hover::after
             opacity: 1;
         }
-    }
-}
-
-
-@mixin sb-component__tooltip(
-    $tipSize:       rem(4),
-    $trans:         $trans,
-    $primary:       $primary,
-    $colour:        white,
-    $fontSize:      rem(16),
-    $fontWeight:    500,
-    $letterSpacing: 0.25,
-    $padding:       rem(2) rem(8)
-) {
-
-    .c-tooltip {
-
-        @include _sb-component__tooltip(
-            $tipSize:       $tipSize,
-            $trans:         $trans,
-            $primary:       $primary,
-            $colour:        $colour,
-            $fontSize:      $fontSize,
-            $fontWeight:    $fontWeight,
-            $letterSpacing: $letterSpacing,
-            $padding:       $padding
-        );
     }
 }
 

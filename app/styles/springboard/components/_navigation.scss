@@ -2,7 +2,7 @@
     #NAVIGATION COMPONENT
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__navigation(
+@mixin sb-component__navigation(
     $closeBg:           rgba(black, 0.25),
     $navSubBg:          lavendar,
     $navLinkHoverBg:    whitesmoke,
@@ -55,25 +55,6 @@
                 }
             }
         }
-}
-
-
-@mixin sb-component__navigation(
-    $closeBg:           rgba(black, 0.25),
-    $navSubBg:          lavendar,
-    $navLinkHoverBg:    whitesmoke,
-    $trans:             $trans
-) {
-
-    .js .c-nav {
-
-        @include _sb-component__navigation(
-            $closeBg:           $closeBg,
-            $navSubBg:          $navSubBg,
-            $navLinkHoverBg:    $navLinkHoverBg,
-            $trans:             $trans
-        );
-    }
 }
 
 

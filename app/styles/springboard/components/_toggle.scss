@@ -2,7 +2,7 @@
     #TOGGLE
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__toggle(
+@mixin sb-component__toggle(
     $colourOn:      dodgerblue,
     $colourOff:     lightgrey,
     $handleColour:  white,
@@ -112,32 +112,6 @@
                 }
             }
         }
-    }
-}
-
-
-@mixin sb-component__toggle(
-    $colourOn:      dodgerblue,
-    $colourOff:     lightgrey,
-    $handleColour:  white,
-    $trans:         $trans,
-    $toggles: (
-        default: (
-            gap: 0.1875rem,
-            size: rem(20)
-        )
-    )
-) {
-
-    .c-toggle {
-
-        @include _sb-component__toggle(
-            $colourOn:      $colourOn,
-            $colourOff:     $colourOff,
-            $handleColour:  $handleColour,
-            $trans:         $trans,
-            $toggles:       $toggles
-        );
     }
 }
 

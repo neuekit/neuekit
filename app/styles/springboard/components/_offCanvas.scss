@@ -2,7 +2,7 @@
     #OFF CANVAS
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__canvas(
+@mixin sb-component__canvas(
     $trans: $trans
 ) {
 
@@ -15,7 +15,7 @@
 }
 
 
-@mixin _sb-component__offCanvas(
+@mixin sb-component__offCanvas(
     $size:          rem(320),
     $trans:         $trans,
     $secondary:     $secondary,
@@ -53,32 +53,6 @@
         &:target + .#{$canvasClass} { // .c-offCanvas--right:target + .c-canvas
             transform: translateX(rem(-320));
         }
-    }
-}
-
-
-@mixin sb-component__offCanvas(
-    $size:          rem(320),
-    $trans:         $trans,
-    $secondary:     $secondary,
-    $canvasClass:   'c-canvas'
-) {
-
-    .c-canvas {
-
-        @include _sb-component__canvas(
-            $trans: $trans
-        );
-    }
-
-    .c-offCanvas {
-
-        @include _sb-component__offCanvas(
-            $size:          $size,
-            $trans:         $trans,
-            $secondary:     $secondary,
-            $canvasClass:   $canvasClass
-        );        
     }
 }
 

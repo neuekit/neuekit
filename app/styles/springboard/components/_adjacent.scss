@@ -2,7 +2,7 @@
     #INPUT PREFIX AND POSTFIX COMPONENT STYLES
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__adjacent(
+@mixin sb-component__adjacent(
     $radius:        $radius,
     $background:    $tertiary,
     $colour:        white
@@ -43,23 +43,6 @@
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
         }
-    }
-}
-
-
-@mixin sb-component__adjacent(
-    $radius:        $radius,
-    $background:    $tertiary,
-    $colour:        white
-) {
-
-    .c-adjacent {
-        
-        @include _sb-component__adjacent(
-            $radius:        $radius,
-            $background:    $background,
-            $colour:        $colour
-        );
     }
 }
 
