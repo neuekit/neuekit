@@ -68,22 +68,22 @@
     [class*="o-bricks"] {
 
         @include _sb-object__bricks(
-            $smallBreakpoint:   s,
+            $smallBreakpoint:   $smallBreakpoint,
             $gutter:            $gutter,
             $gutterSmall:       $gutterSmall,
             $columns:           $columns,
-            $gridClass:         'o-grid',
-            $bricksClass:       'o-bricks',
-            $brickClass:        'o-brick'
+            $gridClass:         $gridClass,
+            $bricksClass:       $bricksClass,
+            $brickClass:        $brickClass
         );
     }
 
     [class*="o-brick"] {
 
         @include _sb-object__brick(
-            $smallBreakpoint: s,
-            $gutter: $gutter,
-            $gutterSmall: $gutterSmall
+            $smallBreakpoint:   $smallBreakpoint,
+            $gutter:            $gutter,
+            $gutterSmall:       $gutterSmall
         );
     }
 }

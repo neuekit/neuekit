@@ -3,10 +3,21 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin _sb-component__loading(
-    $animation: sb-keyframe__loading 0.6s infinite linear,
-    $primary: $primary,
-    $secondary: $secondary
+    $animation:     sb-keyframe__loading 0.6s infinite linear,
+    $primary:       $primary,
+    $secondary:     $secondary
 ) {
+
+    @keyframes sb-keyframe__loading {
+
+        from {
+            transform: translate(-50%, -50%) rotate(0deg);
+        }
+    
+        to {
+            transform: translate(-50%, -50%) rotate(360deg);
+        }
+    }
 
     // .c-loading
     color: transparent !important;
@@ -67,17 +78,17 @@
 
 
 @mixin sb-component__loading(
-    $animation: sb-keyframe__loading 0.6s infinite linear,
-    $primary: $primary,
-    $secondary: $secondary
+    $animation:     sb-keyframe__loading 0.6s infinite linear,
+    $primary:       $primary,
+    $secondary:     $secondary
 ) {
 
     .c-loading {
 
         @include _sb-component__loading(
-            $animation: sb-keyframe__loading 0.6s infinite linear,
-            $primary: $primary,
-            $secondary: $secondary
+            $animation:     $animation,
+            $primary:       $primary,
+            $secondary:     $secondary
         );
     }
 }

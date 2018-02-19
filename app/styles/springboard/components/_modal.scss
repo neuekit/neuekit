@@ -3,12 +3,12 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin _sb-component__modal(
-    $primary: $primary,
-    $tertiary: $tertiary,
-    $quaternary: $quaternary,
-    $radius: $radius,
-    $speed: $speed,
-    $maxWidth: $maxWidth
+    $primary:       $primary,
+    $tertiary:      $tertiary,
+    $quaternary:    $quaternary,
+    $radius:        $radius,
+    $trans:         $trans,
+    $maxWidth:      $maxWidth
 ) {
 
     // .c-modal
@@ -105,29 +105,29 @@
         #{$block}__content { // .c-modal.visible .c-modal__content
             opacity: 1;
             transform: translateY(0);
-            transition-delay: $speed;
+            transition-delay: $trans;
         }
     }
 }
 
 @mixin sb-component__modal(
-    $primary: $primary,
-    $tertiary: $tertiary,
-    $quaternary: $quaternary,
-    $radius: $radius,
-    $speed: $speed,
-    $maxWidth: $maxWidth
+    $primary:       $primary,
+    $tertiary:      $tertiary,
+    $quaternary:    $quaternary,
+    $radius:        $radius,
+    $trans:         $trans,
+    $maxWidth:      $maxWidth
 ) {
 
     .c-modal {
 
         @include _sb-component__modal(
-            $primary: $primary,
-            $tertiary: $tertiary,
-            $quaternary: $quaternary,
-            $radius: $radius,
-            $speed: $speed,
-            $maxWidth: $maxWidth
+            $primary:       $primary,
+            $tertiary:      $tertiary,
+            $quaternary:    $quaternary,
+            $radius:        $radius,
+            $trans:         $trans,
+            $maxWidth:      $maxWidth
         );
     }
 }

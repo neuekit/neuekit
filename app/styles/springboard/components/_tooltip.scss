@@ -3,15 +3,14 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin _sb-component__tooltip(
-    $tipSize: rem(4),
-    $speed: $speed,
-    $ease: $ease,
-    $primary: $primary,
-    $colour: white,
-    $fontSize: rem(16),
-    $fontWeight: 500,
+    $tipSize:       rem(4),
+    $trans:         $trans,
+    $primary:       $primary,
+    $colour:        white,
+    $fontSize:      rem(16),
+    $fontWeight:    500,
     $letterSpacing: 0.25,
-    $padding: rem(2) rem(8)
+    $padding:       rem(2) rem(8)
 ) {
 
     // .c-tooltip
@@ -106,29 +105,27 @@
 
 
 @mixin sb-component__tooltip(
-    $tipSize: rem(4),
-    $speed: $speed,
-    $ease: $ease,
-    $primary: $primary,
-    $colour: white,
-    $fontSize: rem(16),
-    $fontWeight: 500,
+    $tipSize:       rem(4),
+    $trans:         $trans,
+    $primary:       $primary,
+    $colour:        white,
+    $fontSize:      rem(16),
+    $fontWeight:    500,
     $letterSpacing: 0.25,
-    $padding: rem(2) rem(8)
+    $padding:       rem(2) rem(8)
 ) {
 
     .c-tooltip {
 
         @include _sb-component__tooltip(
-            $tipSize: rem(4),
-            $speed: $speed,
-            $ease: $ease,
-            $primary: $primary,
-            $colour: white,
-            $fontSize: rem(16),
-            $fontWeight: 500,
-            $letterSpacing: 0.25,
-            $padding: rem(2) rem(8)
+            $tipSize:       $tipSize,
+            $trans:         $trans,
+            $primary:       $primary,
+            $colour:        $colour,
+            $fontSize:      $fontSize,
+            $fontWeight:    $fontWeight,
+            $letterSpacing: $letterSpacing,
+            $padding:       $padding
         );
     }
 }

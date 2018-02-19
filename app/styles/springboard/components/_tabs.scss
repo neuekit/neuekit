@@ -3,15 +3,15 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin _sb-component__tabs(
-    $secondary: $secondary
+    $tabColour: $secondary
 ) {
 
     // .c-tabs
-    border: 1px solid $secondary;
+    border: 1px solid $tabColour;
 
     &__nav { // .c-tabs__nav
         display: flex;
-        border-bottom: 1px solid $secondary;
+        border-bottom: 1px solid $tabColour;
     }
 
     &__link { // .c-tabs__link
@@ -21,11 +21,11 @@
         width: 0%;
 
         & + & { // .c-tabs__link + .c-tabs__link
-            border-left: 1px solid $secondary;
+            border-left: 1px solid $tabColour;
         }
 
         &.active { // .c-tabs__link.active
-            background-color: $secondary;
+            background-color: $tabColour;
         }
     }
 
@@ -41,13 +41,13 @@
 
 
 @mixin sb-component__tabs(
-    $secondary: $secondary
+    $tabColour: $secondary
 ) {
 
     .c-tabs {
 
         @include _sb-component__tabs(
-            $secondary: $secondary
+            $tabColour: $tabColour
         );
     }
 }

@@ -3,9 +3,9 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin _sb-component__adjacent(
-    $radius: $radius,
-    $tertiary: $tertiary,
-    $color: white
+    $radius:        $radius,
+    $background:    $tertiary,
+    $colour:        white
 ) {
 
     // .c-adjacent
@@ -19,8 +19,8 @@
 
     &__end { // .c-adjacent__end
         align-items: center;
-        background-color: $tertiary;
-        color: $color;
+        background-color: $background;
+        color: $colour;
         display: flex;
         flex-flow: row;
         flex-shrink: 0;
@@ -48,17 +48,17 @@
 
 
 @mixin sb-component__adjacent(
-    $radius: $radius,
-    $tertiary: $tertiary,
-    $color: white
+    $radius:        $radius,
+    $background:    $tertiary,
+    $colour:        white
 ) {
 
     .c-adjacent {
         
         @include _sb-component__adjacent(
-            $radius: $radius,
-            $tertiary: $tertiary,
-            $color: white
+            $radius:        $radius,
+            $background:    $background,
+            $colour:        $colour
         );
     }
 }

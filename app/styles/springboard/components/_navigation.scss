@@ -3,10 +3,10 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin _sb-component__navigation(
-    $closeBg: rgba(black, 0.25),
-    $navSubBg: lavendar,
-    $navLinkHoverBg: whitesmoke,
-    $speed: $speed
+    $closeBg:           rgba(black, 0.25),
+    $navSubBg:          lavendar,
+    $navLinkHoverBg:    whitesmoke,
+    $trans:             $trans
 ) {
 
     // .js .c-nav
@@ -59,19 +59,19 @@
 
 
 @mixin sb-component__navigation(
-    $closeBg: rgba(black, 0.25),
-    $navSubBg: lavendar,
-    $navLinkHoverBg: whitesmoke,
-    $speed: $speed
+    $closeBg:           rgba(black, 0.25),
+    $navSubBg:          lavendar,
+    $navLinkHoverBg:    whitesmoke,
+    $trans:             $trans
 ) {
 
     .js .c-nav {
 
         @include _sb-component__navigation(
-            $closeBg: rgba(black, 0.25),
-            $navSubBg: lavendar,
-            $navLinkHoverBg: whitesmoke,
-            $speed: $speed
+            $closeBg:           $closeBg,
+            $navSubBg:          $navSubBg,
+            $navLinkHoverBg:    $navLinkHoverBg,
+            $trans:             $trans
         );
     }
 }

@@ -16,10 +16,10 @@
 
 
 @mixin _sb-component__offCanvas(
-    $size: rem(320),
-    $trans: $trans,
-    $secondary: $secondary,
-    $canvasClass: 'c-canvas'
+    $size:          rem(320),
+    $trans:         $trans,
+    $secondary:     $secondary,
+    $canvasClass:   'c-canvas'
 ) {
 
     // .c-offCanvas
@@ -58,10 +58,10 @@
 
 
 @mixin sb-component__offCanvas(
-    $size: rem(320),
-    $trans: $trans,
-    $secondary: $secondary,
-    $canvasClass: 'c-canvas'
+    $size:          rem(320),
+    $trans:         $trans,
+    $secondary:     $secondary,
+    $canvasClass:   'c-canvas'
 ) {
 
     .c-canvas {
@@ -74,10 +74,10 @@
     .c-offCanvas {
 
         @include _sb-component__offCanvas(
-            $size: rem(320),
-            $trans: $trans,
-            $secondary: $secondary,
-            $canvasClass: 'c-canvas'
+            $size:          $size,
+            $trans:         $trans,
+            $secondary:     $secondary,
+            $canvasClass:   $canvasClass
         );        
     }
 }

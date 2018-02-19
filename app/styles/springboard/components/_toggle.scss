@@ -3,9 +3,10 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin _sb-component__toggle(
-    $colourOn: dodgerblue,
-    $colourOff: lightgrey,
-    $handleColour: white,
+    $colourOn:      dodgerblue,
+    $colourOff:     lightgrey,
+    $handleColour:  white,
+    $trans:         $trans,
     $toggles: (
         default: (
             gap: 0.1875rem,
@@ -27,9 +28,7 @@
         //     gap: 0.4375rem,
         //     size: 4rem
         // )
-    ),
-    $speed: $speed,
-    $ease: $ease
+    )
 ) {
 
     // .c-toggle
@@ -118,33 +117,26 @@
 
 
 @mixin sb-component__toggle(
-    $colourOn: dodgerblue,
-    $colourOff: lightgrey,
-    $handleColour: white,
+    $colourOn:      dodgerblue,
+    $colourOff:     lightgrey,
+    $handleColour:  white,
+    $trans:         $trans,
     $toggles: (
         default: (
             gap: 0.1875rem,
             size: rem(20)
         )
-    ),
-    $speed: $speed,
-    $ease: $ease
+    )
 ) {
 
     .c-toggle {
 
         @include _sb-component__toggle(
-            $colourOn: dodgerblue,
-            $colourOff: lightgrey,
-            $handleColour: white,
-            $toggles: (
-                default: (
-                    gap: 0.1875rem,
-                    size: rem(20)
-                )
-            ),
-            $speed: $speed,
-            $ease: $ease
+            $colourOn:      $colourOn,
+            $colourOff:     $colourOff,
+            $handleColour:  $handleColour,
+            $trans:         $trans,
+            $toggles:       $toggles
         );
     }
 }

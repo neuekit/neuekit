@@ -3,11 +3,10 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin _sb-component__validate(
-    $success: $success,
-    $error: $error,
-    $speed: $speed,
-    $ease: $ease,
-    $fontWeight: 500
+    $success:       $success,
+    $error:         $error,
+    $trans:         $trans,
+    $fontWeight:    500
 ) {
 
     // .c-validate
@@ -56,21 +55,19 @@
 
 
 @mixin sb-component__validate(
-    $success: $success,
-    $error: $error,
-    $speed: $speed,
-    $ease: $ease,
-    $fontWeight: 500
+    $success:       $success,
+    $error:         $error,
+    $trans:         $trans,
+    $fontWeight:    500
 ) {
 
     .c-validate {
 
         @include _sb-component__validate(
-            $success: $success,
-            $error: $error,
-            $speed: $speed,
-            $ease: $ease,
-            $fontWeight: 500
+            $success:       $success,
+            $error:         $error,
+            $trans:         $trans,
+            $fontWeight:    $fontWeight
         );
     }
 }
