@@ -2,89 +2,85 @@
     #GRID OBJECT
 \*----------------------------------------------------------------------------*/
 
-@mixin sb-object__grid(
-    $maxWidth: $maxWidth,
-    $gutter: $gutter,
-    $gutterSmall: $gutterSmall
+@mixin _sb-object__grid(
+    $maxWidth:          $maxWidth,
+    $gutter:            $gutter,
+    $gutterSmall:       $gutterSmall,
+    $mediumBreakpoint:  m
 ) {
 
-    /*  Blocks  */
+    // .o-grid
+    display: flex;
+    flex-shrink: 0;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: rem( $maxWidth );
+    padding: 0 rem( $gutterSmall );
+    width: 100%;
 
-    .o-grid { // .o-grid
-        display: flex;
-        flex-shrink: 0;
-        flex-wrap: wrap;
-        margin: 0 auto;
-        max-width: rem( $maxWidth );
+
+    /*  Elements  */
+
+    &__item { // .o-grid__item
+        @if(not($auto)) { flex-basis: 100%; }
+        flex-direction: column;
+        @if($auto) { flex-grow: 1; }
+        max-width: 100%;
         padding: 0 rem( $gutterSmall );
-        width: 100%;
+        @if(not($auto)) { width: 100%; }
+    }
 
 
-        /*  Elements  */
+    /*  Modifiers  */
+
+    &--item { // .o-grid--item
+        display: block;
+        flex-direction: column;
+        padding: 0 rem( $gutterSmall * 2 );
+    }
+
+    &#{ & }--item { // .o-grid.o-grid--item
+        display: block;
+    }
+
+    & &, // .o-grid .o-grid
+    &--unnest#{&}--unnest { // .o-grid--unnest
+        flex-shrink: 1;
+        margin: 0 #{ rem( -$gutterSmall * 2 ) };
+        max-width: none;
+        width: auto;
+    }
+
+    &--max { // .o-grid--max
+        max-width: none;
+    }
+
+    &#{ & }--edge, // .o-grid.o-grid--edge
+    &--edge > &__item { // .o-grid--edge > .o-grid__item
+        padding: 0;
+    }
+
+    & &--nest#{&}--nest, // .o-grid--nest
+    &#{ & }--edge, // .o-grid--edge
+    &--edge &:not(&--unnest) { // .o-grid--edge .o-grid
+        margin: 0 auto;
+    }
+
+    @include media($mediumBreakpoint) {
+
+        padding: 0 rem( $gutter );
 
         &__item { // .o-grid__item
-            @if(not($auto)) { flex-basis: 100%; }
-            flex-direction: column;
-            @if($auto) { flex-grow: 1; }
-            max-width: 100%;
-            padding: 0 rem( $gutterSmall );
-            @if(not($auto)) { width: 100%; }
+            padding: 0 rem( $gutter );
         }
-
-
-        /*  Modifiers  */
 
         &--item { // .o-grid--item
-            display: block;
-            flex-direction: column;
-            padding: 0 rem( $gutterSmall * 2 );
-        }
-
-        &#{ & }--item { // .o-grid.o-grid--item
-            display: block;
+            padding: 0 rem( $gutter * 2 );
         }
 
         & &, // .o-grid .o-grid
-        &--unnest#{&}--unnest { // .o-grid--unnest
-            flex-shrink: 1;
-            margin: 0 #{ rem( -$gutterSmall * 2 ) };
-            max-width: none;
-            width: auto;
-        }
-
-        &--max { // .o-grid--max
-            max-width: none;
-        }
-
-        &#{ & }--edge, // .o-grid.o-grid--edge
-        &--edge > &__item { // .o-grid--edge > .o-grid__item
-            padding: 0;
-        }
-
-        & &--nest#{&}--nest, // .o-grid--nest
-        &#{ & }--edge, // .o-grid--edge
-        &--edge &:not(&--unnest) { // .o-grid--edge .o-grid
-            margin: 0 auto;
-        }
-    }
-
-    @include media(m) {
-
-        .o-grid { // .o-grid
-            padding: 0 rem( $gutter );
-
-            &__item { // .o-grid__item
-                padding: 0 rem( $gutter );
-            }
-
-            &--item { // .o-grid--item
-                padding: 0 rem( $gutter * 2 );
-            }
-
-            & &, // .o-grid .o-grid
-            &--unnest { // .o-grid--unnest
-                margin: 0 #{ rem( -($gutter * 2) ) };
-            }
+        &--unnest { // .o-grid--unnest
+            margin: 0 #{ rem( -($gutter * 2) ) };
         }
     }
 
@@ -94,11 +90,31 @@
 
             $width: floor((100% / $grid) * 1000) / 1000;
 
-            .o-grid--items-#{$grid}#{$break} .o-grid__item {
+            &--items-#{$grid}#{$break} &__item { // .o-grid--items-2@m .o-grid__item
                 flex-basis: $width;
                 max-width: $width;
             }
         }
+    }
+}
+
+
+
+@mixin sb-object__grid(
+    $maxWidth:          $maxWidth,
+    $gutter:            $gutter,
+    $gutterSmall:       $gutterSmall,
+    $mediumBreakpoint:  m
+) {
+
+    .o-grid {
+
+        @include _sb-object__grid(
+            $maxWidth:          $maxWidth,
+            $gutter:            $gutter,
+            $gutterSmall:       $gutterSmall,
+            $mediumBreakpoint:  $mediumBreakpoint
+        );
     }
 }
 
