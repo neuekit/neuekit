@@ -20,3 +20,5 @@ $mediaClass:    '\\@'           !default;
 $direction:     column          !default;
 
 $responsive:    both            !default; // Used with mixins as a default for responsive elements. Values: false, both, up, only
+
+$plainInputs: false;

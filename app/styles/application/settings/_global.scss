@@ -1,7 +1,24 @@
 /*----------------------------------------------------------------------------*\
-    #GLOBAL VARIABLES
+    #GLOBAL SETTINGS
 \*----------------------------------------------------------------------------*/
 
-
-
-
+// $radius:        3px;
+// $speed:         0.2s;
+// $ease:          ease;
+// $trans:         $speed $ease;
+//
+// $breakpoints: (
+//     xs:         0,              // Phone
+//     s:          768px,          // Tablet
+//     m:          1024px,         // Notebook
+//     l:          1200px,         // Laptop
+//     xl:         1600px          // Desktop
+// );
+//
+// $mediaClass:    '\\@';
+//
+// $direction:     column;
+//
+// $responsive:    both; // Used with mixins as a default for responsive elements. Values: false, both, up, only
+//
+//$plainInputs: false;

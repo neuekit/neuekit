@@ -239,6 +239,26 @@ export const standaloneLinks = () => {
 
     if ( ('standalone' in navigator) && navigator['standalone'] ) {
 
+        const $els = document.getElementsByClassName('js-history');
+
+        [...$els].map(($el) => {
+
+            $el.addEventListener('click', function(e) {
+
+                e.preventDefault();
+
+                if ( $el.dataset.history === ('reload' || 'refresh') ) {
+
+                    location.reload();
+                }
+
+                else {
+
+                    history[$el.dataset.history]();
+                }
+            });
+        });
+
         document.addEventListener('click', function(e) {
 
             let target = e.target;
@@ -266,7 +286,7 @@ export const standaloneLinks = () => {
 
                 location.href = target.href;
             }
-        },false);
+        }, false);
     }
 };
 
