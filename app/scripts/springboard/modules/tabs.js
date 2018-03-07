@@ -4,6 +4,8 @@
     MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
+import {S, SA, CN, ID, TN} from './aliases';
+
 // Module instantiation
 export default function(options) {
 
@@ -32,11 +34,11 @@ export default function(options) {
     const goto = (id, push) => {
 
         // Store elements for later use
-        const $this = id ? document.querySelector(`[href="#${id}"]`) : this;
+        const $this = id ? S(`[href="#${id}"]`) : this;
         const $tabs = $this.closest('.js-tabs').getElementsByClassName('js-tab');
 
         // Store target elements for later use
-        const $content = document.getElementById(id);
+        const $content = ID(id);
         const $contents = $content.closest('.js-tabs-contents').getElementsByClassName('js-tab-content');
 
         // Pass data to events
@@ -80,7 +82,7 @@ export default function(options) {
     const destroy = () => {
 
         // Get all elements
-        const $tabs = document.getElementsByClassName('js-tab');
+        const $tabs = CN('js-tab');
 
         // Add click events to each link
         [...$tabs].map(($el) => $el.removeEventListener('click', _clickGoto));
@@ -97,9 +99,9 @@ export default function(options) {
     const init = (() => {
 
         // Get data
-        const $tabs = document.getElementsByClassName('js-tab');
+        const $tabs = CN('js-tab');
         const hash = location.hash.substring(1);
-        const $el = document.getElementById(hash);
+        const $el = ID(hash);
 
         // Add click events to each link
         [...$tabs].map(($el) => $el.addEventListener('click', _clickGoto));
@@ -113,7 +115,7 @@ export default function(options) {
         window.addEventListener('popstate', () => {
 
             const hash = location.hash.substring(1);
-            const $el = document.getElementById(hash);
+            const $el = ID(hash);
 
             if ( $el && $el.classList.contains('js-tab-content') ) {
 

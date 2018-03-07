@@ -4,6 +4,8 @@
     MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
+import {S, SA, CN, ID, TN} from './aliases';
+
 // Module instantiation
 export default function(options) {
 
@@ -23,9 +25,9 @@ export default function(options) {
 
     // Private: Get elements
     const _getEls = {
-        open: document.getElementsByClassName('js-modal__open'),
-        close: document.getElementsByClassName('js-modal__close'),
-        modal: document.getElementsByClassName('c-modal')
+        open: CN('js-modal__open'),
+        close: CN('js-modal__close'),
+        modal: CN('c-modal')
     };
 
     // Private: Click event callback for open method
@@ -59,7 +61,7 @@ export default function(options) {
     const open = (id, push) => {
 
         // Store target elements for later use
-        const $modal = document.getElementById(id);
+        const $modal = ID(id);
 
         // Pass data to events
         const data = {
@@ -113,19 +115,19 @@ export default function(options) {
         // Dispatch the before event
         document.dispatchEvent(before);
 
-        if ( document.querySelectorAll('.c-modal.active').length === 1 ) {
+        if ( SA('.c-modal.active').length === 1 ) {
 
             document.body.classList.remove('u-locked');
         }
 
         if ( id ) {
 
-            document.getElementById(id).closest('.c-modal').classList.remove('active');
+            ID(id).closest('.c-modal').classList.remove('active');
         }
 
         else {
 
-            [...document.querySelectorAll('.c-modal')].map(($el) => $el.classList.remove('active'));
+            [...SA('.c-modal')].map(($el) => $el.classList.remove('active'));
         }
 
         // Check for after callback and run
@@ -158,7 +160,7 @@ export default function(options) {
 
         // Get data
         const hash = location.hash.substring(1);
-        const $el = document.getElementById(hash);
+        const $el = ID(hash);
 
         // Run check and open modal if successful
         if ( $el && $el.classList.contains('c-modal') ) {
@@ -175,7 +177,7 @@ export default function(options) {
         window.addEventListener('popstate', () => {
 
             const hash = location.hash.substring(1);
-            const $el = document.getElementById(hash);
+            const $el = ID(hash);
 
             if ( $el && $el.classList.contains('c-modal') ) {
 

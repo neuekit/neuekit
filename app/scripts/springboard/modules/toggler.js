@@ -4,6 +4,8 @@
     MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
+import {S, SA, CN, ID, TN} from './aliases';
+
 export default function(options) {
 
     // Private: Default settings object
@@ -33,7 +35,7 @@ export default function(options) {
     // Public: Initialise module
     const init = (() => {
 
-        const $els = document.getElementsByClassName('js-toggler');
+        const $els = CN('js-toggler');
 
         [...$els].map(($el) => {
 
@@ -41,7 +43,7 @@ export default function(options) {
 
                 e.preventDefault();
 
-                const $targets = document.querySelectorAll($el.dataset.toggleTarget);
+                const $targets = SA($el.dataset.toggleTarget);
 
                 [...$targets].map(($target) => {
 

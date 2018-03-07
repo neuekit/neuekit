@@ -4,6 +4,7 @@
     MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
+import {S, SA, CN, ID, TN} from './aliases';
 
 /*--------------------------------------------------*\
     Get Domain
@@ -92,7 +93,7 @@ export const setDocClasses = () => {
 
 export const setInputTypes = () => {
 
-    [...document.getElementsByTagName('input')].map(($el) => {
+    [...TN('input')].map(($el) => {
 
         if ( $el.type !== $el.getAttribute('type') ) {
 
@@ -221,7 +222,7 @@ export const removeStorage = (name, checkCookie) => {
 
 export const sticky = () => {
 
-    [...document.getElementsByClassName('u-sticky')].map(($el) => {
+    [...CN('u-sticky')].map(($el) => {
 
         Stickyfill.add($el);
     })
@@ -239,7 +240,7 @@ export const standaloneLinks = () => {
 
     if ( ('standalone' in navigator) && navigator['standalone'] ) {
 
-        const $els = document.getElementsByClassName('js-history');
+        const $els = CN('js-history');
 
         [...$els].map(($el) => {
 
