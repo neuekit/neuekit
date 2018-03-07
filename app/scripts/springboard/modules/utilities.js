@@ -221,7 +221,7 @@ export const removeStorage = (name, checkCookie) => {
 
 export const sticky = () => {
 
-    [...document.getElementsByClassName('sticky')].map(($el) => {
+    [...document.getElementsByClassName('u-sticky')].map(($el) => {
 
         Stickyfill.add($el);
     })
