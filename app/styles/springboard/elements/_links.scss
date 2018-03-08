@@ -4,10 +4,21 @@
 
 @mixin sb-element__link() {
 
+    /*----------------------------------------------------------------------------*\
+        1. Remove the gray background on active links in IE 10.
+        2. Remove the gaps in underlines in iOS 8+ and Safari 8+.
+        3. Remove the outline when hovering in all browsers (opinionated).
+    \*----------------------------------------------------------------------------*/
+
     a {
+        background-color: transparent;          /* 1 */
         color: inherit;
         text-decoration: none;
-    }
+        -webkit-text-decoration-skip: objects;  /* 2 */
 
+        &:hover { // a:hover
+            outline-width: 0;                   /* 3 */
+        }
+    }
 }
 

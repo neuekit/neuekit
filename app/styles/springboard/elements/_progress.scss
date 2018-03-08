@@ -1,0 +1,75 @@
+/*----------------------------------------------------------------------------*\
+    #PROGRESS ELEMENT
+\*----------------------------------------------------------------------------*/
+
+@mixin sb-element__progress() {
+
+    /*----------------------------------------------------------------------------*\
+        1. Add the correct vertical alignment in Chrome, Firefox, and Opera.
+    \*----------------------------------------------------------------------------*/
+
+    progress {
+        appearance: none;
+        background: linear-gradient(
+            to right,
+            $primary 0%,
+            $input 0%,
+            $input 100%,
+            $primary 100%
+        ) repeat;
+        background-size: 200% 100%;
+        border: none;
+        border-radius: rem(16);
+        color: $primary;
+        @include area(rem(8), 100%);
+        vertical-align: baseline; /* 1 */
+
+        &::-ms-fill { // progress::-ms-fill
+            animation-name: none;
+        }
+
+        &[value], // progress[value],
+        &::-webkit-progress-bar, // progress::-webkit-progress-bar,
+        &[value]::-webkit-progress-value { // progress[value]::-webkit-progress-value
+            background: none;
+            border: none;
+            border-radius: rem(16);
+        }
+
+        &[value]::-webkit-progress-bar { // progress[value]::-webkit-progress-bar
+            background: $input;
+        }
+
+        &[value]::-webkit-progress-value { // progress[value]::-webkit-progress-value
+            background-color: $primary;
+        }
+
+        &:not([value]) { // prgoress:not([value])
+            animation: animate-progress 2s ease infinite;
+        }
+    }
+
+    @-moz-document url-prefix() {
+
+        progress::-moz-progress-bar {
+            background-color: transparent;
+        }
+
+        progress[value],
+        progress[value]::-moz-progress-bar {
+            border: none;
+            border-radius: rem(16);
+            height: rem(8);
+        }
+
+        progress[value] {
+            background-color: $input;
+
+            &::-moz-progress-bar {
+                background-color: $primary;
+            }
+        }
+    }
+}
+
+

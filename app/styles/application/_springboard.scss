@@ -5,35 +5,31 @@
 \*----------------------------------------------------------------------------*/
 
 
-
-/*----------------------------------------------------------------------------*\
-    #GENERIC
-
-    Ground-zero styles. Low-specificity, far-reaching.
-\*----------------------------------------------------------------------------*/
-
-@include sb-generic();
-
-// @include sb-generic__reboot();          // A modern level playing field.
-// @include sb-generic__shared();          // Shared global commonalities.
-
-
 /*----------------------------------------------------------------------------*\
     #ELEMENTS
 
-    Last layer for type selectors (h1-h6, a).
+    Element resets, styles alongside psuedo & wildcard far reaching declarations.
 \*----------------------------------------------------------------------------*/
 
 @include sb-elements();
 
-// @include sb-element__document();        // Page-level styles (HTML, body etc).
-// @include sb-element__form();            // Form inputs, textareas.
-// @include sb-element__link();            // Hyperlinks.
-// @include sb-element__list();            // Lists.
-// @include sb-element__media();           // Media elements, img, svg, video, etc.
-// @include sb-element__quote();           // Blockquotes, cite, etc.
-// @include sb-element__table();           // Table element styles.
-// @include sb-element__type();            // All type styles.
+// @include sb-element__shared();      // Shared global commonalities.
+// @include sb-element__document();     // Page-level styles (HTML, body etc).
+// @include sb-element__details();      // Native details component.
+// @include sb-element__form();         // Form fieldset and legend.
+// @include sb-element__inputs();       // Input, select, textarea, button etc.
+// @include sb-element__link();         // Hyperlinks.
+// @include sb-element__list();         // Lists.
+// @include sb-element__media();        // Media elements, img, svg, video, etc.
+// @include sb-element__quote();        // Blockquotes, cite, etc.
+// @include sb-element__table();        // Table element styles.
+// @include sb-element__type();         // All type styles.
+// @include sb-element__toggles();      // Checkbox and radio elements.
+// @include sb-element__meter();        // The native meter element.
+// @include sb-element__progress();     // The native progress element.
+// @include sb-element__range();        // The native range input element.
+// @include sb-element__aria();         // Accessibility attribute styles.
+
 
 
 /*----------------------------------------------------------------------------*\

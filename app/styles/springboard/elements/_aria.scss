@@ -1,0 +1,50 @@
+/*----------------------------------------------------------------------------*\
+    #ARIA STYLES
+\*----------------------------------------------------------------------------*/
+
+@mixin sb-element__aria() {
+
+    /*----------------------------------------------------------------------------*\
+        Change the cursor on busy elements (opinionated).
+    \*----------------------------------------------------------------------------*/
+
+    [aria-busy="true"] {
+        cursor: progress;
+    }
+
+
+    /*----------------------------------------------------------------------------*\
+        Change the cursor on control elements (opinionated).
+    \*----------------------------------------------------------------------------*/
+
+    [aria-controls] {
+        cursor: pointer;
+    }
+
+
+    /*----------------------------------------------------------------------------*\
+        Change the cursor on disabled, not-editable, or otherwise inoperable
+        elements (opinionated).
+    \*----------------------------------------------------------------------------*/
+
+    [aria-disabled] {
+        cursor: default;
+    }
+
+
+    /*----------------------------------------------------------------------------*\
+        Change the display on visually hidden accessible elements (opinionated).
+    \*----------------------------------------------------------------------------*/
+
+    [hidden][aria-hidden="false"] {
+        clip: rect(0, 0, 0, 0);
+        display: inherit;
+        position: absolute;
+    }
+
+    [hidden][aria-hidden="false"]:focus {
+        clip: auto;
+    }
+}
+
+

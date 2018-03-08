@@ -4,6 +4,34 @@
 
 @mixin sb-element__media() {
 
+    /*----------------------------------------------------------------------------*\
+        1. Change the alignment on media elements in all browers (opinionated).
+    \*----------------------------------------------------------------------------*/
+
+    audio,
+    canvas,
+    iframe,
+    img,
+    svg,
+    video {
+        vertical-align: middle; /* 1 */
+    }
+
+
+
+    /*----------------------------------------------------------------------------*\
+        1. Change the fill color to match the text color in all browsers (opinionated).
+        2. Hide the overflow in IE.
+    \*----------------------------------------------------------------------------*/
+
+    svg {
+        fill: currentColor;     /* 1 */
+
+        &:not(:root) {
+            overflow: hidden;   /* 2 */
+        }
+    }
+
     img,
     svg {
         display: block;

@@ -4,18 +4,102 @@
 
 @mixin sb-element__type() {
 
-    html {
-        color: $text;
-        font-family: $fontstack;
-        font-size: $htmlFontSize;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+    /*----------------------------------------------------------------------------*\
+        1. Correct the font sizes and margins on `h1` elements within `section` and
+        `article` contexts in Chrome, Firefox, and Safari
+    \*----------------------------------------------------------------------------*/
+
+    h1 {
+        font-size: 2em;     /* 1 */
+        margin: 0.6875em 0; /* 1 */
     }
 
-    body {
-        font-size: $baseFontSize;
+
+    /*----------------------------------------------------------------------------*\
+        1. Correct font sizing inheritance and scaling in all browsers.
+        2. Correct the odd `em` font sizing in all browsers.
+    \*----------------------------------------------------------------------------*/
+
+    code,
+    kbd,
+    pre,
+    samp {
+        font-family: monospace, monospace;  /* 1 */
+        font-size: 1em;                     /* 2 */
     }
 
+
+    /*----------------------------------------------------------------------------*\
+        1. Add the correct box sizing in Firefox.
+        2. Show the overflow in Edge and IE.
+    \*----------------------------------------------------------------------------*/
+
+    hr {
+        box-sizing: content-box; /* 1 */
+        height: 0;               /* 1 */
+        overflow: visible;       /* 2 */
+    }
+
+
+    /*----------------------------------------------------------------------------*\
+        1. Add the correct font weight in Chrome, Edge, and Safari.
+    \*----------------------------------------------------------------------------*/
+
+    b,
+    strong {
+        font-weight: bolder; /* 1 */
+    }
+
+
+    /*----------------------------------------------------------------------------*\
+        1. Add the correct font style in Android 4.3-.
+    \*----------------------------------------------------------------------------*/
+
+    dfn {
+        font-style: italic; /* 1 */
+    }
+
+
+    /*----------------------------------------------------------------------------*\
+        1. Correct the font size in all browsers.
+    \*----------------------------------------------------------------------------*/
+
+    small {
+        font-size: 83.3333%; /* 1 */
+    }
+
+
+    /*----------------------------------------------------------------------------*\
+        In all browsers (opinionated).
+        1. Correct the font size in all browsers.
+    \*----------------------------------------------------------------------------*/
+
+    sub,
+    sup {
+        font-size: 83.3333%; /* 1 */
+        line-height: 0;
+        vertical-align: baseline;
+    }
+
+    sub {
+        bottom: -0.25em;
+    }
+
+    sup {
+        top: -0.5em;
+    }
+
+
+    /*----------------------------------------------------------------------------*\
+        1. Remove the bottom border in Firefox 39-.
+        2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+    \*----------------------------------------------------------------------------*/
+
+    abbr[title] {
+        border-bottom: none;                /* 1 */
+        text-decoration: underline;         /* 2 */
+        text-decoration: underline dotted;  /* 2 */
+    }
 
 
     /*----------------------------------------------*\

@@ -1,0 +1,63 @@
+/*----------------------------------------------------------------------------*\
+    #METER ELEMENT
+\*----------------------------------------------------------------------------*/
+
+@mixin sb-element__meter() {
+
+    meter {
+        border: none;
+        width: 100%;
+
+        &::-webkit-meter-bar, // meter::-webkit-meter-bar,
+        &::-webkit-meter-optimum-value, // meter::-webkit-meter-optimum-value,
+        &::-webkit-meter-suboptimum-value, // meter::-webkit-meter-suboptimum-value,
+        &::-webkit-meter-even-less-good-value { // meter::-webkit-meter-even-less-good-value
+            border: none;
+            border-radius: rem(16);
+        }
+
+        &::-webkit-meter-bar { // meter::-webkit-meter-bar
+            background: $input;
+            height: rem(8);
+        }
+
+        &::-webkit-meter-optimum-value { // meter::-webkit-meter-bar
+            background: $success;
+        }
+
+        &::-webkit-meter-suboptimum-value { // meter::-webkit-meter-suboptimum-value
+            background: $warn;
+        }
+
+        &::-webkit-meter-even-less-good-value { // meter::-webkit-meter-even-less-good-value
+            background: $error;
+        }
+    }
+
+    @-moz-document url-prefix() {
+
+        meter {
+            background: $input;
+            border-radius: rem(16);
+            height: rem(8);
+
+            &::-moz-meter-bar { // meter::-moz-meter-bar
+                border-radius: rem(16);
+            }
+
+            &:-moz-meter-optimum::-moz-meter-bar { // meter:-moz-meter-optimum::-moz-meter-bar
+                background: $success;
+            }
+
+            &:-moz-meter-sub-optimum::-moz-meter-bar { // meter:-moz-meter-sub-optimum::-moz-meter-bar
+                background: $warn;
+            }
+
+            &:-moz-meter-sub-sub-optimum::-moz-meter-bar { // meter:-moz-meter-sub-sub-optimum::-moz-meter-bar
+                background: $error;
+            }
+        }
+    }
+}
+
+
