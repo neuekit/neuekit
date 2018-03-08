@@ -4,6 +4,17 @@
 
 @mixin sb-element__list() {
 
+    /*----------------------------------------------------------------------------*\
+        1. Remove the list style on navigation lists in all browsers (opinionated).
+    \*----------------------------------------------------------------------------*/
+
+    nav {
+        ol,  // nav ol,
+        ul { // nav ul
+            list-style: none; /* 1 */
+        }
+    }
+
     ol,
     ul {
         padding-left: rem(24);
