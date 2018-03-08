@@ -13,7 +13,7 @@
 
 @include sb-elements();
 
-// @include sb-elements__shared();      // Shared global commonalities.
+// @include sb-element__shared();      // Shared global commonalities.
 // @include sb-element__document();     // Page-level styles (HTML, body etc).
 // @include sb-element__details();      // Native details component.
 // @include sb-element__form();         // Form fieldset and legend.
