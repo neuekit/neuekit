@@ -47,7 +47,7 @@
 
 @mixin sb-elements() {
 
-    @include sb-elements__shared();
+    @include sb-element__shared();
     @include sb-element__document();
     @include sb-element__details();
     @include sb-element__form();
