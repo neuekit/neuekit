@@ -4,7 +4,7 @@
     MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
-import {S, SA, CN, ID, TN, on} from './aliases';
+import {S, SA, CN, ID, TN, on, off} from './aliases';
 
 // Module instantiation
 export default function(options) {
@@ -167,7 +167,7 @@ export default function(options) {
 
             open(hash);
         }
-        
+
         // Add click events to each link
         [..._getEls.open].map(($link) => $link.on('click', _clickOpen));
         [..._getEls.close].map(($link) => $link.on('click', _clickClose));
