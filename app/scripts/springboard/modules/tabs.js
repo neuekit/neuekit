@@ -4,7 +4,7 @@
     MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
-import {S, SA, CN, ID, TN} from './aliases';
+import {S, SA, CN, ID, TN, on, off} from './aliases';
 
 // Module instantiation
 export default function(options) {
@@ -104,7 +104,7 @@ export default function(options) {
         const $el = ID(hash);
 
         // Add click events to each link
-        [...$tabs].map(($el) => $el.addEventListener('click', _clickGoto));
+        [...$tabs].map(($el) => $el.on('click', _clickGoto));
 
         if ( $el && $el.classList.contains('js-tab-content') ) {
 
@@ -112,7 +112,7 @@ export default function(options) {
         }
 
         // Popstate event listener
-        window.addEventListener('popstate', () => {
+        window.on('popstate', () => {
 
             const hash = location.hash.substring(1);
             const $el = ID(hash);

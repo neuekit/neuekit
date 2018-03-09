@@ -4,7 +4,7 @@
     MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
-import {S, SA, CN, ID, TN} from './aliases';
+import {S, SA, CN, ID, TN, on, off} from './aliases';
 
 export default function(options) {
 

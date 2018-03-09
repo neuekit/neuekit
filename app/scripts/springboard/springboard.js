@@ -59,10 +59,10 @@ window.SpringBoard = function(options) {
     const init = (() => {
 
         _modules.core     = new Core(_settings.core);
-        _modules.fetcher  = new Core(_settings.fetcher);
+        _modules.fetcher  = new Fetcher(_settings.fetcher);
         _modules.modals   = new Modals(_settings.modals);
         _modules.tabs     = new Tabs(_settings.tabs);
-        _modules.toggler  = new Tabs(_settings.toggler);
+        _modules.toggler  = new Toggler(_settings.toggler);
     })();
 
     return {

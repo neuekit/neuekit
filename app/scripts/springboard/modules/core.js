@@ -4,7 +4,7 @@
     MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
-import {S, SA, CN, ID, TN} from './aliases';
+import {S, SA, CN, ID, TN, on, off} from './aliases';
 import * as util from './utilities';
 
 export default function(options) {
@@ -35,6 +35,12 @@ export default function(options) {
 
     // Public: Initialise module
     const init = (() => {
+
+        Window.prototype.on = Window.prototype.addEventListener;
+        Window.prototype.off = Window.prototype.removeEventListener;
+
+        Node.prototype.on = Node.prototype.addEventListener;
+        Node.prototype.off = Node.prototype.removeEventListener;
 
         util.setDocClasses();
         util.setInputTypes();

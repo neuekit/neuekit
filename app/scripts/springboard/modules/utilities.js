@@ -4,7 +4,7 @@
     MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
-import {S, SA, CN, ID, TN} from './aliases';
+import {S, SA, CN, ID, TN, on, off} from './aliases';
 
 /*--------------------------------------------------*\
     Get Domain
@@ -244,7 +244,7 @@ export const standaloneLinks = () => {
 
         [...$els].map(($el) => {
 
-            $el.addEventListener('click', function(e) {
+            $el.on('click', function(e) {
 
                 e.preventDefault();
 
@@ -260,7 +260,7 @@ export const standaloneLinks = () => {
             });
         });
 
-        document.addEventListener('click', function(e) {
+        document.on('click', function(e) {
 
             let target = e.target;
             let location = document.location;

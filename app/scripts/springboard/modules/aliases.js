@@ -22,3 +22,13 @@ export const TN = (tag, container = document) => {
 
     return container.getElementsByTagName(tag);
 };
+
+export function on(name, handler) {
+
+    return this.addEventListener(name, handler, false);
+};
+
+export function off(name, handler) {
+
+    return this.removeEventListener(name, handler, false);
+};
