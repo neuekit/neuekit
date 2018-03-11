@@ -3,7 +3,7 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin sb-utility__text(
-    $responsive: $responsive,
+    $responsive: false,
     $utilities: (
         text-start,
         text-center,
