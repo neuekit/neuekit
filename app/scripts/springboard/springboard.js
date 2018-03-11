@@ -14,7 +14,6 @@ import Core     from './modules/core';
 import Fetcher  from './modules/fetcher';
 import Modals   from './modules/modals';
 import Tabs     from './modules/tabs';
-import Toggler  from './modules/toggler';
 
 
 /* SpringBoard */
@@ -26,8 +25,7 @@ window.SpringBoard = function(options) {
         core: {},
         fetcher: {},
         modals: {},
-        tabs: {},
-        toggler: {}
+        tabs: {}
     };
 
     // Private: Merge passed in object with defaults
@@ -45,7 +43,6 @@ window.SpringBoard = function(options) {
         _modules.fetcher.destroy();
         _modules.modals.destroy();
         _modules.tabs.destroy();
-        _modules.toggler.destroy();
     };
 
     // Public: Destroy module instance and run initialise again
@@ -62,7 +59,6 @@ window.SpringBoard = function(options) {
         _modules.fetcher  = new Fetcher(_settings.fetcher);
         _modules.modals   = new Modals(_settings.modals);
         _modules.tabs     = new Tabs(_settings.tabs);
-        _modules.toggler  = new Toggler(_settings.toggler);
     })();
 
     return {
