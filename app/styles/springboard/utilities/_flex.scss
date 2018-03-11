@@ -8,15 +8,23 @@
         display: flex;
     }
 
-    #{chain('.u-grow')} {
-        flex-grow: 1;
-    }
-
-    #{chain('.u-noGrow')} {
-        flex-grow: 0;
-    }
-
     @include breakpoints( both ) {
+
+        #{chain('.u-grow')} {
+            flex-grow: 1;
+        }
+
+        #{chain('.u-noGrow')} {
+            flex-grow: 0;
+        }
+
+        #{chain('.u-shrink')} {
+            flex-shrink: 1;
+        }
+
+        #{chain('.u-noShrink')} {
+            flex-shrink: 0;
+        }
 
         #{chain('.u-row' + $break)} {
             flex-direction: row;

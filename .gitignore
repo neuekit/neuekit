@@ -1,12 +1,7 @@
 *.scssc
-config.codekit
-codekit3.config
-config.codekit3
 .DS_Store
-.config.codekit3
-/node_modules
 node_modules
 .vscode
 /app/yarn.lock
 /app/.yarnclean
-yarn-error.log
+*.log
