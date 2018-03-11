@@ -3,7 +3,7 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin sb-utility__visibility(
-    $responsive: false,
+    $responsive: both,
     $utilities: (
         hide,
         block,
