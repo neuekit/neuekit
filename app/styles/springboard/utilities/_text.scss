@@ -108,6 +108,19 @@
 
         @include create-utilities-text( $utilities, $break: '' );
     }
+
+    @if ( $responsiveType ) {
+
+        @include breakpoints {
+
+            @include headings( rem( $headingIncrement ) * $breakindex );
+        }
+    }
+
+    @else {
+
+        @include headings( rem( $headingIncrement * 3 )  );
+    }
 }
 
 @mixin create-utilities-text( $utilities, $break ) {

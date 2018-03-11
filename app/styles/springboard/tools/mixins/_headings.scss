@@ -2,17 +2,32 @@
     #HEADING SIZES MIXIN
 \*----------------------------------------------------------------------------*/
 
-@mixin headings($jump) {
+@mixin headings($jump, $element: false) {
 
-    @for $i from 1 through 6 {
+    @if ( $element ) {
 
-        h#{$i},
-        .h#{$i} {
-            font-size: $baseFontSize + ($jump * (6 - $i));
+        @for $i from 1 through 6 {
+
+            h#{$i} {
+                font-size: $baseFontSize + ($jump * (6 - $i));
+            }
+        }
+    }
+
+    @else {
+
+        @for $i from 1 through 6 {
+
+            .u-h#{$i} {
+                font-size: $baseFontSize + ($jump * (6 - $i));
+            }
         }
 
-        .s#{$i} {
-            font-size: $baseFontSize + ($jump * (6 - $i)) - rem(4);
+        @for $i from 1 through 6 {
+
+            .u-s#{$i} {
+                font-size: $baseFontSize + ($jump * (6 - $i)) - rem(4);
+            }
         }
     }
 }

@@ -1,8 +1,8 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js run build
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js run build:css --silent --silent
 
 PATH: 
-  /Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Python.framework/Versions/3.6/bin
+  /Users/Matt/Sites/SpringBoard/node_modules/.bin:/Users/Matt/.config/yarn/link/node_modules/.bin:/Users/Matt/Sites/SpringBoard/node_modules/.bin:/Users/Matt/.config/yarn/link/node_modules/.bin:/usr/local/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/bin/node_modules/npm/bin/node-gyp-bin:/Users/Matt/Sites/SpringBoard/node_modules/.bin:/Users/Matt/.config/yarn/link/node_modules/.bin:/Users/Matt/Sites/SpringBoard/node_modules/.bin:/Users/Matt/.config/yarn/link/node_modules/.bin:/usr/local/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/bin/node_modules/npm/bin/node-gyp-bin:/Users/Matt/Sites/SpringBoard/node_modules/.bin:/Users/Matt/.config/yarn/link/node_modules/.bin:/Users/Matt/Sites/SpringBoard/node_modules/.bin:/Users/Matt/.config/yarn/link/node_modules/.bin:/usr/local/libexec/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/lib/node_modules/npm/bin/node-gyp-bin:/usr/local/bin/node_modules/npm/bin/node-gyp-bin:/Library/Frameworks/Python.framework/Versions/3.6/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Frameworks/Python.framework/Versions/3.6/bin
 
 Yarn version: 
   1.5.1
@@ -4233,7 +4233,7 @@ Trace:
   Error: Command failed.
   Exit code: 1
   Command: sh
-  Arguments: -c yarn run build:css --silent && yarn run build:js --silent
+  Arguments: -c yarn run scss --silent && yarn run autoprefixer --silent --silent --silent
   Directory: /Users/Matt/Sites/SpringBoard
   Output:
   

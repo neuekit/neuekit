@@ -121,13 +121,13 @@
 
         @include breakpoints {
 
-            @include headings( rem( $headingIncrement ) * $breakindex );
+            @include headings( rem( $headingIncrement ) * $breakindex, true );
         }
     }
 
     @else {
 
-        @include headings( rem( $headingIncrement * 3 ) );
+        @include headings( rem( $headingIncrement * 3 ), true  );
     }
 
 
