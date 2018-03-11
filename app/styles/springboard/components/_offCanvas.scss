@@ -39,7 +39,7 @@
 
         .#{$canvasClass}__trigger { // .c-offCanvas:target ~ .c-canvas .c-canvas__trigger
             display: none;
-        
+
             &--close { // .c-offCanvas:target ~ .c-canvas .c-canvas__trigger--close
                 display: inline-block;
             }
@@ -53,6 +53,22 @@
         &:target + .#{$canvasClass} { // .c-offCanvas--right:target + .c-canvas
             transform: translateX(rem(-320));
         }
+    }
+
+    &--top,     // .c-offCanvas--top,
+    &--bottom { // .c-offCanvas--bottom
+        @include area($size, 100%);
+        transform: translateY(100%);
+        z-index: 1;
+
+        &:target + .#{$canvasClass} { // .c-offCanvas--right:target + .c-canvas
+            transform: translateY(-#{$size});
+        }
+    }
+
+    &--bottom { // .c-offCanvas--bottom
+        bottom: 0;
+        top: auto;
     }
 }
 
@@ -78,7 +94,7 @@
             $trans:         $trans,
             $secondary:     $secondary,
             $canvasClass:   $canvasClass
-        );        
+        );
     }
 }
 
