@@ -4,7 +4,7 @@
     MK1 @ Version 1.0
 \*--------------------------------------------------*/
 
-import {S, SA, CN, ID, TN, on, off} from './aliases';
+import {S, SA, CN, ID, TN, extend} from './aliases';
 import * as util from './utilities';
 
 export default function(options) {
@@ -18,15 +18,6 @@ export default function(options) {
     const _settings = {
         ..._defaults,
         ...options
-    };
-
-    const _extendPrototypes = () => {
-
-        Window.prototype.on = Window.prototype.addEventListener;
-        Window.prototype.off = Window.prototype.removeEventListener;
-
-        Node.prototype.on = Node.prototype.addEventListener;
-        Node.prototype.off = Node.prototype.removeEventListener;
     };
 
     // Public: Destroy module instance
@@ -44,8 +35,6 @@ export default function(options) {
 
     // Public: Initialise module
     const init = (() => {
-
-        _extendPrototypes();
 
         util.setDocClasses();
         util.setInputTypes();

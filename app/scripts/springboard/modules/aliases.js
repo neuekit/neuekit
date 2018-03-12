@@ -23,12 +23,11 @@ export const TN = (tag, container = document) => {
     return container.getElementsByTagName(tag);
 };
 
-export function on(name, handler) {
+export const extend = (() => {
 
-    return this.addEventListener(name, handler, false);
-};
+    Window.prototype.on = Window.prototype.addEventListener;
+    Window.prototype.off = Window.prototype.removeEventListener;
 
-export function off(name, handler) {
-
-    return this.removeEventListener(name, handler, false);
-};
+    Node.prototype.on = Node.prototype.addEventListener;
+    Node.prototype.off = Node.prototype.removeEventListener;
+})();
