@@ -40,7 +40,7 @@ window.SpringBoard = function(options) {
     const destroy = () => {
 
         _modules.core.destroy();
-        _modules.fetcher.destroy();
+        //_modules.fetcher.destroy();
         _modules.modals.destroy();
         _modules.tabs.destroy();
     };
@@ -56,7 +56,7 @@ window.SpringBoard = function(options) {
     const init = (() => {
 
         _modules.core     = new Core(_settings.core);
-        _modules.fetcher  = new Fetcher(_settings.fetcher);
+        //_modules.fetcher  = new Fetcher(_settings.fetcher);
         _modules.modals   = new Modals(_settings.modals);
         _modules.tabs     = new Tabs(_settings.tabs);
     })();

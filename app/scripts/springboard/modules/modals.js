@@ -173,6 +173,18 @@ export default function(options) {
         [..._getEls.close].map(($link) => $link.on('click', _clickClose));
         [..._getEls.modal].map(($link) => $link.on('click', _clickOverlay));
 
+        window.on('keydown', (event) => {
+
+            const activeModals = SA('.c-modal.active');
+
+            if( event.key == 'Escape' && activeModals.length ) {
+
+                const topModal = activeModals.length - 1;
+
+                close(activeModals[topModal].id)
+            }
+        });
+
         // Popstate event listener
         window.on('popstate', () => {
 
