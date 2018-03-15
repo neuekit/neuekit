@@ -57,6 +57,29 @@ export default function(options) {
         }
     };
 
+    const _escape = function(event) {
+
+        const activeModals = SA('.c-modal.active');
+
+        if( event.key == 'Escape' && activeModals.length ) {
+
+            const topModal = activeModals.length - 1;
+
+            close(activeModals[topModal].id)
+        }
+    };
+
+    const _deeplink = () => {
+
+        const hash = location.hash.substring(1);
+        const $el = ID(hash);
+
+        if ( $el && $el.classList.contains('c-modal') ) {
+
+            open(hash, true);
+        }
+    }
+
     // Public: Open method
     const open = (id, push) => {
 
@@ -130,6 +153,8 @@ export default function(options) {
             [...SA('.c-modal')].map(($el) => $el.classList.remove('active'));
         }
 
+        history.pushState({}, '', location.origin + location.pathname);
+
         // Check for after callback and run
         typeof _settings.afterClose == 'function' && _settings.afterClose.call(this);
 
@@ -173,29 +198,11 @@ export default function(options) {
         [..._getEls.close].map(($link) => $link.on('click', _clickClose));
         [..._getEls.modal].map(($link) => $link.on('click', _clickOverlay));
 
-        window.on('keydown', (event) => {
-
-            const activeModals = SA('.c-modal.active');
-
-            if( event.key == 'Escape' && activeModals.length ) {
-
-                const topModal = activeModals.length - 1;
-
-                close(activeModals[topModal].id)
-            }
-        });
+        // Escape key event listener
+        window.on('keydown', _escape);
 
         // Popstate event listener
-        window.on('popstate', () => {
-
-            const hash = location.hash.substring(1);
-            const $el = ID(hash);
-
-            if ( $el && $el.classList.contains('c-modal') ) {
-
-                open(hash, true);
-            }
-        });
+        window.on('popstate', _deeplink);
     })();
 
     // Return public methods
