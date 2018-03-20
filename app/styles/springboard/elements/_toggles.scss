@@ -31,7 +31,7 @@
     [type="checkbox"] {
 
         + label::before { // [type="checkbox"] + label::before
-            background: $input url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' fill='#{$primary}' viewBox='0 0 32 32'%3E%3Cpath d='M31.74,7.14L27.63,3A0.88,0.88,0,0,0,26.5,3L10.38,19.11l-4.93-5a0.81,0.81,0,0,0-1.13,0L0.21,18.29a0.76,0.76,0,0,0-.21.57,0.7,0.7,0,0,0,.21.51L9.81,29a0.79,0.79,0,0,0,.57.26h0.05A0.55,0.55,0,0,0,10.94,29L31.74,8.22A0.79,0.79,0,0,0,32,7.65,0.63,0.63,0,0,0,31.74,7.14Z' /%3E%3C/svg%3E") no-repeat center #{rem(18)} / #{rem(12)};
+            background: $input url(svg-encode('<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#{$primary}" viewBox="0 0 32 32"><path d="M31.74,7.14L27.63,3A0.88,0.88,0,0,0,26.5,3L10.38,19.11l-4.93-5a0.81,0.81,0,0,0-1.13,0L0.21,18.29a0.76,0.76,0,0,0-.21.57,0.7,0.7,0,0,0,.21.51L9.81,29a0.79,0.79,0,0,0,.57.26h0.05A0.55,0.55,0,0,0,10.94,29L31.74,8.22A0.79,0.79,0,0,0,32,7.65,0.63,0.63,0,0,0,31.74,7.14Z" /></svg>')) no-repeat center #{rem(18)} / #{rem(12)};
             border-radius: $radius;
         }
 
