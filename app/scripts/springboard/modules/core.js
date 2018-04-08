@@ -23,7 +23,8 @@ export default function(options) {
     // Public: Destroy module instance
     const destroy = () => {
 
-
+        Stickyfill.removeAll();
+        util.destroyStandaloneLinks();
     };
 
     // Public: Destroy module instance and run initialise again

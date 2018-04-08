@@ -167,10 +167,15 @@ export default function(options) {
 
         close();
 
-        // Add click events to each link
+        // Remove click events to each link
         [..._getEls.open].map(($link) => $link.off('click', _clickOpen));
         [..._getEls.close].map(($link) => $link.off('click', _clickClose));
         [..._getEls.modal].map(($link) => $link.off('click', _clickOverlay));
+
+        // Remove escape key event listener
+        window.off('keydown', _escape);
+
+        document.off('fetcher:after', reinit);
     };
 
     // Public: Destroy module instance and run initialise again

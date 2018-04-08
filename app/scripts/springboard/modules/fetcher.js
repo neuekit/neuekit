@@ -113,6 +113,8 @@ export default function(options) {
     const destroy = () => {
 
         [...SA(_settings.excludes)].map($link => $link.off('click', _before));
+
+        window.off('popstate', _before);
     };
 
     // Public: Destroy module instance and run initialise again

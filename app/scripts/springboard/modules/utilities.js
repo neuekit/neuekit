@@ -81,6 +81,7 @@ export const setDocClasses = () => {
     document.documentElement.classList.add('js');
 
     if ( window.navigator.standalone == true || window.matchMedia('(display-mode: standalone)').matches ) {
+
         document.documentElement.classList.add('standalone');
     }
 };
@@ -237,6 +238,50 @@ export const sticky = () => {
     This stops webapps jumping out to Safari on iOS
 \*--------------------------------------------------*/
 
+const _history = function(e) {
+
+    e.preventDefault();
+
+    if ( $el.dataset.history === ('reload' || 'refresh') ) {
+
+        location.reload();
+    }
+
+    else {
+
+        history[$el.dataset.history]();
+    }
+};
+
+const _target = function(e) {
+
+    let target = e.target;
+    let location = document.location;
+    let stop = /^(a|html)$/i;
+
+    while (!(stop).test(target.nodeName)) {
+
+        target = target.parentNode;
+    }
+
+    if (
+        'href' in target
+        &&
+        (href = target.href).replace(location.href, '').indexOf('#')
+        &&
+        (
+            !(/^[a-z\+\.\-]+:/i).test(href)
+            ||
+            href.indexOf(location.protocol + '//' + location.host) === 0
+        )
+    ) {
+
+        e.preventDefault();
+
+        location.href = target.href;
+    }
+};
+
 export const standaloneLinks = () => {
 
     if ( ('standalone' in navigator) && navigator['standalone'] ) {
@@ -245,50 +290,25 @@ export const standaloneLinks = () => {
 
         [...$els].map(($el) => {
 
-            $el.on('click', function(e) {
-
-                e.preventDefault();
-
-                if ( $el.dataset.history === ('reload' || 'refresh') ) {
-
-                    location.reload();
-                }
-
-                else {
-
-                    history[$el.dataset.history]();
-                }
-            });
+            $el.on('click', _history);
         });
 
-        document.on('click', function(e) {
+        document.on('click', _target, false);
+    }
+};
 
-            let target = e.target;
-            let location = document.location;
-            let stop = /^(a|html)$/i;
+export const destroyStandaloneLinks = () => {
 
-            while (!(stop).test(target.nodeName)) {
+    if ( ('standalone' in navigator) && navigator['standalone'] ) {
 
-                target = target.parentNode;
-            }
+        const $els = CN('js-history');
 
-            if (
-                'href' in target
-                &&
-                (href = target.href).replace(location.href, '').indexOf('#')
-                &&
-                (
-                    !(/^[a-z\+\.\-]+:/i).test(href)
-                    ||
-                    href.indexOf(location.protocol + '//' + location.host) === 0
-                )
-            ) {
+        [...$els].map(($el) => {
 
-                e.preventDefault();
+            $el.off('click', _history);
+        });
 
-                location.href = target.href;
-            }
-        }, false);
+        document.off('click', _target, false);
     }
 };
 

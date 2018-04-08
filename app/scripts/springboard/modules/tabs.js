@@ -97,7 +97,7 @@ export default function(options) {
         const $tabs = CN('js-tab');
 
         // Add click events to each link
-        [...$tabs].map(($el) => $el.removeEventListener('click', _clickGoto));
+        [...$tabs].map(($el) => $el.off('click', _clickGoto));
     };
 
     // Public: Destroy module instance and run initialise again
