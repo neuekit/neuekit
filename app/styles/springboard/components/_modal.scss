@@ -44,9 +44,11 @@
         border-radius: 50%;
         display: block;
         @include area(rem(28));
-        position: absolute;
-        right: rem(12); top: rem(12);
+        margin-left: auto;
+        position: sticky;
+        top: 0;
         transition: all $trans;
+        z-index: 1;
 
         &::before, // .c-modal__close::before,
         &::after { // .c-modal__close::after

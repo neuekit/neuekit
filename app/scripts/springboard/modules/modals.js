@@ -106,7 +106,7 @@ export default function(options) {
 
         // Add classes
         $modal.classList.add('active');
-        document.body.classList.add('locked');
+        document.body.classList.add('u-locked');
 
         //Update history states
         !push && history.pushState({}, '', `#${id}`);
@@ -153,7 +153,7 @@ export default function(options) {
             [...SA('.c-modal')].map(($el) => $el.classList.remove('active'));
         }
 
-        history.pushState({}, '', location.origin + location.pathname);
+        //history.pushState({}, '', location.origin + location.pathname);
 
         // Check for after callback and run
         typeof _settings.afterClose == 'function' && _settings.afterClose.call(this);
@@ -168,9 +168,9 @@ export default function(options) {
         close();
 
         // Add click events to each link
-        [..._getEls.open].map(($link) => $link.removeEventListener('click', _clickOpen));
-        [..._getEls.close].map(($link) => $link.removeEventListener('click', _clickClose));
-        [..._getEls.modal].map(($link) => $link.removeEventListener('click', _clickOverlay));
+        [..._getEls.open].map(($link) => $link.off('click', _clickOpen));
+        [..._getEls.close].map(($link) => $link.off('click', _clickClose));
+        [..._getEls.modal].map(($link) => $link.off('click', _clickOverlay));
     };
 
     // Public: Destroy module instance and run initialise again
@@ -181,7 +181,7 @@ export default function(options) {
     };
 
     // Public: Initialise module
-    const init = (() => {
+    function init() {
 
         // Get data
         const hash = location.hash.substring(1);
@@ -201,9 +201,8 @@ export default function(options) {
         // Escape key event listener
         window.on('keydown', _escape);
 
-        // Popstate event listener
-        window.on('popstate', _deeplink);
-    })();
+        document.on('fetcher:after', reinit);
+    }
 
     // Return public methods
     return {
@@ -211,7 +210,7 @@ export default function(options) {
         close,
         destroy,
         reinit,
-        init
+        init : init()
     };
 }
 

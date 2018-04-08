@@ -24,13 +24,17 @@ export default function(options) {
     const _setListeners = () => {
 
         [...SA(_settings.excludes)].map($link => $link.on('click', _before));
+
+        // Popstate event listener
+        window.on('popstate', _before);
+        //this thing runs all the time and blocks modals
     };
 
     const _before = function(e) {
 
         e.preventDefault();
 
-        const url = e.target.href;
+        const url = e.target.href || location.href;
 
         // Pass data to events
         const data = {
@@ -61,7 +65,9 @@ export default function(options) {
 
         fetch(url)
             .then(response => response.text())
-            .then(_inject);
+            .then(_inject)
+            .then(() => _after(url))
+            .catch((error) => console.error(error));
     }
 
     const _inject = (html) => {
@@ -69,13 +75,22 @@ export default function(options) {
         const nodes = new DOMParser().parseFromString(html, 'text/html');
         const body = nodes.querySelector('body');
 
+        [...SA(_settings.excludes)].map($link => $link.off('click', _before));
+
         document.documentElement.removeChild(document.body);
         document.documentElement.appendChild(body);
 
-        _after();
+        document.title = nodes.title;
     };
 
-    const _after = function() {
+    const _after = function(url) {
+
+        if ( location.href !== url ) {
+
+            history.pushState({}, '', url);
+        }
+
+        _setListeners();
 
         // Pass data to events
         const data = {
@@ -97,7 +112,7 @@ export default function(options) {
     // Public: Destroy module instance
     const destroy = () => {
 
-
+        [...SA(_settings.excludes)].map($link => $link.off('click', _before));
     };
 
     // Public: Destroy module instance and run initialise again

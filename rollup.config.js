@@ -43,10 +43,11 @@ export default [
                     'transform-object-rest-spread'
                 ]
             }),
-            resolve(),
-            uglify({
-                sourceMap: false
-            }, minify)
+            resolve()
+            // ,
+            // uglify({
+            //     sourceMap: false
+            // }, minify)
         ]
     }
 ];

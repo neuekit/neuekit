@@ -78,6 +78,18 @@ export default function(options) {
         document.dispatchEvent(after);
     };
 
+    // Private: Deep Link
+    const _deeplink = () => {
+
+        const hash = location.hash.substring(1);
+        const $el = ID(hash);
+
+        if ( $el && $el.classList.contains('js-tab-content') ) {
+
+            goto(hash, true);
+        }
+    };
+
     // Public: Destroy module instance
     const destroy = () => {
 
@@ -96,40 +108,25 @@ export default function(options) {
     };
 
     // Public: Initialise module
-    const init = (() => {
+    function init() {
 
         // Get data
         const $tabs = CN('js-tab');
-        const hash = location.hash.substring(1);
-        const $el = ID(hash);
 
         // Add click events to each link
         [...$tabs].map(($el) => $el.on('click', _clickGoto));
 
-        if ( $el && $el.classList.contains('js-tab-content') ) {
+        _deeplink();
 
-            goto(hash);
-        }
-
-        // Popstate event listener
-        window.on('popstate', () => {
-
-            const hash = location.hash.substring(1);
-            const $el = ID(hash);
-
-            if ( $el && $el.classList.contains('js-tab-content') ) {
-
-                goto(hash, true);
-            }
-        });
-    })();
+        document.on('fetcher:after', reinit);
+    }
 
     // Return public methods
     return {
         goto,
         destroy,
         reinit,
-        init
+        init : init()
     };
 }
 

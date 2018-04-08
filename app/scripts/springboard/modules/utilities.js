@@ -16,7 +16,9 @@ export const getUrl = () => {
 
     const port = location.port && `:${location.port}`;
 
-    const url = `${location.protocol}//${location.hostname}${port}/`;
+    const slashes = '//'; // temporary dues to syntax highlighting issue in atom
+
+    const url = `${location.protocol}${slashes}${location.hostname}${port}/`;
 
     return url;
 };
@@ -222,10 +224,9 @@ export const removeStorage = (name, checkCookie) => {
 
 export const sticky = () => {
 
-    [...CN('u-sticky')].map(($el) => {
+    [...CN('u-sticky')].map(($el) => Stickyfill.add($el));
 
-        Stickyfill.add($el);
-    })
+    [...CN('c-modal__close')].map(($el) => Stickyfill.add($el));
 };
 
 

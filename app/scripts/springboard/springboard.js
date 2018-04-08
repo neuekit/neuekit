@@ -11,7 +11,7 @@
 /* Imports */
 
 import Core     from './modules/core';
-import Fetcher  from './modules/fetcher';
+//import Fetcher  from './modules/fetcher';
 import Modals   from './modules/modals';
 import Tabs     from './modules/tabs';
 
@@ -23,7 +23,7 @@ window.SpringBoard = function(options) {
     // Private: Default settings object
     const _defaults = {
         core: {},
-        fetcher: {},
+        //fetcher: {},
         modals: {},
         tabs: {}
     };
