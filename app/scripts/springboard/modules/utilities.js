@@ -225,9 +225,12 @@ export const removeStorage = (name, checkCookie) => {
 
 export const sticky = () => {
 
-    [...CN('u-sticky')].map(($el) => Stickyfill.add($el));
+    if ( Stickyfill ) {
 
-    [...CN('c-modal__close')].map(($el) => Stickyfill.add($el));
+        [...CN('u-sticky')].map(($el) => Stickyfill.add($el));
+
+        [...CN('c-modal__close')].map(($el) => Stickyfill.add($el));
+    }
 };
 
 
