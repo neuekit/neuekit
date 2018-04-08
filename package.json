@@ -34,7 +34,7 @@
     "clean:dev": "rm -rf ./node_modules",
     "clean:app": "rm -rf ./app/node_modules",
     "reset": "yarn run clean:dev && yarn",
-    "update": "yarn upgrade-interactive --latest",
+    "upgrade": "yarn upgrade-interactive --latest",
     "scss": "node-sass --omit-source-map-url --recursive --output-style compressed --output ./app/styles ./app/styles",
     "autoprefixer": "postcss --use autoprefixer --replace ./app/styles/style.css --no-map",
     "build:css": "yarn run scss --silent && yarn run autoprefixer --silent",
