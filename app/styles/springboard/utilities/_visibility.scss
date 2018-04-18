@@ -13,42 +13,43 @@
     )
 ) {
 
-    // Check first if we need to provide responsive overrides
-    @if $responsive != false {
+    @include breakpoints( $responsive ) {
 
-        @include breakpoints( $responsive ) {
+        @if index($utilities, hide) {
 
-            @include _sb-utility__visibility-create( $utilities, $break );
+            #{chain('.u-hide' + $break)} {
+                display: none;
+            }
         }
-    // If not responsive, just run the general loop
-    }
 
-    @else {
+        @if index($utilities, block) {
 
-        @include _sb-utility__visibility-create( $utilities, $break: '' );
-    }
-}
-
-@mixin _sb-utility__visibility-create( $utilities, $break ) {
-
-    @if index($utilities, hide) {
-
-        #{chain('.u-hide' + $break) } {
-            display: none;
+            #{chain('.u-block' + $break)} {
+                display: block;
+            }
         }
-    }
 
-    @if index($utilities, block) {
-
-        #{chain('.u-block' + $break) } {
-            display: block;
+        @if index($utilities, locked) {
+    
+            #{chain('.u-locked' + $break)} {
+                overflow: hidden;
+            }
         }
-    }
 
-    @if index($utilities, locked) {
+        @if index($utilities, sticky) {
 
-        #{chain('.u-locked')} {
-            overflow: hidden;
+            #{chain('.u-sticky' + $break)} {
+                position: static;
+                position: sticky;
+                top: 0;
+                z-index: 1;
+
+                &::before, // .u-sticky.u-sticky::before,
+                &::after { // .u-sticky.u-sticky::after
+                    content: '';
+                    display: table;
+                }
+            }
         }
     }
 
@@ -56,22 +57,6 @@
 
         #{chain('.u-radius')} {
             border-radius: $radius;
-        }
-    }
-
-    @if index($utilities, sticky) {
-
-        #{chain('.u-sticky')} {
-            position: static;
-            position: sticky;
-            top: 0;
-            z-index: 1;
-
-            &::before, // .u-sticky.u-sticky::before,
-            &::after { // .u-sticky.u-sticky::after
-                content: '';
-                display: table;
-            }
         }
     }
 }

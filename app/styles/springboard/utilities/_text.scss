@@ -95,18 +95,59 @@
         }
     }
 
-    // Check first if we need to provide responsive utilities
-    @if $responsive != false {
+    @include breakpoints( $responsive ) {
 
-        @include breakpoints( $responsive ) {
+        @if index($utilities, text-start) {
 
-            @include create-utilities-text( $utilities, $break );
+            #{chain('.u-textStart' + $break)} {
+                text-align: left;
+                text-align: start;
+            }
         }
-    }
+    
+        @if index($utilities, text-center) {
+    
+            #{chain('.u-textCenter' + $break)} {
+                text-align: center;
+            }
+        }
+    
+        @if index($utilities, text-end) {
+    
+            #{chain('.u-textEnd' + $break)} {
+                text-align: right;
+                text-align: end;
+            }
+        }
+    
+        @if index($utilities, text-justify) {
+    
+            #{chain('.u-textJustify' + $break)} {
+                text-align: justify;
+            }
+        }
+    
+        @if index($utilities, text-grow) {
+    
+            #{chain('.u-textGrow' + $break)} {
+                font-size: 125%;
+            }
+        }
+    
+        @if index($utilities, text-shrink) {
+    
+            #{chain('.u-textShrink' + $break)} {
+                font-size: 75%;
+            }
+        }
+    
+        @if index($utilities, text-nowrap) {
+    
+            #{chain('.u-textNowrap' + $break)} {
+                white-space: nowrap;
+            }
+        }
 
-    @else { // If not responsive, just run the general loop
-
-        @include create-utilities-text( $utilities, $break: '' );
     }
 
     @if ( $responsiveType ) {
@@ -120,60 +161,6 @@
     @else {
 
         @include headings( rem( $headingIncrement * 3 )  );
-    }
-}
-
-@mixin create-utilities-text( $utilities, $break ) {
-
-    @if index($utilities, text-start) {
-
-        #{chain('.u-textStart' + $break)} {
-            text-align: left;
-            text-align: start;
-        }
-    }
-
-    @if index($utilities, text-center) {
-
-        #{chain('.u-textCenter' + $break)} {
-            text-align: center;
-        }
-    }
-
-    @if index($utilities, text-end) {
-
-        #{chain('.u-textEnd' + $break)} {
-            text-align: right;
-            text-align: end;
-        }
-    }
-
-    @if index($utilities, text-justify) {
-
-        #{chain('.u-textJustify' + $break)} {
-            text-align: justify;
-        }
-    }
-
-    @if index($utilities, text-grow) {
-
-        #{chain('.u-textGrow' + $break)} {
-            font-size: 125%;
-        }
-    }
-
-    @if index($utilities, text-shrink) {
-
-        #{chain('.u-textShrink' + $break)} {
-            font-size: 75%;
-        }
-    }
-
-    @if index($utilities, text-nowrap) {
-
-        #{chain('.u-textNowrap' + $break)} {
-            white-space: nowrap;
-        }
     }
 }
 

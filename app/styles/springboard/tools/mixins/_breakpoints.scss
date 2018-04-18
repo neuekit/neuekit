@@ -4,62 +4,71 @@
 
 @mixin breakpoints( $choice: up ) {
 
-    @each $breakclass, $breakpoint in $breakpoints {
+    @if ( $choice != false ) {
+ 
+        @each $breakclass, $breakpoint in $breakpoints {
 
-        $breakindex: index( map-keys( $breakpoints ), $breakclass ) !global;
+            $breakindex: index( map-keys( $breakpoints ), $breakclass ) !global;
 
 
-        //  AND UP MEDIA QUERY LOOP
+            //  AND UP MEDIA QUERY LOOP
 
-        @if ( $choice == null or $choice == 0 or $choice == up or $choice == both ) {
+            @if ( $choice == null or $choice == 0 or $choice == up or $choice == both ) {
 
-            @if ( $breakindex == 1 ) {
+                @if ( $breakindex == 1 ) {
 
-                $break: '' !global;
-
-                @content;
-            }
-
-            @else {
-
-                $break: $mediaClass + $breakclass !global;
-                $screen: 'only screen and (min-width: #{ em( $breakpoint ) })';
-
-                @media #{ $screen } {
+                    $break: '' !global;
 
                     @content;
-                }
-            }
-        }
-
-
-        //  ONLY MEDIA QUERY LOOP
-
-        @if ( $choice == only or $choice == both ) {
-
-            $break: $mediaClass + $breakclass + '-only' !global;
-
-            @if ( length( $breakpoints ) > $breakindex ) {
-
-                $screenOnly: null;
-                $nextBreakpoint: map-get( $breakpoints, nth( map-keys( $breakpoints ), $breakindex + 1 ) );
-
-                @if ( $breakindex > 1 ) {
-
-                    $screenOnly: 'only screen and (min-width: #{ em( $breakpoint ) }) and (max-width: #{ em( $nextBreakpoint - 1 ) })';
                 }
 
                 @else {
 
-                    $screenOnly: 'only screen and (max-width: #{ em( $nextBreakpoint - 1 ) })';
+                    $break: $mediaClass + $breakclass !global;
+                    $screen: 'only screen and (min-width: #{ em( $breakpoint ) })';
+
+                    @media #{ $screen } {
+
+                        @content;
+                    }
                 }
+            }
 
-                @media #{ $screenOnly } {
 
-                    @content;
+            //  ONLY MEDIA QUERY LOOP
+
+            @if ( $choice == only or $choice == both ) {
+
+                $break: $mediaClass + $breakclass + '-only' !global;
+
+                @if ( length( $breakpoints ) > $breakindex ) {
+
+                    $screenOnly: null;
+                    $nextBreakpoint: map-get( $breakpoints, nth( map-keys( $breakpoints ), $breakindex + 1 ) );
+
+                    @if ( $breakindex > 1 ) {
+
+                        $screenOnly: 'only screen and (min-width: #{ em( $breakpoint ) }) and (max-width: #{ em( $nextBreakpoint - 1 ) })';
+                    }
+
+                    @else {
+
+                        $screenOnly: 'only screen and (max-width: #{ em( $nextBreakpoint - 1 ) })';
+                    }
+
+                    @media #{ $screenOnly } {
+
+                        @content;
+                    }
                 }
             }
         }
+    }
+
+    @else {
+
+        $break: '' !global;
+        @content;
     }
 }
 

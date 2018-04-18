@@ -2,13 +2,15 @@
     #FLEX UTILITIES
 \*----------------------------------------------------------------------------*/
 
-@mixin sb-utility__flex() {
+@mixin sb-utility__flex(
+    $responsive: both
+) {
 
     #{chain('.u-flex')} {
         display: flex;
     }
 
-    @include breakpoints( both ) {
+    @include breakpoints( $responsive ) {
 
         #{chain('.u-grow')} {
             flex-grow: 1;

@@ -4,7 +4,7 @@
 
 @mixin sb-utility__spacing(
     $attrs: ( padding, margin ),    // Values: margin, padding
-    $responsive: false,       // Values: false, both, up, only
+    $responsive: false,             // Values: false, both, up, only
     $steps: (                       // Array of integers (pixel values)
         0, 4, 8, 12, 16, 20, 24, 32, 40, 48
     ),
@@ -44,72 +44,57 @@
         padding-bottom: env(safe-area-inset-bottom);
     }
 
-    // Check first if we need to provide responsive utilities
-    @if $responsive != false {
+    @include breakpoints( $responsive ) {
 
-        @include breakpoints( $responsive ) {
+        // Create utilities for each step defined
+        @each $step in $steps {
 
-            @include _sb-utility__spacing-create( $attrs, $steps, $directions, $break );
-        }
+            // Iterate through each attribute (padding, margin)
+            @each $attr in $attrs {
 
-    // If not responsive, just run the general loop
-    } @else {
+                // Get the first character of the attribute for our helper classes (ie. 'p' from 'padding')
+                $attrClass: str-slice($attr, 1, 1);
 
-        @include _sb-utility__spacing-create( $attrs, $steps, $directions, $break: '' );
-    }
-}
+                // ie. .u-p8@m
+                #{chain('.u-' + $attrClass + $step + $break) } {
+                    #{ $attr }: rem($step); // ie. padding: rem(8);
+                }
 
-@mixin _sb-utility__spacing-create( $attrs, $steps, $directions, $break ) {
+                // Iterate through each direction
+                @each $direction in $directions {
 
-    // Create utilities for each step defined
-    @each $step in $steps {
+                    // Get the first character of the direction (ie. 'l' from 'left')
+                    $dir: str-slice($direction, 1, 1);
 
-        // Iterate through each attribute (padding, margin)
-        @each $attr in $attrs {
+                    // If direction is top & bottom
+                    @if $direction == vertical {
 
-            // Get the first character of the attribute for our helper classes (ie. 'p' from 'padding')
-            $attrClass: str-slice($attr, 1, 1);
+                        // ie. .u-pH-8@m
+                        #{chain('.u-' + $attrClass + 'V-' + $step + $break) } {
+                            #{ $attr }-top: rem($step); // ie. padding-top: rem(8)
+                            #{ $attr }-bottom: rem($step); // ie. padding-bottom: rem(8)
+                        }
 
-            // ie. .u-p8@m
-            #{chain('.u-' + $attrClass + $step + $break) } {
-                #{ $attr }: rem($step); // ie. padding: rem(8);
-            }
+                    // If direction is left & right
+                    } @else if $direction == horizontal {
 
-            // Iterate through each direction
-            @each $direction in $directions {
+                        // ie. .u-pV-8@m
+                        #{chain('.u-' + $attrClass + 'H-' + $step + $break) } {
+                            #{ $attr }-left: rem($step); // ie. padding-left: rem(8)
+                            #{ $attr }-right: rem($step); // ie. padding-right: rem(8)
+                        }
 
-                // Get the first character of the direction (ie. 'l' from 'left')
-                $dir: str-slice($direction, 1, 1);
+                    // All others
+                    } @else {
 
-                // If direction is top & bottom
-                @if $direction == vertical {
-
-                    // ie. .u-pH-8@m
-                    #{chain('.u-' + $attrClass + 'V-' + $step + $break) } {
-                        #{ $attr }-top: rem($step); // ie. padding-top: rem(8)
-                        #{ $attr }-bottom: rem($step); // ie. padding-bottom: rem(8)
-                    }
-
-                // If direction is left & right
-                } @else if $direction == horizontal {
-
-                    // ie. .u-pV-8@m
-                    #{chain('.u-' + $attrClass + 'H-' + $step + $break) } {
-                        #{ $attr }-left: rem($step); // ie. padding-left: rem(8)
-                        #{ $attr }-right: rem($step); // ie. padding-right: rem(8)
-                    }
-
-                // All others
-                } @else {
-
-                    // ie. .u-pL-8@m
-                    #{chain('.u-' + $attrClass + to-upper-case($dir) + '-' + $step + $break) } {
-                        #{ $attr }-#{ $direction }: rem($step); // ie. padding-left: rem(8)
+                        // ie. .u-pL-8@m
+                        #{chain('.u-' + $attrClass + to-upper-case($dir) + '-' + $step + $break) } {
+                            #{ $attr }-#{ $direction }: rem($step); // ie. padding-left: rem(8)
+                        }
                     }
                 }
             }
         }
     }
 }
-
 
