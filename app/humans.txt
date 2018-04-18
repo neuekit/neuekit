@@ -33,7 +33,7 @@ Twitter: @csswizardry
 
 /* SITE */
 
-Last update: January 16th, August 2018
+Last update: Wednesday, 18th April 2018
 Standards: HTML5, CSS3, ES2015
 Software: Atom, Yarn
 
