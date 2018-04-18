@@ -13,35 +13,20 @@
     )
 ) {
 
-    // Check first if we need to provide responsive overrides
-    @if $responsive != false {
+    @include breakpoints( $responsive ) {
 
-        @include breakpoints( $responsive ) {
+        @if index($utilities, hide) {
 
-            @include _sb-utility__visibility-create( $utilities, $break );
+            #{chain('.u-hide' + $break) } {
+                display: none;
+            }
         }
-    // If not responsive, just run the general loop
-    }
 
-    @else {
+        @if index($utilities, block) {
 
-        @include _sb-utility__visibility-create( $utilities, $break: '' );
-    }
-}
-
-@mixin _sb-utility__visibility-create( $utilities, $break ) {
-
-    @if index($utilities, hide) {
-
-        #{chain('.u-hide' + $break) } {
-            display: none;
-        }
-    }
-
-    @if index($utilities, block) {
-
-        #{chain('.u-block' + $break) } {
-            display: block;
+            #{chain('.u-block' + $break) } {
+                display: block;
+            }
         }
     }
 

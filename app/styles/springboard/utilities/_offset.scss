@@ -2,9 +2,11 @@
     #OFFSET UTILITIES
 \*----------------------------------------------------------------------------*/
 
-@mixin sb-utility__offset() {
+@mixin sb-utility__offset(
+    $responsive: both
+) {
 
-    @include breakpoints( both ) {
+    @include breakpoints( $responsive ) {
 
         @for $inset from 1 through $columns {
 

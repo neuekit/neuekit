@@ -2,9 +2,11 @@
     #SIZE UTILITIES
 \*----------------------------------------------------------------------------*/
 
-@mixin sb-utility__size() {
+@mixin sb-utility__size(
+    $responsive: up
+) {
 
-    @include breakpoints( up ) {
+    @include breakpoints( $responsive ) {
 
         .u-size-auto#{ $break } {
             flex-grow: 1;
