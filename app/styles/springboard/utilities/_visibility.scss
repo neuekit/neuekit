@@ -17,23 +17,39 @@
 
         @if index($utilities, hide) {
 
-            #{chain('.u-hide' + $break) } {
+            #{chain('.u-hide' + $break)} {
                 display: none;
             }
         }
 
         @if index($utilities, block) {
 
-            #{chain('.u-block' + $break) } {
+            #{chain('.u-block' + $break)} {
                 display: block;
             }
         }
-    }
 
-    @if index($utilities, locked) {
+        @if index($utilities, locked) {
+    
+            #{chain('.u-locked' + $break)} {
+                overflow: hidden;
+            }
+        }
 
-        #{chain('.u-locked')} {
-            overflow: hidden;
+        @if index($utilities, sticky) {
+
+            #{chain('.u-sticky' + $break)} {
+                position: static;
+                position: sticky;
+                top: 0;
+                z-index: 1;
+
+                &::before, // .u-sticky.u-sticky::before,
+                &::after { // .u-sticky.u-sticky::after
+                    content: '';
+                    display: table;
+                }
+            }
         }
     }
 
@@ -41,22 +57,6 @@
 
         #{chain('.u-radius')} {
             border-radius: $radius;
-        }
-    }
-
-    @if index($utilities, sticky) {
-
-        #{chain('.u-sticky')} {
-            position: static;
-            position: sticky;
-            top: 0;
-            z-index: 1;
-
-            &::before, // .u-sticky.u-sticky::before,
-            &::after { // .u-sticky.u-sticky::after
-                content: '';
-                display: table;
-            }
         }
     }
 }
