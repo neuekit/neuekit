@@ -24,7 +24,7 @@ export default function(options) {
     const destroy = () => {
 
         Stickyfill && Stickyfill.removeAll();
-        
+
         util.destroyStandaloneLinks();
     };
 
@@ -37,7 +37,7 @@ export default function(options) {
 
     // Public: Initialise module
     const init = (() => {
-
+        
         util.setDocClasses();
         util.setInputTypes();
         util.sticky();
