@@ -8,11 +8,11 @@ $ease:          ease            !default;
 $trans:         $speed $ease    !default;
 
 $breakpoints: (
-    xs:         0,              // Phone
-    s:          768px,          // Tablet
-    m:          1024px,         // Notebook
-    l:          1200px,         // Laptop
-    xl:         1600px          // Desktop
+    extra-small:         0,              // Phone
+    small:               768px,          // Tablet
+    medium:              1024px,         // Notebook
+    large:               1200px,         // Laptop
+    extra-large:         1600px          // Desktop
 )                               !default;
 
 $mediaClass:    '\\@'           !default;
