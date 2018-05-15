@@ -30,7 +30,7 @@
   "scripts": {
     "clean": "rm -rf ./node_modules",
     "reset": "yarn run clean && yarn",
-    "update": "yarn upgrade-interactive --latest",
+    "upgrade": "yarn upgrade-interactive --latest",
     "scss": "node-sass --omit-source-map-url --recursive --output-style compressed --output ./styles ./styles",
     "autoprefixer": "postcss --use autoprefixer --replace ./styles/style.css --no-map",
     "build:css": "npm run scss --silent && npm run autoprefixer --silent",
