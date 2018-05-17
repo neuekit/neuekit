@@ -48,5 +48,35 @@ export default [
                 sourceMap: false
             }, minify)
         ]
+    },
+    {
+        input: './app/scripts/application/application.js',
+        output: {
+            file: './app/scripts/application/application.min.js',
+            format: 'iife',
+            name: 'Application'
+        },
+        plugins: [
+            babel({
+                exclude: [
+                    'node_modules/**',
+                    './app/scripts/parties/**',
+                    './app/scripts/polyfills/**'
+                ],
+                presets: [[
+                    'env', {
+                        'modules': false
+                    }
+                ]],
+                plugins: [
+                    'external-helpers',
+                    'transform-object-rest-spread'
+                ]
+            }),
+            resolve(),
+            uglify({
+                sourceMap: false
+            }, minify)
+        ]
     }
 ];

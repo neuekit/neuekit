@@ -23,7 +23,7 @@ export default function(options) {
     // Public: Destroy module instance
     const destroy = () => {
 
-        Stickyfill && Stickyfill.removeAll();
+        Stickyfill && Stickyfill.remove(SA('.u-sticky'));
 
         util.destroyStandaloneLinks();
     };
@@ -36,20 +36,20 @@ export default function(options) {
     };
 
     // Public: Initialise module
-    const init = (() => {
+    function init() {
 
         util.setDocClasses();
         util.setInputTypes();
         util.sticky();
         util.standaloneLinks();
         svg4everybody();
-    })();
+    }
 
     // Return public methods
     return {
         destroy,
         reinit,
-        init
+        init : init()
     };
 }
 

@@ -53,18 +53,18 @@ window.SpringBoard = function(options) {
     };
 
     // Public: Initialise module
-    const init = (() => {
+    function init() {
 
         _modules.core     = new Core(_settings.core);
         //_modules.fetcher  = new Fetcher(_settings.fetcher);
         _modules.modals   = new Modals(_settings.modals);
         _modules.tabs     = new Tabs(_settings.tabs);
-    })();
+    }
 
     return {
         destroy,
         reinit,
-        init
+        init : init()
     }
 };
 
