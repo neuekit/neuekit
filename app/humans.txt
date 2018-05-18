@@ -35,6 +35,6 @@ Twitter: @csswizardry
 
 Last update: Wednesday, 18th April 2018
 Standards: HTML5, CSS3, ES2015
-Software: Atom, Yarn
+Software: Atom
 
 

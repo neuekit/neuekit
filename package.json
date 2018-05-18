@@ -38,18 +38,17 @@
   "scripts": {
     "clean:dev": "rm -rf ./node_modules",
     "clean:app": "rm -rf ./app/node_modules",
-    "reset": "yarn run clean:dev && yarn",
-    "upgrade": "yarn upgrade-interactive --latest",
+    "reset": "npm run clean:dev && npm i",
     "scss": "node-sass --omit-source-map-url --recursive --output-style compressed --output ./app/styles ./app/styles",
     "autoprefixer": "postcss --use autoprefixer --replace ./app/styles/style.css --no-map",
-    "build:css": "yarn run scss --silent && yarn run autoprefixer --silent",
+    "build:css": "npm run scss --silent && npm run autoprefixer --silent",
     "build:js": "rollup --config",
-    "build": "yarn run build:css --silent && yarn run build:js --silent",
+    "build": "npm run build:css --silent && npm run build:js --silent",
     "serve": "browser-sync start --server --directory --no-notify --files './app/styles/**/*.css, ./app/scripts/**/*.js, ./**/*.html, !node_modules/**/*.html'",
-    "watch:css": "onchange './app/styles/**/*.scss' -- yarn run build:css --silent",
+    "watch:css": "onchange './app/styles/**/*.scss' -- npm run build:css --silent",
     "watch:js": "rollup --config --watch",
     "watch:all": "npm-run-all --parallel 'serve --silent' 'watch:css --silent' 'watch:js --silent'",
-    "postinstall": "yarn run watch:all --silent",
-    "go": "yarn run postinstall --silent"
+    "postinstall": "npm run watch:all --silent",
+    "go": "npm run postinstall --silent"
   }
 }

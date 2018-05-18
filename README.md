@@ -6,7 +6,7 @@ The kit includes a flex based fluid grid, common comprehendible Javascript plugi
 
 ## Requirements
 
-This is a Sass based framework and you'll need something to compile all that sassy code. In-house we use npm/yarn scripts to watch for, check, compile, minify and display code changes fast.
+This is a Sass based framework and you'll need something to compile all that sassy code. In-house we use npm scripts to watch for, check, compile, minify and display code changes fast.
 
 All style properties are autoprefixed where required, all JavaScript code is transpiled using Babel, bundled using Rollup and minified using Uglify. Finally code changes are served to the browser whilst you develop your codebase in realtime using Browsersync.
 
@@ -18,10 +18,10 @@ To get going with the framework you can:
 
   * Download the latest release
   * Open terminal and `cd` to the directory
-  * Then run `yarn` or `npm i`
+  * Then run `npm i`
   * That's it once the dependancies have installed the postinstall script will be run and you are ready to code!
 
-In future sessions where you already have the dependancies you can just run `yarn run go` or `npm run go`
+In future sessions where you already have the dependancies you can just run `npm run go` or `npm run go`
 
 ## <a href="https://creativelittledots.github.io/springboard" target="_blank">Documentation</a>
 
