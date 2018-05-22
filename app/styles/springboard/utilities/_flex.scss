@@ -12,19 +12,19 @@
 
     @include breakpoints( $responsive ) {
 
-        #{chain('.u-grow')} {
+        #{chain('.u-grow' + $break)} {
             flex-grow: 1;
         }
 
-        #{chain('.u-noGrow')} {
+        #{chain('.u-noGrow' + $break)} {
             flex-grow: 0;
         }
 
-        #{chain('.u-shrink')} {
+        #{chain('.u-shrink' + $break)} {
             flex-shrink: 1;
         }
 
-        #{chain('.u-noShrink')} {
+        #{chain('.u-noShrink' + $break)} {
             flex-shrink: 0;
         }
 
