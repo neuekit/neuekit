@@ -10,6 +10,10 @@
         display: flex;
     }
 
+    #{chain('.u-inflex')} {
+        display: inline-flex;
+    }
+
     @include breakpoints( $responsive ) {
 
         #{chain('.u-grow' + $break)} {
