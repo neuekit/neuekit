@@ -1,0 +1,32 @@
+/*----------------------------------------------------------------------------*\
+    #INLINE OBJECT
+\*----------------------------------------------------------------------------*/
+
+@mixin _sb-object__feed() {
+
+    // .o-inline
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__bar { // .o-feed__bar
+        flex: 0 0 auto;
+    }
+
+    &__main { // .o-feed__main
+        flex: 1 1 auto;
+        overflow: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
+
+@mixin sb-object__feed() {
+
+    .o-feed {
+
+        @include _sb-object__feed();
+    }
+}
+
+

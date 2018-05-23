@@ -5,3 +5,4 @@ node_modules
 /app/yarn.lock
 /app/.yarnclean
 *.log
+/app/shrinkwrap.yaml

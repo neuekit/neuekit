@@ -73,12 +73,14 @@
     Design Patterns. Layout. No cosmetics. Start using agnostic classes only.
 \*----------------------------------------------------------------------------*/
 
+@import 'objects/feed';                 // Feed style object with fixed top/tail.
 @import 'objects/grid';                 // Flex based grid layout.
 @import 'objects/inline';               // Flex based inliner.
 @import 'objects/unlist';               // Strip list styles.
 
 @mixin sb-objects() {
 
+    @include sb-object__feed();
     @include sb-object__grid();
     @include sb-object__inline();
     @include sb-object__unlist();

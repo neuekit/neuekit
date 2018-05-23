@@ -40,7 +40,7 @@
 
 @include sb-objects();
 
-// @include sb-object__bricks();           // Flex based block layout.
+// @include sb-object__feed();             // Feed object with fixed top/tail.
 // @include sb-object__grid();             // Flex based grid layout.
 // @include sb-object__inline();           // Flex based inliner.
 // @include sb-object__unlist();           // Strip list styles.
