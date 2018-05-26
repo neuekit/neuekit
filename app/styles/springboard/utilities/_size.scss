@@ -3,7 +3,7 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin sb-utility__size(
-    $responsive: up
+    $responsive: (up)
 ) {
 
     @include breakpoints( $responsive ) {
