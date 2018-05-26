@@ -21,7 +21,7 @@ To get going with the framework you can:
   * Then run `npm i`
   * That's it once the dependancies have installed the postinstall script will be run and you are ready to code!
 
-In future sessions where you already have the dependancies you can just run `npm run go` or `npm run go`
+In future sessions where you already have the dependancies you can just run `npm start`
 
 ## <a href="https://creativelittledots.github.io/springboard" target="_blank">Documentation</a>
 
