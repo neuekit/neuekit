@@ -37,6 +37,10 @@
         padding: rem(32);
         transform: translateY(rem(160));
         transition: all $trans;
+
+        &--scroll {
+            display: flex;
+        }
     }
 
     &__close { // .c-modal__close

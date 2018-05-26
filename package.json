@@ -48,6 +48,6 @@
     "watch:js": "rollup --config --watch",
     "watch:all": "npm-run-all --parallel 'serve --silent' 'watch:css --silent' 'watch:js --silent'",
     "postinstall": "npm run watch:all --silent",
-    "go": "npm run postinstall --silent"
+    "start": "npm run postinstall --silent"
   }
 }
