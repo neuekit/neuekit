@@ -67,6 +67,7 @@
     ),
     $trans: $trans
 ) {
+    $block: &;
 
     // .c-button
     appearance: none;
@@ -147,7 +148,7 @@
             box-shadow: inset 0 0 0 2px map-deep-get($styles, 'line', 'color');
             color: map-deep-get($styles, 'line', 'color');
 
-            &#{&}--light { // .c-button--line.c-button--light
+            &#{$block}--light { // .c-button--line.c-button--light
                 box-shadow: inset 0 0 0 2px map-deep-get($styles, 'line', 'lightColor');
                 color: map-deep-get($styles, 'line', 'lightColor');
 
@@ -170,7 +171,7 @@
             background: none;
             color: map-deep-get($styles, 'text', 'color');
 
-            &#{&}--secondary { // .c-button--text.c-button--secondary
+            &#{$block}--secondary { // .c-button--text.c-button--secondary
                 background: none;
                 color: map-deep-get($styles, 'secondary', 'bgColor');
             }
@@ -184,7 +185,7 @@
                 background: map-deep-get($styles, 'text', 'color');
             }
 
-            &#{&}--light { // .c-button--text.c-button--light
+            &#{$block}--light { // .c-button--text.c-button--light
                 color: map-deep-get($styles, 'text', 'lightColor');
             }
         }
