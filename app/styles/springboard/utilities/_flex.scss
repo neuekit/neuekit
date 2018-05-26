@@ -3,7 +3,7 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin sb-utility__flex(
-    $responsive: both
+    $responsive: (up, only)
 ) {
 
     #{chain('.u-flex')} {

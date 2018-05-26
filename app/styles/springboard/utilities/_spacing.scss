@@ -6,7 +6,7 @@
     $attrs: ( padding, margin ),    // Values: margin, padding
     $dash: '-',
     $rem: false,
-    $responsive: false,             // Values: false, both, up, only
+    $responsive: false,             // Values: false, (up, only, down)
     $steps: (                       // Array of integers (pixel values)
         0, 4, 8, 12, 16, 20, 24, 32, 40, 48
     ),

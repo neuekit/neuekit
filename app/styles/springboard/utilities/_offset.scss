@@ -3,7 +3,7 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin sb-utility__offset(
-    $responsive: both
+    $responsive: (up, only)
 ) {
 
     @include breakpoints( $responsive ) {

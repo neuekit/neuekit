@@ -2,10 +2,10 @@
     #BREAKPOINTS LOOP MIXIN
 \*----------------------------------------------------------------------------*/
 
-@mixin breakpoints( $choice: up ) {
+@mixin breakpoints( $choice: (up) ) {
 
     @if ( $choice != false ) {
- 
+
         @each $breakclass, $breakpoint in $breakpoints {
 
             $breakindex: index( map-keys( $breakpoints ), $breakclass ) !global;
@@ -13,7 +13,7 @@
 
             //  AND UP MEDIA QUERY LOOP
 
-            @if ( $choice == null or $choice == 0 or $choice == up or $choice == both ) {
+            @if ( $choice == null or $choice == 0 or index($choice, up) ) {
 
                 @if ( $breakindex == 1 ) {
 
@@ -37,7 +37,7 @@
 
             //  ONLY MEDIA QUERY LOOP
 
-            @if ( $choice == only or $choice == both ) {
+            @if ( index($choice, only) ) {
 
                 $break: $mediaClass + $breakclass + '-only' !global;
 
@@ -57,6 +57,25 @@
                     }
 
                     @media #{ $screenOnly } {
+
+                        @content;
+                    }
+                }
+            }
+
+
+            //  AND DOWN MEDIA QUERY LOOP
+
+            @if ( index($choice, down) ) {
+
+                $break: $mediaClass + $breakclass + '-down' !global;
+
+                @if ( length( $breakpoints ) > $breakindex ) {
+
+                    $nextBreakpoint: map-get( $breakpoints, nth( map-keys( $breakpoints ), $breakindex + 1 ) );
+                    $screen: 'only screen and (max-width: #{ em( $nextBreakpoint ) })';
+
+                    @media #{ $screen } {
 
                         @content;
                     }

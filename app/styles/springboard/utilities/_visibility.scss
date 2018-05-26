@@ -3,10 +3,11 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin sb-utility__visibility(
-    $responsive: both,
+    $responsive: (up, only, down),
     $utilities: (
         hide,
         block,
+        inblock,
         locked,
         radius,
         sticky
@@ -29,8 +30,15 @@
             }
         }
 
+        @if index($utilities, inblock) {
+
+            #{chain('.u-inblock' + $break)} {
+                display: inline-block;
+            }
+        }
+
         @if index($utilities, locked) {
-    
+
             #{chain('.u-locked' + $break)} {
                 overflow: hidden;
             }
