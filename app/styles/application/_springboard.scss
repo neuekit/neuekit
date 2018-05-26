@@ -75,11 +75,11 @@
 
 @include sb-utilities();
 
-// @include sb-utilities__flex();            // Flex based sizes.
-// @include sb-utilities__offset();          // Give flex a helping hand.
-// @include sb-utilities__size();            // Margin offsets for asymetric layouts.
-// @include sb-utilities__spacing();         // Micro-level spacing.
-// @include sb-utilities__text();            // Handy text assistants.
-// @include sb-utilities__visibility();      // Helpers to show and side stuff.
+// @include sb-utility__flex();            // Flex based sizes.
+// @include sb-utility__offset();          // Give flex a helping hand.
+// @include sb-utility__size();            // Margin offsets for asymetric layouts.
+// @include sb-utility__spacing();         // Micro-level spacing.
+// @include sb-utility__text();            // Handy text assistants.
+// @include sb-utility__visibility();      // Helpers to show and side stuff.
 
 
