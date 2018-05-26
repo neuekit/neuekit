@@ -10,7 +10,8 @@
         inblock,
         locked,
         radius,
-        sticky
+        sticky,
+        pointer
     )
 ) {
 
@@ -65,6 +66,13 @@
 
         #{chain('.u-radius')} {
             border-radius: $radius;
+        }
+    }
+
+    @if index($utilities, pointer) {
+
+        #{chain('.u-pointerNone' + $break)} {
+            pointer-events: none;
         }
     }
 }
