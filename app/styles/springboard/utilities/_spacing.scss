@@ -70,7 +70,7 @@
                     // If direction is top & bottom
                     @if $direction == vertical {
 
-                        #{chain('.u-' + $attrClass + 'V-a' + $break) } { // .u-mV-a
+                        #{chain('.u-' + $attrClass + 'V' + $dash + 'a' + $break) } { // .u-mV-a
                             #{ $attr }-top: auto;
                             #{ $attr }-bottom: auto;
                         }
@@ -79,7 +79,7 @@
                     // If direction is left & right
                     @else if $direction == horizontal {
 
-                        #{chain('.u-' + $attrClass + 'H-a' + $break) } { // .u-mH-a
+                        #{chain('.u-' + $attrClass + 'H' + $dash + 'a' + $break) } { // .u-mH-a
                             #{ $attr }-left: auto;
                             #{ $attr }-right: auto;
                         }
@@ -88,7 +88,7 @@
                     // All others
                     @else {
 
-                        #{chain('.u-' + $attrClass + to-upper-case($dir) + '-a' + $break) } { // .u-mT-a
+                        #{chain('.u-' + $attrClass + to-upper-case($dir) + $dash + 'a' + $break) } { // .u-mT-a
                             #{ $attr }-#{ $direction }: auto;
                         }
                     }
@@ -114,7 +114,7 @@
                     // If direction is top & bottom
                     @if $direction == vertical {
 
-                        #{chain('.u-' + $attrClass + 'V-' + $step + $break) } { // .u-pV-4
+                        #{chain('.u-' + $attrClass + 'V' + $dash + $step + $break) } { // .u-pV-4
                             #{ $attr }-top: $unit;
                             #{ $attr }-bottom: $unit;
                         }
@@ -123,7 +123,7 @@
                     // If direction is left & right
                     @else if $direction == horizontal {
 
-                        #{chain('.u-' + $attrClass + 'H-' + $step + $break) } { // .u-pH-4
+                        #{chain('.u-' + $attrClass + 'H' + $dash + $step + $break) } { // .u-pH-4
                             #{ $attr }-left: $unit;
                             #{ $attr }-right: $unit;
                         }
@@ -132,7 +132,7 @@
                     // All others
                     @else {
 
-                        #{chain('.u-' + $attrClass + to-upper-case($dir) + '-' + $step + $break) } { // .u-pT-4
+                        #{chain('.u-' + $attrClass + to-upper-case($dir) + $dash + $step + $break) } { // .u-pT-4
                             #{ $attr }-#{ $direction }: $unit;
                         }
                     }
