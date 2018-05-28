@@ -54,8 +54,8 @@ export default [
                     'transform-object-rest-spread'
                 ]
             }),
-            resolve()//,
-            //terser(terse)
+            resolve(),
+            terser(terse)
         ]
     },
     {
