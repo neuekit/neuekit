@@ -27,9 +27,7 @@ export default function(options) {
 
         event.preventDefault();
 
-        const target = event.srcElement || event.originalTarget;
-
-        goto(target.hash.substring(1));
+        goto(this.hash.substring(1));
     };
 
     // Public:  Go to method

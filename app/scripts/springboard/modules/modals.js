@@ -35,9 +35,7 @@ export default function(options) {
 
         event.preventDefault();
 
-        const target = event.srcElement || event.originalTarget;
-
-        open(target.hash.substring(1));
+        open(this.hash.substring(1));
     }
 
     // Private: Click event callback for close method
