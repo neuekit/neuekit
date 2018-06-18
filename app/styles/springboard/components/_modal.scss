@@ -26,21 +26,30 @@
     visibility: hidden;
     z-index: 1;
 
-    &__content { // .c-modal__content
+    &__content,  // .c-modal__content
+    &__feed {    // .c-modal__feed
         background-color: white;
         border-radius: $radius;
         margin: auto;
         max-height: calc(100vh - #{rem(32)});
         max-width: $maxWidth;
         opacity: 0;
-        overflow: auto; -webkit-overflow-scrolling: touch;
-        padding: rem(32);
         transform: translateY(rem(160));
         transition: all $trans;
+    }
 
-        &--scroll {
-            display: flex;
-        }
+    &__content { // .c-modal__content
+        overflow: auto; -webkit-overflow-scrolling: touch;
+        padding: rem(32);
+    }
+
+    &__bar {
+        border-bottom: 1px solid $secondary;
+    }
+
+    &__main + &__bar {
+        border-bottom: 0;
+        border-top: 1px solid $secondary;
     }
 
     &__close { // .c-modal__close
@@ -108,7 +117,8 @@
         opacity: 1;
         visibility: visible;
 
-        #{$block}__content { // .c-modal.visible .c-modal__content
+        #{$block}__content, // .c-modal.visible .c-modal__content
+        #{$block}__feed {   // .c-modal.visible .c-modal__feed
             opacity: 1;
             transform: translateY(0);
             transition-delay: $trans;

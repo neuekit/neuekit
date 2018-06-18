@@ -15,7 +15,7 @@
             padding: rem(10) rem(16)
         ),
         secondary: (
-            color: white,
+            color: $primary,
             colorDisabled: grey,
             bgColor: $secondary,
             bgColorHover: darken($secondary, 20),
@@ -242,7 +242,7 @@
             padding: rem(10) rem(16)
         ),
         secondary: (
-            color: white,
+            color: $primary,
             colorDisabled: grey,
             bgColor: $secondary,
             bgColorHover: darken($secondary, 20),
