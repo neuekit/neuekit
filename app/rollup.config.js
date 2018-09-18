@@ -17,19 +17,16 @@ export default {
                 './scripts/parties/**',
                 './scripts/polyfills/**'
             ],
-            presets : [[
-                'env', {
-                    'modules' : false
+            presets: [[
+                '@babel/preset-env', {
+                    'modules' : false,
+                    'shippedProposals' : true
                 }
-            ]],
-            plugins : [
-                'external-helpers',
-                'transform-object-rest-spread'
-            ]
+            ]]
         }),
         resolve(),
         terser({
-            sourceMap : false,
+            sourcemap : false,
             output: {
                 comments: function(node, comment) {
                     var text = comment.value;

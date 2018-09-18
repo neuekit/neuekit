@@ -54,7 +54,7 @@
 ) {
 
     .c-adjacent {
-        
+
         @include _sb-component__adjacent(
             $radius:        $radius,
             $background:    $background,

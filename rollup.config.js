@@ -4,7 +4,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import { terser } from "rollup-plugin-terser";
 
 const terse = {
-    sourceMap : false,
+    sourcemap : false,
     output: {
         comments: function(node, comment) {
             var text = comment.value;
@@ -45,14 +45,11 @@ export default [
                     './app/scripts/polyfills/**'
                 ],
                 presets: [[
-                    'env', {
-                        'modules': false
+                    '@babel/preset-env', {
+                        'modules' : false,
+                        'shippedProposals' : true
                     }
-                ]],
-                plugins: [
-                    'external-helpers',
-                    'transform-object-rest-spread'
-                ]
+                ]]
             }),
             resolve(),
             terser(terse)
@@ -73,14 +70,11 @@ export default [
                     './app/scripts/polyfills/**'
                 ],
                 presets: [[
-                    'env', {
-                        'modules': false
+                    '@babel/preset-env', {
+                        'modules' : false,
+                        'shippedProposals' : true
                     }
-                ]],
-                plugins: [
-                    'external-helpers',
-                    'transform-object-rest-spread'
-                ]
+                ]]
             }),
             resolve(),
             terser(terse)
