@@ -6,7 +6,7 @@
 
     $media: '';
     $from: map-get($breakpoints, $minbreak);
-    $from: if( $from != null, $from + 1px, null );
+    $from: if( $from != null, $from - 1px, null );
     $to: map-get($breakpoints, $maxbreak);
 
     @if ( $from != null and $maxbreak == null ) {
