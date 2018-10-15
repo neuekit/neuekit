@@ -119,7 +119,7 @@ export default function(options) {
 
     // Public: Destroy module instance and run initialise again
     const reinit = () => {
-
+        
         destroy();
         init();
     };
