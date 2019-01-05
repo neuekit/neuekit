@@ -1,14 +1,15 @@
 /*!---------------------------------------------------------------------------*\
     SpringBoard
 
-    - Version:      0.9.9
+    - Version:      1.0.0.alpha.1
     - Author:       Creative Little Dots
     - Site:         http://creativelittle.uk/springboard
-    - Copyright:    2018, Creative Little Dots
+    - Copyright:    2019, Creative Little Dots
     – License:      MIT | http://goo.gl/p3bexl
 \*----------------------------------------------------------------------------*/
 
 /* Imports */
+import 'core-js/fn/symbol'; // TEMP FIX awaiting https://github.com/babel/babel/pull/8947
 
 import Core     from './modules/core';
 //import Fetcher  from './modules/fetcher';

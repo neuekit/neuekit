@@ -150,7 +150,7 @@ export default function(options) {
 
         else {
 
-            [...SA('.c-modal')].map(($el) => $el.classList.remove('active'));
+            Array.from(SA('.c-modal')).map(($el) => $el.classList.remove('active'));
         }
 
         //history.pushState({}, '', location.origin + location.pathname);
@@ -168,9 +168,9 @@ export default function(options) {
         close();
 
         // Remove click events to each link
-        [..._getEls.open].map(($link) => $link.off('click', _clickOpen));
-        [..._getEls.close].map(($link) => $link.off('click', _clickClose));
-        [..._getEls.modal].map(($link) => $link.off('click', _clickOverlay));
+        Array.from(_getEls.open).map(($link) => $link.off('click', _clickOpen));
+        Array.from(_getEls.close).map(($link) => $link.off('click', _clickClose));
+        Array.from(_getEls.modal).map(($link) => $link.off('click', _clickOverlay));
 
         // Remove escape key event listener
         window.off('keydown', _escape);
@@ -199,9 +199,9 @@ export default function(options) {
         }
 
         // Add click events to each link
-        [..._getEls.open].map(($link) => $link.on('click', _clickOpen));
-        [..._getEls.close].map(($link) => $link.on('click', _clickClose));
-        [..._getEls.modal].map(($link) => $link.on('click', _clickOverlay));
+        Array.from(_getEls.open).map(($link) => $link.on('click', _clickOpen));
+        Array.from(_getEls.close).map(($link) => $link.on('click', _clickClose));
+        Array.from(_getEls.modal).map(($link) => $link.on('click', _clickOverlay));
 
         // Escape key event listener
         window.on('keydown', _escape);

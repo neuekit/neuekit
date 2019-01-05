@@ -62,7 +62,7 @@ export default function(options) {
         document.dispatchEvent(before);
 
         // Remove all active states from
-        [...$tabs, ...$contents].map(($el) => $el.classList.remove('active'));
+        [...Array.from($tabs), ...Array.from($contents)].map(($el) => $el.classList.remove('active'));
 
         // Add classes
         $this.classList.add('active');
@@ -97,7 +97,7 @@ export default function(options) {
         const $tabs = CN('js-tab');
 
         // Add click events to each link
-        [...$tabs].map(($el) => $el.off('click', _clickGoto));
+        Array.from($tabs).map(($el) => $el.off('click', _clickGoto));
     };
 
     // Public: Destroy module instance and run initialise again
@@ -114,7 +114,7 @@ export default function(options) {
         const $tabs = CN('js-tab');
 
         // Add click events to each link
-        [...$tabs].map(($el) => $el.on('click', _clickGoto));
+        Array.from($tabs).map(($el) => $el.on('click', _clickGoto));
 
         _deeplink();
 

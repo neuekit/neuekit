@@ -1,6 +1,6 @@
 {
   "name": "springboard",
-  "version": "0.9.9",
+  "version": "1.0.0-alpha.1",
   "license": "MIT",
   "description": "SpringBoard is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with (we hope), and built for the future.",
   "repository": {
@@ -18,34 +18,40 @@
     "not android <= 4.4.4"
   ],
   "devDependencies": {
-    "@babel/core": "^7.1.2",
-    "@babel/preset-env": "^7.0.0",
-    "autoprefixer": "^9.2.0",
+    "@babel/core": "^7.2.2",
+    "@babel/plugin-transform-runtime": "^7.2.0",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/preset-env": "^7.2.3",
+    "@babel/runtime": "^7.2.0",
+    "autoprefixer": "^9.4.4",
     "browser-sync": "^2.26.3",
-    "node-sass": "^4.9.4",
-    "npm-run-all": "^4.1.3",
-    "onchange": "^5.0.2",
-    "postcss-cli": "^6.0.0",
-    "rollup": "^0.66.6",
-    "rollup-plugin-babel": "^4.0.3",
-    "rollup-plugin-node-resolve": "^3.4.0",
-    "rollup-plugin-terser": "^3.0.0",
-    "rollup-watch": "^4.3.1"
+    "custom-event-polyfill": "^1.0.6",
+    "element-closest": "^3.0.0",
+    "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
+    "onchange": "^5.2.0",
+    "postcss-cli": "^6.1.0",
+    "promise-polyfill": "^8.1.0",
+    "rollup": "^1.0.1",
+    "rollup-plugin-babel": "^4.2.0",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "rollup-plugin-terser": "~3.0.0",
+    "smoothscroll-polyfill": "^0.4.2",
+    "stickyfilljs": "^2.1.0",
+    "svg4everybody": "^2.1.9",
+    "whatwg-fetch": "^3.0.0"
   },
   "scripts": {
-    "clean:dev": "rm -rf ./node_modules",
-    "clean:app": "rm -rf ./app/node_modules",
-    "reset": "npm run clean:dev && npm i",
-    "scss": "node-sass --omit-source-map-url --recursive --output-style compressed --output ./app/styles ./app/styles",
+    "serve": "browser-sync start --server --directory --no-notify --files '.' --ignore 'node_modules'",
+    "scss": "node-sass -x -r --output-style compressed --output ./app/styles ./app/styles",
     "autoprefixer": "postcss --use autoprefixer --replace ./app/styles/style.css --no-map",
     "build:css": "npm run scss --silent && npm run autoprefixer --silent",
     "build:js": "rollup --config",
     "build": "npm run build:css --silent && npm run build:js --silent",
-    "serve": "browser-sync start --server --directory --no-notify --files './app/styles/**/*.css, ./app/scripts/**/*.js, ./**/*.html, !node_modules/**/*.html'",
     "watch:css": "onchange './app/styles/**/*.scss' -- npm run build:css --silent",
     "watch:js": "rollup --config --watch",
-    "watch:all": "npm-run-all --parallel 'serve --silent' 'watch:css --silent' 'watch:js --silent'",
-    "postinstall": "npm run watch:all --silent",
-    "start": "npm run postinstall --silent"
+    "watch": "npm-run-all --parallel 'serve --silent' 'watch:css --silent' 'watch:js --silent'",
+    "start": "npm run watch --silent"
   }
 }

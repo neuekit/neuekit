@@ -1,83 +1,61 @@
-// Rollup plugins
 import babel from 'rollup-plugin-babel';
+import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
-import { terser } from "rollup-plugin-terser";
+import { terser } from 'rollup-plugin-terser';
 
-const terse = {
-    sourcemap : false,
-    output: {
-        comments: function(node, comment) {
-            var text = comment.value;
-            var type = comment.type;
-            if (type == "comment2") {
-            // multiline comment
-                return /@preserve|@license|@cc_on/i.test(text);
-            }
-        }
-    }
-};
+export default config => {
 
-export default [
-    {
+    const dev = true;
+
+    const plugins = [
+        babel({
+            exclude: [
+                'node_modules/**',
+                './app/scripts/parties/**',
+                './app/scripts/polyfills/**'
+            ],
+            presets: [[
+                '@babel/env', {
+                    shippedProposals: true,
+                    useBuiltIns: 'usage'
+                }
+            ]]
+        }),
+        commonjs(),
+        resolve(),
+        terser({ sourcemap: false })
+    ];
+
+    const polyfills = {
         input: './app/scripts/polyfills/polyfills.js',
         output: {
             file: './app/scripts/polyfills/polyfills.min.js',
             format: 'iife',
-            name: 'Polyfills'
         },
         context: 'window',
         plugins: [
-            terser(terse)
+            resolve(),
+            terser({ sourcemap: false })
         ]
-    },
-    {
+    };
+
+    const springboard = {
         input: './app/scripts/springboard/springboard.js',
         output: {
             file: './app/scripts/springboard/springboard.min.js',
             format: 'iife',
-            name: 'SpringBoard'
         },
-        plugins: [
-            babel({
-                exclude: [
-                    'node_modules/**',
-                    './app/scripts/parties/**',
-                    './app/scripts/polyfills/**'
-                ],
-                presets: [[
-                    '@babel/preset-env', {
-                        'modules' : false,
-                        'shippedProposals' : true
-                    }
-                ]]
-            }),
-            resolve(),
-            terser(terse)
-        ]
-    },
-    {
+        plugins
+    };
+
+    const application = {
         input: './app/scripts/application/application.js',
         output: {
             file: './app/scripts/application/application.min.js',
             format: 'iife',
-            name: 'Application'
         },
-        plugins: [
-            babel({
-                exclude: [
-                    'node_modules/**',
-                    './app/scripts/parties/**',
-                    './app/scripts/polyfills/**'
-                ],
-                presets: [[
-                    '@babel/preset-env', {
-                        'modules' : false,
-                        'shippedProposals' : true
-                    }
-                ]]
-            }),
-            resolve(),
-            terser(terse)
-        ]
-    }
-];
+        plugins
+    };
+
+    return [polyfills, ...(dev ? [springboard] : []), application];
+};

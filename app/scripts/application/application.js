@@ -4,7 +4,7 @@
     - Version:      1.0
     - Author:       YOUR NAME
     - Site:         http://YOUR_SITE
-    - Copyright:    2018, YOUR COMPANY
+    - Copyright:    2019, YOUR COMPANY
     – License:      YOUR LICENSE
 \*----------------------------------------------------------------------------*/
 
@@ -16,7 +16,6 @@ import * as util from './modules/utilities';
 /* SpringBoard */
 
 const springboard = new SpringBoard();
-
 
 
 /* Project Code */

@@ -96,7 +96,7 @@ export const setDocClasses = () => {
 
 export const setInputTypes = () => {
 
-    [...TN('input')].map(($el) => {
+    Array.from(TN('input')).map(($el) => {
 
         if ( $el.type !== $el.getAttribute('type') ) {
 
@@ -227,9 +227,9 @@ export const sticky = () => {
 
     if ( Stickyfill ) {
 
-        [...CN('u-sticky')].map(($el) => Stickyfill.add($el));
+        Array.from(CN('u-sticky')).map(($el) => Stickyfill.add($el));
 
-        [...CN('c-modal__close')].map(($el) => Stickyfill.add($el));
+        Array.from(CN('c-modal__close')).map(($el) => Stickyfill.add($el));
     }
 };
 
@@ -291,7 +291,7 @@ export const standaloneLinks = () => {
 
         const $els = CN('js-history');
 
-        [...$els].map(($el) => {
+        Array.from($els).map(($el) => {
 
             $el.on('click', _history);
         });
@@ -306,7 +306,7 @@ export const destroyStandaloneLinks = () => {
 
         const $els = CN('js-history');
 
-        [...$els].map(($el) => {
+        Array.from($els).map(($el) => {
 
             $el.off('click', _history);
         });

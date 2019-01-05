@@ -23,7 +23,7 @@ export default function(options) {
 
     const _setListeners = () => {
 
-        [...SA(_settings.excludes)].map($link => $link.on('click', _before));
+        Array.from(SA(_settings.excludes)).map($link => $link.on('click', _before));
 
         // Popstate event listener
         window.on('popstate', _before);
@@ -75,7 +75,7 @@ export default function(options) {
         const nodes = new DOMParser().parseFromString(html, 'text/html');
         const body = nodes.querySelector('body');
 
-        [...SA(_settings.excludes)].map($link => $link.off('click', _before));
+        Array.from(SA(_settings.excludes)).map($link => $link.off('click', _before));
 
         document.documentElement.removeChild(document.body);
         document.documentElement.appendChild(body);
@@ -112,14 +112,14 @@ export default function(options) {
     // Public: Destroy module instance
     const destroy = () => {
 
-        [...SA(_settings.excludes)].map($link => $link.off('click', _before));
+        Array.from(SA(_settings.excludes)).map($link => $link.off('click', _before));
 
         window.off('popstate', _before);
     };
 
     // Public: Destroy module instance and run initialise again
     const reinit = () => {
-        
+
         destroy();
         init();
     };

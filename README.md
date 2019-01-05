@@ -35,4 +35,4 @@ Still in progress...
 
 ![Browsers](https://creativelittledots.github.io/springboard/images/platforms.svg?hello)
 
-Copyright © 2018 Creative Little Dots, ltd.
+Copyright © 2019 Creative Little Dots, ltd.

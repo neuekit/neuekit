@@ -1,14 +1,14 @@
 /*----------------------------------------------------------------------------*\
     #STYLE
 
-    Import the SpringBoard framework, all settings, configurable mixins and theme.
+    Import the SpringBoard framework, all settings, configurable mixins & theme.
 \*----------------------------------------------------------------------------*/
 
-@import 'springboard/settings';           // DONT EDIT SKY WILL FALL
-@import 'application/settings';         // EDIT AS YOU WISH
+@import 'springboard/settings';             // DONT EDIT SKY WILL FALL
+@import 'application/settings';             // EDIT AS YOU WISH
 
 @import 'springboard/springboard';          // DONT EDIT SKY WILL FALL
-@import 'application/springboard';            // EDIT AS YOU WISH
-@import 'application/application';      // EDIT AS YOU WISH
+@import 'application/springboard';          // EDIT AS YOU WISH
+@import 'application/application';          // EDIT AS YOU WISH
 
 

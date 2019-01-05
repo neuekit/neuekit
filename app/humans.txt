@@ -33,7 +33,7 @@ Twitter: @csswizardry
 
 /* SITE */
 
-Last update: Monday, 15th October 2018
+Last update: Monday, 15th October 2019
 Standards: HTML5, CSS3, ES2015
 
 

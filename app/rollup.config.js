@@ -1,42 +1,61 @@
-// Rollup plugins
 import babel from 'rollup-plugin-babel';
+import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
-import { terser } from "rollup-plugin-terser";
+import { terser } from 'rollup-plugin-terser';
 
-export default {
-    input : './scripts/application/application.js',
-    output : {
-        file : './scripts/application/application.min.js',
-        format : 'iife',
-        name : 'PROJECT'
-    },
-    plugins : [
+export default config => {
+
+    const dev = false;
+
+    const plugins = [
         babel({
-            exclude : [
-                './node_modules/**',
+            exclude: [
+                'node_modules/**',
                 './scripts/parties/**',
                 './scripts/polyfills/**'
             ],
             presets: [[
-                '@babel/preset-env', {
-                    'modules' : false,
-                    'shippedProposals' : true
+                '@babel/env', {
+                    shippedProposals: true,
+                    useBuiltIns: 'usage'
                 }
             ]]
         }),
+        commonjs(),
         resolve(),
-        terser({
-            sourcemap : false,
-            output: {
-                comments: function(node, comment) {
-                    var text = comment.value;
-                    var type = comment.type;
-                    if (type == "comment2") {
-                    // multiline comment
-                        return /@preserve|@license|@cc_on/i.test(text);
-                    }
-                }
-            }
-        })
-    ]
+        terser({ sourcemap: false })
+    ];
+
+    const polyfills = {
+        input: './scripts/polyfills/polyfills.js',
+        output: {
+            file: './scripts/polyfills/polyfills.min.js',
+            format: 'iife',
+        },
+        context: 'window',
+        plugins: [
+            resolve(),
+            terser({ sourcemap: false })
+        ]
+    };
+
+    const springboard = {
+        input: './scripts/springboard/springboard.js',
+        output: {
+            file: './scripts/springboard/springboard.min.js',
+            format: 'iife',
+        },
+        plugins
+    };
+
+    const application = {
+        input: './scripts/application/application.js',
+        output: {
+            file: './scripts/application/application.min.js',
+            format: 'iife',
+        },
+        plugins
+    };
+
+    return [polyfills, ...(dev ? [springboard] : []), application];
 };
