@@ -1,7 +1,7 @@
 /*!---------------------------------------------------------------------------*\
     SpringBoard
 
-    - Version:      1.0.0.alpha.1
+    - Version:      1.0.0.alpha.2
     - Author:       Creative Little Dots
     - Site:         http://creativelittle.uk/springboard
     - Copyright:    2019, Creative Little Dots
@@ -19,7 +19,7 @@ import Tabs     from './modules/tabs';
 
 /* SpringBoard */
 
-window.SpringBoard = function(options) {
+export default function(options) {
 
     // Private: Default settings object
     const _defaults = {

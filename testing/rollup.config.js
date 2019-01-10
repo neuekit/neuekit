@@ -3,9 +3,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import resolve from 'rollup-plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 
-export default config => {
-
-    const dev = false;
+export default () => {
 
     const plugins = [
         babel({
@@ -13,6 +11,9 @@ export default config => {
                 'node_modules/**',
                 './scripts/parties/**',
                 './scripts/polyfills/**'
+            ],
+            include: [
+                'node_modules/springboard/**'
             ],
             presets: [[
                 '@babel/env', {
@@ -31,6 +32,7 @@ export default config => {
         output: {
             file: './scripts/polyfills/polyfills.min.js',
             format: 'iife',
+            name: 'Polyfills'
         },
         context: 'window',
         plugins: [
@@ -39,23 +41,15 @@ export default config => {
         ]
     };
 
-    const springboard = {
-        input: './scripts/springboard/springboard.js',
-        output: {
-            file: './scripts/springboard/springboard.min.js',
-            format: 'iife',
-        },
-        plugins
-    };
-
     const application = {
         input: './scripts/application/application.js',
         output: {
             file: './scripts/application/application.min.js',
             format: 'iife',
+            name: 'Application'
         },
         plugins
     };
 
-    return [polyfills, ...(dev ? [springboard] : []), application];
+    return [polyfills, application];
 };

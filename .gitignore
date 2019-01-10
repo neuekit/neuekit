@@ -1,9 +1,9 @@
+*.log
 *.scssc
 .DS_Store
-node_modules
 .vscode
-yarn.lock
 .yarnclean
-*.log
-shrinkwrap.yaml
+node_modules
 package-lock.json
+shrinkwrap.yaml
+yarn.lock

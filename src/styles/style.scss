@@ -1,0 +1,89 @@
+/*----------------------------------------------------------------------------*\
+    #SPRINGBOARD
+
+    SpringBoard objects, components, utilities & overrides. Comment to disable.
+\*----------------------------------------------------------------------------*/
+
+@import 'settings';
+@import '_springboard';
+
+
+
+/*----------------------------------------------------------------------------*\
+    #ELEMENTS
+
+    Element resets, styles alongside psuedo & wildcard far reaching declarations.
+\*----------------------------------------------------------------------------*/
+
+@include sb-elements();
+
+// @include sb-element__shared();      // Shared global commonalities.
+// @include sb-element__document();     // Page-level styles (HTML, body etc).
+// @include sb-element__details();      // Native details component.
+// @include sb-element__form();         // Form fieldset and legend.
+// @include sb-element__inputs();       // Input, select, textarea, button etc.
+// @include sb-element__link();         // Hyperlinks.
+// @include sb-element__list();         // Lists.
+// @include sb-element__media();        // Media elements, img, svg, video, etc.
+// @include sb-element__quote();        // Blockquotes, cite, etc.
+// @include sb-element__table();        // Table element styles.
+// @include sb-element__type();         // All type styles.
+// @include sb-element__toggles();      // Checkbox and radio elements.
+// @include sb-element__meter();        // The native meter element.
+// @include sb-element__progress();     // The native progress element.
+// @include sb-element__range();        // The native range input element.
+// @include sb-element__aria();         // Accessibility attribute styles.
+
+
+
+/*----------------------------------------------------------------------------*\
+    #OBJECTS
+
+    Design Patterns. Layout. No cosmetics. Start using agnostic classes only.
+\*----------------------------------------------------------------------------*/
+
+@include sb-objects();
+
+// @include sb-object__feed();             // Feed object with fixed top/tail.
+// @include sb-object__grid();             // Flex based grid layout.
+// @include sb-object__inline();           // Flex based inliner.
+// @include sb-object__unlist();           // Strip list styles.
+
+
+/*----------------------------------------------------------------------------*\
+    #COMPONENTS
+
+    Designed pieces of UI. Only using classes. More explicit naming.
+\*----------------------------------------------------------------------------*/
+
+@include sb-components();
+
+// @include sb-component__adjacent();      // Adjacent input styles.
+// @include sb-component__button();        // Button styles.
+// @include sb-component__loading();       // Loading indicator component.
+// @include sb-component__modal();         // Modal styles.
+// @include sb-component__navigation();    // Responsive navigation component.
+// @include sb-component__off-canvas();    // Pure CSS off canvas panel.
+// @include sb-component__tabs();          // Tabs component.
+// @include sb-component__toggle();        // Toggle for checkbox.
+// @include sb-component__tooltip();       // Tooltips component.
+// @include sb-component__validate();      // Input validation component.
+
+
+
+/*----------------------------------------------------------------------------*\
+    #UTILITIES
+
+    Overrides, helpers, utilities. Only affect one item at a time.
+\*----------------------------------------------------------------------------*/
+
+@include sb-utilities();
+
+// @include sb-utility__flex();            // Flex based sizes.
+// @include sb-utility__offset();          // Give flex a helping hand.
+// @include sb-utility__size();            // Margin offsets for asymetric layouts.
+// @include sb-utility__spacing();         // Micro-level spacing.
+// @include sb-utility__text();            // Handy text assistants.
+// @include sb-utility__visibility();      // Helpers to show and side stuff.
+
+

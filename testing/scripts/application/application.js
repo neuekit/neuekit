@@ -10,6 +10,7 @@
 
 /* Imports */
 
+import SpringBoard from '../../../src/scripts/springboard';
 import * as util from './modules/utilities';
 
 
@@ -17,7 +18,7 @@ import * as util from './modules/utilities';
 
 const springboard = new SpringBoard();
 
-
+window.springboard = springboard;
 /* Project Code */
 
 
