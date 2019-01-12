@@ -3,6 +3,7 @@
   "version": "1.0.0-alpha.3",
   "license": "MIT",
   "description": "Spark is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with (we hope), and built for the future.",
+  "main": "dist/spark.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/creativelittledots/spark.git"
@@ -17,7 +18,7 @@
     "not op_mini all",
     "not android <= 4.4.4"
   ],
-  "devDependencies": {
+  "dependencies": {
     "@babel/core": "^7.2.2",
     "@babel/plugin-transform-runtime": "^7.2.0",
     "@babel/polyfill": "^7.2.5",
@@ -41,9 +42,9 @@
   },
   "scripts": {
     "serve": "browser-sync start --server --directory --no-notify --files '.' --ignore 'node_modules'",
-    "scss": "node-sass -x -r --output-style compressed --output ./dist/styles ./src/styles",
-    "autoprefixer": "postcss --use autoprefixer --replace ./dist/styles/style.css --no-map",
-    "build:css": "npm run scss --silent && npm run autoprefixer --silent && mv ./dist/styles/style.css ./dist/styles/spark.css",
+    "scss": "node-sass -x -r --output-style compressed --output ./dist ./src/styles",
+    "autoprefixer": "postcss --use autoprefixer --replace ./dist/style.css --no-map",
+    "build:css": "npm run scss --silent && npm run autoprefixer --silent && mv ./dist/style.css ./dist/spark.css",
     "build:js": "rollup --config",
     "build": "npm run build:css --silent && npm run build:js --silent",
     "watch:css": "onchange './styles/**/*.scss' -- npm run build:css --silent",

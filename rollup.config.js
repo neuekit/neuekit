@@ -7,7 +7,7 @@ export default [
     {
         input: './src/scripts/spark.js',
         output: {
-            file: './dist/scripts/spark.js',
+            file: './dist/spark.js',
             format: 'iife',
             name: 'Spark'
         },
