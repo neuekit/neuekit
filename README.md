@@ -4,6 +4,10 @@ Spark is a utilitarian, ITCSS based, super scaleable front-end framework. It's b
 
 The kit includes a flex based fluid grid, common comprehendible Javascript plugins and a tasty minimalist style for all your friendly neighbourhood web elements.
 
+## Quick Start
+
+To get started with SprinBoard you can either `npm install` this package into your project or head over to the starter repo to get going with a barebones web project that includes this repo via npm.
+
 ## Requirements
 
 This is a Sass based framework and you'll need something to compile all that sassy code. In-house we use npm scripts to watch for, check, compile, minify and display code changes fast.
@@ -16,10 +20,7 @@ The JavaScript setup here means you can code in whatever Babel supports and brow
 
 To get going with the framework you can:
 
-  * Download the latest release
-  * Open terminal and `cd` to the directory
-  * Then run `npm i`
-  * That's it once the dependancies have installed the postinstall script will be run and you are ready to code!
+
 
 In future sessions where you already have the dependancies you can just run `npm start`
 
