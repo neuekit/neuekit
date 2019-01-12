@@ -1,17 +1,17 @@
 {
-  "name": "springboard",
-  "version": "1.0.0-alpha.2",
+  "name": "spark",
+  "version": "1.0.0-alpha.3",
   "license": "MIT",
-  "description": "SpringBoard is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with (we hope), and built for the future.",
+  "description": "Spark is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with (we hope), and built for the future.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativelittledots/springboard.git"
+    "url": "git+https://github.com/creativelittledots/spark.git"
   },
   "author": "Matt Pilott",
   "bugs": {
-    "url": "https://github.com/creativelittledots/springboard/issues"
+    "url": "https://github.com/creativelittledots/spark/issues"
   },
-  "homepage": "https://github.com/creativelittledots/springboard#readme",
+  "homepage": "https://github.com/creativelittledots/spark#readme",
   "browserslist": [
     ">0.5%",
     "not op_mini all",
@@ -23,7 +23,7 @@
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.2.3",
     "@babel/runtime": "^7.2.0",
-    "autoprefixer": "^9.4.4",
+    "autoprefixer": "^9.4.5",
     "browser-sync": "^2.26.3",
     "custom-event-polyfill": "^1.0.6",
     "element-closest": "^3.0.0",
@@ -33,7 +33,7 @@
     "postcss-cli": "^6.1.0",
     "promise-polyfill": "^8.1.0",
     "rollup": "^1.1.0",
-    "rollup-plugin-babel": "^4.2.0",
+    "rollup-plugin-babel": "^4.3.0",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^4.0.0",
     "rollup-plugin-terser": "^4.0.2",
@@ -42,8 +42,8 @@
   "scripts": {
     "serve": "browser-sync start --server --directory --no-notify --files '.' --ignore 'node_modules'",
     "scss": "node-sass -x -r --output-style compressed --output ./dist/styles ./src/styles",
-    "autoprefixer": "postcss --use autoprefixer --replace ./dist/styles/springboard.css --no-map",
-    "build:css": "npm run scss --silent && npm run autoprefixer --silent",
+    "autoprefixer": "postcss --use autoprefixer --replace ./dist/styles/style.css --no-map",
+    "build:css": "npm run scss --silent && npm run autoprefixer --silent && mv ./dist/styles/style.css ./dist/styles/spark.css",
     "build:js": "rollup --config",
     "build": "npm run build:css --silent && npm run build:js --silent",
     "watch:css": "onchange './styles/**/*.scss' -- npm run build:css --silent",

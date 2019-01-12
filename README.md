@@ -1,6 +1,6 @@
-# <a href="http://creativelittle.uk/springboard" target="_blank">SpringBoard</a> - M1
+# <a href="http://creativelittle.uk/spark" target="_blank">Spark</a> - M1
 
-The Creative Little SpringBoard is a utilitarian, ITCSS based, super scaleable front-end framework. It's built for the modern web and only supports modern browsers, oh and IE11, all for the benefit of web users everywhere.
+Spark is a utilitarian, ITCSS based, super scaleable front-end framework. It's built for the modern web and only supports modern browsers, oh and IE11, all for the benefit of web users everywhere.
 
 The kit includes a flex based fluid grid, common comprehendible Javascript plugins and a tasty minimalist style for all your friendly neighbourhood web elements.
 
@@ -23,16 +23,18 @@ To get going with the framework you can:
 
 In future sessions where you already have the dependancies you can just run `npm start`
 
-## <a href="https://creativelittledots.github.io/springboard" target="_blank">Documentation</a>
+## <a href="https://creativelittledots.github.io/spark" target="_blank">Documentation</a>
 
 Still in progress...
 
 ## Supported Browsers
 
-![Browsers](https://creativelittledots.github.io/springboard/images/browsers.svg?hello)
+![Browsers](https://creativelittledots.github.io/spark/images/browsers.svg?hello)
 
 ## Supported Platforms
 
-![Browsers](https://creativelittledots.github.io/springboard/images/platforms.svg?hello)
+![Browsers](https://creativelittledots.github.io/spark/images/platforms.svg?hello)
+
+Thank you to @jackcoup for name inspiration!
 
 Copyright © 2019 Creative Little Dots, ltd.

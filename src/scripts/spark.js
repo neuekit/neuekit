@@ -1,9 +1,9 @@
 /*!---------------------------------------------------------------------------*\
-    SpringBoard
+    Spark
 
-    - Version:      1.0.0.alpha.2
+    - Version:      1.0.0.alpha.3
     - Author:       Creative Little Dots
-    - Site:         http://creativelittle.uk/springboard
+    - Site:         http://creativelittle.uk/spark
     - Copyright:    2019, Creative Little Dots
     – License:      MIT | http://goo.gl/p3bexl
 \*----------------------------------------------------------------------------*/
@@ -17,7 +17,7 @@ import Modals   from './modules/modals';
 import Tabs     from './modules/tabs';
 
 
-/* SpringBoard */
+/* Spark */
 
 export default function(options) {
 

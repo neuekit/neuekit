@@ -10,15 +10,15 @@
 
 /* Imports */
 
-import SpringBoard from '../../../src/scripts/springboard';
+import Spark from '../../../src/scripts/spark';
 import * as util from './modules/utilities';
 
 
-/* SpringBoard */
+/* Spark */
 
-const springboard = new SpringBoard();
+const spark = new Spark();
 
-window.springboard = springboard;
+window.spark = spark;
 /* Project Code */
 
 

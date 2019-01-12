@@ -13,7 +13,7 @@ export default () => {
                 './scripts/polyfills/**'
             ],
             include: [
-                'node_modules/springboard/**'
+                'node_modules/spark/**'
             ],
             presets: [[
                 '@babel/env', {

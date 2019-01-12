@@ -1,14 +1,14 @@
 /*----------------------------------------------------------------------------*\
     #STYLE
 
-    Import the SpringBoard framework, all settings, configurable mixins & theme.
+    Import the Spark framework, all settings, configurable mixins & theme.
 \*----------------------------------------------------------------------------*/
 
 @import '../../src/styles/settings';
 @import 'application/settings';
 
-@import '../../src/styles/springboard';
-@import 'application/springboard';
+@import '../../src/styles/spark';
+@import 'application/spark';
 @import 'application/application';
 
 
