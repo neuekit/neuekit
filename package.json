@@ -4,6 +4,7 @@
   "license": "MIT",
   "description": "Spark is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with (we hope), and built for the future.",
   "main": "dist/spark.js",
+  "unpkg": "dist/spark.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/creativelittledots/spark.git"
