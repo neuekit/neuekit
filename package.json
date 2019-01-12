@@ -1,5 +1,5 @@
 {
-  "name": "spark",
+  "name": "@spark/spark",
   "version": "1.0.0-alpha.3",
   "license": "MIT",
   "description": "Spark is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with (we hope), and built for the future.",
