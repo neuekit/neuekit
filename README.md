@@ -1,5 +1,9 @@
 # <a href="http://creativelittle.uk/spark" target="_blank">Spark</a> - M1
 
+> THIS PROJECT IS IN ALPHA DUE TO THERE BEING NO ACCESSIBLE DOCUMENTATION;
+> Code works though 🙃
+
+
 Spark is a utilitarian, ITCSS based, super scaleable front-end framework. It's built for the modern web and only supports modern browsers, oh and IE11, all for the benefit of web users everywhere.
 
 The kit includes a flex based fluid grid, common comprehendible Javascript plugins and a tasty minimalist style for all your friendly neighbourhood web elements.
