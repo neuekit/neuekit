@@ -28,18 +28,16 @@ To get going with the framework you can:
 
 In future sessions where you already have the dependancies you can just run `npm start`
 
-## <a href="https://creativelittledots.github.io/neuekit" target="_blank">Documentation</a>
+## <a href="https://neuekit.github.io/neuekit/" target="_blank">Documentation</a>
 
 Still in progress...
 
 ## Supported Browsers
 
-![Browsers](https://creativelittledots.github.io/neuekit/images/browsers.svg?hello)
+![Browsers](https://neuekit.github.io/neuekit/images/browsers.svg?hello)
 
 ## Supported Platforms
 
-![Browsers](https://creativelittledots.github.io/neuekit/images/platforms.svg?hello)
-
-Thank you to @jackcoup for name inspiration!
+![Browsers](https://neuekit.github.io/neuekit/images/platforms.svg?hello)
 
 Copyright © 2019 Creative Little Dots, ltd.
