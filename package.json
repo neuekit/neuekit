@@ -1,6 +1,6 @@
 {
   "name": "neuekit",
-  "version": "1.0.0-alpha.4",
+  "version": "1.0.0-alpha.5",
   "license": "MIT",
   "description": "Neue Kit is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with (we hope), and built for the future.",
   "main": "dist/neuekit.js",
