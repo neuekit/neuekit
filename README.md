@@ -40,6 +40,4 @@ Still in progress...
 
 ![Browsers](https://creativelittledots.github.io/neuekit/images/platforms.svg?hello)
 
-Thank you to @jackcoup for name inspiration!
-
 Copyright © 2019 Creative Little Dots, ltd.
