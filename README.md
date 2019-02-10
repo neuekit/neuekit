@@ -1,10 +1,10 @@
-# <a href="http://creativelittle.uk/spark" target="_blank">Spark</a> - M1
+# <a href="http://creativelittle.uk/neuekit" target="_blank">Neue Kit</a> - M1
 
 > THIS PROJECT IS IN ALPHA DUE TO THERE BEING NO ACCESSIBLE DOCUMENTATION;
 > Code works though 🙃
 
 
-Spark is a utilitarian, ITCSS based, super scaleable front-end framework. It's built for the modern web and only supports modern browsers, oh and IE11, all for the benefit of web users everywhere.
+Neue Kit is a utilitarian, ITCSS based, super scaleable front-end framework. It's built for the modern web and only supports modern browsers, oh and IE11, all for the benefit of web users everywhere.
 
 The kit includes a flex based fluid grid, common comprehendible Javascript plugins and a tasty minimalist style for all your friendly neighbourhood web elements.
 
@@ -28,17 +28,17 @@ To get going with the framework you can:
 
 In future sessions where you already have the dependancies you can just run `npm start`
 
-## <a href="https://creativelittledots.github.io/spark" target="_blank">Documentation</a>
+## <a href="https://creativelittledots.github.io/neuekit" target="_blank">Documentation</a>
 
 Still in progress...
 
 ## Supported Browsers
 
-![Browsers](https://creativelittledots.github.io/spark/images/browsers.svg?hello)
+![Browsers](https://creativelittledots.github.io/neuekit/images/browsers.svg?hello)
 
 ## Supported Platforms
 
-![Browsers](https://creativelittledots.github.io/spark/images/platforms.svg?hello)
+![Browsers](https://creativelittledots.github.io/neuekit/images/platforms.svg?hello)
 
 Thank you to @jackcoup for name inspiration!
 

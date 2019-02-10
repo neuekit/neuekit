@@ -1,14 +1,14 @@
 /*----------------------------------------------------------------------------*\
     #STYLE
 
-    Import the Spark framework, all settings, configurable mixins & theme.
+    Import the Neue Kit framework, all settings, configurable mixins & theme.
 \*----------------------------------------------------------------------------*/
 
 @import '../../src/styles/settings';
 @import 'application/settings';
 
-@import '../../src/styles/spark';
-@import 'application/spark';
+@import '../../src/styles/neuekit';
+@import 'application/neuekit';
 @import 'application/application';
 
 

@@ -5,11 +5,11 @@ import { terser } from 'rollup-plugin-terser';
 
 export default [
     {
-        input: './src/scripts/spark.js',
+        input: './src/scripts/neuekit.js',
         output: {
-            file: './dist/spark.js',
+            file: './dist/neuekit.js',
             format: 'iife',
-            name: 'Spark'
+            name: 'NeueKit'
         },
         plugins: [
             babel({

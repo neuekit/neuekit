@@ -13,7 +13,7 @@ export default () => {
                 './scripts/polyfills/**'
             ],
             include: [
-                'node_modules/@creativelittledots/spark/**'
+                'node_modules/neuekit/**'
             ],
             presets: [[
                 '@babel/env', {

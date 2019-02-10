@@ -1,19 +1,19 @@
 {
-  "name": "@creativelittledots/spark",
-  "version": "1.0.0-alpha.3",
+  "name": "neuekit",
+  "version": "1.0.0-alpha.4",
   "license": "MIT",
-  "description": "Spark is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with (we hope), and built for the future.",
-  "main": "dist/spark.js",
-  "unpkg": "dist/spark.js",
+  "description": "Neue Kit is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with (we hope), and built for the future.",
+  "main": "dist/neuekit.js",
+  "unpkg": "dist/neuekit.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativelittledots/spark.git"
+    "url": "git+https://github.com/neuekit/neuekit.git"
   },
   "author": "Matt Pilott",
   "bugs": {
-    "url": "https://github.com/creativelittledots/spark/issues"
+    "url": "https://github.com/neuekit/neuekit/issues"
   },
-  "homepage": "https://github.com/creativelittledots/spark#readme",
+  "homepage": "https://github.com/neuekit/neuekit#readme",
   "browserslist": [
     ">0.5%",
     "not op_mini all",
@@ -45,7 +45,7 @@
     "serve": "browser-sync start --server --directory --no-notify --files '.' --ignore 'node_modules'",
     "scss": "node-sass -x -r --output-style compressed --output ./dist ./src/styles",
     "autoprefixer": "postcss --use autoprefixer --replace ./dist/style.css --no-map",
-    "build:css": "npm run scss --silent && npm run autoprefixer --silent && mv ./dist/style.css ./dist/spark.css",
+    "build:css": "npm run scss --silent && npm run autoprefixer --silent && mv ./dist/style.css ./dist/neuekit.css",
     "build:js": "rollup --config",
     "build": "npm run build:css --silent && npm run build:js --silent",
     "watch:css": "onchange './styles/**/*.scss' -- npm run build:css --silent",
