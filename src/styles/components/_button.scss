@@ -2,7 +2,7 @@
     #BUTTON COMPONENT STYLES
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__button(
+@mixin _nu-component__button(
     $btnReset: false,
     $btnRadius: $radius,
     $styles: (
@@ -229,7 +229,7 @@
 }
 
 
-@mixin sb-component__button(
+@mixin nu-component__button(
     $btnReset: false,
     $btnRadius: $radius,
     $styles: (
@@ -301,7 +301,7 @@
     #{$btnCondition}
     .c-button {
 
-        @include _sb-component__button(
+        @include _nu-component__button(
             $btnReset: $btnReset,
             $btnRadius: $btnRadius,
             $styles: $styles,

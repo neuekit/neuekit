@@ -2,7 +2,7 @@
     #TOOLTIP COMPONENT
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__tooltip(
+@mixin _nu-component__tooltip(
     $tipSize:       rem(4),
     $trans:         $trans,
     $primary:       $primary,
@@ -104,7 +104,7 @@
 }
 
 
-@mixin sb-component__tooltip(
+@mixin nu-component__tooltip(
     $tipSize:       rem(4),
     $trans:         $trans,
     $primary:       $primary,
@@ -117,7 +117,7 @@
 
     .c-tooltip {
 
-        @include _sb-component__tooltip(
+        @include _nu-component__tooltip(
             $tipSize:       $tipSize,
             $trans:         $trans,
             $primary:       $primary,

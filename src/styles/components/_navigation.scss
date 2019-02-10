@@ -2,7 +2,7 @@
     #NAVIGATION COMPONENT
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__navigation(
+@mixin _nu-component__navigation(
     $closeBg:           rgba(black, 0.25),
     $navSubBg:          lavendar,
     $navLinkHoverBg:    whitesmoke,
@@ -58,7 +58,7 @@
 }
 
 
-@mixin sb-component__navigation(
+@mixin nu-component__navigation(
     $closeBg:           rgba(black, 0.25),
     $navSubBg:          lavendar,
     $navLinkHoverBg:    whitesmoke,
@@ -67,7 +67,7 @@
 
     .js .c-nav {
 
-        @include _sb-component__navigation(
+        @include _nu-component__navigation(
             $closeBg:           $closeBg,
             $navSubBg:          $navSubBg,
             $navLinkHoverBg:    $navLinkHoverBg,

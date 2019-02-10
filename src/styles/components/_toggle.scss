@@ -2,7 +2,7 @@
     #TOGGLE
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__toggle(
+@mixin _nu-component__toggle(
     $colourOn:      dodgerblue,
     $colourOff:     lightgrey,
     $handleColour:  white,
@@ -116,7 +116,7 @@
 }
 
 
-@mixin sb-component__toggle(
+@mixin nu-component__toggle(
     $colourOn:      dodgerblue,
     $colourOff:     lightgrey,
     $handleColour:  white,
@@ -131,7 +131,7 @@
 
     .c-toggle {
 
-        @include _sb-component__toggle(
+        @include _nu-component__toggle(
             $colourOn:      $colourOn,
             $colourOff:     $colourOff,
             $handleColour:  $handleColour,

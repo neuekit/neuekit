@@ -2,7 +2,7 @@
     #SPACING UTILITIES
 \*----------------------------------------------------------------------------*/
 
-@mixin sb-utility__spacing(
+@mixin nu-utility__spacing(
     $attrs: ( padding, margin ),    // Values: margin, padding
     $dash: '-',
     $rem: false,

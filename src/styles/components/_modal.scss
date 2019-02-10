@@ -2,7 +2,7 @@
     #MODAL
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__modal(
+@mixin _nu-component__modal(
     $primary:       $primary,
     $tertiary:      $tertiary,
     $quaternary:    $quaternary,
@@ -126,7 +126,7 @@
     }
 }
 
-@mixin sb-component__modal(
+@mixin nu-component__modal(
     $primary:       $primary,
     $tertiary:      $tertiary,
     $quaternary:    $quaternary,
@@ -137,7 +137,7 @@
 
     .c-modal {
 
-        @include _sb-component__modal(
+        @include _nu-component__modal(
             $primary:       $primary,
             $tertiary:      $tertiary,
             $quaternary:    $quaternary,

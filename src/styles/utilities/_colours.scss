@@ -2,7 +2,7 @@
     #COLOUR UTILITIES
 \*----------------------------------------------------------------------------*/
 
-@mixin sb-utility__colour(
+@mixin nu-utility__colour(
     $palette: $palette,
     $lightnessTolerance: 50, // The lightness component, between 0% and 100%, or false/null
     $lightnessColour: white, // Colour to set the text to if background colour is deemed to be dark

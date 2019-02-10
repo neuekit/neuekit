@@ -2,7 +2,7 @@
     #GRID OBJECT
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-object__grid(
+@mixin _nu-object__grid(
     $maxWidth:          $maxWidth,
     $gutter:            $gutter,
     $gutterSmall:       $gutterSmall,
@@ -100,7 +100,7 @@
 
 
 
-@mixin sb-object__grid(
+@mixin nu-object__grid(
     $maxWidth:          $maxWidth,
     $gutter:            $gutter,
     $gutterSmall:       $gutterSmall,
@@ -109,7 +109,7 @@
 
     .o-grid {
 
-        @include _sb-object__grid(
+        @include _nu-object__grid(
             $maxWidth:          $maxWidth,
             $gutter:            $gutter,
             $gutterSmall:       $gutterSmall,

@@ -2,7 +2,7 @@
     #STRIP LIST STYLES
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-object__unlist() {
+@mixin _nu-object__unlist() {
 
     // .o-unlist
     list-style: none;
@@ -11,11 +11,11 @@
 }
 
 
-@mixin sb-object__unlist() {
+@mixin nu-object__unlist() {
 
     .o-unlist {
 
-        @include _sb-object__unlist();
+        @include _nu-object__unlist();
     }
 }
 

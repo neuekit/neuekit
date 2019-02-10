@@ -2,7 +2,7 @@
     #TABS COMPONENT
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__tabs(
+@mixin _nu-component__tabs(
     $tabColour: $secondary
 ) {
 
@@ -40,13 +40,13 @@
 }
 
 
-@mixin sb-component__tabs(
+@mixin nu-component__tabs(
     $tabColour: $secondary
 ) {
 
     .c-tabs {
 
-        @include _sb-component__tabs(
+        @include _nu-component__tabs(
             $tabColour: $tabColour
         );
     }

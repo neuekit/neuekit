@@ -45,24 +45,24 @@
 @import 'elements/toggles';             // Checkbox and radio elements.
 @import 'elements/type';                // All type styles.
 
-@mixin sb-elements() {
+@mixin nu-elements() {
 
-    @include sb-element__shared();
-    @include sb-element__document();
-    @include sb-element__details();
-    @include sb-element__form();
-    @include sb-element__inputs();
-    @include sb-element__link();
-    @include sb-element__list();
-    @include sb-element__media();
-    @include sb-element__quote();
-    @include sb-element__table();
-    @include sb-element__type();
-    @include sb-element__toggles();
-    @include sb-element__meter();
-    @include sb-element__progress();
-    @include sb-element__range();
-    @include sb-element__aria();
+    @include nu-element__shared();
+    @include nu-element__document();
+    @include nu-element__details();
+    @include nu-element__form();
+    @include nu-element__inputs();
+    @include nu-element__link();
+    @include nu-element__list();
+    @include nu-element__media();
+    @include nu-element__quote();
+    @include nu-element__table();
+    @include nu-element__type();
+    @include nu-element__toggles();
+    @include nu-element__meter();
+    @include nu-element__progress();
+    @include nu-element__range();
+    @include nu-element__aria();
 }
 
 
@@ -78,12 +78,12 @@
 @import 'objects/inline';               // Flex based inliner.
 @import 'objects/unlist';               // Strip list styles.
 
-@mixin sb-objects() {
+@mixin nu-objects() {
 
-    @include sb-object__feed();
-    @include sb-object__grid();
-    @include sb-object__inline();
-    @include sb-object__unlist();
+    @include nu-object__feed();
+    @include nu-object__grid();
+    @include nu-object__inline();
+    @include nu-object__unlist();
 }
 
 
@@ -105,18 +105,18 @@
 @import 'components/tooltip';           // Tooltips component.
 @import 'components/validate';          // Form validation component.
 
-@mixin sb-components() {
+@mixin nu-components() {
 
-    @include sb-component__adjacent();
-    @include sb-component__button();
-    @include sb-component__loading();
-    @include sb-component__modal();
-    @include sb-component__navigation();
-    @include sb-component__offCanvas();
-    @include sb-component__tabs();
-    @include sb-component__toggle();
-    @include sb-component__tooltip();
-    @include sb-component__validate();
+    @include nu-component__adjacent();
+    @include nu-component__button();
+    @include nu-component__loading();
+    @include nu-component__modal();
+    @include nu-component__navigation();
+    @include nu-component__offCanvas();
+    @include nu-component__tabs();
+    @include nu-component__toggle();
+    @include nu-component__tooltip();
+    @include nu-component__validate();
 }
 
 
@@ -135,15 +135,15 @@
 @import 'utilities/text';                 // Handy text assistants.
 @import 'utilities/visibility';           // Helpers to show and side stuff.
 
-@mixin sb-utilities() {
+@mixin nu-utilities() {
 
-    @include sb-utility__colour();
-    @include sb-utility__flex();
-    @include sb-utility__offset();
-    @include sb-utility__size();
-    @include sb-utility__spacing();
-    @include sb-utility__text();
-    @include sb-utility__visibility();
+    @include nu-utility__colour();
+    @include nu-utility__flex();
+    @include nu-utility__offset();
+    @include nu-utility__size();
+    @include nu-utility__spacing();
+    @include nu-utility__text();
+    @include nu-utility__visibility();
 }
 
 

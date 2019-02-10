@@ -2,7 +2,7 @@
     #OFF CANVAS
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__canvas(
+@mixin _nu-component__canvas(
     $trans: $trans
 ) {
 
@@ -15,7 +15,7 @@
 }
 
 
-@mixin _sb-component__offCanvas(
+@mixin _nu-component__offCanvas(
     $size:          rem(320),
     $trans:         $trans,
     $secondary:     $secondary,
@@ -73,7 +73,7 @@
 }
 
 
-@mixin sb-component__offCanvas(
+@mixin nu-component__offCanvas(
     $size:          rem(320),
     $trans:         $trans,
     $secondary:     $secondary,
@@ -82,14 +82,14 @@
 
     .c-canvas {
 
-        @include _sb-component__canvas(
+        @include _nu-component__canvas(
             $trans: $trans
         );
     }
 
     .c-offCanvas {
 
-        @include _sb-component__offCanvas(
+        @include _nu-component__offCanvas(
             $size:          $size,
             $trans:         $trans,
             $secondary:     $secondary,

@@ -2,7 +2,7 @@
     #VALIDATE
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__validate(
+@mixin _nu-component__validate(
     $success:       $success,
     $error:         $error,
     $trans:         $trans,
@@ -54,7 +54,7 @@
 }
 
 
-@mixin sb-component__validate(
+@mixin nu-component__validate(
     $success:       $success,
     $error:         $error,
     $trans:         $trans,
@@ -63,7 +63,7 @@
 
     .c-validate {
 
-        @include _sb-component__validate(
+        @include _nu-component__validate(
             $success:       $success,
             $error:         $error,
             $trans:         $trans,

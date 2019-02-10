@@ -2,13 +2,13 @@
     #LOADING INDICATOR
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-component__loading(
-    $animation:     sb-keyframe__loading 0.6s infinite linear,
+@mixin _nu-component__loading(
+    $animation:     nu-keyframe__loading 0.6s infinite linear,
     $primary:       $primary,
     $secondary:     $secondary
 ) {
 
-    @keyframes sb-keyframe__loading {
+    @keyframes nu-keyframe__loading {
 
         from {
             transform: translate(-50%, -50%) rotate(0deg);
@@ -77,15 +77,15 @@
 }
 
 
-@mixin sb-component__loading(
-    $animation:     sb-keyframe__loading 0.6s infinite linear,
+@mixin nu-component__loading(
+    $animation:     nu-keyframe__loading 0.6s infinite linear,
     $primary:       $primary,
     $secondary:     $secondary
 ) {
 
     .c-loading {
 
-        @include _sb-component__loading(
+        @include _nu-component__loading(
             $animation:     $animation,
             $primary:       $primary,
             $secondary:     $secondary

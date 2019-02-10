@@ -2,7 +2,7 @@
     #INLINE OBJECT
 \*----------------------------------------------------------------------------*/
 
-@mixin _sb-object__feed() {
+@mixin _nu-object__feed() {
 
     // .o-inline
     display: flex;
@@ -21,11 +21,11 @@
 }
 
 
-@mixin sb-object__feed() {
+@mixin nu-object__feed() {
 
     .o-feed {
 
-        @include _sb-object__feed();
+        @include _nu-object__feed();
     }
 }
 
