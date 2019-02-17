@@ -1,7 +1,7 @@
 /*!---------------------------------------------------------------------------*\
     Neue Kit
 
-    - Version:      1.0.0.alpha.3
+    - Version:      1.0.0.alpha.6
     - Author:       Creative Little Dots
     - Site:         http://creativelittle.uk/neuekit
     - Copyright:    2019, Creative Little Dots
