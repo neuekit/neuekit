@@ -8,9 +8,9 @@
     height: calc(100% - 2rem);
     position: fixed;
     left: 0; top: 2rem;
-    padding: 0 1.6rem;
+    margin: 0 1.6rem;
     overflow: auto;
-    width: 32rem;
+    width: 28.8rem;
 
     &::after {
         content: '';
@@ -30,6 +30,8 @@
         font-weight: 600;
         line-height: 1.4;
         padding: 1.4rem 1.6rem;
+        position: -webkit-sticky;
+        top: 0;
         z-index: 1;
     }
 
