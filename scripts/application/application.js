@@ -1,34 +1,30 @@
 /*!---------------------------------------------------------------------------*\
-
-    #PROJECT
+    Project Name
 
     - Version:      1.0
     - Author:       YOUR NAME
     - Site:         http://YOUR_SITE
-    - Copyright:    2018, YOUR COMPANY
+    - Copyright:    2019, YOUR COMPANY
     – License:      YOUR LICENSE
-
 \*----------------------------------------------------------------------------*/
 
+/* Imports */
+
+import NeueKit from 'neuekit/src/scripts/neuekit';
+import * as util from './modules/utilities';
 
 
-/*----------------------------------------------------------------------------*\
-    #HELPERS
+/* Neue Kit */
 
-    Single concern functions and utilities to help you out.
-\*----------------------------------------------------------------------------*/
+const neuekit = new NeueKit();
 
-import './modules/helpers';
+window.neuekit = neuekit;
 
+/* Project Code */
 
-
-/*----------------------------------------------------------------------------*\
-    #MODULES
-
-    Designed pieces of UI. Only using classes. More explicit naming.
-\*----------------------------------------------------------------------------*/
-
-
+Prism.plugins.NormalizeWhitespace.setDefaults({
+    'remove-trailing': false
+});
 
 
 

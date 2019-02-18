@@ -1,14 +1,14 @@
 /*----------------------------------------------------------------------------*\
     #STYLE
 
-    Import the UI Kit framework, all settings, configurable mixins and theme.
+    Import the Neue Kit framework, all settings, configurable mixins & theme.
 \*----------------------------------------------------------------------------*/
 
-@import 'framework/settings';           // DONT EDIT SKY WILL FALL
-@import 'application/settings';         // EDIT AS YOU WISH
+@import 'node_modules/neuekit/src/styles/settings';
+@import 'application/settings';
 
-@import 'framework/framework';          // DONT EDIT SKY WILL FALL
-@import 'application/uikit';            // EDIT AS YOU WISH
-@import 'application/application';      // EDIT AS YOU WISH
+@import 'node_modules/neuekit/src/styles/neuekit';
+@import 'application/neuekit';
+@import 'application/application';
 
 

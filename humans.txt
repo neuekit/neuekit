@@ -2,22 +2,16 @@
 
 Name: Matt Pilott
 Title: Front-end Engineer
-Email: matt@creativelittledots.co.uk
-Site: http://creativelittledots.co.uk
 Github: @matt3224
 Twitter: @LittleDotMatt
 
 Name: Darby Manning
 Title: Front-end Engineer
-Email: darby@creativelittledots.co.uk
-Site: http://creativelittledots.co.uk
 Github: @darbymanning
 Twitter: @LittleDotDarby
 
 Name: Chris Myers
 Title: Front-end Engineer
-Email: chris@creativelittledots.co.uk
-Site: http://creativelittledots.co.uk
 Github: @CreativeLittleChris
 Twitter: @LittleDotChris
 
@@ -28,13 +22,5 @@ Twitter: @LittleDotChris
 Name: Harry Roberts
 For: ITCSS
 Twitter: @csswizardry
-
-
-
-/* SITE */
-
-Last update: January 16th, August 2018
-Standards: HTML5, CSS3, ES2015
-Software: Atom, Yarn
 
 

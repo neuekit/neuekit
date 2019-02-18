@@ -1,0 +1,29 @@
+.c-navi {
+
+    &__block {
+        background-color: $cloud2;
+        box-shadow: 0 2px 0 $cloud1;
+        border-radius: 10px;
+        margin-top: 1.6rem;
+        overflow: hidden;
+    }
+
+    &__title {
+        background-color: $cloud1;
+        color: $storm;
+        display: block;
+        font-weight: 600;
+        padding: 1.2rem 1.6rem;
+    }
+
+    &__sub {
+        padding: 1rem 0;
+    }
+
+    &__link {
+        color: $storm;
+        font-weight: 500;
+        display: block;
+        padding: 0.6rem 1.6rem;
+    }
+}

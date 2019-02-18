@@ -1,6 +1,9 @@
+*.log
 *.scssc
-config.codekit
-codekit3.config
-.config.codekit3
 .DS_Store
+.vscode
+.yarnclean
 node_modules
+package-lock.json
+shrinkwrap.yaml
+yarn.lock

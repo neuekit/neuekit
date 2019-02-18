@@ -2,535 +2,351 @@
 
 <html class="no-js" lang="en">
 
-    <head>
+<head>
 
-        <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-        <!--  Docuent: Setup  -->
-        <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+    <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+    <!--  Document: Setup  -->
+    <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
 
-        <meta charset="utf-8">
+    <!--  Meta Information  -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="description" content="A modernist structured User Interface Kit for building responsive scalable web projects">
+    <meta name="coverage" content="Worldwide">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-TileColor" content="#272a33">
+    <meta name="msapplication-config" content="images/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--  Title Element  -->
+    <title>Test Elements</title>
 
-        <title>SpringBoard Documentation</title>
 
-        <meta name="description" content="A modernist structured User Interface Kit for building responsive scalable web projects">
+    <!--  Icon Links  -->
+    <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16x16.png">
+    <link rel="mask-icon" href="images/icons/safari-pinned-tab.svg" color="#000000">
+    <link rel="shortcut icon" href="images/icons/favicon.ico">
 
-        <meta name="coverage" content="Worldwide">
 
-        <meta name="format-detection" content="telephone=no">
+    <!--  Web Manifest  -->
+    <link rel="manifest" href="images/icons/site.webmanifest">
 
 
-        <!--  Standard Favicons  -->
+    <!--  Priority Resources  -->
+    <link rel="stylesheet" href="styles/style.css">
 
-        <link rel="icon" type="image/png" href="images/icons/favicon-32x32.png" sizes="32x32">
 
-        <link rel="icon" type="image/png" href="images/icons/favicon-16x16.png" sizes="16x16">
+    <!--  Subservient Resources  -->
+    <script src="scripts/polyfills/polyfills.min.js" defer></script>
+    <script src="scripts/application/prism.js" defer></script>
+    <script src="scripts/application/application.min.js" defer></script>
 
-        <link rel="shortcut icon" href="images/icons/favicon.ico">
+</head>
 
 
-        <!--  Google Meta  -->
-        <meta name="mobile-web-app-capable" content="yes">
+<body>
 
-        <meta name="application-name" content="SpringBoard">
+    <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+    <!--  Site: Header  -->
+    <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
 
-        <meta name="theme-color" content="#2F3BA2">
+    <header class="c-head" role="banner">
 
-        <link rel="icon" sizes="192x192" href="images/icons/chrome-touch-icon-192x192.png">
+        <div class="o-grid  o-grid--item">
 
+            <nav role="navigation">
 
-        <!--  Apple Meta  -->
-        <meta name="apple-mobile-web-app-capable" content="yes">
+                <a href="#">NPM</a>
 
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+                <a href="#">GitHub</a>
 
-        <meta name="apple-mobile-web-app-title" content="SpringBoard">
+                <a href="#">Help</a>
 
-        <link rel="apple-touch-icon" sizes="180x180" href="images/icons/apple-touch-icon.png">
+            </nav>
 
-        <link rel="mask-icon" href="images/icons/safari-pinned-tab.svg" color="#212226">
+        </div>
 
+    </header>
 
-        <!--  Windows Meta  -->
-        <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+    <!--  Site: Aside  -->
+    <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
 
-        <meta name="msapplication-TileColor" content="#2F3BA2">
+    <aside class="c-aside" role="complementary">
 
-        <meta name="msapplication-tap-highlight" content="no">
+        <header class="c-aside__head">
+            <img class="u-mR-16" src="images/neuekit.svg">
+            Neue Kit, a classic UI Kit with modern sensibilities.
+        </header>
 
-        <meta name="msapplication-config" content="images/icons/browserconfig.xml">
+        <div class="c-aside__sub">
+            <span>M1</span>
+            <span>Version 1.0.1</span>
+        </div>
 
+        <nav class="c-navi" role="navigation">
 
-        <!--  Web Application Manifest  -->
-        <link rel="manifest" href="manifest.json">
+            <div class="c-navi__block">
 
+                <a class="c-navi__title" href="#getstarted">Getting started</a>
 
+                <nav class="c-navi__sub">
 
+                    <a class="c-navi__link" href="#installation">Installation</a>
+                    <a class="c-navi__link" href="#compatibility">Compatibility</a>
+                    <a class="c-navi__link" href="#accessibility">Accessibility</a>
 
+                </nav>
 
-        <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-        <!--  Document: Priority Resources  -->
-        <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+            </div>
 
-        <link href="styles/parties/prism.css" rel="stylesheet">
+            <div class="c-navi__block">
 
-        <link href="styles/style.css" rel="stylesheet">
+                <a class="c-navi__title" href="#itcss">ITCSS methodology</a>
 
+                <nav class="c-navi__sub">
 
+                    <a class="c-navi__link" href="#what">What?</a>
+                    <a class="c-navi__link" href="#why">Why?</a>
+                    <a class="c-navi__link" href="#how">How?</a>
 
-    </head>
+                </nav>
 
-    <body>
+            </div>
 
-        <div class="app">
+            <div class="c-navi__block">
 
-            <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-            <!--  Site: Header  -->
-            <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+                <a class="c-navi__title" href="#settings">Settings</a>
 
-            <header class="head" role="banner">
+                <nav class="c-navi__sub">
 
-                <a class="head__logo" href="#">
+                    <a class="c-navi__link" href="#s_defaults">Defaults</a>
+                    <a class="c-navi__link" href="#s_overrides">Overrides</a>
+                    <a class="c-navi__link" href="#s_usage">Usage</a>
 
-                    <span class="text-bolder">CREATIVE</span>
+                </nav>
 
-                    <br>
+            </div>
 
-                    <span class="pacifico  head__logo-little">little</span> SpringBoard
+            <div class="c-navi__block">
 
-                </a>
+                <a class="c-navi__title" href="#tools">Tools</a>
 
-            </header>
+                <nav class="c-navi__sub">
 
+                    <a class="c-navi__link" href="#t_functions">Functions</a>
+                    <a class="c-navi__link" href="#t_mixins">Mixins</a>
 
+                </nav>
 
-            <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-            <!--  Site: Aside  -->
-            <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+            </div>
 
-            <aside class="aside">
+            <div class="c-navi__block">
 
-                <section class="aside__content">
+                <a class="c-navi__title" href="#generic">Generic</a>
 
-                    <nav role="navigation">
+                <nav class="c-navi__sub">
 
-                        <ul class="menu">
+                    <a class="c-navi__link" href="#g_reboot">Reboot</a>
+                    <a class="c-navi__link" href="#g_fonts">Fonts</a>
+                    <a class="c-navi__link" href="#g_keyframes">Keyframes</a>
 
-                            <li><a class="menu__title" href="#getstarted">Get Started</a></li>
+                </nav>
 
-                            <li class="menu__item"><a href="#">Installation</a></li>
+            </div>
 
-                            <li class="menu__item"><a href="#">Compatibility</a></li>
+            <div class="c-navi__block">
 
-                            <li class="menu__item"><a href="#">Accessibility</a></li>
+                <a class="c-navi__title" href="#elements">Elements</a>
 
-                        </ul>
+                <nav class="c-navi__sub">
 
-                        <ul class="menu">
+                    <a class="c-navi__link" href="#e_base">Base styles</a>
+                    <a class="c-navi__link" href="#e_shared">Shared styles</a>
 
-                            <li><a class="menu__title" href="#itcss">ITSCSS</a></li>
+                </nav>
 
-                            <li class="menu__item"><a href="#">What</a></li>
+            </div>
 
-                            <li class="menu__item"><a href="#">Why</a></li>
+            <div class="c-navi__block">
 
-                            <li class="menu__item"><a href="#">How</a></li>
+                <a class="c-navi__title" href="#objects">Objects</a>
 
-                        </ul>
+                <nav class="c-navi__sub">
 
-                        <ul class="menu">
+                    <a class="c-navi__link" href="#o_feed">Feed</a>
+                    <a class="c-navi__link" href="#o_grid">Grid</a>
+                    <a class="c-navi__link" href="#o_inline">Inline</a>
+                    <a class="c-navi__link" href="#o_unlist">Unlist</a>
 
-                            <li><a class="menu__title" href="#settings">Settings</a></li>
+                </nav>
 
-                            <li class="menu__item"><a href="#">Defaults</a></li>
+            </div>
 
-                            <li class="menu__item"><a href="#">Overrides</a></li>
+            <div class="c-navi__block">
 
-                            <li class="menu__item"><a href="#">Usage</a></li>
+                <a class="c-navi__title" href="#components">Components</a>
 
-                        </ul>
+                <nav class="c-navi__sub">
 
-                        <ul class="menu">
+                    <a class="c-navi__link" href="#c_adjacent">Adjacent</a>
+                    <a class="c-navi__link" href="#c_button">Button</a>
+                    <a class="c-navi__link" href="#c_loading">Loading</a>
+                    <a class="c-navi__link" href="#c_modal">Modal</a>
+                    <a class="c-navi__link" href="#c_navigation">Navigation</a>
+                    <a class="c-navi__link" href="#c_off_canvas">Off Canvas</a>
+                    <a class="c-navi__link" href="#c_tabs">Tabs</a>
+                    <a class="c-navi__link" href="#c_toggle">Toggle</a>
+                    <a class="c-navi__link" href="#c_tooltip">Tooltip</a>
+                    <a class="c-navi__link" href="#c_validate">Validate</a>
 
-                            <li><a class="menu__title" href="#tools">Tools</a></li>
+                </nav>
 
-                            <li class="menu__item"><a href="#">Functions</a></li>
+            </div>
 
-                            <li class="menu__item"><a href="#">Mixins</a></li>
+            <div class="c-navi__block">
 
-                        </ul>
+                <a class="c-navi__title" href="#generic">Utilities</a>
 
-                        <ul class="menu">
+                <nav class="c-navi__sub">
 
-                            <li><a class="menu__title" href="#generic">Generic</a></li>
+                    <a class="c-navi__link" href="#u_colours">Colours</a>
+                    <a class="c-navi__link" href="#u_flex">Flex</a>
+                    <a class="c-navi__link" href="#u_offset">Offset</a>
+                    <a class="c-navi__link" href="#u_size">Size</a>
+                    <a class="c-navi__link" href="#u_spacing">Spacing</a>
+                    <a class="c-navi__link" href="#u_text">Text</a>
+                    <a class="c-navi__link" href="#u_visibility">Visibility</a>
 
-                            <li class="menu__item"><a href="#">Reboot</a></li>
+                </nav>
 
-                            <li class="menu__item"><a href="#">Fonts</a></li>
+            </div>
 
-                            <li class="menu__item"><a href="#">Keyframes</a></li>
+        </nav>
 
-                        </ul>
+    </aside>
 
-                        <ul class="menu">
 
-                            <li><a class="menu__title" href="#elements">Elements</a></li>
+    <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+    <!--  Site: Main  -->
+    <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
 
-                            <li class="menu__item"><a href="#">Base Styles</a></li>
+    <main class="c-main" role="main">
 
-                            <li class="menu__item"><a href="#">Shared Styles</a></li>
+        <div class="o-grid  o-grid--item">
 
-                        </ul>
+            <section id="getstarted">
 
-                        <ul class="menu">
+                <div class="u-h4  u-mB-16">Welcome</div>
 
-                            <li><a class="menu__title" href="#objects">Objects</a></li>
+                <p>Neue Kit (German for new, said like "noya") is a performance focused, ITCSS based scaleable front-end kit. It's built for the modern web and only supports modern browsers although we are dragging IE11 along too! It includes a flex based fluid grid, common comprehendible JavaScript plugins and a minimalist style for all your friendly neighbourhood web elements.</p>
 
-                            <li class="menu__item"><a href="#">Grid</a></li>
+                <div class="u-h5  u-mB-16  u-mT-48">Installation</div>
 
-                            <li class="menu__item"><a href="#">Sizes</a></li>
+                <p>There are 2 routes to get going with Neue Kit, you can either spin up a clean project with the Neue Kit structure or you can simply add the Neue Kit NPM package to your existing project.</p>
 
-                            <li class="menu__item"><a href="#">Blocks</a></li>
+                <div class="o-grid  u-mT-32">
 
-                            <li class="menu__item"><a href="#">Offsets</a></li>
+                    <div class="o-grid__item  u-size-6@m  u-flex">
 
-                        </ul>
+                        <div class="u-h6">Starter Kit</div>
 
-                        <ul class="menu">
+                        <pre class="line-numbers  u-grow">
 
-                            <li><a class="menu__title" href="#parties">Parties</a></li>
+                            <code class="language-bash">
+                                npm install -g degit
+                                degit neuekit/neuekit-starter yourprojectfolder
+                                npm install
+                                npm start
+                            </code>
 
-                            <li class="menu__item"><a href="#">Modernizr</a></li>
-
-                            <li class="menu__item"><a href="#">Container Queries</a></li>
-
-                            <li class="menu__item"><a href="#">jQuery</a></li>
-
-                            <li class="menu__item"><a href="#">Slick</a></li>
-
-                            <li class="menu__item"><a href="#">Green Sock</a></li>
-
-                        </ul>
-
-                        <ul class="menu">
-
-                            <li><a class="menu__title" href="#components">Components</a></li>
-
-                            <li class="menu__item"><a href="#">Buttons</a></li>
-
-                            <li class="menu__item"><a href="#">Lists</a></li>
-
-                            <li class="menu__item"><a href="#">Menus</a></li>
-
-                            <li class="menu__item"><a href="#">Modals</a></li>
-
-                        </ul>
-
-                        <ul class="menu">
-
-                            <li><a class="menu__title" href="#trumps">Trumps</a></li>
-
-                            <li class="menu__item"><a href="#">Modernizr</a></li>
-
-                            <li class="menu__item"><a href="#">Flex Helpers</a></li>
-
-                            <li class="menu__item"><a href="#">Text Helpers</a></li>
-
-                            <li class="menu__item"><a href="#">Spacing</a></li>
-
-                            <li class="menu__item"><a href="#">Validation</a></li>
-
-                            <li class="menu__item"><a href="#">Visibility</a></li>
-
-                        </ul>
-
-                    </nav>
-
-                </section>
-
-                <footer class="aside__foot  size-0  grid__item">
-
-                    <a href="#">Change Log</a>
-
-                </footer>
-
-            </aside>
-
-
-
-            <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-            <!--  Site: Main  -->
-            <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-
-            <main class="main" role="main">
-
-                <section id="getstarted">
-
-                    <div class="grid">
-
-                        <div class="grid__item  size-10@l  justify-center">
-
-                            <br><br>
-
-                            <h4>Welcome</h4>
-
-                            <p>The Creative Little SpringBoard is a performance focused, ITCSS based super scaleable front-end framework. It's built for the modern web and only supports modern browsers, that's right we've left IE10- out in the cold, all for the benefit of web users everywhere. It includes a flex based fluid grid, common, comprehendible Javascript plugins and a tasty minimalist style for all your friendly neighbourhood web elements.</p>
-
-                            <br>
-
-                            <h6>Installation</h6>
-
-                            <p>Installing the SpringBoard is very simple, just download the latest release from Github and start coding. There is no package manager to setup, it doesn't rely on node.js it will work out of the box as any good CSS framework should.</p>
-
-                            <p>The SpringBoard was built for the team at Creative Little Dots to use in-house and as such is biased to a specific setup. Although it's not a requirement we use the fantastic CodeKit app in-house to do all our compiling, linting, minification, transpiling and image optimisation.</p>
-
-                            <br>
-
-                            <h6>Compatibility</h6>
-
-                            <p>The SpringBoard really is built for the modern web and as such only supports the cool kid browsers... and that kid who sits in the corner and eats flies.</p>
-
-                            <ul class="col-1  col-2-m  col-3-l">
-
-                                <li>Chrome 21+</li>
-
-                                <li>Safari 6.1+</li>
-
-                                <li>iOS Safari 7.1+</li>
-
-                                <li>Firefox 28+</li>
-
-                                <li>Android 4.4+</li>
-
-                                <li>Opera 12.1+</li>
-
-                                <li>Edge 12+</li>
-
-                                <li>Internet Explorer 11+</li>
-
-                                <li>IE Mobile 11+</li>
-
-                            </ul>
-
-                            <br>
-
-                            <h6>Accessibility</h6>
-
-                            <p>In progress...</p>
-
-                            <br>
-
-                            <hr>
-
-                        </div>
+                        </pre>
 
                     </div>
 
-                </section>
+                    <div class="o-grid__item  u-size-6@m  u-flex">
 
-                <section id="itcss">
+                        <div class="u-h6">NPM Package</div>
 
-                    <div class="grid">
+                        <pre class="line-numbers  u-grow">
 
-                        <div class="grid__item  size-10@l  justify-center">
+                            <code class="language-bash">
+                                npm install neuekit --save
+                                npm start
+                            </code>
 
-                            <h4>ITCSS</h4>
-
-                            <h6>What?</h6>
-
-                            <p>Inverted Triangle CSS, created by Harry Roberts, is a new architecture that uses the core principles and design of the CSS language to help utilise the code we write in a way that benefits everyone, whether you're the first developer or the 6th developer to work on a project.</p>
-
-                            <p>The philosophy behind ITCSS is to order CSS itself by measurable properties defined in the language, such as specificity. This results in an almost purely class based methodology throwing shade to ID's and occasionally giving them a good kicking when no one is looking.</p>
-
-                            <p>Using ITCSS is fairly simple, once you learn the basic rules behind the philosophy you can carry on as usual with your code dilly dally.</p>
-
-                            <br>
-
-                            <h6>Why?</h6>
-
-                            <p>We are now at a point in web development where even sometimes simple projects are complicated and the biggest plague to hit front-end development since it's inception is code rot. Adding styles to the end of your style sheet because you can't be bothered to work out it's rightful place has become the nightmare of any developer working on a project second hand.</p>
-
-                            <p>By using the ITCSS architecture we have a component based framework that attempts to prevent code rot and keep CSS maintainable.</p>
-
-                            <br>
-
-                            <h6>How?</h6>
-
-                            <p>For those of you who detest reading, and I've got to say i'm amazed you've made it all the way to paragraph 10! We would recommend hiring <a href="https://twitter.com/csswizardry" target="_blank">Harry Roberts</a> himself to teach you his Jedi ways.</p>
-
-                            <p>For the rest of you here's a quick rundown of how to get started using ITCSS in your next project. The system works by having a main SCSS stylesheet purely for including partials. It is ordered based on specificity and begins with files that don't output and code, these would be your mixins, functions and variables.</p>
-
-                            <p>Our first level after settings and tools is our generic level. This level is used to declare things such as fonts, keyframes and most importantly shared styles using psuedos and wildcard selectors. (*, ::selection, etc.)</p>
-
-                            <p>Following those we create any element level styles using tag selectors (input, h1, img, etc.) these are low specificity so they come before our classes. Any code in this level should be considered global or default for the tag selectors.</p>
-
-                            <p>Next up we have the object level, this is similar to components but with one key difference, objects have no aesthetics, they are used to create layouts and bind elements to the page, the grid for example is an object.</p>
-
-                            <p>Before we get to components, we add in our third party CSS from any plugins we need so we can override them in components without being too specific. It's worth noting that in some cases it may be better to switch components and parties if the third party CSS is already very specific (Uses selectors like this: #myElem > * > p > a.hello).</p>
-
-                            <p>Components! Finally, this where you'll spend most of your time. Keep your components dry and don't attach them to locations. For example creating a component that can only live on a specific page such as "contact" is not reusable!</p>
-
-                            <p>Of course as much as we try to prevent it theres always going to be cases where we need !important or can only override by matching the selector tree. For this we use trumps. Trumps can also be used for helpers and atomic style classes.</p>
-
-                            <br>
-
-                            <hr>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section id="settings">
-
-                    <div class="grid">
-
-                        <div class="grid__item  size-10@l  justify-center">
-
-                            <h4>Settings</h4>
-
-                            <p>The SpringBoard is configurable by overriding the default settings. In the "styles > framework > settings" folder there are a handful of files. You can use this as a direct reference to find out what settings are available to you.</p>
-
-                            <h6>global.scss</h6>
-
-<pre><code class="language-scss">$radius:            3px         !default;
-$btnRadius:         0           !default;
-$btnReset:          true        !default;
-$speed:             0.25s       !default;
-</code></pre>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section id="tools">
-
-                    <div class="grid">
-
-                        <div class="grid__item  size-10@l  justify-center">
-
-                            <h4>Tools</h4>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section id="elements">
-
-                    <div class="grid">
-
-                        <div class="grid__item  size-10@l  justify-center">
-
-                            <h4>Elements</h4>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section id="objects">
-
-                    <div class="grid">
-
-                        <div class="grid__item  size-10@l  justify-center">
-
-                            <h4>Objects</h4>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section id="parties">
-
-                    <div class="grid">
-
-                        <div class="grid__item  size-10@l  justify-center">
-
-                            <h4>Parties</h4>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section id="components">
-
-                    <div class="grid">
-
-                        <div class="grid__item  size-10@l  justify-center">
-
-                            <h4>Components</h4>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-                <section id="trumps">
-
-                    <div class="grid">
-
-                        <div class="grid__item  size-10@l  justify-center">
-
-                            <h4>Trumps</h4>
-
-                        </div>
-
-                    </div>
-
-                </section>
-
-            </main>
-
-
-
-            <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-            <!--  Site: Footer  -->
-            <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-
-            <footer class="foot" role="contentinfo">
-
-                <div class="grid">
-
-                    <div class="grid__item">
+                        </pre>
 
                     </div>
 
                 </div>
 
-            </footer>
+                <div class="u-h5  u-mB-16  u-mT-48">Compatibility</div>
+
+                <p>Neue Kit really is built for the modern web and as such only supports the cool kid browsers... and that kid who sits in the corner and eats flies.</p>
+
+                <p>Of course you can adjust the supported browsers by filling in the package.json browserlist config. Both the CSS and JS are configurable in this manner. See our default config on <a href="https://browserl.ist/?q=%3E0.5%25%2C+not+op_mini+all" target="_blank">browserl.ist</a>
+
+                <ul class="o-unlist  col-1  col-2-m  col-3-l">
+
+                    <li>Chrome 49+</li>
+                    <li>Safari 12+</li>
+                    <li>iOS Safari 11+</li>
+                    <li>Firefox 63+</li>
+                    <li>Samsung 4+</li>
+                    <li>Opera 56+</li>
+                    <li>Edge 17+</li>
+                    <li>Internet Explorer 11+</li>
+                    <li>UC Browser 11.8+</li>
+
+                </ul>
+
+            </section>
+
+            <section id="itcss">
+
+                <div class="u-h5  u-mB-16  u-mT-48">ITCSS methodology</div>
+
+                <div class="u-h6  u-mB-16  u-mT-32">What?</div>
+
+                <p>Inverted triangle CSS is a way to architect your styles. It focusses on organising your styles in order of reach and specificity, which makes your stylesheets easier to deal with. It aims to fix a classic CSS problem, coming back to a previous project or inheriting one and not knowing where new styles should go in the stylesheet. This is most commonly solved by adding them to the end of the sheet, which is less than desirable.</p>
+
+                <img class="u-mH-a" width="500" src="images/itcss.png">
+
+                <div class="u-h6  u-mB-16  u-mT-32">Why?</div>
+
+                <p></p>
+
+                <div class="u-h6  u-mB-16  u-mT-32">How?</div>
+
+
+
+            </section>
 
         </div>
 
+    </main>
 
 
-        <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
-        <!--  Document: Subservient Resources  -->
-        <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+    <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
+    <!--  Site: Footer  -->
+    <!--  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~  -->
 
-        <script src="scripts/parties/domtastic.min.js"></script>
+    <footer class="c-foot" role="contentinfo">
 
-        <script src="scripts/framework/framework.min.js"></script>
-
-        <script src="scripts/parties/prism.min.js"></script>
-
-        <script src="scripts/application/application.min.js"></script>
+        <div class="o-grid  o-grid--item">
 
 
 
-    </body>
+        </div>
+
+    </footer>
+
+
+</body>
 
 </html>

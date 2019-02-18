@@ -5,7 +5,7 @@
     - Version:      1.0
     - Author:       YOUR NAME
     - Site:         http://YOUR_SITE
-    - Copyright:    2018, YOUR COMPANY
+    - Copyright:    2019, YOUR COMPANY
     – License:      YOUR LICENSE
 
 \*----------------------------------------------------------------------------*/
@@ -18,7 +18,7 @@
     Globally-available functions.
 \*----------------------------------------------------------------------------*/
 
-@import 'functions/function';           // Example function.
+@import 'tools/functions/function';           // Example function.
 
 
 
@@ -28,7 +28,7 @@
     Globally-available mixins.
 \*----------------------------------------------------------------------------*/
 
-@import 'mixins/mixin';                 // Example Mixin.
+@import 'tools/mixins/mixin';                 // Example Mixin.
 
 
 
@@ -52,7 +52,6 @@
 
 @import 'elements/document';            // Page-level styles (HTML, body etc).
 @import 'elements/forms';               // Form inputs, textareas.
-@import 'elements/interactive';         // Interactive elements.
 @import 'elements/links';               // Hyperlinks.
 @import 'elements/lists';               // Lists.
 @import 'elements/media';               // Media elements, img, svg, video, etc.
@@ -69,6 +68,7 @@
 \*----------------------------------------------------------------------------*/
 
 @import 'objects/app';                  // Core UI Wrapper.
+@import 'objects/col';                  // Columns.
 
 
 
@@ -83,27 +83,27 @@
 @import 'components/core/main';         // Core main.
 @import 'components/core/foot';         // Core footer.
 
-@import 'components/menu';              // Menu.
+@import 'components/navi';              // navigation.
 
 
 
 /*----------------------------------------------------------------------------*\
-    #HELPERS
+    #COMPONENTS
 
-    Overrides, helpers, utilities. Only affect one item at a time.
+    Designed pieces of UI. Only using classes. More explicit naming.
 \*----------------------------------------------------------------------------*/
 
-@import 'helpers/spacing';              // Micro-level spacing.
+@import 'parties/prism';                 // Core header.
 
 
 
 /*----------------------------------------------------------------------------*\
-    #OVERRIDES
+    #UTILITIES
 
     Overrides, helpers, utilities. Only affect one item at a time.
 \*----------------------------------------------------------------------------*/
 
-@import 'overrides/validation';         // Form validation styles.
-@import 'overrides/visibility';         // Helpers to show and side stuff.
+@import 'utilities/spacing';              // Micro-level spacing.
+@import 'utilities/type';                 // Type helpers.
 
 

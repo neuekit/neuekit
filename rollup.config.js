@@ -1,33 +1,55 @@
-// Rollup plugins
 import babel from 'rollup-plugin-babel';
-import uglify from 'rollup-plugin-uglify';
-import { minify } from 'uglify-es';
+import commonjs from 'rollup-plugin-commonjs';
+import resolve from 'rollup-plugin-node-resolve';
+import { terser } from 'rollup-plugin-terser';
 
-export default {
-    input : './scripts/application/application.js',
-    output : {
-        file : './scripts/application/application.min.js',
-        format : 'iife',
-        name : 'PROJECT'
-    },
-    plugins : [
+export default () => {
+
+    const plugins = [
         babel({
-            exclude : [
-                './node_modules/**',
-                './scripts/parties/**'
+            exclude: [
+                'node_modules/**',
+                './scripts/parties/**',
+                './scripts/polyfills/**'
             ],
-            presets : [[
-                'env', {
-                    'modules' : false
+            include: [
+                'node_modules/neuekit/**'
+            ],
+            presets: [[
+                '@babel/env', {
+                    shippedProposals: true,
+                    useBuiltIns: 'usage'
                 }
-            ]],
-            plugins : [
-                'transform-object-rest-spread',
-                'external-helpers'
-            ]
+            ]]
         }),
-        uglify({
-            sourceMap : false
-        }, minify)
-    ]
+        commonjs(),
+        resolve(),
+        terser({ sourcemap: false })
+    ];
+
+    const polyfills = {
+        input: './scripts/polyfills/polyfills.js',
+        output: {
+            file: './scripts/polyfills/polyfills.min.js',
+            format: 'iife',
+            name: 'Polyfills'
+        },
+        context: 'window',
+        plugins: [
+            resolve(),
+            terser({ sourcemap: false })
+        ]
+    };
+
+    const application = {
+        input: './scripts/application/application.js',
+        output: {
+            file: './scripts/application/application.min.js',
+            format: 'iife',
+            name: 'Application'
+        },
+        plugins
+    };
+
+    return [polyfills, application];
 };

@@ -2,14 +2,9 @@
     #TYPE ELEMENT STYLES
 \*----------------------------------------------------------------------------*/
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    margin-top: rem(24);
-    margin-bottom: rem(24);
+html,
+body {
+    color: $body;
 }
 
 
