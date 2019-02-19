@@ -50,20 +50,15 @@
 
         #{chain('.u-justifyStart' + $break)} {
             justify-content: flex-start;
-            margin-left: 0;
-            margin-right: auto;
         }
 
         #{chain('.u-justifyCenter' + $break)} {
             justify-content: center;
-            margin-left: auto;
-            margin-right: auto;
         }
 
         #{chain('.u-justifyEnd' + $break)} {
             justify-content: flex-end;
             margin-left: auto;
-            margin-right: 0;
         }
 
         #{chain('.u-alignStart' + $break)} {

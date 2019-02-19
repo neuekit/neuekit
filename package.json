@@ -1,6 +1,6 @@
 {
   "name": "neuekit",
-  "version": "1.0.0-alpha.6",
+  "version": "1.0.0-alpha.7",
   "license": "MIT",
   "description": "Neue Kit is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with (we hope), and built for the future.",
   "main": "dist/neuekit.js",
@@ -34,7 +34,7 @@
     "onchange": "^5.2.0",
     "postcss-cli": "^6.1.0",
     "promise-polyfill": "^8.1.0",
-    "rollup": "^1.2.1",
+    "rollup": "^1.2.2",
     "rollup-plugin-babel": "^4.3.2",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^4.0.0",
