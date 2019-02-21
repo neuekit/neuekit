@@ -34,10 +34,10 @@ Still in progress...
 
 ## Supported Browsers
 
-![Browsers](https://raw.githubusercontent.com/neuekit/neuekit/gh-pages/images/browsers.svg?hello)
+![Browsers](https://neuekit.github.io/neuekit/images/browsers.svg)
 
 ## Supported Platforms
 
-![Browsers](https://raw.githubusercontent.com/neuekit/neuekit/gh-pages/images/platforms.svg?hello)
+![Browsers](https://neuekit.github.io/neuekit/images/platforms.svg)
 
 Copyright © 2019 Creative Little Dots, ltd.
