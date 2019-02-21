@@ -1,6 +1,6 @@
 {
   "name": "neuekit",
-  "version": "1.0.0-alpha.7",
+  "version": "1.0.0-alpha.8",
   "license": "MIT",
   "description": "Neue Kit is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with (we hope), and built for the future.",
   "main": "dist/neuekit.js",
@@ -25,7 +25,7 @@
     "@babel/polyfill": "^7.2.5",
     "@babel/preset-env": "^7.3.1",
     "@babel/runtime": "^7.3.1",
-    "autoprefixer": "^9.4.7",
+    "autoprefixer": "^9.4.8",
     "browser-sync": "^2.26.3",
     "custom-event-polyfill": "^1.0.6",
     "element-closest": "^3.0.1",

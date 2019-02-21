@@ -66,21 +66,24 @@
         margin: 0 auto;
     }
 
-    @include media($mediumBreakpoint) {
+    @if($gutter != $gutterSmall) {
 
-        padding: 0 rem( $gutter );
+        @include media($mediumBreakpoint) {
 
-        &__item { // .o-grid__item
             padding: 0 rem( $gutter );
-        }
 
-        &--item { // .o-grid--item
-            padding: 0 rem( $gutter * 2 );
-        }
+            &__item { // .o-grid__item
+                padding: 0 rem( $gutter );
+            }
 
-        & &, // .o-grid .o-grid
-        &--unnest { // .o-grid--unnest
-            margin: 0 #{ rem( -($gutter * 2) ) };
+            &--item { // .o-grid--item
+                padding: 0 rem( $gutter * 2 );
+            }
+
+            & &, // .o-grid .o-grid
+            &--unnest { // .o-grid--unnest
+                margin: 0 #{ rem( -($gutter * 2) ) };
+            }
         }
     }
 
