@@ -1,6 +1,6 @@
 # <a href="http://creativelittle.uk/neuekit" target="_blank">Neue Kit</a> - M1
 
-> THIS PROJECT IS IN ALPHA DUE TO THERE BEING NO ACCESSIBLE DOCUMENTATION;
+> THIS PROJECT IS IN ALPHA DUE TO THERE BEING MINIMAL ACCESSIBLE DOCUMENTATION;
 > Code works though 🙃
 
 
