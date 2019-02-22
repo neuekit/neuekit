@@ -24,7 +24,7 @@
             border-left: 1px solid $tabColour;
         }
 
-        &.active { // .c-tabs__link.active
+        &.is-active { // .c-tabs__link.is-active
             background-color: $tabColour;
         }
     }
@@ -33,7 +33,7 @@
         display: none;
         padding: rem(16);
 
-        &.active { // .c-tabs__content.active
+        &.is-active { // .c-tabs__content.is-active
             display: block;
         }
     }
