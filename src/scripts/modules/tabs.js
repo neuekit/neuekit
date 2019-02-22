@@ -62,11 +62,11 @@ export default function(options) {
         document.dispatchEvent(before);
 
         // Remove all active states from
-        [...Array.from($tabs), ...Array.from($contents)].map(($el) => $el.classList.remove('active'));
+        [...Array.from($tabs), ...Array.from($contents)].map(($el) => $el.classList.remove('is-active'));
 
         // Add classes
-        $this.classList.add('active');
-        $content.classList.add('active');
+        $this.classList.add('is-active');
+        $content.classList.add('is-active');
 
         //Update history states
         !push && history.pushState({}, '', `#${id}`);

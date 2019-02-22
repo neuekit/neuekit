@@ -59,7 +59,7 @@ export default function(options) {
 
     const _escape = function(event) {
 
-        const activeModals = SA('.c-modal.active');
+        const activeModals = SA('.c-modal.is-active');
 
         if( event.key == 'Escape' && activeModals.length ) {
 
@@ -105,7 +105,7 @@ export default function(options) {
         document.dispatchEvent(before);
 
         // Add classes
-        $modal.classList.add('active');
+        $modal.classList.add('is-active');
         document.body.classList.add('u-locked');
 
         //Update history states
@@ -138,19 +138,19 @@ export default function(options) {
         // Dispatch the before event
         document.dispatchEvent(before);
 
-        if ( SA('.c-modal.active').length === 1 ) {
+        if ( SA('.c-modal.is-active').length === 1 ) {
 
             document.body.classList.remove('u-locked');
         }
 
         if ( id ) {
 
-            ID(id).closest('.c-modal').classList.remove('active');
+            ID(id).closest('.c-modal').classList.remove('is-active');
         }
 
         else {
 
-            Array.from(SA('.c-modal')).map(($el) => $el.classList.remove('active'));
+            Array.from(SA('.c-modal')).map(($el) => $el.classList.remove('is-active'));
         }
 
         //history.pushState({}, '', location.origin + location.pathname);

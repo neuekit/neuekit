@@ -113,7 +113,7 @@
         }
     }
 
-    &.active { // .c-modal.active
+    &.is-active { // .c-modal.is-active
         opacity: 1;
         visibility: visible;
 
