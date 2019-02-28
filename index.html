@@ -364,6 +364,442 @@
 
                 <div class="u-h5  u-mB-16  u-mT-48">Utilities</div>
 
+                <p>The utility layer is home to many small css classes, that ordinarily take on a single simple task. This layer edges towards the end sharper point of the itcss triangle and as such it is not uncommon for classes to be doubled to ensure they are more specific than nest classes.</p>
+
+                <div>
+
+                    <div class="u-h5  u-mT-32" id="colours">Colours</div>
+
+                    <hr>
+
+                    <p>This utility creates simple potentially helpful classes that you can use to set the background colour or text colour of any element. These are created based on the colour variables set out in the settings layer.</p>
+
+                    <pre class="line-numbers">
+                        <code class="language-markup">
+                            &lt;figure class=&quot;u-bgNoir&quot;&gt;
+                                &lt;img src=&quot;michael.jpg&quot; alt=&quot;Michael Scott&quot;&gt;
+                                &lt;figcaption class=&quot;u-colourSnow&quot;&gt;You don't know how high I can fly&lt;/figcaption&gt;
+                                &lt;/figure&gt;
+                        </code>
+                    </pre>
+
+                    <p>As mentioned the utility relies on a scss map declared as <code class="language-sass">$palette</code> see the following example for how to declare said map.</p>
+
+                    <pre class="line-numbers">
+                        <code class="language-sass">
+                            $palette: (
+                                'primary':      $primary,
+                                'secondary':    $secondary,
+                                'tertiary':     $tertiary,
+                                'quaternary':   $quaternary
+                            );
+                        </code>
+                    </pre>
+
+                    <div class="u-h6  u-mT-32  u-mB-16" id="configuringcolours">Configuring the mixin</div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$palette</td>
+                                <td>Setting Var</td>
+                                <td>$palette</td>
+                                <td>Passes in the project colour palette map</td>
+                            </tr>
+                            <tr>
+                                <td>$lightnessTolerance</td>
+                                <td>Integer</td>
+                                <td>50</td>
+                                <td>Sets threshold for the level of darkness a background colour must have before setting the text to a light colour</td>
+                            </tr>
+                            <tr>
+                                <td>$lightnessColour</td>
+                                <td>String</td>
+                                <td>white</td>
+                                <td>Colour to apply to text on dark background colours</td>
+                            </tr>
+                            <tr>
+                                <td>$utilities</td>
+                                <td>Map</td>
+                                <td>(background, colour)</td>
+                                <td>Map defining which classes to create</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="u-h5  u-mT-32" id="flex">flex</div>
+
+                    <hr>
+
+                    <p>There are a fair few flex helpers to help you create a wide variety of layouts.</p>
+
+                    <div class="u-h6  u-mT-32  u-mB-16">Initialise flex:</div>
+
+                    <ul>
+                        <li><code class="language-css">u-flex</code> Adds <code class="language-css">display: flex</code> to any element</li>
+                        <li><code class="language-css">u-inflex</code> Adds <code class="language-css">display: inline-flex</code> to any element</li>
+                    </ul>
+
+                    <div class="u-h6  u-mT-32  u-mB-16">Parent flex utilities</div>
+
+                    <p>Available in breakpoint format eg. <code class="language-css">u-row@xs</code>, <code class="language-css">u-row@s</code>, <code class="language-css">u-row@m</code>, <code class="language-css">u-row@l</code>, <code class="language-css">u-row@xl</code></p>
+
+                    <ul>
+                        <li><code class="language-css">u-row</code> adds <code class="language-css">flex-direction: row</code></li>
+                        <li><code class="language-css">u-column</code> adds <code class="language-css">flex-direction: column</code></li>
+                        <li><code class="language-css">u-rowRevers</code> adds <code class="language-css">flex-direction: row-reverse</code></li>
+                        <li><code class="language-css">u-columnReverse</code> adds <code class="language-css">flex-direction: column-reverse</code></li>
+                        <li><code class="language-css">u-justifyStart</code> adds <code class="language-css">justify-content: flex-start</code></li>
+                        <li><code class="language-css">u-justifyCenter</code> adds <code class="language-css">justify-content: center</code></li>
+                        <li><code class="language-css">u-justifyEnd</code> adds <code class="language-css">justify-content: flex-end</code></li>
+                        <li><code class="language-css">u-alignStart</code> adds <code class="language-css">align-items: flex-start</code></li>
+                        <li><code class="language-css">u-alignCenter</code> adds <code class="language-css">align-items: center</code></li>
+                        <li><code class="language-css">u-alignEnd</code> adds <code class="language-css">align-items: flex-end</code></li>
+                        <li><code class="language-css">u-around</code> adds <code class="language-css">justify-content: space-around</code></li>
+                        <li><code class="language-css">u-between</code> adds <code class="language-css">justify-content: space-between</code></li>
+                        <li><code class="language-css">u-wrap</code> adds <code class="language-css">flex-wrap: wrap</code></li>
+                        <li><code class="language-css">u-nowrap</code> adds <code class="language-css">flex-wrap: nowrap</code></li>
+                    </ul>
+
+                    <div class="u-h6  u-mT-32  u-mB-16">Child flex utilities</div>
+
+                    <p>Available in breakpoint format eg. <code class="language-css">u-grow@xs</code>, <code class="language-css">u-grow@s</code>, <code class="language-css">u-grow@m</code>, <code class="language-css">u-grow@l</code>, <code class="language-css">u-grow@xl</code></p>
+
+                    <ul>
+                        <li><code class="language-css">u-grow</code> adds <code class="language-css">flex-grow: 1</code></li>
+                        <li><code class="language-css">u-noGrow</code> adds <code class="language-css">flex-grow: 0</code></li>
+                        <li><code class="language-css">u-shrink</code> adds <code class="language-css">flex-shrink: 1</code></li>
+                        <li><code class="language-css">u-noShrink</code> adds <code class="language-css">flex-shrink: 0</code></li>
+                        <li><code class="language-css">u-alignSelfStart</code> adds <code class="language-css">align-self: flex-start</code></li>
+                        <li><code class="language-css">u-alignSelfCenter</code> adds <code class="language-css">align-self: center</code></li>
+                        <li><code class="language-css">u-alignSelfEnd</code> adds <code class="language-css">align-self: flex-end</code></li>
+                        <li><code class="language-css">u-first</code> adds <code class="language-css">order: -1</code></li>
+                        <li><code class="language-css">u-last</code> adds <code class="language-css">order: 1</code></li>
+                    </ul>
+
+                    <div class="u-h6  u-mT-32  u-mB-16" id="configuringflex">Configuring the mixin</div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$responsive</td>
+                                <td>Map</td>
+                                <td>(up, only)</td>
+                                <td>Sets the responsive rules for class generation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="u-h5  u-mT-32" id="offsets">Offsets</div>
+
+                    <hr>
+
+                    <p>Offsets enable you to pull and push items around, especially useful when you need to create artistic layouts with the grid. Although these can be used anywhere.</p>
+
+                    <p>Available in breakpoint format eg. <code class="language-css">u-inset-1@xs</code>, <code class="language-css">u-inset-1@s</code>, <code class="language-css">u-inset-1@m</code>, <code class="language-css">u-inset-1@l</code>, <code class="language-css">u-inset-1@xl</code></p>
+
+                    <p>Classes end in a number, 1-12 by default, reflective of the number of columns configured</p>
+
+                    <ul>
+                        <li><code class="language-css">u-inset-1</code> applies a positive left margin as a percentage to any element</li>
+                        <li><code class="language-css">u-outsetLeft-1</code> applies a negative left margin as a percentage to any element</li>
+                        <li><code class="language-css">u-outsetRight-1</code> applies a negative right margin as a percentage to any element</li>
+                    </ul>
+
+                    <div class="u-h6  u-mT-32  u-mB-16" id="configuringoffsets">Configuring the mixin</div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$responsive</td>
+                                <td>Map</td>
+                                <td>(up, only)</td>
+                                <td>Sets the responsive rules for class generation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="u-h5  u-mT-32" id="sizes">Sizes</div>
+
+                    <hr>
+
+                    <p>A size class sets the flex basis property of a flex child. It can be used to set the width of any element also. Typically this is matched with the grid, but is not limited to the gird.</p>
+
+                    <p>Available in breakpoint format eg. <code class="language-css">u-size-1@xs</code>, <code class="language-css">u-size-1@s</code>, <code class="language-css">u-size-1@m</code>, <code class="language-css">u-size-1@l</code>, <code class="language-css">u-size-1@xl</code></p>
+
+                    <p>Classes end in a number, 1-12 by default, reflective of the number of columns configured</p>
+
+                    <ul>
+                        <li><code class="language-css">u-size-auto</code> applies flex grow to the element, filling the available space</li>
+                        <li><code class="language-css">u-size-1</code> applies flex basis as a percentage to any flex child element</li>
+                    </ul>
+
+                    <div class="u-h6  u-mT-32  u-mB-16" id="configuringsizes">Configuring the mixin</div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$responsive</td>
+                                <td>Map</td>
+                                <td>(up, only)</td>
+                                <td>Sets the responsive rules for class generation</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="u-h5  u-mT-32" id="spacing">Spacing</div>
+
+                    <hr>
+
+                    <p>The need for declarative margin and padding helpers comes around for more frequently than we would like to admit. Neue Kit has a mixin that can create the classes for you.</p>
+
+                    <div class="u-h6  u-mT-32  u-mB-16">Safe area</div>
+
+                    <p>To start there a few non-breakpoint classes for the safe padding area, often required for devices like the iPhone X as a way to deal with the notch.</p>
+
+                    <ul>
+                        <li><code class="language-css">u-safeArea-l</code> applies padding left using the <code class="language-css">safe-area-inset-left</code> value</li>
+                        <li><code class="language-css">u-safeArea-r</code> applies padding right using the <code class="language-css">safe-area-inset-right</code> value</li>
+                        <li><code class="language-css">u-safeArea-t</code> applies padding top using the <code class="language-css">safe-area-inset-top</code> value</li>
+                        <li><code class="language-css">u-safeArea-b</code> applies padding bottom using the <code class="language-css">safe-area-inset-bottom</code> value</li>
+                        <li><code class="language-css">u-safeArea-h</code> combines both <code class="language-css">u-safeArea-l</code> and <code class="language-css">u-safeArea-r</code></li>
+                        <li><code class="language-css">u-safeArea-v</code> combines both <code class="language-css">u-safeArea-t</code> and <code class="language-css">u-safeArea-b</code></li>
+                    </ul>
+
+                    <div class="u-h6  u-mT-32  u-mB-16">Margin</div>
+
+                    <p>Available in breakpoint format eg. <code class="language-css">u-mL-4@xs</code>, <code class="language-css">u-mL-4@s</code>, <code class="language-css">u-mL-4@m</code>, <code class="language-css">u-mL-4@l</code>, <code class="language-css">u-mL-4@xl</code></p>
+
+                    <ul>
+                        <li><code class="language-css">u-mL-a</code> applies margin left auto</li>
+                        <li><code class="language-css">u-mR-a</code> applies margin right auto</li>
+                        <li><code class="language-css">u-mT-a</code> applies margin top auto</li>
+                        <li><code class="language-css">u-mB-a</code> applies margin bottom auto</li>
+                        <li><code class="language-css">u-mH-a</code> combines both <code class="language-css">u-mL-a</code> and <code class="language-css">u-mR-a</code></li>
+                        <li><code class="language-css">u-mV-a</code> combines both <code class="language-css">u-mT-a</code> and <code class="language-css">u-mB-a</code></li>
+                        <li><code class="language-css">u-mL-4</code> applies margin left at the specified size using the rem unit</li>
+                        <li><code class="language-css">u-mR-4</code> applies margin right at the specified size using the rem unit</li>
+                        <li><code class="language-css">u-mT-4</code> applies margin top at the specified size using the rem unit</li>
+                        <li><code class="language-css">u-mB-4</code> applies margin bottom at the specified size using the rem unit</li>
+                        <li><code class="language-css">u-mH-4</code> combines both <code class="language-css">u-mL-4</code> and <code class="language-css">u-mR-4</code></li>
+                        <li><code class="language-css">u-mV-4</code> combines both <code class="language-css">u-mT-4</code> and <code class="language-css">u-mB-4</code></li>
+                    </ul>
+
+                    <div class="u-h6  u-mT-32  u-mB-16">Padding</div>
+
+                    <p>Available in breakpoint format eg. <code class="language-css">u-pL-4@xs</code>, <code class="language-css">u-pL-4@s</code>, <code class="language-css">u-pL-4@m</code>, <code class="language-css">u-pL-4@l</code>, <code class="language-css">u-pL-4@xl</code></p>
+
+                    <ul>
+                        <li><code class="language-css">u-pL-4</code> applies padding left at the specified size using the rem unit</li>
+                        <li><code class="language-css">u-pR-4</code> applies padding right at the specified size using the rem unit</li>
+                        <li><code class="language-css">u-pT-4</code> applies padding top at the specified size using the rem unit</li>
+                        <li><code class="language-css">u-pB-4</code> applies padding bottom at the specified size using the rem unit</li>
+                        <li><code class="language-css">u-pH-4</code> combines both <code class="language-css">u-pL-4</code> and <code class="language-css">u-pR-4</code></li>
+                        <li><code class="language-css">u-pV-4</code> combines both <code class="language-css">u-pT-4</code> and <code class="language-css">u-pB-4</code></li>
+                    </ul>
+
+                    <div class="u-h6  u-mT-32  u-mB-16" id="configuringspacing">Configuring the mixin</div>
+
+                    <table class="table">
+                        <thead>
+        					<tr>
+        						<th>Parameter</th>
+        						<th>Type</th>
+        						<th>Default</th>
+        						<th>Description</th>
+        					</tr>
+        				</thead>
+        				<tbody>
+        					<tr>
+        						<td>$attrs</td>
+        						<td>Map</td>
+        						<td>(padding, margin)</td>
+        						<td>Declares spacing types to create</td>
+        					</tr>
+        					<tr>
+        						<td>$dash</td>
+        						<td>String</td>
+        						<td>'-'</td>
+        						<td>Set the character between the classname and the unit</td>
+        					</tr>
+        					<tr>
+        						<td>$rem</td>
+        						<td>Boolean</td>
+        						<td>true</td>
+        						<td>Toggle for pixels or rem values</td>
+        					</tr>
+        					<tr>
+        						<td>$responsive</td>
+        						<td>Map</td>
+        						<td>(up, only)</td>
+        						<td>Sets the responsive rules for class generation</td>
+        					</tr>
+        					<tr>
+        						<td>$steps</td>
+        						<td>Map</td>
+        						<td>(0, 4, 8, 12, 16, 20, 24, 32, 40, 48)</td>
+        						<td>List of spacing sizes to create</td>
+        					</tr>
+        					<tr>
+        						<td>$directions</td>
+        						<td>Map</td>
+        						<td>(top, bottom, left, right, vertical, horizontal)</td>
+        						<td>List of directions to create</td>
+        					</tr>
+        				</tbody>
+                    </table>
+
+                    <div class="u-h5  u-mT-32" id="text">Text</div>
+
+                    <hr>
+
+                    <p>There are many available text utility classes ready for use in the kit. By default the mixin includes them all but you can cherry pick the ones you actually using. 😁</p>
+
+                    <p>First the non-breakpoint classes</p>
+
+                    <ul>
+                        <li><code class="language-css">u-textBolder</code> applies <code class="language-css">font-weight: bolder</code></li>
+                        <li><code class="language-css">u-textLighter</code> applies <code class="language-css">font-weight: lighter</code></li>
+                        <li><code class="language-css">u-textStrong</code> applies <code class="language-css">font-weight: 600</code></li>
+                        <li><code class="language-css">u-textSuccess</code> applies <code class="language-css">color: $success</code></li>
+                        <li><code class="language-css">u-textWarn</code> applies <code class="language-css">color: $warn</code></li>
+                        <li><code class="language-css">u-textError</code> applies <code class="language-css">color: $error</code></li>
+                        <li><code class="language-css">u-textDisabled</code> applies <code class="language-css">color: $disabled</code></li>
+                        <li><code class="language-css">u-textLower</code> applies <code class="language-css">text-transform: lowercase</code></li>
+                        <li><code class="language-css">u-textUpper</code> applies <code class="language-css">text-transform: uppercase</code></li>
+                        <li><code class="language-css">u-textCaps</code> applies <code class="language-css">text-transform: capitalize</code></li>
+                    </ul>
+
+                    <p>Available in breakpoint format eg. <code class="language-css">u-pL-4@xs</code>, <code class="language-css">u-pL-4@s</code>, <code class="language-css">u-pL-4@m</code>, <code class="language-css">u-pL-4@l</code>, <code class="language-css">u-pL-4@xl</code></p>
+
+                    <ul>
+                        <li><code class="language-css">u-textStart</code> applies <code class="language-css">text-align: start</code> with a fallback to <code class="language-css">text-align: left</code></li>
+                        <li><code class="language-css">u-textCenter</code> applies <code class="language-css">text-align: center</code></li>
+                        <li><code class="language-css">u-textEnd</code> applies <code class="language-css">text-align: end</code> with a fallback to <code class="language-css">text-align: right</code></li>
+                        <li><code class="language-css">u-textJustify</code> applies <code class="language-css">text-align: justify</code></li>
+                        <li><code class="language-css">u-textGrow</code> applies <code class="language-css">font-size: 125%</code></li>
+                        <li><code class="language-css">u-texthrink</code> applies <code class="language-css">font-size: 75%</code></li>
+                        <li><code class="language-css">u-textNowrap</code> applies <code class="language-css">white-space: nowrap</code></li>
+                        <li><code class="language-css">u-h1</code> enables the h1 element styling to be applied to any element</li>
+                        <li><code class="language-css">u-h2</code> enables the h2 element styling to be applied to any element</li>
+                        <li><code class="language-css">u-h3</code> enables the h3 element styling to be applied to any element</li>
+                        <li><code class="language-css">u-h4</code> enables the h4 element styling to be applied to any element</li>
+                        <li><code class="language-css">u-h5</code> enables the h5 element styling to be applied to any element</li>
+                        <li><code class="language-css">u-h6</code> enables the h6 element styling to be applied to any element</li>
+                        <li><code class="language-css">u-s1</code> applies a size between h1 and h2</li>
+                        <li><code class="language-css">u-s2</code> applies a size between h2 and h3</li>
+                        <li><code class="language-css">u-s3</code> applies a size between h3 and h4</li>
+                        <li><code class="language-css">u-s4</code> applies a size between h4 and h5</li>
+                        <li><code class="language-css">u-s5</code> applies a size between h5 and h6</li>
+                        <li><code class="language-css">u-s6</code> applies a size below h6</li>
+                    </ul>
+
+                    <div class="u-h6  u-mT-32  u-mB-16" id="configuringtext">Configuring the mixin</div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$responsive</td>
+                                <td>Map</td>
+                                <td>(up, only)</td>
+                                <td>Sets the responsive rules for class generation</td>
+                            </tr>
+                            <tr>
+                                <td>$utilities</td>
+                                <td>Map</td>
+                                <td>( text-start, text-center, text-end, text-grow, text-shrink, text-bolder, text-lighter, text-strong, text-justify, text-success, text-warn, text-error, text-disabled, text-lower, text-upper, text-caps, text-nowrap )</td>
+                                <td>Declares the types of classes to create</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <div class="u-h5  u-mT-32" id="visibility">Visibility</div>
+
+                    <hr>
+
+                    <p>Quick access to classes enabling you to hide, show, lock and position all or parts of elements can be found here. By default you get all of these when including the mixin but again you can cherry pick the ones you are actually using.</p>
+
+                    <p>Available in breakpoint format eg. <code class="language-css">u-hide@xs</code>, <code class="language-css">u-hide@s</code>, <code class="language-css">u-hide@m</code>, <code class="language-css">u-hide@l</code>, <code class="language-css">u-hide@xl</code></p>
+
+                    <ul>
+                        <li><code class="language-css">u-hide</code> applies <code class="language-css">display: none</code></li>
+                        <li><code class="language-css">u-block</code> applies <code class="language-css">display: block</code></li>
+                        <li><code class="language-css">u-inblock</code> applies <code class="language-css">display: inline-block</code></li>
+                        <li><code class="language-css">u-locked</code> applies <code class="language-css">overflow: hidden</code></li>
+                        <li><code class="language-css">u-sticky</code> applies <code class="language-css">position: sticky</code> along required properties for the polyfill</li>
+                        <li><code class="language-css">u-radius</code> applies <code class="language-css">border-radius: $radius</code></li>
+                        <li><code class="language-css">u-pointerNone</code> applies <code class="language-css">pointer-events: none</code></li>
+                    </ul>
+
+                    <div class="u-h6  u-mT-32  u-mB-16" id="configuringflex">Configuring the mixin</div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$responsive</td>
+                                <td>Map</td>
+                                <td>(up, only)</td>
+                                <td>Sets the responsive rules for class generation</td>
+                            </tr>
+                            <tr>
+                                <td>$utilities</td>
+                                <td>Map</td>
+                                <td>( hide, block, inblock, locked, radius, sticky, pointer )</td>
+                                <td>Declares the types of classes to create</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+
             </section>
 
         </div>
