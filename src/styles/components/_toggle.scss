@@ -116,6 +116,17 @@
 }
 
 
+
+/// @group Components
+/// @param {String} $colourOn [dodgerblue] - Sets on background color
+/// @param {String} $colourOff [lightgrey] - Sets off background color
+/// @param {String} $handleColour [white] - Sets handle color
+/// @param {String} $trans [$trans] - Sets transition properties eg. 0.2 ease
+/// @param {Map} $toggles [(default: (gap: 0.1875rem, size: rem(20)))] - Declares toggle sizes
+/// @require {function} map-deep-get
+/// @require {function} rem
+/// @require {mixin} area
+
 @mixin nu-component__toggle(
     $colourOn:      dodgerblue,
     $colourOff:     lightgrey,

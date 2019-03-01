@@ -2,12 +2,23 @@
     #SPACING UTILITIES
 \*----------------------------------------------------------------------------*/
 
+/// @group Utilities
+/// @param {List} $attrs [( padding, margin )] - Classes to create
+/// @param {List} $dash ['-'] - Value separater
+/// @param {List} $rem [false] - Use rem instead of pixels
+/// @param {List} $responsive [(up)] - Breakpoint rules
+/// @param {List} $steps [(0, 4, 8, 12, 16, 20, 24, 32, 40, 48)] - Spacing sizes
+/// @param {List} $directions [(top, bottom, left, right, vertical, horizontal)] - Directions
+/// @require {function} chain
+/// @require {function} str-replace
+/// @require {mixin} breakpoints
+
 @mixin nu-utility__spacing(
     $attrs: ( padding, margin ),    // Values: margin, padding
     $dash: '-',
     $rem: false,
     $responsive: false,             // Values: false, (up, only, down)
-    $steps: (                       // Array of integers (pixel values)
+    $steps: (                       // Array of integers (pixel/rem values)
         0, 4, 8, 12, 16, 20, 24, 32, 40, 48
     ),
     $directions: (                  // Values: top, bottom, left, right, vertical, horizontal

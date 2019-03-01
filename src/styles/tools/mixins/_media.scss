@@ -2,6 +2,11 @@
     #MEDIA QUERY MIXIN
 \*----------------------------------------------------------------------------*/
 
+/// @group Tools
+/// @param {Length} $minbreak [null] - Lower end of the media query
+/// @param {Length} $maxbreak [null] - Higher end of the media query
+/// @param {Length} $type [null] - Type of media query
+
 @mixin media( $minbreak: null, $maxbreak: null, $type: null ) {
 
     $media: '';

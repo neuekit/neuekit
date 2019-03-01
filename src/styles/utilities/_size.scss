@@ -2,6 +2,10 @@
     #SIZE UTILITIES
 \*----------------------------------------------------------------------------*/
 
+/// @group Utilities
+/// @param {List} $responsive [(up)] - Breakpoint rules
+/// @require {mixin} breakpoints
+
 @mixin nu-utility__size(
     $responsive: (up)
 ) {

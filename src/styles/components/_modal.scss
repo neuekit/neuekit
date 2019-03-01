@@ -126,6 +126,16 @@
     }
 }
 
+
+
+/// @group Components
+/// @param {String} $primary [$primary] - Sets backdrop color
+/// @param {String} $tertiary [$tertiary] - Sets close button hover color
+/// @param {String} $quaternary [$quaternary] - Sets close button color
+/// @param {Length} $radius [$radius] - Sets corner radius
+/// @param {String} $trans [$trans] - Sets transition properties eg. 0.2 ease
+/// @param {Length} $maxWidth [$maxWidth] - Sets modal max width
+
 @mixin nu-component__modal(
     $primary:       $primary,
     $tertiary:      $tertiary,

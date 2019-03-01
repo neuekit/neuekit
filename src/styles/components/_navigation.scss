@@ -58,6 +58,13 @@
 }
 
 
+
+/// @group Components
+/// @param {String} $closeBg [rgba(black, 0.25)] - Sets close button color
+/// @param {String} $navSubBg [lavendar] - Sets subnav background color
+/// @param {String} $navLinkHoverBg [whitesmoke] - Sets text hover color
+/// @param {String} $trans [$trans] - Sets transition properties eg. 0.2 ease
+
 @mixin nu-component__navigation(
     $closeBg:           rgba(black, 0.25),
     $navSubBg:          lavendar,

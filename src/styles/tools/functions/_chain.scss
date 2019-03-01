@@ -2,6 +2,11 @@
     #CHAIN SELECTORS TO INCREASE SPECIFICITY
 \*----------------------------------------------------------------------------*/
 
+/// @group Tools
+/// @param {String} $class - Classname to chain
+/// @param {Number} $specificity [2] - How many times to chain the class
+/// @return {String}
+
 @function chain($class, $specificity: 2) {
 
     $chain: '';

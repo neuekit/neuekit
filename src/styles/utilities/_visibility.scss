@@ -2,6 +2,21 @@
     #VISIBILITY UTILITIES
 \*----------------------------------------------------------------------------*/
 
+/// @group Utilities
+/// @param {List} $responsive [(up)] - Breakpoint rules
+/// @param {List} $utilities [(
+///    hide,
+///    block,
+///    inblock,
+///    locked,
+///    radius,
+///    sticky,
+///    pointer
+/// )] - Spacing sizes
+/// @require {function} chain
+/// @require {function} str-replace
+/// @require {mixin} breakpoints
+
 @mixin nu-utility__visibility(
     $responsive: (up, only, down),
     $utilities: (

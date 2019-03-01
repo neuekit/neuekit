@@ -40,6 +40,11 @@
 }
 
 
+
+/// @group Components
+/// @param {String} $tabColour [$secondary] - Sets accent color
+/// @require {function} rem
+
 @mixin nu-component__tabs(
     $tabColour: $secondary
 ) {

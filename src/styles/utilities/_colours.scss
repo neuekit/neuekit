@@ -2,6 +2,14 @@
     #COLOUR UTILITIES
 \*----------------------------------------------------------------------------*/
 
+/// @group Utilities
+/// @param {Map} $palette [$palette] - Colour palette map
+/// @param {Number} $lightnessTolerance [50] - Threshold for white text to be applied to darker backgrounds
+/// @param {String} $lightnessColour [white] - Light text colour for dark backgrounds
+/// @param {List} $utilities [(background, colour)] - Map declaring which classes to create
+/// @require {function} str-capitalise
+/// @require {function} chain
+
 @mixin nu-utility__colour(
     $palette: $palette,
     $lightnessTolerance: 50, // The lightness component, between 0% and 100%, or false/null
@@ -29,7 +37,7 @@
         }
 
         @if index($utilities, colour) {
-        
+
             #{chain(".u-colour" + $name)} { // .u-colourRed
                 color: $colour;
             }

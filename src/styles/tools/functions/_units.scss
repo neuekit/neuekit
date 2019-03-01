@@ -2,6 +2,10 @@
     #PIXELS TO REM FUNCTION
 \*----------------------------------------------------------------------------*/
 
+/// @group Tools
+/// @param {Length | Number} $pixels - Value to convert to rem
+/// @param {String} $context [$rootFontSize] - Root font size to base rem on
+
 @function rem( $pixels, $context: $rootFontSize ) {
 
     @if ( unit($pixels) == '%' or $pixels == 0 ) {
@@ -24,6 +28,12 @@
         @return $pixels / $context * 1rem;
     }
 }
+
+
+
+/// @group Tools
+/// @param {Length | Number} $pixels - Value to convert to em
+/// @param {String} $context [16px] - Root font size to base em on
 
 @function em( $pixels, $context: 16px ) {
 

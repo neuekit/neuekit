@@ -229,6 +229,74 @@
 }
 
 
+
+/// @group Components
+/// @param {Boolean} $btnReset [false] - Reset default button styles
+/// @param {Number} $btnRadius [$radius] - Border radius of radius button modifier
+/// @param {Map} $styles [(
+///     default: (
+///         color: white,
+///         colorDisabled: grey,
+///         bgColor: $primary,
+///         bgColorHover: darken($primary, 20),
+///         bgColorDisabled: $secondary,
+///         padding: rem(10) rem(16)
+///     ),
+///     secondary: (
+///         color: $primary,
+///         colorDisabled: grey,
+///         bgColor: $secondary,
+///         bgColorHover: darken($secondary, 20),
+///         bgColorDisabled: $primary
+///     ),
+///     light: (
+///         color: $primary,
+///         colorHover: white,
+///         bgColor: white,
+///         bgColorHover: $primary
+///     ),
+///     line: (
+///         color: $primary,
+///         lightColor: white
+///     ),
+///     text: (
+///         color: $primary,
+///         lightColor: white
+///     ),
+///     round: ()
+/// )] - Declares button styles
+/// @param {Map} $sizes [(
+///     tiny: (
+///         fontSize: rem(12),
+///         padding: rem(8) rem(10)
+///     ),
+///     small: (
+///         fontSize: rem(14),
+///         padding: rem(8) rem(10)
+///     ),
+///     medium: (
+///         padding: rem(10) rem(14)
+///     ),
+///     large: (
+///         padding: rem(16) rem(18)
+///     ),
+///     xlarge: (
+///         fontSize: rem(18),
+///         padding: rem(20) rem(22)
+///     ),
+///     xxlarge: (
+///         fontSize: rem(20),
+///         padding: rem(24) rem(26)
+///     ),
+///     xxxlarge: (
+///         fontSize: rem(24),
+///         padding: rem(32) rem(34)
+///     )
+/// )] - Declares button sizes
+/// @param {Length} $trans [$trans] - Sets transition properties eg. 0.2 ease
+/// @require {function} rem
+/// @require {mixin} area
+
 @mixin nu-component__button(
     $btnReset: false,
     $btnRadius: $radius,

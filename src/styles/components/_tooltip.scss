@@ -104,6 +104,19 @@
 }
 
 
+
+/// @group Components
+/// @param {Length} $tipSize [rem(4)] - Sets on background color
+/// @param {String} $trans [$trans] - Sets transition properties eg. 0.2 ease
+/// @param {String} $primary [$primary] - Sets background color
+/// @param {String} $colour [white] - Sets text color
+/// @param {Length} $fontSize [rem(16)] - Font size
+/// @param {Length} $fontWeight [500] - Font weight
+/// @param {Number} $letterSpacing [0.25] - Letter spacing
+/// @param {Length} $padding [rem(2) rem(8)] - Padding values
+/// @require {function} rem
+/// @require {mixin} area
+
 @mixin nu-component__tooltip(
     $tipSize:       rem(4),
     $trans:         $trans,

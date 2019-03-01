@@ -73,6 +73,14 @@
 }
 
 
+
+/// @group Components
+/// @param {Length} $size [rem(320)] - Sets canvas width
+/// @param {String} $trans [$trans] - Sets transition properties eg. 0.2 ease
+/// @param {String} $secondary [$secondary] - Sets background color
+/// @param {String} $canvasClass ['c-canvas'] - Declares canvas class
+/// @require {function} rem
+
 @mixin nu-component__offCanvas(
     $size:          rem(320),
     $trans:         $trans,

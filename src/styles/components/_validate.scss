@@ -54,6 +54,14 @@
 }
 
 
+
+/// @group Components
+/// @param {Length} $success [$success] - Sets success color
+/// @param {String} $error [$error] - Sets error color
+/// @param {String} $trans [$trans] - Sets transition properties eg. 0.2 ease
+/// @param {String} $fontWeight [500] - Sets font weight
+/// @require {function} rem
+
 @mixin nu-component__validate(
     $success:       $success,
     $error:         $error,

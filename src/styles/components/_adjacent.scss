@@ -47,6 +47,13 @@
 }
 
 
+
+/// @group Components
+/// @param {Length} $radius [$radius] - Sets corner radius
+/// @param {String} $background [$tertiary] - Sets end background color
+/// @param {String} $colour [white] - Sets end text color
+/// @require {function} rem
+
 @mixin nu-component__adjacent(
     $radius:        $radius,
     $background:    $tertiary,

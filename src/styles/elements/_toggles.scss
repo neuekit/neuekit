@@ -2,6 +2,10 @@
     #TOGGLE ELEMENTS
 \*----------------------------------------------------------------------------*/
 
+/// @group Elements
+/// @require {function} rem
+/// @require {function} svg-encode
+
 @mixin nu-element__toggles() {
 
     [type="checkbox"],
