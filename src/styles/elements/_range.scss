@@ -2,6 +2,9 @@
     #RANGE INPUT ELEMENT
 \*----------------------------------------------------------------------------*/
 
+/// @group Elements
+/// @require {function} rem
+
 @mixin _nu-element__form-track() {
     animate: 0.2s;
     background: $input;

@@ -103,6 +103,14 @@
 
 
 
+/// @group Objects
+/// @param {Length} $maxWidth [$maxWidth] - Max width of grid container
+/// @param {Length} $gutter [$gutter] - Space between columns
+/// @param {Length} $gutterSmall [$gutterSmall] - Mobile space between columns
+/// @param {Length} $mediumBreakpoint [$mediumBreakpoint] - Which breakpoint to switch gutter
+/// @require {function} rem
+/// @require {mixin} breakpoints
+
 @mixin nu-object__grid(
     $maxWidth:          $maxWidth,
     $gutter:            $gutter,

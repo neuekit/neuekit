@@ -2,6 +2,32 @@
     #TEXT UTILITIES
 \*----------------------------------------------------------------------------*/
 
+/// @group Utilities
+/// @param {List} $responsive [(up)] - Breakpoint rules
+/// @param {List} $steps [(
+///    text-start,
+///    text-center,
+///    text-end,
+///    text-grow,
+///    text-shrink,
+///    text-bolder,
+///    text-lighter,
+///    text-strong,
+///    text-justify,
+///    text-success,
+///    text-warn,
+///    text-error,
+///    text-disabled,
+///    text-lower,
+///    text-upper,
+///    text-caps,
+///    text-nowrap
+/// )] - Spacing sizes
+/// @require {function} chain
+/// @require {function} rem
+/// @require {mixin} breakpoints
+/// @require {mixin} headings
+
 @mixin nu-utility__text(
     $responsive: false,
     $utilities: (
@@ -104,45 +130,45 @@
                 text-align: start;
             }
         }
-    
+
         @if index($utilities, text-center) {
-    
+
             #{chain('.u-textCenter' + $break)} {
                 text-align: center;
             }
         }
-    
+
         @if index($utilities, text-end) {
-    
+
             #{chain('.u-textEnd' + $break)} {
                 text-align: right;
                 text-align: end;
             }
         }
-    
+
         @if index($utilities, text-justify) {
-    
+
             #{chain('.u-textJustify' + $break)} {
                 text-align: justify;
             }
         }
-    
+
         @if index($utilities, text-grow) {
-    
+
             #{chain('.u-textGrow' + $break)} {
                 font-size: 125%;
             }
         }
-    
+
         @if index($utilities, text-shrink) {
-    
+
             #{chain('.u-textShrink' + $break)} {
                 font-size: 75%;
             }
         }
-    
+
         @if index($utilities, text-nowrap) {
-    
+
             #{chain('.u-textNowrap' + $break)} {
                 white-space: nowrap;
             }

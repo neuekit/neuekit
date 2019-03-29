@@ -2,6 +2,10 @@
     #BREAKPOINTS LOOP MIXIN
 \*----------------------------------------------------------------------------*/
 
+/// @group Tools
+/// @param {List} $choice [(up)] - Height value
+/// @require {function} em
+
 @mixin breakpoints( $choice: (up) ) {
 
     @if ( $choice != false ) {

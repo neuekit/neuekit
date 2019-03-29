@@ -2,6 +2,11 @@
     #TYPE ELEMENT STYLES
 \*----------------------------------------------------------------------------*/
 
+/// @group Elements
+/// @require {function} rem
+/// @require {mixin} headings
+/// @require {mixin} breakpoints
+
 @mixin nu-element__type() {
 
     /*----------------------------------------------------------------------------*\

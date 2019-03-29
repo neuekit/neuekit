@@ -2,6 +2,11 @@
     #HEADING SIZES MIXIN
 \*----------------------------------------------------------------------------*/
 
+/// @group Tools
+/// @param {Length} $jump - Difference between heading sizes
+/// @param {Boolean} $element [false] - Whether to output h1 instead of .u-h1
+/// @require {function} rem
+
 @mixin headings($jump, $element: false) {
 
     @if ( $element ) {

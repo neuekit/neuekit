@@ -2,6 +2,10 @@
     #OFFSET UTILITIES
 \*----------------------------------------------------------------------------*/
 
+/// @group Utilities
+/// @param {List} $responsive [(up, only)] - Breakpoint rules
+/// @require {mixin} breakpoints
+
 @mixin nu-utility__offset(
     $responsive: (up, only)
 ) {

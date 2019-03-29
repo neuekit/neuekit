@@ -2,6 +2,11 @@
     #FLEX UTILITIES
 \*----------------------------------------------------------------------------*/
 
+/// @group Utilities
+/// @param {List} $responsive [(up, only)] - Breakpoint rules
+/// @require {function} chain
+/// @require {mixin} breakpoints
+
 @mixin nu-utility__flex(
     $responsive: (up, only)
 ) {

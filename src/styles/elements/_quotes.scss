@@ -2,6 +2,9 @@
     #BLOCKQUOTE AND CITE ELEMENT STYLES
 \*----------------------------------------------------------------------------*/
 
+/// @group Elements
+/// @require {function} rem
+
 @mixin nu-element__quote() {
 
     blockquote {

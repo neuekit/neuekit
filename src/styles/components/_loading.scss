@@ -13,7 +13,7 @@
         from {
             transform: translate(-50%, -50%) rotate(0deg);
         }
-    
+
         to {
             transform: translate(-50%, -50%) rotate(360deg);
         }
@@ -76,6 +76,12 @@
     }
 }
 
+
+
+/// @group Components
+/// @param {String} $animation [nu-keyframe__loading 0.6s infinite linear] - Sets animation value
+/// @param {String} $primary [$primary] - Sets foreground color
+/// @param {String} $secondary [white] - Sets background color
 
 @mixin nu-component__loading(
     $animation:     nu-keyframe__loading 0.6s infinite linear,

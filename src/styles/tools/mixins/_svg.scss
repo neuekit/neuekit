@@ -2,11 +2,14 @@
     #SVG FILL FIX MIXIN
 \*----------------------------------------------------------------------------*/
 
+/// @group Tools
+/// @param {String} $colour - Color code for fill
+
 @mixin fill($colour) {
     &,
     use > svg {
         fill: $colour;
-    }  
+    }
 }
 
 

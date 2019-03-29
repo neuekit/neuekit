@@ -2,6 +2,9 @@
     #METER ELEMENT
 \*----------------------------------------------------------------------------*/
 
+/// @group Elements
+/// @require {function} rem
+
 @mixin nu-element__meter() {
 
     meter {

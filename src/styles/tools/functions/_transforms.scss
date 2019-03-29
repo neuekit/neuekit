@@ -1,11 +1,12 @@
 /*----------------------------------------------------------------------------*\
     #STRING REPLACE
-
-    @param {String} $string - Initial string
-    @param {String} $search - Substring to replace
-    @param {String} $replace ('') - New value
-    @return {String} - Updated string
 \*----------------------------------------------------------------------------*/
+
+/// @group Tools
+/// @param {String} $string - Initial string
+/// @param {String} $search - Substring to replace
+/// @param {String} $replace ('') - New value
+/// @return {String} - Updated string
 
 @function str-replace($string, $search, $replace: '') {
 
@@ -22,10 +23,11 @@
 
 /*----------------------------------------------------------------------------*\
     #STRING CAPITALISE
-
-    @param {String} $string - Initial string
-    @return {String} $string - Updated string
 \*----------------------------------------------------------------------------*/
+
+/// @group Tools
+/// @param {String} $string - Initial string
+/// @return {String} $string - Updated string
 
 @function str-capitalise($string) {
 
@@ -36,10 +38,11 @@
 
 /*----------------------------------------------------------------------------*\
     #UNCAPITALISE STRING
-
-    @param {String} $string - Initial string
-    @return {String} $string - Updated string
 \*----------------------------------------------------------------------------*/
+
+/// @group Tools
+/// @param {String} $string - Initial string
+/// @return {String} $string - Updated string
 
 @function str-uncapitalise($string) {
 
@@ -92,7 +95,7 @@
     $progress: $string;
     $result: "";
     $exclude: " ", "-", "–", "—", "_", ",", ";", ":", ".";
-    
+
     @while str-length($progress) > 0 {
 
         $char: str-slice($progress, 1, 1);
@@ -100,13 +103,13 @@
         @if contain($exclude, $char) {
             $progress: str-capitalise(str-slice($progress, 2, 2)) + str-slice($progress, 3);
         }
-        
+
         @else {
             $result: $result + $char;
             $progress: str-slice($progress, 2);
         }
     }
-    
+
     @return $result;
 }
 

@@ -2,6 +2,8 @@
     #SENTANCE CASE
 \*----------------------------------------------------------------------------*/
 
+/// @group Tools
+
 @mixin sentence-case() {
 
     text-transform: lowercase;
