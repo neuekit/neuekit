@@ -35,12 +35,14 @@
     &__input { // .c-validate__input
         margin-bottom: rem(4);
 
-        &:focus:valid { // .c-validate__input:valid
+        &:focus:valid, // .c-validate__input:valid
+        &:focus.is-valid { // .c-validate__input.is-valid
             background-color: rgba($success, 0.1);
             box-shadow: inset 0 0 0 2px $success;
         }
 
-        &:invalid:not(:placeholder-shown) { // .c-validate__input:invalid:not(:placeholder-shown)
+        &:invalid:not(:placeholder-shown), // .c-validate__input:invalid:not(:placeholder-shown)
+        &.is-invalid:not(:placeholder-shown) { // .c-validate__input.is-invalid:not(:placeholder-shown)
             background-color: rgba($error, 0.1);
             box-shadow: inset 0 0 0 2px $error;
 

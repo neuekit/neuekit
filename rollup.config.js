@@ -14,13 +14,15 @@ export default [
         plugins: [
             babel({
                 exclude: [
+                    /\/core-js\//,
                     'node_modules/**',
                     'testing/**'
                 ],
                 presets: [[
                     '@babel/env', {
                         shippedProposals: true,
-                        useBuiltIns: 'usage'
+                        useBuiltIns: 'usage',
+                        corejs: "2"
                     }
                 ]]
             }),
