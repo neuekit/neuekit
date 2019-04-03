@@ -8,6 +8,7 @@ export default () => {
     const plugins = [
         babel({
             exclude: [
+                /\/core-js\//,
                 'node_modules/**',
                 './scripts/parties/**',
                 './scripts/polyfills/**'
@@ -17,8 +18,11 @@ export default () => {
             ],
             presets: [[
                 '@babel/env', {
-                    shippedProposals: true,
-                    useBuiltIns: 'usage'
+                    useBuiltIns: 'usage',
+                    corejs: {
+                        version: 3,
+                        proposals: true
+                    }
                 }
             ]]
         }),

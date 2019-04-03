@@ -9,7 +9,7 @@
 \*----------------------------------------------------------------------------*/
 
 /* Imports */
-import 'core-js/fn/symbol'; // TEMP FIX awaiting https://github.com/babel/babel/pull/8947
+//import 'core-js/fn/symbol'; // TEMP FIX awaiting https://github.com/babel/babel/pull/8947
 
 import Core     from './modules/core';
 //import Fetcher  from './modules/fetcher';
