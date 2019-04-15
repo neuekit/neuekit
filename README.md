@@ -10,7 +10,7 @@ The kit includes a flex based fluid grid, common comprehendible Javascript plugi
 
 ## Quick Start
 
-To get started with SprinBoard you can either `npm install` this package into your project or head over to the starter repo to get going with a barebones web project that includes this repo via npm.
+To get started with Neue Kit you can either `npm install` this package into your project or head over to the starter repo to get going with a barebones web project that includes this repo via npm.
 
 ## Requirements
 
