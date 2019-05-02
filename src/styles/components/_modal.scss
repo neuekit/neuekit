@@ -4,7 +4,7 @@
 
 @mixin _nu-component__modal(
     $backdropColour:            $nu-colourPrimary,
-    $barColour:                 $nu-$barColour,
+    $barColour:                 $nu-barColour,
     $closeButtonColour--hover:  $nu-colourTertiary,
     $closeButtonColour:         $nu-colourQuaternary,
     $radius:                    $nu-radius,
