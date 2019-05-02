@@ -3,9 +3,9 @@
 \*----------------------------------------------------------------------------*/
 
 /// @group Elements
-/// @require {function} rem
-/// @require {mixin} headings
-/// @require {mixin} breakpoints
+/// @require {function} nu-rem
+/// @require {mixin} nu-headings
+/// @require {mixin} nu-breakpoints
 
 @mixin nu-element__type() {
 
@@ -111,7 +111,7 @@
         #HEADING BASE STYLES
     \*----------------------------------------------*/
 
-    @if ( $headingMarginTop == false ) {
+    @if ( $nu-headingMarginTop == false ) {
         h1,
         h2,
         h3,
@@ -122,17 +122,17 @@
         }
     }
 
-    @if ( $responsiveType ) {
+    @if ( $nu-responsiveType ) {
 
-        @include breakpoints {
+        @include nu-breakpoints {
 
-            @include headings( rem( $headingIncrement ) * $breakindex, true );
+            @include nu-headings( nu-rem( $nu-headingIncrement ) * $breakindex, true );
         }
     }
 
     @else {
 
-        @include headings( rem( $headingIncrement * 3 ), true  );
+        @include nu-headings( nu-rem( $nu-headingIncrement * 3 ), true  );
     }
 
 
@@ -142,12 +142,12 @@
     \*----------------------------------------------*/
 
     hr {
-        background-color: $secondary;
+        background-color: $nu-colourSecondary;
         border: none;
         height: 2px;
     }
 
-    @if ( $paragraphMarginTop == false ) {
+    @if ( $nu-paragraphMarginTop == false ) {
 
         p {
             margin-top: 0;

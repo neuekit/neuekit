@@ -6,7 +6,7 @@
 /// @param {Length} $height - Height value
 /// @param {Length} $width [$height] - Width value
 
-@mixin area( $height, $width: $height ) {
+@mixin nu-area( $height, $width: $height ) {
 
     height: $height; width: $width;
 }

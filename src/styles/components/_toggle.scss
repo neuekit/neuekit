@@ -6,22 +6,22 @@
     $colourOn:      dodgerblue,
     $colourOff:     lightgrey,
     $handleColour:  white,
-    $trans:         $trans,
+    $trans:         $nu-trans,
     $toggles: (
         default: (
             gap: 0.1875rem,
-            size: rem(20)
+            size: nu-rem(20)
         ),
         // small: (
         //     gap: 0.125rem,
-        //     size: rem(16)
+        //     size: nu-rem(16)
         // ),
         // medium: (
-        //     gap: rem(4),
-        //     size: rem(32)
+        //     gap: nu-rem(4),
+        //     size: nu-rem(32)
         // ),
         // large: (
-        //     gap: rem(5),
+        //     gap: nu-rem(5),
         //     size: 3rem
         // ),
         // xlarge: (
@@ -33,11 +33,11 @@
 
     // .c-toggle
     $block: &;
-    $size: map-deep-get($toggles, 'default', 'size');
-    $gap: map-deep-get($toggles, 'default', 'gap');
+    $size: nu-mapDeepGet($toggles, 'default', 'size');
+    $gap: nu-mapDeepGet($toggles, 'default', 'gap');
 
     &__input { // .c-toggle__input
-        @include area(0.1px);
+        @include nu-area(0.1px);
         opacity: 0;
         position: absolute;
 
@@ -59,7 +59,7 @@
         border-radius: $size * 2;
         cursor: pointer;
         display: block;
-        @include area($size, $size * 2);
+        @include nu-area($size, $size * 2);
         margin: 0;
         transition: background-color $trans;
         user-select: none;
@@ -70,7 +70,7 @@
             box-shadow: 0 $gap $size / 2 rgba(black, 0.1);
             content: '';
             display: block;
-            @include area($size - ($gap * 2));
+            @include nu-area($size - ($gap * 2));
             margin: 0;
             right: calc(100% - #{$size - $gap}); top: $gap;
             position: absolute;
@@ -79,8 +79,8 @@
 
         &::after { // .c-toggle__label.c-toggle__label::after
             content: attr(data-off);
-            font-size: rem(14);
-            left: calc(100% + #{rem(8)}); top: 50%;
+            font-size: nu-rem(14);
+            left: calc(100% + #{nu-rem(8)}); top: 50%;
             position: absolute;
             transform: translateY(-50%);
         }
@@ -102,10 +102,10 @@
 
                     &__label { // .c-toggle--small .c-toggle__label
                         border-radius: $size * 2;
-                        @include area($size, $size * 2);
+                        @include nu-area($size, $size * 2);
 
                         &::before { // .c-toggle--small .c-toggle__label::before
-                            @include area($size - ($gap * 2));
+                            @include nu-area($size - ($gap * 2));
                             right: calc(100% - #{$size - $gap}); top: $gap;
                         }
                     }
@@ -122,20 +122,20 @@
 /// @param {String} $colourOff [lightgrey] - Sets off background color
 /// @param {String} $handleColour [white] - Sets handle color
 /// @param {String} $trans [$trans] - Sets transition properties eg. 0.2 ease
-/// @param {Map} $toggles [(default: (gap: 0.1875rem, size: rem(20)))] - Declares toggle sizes
-/// @require {function} map-deep-get
-/// @require {function} rem
-/// @require {mixin} area
+/// @param {Map} $toggles [(default: (gap: 0.1875rem, size: nu-rem(20)))] - Declares toggle sizes
+/// @require {function} nu-mapDeepGet
+/// @require {function} nu-rem
+/// @require {mixin} nu-area
 
 @mixin nu-component__toggle(
     $colourOn:      dodgerblue,
     $colourOff:     lightgrey,
     $handleColour:  white,
-    $trans:         $trans,
+    $trans:         $nu-trans,
     $toggles: (
         default: (
             gap: 0.1875rem,
-            size: rem(20)
+            size: nu-rem(20)
         )
     )
 ) {

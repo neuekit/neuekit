@@ -7,12 +7,12 @@
 /// @param {Length} $maxbreak [null] - Higher end of the media query
 /// @param {Length} $type [null] - Type of media query
 
-@mixin media( $minbreak: null, $maxbreak: null, $type: null ) {
+@mixin nu-media( $minbreak: null, $maxbreak: null, $type: null ) {
 
     $media: '';
-    $from: map-get($breakpoints, $minbreak);
+    $from: map-get($nu-breakpoints, $minbreak);
     $from: if( $from != null, $from - 1px, null );
-    $to: map-get($breakpoints, $maxbreak);
+    $to: map-get($nu-breakpoints, $maxbreak);
 
     @if ( $from != null and $maxbreak == null ) {
 

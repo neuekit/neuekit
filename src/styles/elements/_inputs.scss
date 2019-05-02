@@ -3,7 +3,7 @@
 \*----------------------------------------------------------------------------*/
 
 /// @group Elements
-/// @require {function} rem
+/// @require {function} nu-rem
 
 @mixin nu-element__inputs() {
 
@@ -129,13 +129,13 @@
     }
 
     ::-ms-browse {
-        background-color: $primary;
+        background-color: $nu-colourPrimary;
         border: none;
-        border-radius: $radius;
+        border-radius: $nu-radius;
         color: white;
-        margin-left: rem(4);
-        min-height: rem(36);
-        padding: rem(10) rem(12) rem(8);
+        margin-left: nu-rem(4);
+        min-height: nu-rem(36);
+        padding: nu-rem(10) nu-rem(12) nu-rem(8);
     }
 
     ::-webkit-date-and-time-value {
@@ -143,7 +143,7 @@
     }
 
     ::-webkit-file-upload-button {
-        font-size: rem(12);
+        font-size: nu-rem(12);
     }
 
     ::-webkit-inner-spin-button {
@@ -152,9 +152,9 @@
     }
 
     ::-webkit-search-cancel-button {
-        background-image: url(svg-encode('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 62"><path d="M32,1A31,31,0,1,0,63,32,31,31,0,0,0,32,1ZM48.26,42.61a4,4,0,0,1-5.66,5.66L32,37.68,21.41,48.28a4,4,0,0,1-5.66-5.66L26.36,32,15.74,21.39a4,4,0,0,1,0-5.66h0a4,4,0,0,1,5.66,0L32,26.36,42.63,15.76a4,4,0,0,1,5.66,5.66L37.68,32Z" fill="#{$tertiary}" transform="translate(-1.02 -1.02)" /></svg>'));
+        background-image: url(nu-svgEncode('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 62 62"><path d="M32,1A31,31,0,1,0,63,32,31,31,0,0,0,32,1ZM48.26,42.61a4,4,0,0,1-5.66,5.66L32,37.68,21.41,48.28a4,4,0,0,1-5.66-5.66L26.36,32,15.74,21.39a4,4,0,0,1,0-5.66h0a4,4,0,0,1,5.66,0L32,26.36,42.63,15.76a4,4,0,0,1,5.66,5.66L37.68,32Z" fill="#{$nu-colourTertiary}" transform="translate(-1.02 -1.02)" /></svg>'));
         cursor: pointer;
-        @include area(rem(16));
+        @include nu-area(nu-rem(16));
         opacity: 0.8;
     }
 
@@ -170,13 +170,13 @@
 
     select {
         appearance: none;
-        background: $input url(svg-encode('<svg xmlns="http://www.w3.org/2000/svg" viewBox="-916.724 629.245 16.039 9.434"><path fill="none" stroke="#{$primary}" stroke-width="2" d="M-1077.422,566.75l7.313,7.313,7.313-7.313" transform="translate(161.405 63.202)" /></svg>')) no-repeat right #{rem(10)} center / #{rem(10)};
-        border-radius: $radius;
+        background: $nu-colourInput url(nu-svgEncode('<svg xmlns="http://www.w3.org/2000/svg" viewBox="-916.724 629.245 16.039 9.434"><path fill="none" stroke="#{$nu-colourPrimary}" stroke-width="2" d="M-1077.422,566.75l7.313,7.313,7.313-7.313" transform="translate(161.405 63.202)" /></svg>')) no-repeat right #{nu-rem(10)} center / #{nu-rem(10)};
+        border-radius: $nu-radius;
         border: none;
         cursor: pointer;
-        height: rem(36);
+        height: nu-rem(36);
         line-height: 2.25;
-        padding: 0 rem(32) 0 rem(16);
+        padding: 0 nu-rem(32) 0 nu-rem(16);
 
         &:focus { // select:focus
             outline: none;
@@ -184,7 +184,7 @@
 
         &:-moz-focusring { // select:-moz-focusring
             color: transparent;
-            text-shadow: 0 0 0 $primary;
+            text-shadow: 0 0 0 $nu-colourPrimary;
         }
 
         &::-ms-expand { // select::-ms-expand
@@ -207,36 +207,36 @@
     [type="url"],
     [type="week"] {
         appearance: none;
-        @if(not($plainInputs)) {
-            background-color: $input;
-            box-shadow: inset 0 0 0 2px $input;
+        @if(not($nu-plainInputs)) {
+            background-color: $nu-colourInput;
+            box-shadow: inset 0 0 0 2px $nu-colourInput;
         }
         @else {
             background-color: white;
         }
         border: none;
-        border-radius: $radius;
+        border-radius: $nu-radius;
         display: flex;
         flex-flow: row;
         font-family: inherit;
-        min-height: rem(40);
+        min-height: nu-rem(40);
         outline: none;
-        padding: 0 rem(12);
-        transition: background-color $trans;
+        padding: 0 nu-rem(12);
+        transition: background-color $nu-trans;
         -webkit-tap-highlight-color: rgba(0,0,0,0);
         width: 100%;
 
         &:focus { // textarea:focus, [type="email"]:focus, [type="date"]:focus, [type="datetime"]:focus, [type="datetime-local"]:focus, [type="month"]:focus, [type="number"]:focus, [type="password"]:focus, [type="search"]:focus, [type="tel"]:focus, [type="text"]:focus, [type="time"]:focus, [type="url"]:focus, [type="week"]:focus
             background-color: white;
-            @if(not($plainInputs)) {
-                box-shadow: inset 0 0 0 2px $input;
+            @if(not($nu-plainInputs)) {
+                box-shadow: inset 0 0 0 2px $nu-colourInput;
             }
         }
     }
 
     textarea {
-        height: rem(120);
-        padding: rem(6) rem(12);
+        height: nu-rem(120);
+        padding: nu-rem(6) nu-rem(12);
     }
 
     [type="date"],
@@ -248,21 +248,21 @@
     }
 
     [type="number"] {
-        background-image: url(svg-encode('<svg xmlns="http://www.w3.org/2000/svg" viewBox="-916.724 608.538 16.039 30.141"><g transform="translate(-1436)"><path fill="none" stroke="#{$primary}" stroke-width="2" d="M-1077.422,566.75l7.313,7.313,7.313-7.313" transform="translate(1597.405 63.202)"/><path fill="none" stroke="#{$primary}" stroke-width="2" d="M-1077.422,566.75l7.313,7.313,7.313-7.313" transform="translate(-542.814 1184.015) rotate(180)"/></g></svg>'));
-        background-position: right rem(14) center;
-        background-size: rem(10);
+        background-image: url(nu-svgEncode('<svg xmlns="http://www.w3.org/2000/svg" viewBox="-916.724 608.538 16.039 30.141"><g transform="translate(-1436)"><path fill="none" stroke="#{$nu-colourPrimary}" stroke-width="2" d="M-1077.422,566.75l7.313,7.313,7.313-7.313" transform="translate(1597.405 63.202)"/><path fill="none" stroke="#{$nu-colourPrimary}" stroke-width="2" d="M-1077.422,566.75l7.313,7.313,7.313-7.313" transform="translate(-542.814 1184.015) rotate(180)"/></g></svg>'));
+        background-position: right nu-rem(14) center;
+        background-size: nu-rem(10);
     }
 
     @-moz-document url-prefix() {
 
         [type="number"] {
-            background: $input;
+            background: $nu-colourInput;
         }
     }
 
     [type="color"] {
         border-radius: 50%;
-        @include area(rem(40));
+        @include nu-area(nu-rem(40));
         overflow: hidden;
         padding: 0;
 
@@ -275,12 +275,12 @@
         }
 
         &::-webkit-color-swatch { // [type="color"]::-webkit-color-swatc
-            border: 2px solid $input;
+            border: 2px solid $nu-colourInput;
             border-radius: 50%;
         }
 
         &::-moz-color-swatch { // [type="color"]::-moz-color-swatch
-            border: 2px solid $input;
+            border: 2px solid $nu-colourInput;
             border-radius: 50%;
         }
     }

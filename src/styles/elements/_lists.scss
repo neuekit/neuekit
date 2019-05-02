@@ -3,7 +3,7 @@
 \*----------------------------------------------------------------------------*/
 
 /// @group Elements
-/// @require {function} rem
+/// @require {function} nu-rem
 
 @mixin nu-element__list() {
 
@@ -20,7 +20,7 @@
 
     ol,
     ul {
-        padding-left: rem(24);
+        padding-left: nu-rem(24);
     }
 
     ol {
@@ -35,7 +35,7 @@
 
             &::before { // ol > li::before
                 content: counters(item, '.') '. ';
-                margin-left: rem(-20);
+                margin-left: nu-rem(-20);
             }
         }
     }

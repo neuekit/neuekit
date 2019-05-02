@@ -23,10 +23,10 @@
 ///    text-caps,
 ///    text-nowrap
 /// )] - Spacing sizes
-/// @require {function} chain
-/// @require {function} rem
-/// @require {mixin} breakpoints
-/// @require {mixin} headings
+/// @require {function} nu-chain
+/// @require {function} nu-rem
+/// @require {mixin} nu-breakpoints
+/// @require {mixin} nu-headings
 
 @mixin nu-utility__text(
     $responsive: false,
@@ -53,79 +53,79 @@
 
     @if index($utilities, text-bolder) {
 
-        #{chain('.u-textBolder')} {
+        #{nu-chain('.u-textBolder')} {
             font-weight: bolder;
         }
     }
 
     @if index($utilities, text-lighter) {
 
-        #{chain('.u-textLighter')} {
+        #{nu-chain('.u-textLighter')} {
             font-weight: lighter;
         }
     }
 
     @if index($utilities, text-strong) {
 
-        #{chain('.u-textStrong')} {
+        #{nu-chain('.u-textStrong')} {
             font-weight: 600;
         }
     }
 
     @if index($utilities, text-success) {
 
-        #{chain('.u-textSuccess')} {
-            color: $success;
+        #{nu-chain('.u-textSuccess')} {
+            color: $nu-colourSuccess;
         }
     }
 
     @if index($utilities, text-warn) {
 
-        #{chain('.u-textWarn')} {
-            color: $warn;
+        #{nu-chain('.u-textWarn')} {
+            color: $nu-colourWarn;
         }
     }
 
     @if index($utilities, text-error) {
 
-        #{chain('.u-textError')} {
-            color: $error;
+        #{nu-chain('.u-textError')} {
+            color: $nu-colourError;
         }
     }
 
     @if index($utilities, text-disabled) {
 
-        #{chain('.u-textDisabled')} {
-            color: $disabled;
+        #{nu-chain('.u-textDisabled')} {
+            color: $nu-colourDisabled;
         }
     }
 
     @if index($utilities, text-lower) {
 
-        #{chain('.u-textLower')} {
+        #{nu-chain('.u-textLower')} {
             text-transform: lowercase;
         }
     }
 
     @if index($utilities, text-upper) {
 
-        #{chain('.u-textUpper')} {
+        #{nu-chain('.u-textUpper')} {
             text-transform: uppercase;
         }
     }
 
     @if index($utilities, text-caps) {
 
-        #{chain('.u-textCaps')} {
+        #{nu-chain('.u-textCaps')} {
             text-transform: capitalize;
         }
     }
 
-    @include breakpoints( $responsive ) {
+    @include nu-breakpoints( $responsive ) {
 
         @if index($utilities, text-start) {
 
-            #{chain('.u-textStart' + $break)} {
+            #{nu-chain('.u-textStart' + $break)} {
                 text-align: left;
                 text-align: start;
             }
@@ -133,14 +133,14 @@
 
         @if index($utilities, text-center) {
 
-            #{chain('.u-textCenter' + $break)} {
+            #{nu-chain('.u-textCenter' + $break)} {
                 text-align: center;
             }
         }
 
         @if index($utilities, text-end) {
 
-            #{chain('.u-textEnd' + $break)} {
+            #{nu-chain('.u-textEnd' + $break)} {
                 text-align: right;
                 text-align: end;
             }
@@ -148,45 +148,45 @@
 
         @if index($utilities, text-justify) {
 
-            #{chain('.u-textJustify' + $break)} {
+            #{nu-chain('.u-textJustify' + $break)} {
                 text-align: justify;
             }
         }
 
         @if index($utilities, text-grow) {
 
-            #{chain('.u-textGrow' + $break)} {
+            #{nu-chain('.u-textGrow' + $break)} {
                 font-size: 125%;
             }
         }
 
         @if index($utilities, text-shrink) {
 
-            #{chain('.u-textShrink' + $break)} {
+            #{nu-chain('.u-textShrink' + $break)} {
                 font-size: 75%;
             }
         }
 
         @if index($utilities, text-nowrap) {
 
-            #{chain('.u-textNowrap' + $break)} {
+            #{nu-chain('.u-textNowrap' + $break)} {
                 white-space: nowrap;
             }
         }
 
     }
 
-    @if ( $responsiveType ) {
+    @if ( $nu-responsiveType ) {
 
-        @include breakpoints {
+        @include nu-breakpoints {
 
-            @include headings( rem( $headingIncrement ) * $breakindex );
+            @include nu-headings( nu-rem( $nu-headingIncrement ) * $breakindex );
         }
     }
 
     @else {
 
-        @include headings( rem( $headingIncrement * 3 )  );
+        @include nu-headings( nu-rem( $nu-headingIncrement * 3 )  );
     }
 }
 

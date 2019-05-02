@@ -2,24 +2,24 @@
     #COLOUR SETTINGS
 \*----------------------------------------------------------------------------*/
 
-$primary:     #2E3133              !default;
-$secondary:   #F0F0F0              !default;
-$tertiary:    #7D7D80              !default;
-$quaternary:  #EDEDED              !default;
+$nu-colourPrimary:     #2E3133              !default;
+$nu-colourSecondary:   #F0F0F0              !default;
+$nu-colourTertiary:    #7D7D80              !default;
+$nu-colourQuaternary:  #EDEDED              !default;
 
-$input:       #F2F2F2              !default;
-$text:        #2E3133              !default;
+$nu-colourInput:       #F2F2F2              !default;
+$nu-colourText:        #2E3133              !default;
 
-$error:       #FF8080              !default;
-$warn:        #FAE57D              !default;
-$success:     #73E699              !default;
-$disabled:    #AAAAAA              !default;
+$nu-colourError:       #FF8080              !default;
+$nu-colourWarn:        #FAE57D              !default;
+$nu-colourSuccess:     #73E699              !default;
+$nu-colourDisabled:    #AAAAAA              !default;
 
-$palette: (
-    'primary':      $primary,
-    'secondary':    $secondary,
-    'tertiary':     $tertiary,
-    'quaternary':   $quaternary
-)                                    !default;
+$nu-colourPalette: (
+    'primary':      $nu-colourPrimary,
+    'secondary':    $nu-colourSecondary,
+    'tertiary':     $nu-colourTertiary,
+    'quaternary':   $nu-colourQuaternary
+) !default;
 
 

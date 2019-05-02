@@ -3,9 +3,9 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin _nu-component__loading(
-    $animation:     nu-keyframe__loading 0.6s infinite linear,
-    $primary:       $primary,
-    $secondary:     $secondary
+    $animation:         nu-keyframe__loading 0.6s infinite linear,
+    $foregroundColour:  $nu-colourPrimary,
+    $backgroundColour:  $nu-colourSecondary
 ) {
 
     @keyframes nu-keyframe__loading {
@@ -21,16 +21,16 @@
 
     // .c-loading
     color: transparent !important;
-    @include area(rem(32));
+    @include nu-area(nu-rem(32));
     pointer-events: none;
 
     &::before, // .c-loading::before,
     &::after { // .c-loading::after
-        border: 3px solid $secondary;
+        border: 3px solid $backgroundColour;
         border-radius: 50%;
         content: '';
         display: block;
-        @include area(100%);
+        @include nu-area(100%);
         left: 50%; top: 50%;
         position: absolute;
         transform: translate(-50%, -50%);
@@ -38,7 +38,7 @@
 
     &::after { // .c-loading::after
         animation: $animation;
-        border-color: $primary;
+        border-color: $foregroundColour;
         border-right-color: transparent;
         border-top-color: transparent;
     }
@@ -49,7 +49,7 @@
     }
 
     &--small { // .c-loading--small
-        @include area(rem(16));
+        @include nu-area(nu-rem(16));
 
         &::before, // .c-loading--small::before,
         &::after { // .c-loading--small::after
@@ -58,7 +58,7 @@
     }
 
     &--large { // .c-loading--large
-        @include area(rem(48));
+        @include nu-area(nu-rem(48));
 
         &::before, // .c-loading--large::before,
         &::after { // .c-loading--large::after
@@ -67,7 +67,7 @@
     }
 
     &--xlarge { // .c-loading--xlarge
-        @include area(rem(64));
+        @include nu-area(nu-rem(64));
 
         &::before, // .c-loading--xlarge::before,
         &::after { // .c-loading--xlarge::after
@@ -80,21 +80,21 @@
 
 /// @group Components
 /// @param {String} $animation [nu-keyframe__loading 0.6s infinite linear] - Sets animation value
-/// @param {String} $primary [$primary] - Sets foreground color
-/// @param {String} $secondary [white] - Sets background color
+/// @param {String} $foregroundColour [$nu-colourPrimary] - Sets foreground colour
+/// @param {String} $backgroundColour [nu-colourSecondary] - Sets background colour
 
 @mixin nu-component__loading(
-    $animation:     nu-keyframe__loading 0.6s infinite linear,
-    $primary:       $primary,
-    $secondary:     $secondary
+    $animation:         nu-keyframe__loading 0.6s infinite linear,
+    $foregroundColour:  $nu-colourPrimary,
+    $backgroundColour:  $nu-colourSecondary
 ) {
 
     .c-loading {
 
         @include _nu-component__loading(
-            $animation:     $animation,
-            $primary:       $primary,
-            $secondary:     $secondary
+            $animation:         $animation,
+            $foregroundColour:  $nu-colourPrimary,
+            $backgroundColour:  $nu-colourSecondary
         );
     }
 }

@@ -3,14 +3,14 @@
 \*----------------------------------------------------------------------------*/
 
 /// @group Elements
-/// @require {function} rem
+/// @require {function} nu-rem
 
 @mixin nu-element__quote() {
 
     blockquote {
-        border-left: 4px solid $primary;
-        margin: 0 0 rem(16);
-        padding: rem(8) rem(16);
+        border-left: 4px solid $nu-colourPrimary;
+        margin: 0 0 nu-rem(16);
+        padding: nu-rem(8) nu-rem(16);
 
         cite {
             display: block;

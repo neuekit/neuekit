@@ -3,7 +3,7 @@
 \*----------------------------------------------------------------------------*/
 
 /// @group Elements
-/// @require {function} rem
+/// @require {function} nu-rem
 
 @mixin nu-element__form() {
 
@@ -12,7 +12,7 @@
     \*----------------------------------------------------------------------------*/
 
     fieldset {
-        border: 2px solid $input;
+        border: 2px solid $nu-colourInput;
         margin: 0 2px;
         padding: 0.35em 0.75em 0.625em;
     }
@@ -28,7 +28,7 @@
         color: inherit;         /* 3 */
         display: table;         /* 1 */
         max-width: 100%;        /* 1 */
-        padding: 0 rem(8);      /* 2 */
+        padding: 0 nu-rem(8);      /* 2 */
         white-space: normal;    /* 1 */
     }
 }

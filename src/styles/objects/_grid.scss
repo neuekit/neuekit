@@ -14,20 +14,20 @@
     flex-shrink: 0;
     flex-wrap: wrap;
     margin: 0 auto;
-    max-width: rem( $maxWidth );
-    padding: 0 rem( $gutterSmall );
+    max-width: nu-rem( $maxWidth );
+    padding: 0 nu-rem( $gutterSmall );
     width: 100%;
 
 
     /*  Elements  */
 
     &__item { // .o-grid__item
-        @if(not($auto)) { flex-basis: 100%; }
+        @if(not($nu-gridAuto)) { flex-basis: 100%; }
         flex-direction: column;
-        @if($auto) { flex-grow: 1; }
+        @if($nu-gridAuto) { flex-grow: 1; }
         max-width: 100%;
-        padding: 0 rem( $gutterSmall );
-        @if(not($auto)) { width: 100%; }
+        padding: 0 nu-rem( $gutterSmall );
+        @if(not($nu-gridAuto)) { width: 100%; }
     }
 
 
@@ -36,7 +36,7 @@
     &--item { // .o-grid--item
         display: block;
         flex-direction: column;
-        padding: 0 rem( $gutterSmall * 2 );
+        padding: 0 nu-rem( $gutterSmall * 2 );
     }
 
     &#{ & }--item { // .o-grid.o-grid--item
@@ -46,7 +46,7 @@
     & &, // .o-grid .o-grid
     &--unnest#{&}--unnest { // .o-grid--unnest
         flex-shrink: 1;
-        margin: 0 #{ rem( -$gutterSmall * 2 ) };
+        margin: 0 #{ nu-rem( -$gutterSmall * 2 ) };
         max-width: none;
         width: auto;
     }
@@ -68,28 +68,28 @@
 
     @if($gutter != $gutterSmall) {
 
-        @include media($mediumBreakpoint) {
+        @include nu-media($mediumBreakpoint) {
 
-            padding: 0 rem( $gutter );
+            padding: 0 nu-rem( $gutter );
 
             &__item { // .o-grid__item
-                padding: 0 rem( $gutter );
+                padding: 0 nu-rem( $gutter );
             }
 
             &--item { // .o-grid--item
-                padding: 0 rem( $gutter * 2 );
+                padding: 0 nu-rem( $gutter * 2 );
             }
 
             & &, // .o-grid .o-grid
             &--unnest { // .o-grid--unnest
-                margin: 0 #{ rem( -($gutter * 2) ) };
+                margin: 0 #{ nu-rem( -($gutter * 2) ) };
             }
         }
     }
 
-    @include breakpoints(up) {
+    @include nu-breakpoints(up) {
 
-        @for $grid from 1 through $columns {
+        @for $grid from 1 through $nu-gridColumns {
 
             $width: floor((100% / $grid) * 1000) / 1000;
 
@@ -104,17 +104,17 @@
 
 
 /// @group Objects
-/// @param {Length} $maxWidth [$maxWidth] - Max width of grid container
-/// @param {Length} $gutter [$gutter] - Space between columns
-/// @param {Length} $gutterSmall [$gutterSmall] - Mobile space between columns
+/// @param {Length} $maxWidth [$nu-gridMaxWidth] - Max width of grid container
+/// @param {Length} $gutter [$nu-gridGutter] - Space between columns
+/// @param {Length} $gutterSmall [$nu-gridGutterSmall] - Mobile space between columns
 /// @param {Length} $mediumBreakpoint [$mediumBreakpoint] - Which breakpoint to switch gutter
-/// @require {function} rem
-/// @require {mixin} breakpoints
+/// @require {function} nu-rem
+/// @require {mixin} nu-breakpoints
 
 @mixin nu-object__grid(
-    $maxWidth:          $maxWidth,
-    $gutter:            $gutter,
-    $gutterSmall:       $gutterSmall,
+    $maxWidth:          $nu-gridMaxWidth,
+    $gutter:            $nu-gridGutter,
+    $gutterSmall:       $nu-gridGutterSmall,
     $mediumBreakpoint:  m
 ) {
 

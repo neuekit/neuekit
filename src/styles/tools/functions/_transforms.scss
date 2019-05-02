@@ -8,12 +8,12 @@
 /// @param {String} $replace ('') - New value
 /// @return {String} - Updated string
 
-@function str-replace($string, $search, $replace: '') {
+@function nu-strReplace($string, $search, $replace: '') {
 
     $index: str-index($string, $search);
 
     @if $index {
-        @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+        @return str-slice($string, 1, $index - 1) + $replace + nu-strReplace(str-slice($string, $index + str-length($search)), $search, $replace);
     }
 
     @return $string;
@@ -29,7 +29,7 @@
 /// @param {String} $string - Initial string
 /// @return {String} $string - Updated string
 
-@function str-capitalise($string) {
+@function nu-strCapitalise($string) {
 
     @return to-upper-case(str-slice($string, 1, 1)) + str-slice($string, 2);
 }
@@ -44,7 +44,7 @@
 /// @param {String} $string - Initial string
 /// @return {String} $string - Updated string
 
-@function str-uncapitalise($string) {
+@function nu-strUncapitalise($string) {
 
     @return to-lower-case(str-slice($string, 1, 1)) + str-slice($string, 2);
 }
@@ -58,7 +58,7 @@
     @return {String} $string - Updated string
 \*----------------------------------------------------------------------------*/
 
-@function str-ucwords($string) {
+@function nu-upperCaseWords($string) {
 
     $progress: $string;
     $result: "";
@@ -69,7 +69,7 @@
         $index: str-index($progress, " ");
 
         @if $index {
-            $result: $result + str-capitalise(str-slice($progress, 1, $index));
+            $result: $result + nu-strCapitalise(str-slice($progress, 1, $index));
             $progress: str-slice($progress, ($index + 1));
         }
 
@@ -78,7 +78,7 @@
         }
     }
 
-    @return str-capitalise($result) + str-capitalise($progress);
+    @return nu-strCapitalise($result) + nu-strCapitalise($progress);
 }
 
 
@@ -90,7 +90,7 @@
     @return {String} $string - Updated string
 \*----------------------------------------------------------------------------*/
 
-@function camelise($string) {
+@function nu-camelise($string) {
 
     $progress: $string;
     $result: "";
@@ -101,7 +101,7 @@
         $char: str-slice($progress, 1, 1);
 
         @if contain($exclude, $char) {
-            $progress: str-capitalise(str-slice($progress, 2, 2)) + str-slice($progress, 3);
+            $progress: nu-strCapitalise(str-slice($progress, 2, 2)) + str-slice($progress, 3);
         }
 
         @else {

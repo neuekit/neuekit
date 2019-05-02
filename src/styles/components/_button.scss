@@ -4,68 +4,68 @@
 
 @mixin _nu-component__button(
     $btnReset: false,
-    $btnRadius: $radius,
+    $btnRadius: $nu-radius,
     $styles: (
         default: (
             color: white,
             colorDisabled: grey,
-            bgColor: $primary,
-            bgColorHover: darken($primary, 20),
-            bgColorDisabled: $secondary,
-            padding: rem(10) rem(16)
+            bgColor: $nu-colourPrimary,
+            bgColorHover: darken($nu-colourPrimary, 20),
+            bgColorDisabled: $nu-colourSecondary,
+            padding: nu-rem(10) nu-rem(16)
         ),
         secondary: (
-            color: $primary,
+            color: $nu-colourPrimary,
             colorDisabled: grey,
-            bgColor: $secondary,
-            bgColorHover: darken($secondary, 20),
-            bgColorDisabled: $primary
+            bgColor: $nu-colourSecondary,
+            bgColorHover: darken($nu-colourSecondary, 20),
+            bgColorDisabled: $nu-colourPrimary
         ),
         light: (
-            color: $primary,
+            color: $nu-colourPrimary,
             colorHover: white,
             bgColor: white,
-            bgColorHover: $primary
+            bgColorHover: $nu-colourPrimary
         ),
         line: (
-            color: $primary,
+            color: $nu-colourPrimary,
             lightColor: white
         ),
         text: (
-            color: $primary,
+            color: $nu-colourPrimary,
             lightColor: white
         ),
         round: ()
     ),
     $sizes: (
         tiny: (
-            fontSize: rem(12),
-            padding: rem(8) rem(10)
+            fontSize: nu-rem(12),
+            padding: nu-rem(8) nu-rem(10)
         ),
         small: (
-            fontSize: rem(14),
-            padding: rem(8) rem(10)
+            fontSize: nu-rem(14),
+            padding: nu-rem(8) nu-rem(10)
         ),
         medium: (
-            padding: rem(10) rem(14)
+            padding: nu-rem(10) nu-rem(14)
         ),
         large: (
-            padding: rem(16) rem(18)
+            padding: nu-rem(16) nu-rem(18)
         ),
         xlarge: (
-            fontSize: rem(18),
-            padding: rem(20) rem(22)
+            fontSize: nu-rem(18),
+            padding: nu-rem(20) nu-rem(22)
         ),
         xxlarge: (
-            fontSize: rem(20),
-            padding: rem(24) rem(26)
+            fontSize: nu-rem(20),
+            padding: nu-rem(24) nu-rem(26)
         ),
         xxxlarge: (
-            fontSize: rem(24),
-            padding: rem(32) rem(34)
+            fontSize: nu-rem(24),
+            padding: nu-rem(32) nu-rem(34)
         )
     ),
-    $trans: $trans
+    $trans: $nu-trans
 ) {
     $block: &;
 
@@ -79,9 +79,9 @@
     line-height: 1;
     text-align: center;
     transition: all $trans;
-    background: map-deep-get($styles, 'default', 'bgColor');
-    padding: map-deep-get($styles, 'default', 'padding');
-    color: map-deep-get($styles, 'default', 'color');
+    background: nu-mapDeepGet($styles, 'default', 'bgColor');
+    padding: nu-mapDeepGet($styles, 'default', 'padding');
+    color: nu-mapDeepGet($styles, 'default', 'color');
 
 
     /*  States  */
@@ -90,12 +90,12 @@
         box-shadow: none;
         pointer-events: none;
 
-        @if map-deep-get($styles, 'default', 'bgColorDisabled') {
-            background-color: map-deep-get($styles, 'default', 'bgColorDisabled');
+        @if nu-mapDeepGet($styles, 'default', 'bgColorDisabled') {
+            background-color: nu-mapDeepGet($styles, 'default', 'bgColorDisabled');
         }
 
-        @if map-deep-get($styles, 'default', 'colorDisabled') {
-            color: map-deep-get($styles, 'default', 'colorDisabled');
+        @if nu-mapDeepGet($styles, 'default', 'colorDisabled') {
+            color: nu-mapDeepGet($styles, 'default', 'colorDisabled');
         }
     }
 
@@ -104,11 +104,11 @@
     }
 
     &:hover { // .c-button:hover
-        background-color: map-deep-get($styles, 'default', 'bgColorHover');
+        background-color: nu-mapDeepGet($styles, 'default', 'bgColorHover');
 
         // Using a condition here as by default the hover color is undefined
-        @if map-deep-get($styles, 'default', 'colorHover') {
-            color: map-deep-get($styles, 'default', 'colorHover');
+        @if nu-mapDeepGet($styles, 'default', 'colorHover') {
+            color: nu-mapDeepGet($styles, 'default', 'colorHover');
         }
     }
 
@@ -119,23 +119,23 @@
 
         &--light { // .c-button--light
 
-            @if map-deep-get($styles, 'light', 'bgColor') {
-                background-color: map-deep-get($styles, 'light', 'bgColor');
+            @if nu-mapDeepGet($styles, 'light', 'bgColor') {
+                background-color: nu-mapDeepGet($styles, 'light', 'bgColor');
             }
 
-            @if map-deep-get($styles, 'light', 'color') {
-                color: map-deep-get($styles, 'light', 'color');
+            @if nu-mapDeepGet($styles, 'light', 'color') {
+                color: nu-mapDeepGet($styles, 'light', 'color');
             }
 
             &:hover { // .c-button:hover
                 box-shadow: inset 0 0 0 2px transparent;
 
-                @if map-deep-get($styles, 'light', 'bgColorHover') {
-                    background-color: map-deep-get($styles, 'light', 'bgColorHover');
+                @if nu-mapDeepGet($styles, 'light', 'bgColorHover') {
+                    background-color: nu-mapDeepGet($styles, 'light', 'bgColorHover');
                 }
 
-                @if map-deep-get($styles, 'light', 'colorHover') {
-                    color: map-deep-get($styles, 'light', 'colorHover');
+                @if nu-mapDeepGet($styles, 'light', 'colorHover') {
+                    color: nu-mapDeepGet($styles, 'light', 'colorHover');
                 }
             }
         }
@@ -145,22 +145,22 @@
 
         &--line { // .c-button--line
             background: none;
-            box-shadow: inset 0 0 0 2px map-deep-get($styles, 'line', 'color');
-            color: map-deep-get($styles, 'line', 'color');
+            box-shadow: inset 0 0 0 2px nu-mapDeepGet($styles, 'line', 'color');
+            color: nu-mapDeepGet($styles, 'line', 'color');
 
             &#{$block}--light { // .c-button--line.c-button--light
-                box-shadow: inset 0 0 0 2px map-deep-get($styles, 'line', 'lightColor');
-                color: map-deep-get($styles, 'line', 'lightColor');
+                box-shadow: inset 0 0 0 2px nu-mapDeepGet($styles, 'line', 'lightColor');
+                color: nu-mapDeepGet($styles, 'line', 'lightColor');
 
                 &:hover { // .c-button--line.c-button--light:hover
-                    background-color: map-deep-get($styles, 'line', 'lightColor');
-                    color: map-deep-get($styles, 'line', 'color');
+                    background-color: nu-mapDeepGet($styles, 'line', 'lightColor');
+                    color: nu-mapDeepGet($styles, 'line', 'color');
                 }
             }
 
             &:hover { // .c-button--line:hover
-                background-color: map-deep-get($styles, 'line', 'color');
-                color: map-deep-get($styles, 'line', 'lightColor');
+                background-color: nu-mapDeepGet($styles, 'line', 'color');
+                color: nu-mapDeepGet($styles, 'line', 'lightColor');
             }
         }
     }
@@ -169,11 +169,11 @@
 
         &--text { // .c-button--text
             background: none;
-            color: map-deep-get($styles, 'text', 'color');
+            color: nu-mapDeepGet($styles, 'text', 'color');
 
             &#{$block}--secondary { // .c-button--text.c-button--secondary
                 background: none;
-                color: map-deep-get($styles, 'secondary', 'bgColor');
+                color: nu-mapDeepGet($styles, 'secondary', 'bgColor');
             }
 
             &:disabled { // .c-button--text:disabled
@@ -181,12 +181,12 @@
             }
 
             &:hover { // .c-button--text:hover
-                color: map-deep-get($styles, 'text', 'lightColor');
-                background: map-deep-get($styles, 'text', 'color');
+                color: nu-mapDeepGet($styles, 'text', 'lightColor');
+                background: nu-mapDeepGet($styles, 'text', 'color');
             }
 
             &#{$block}--light { // .c-button--text.c-button--light
-                color: map-deep-get($styles, 'text', 'lightColor');
+                color: nu-mapDeepGet($styles, 'text', 'lightColor');
             }
         }
     }
@@ -194,24 +194,24 @@
     @if map-has-key($styles, round) {
 
         &--round { // .c-button--round
-            border-radius: rem(160);
+            border-radius: nu-rem(160);
         }
     }
 
     @if map-has-key($styles, secondary) {
 
         &--secondary { // .c-button--secondary
-            color: map-deep-get($styles, 'secondary', 'color');
-            background: map-deep-get($styles, 'secondary', 'bgColor');
+            color: nu-mapDeepGet($styles, 'secondary', 'color');
+            background: nu-mapDeepGet($styles, 'secondary', 'bgColor');
 
             &:hover { // .c-button--secondary:hover
-                color: map-deep-get($styles, 'secondary', 'colorHover');
-                background: map-deep-get($styles, 'secondary', 'bgColorHover');
+                color: nu-mapDeepGet($styles, 'secondary', 'colorHover');
+                background: nu-mapDeepGet($styles, 'secondary', 'bgColorHover');
             }
 
             &:disabled { // .c-button--secondary:disabled
-                color: map-deep-get($styles, 'secondary', 'colorDisabled');
-                background: map-deep-get($styles, 'secondary', 'bgColorDisabled');
+                color: nu-mapDeepGet($styles, 'secondary', 'colorDisabled');
+                background: nu-mapDeepGet($styles, 'secondary', 'bgColorDisabled');
             }
         }
     }
@@ -232,135 +232,135 @@
 
 /// @group Components
 /// @param {Boolean} $btnReset [false] - Reset default button styles
-/// @param {Number} $btnRadius [$radius] - Border radius of radius button modifier
+/// @param {Number} $btnRadius [$nu-radius] - Border radius of radius button modifier
 /// @param {Map} $styles [(
 ///     default: (
 ///         color: white,
 ///         colorDisabled: grey,
-///         bgColor: $primary,
-///         bgColorHover: darken($primary, 20),
-///         bgColorDisabled: $secondary,
-///         padding: rem(10) rem(16)
+///         bgColor: $nu-colourPrimary,
+///         bgColorHover: darken($nu-colourPrimary, 20),
+///         bgColorDisabled: $nu-colourSecondary,
+///         padding: nu-rem(10) nu-rem(16)
 ///     ),
 ///     secondary: (
-///         color: $primary,
+///         color: $nu-colourPrimary,
 ///         colorDisabled: grey,
-///         bgColor: $secondary,
-///         bgColorHover: darken($secondary, 20),
-///         bgColorDisabled: $primary
+///         bgColor: $nu-colourSecondary,
+///         bgColorHover: darken($nu-colourSecondary, 20),
+///         bgColorDisabled: $nu-colourPrimary
 ///     ),
 ///     light: (
-///         color: $primary,
+///         color: $nu-colourPrimary,
 ///         colorHover: white,
 ///         bgColor: white,
-///         bgColorHover: $primary
+///         bgColorHover: $nu-colourPrimary
 ///     ),
 ///     line: (
-///         color: $primary,
+///         color: $nu-colourPrimary,
 ///         lightColor: white
 ///     ),
 ///     text: (
-///         color: $primary,
+///         color: $nu-colourPrimary,
 ///         lightColor: white
 ///     ),
 ///     round: ()
 /// )] - Declares button styles
 /// @param {Map} $sizes [(
 ///     tiny: (
-///         fontSize: rem(12),
-///         padding: rem(8) rem(10)
+///         fontSize: nu-rem(12),
+///         padding: nu-rem(8) nu-rem(10)
 ///     ),
 ///     small: (
-///         fontSize: rem(14),
-///         padding: rem(8) rem(10)
+///         fontSize: nu-rem(14),
+///         padding: nu-rem(8) nu-rem(10)
 ///     ),
 ///     medium: (
-///         padding: rem(10) rem(14)
+///         padding: nu-rem(10) nu-rem(14)
 ///     ),
 ///     large: (
-///         padding: rem(16) rem(18)
+///         padding: nu-rem(16) nu-rem(18)
 ///     ),
 ///     xlarge: (
-///         fontSize: rem(18),
-///         padding: rem(20) rem(22)
+///         fontSize: nu-rem(18),
+///         padding: nu-rem(20) nu-rem(22)
 ///     ),
 ///     xxlarge: (
-///         fontSize: rem(20),
-///         padding: rem(24) rem(26)
+///         fontSize: nu-rem(20),
+///         padding: nu-rem(24) nu-rem(26)
 ///     ),
 ///     xxxlarge: (
-///         fontSize: rem(24),
-///         padding: rem(32) rem(34)
+///         fontSize: nu-rem(24),
+///         padding: nu-rem(32) nu-rem(34)
 ///     )
 /// )] - Declares button sizes
-/// @param {Length} $trans [$trans] - Sets transition properties eg. 0.2 ease
-/// @require {function} rem
-/// @require {mixin} area
+/// @param {Length} $trans [$nu-trans] - Sets transition properties eg. 0.2 ease
+/// @require {function} nu-rem
+/// @require {mixin} nu-area
 
 @mixin nu-component__button(
     $btnReset: false,
-    $btnRadius: $radius,
+    $btnRadius: $nu-radius,
     $styles: (
         default: (
             color: white,
             colorDisabled: grey,
-            bgColor: $primary,
-            bgColorHover: darken($primary, 20),
-            bgColorDisabled: $secondary,
-            padding: rem(10) rem(16)
+            bgColor: $nu-colourPrimary,
+            bgColorHover: darken($nu-colourPrimary, 20),
+            bgColorDisabled: $nu-colourSecondary,
+            padding: nu-rem(10) nu-rem(16)
         ),
         secondary: (
-            color: $primary,
+            color: $nu-colourPrimary,
             colorDisabled: grey,
-            bgColor: $secondary,
-            bgColorHover: darken($secondary, 20),
-            bgColorDisabled: $primary
+            bgColor: $nu-colourSecondary,
+            bgColorHover: darken($nu-colourSecondary, 20),
+            bgColorDisabled: $nu-colourPrimary
         ),
         light: (
-            color: $primary,
+            color: $nu-colourPrimary,
             colorHover: white,
             bgColor: white,
-            bgColorHover: $primary
+            bgColorHover: $nu-colourPrimary
         ),
         line: (
-            color: $primary,
+            color: $nu-colourPrimary,
             lightColor: white
         ),
         text: (
-            color: $primary,
+            color: $nu-colourPrimary,
             lightColor: white
         ),
         round: ()
     ),
     $sizes: (
         tiny: (
-            fontSize: rem(12),
-            padding: rem(8) rem(10)
+            fontSize: nu-rem(12),
+            padding: nu-rem(8) nu-rem(10)
         ),
         small: (
-            fontSize: rem(14),
-            padding: rem(8) rem(10)
+            fontSize: nu-rem(14),
+            padding: nu-rem(8) nu-rem(10)
         ),
         medium: (
-            padding: rem(10) rem(14)
+            padding: nu-rem(10) nu-rem(14)
         ),
         large: (
-            padding: rem(16) rem(18)
+            padding: nu-rem(16) nu-rem(18)
         ),
         xlarge: (
-            fontSize: rem(18),
-            padding: rem(20) rem(22)
+            fontSize: nu-rem(18),
+            padding: nu-rem(20) nu-rem(22)
         ),
         xxlarge: (
-            fontSize: rem(20),
-            padding: rem(24) rem(26)
+            fontSize: nu-rem(20),
+            padding: nu-rem(24) nu-rem(26)
         ),
         xxxlarge: (
-            fontSize: rem(24),
-            padding: rem(32) rem(34)
+            fontSize: nu-rem(24),
+            padding: nu-rem(32) nu-rem(34)
         )
     ),
-    $trans: $trans
+    $trans: $nu-trans
 ) {
 
     $btnSelectors: 'button, [role="button"], [type="button"], [type="reset"], [type="submit"], ';

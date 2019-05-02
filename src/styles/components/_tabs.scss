@@ -3,7 +3,7 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin _nu-component__tabs(
-    $tabColour: $secondary
+    $tabColour: $nu-colourSecondary
 ) {
 
     // .c-tabs
@@ -16,7 +16,7 @@
 
     &__link { // .c-tabs__link
         flex: 1 1 auto;
-        padding: rem(8) rem(16);
+        padding: nu-rem(8) nu-rem(16);
         text-align: center;
         width: 0%;
 
@@ -31,7 +31,7 @@
 
     &__content { // .c-tabs__content
         display: none;
-        padding: rem(16);
+        padding: nu-rem(16);
 
         &.is-active { // .c-tabs__content.is-active
             display: block;
@@ -42,11 +42,11 @@
 
 
 /// @group Components
-/// @param {String} $tabColour [$secondary] - Sets accent color
-/// @require {function} rem
+/// @param {String} $tabColour [$nu-colourSecondary] - Sets accent color
+/// @require {function} nu-rem
 
 @mixin nu-component__tabs(
-    $tabColour: $secondary
+    $tabColour: $nu-colourSecondary
 ) {
 
     .c-tabs {

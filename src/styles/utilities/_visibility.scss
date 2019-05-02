@@ -13,9 +13,9 @@
 ///    sticky,
 ///    pointer
 /// )] - Spacing sizes
-/// @require {function} chain
-/// @require {function} str-replace
-/// @require {mixin} breakpoints
+/// @require {function} nu-chain
+/// @require {function} nu-strReplace
+/// @require {mixin} nu-breakpoints
 
 @mixin nu-utility__visibility(
     $responsive: (up, only, down),
@@ -30,39 +30,39 @@
     )
 ) {
 
-    @include breakpoints( $responsive ) {
+    @include nu-breakpoints( $responsive ) {
 
         @if index($utilities, hide) {
 
-            #{chain('.u-hide' + $break)} {
+            #{nu-chain('.u-hide' + $break)} {
                 display: none;
             }
         }
 
         @if index($utilities, block) {
 
-            #{chain('.u-block' + $break)} {
+            #{nu-chain('.u-block' + $break)} {
                 display: block;
             }
         }
 
         @if index($utilities, inblock) {
 
-            #{chain('.u-inblock' + $break)} {
+            #{nu-chain('.u-inblock' + $break)} {
                 display: inline-block;
             }
         }
 
         @if index($utilities, locked) {
 
-            #{chain('.u-locked' + $break)} {
+            #{nu-chain('.u-locked' + $break)} {
                 overflow: hidden;
             }
         }
 
         @if index($utilities, sticky) {
 
-            #{chain('.u-sticky' + $break)} {
+            #{nu-chain('.u-sticky' + $break)} {
                 position: static;
                 position: sticky;
                 top: 0;
@@ -79,14 +79,14 @@
 
     @if index($utilities, radius) {
 
-        #{chain('.u-radius')} {
-            border-radius: $radius;
+        #{nu-chain('.u-radius')} {
+            border-radius: $nu-radius;
         }
     }
 
     @if index($utilities, pointer) {
 
-        #{chain('.u-pointerNone' + $break)} {
+        #{nu-chain('.u-pointerNone' + $break)} {
             pointer-events: none;
         }
     }

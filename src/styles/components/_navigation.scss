@@ -6,7 +6,7 @@
     $closeBg:           rgba(black, 0.25),
     $navSubBg:          lavendar,
     $navLinkHoverBg:    whitesmoke,
-    $trans:             $trans
+    $trans:             $nu-trans
 ) {
 
     // .js .c-nav
@@ -23,14 +23,14 @@
         &__close { // .js .c-nav__close
             background-color: $closeBg;
             display: block;
-            @include area(100%);
+            @include nu-area(100%);
             left: 0; top: 0;
             position: fixed;
         }
 
         &__link { // .js .c-nav__link
             display: block;
-            padding: rem(4) rem(12);
+            padding: nu-rem(4) nu-rem(12);
 
             + .nav-sub { // .js .c-nav__link + .nav-sub
                 background-color: $navLinkHoverBg;
@@ -63,13 +63,13 @@
 /// @param {String} $closeBg [rgba(black, 0.25)] - Sets close button color
 /// @param {String} $navSubBg [lavendar] - Sets subnav background color
 /// @param {String} $navLinkHoverBg [whitesmoke] - Sets text hover color
-/// @param {String} $trans [$trans] - Sets transition properties eg. 0.2 ease
+/// @param {String} $trans [$nu-trans] - Sets transition properties eg. 0.2 ease
 
 @mixin nu-component__navigation(
     $closeBg:           rgba(black, 0.25),
     $navSubBg:          lavendar,
     $navLinkHoverBg:    whitesmoke,
-    $trans:             $trans
+    $trans:             $nu-trans
 ) {
 
     .js .c-nav {

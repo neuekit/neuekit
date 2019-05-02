@@ -6,7 +6,7 @@
 /// @param {String} $svg - SVG code
 /// @return {String}
 
-@function svg-encode($svg) {
+@function nu-svgEncode($svg) {
 
     $encoding-reference: (
         ('%','%25'),  // This has to go first as all entities start with a %
@@ -50,7 +50,7 @@
 
     @each $char, $encoded in $encoding-reference {
 
-        $svg: str-replace($svg, $char, $encoded);
+        $svg: nu-strReplace($svg, $char, $encoded);
     }
 
     @return 'data:image/svg+xml,' + $svg;
