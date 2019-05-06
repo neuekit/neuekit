@@ -1,6 +1,6 @@
 {
   "name": "neuekit",
-  "version": "1.0.0-alpha.10",
+  "version": "1.0.0-alpha.11",
   "license": "MIT",
   "description": "Neue Kit is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with (we hope), and built for the future.",
   "main": "dist/neuekit.js",
@@ -20,9 +20,9 @@
     "not android <= 4.4.4"
   ],
   "devDependencies": {
-    "@babel/core": "7.4.3",
-    "@babel/plugin-transform-runtime": "7.4.3",
-    "@babel/preset-env": "7.4.3",
+    "@babel/core": "7.4.4",
+    "@babel/plugin-transform-runtime": "7.4.4",
+    "@babel/preset-env": "7.4.4",
     "@babel/runtime-corejs3": "^7.4.3",
     "autoprefixer": "^9.4.9",
     "browser-sync": "^2.26.3",
@@ -31,18 +31,17 @@
     "npm-run-all": "^4.1.5",
     "onchange": "^5.2.0",
     "postcss-cli": "^6.1.0",
-    "rollup": "1.8.0",
+    "rollup": "1.11.3",
     "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-commonjs": "9.3.0",
+    "rollup-plugin-commonjs": "9.3.4",
     "rollup-plugin-node-resolve": "^4.0.1",
     "rollup-plugin-terser": "^4.0.4",
-    "sassdoc": "^2.5.1",
-    "sassdoc-theme-flippant": "^0.1.0"
+    "sassdoc": "^2.7.0"
   },
   "scripts": {
     "serve": "browser-sync start --server --directory --no-notify --files '.' --ignore 'node_modules'",
     "scss": "node-sass -x -r --output-style compressed --output ./dist ./src/styles",
-    "sassdoc": "sassdoc ./src/styles --theme flippant",
+    "sassdoc": "sassdoc ./src/styles --theme default",
     "autoprefixer": "postcss --use autoprefixer --replace ./dist/style.css --no-map",
     "build:css": "npm run sassdoc --silent && npm run scss --silent && npm run autoprefixer --silent && mv ./dist/style.css ./dist/neuekit.css",
     "build:js": "rollup --config",
