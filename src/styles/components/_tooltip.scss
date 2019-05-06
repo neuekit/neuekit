@@ -3,20 +3,21 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin _nu-component__tooltip(
-    $tipSize:       rem(4),
+    $tipSize:       nu-rem(4),
     $trans:         $trans,
-    $primary:       $primary,
+    $colourPrimary: $colourPrimary,
     $colour:        white,
-    $fontSize:      rem(16),
+    $fontSize:      nu-rem(16),
     $fontWeight:    500,
     $letterSpacing: 0.25,
-    $padding:       rem(2) rem(8)
+    $padding:       nu-rem(2) nu-rem(8),
+    $radius:        $radius
 ) {
 
     // .c-tooltip
     &::before, // .c-tooltip::before,
     &::after { // .c-tooltip::after
-        bottom: calc(100% + #{rem(2)}); left: 50%;
+        bottom: calc(100% + #{nu-rem(2)}); left: 50%;
         opacity: 0;
         position: absolute;
         transition: opacity $trans;
@@ -25,14 +26,14 @@
     &::before { // .c-tooltip::before
         border-left: $tipSize solid transparent;
         border-right: $tipSize solid transparent;
-        border-top: $tipSize solid $primary;
+        border-top: $tipSize solid $colourPrimary;
         content: '';
-        @include area(0);
+        @include nu-area(0);
         transform: translate(-50%, $tipSize);
     }
 
     &::after { // .c-tooltip::after
-        background-color: $primary;
+        background-color: $colourPrimary;
         border-radius: $radius;
         color: $colour;
         content: attr(title);
@@ -49,7 +50,7 @@
 
         &::before, // .c-tooltip--bottom::before
         &::after { // .c-tooltip--bottom::after
-            bottom: auto; top: calc(100% + #{rem(2)});
+            bottom: auto; top: calc(100% + #{nu-rem(2)});
         }
 
         &::before { // .c-tooltip::before
@@ -74,11 +75,11 @@
 
         &::before, // .c-tooltip--left::before,
         &::after { // .c-tooltip--left::after
-            left: auto; right: calc(100% + #{rem(2)});
+            left: auto; right: calc(100% + #{nu-rem(2)});
         }
 
         &::before { // .c-tooltip--left::before
-            transform: translate(rem(6), 50%) rotate(270deg);
+            transform: translate(nu-rem(6), 50%) rotate(270deg);
         }
     }
 
@@ -86,11 +87,11 @@
 
         &::before, // .c-tooltip--right::before,
         &::after { // .c-tooltip--right::after
-            left: calc(100% + #{rem(2)});
+            left: calc(100% + #{nu-rem(2)});
         }
 
         &::before { // .c-tooltip--right::before
-            transform: translate(rem(-6), 50%) rotate(90deg);
+            transform: translate(nu-rem(-6), 50%) rotate(90deg);
         }
     }
 
@@ -106,26 +107,28 @@
 
 
 /// @group Components
-/// @param {Length} $tipSize [rem(4)] - Sets on background color
-/// @param {String} $trans [$trans] - Sets transition properties eg. 0.2 ease
-/// @param {String} $primary [$primary] - Sets background color
+/// @param {Length} $tipSize [nu-rem(4)] - Sets on background color
+/// @param {String} $trans [$nu-trans] - Sets transition properties eg. 0.2 ease
+/// @param {String} $colourPrimary [$nu-colourPrimary] - Sets background color
 /// @param {String} $colour [white] - Sets text color
-/// @param {Length} $fontSize [rem(16)] - Font size
+/// @param {Length} $fontSize [nu-rem(16)] - Font size
 /// @param {Length} $fontWeight [500] - Font weight
 /// @param {Number} $letterSpacing [0.25] - Letter spacing
-/// @param {Length} $padding [rem(2) rem(8)] - Padding values
-/// @require {function} rem
-/// @require {mixin} area
+/// @param {Length} $padding [nu-rem(2) nu-rem(8)] - Padding values
+/// @param {Length} $radius [nu-radius] - Sets corner radius
+/// @require {function} nu-rem
+/// @require {mixin} nu-area
 
 @mixin nu-component__tooltip(
-    $tipSize:       rem(4),
-    $trans:         $trans,
-    $primary:       $primary,
+    $tipSize:       nu-rem(4),
+    $trans:         $nu-trans,
+    $colourPrimary: $nu-colourPrimary,
     $colour:        white,
-    $fontSize:      rem(16),
+    $fontSize:      nu-rem(16),
     $fontWeight:    500,
     $letterSpacing: 0.25,
-    $padding:       rem(2) rem(8)
+    $padding:       nu-rem(2) nu-rem(8),
+    $radius:        $nu-radius
 ) {
 
     .c-tooltip {
@@ -133,12 +136,13 @@
         @include _nu-component__tooltip(
             $tipSize:       $tipSize,
             $trans:         $trans,
-            $primary:       $primary,
+            $colourPrimary: $colourPrimary,
             $colour:        $colour,
             $fontSize:      $fontSize,
             $fontWeight:    $fontWeight,
             $letterSpacing: $letterSpacing,
-            $padding:       $padding
+            $padding:       $padding,
+            $radius:        $radius
         );
     }
 }

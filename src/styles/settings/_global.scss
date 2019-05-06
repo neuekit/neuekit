@@ -2,12 +2,12 @@
     #GLOBAL SETTINGS
 \*----------------------------------------------------------------------------*/
 
-$radius:        3px             !default;
-$speed:         0.2s            !default;
-$ease:          ease            !default;
-$trans:         $speed $ease    !default;
+$nu-radius:        3px             !default;
+$nu-speed:         0.2s            !default;
+$nu-ease:          ease            !default;
+$nu-trans:         $nu-speed $nu-ease    !default;
 
-$breakpoints: (
+$nu-breakpoints: (
     xs:         0,              // Phone
     s:          768px,          // Tablet
     m:          1024px,         // Notebook
@@ -15,9 +15,6 @@ $breakpoints: (
     xl:         1600px          // Desktop
 )                               !default;
 
-$mediaClass:    '\\@'           !default;
+$nu-mediaClass:    '\\@'           !default;
 
-$direction:     column          !default;
-
-
-$plainInputs: false;
+$nu-plainInputs: false;

@@ -4,113 +4,113 @@
 
 /// @group Utilities
 /// @param {List} $responsive [(up, only)] - Breakpoint rules
-/// @require {function} chain
-/// @require {mixin} breakpoints
+/// @require {function} nu-chain
+/// @require {mixin} nu-breakpoints
 
 @mixin nu-utility__flex(
     $responsive: (up, only)
 ) {
 
-    #{chain('.u-flex')} {
+    #{nu-chain('.u-flex')} {
         display: flex;
     }
 
-    #{chain('.u-inflex')} {
+    #{nu-chain('.u-inflex')} {
         display: inline-flex;
     }
 
-    @include breakpoints( $responsive ) {
+    @include nu-breakpoints( $responsive ) {
 
-        #{chain('.u-grow' + $break)} {
+        #{nu-chain('.u-grow' + $break)} {
             flex-grow: 1;
         }
 
-        #{chain('.u-noGrow' + $break)} {
+        #{nu-chain('.u-noGrow' + $break)} {
             flex-grow: 0;
         }
 
-        #{chain('.u-shrink' + $break)} {
+        #{nu-chain('.u-shrink' + $break)} {
             flex-shrink: 1;
         }
 
-        #{chain('.u-noShrink' + $break)} {
+        #{nu-chain('.u-noShrink' + $break)} {
             flex-shrink: 0;
         }
 
-        #{chain('.u-row' + $break)} {
+        #{nu-chain('.u-row' + $break)} {
             flex-direction: row;
         }
 
-        #{chain('.u-column' + $break)} {
+        #{nu-chain('.u-column' + $break)} {
             flex-direction: column;
         }
 
-        #{chain('.u-rowReverse' + $break)} {
+        #{nu-chain('.u-rowReverse' + $break)} {
             flex-flow: row-reverse;
         }
 
-        #{chain('.u-columnReverse' + $break)} {
+        #{nu-chain('.u-columnReverse' + $break)} {
             flex-flow: column-reverse;
         }
 
-        #{chain('.u-justifyStart' + $break)} {
+        #{nu-chain('.u-justifyStart' + $break)} {
             justify-content: flex-start;
         }
 
-        #{chain('.u-justifyCenter' + $break)} {
+        #{nu-chain('.u-justifyCenter' + $break)} {
             justify-content: center;
         }
 
-        #{chain('.u-justifyEnd' + $break)} {
+        #{nu-chain('.u-justifyEnd' + $break)} {
             justify-content: flex-end;
             margin-left: auto;
         }
 
-        #{chain('.u-alignStart' + $break)} {
+        #{nu-chain('.u-alignStart' + $break)} {
             align-items: flex-start;
         }
 
-        #{chain('.u-alignCenter' + $break)} {
+        #{nu-chain('.u-alignCenter' + $break)} {
             align-items: center;
         }
 
-        #{chain('.u-alignEnd' + $break)} {
+        #{nu-chain('.u-alignEnd' + $break)} {
             align-items: flex-end;
         }
 
-        #{chain('.u-alignSelfStart' + $break)} {
+        #{nu-chain('.u-alignSelfStart' + $break)} {
             align-self: flex-start;
         }
 
-        #{chain('.u-alignSelfCenter' + $break)} {
+        #{nu-chain('.u-alignSelfCenter' + $break)} {
             align-self: center;
         }
 
-        #{chain('.u-alignSelfEnd' + $break)} {
+        #{nu-chain('.u-alignSelfEnd' + $break)} {
             align-self: flex-end;
         }
 
-        #{chain('.u-around' + $break)} {
+        #{nu-chain('.u-around' + $break)} {
             justify-content: space-around;
         }
 
-        #{chain('.u-between' + $break)} {
+        #{nu-chain('.u-between' + $break)} {
             justify-content: space-between;
         }
 
-        #{chain('.u-first' + $break)} {
+        #{nu-chain('.u-first' + $break)} {
             order: -1;
         }
 
-        #{chain('.u-last' + $break)} {
+        #{nu-chain('.u-last' + $break)} {
             order: 1;
         }
 
-        #{chain('.u-wrap' + $break)} {
+        #{nu-chain('.u-wrap' + $break)} {
             flex-wrap: wrap;
         }
 
-        #{chain('.u-nowrap' + $break)} {
+        #{nu-chain('.u-nowrap' + $break)} {
             flex-wrap: nowrap;
         }
     }

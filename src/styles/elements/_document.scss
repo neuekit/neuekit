@@ -15,10 +15,10 @@
 
     html {
         box-sizing: border-box;             /* 1 */
-        color: $text;
+        color: $nu-colourText;
         cursor: default;                    /* 2 */
-        font-family: $fontstack;
-        font-size: $htmlFontSize;
+        font-family: $nu-fontstack;
+        font-size: $nu-htmlFontSize;
         line-height: 1.5;                   /* 3 */
         -moz-osx-font-smoothing: grayscale;
         -webkit-font-smoothing: antialiased;
@@ -31,7 +31,7 @@
     \*----------------------------------------------------------------------------*/
 
     body {
-        font-size: $baseFontSize;
+        font-size: $nu-baseFontSize;
         margin: 0; /* 1 */
     }
 

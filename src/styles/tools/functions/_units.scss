@@ -4,9 +4,9 @@
 
 /// @group Tools
 /// @param {Length | Number} $pixels - Value to convert to rem
-/// @param {String} $context [$rootFontSize] - Root font size to base rem on
+/// @param {String} $context [$nu-rootFontSize] - Root font size to base rem on
 
-@function rem( $pixels, $context: $rootFontSize ) {
+@function nu-rem( $pixels, $context: $nu-rootFontSize ) {
 
     @if ( unit($pixels) == '%' or $pixels == 0 ) {
 

@@ -5,16 +5,16 @@
 /// @group Tools
 /// @param {Length} $jump - Difference between heading sizes
 /// @param {Boolean} $element [false] - Whether to output h1 instead of .u-h1
-/// @require {function} rem
+/// @require {function} nu-rem
 
-@mixin headings($jump, $element: false) {
+@mixin nu-headings($jump, $element: false) {
 
     @if ( $element ) {
 
         @for $i from 1 through 6 {
 
             h#{$i} {
-                font-size: $baseFontSize + ($jump * (6 - $i));
+                font-size: $nu-baseFontSize + ($jump * (6 - $i));
             }
         }
     }
@@ -24,14 +24,14 @@
         @for $i from 1 through 6 {
 
             .u-h#{$i} {
-                font-size: $baseFontSize + ($jump * (6 - $i));
+                font-size: $nu-baseFontSize + ($jump * (6 - $i));
             }
         }
 
         @for $i from 1 through 6 {
 
             .u-s#{$i} {
-                font-size: $baseFontSize + ($jump * (6 - $i)) - rem(4);
+                font-size: $nu-baseFontSize + ($jump * (6 - $i)) - nu-rem(4);
             }
         }
     }

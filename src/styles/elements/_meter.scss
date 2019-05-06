@@ -3,7 +3,7 @@
 \*----------------------------------------------------------------------------*/
 
 /// @group Elements
-/// @require {function} rem
+/// @require {function} nu-rem
 
 @mixin nu-element__meter() {
 
@@ -16,48 +16,48 @@
         &::-webkit-meter-suboptimum-value, // meter::-webkit-meter-suboptimum-value,
         &::-webkit-meter-even-less-good-value { // meter::-webkit-meter-even-less-good-value
             border: none;
-            border-radius: rem(16);
+            border-radius: nu-rem(16);
         }
 
         &::-webkit-meter-bar { // meter::-webkit-meter-bar
-            background: $input;
-            height: rem(8);
+            background: $nu-colourInput;
+            height: nu-rem(8);
         }
 
         &::-webkit-meter-optimum-value { // meter::-webkit-meter-bar
-            background: $success;
+            background: $nu-colourSuccess;
         }
 
         &::-webkit-meter-suboptimum-value { // meter::-webkit-meter-suboptimum-value
-            background: $warn;
+            background: $nu-colourWarn;
         }
 
         &::-webkit-meter-even-less-good-value { // meter::-webkit-meter-even-less-good-value
-            background: $error;
+            background: $nu-colourError;
         }
     }
 
     @-moz-document url-prefix() {
 
         meter {
-            background: $input;
-            border-radius: rem(16);
-            height: rem(8);
+            background: $nu-colourInput;
+            border-radius: nu-rem(16);
+            height: nu-rem(8);
 
             &::-moz-meter-bar { // meter::-moz-meter-bar
-                border-radius: rem(16);
+                border-radius: nu-rem(16);
             }
 
             &:-moz-meter-optimum::-moz-meter-bar { // meter:-moz-meter-optimum::-moz-meter-bar
-                background: $success;
+                background: $nu-colourSuccess;
             }
 
             &:-moz-meter-sub-optimum::-moz-meter-bar { // meter:-moz-meter-sub-optimum::-moz-meter-bar
-                background: $warn;
+                background: $nu-colourWarn;
             }
 
             &:-moz-meter-sub-sub-optimum::-moz-meter-bar { // meter:-moz-meter-sub-sub-optimum::-moz-meter-bar
-                background: $error;
+                background: $nu-colourError;
             }
         }
     }

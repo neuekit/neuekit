@@ -4,13 +4,13 @@
 
 /// @group Utilities
 /// @param {List} $responsive [(up)] - Breakpoint rules
-/// @require {mixin} breakpoints
+/// @require {mixin} nu-breakpoints
 
 @mixin nu-utility__size(
     $responsive: (up)
 ) {
 
-    @include breakpoints( $responsive ) {
+    @include nu-breakpoints( $responsive ) {
 
         .u-size-auto#{ $break } {
             flex-grow: 1;
@@ -19,12 +19,12 @@
             width: 0%;
         }
 
-        @for $grid from 0 through $columns {
+        @for $grid from 0 through $nu-gridColumns {
 
             $width: if(
                 $grid == 0,
                 auto,
-                floor( 100% / $columns * ( $grid * 1000 ) ) / 1000
+                floor( 100% / $nu-gridColumns * ( $grid * 1000 ) ) / 1000
             );
 
             .u-size-#{ $grid }#{ $break } {

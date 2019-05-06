@@ -3,24 +3,25 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin _nu-component__modal(
-    $primary:       $primary,
-    $tertiary:      $tertiary,
-    $quaternary:    $quaternary,
-    $radius:        $radius,
-    $trans:         $trans,
-    $maxWidth:      $maxWidth
+    $backdropColour:            $nu-colourPrimary,
+    $barColour:                 $nu-colourSecondary,
+    $closeButtonColour--hover:  $nu-colourTertiary,
+    $closeButtonColour:         $nu-colourQuaternary,
+    $radius:                    $nu-radius,
+    $trans:                     $nu-trans,
+    $maxWidth:                  $nu-gridMaxWidth
 ) {
 
     // .c-modal
     $block: &;
 
     align-items: center;
-    background-color: rgba($primary, 0.8);
+    background-color: rgba($backdropColour, 0.8);
     display: flex;
-    @include area(100%);
+    @include nu-area(100%);
     left: 0; top: 0;
     opacity: 0;
-    padding: rem(16);
+    padding: nu-rem(16);
     position: fixed;
     transition: opacity $trans;
     visibility: hidden;
@@ -31,32 +32,32 @@
         background-color: white;
         border-radius: $radius;
         margin: auto;
-        max-height: calc(100vh - #{rem(32)});
+        max-height: calc(100vh - #{nu-rem(32)});
         max-width: $maxWidth;
         opacity: 0;
-        transform: translateY(rem(160));
+        transform: translateY(nu-rem(160));
         transition: all $trans;
     }
 
     &__content { // .c-modal__content
         overflow: auto; -webkit-overflow-scrolling: touch;
-        padding: rem(32);
+        padding: nu-rem(32);
     }
 
     &__bar {
-        border-bottom: 1px solid $secondary;
+        border-bottom: 1px solid $barColour;
     }
 
     &__main + &__bar {
         border-bottom: 0;
-        border-top: 1px solid $secondary;
+        border-top: 1px solid $barColour;
     }
 
     &__close { // .c-modal__close
-        background-color: $quaternary;
+        background-color: $closeButtonColour;
         border-radius: 50%;
         display: block;
-        @include area(rem(28));
+        @include nu-area(nu-rem(28));
         margin-left: auto;
         position: sticky;
         top: 0;
@@ -65,11 +66,11 @@
 
         &::before, // .c-modal__close::before,
         &::after { // .c-modal__close::after
-            background-color: $primary;
-            border-radius: rem(16);
+            background-color: $backdropColour;
+            border-radius: nu-rem(16);
             content: '';
             display: block;
-            @include area(rem(3), rem(14));
+            @include nu-area(nu-rem(3), nu-rem(14));
             left: 50%; top: 50%;
             position: absolute;
             transform: translate(-50%, -50%) rotate(45deg);
@@ -82,7 +83,7 @@
         }
 
         &:hover { // .c-modal__close:hover
-            background-color: $tertiary;
+            background-color: $closeButtonColour--hover;
 
             &::before, // .c-modal__close:hover::before,
             &::after { // .c-modal__close:hover::after
@@ -104,7 +105,7 @@
 
         #{$block}__content { // .c-modal--fullscreen .c-modal__content
             border-radius: 0;
-            @include area(100%);
+            @include nu-area(100%);
             margin: 0;
             max-height: none;
             max-width: none;
@@ -129,31 +130,34 @@
 
 
 /// @group Components
-/// @param {String} $primary [$primary] - Sets backdrop color
-/// @param {String} $tertiary [$tertiary] - Sets close button hover color
-/// @param {String} $quaternary [$quaternary] - Sets close button color
-/// @param {Length} $radius [$radius] - Sets corner radius
-/// @param {String} $trans [$trans] - Sets transition properties eg. 0.2 ease
-/// @param {Length} $maxWidth [$maxWidth] - Sets modal max width
+/// @param {String} $backdropColour [$nu-colourPrimary] - Sets backdrop colour
+/// @param {String} $barColour [$nu-colourSecondary] - Sets bar colour
+/// @param {String} $closeButtonColour--hover [$nu-colourTertiary] - Sets close button hover colour
+/// @param {String} $closeButtonColour [$nu-colourQuaternary] - Sets close button colour
+/// @param {Length} $radius [$nu-radius] - Sets corner radius
+/// @param {String} $trans [$nu-trans] - Sets transition properties eg. 0.2 ease
+/// @param {Length} $maxWidth [$nu-gridMaxWidth] - Sets modal max width
 
 @mixin nu-component__modal(
-    $primary:       $primary,
-    $tertiary:      $tertiary,
-    $quaternary:    $quaternary,
-    $radius:        $radius,
-    $trans:         $trans,
-    $maxWidth:      $maxWidth
+    $backdropColour:            $nu-colourPrimary,
+    $barColour:                 $nu-colourSecondary,
+    $closeButtonColour--hover:  $nu-colourTertiary,
+    $closeButtonColour:         $nu-colourQuaternary,
+    $radius:                    $nu-radius,
+    $trans:                     $nu-trans,
+    $maxWidth:                  $nu-gridMaxWidth
 ) {
 
     .c-modal {
 
         @include _nu-component__modal(
-            $primary:       $primary,
-            $tertiary:      $tertiary,
-            $quaternary:    $quaternary,
-            $radius:        $radius,
-            $trans:         $trans,
-            $maxWidth:      $maxWidth
+            $backdropColour:            $backdropColour,
+            $barColour:                 $barColour,
+            $closeButtonColour--hover:  $closeButtonColour--hover,
+            $closeButtonColour:         $closeButtonColour,
+            $radius:                    $radius,
+            $trans:                     $trans,
+            $maxWidth:                  $maxWidth
         );
     }
 }

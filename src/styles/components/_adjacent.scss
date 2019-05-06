@@ -3,9 +3,9 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin _nu-component__adjacent(
-    $radius:        $radius,
-    $background:    $tertiary,
-    $colour:        white
+    $radius:                $nu-radius,
+    $endBackgroundColour:   $nu-colourTertiary,
+    $endTextColour:         white
 ) {
 
     // .c-adjacent
@@ -19,12 +19,12 @@
 
     &__end { // .c-adjacent__end
         align-items: center;
-        background-color: $background;
-        color: $colour;
+        background-color: $endBackgroundColour;
+        color: $endTextColour;
         display: flex;
         flex-flow: row;
         flex-shrink: 0;
-        padding: 0 rem(16);
+        padding: 0 nu-rem(16);
     }
 
     &__item, // .c-adjacent__item,
@@ -49,23 +49,23 @@
 
 
 /// @group Components
-/// @param {Length} $radius [$radius] - Sets corner radius
-/// @param {String} $background [$tertiary] - Sets end background color
-/// @param {String} $colour [white] - Sets end text color
-/// @require {function} rem
+/// @param {Length} $radius [$nu-radius] - Sets corner radius
+/// @param {String} $endBackgroundColour [$nu-colourTertiary] - Sets end background color
+/// @param {String} $endTextColour [white] - Sets end text color
+/// @require {function} nu-rem
 
 @mixin nu-component__adjacent(
-    $radius:        $radius,
-    $background:    $tertiary,
-    $colour:        white
+    $radius:                $nu-radius,
+    $endBackgroundColour:   $nu-colourTertiary,
+    $endTextColour:         white
 ) {
 
     .c-adjacent {
 
         @include _nu-component__adjacent(
-            $radius:        $radius,
-            $background:    $background,
-            $colour:        $colour
+            $radius:                $radius,
+            $endBackgroundColour:   $endBackgroundColour,
+            $endTextColour:         $endTextColour
         );
     }
 }

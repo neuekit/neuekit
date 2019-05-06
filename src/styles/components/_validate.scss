@@ -3,8 +3,8 @@
 \*----------------------------------------------------------------------------*/
 
 @mixin _nu-component__validate(
-    $success:       $success,
-    $error:         $error,
+    $colourSuccess: $colourSuccess,
+    $colourError:   $colourError,
     $trans:         $trans,
     $fontWeight:    500
 ) {
@@ -18,33 +18,33 @@
     /*  Elements  */
 
     &__label { // .c-validate__label
-        margin-bottom: rem(12);
+        margin-bottom: nu-rem(12);
         order: -1;
     }
 
     &__message { // .c-validate__message
-        color: $error;
+        color: $colourError;
         font-weight: $fontWeight;
         height: 0;
         pointer-events: none;
         opacity: 0;
-        transform: translateY(rem(4));
+        transform: translateY(nu-rem(4));
         transition: all $trans;
     }
 
     &__input { // .c-validate__input
-        margin-bottom: rem(4);
+        margin-bottom: nu-rem(4);
 
         &:focus:valid, // .c-validate__input:valid
         &:focus.is-valid { // .c-validate__input.is-valid
-            background-color: rgba($success, 0.1);
-            box-shadow: inset 0 0 0 2px $success;
+            background-color: rgba($colourSuccess, 0.1);
+            box-shadow: inset 0 0 0 2px $colourSuccess;
         }
 
         &:invalid:not(:placeholder-shown), // .c-validate__input:invalid:not(:placeholder-shown)
         &.is-invalid:not(:placeholder-shown) { // .c-validate__input.is-invalid:not(:placeholder-shown)
-            background-color: rgba($error, 0.1);
-            box-shadow: inset 0 0 0 2px $error;
+            background-color: rgba($colourError, 0.1);
+            box-shadow: inset 0 0 0 2px $colourError;
 
             ~ #{$block}__message { // .c-validate__input:invalid:not(:placeholder-shown) ~ .c-validate__message
                 height: auto;
@@ -58,24 +58,24 @@
 
 
 /// @group Components
-/// @param {Length} $success [$success] - Sets success color
-/// @param {String} $error [$error] - Sets error color
-/// @param {String} $trans [$trans] - Sets transition properties eg. 0.2 ease
+/// @param {Length} $colourSuccess [$nu-colourSuccess] - Sets success color
+/// @param {String} $colourError [$nu-colourError] - Sets error color
+/// @param {String} $trans [$nu-trans] - Sets transition properties eg. 0.2 ease
 /// @param {String} $fontWeight [500] - Sets font weight
-/// @require {function} rem
+/// @require {function} nu-rem
 
 @mixin nu-component__validate(
-    $success:       $success,
-    $error:         $error,
-    $trans:         $trans,
+    $colourSuccess: $nu-colourSuccess,
+    $colourError:   $nu-colourError,
+    $trans:         $nu-trans,
     $fontWeight:    500
 ) {
 
     .c-validate {
 
         @include _nu-component__validate(
-            $success:       $success,
-            $error:         $error,
+            $colourSuccess: $colourSuccess,
+            $colourError:   $colourError,
             $trans:         $trans,
             $fontWeight:    $fontWeight
         );

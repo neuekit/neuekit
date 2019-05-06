@@ -7,7 +7,7 @@
 /// @param {Arglist} $keys - Key chain
 /// @return {*} - Desired value
 
-@function map-deep-get($map, $keys...) {
+@function nu-mapDeepGet($map, $keys...) {
 
     @each $key in $keys {
 

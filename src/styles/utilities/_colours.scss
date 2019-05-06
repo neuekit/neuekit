@@ -3,15 +3,15 @@
 \*----------------------------------------------------------------------------*/
 
 /// @group Utilities
-/// @param {Map} $palette [$palette] - Colour palette map
+/// @param {Map} $colourPalette [$nu-colourPalette] - Colour palette map
 /// @param {Number} $lightnessTolerance [50] - Threshold for white text to be applied to darker backgrounds
 /// @param {String} $lightnessColour [white] - Light text colour for dark backgrounds
 /// @param {List} $utilities [(background, colour)] - Map declaring which classes to create
-/// @require {function} str-capitalise
-/// @require {function} chain
+/// @require {function} nu-strCapitalise
+/// @require {function} nu-chain
 
 @mixin nu-utility__colour(
-    $palette: $palette,
+    $colourPalette: $nu-colourPalette,
     $lightnessTolerance: 50, // The lightness component, between 0% and 100%, or false/null
     $lightnessColour: white, // Colour to set the text to if background colour is deemed to be dark
     $utilities: (
@@ -20,14 +20,14 @@
     )
 ) {
 
-    @each $name, $colour in $palette {
+    @each $name, $colour in $colourPalette {
 
         // Capitalise our colour name (ie. red becomes Red)
-        $name: str-capitalise($name);
+        $name: nu-strCapitalise($name);
 
         @if index($utilities, background) {
 
-            #{chain(".u-bg" + $name)} { // .u-bgRed
+            #{nu-chain(".u-bg" + $name)} { // .u-bgRed
                 background-color: $colour;
 
                 @if ( $lightnessTolerance and lightness($colour) < $lightnessTolerance ) {
@@ -38,7 +38,7 @@
 
         @if index($utilities, colour) {
 
-            #{chain(".u-colour" + $name)} { // .u-colourRed
+            #{nu-chain(".u-colour" + $name)} { // .u-colourRed
                 color: $colour;
             }
         }

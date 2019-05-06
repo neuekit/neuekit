@@ -3,7 +3,7 @@
 \*----------------------------------------------------------------------------*/
 
 /// @group Elements
-/// @require {function} rem
+/// @require {function} nu-rem
 
 @mixin nu-element__progress() {
 
@@ -15,16 +15,16 @@
         appearance: none;
         background: linear-gradient(
             to right,
-            $primary 0%,
-            $input 0%,
-            $input 100%,
-            $primary 100%
+            $nu-colourPrimary 0%,
+            $nu-colourInput 0%,
+            $nu-colourInput 100%,
+            $nu-colourPrimary 100%
         ) repeat;
         background-size: 200% 100%;
         border: none;
-        border-radius: rem(16);
-        color: $primary;
-        @include area(rem(8), 100%);
+        border-radius: nu-rem(16);
+        color: $nu-colourPrimary;
+        @include nu-area(nu-rem(8), 100%);
         vertical-align: baseline; /* 1 */
 
         &::-ms-fill { // progress::-ms-fill
@@ -36,15 +36,15 @@
         &[value]::-webkit-progress-value { // progress[value]::-webkit-progress-value
             background: none;
             border: none;
-            border-radius: rem(16);
+            border-radius: nu-rem(16);
         }
 
         &[value]::-webkit-progress-bar { // progress[value]::-webkit-progress-bar
-            background: $input;
+            background: $nu-colourInput;
         }
 
         &[value]::-webkit-progress-value { // progress[value]::-webkit-progress-value
-            background-color: $primary;
+            background-color: $nu-colourPrimary;
         }
 
         &:not([value]) { // prgoress:not([value])
@@ -61,15 +61,15 @@
         progress[value],
         progress[value]::-moz-progress-bar {
             border: none;
-            border-radius: rem(16);
-            height: rem(8);
+            border-radius: nu-rem(16);
+            height: nu-rem(8);
         }
 
         progress[value] {
-            background-color: $input;
+            background-color: $nu-colourInput;
 
             &::-moz-progress-bar {
-                background-color: $primary;
+                background-color: $nu-colourPrimary;
             }
         }
     }
