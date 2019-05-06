@@ -254,7 +254,7 @@
 
                         <div class="u-h6">Starter Kit</div>
 
-                        <pre class="line-numbers  u-grow">
+                        <pre class="command-line  u-grow" data-prompt="$">
 
                             <code class="language-bash">
                                 npm install -g degit
@@ -271,7 +271,7 @@
 
                         <div class="u-h6">NPM Package</div>
 
-                        <pre class="line-numbers  u-grow">
+                        <pre class="command-line  u-grow" data-prompt="$">
 
                             <code class="language-bash">
                                 npm install neuekit --save
@@ -318,8 +318,6 @@
 
                 <div class="u-h6  u-mB-16  u-mT-32" id="why">Why?</div>
 
-                <p></p>
-
                 <div class="u-h6  u-mB-16  u-mT-32" id="how">How?</div>
 
             </section>
@@ -350,7 +348,216 @@
 
             <section id="objects">
 
-                <div class="u-h5  u-mB-16  u-mT-48">Objects</div>
+                <div class="u-h4  u-mB-16  u-mT-48">Objects</div>
+
+                <div>
+
+                    <div class="u-h5  u-mT-32" id="o_grid">Grid</div>
+
+                    <p>The grid system is simple to use, can create a wide range of layouts and utilises a mixture of settings and utilities to allow ultimate flexibility. Oh they are infinitely nest-able too!</p>
+
+                    <div class="u-h6  u-mT-32" id="basicusage">Basic usage</div>
+
+                    <hr />
+
+                    <p>The Neue Kit grid system is built with flex and with our handy utilities we can make use of all of the benefits that flex has to offer.</p>
+
+                    <p>Here is a super simple grid declaration with a single full width column. By default a single column will try to take up 100% of the width of the parent.</p>
+
+                    <pre class="line-numbers">
+                        <code class="language-markup">
+                            &lt;div class="o-grid"&gt;
+                                &lt;div class="o-grid__item"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+
+                    <!-- Alternatively -->
+
+                    <pre class="line-numbers">
+                        <code class="language-markup">
+                            &lt;div class="o-grid  o-grid--item"&gt;&lt;/div&gt;
+                        </code>
+                    </pre>
+
+                    <p>Let's take a look at a grid with a few columns and an alignment class for good measure. This declaration will define 4 columns, centre aligned (see alignment utilities).</p>
+
+                    <p>On mobile each column will be 100%, on tablets it will change to 50% per column and on desktop 25% per column. There are 12 size classes in the default setup, which can be changed to any number, along with gutter sizes too.</p>
+
+                    <pre class="line-numbers">
+                        <code class="language-markup">
+                            &lt;div class="o-grid  u-alignCenter@l"&gt;
+                                &lt;div class="o-grid__item  u-size-6@m  u-size-3@l"&gt;&lt;/div&gt;
+                                &lt;div class="o-grid__item  u-size-6@m  u-size-3@l"&gt;&lt;/div&gt;
+                                &lt;div class="o-grid__item  u-size-6@m  u-size-3@l"&gt;&lt;/div&gt;
+                                &lt;div class="o-grid__item  u-size-6@m  u-size-3@l"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+
+                    <div class="u-h6  u-mT-32" id="modifierclasses">Modifier classes</div>
+
+                    <hr />
+
+                    <p>There are a whole heap of classes you can use to customise the grid to your liking, these are added top level alongside your <code class="language-css">o-grid</code> class:</p>
+
+                    <ul>
+                        <li><code class="language-css">o-grid--item</code> This can be used if you only need a single column, which saves a div 😁</li>
+
+                        <li><code class="language-css">o-grid--max</code> This removes the <code class="language-css">max-width</code> restriction on the grid, making it fill the screen.</li>
+
+                        <li><code class="language-css">o-grid--edge</code> This strips the gutters from your columns, enabling them to go edge-to-edge.</li>
+
+                        <li><code class="language-css">o-grid—-unnest</code> This doubles the negative margin which may be needed to reverse nested grid padding.</li>
+
+                        <li><code class="language-css">o-grid--nest</code> This does the opposite of the above and allows a nested grid to be inset visually.</li>
+
+                        <li><code class="language-css">o-grid--items-2</code> Adding <code class="language-css">items</code> plural and specifying a number sets the columns at the parent level...</li>
+                    </ul>
+
+                    <div class="u-h6  u-mT-32" id="topleveldefinition">Top-level definition</div>
+
+                    <hr />
+
+                    <p>You can layout your grid at the parent level if your columns are all the same width, you can even do this for each breakpoint. This can be especially helpful if you don't know the number of columns you have to display, if they are pulled dynamically for example.</p>
+
+                    <pre class="line-numbers">
+                        <code class="language-markup">
+                            &lt;div class="o-grid  o-grid--items-6@m  o-grid--items-3@l"&gt;
+                                &lt;div class="o-grid__item"&gt;&lt;/div&gt;
+                                &lt;div class="o-grid__item"&gt;&lt;/div&gt;
+                                &lt;div class="o-grid__item"&gt;&lt;/div&gt;
+                                &lt;div class="o-grid__item"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+
+                    <div class="u-h6  u-mT-32" id="usingsizeutilities">Using size utilities</div>
+
+                    <hr />
+
+                    <p>As shown above the grid makes use of the size utility classes, which are not restricted to the grid. You can customise the number of size classes in the settings layer. (See size utilities) Here's a broad example of the default available size classes and how you may apply them to the grid.</p>
+
+                    <pre class="line-numbers">
+                        <code class="language-markup">
+                            &lt;div class="o-grid"&gt;
+                                &lt;div class="o-grid__item  u-size-6@s  u-size-3@m  u-size-2@l  u-size-1@xl"&gt;&lt;/div&gt;
+                                &lt;div class="o-grid__item  u-size-6@s  u-size-3@m  u-size-2@l  u-size-1@xl"&gt;&lt;/div&gt;
+                                &lt;!-- Repeat --&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class="o-grid"&gt;
+                                &lt;div class="o-grid__item  u-size-4"&gt;&lt;/div&gt;
+                                &lt;div class="o-grid__item  u-size-auto"&gt;&lt;/div&gt;
+                                &lt;div class="o-grid__item  u-size-auto"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+
+                    <p><code class="language-markup">u-size-auto</code> fills the remaining space and if you use more than one the space is divided up and shared equally among them.</p>
+
+                    <div class="u-h6  u-mT-32" id="usingflexutilites">Using flex utilites</div>
+
+                    <hr />
+
+                    <p>One of the strengths of pulling helpers out into utilities is that we can use them with anything. Neue Kit comes with utilities for all sorts of things, and flex utilities come in handy when defining your layouts.</p>
+
+                    <pre class="line-numbers">
+                        <code class="language-markup">
+                        &lt;div class="o-grid  u-alignCenter  u-between  u-justifyCenter@l"&gt;
+                            &lt;div class="o-grid__item  u-size-6  u-size-2@m"&gt;
+                            &lt;div class="o-grid__item  u-size-4@m"&gt;
+                            &lt;div class="o-grid__item  u-size-6  u-size-2@m"&gt;
+                        &lt;/div&gt;
+                        </code>
+                    </pre>
+
+                    <p>Head over to the utilities section to see the full range of helpers on offer and how you can use them in your project.</p>
+
+                    <div class="u-h6  u-mT-32" id="usingoffsetutilities">Using offset utilities</div>
+
+                    <hr />
+
+                    <p>Sometimes if your designer is feeling particularly edgy they may create a wonderful arymetric page layout with areas that are being pulled and pushed outside the confines of the grid.. and you need to somehow create this using a grid system 😳</p>
+
+                    <p>This is where the offset utility can help you out!</p>
+
+                    <pre class="line-numbers">
+                        <code class="language-markup">
+                            &lt;div class="o-grid"&gt;
+                                &lt;div class="o-grid__item  u-size-8@l u-outsetLeft-2@l"&gt;&lt;/div&gt;
+                                &lt;div class="o-grid__item  u-size-6@l"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+
+                            &lt;div class="o-grid"&gt;
+                                &lt;div class="o-grid__item  u-size-4@l  u-inset-2@l"&gt;&lt;/div&gt;
+                                &lt;div class="o-grid__item  u-size-7@l  u-outsetRight-1@l"&gt;&lt;/div&gt;
+                            &lt;/div&gt;
+                        </code>
+                    </pre>
+
+                    <div class="u-h6  u-mT-32" id="includingthemixin">Including the mixin</div>
+
+                    <hr />
+
+                    <p>Usage of the grid mixin is simple, you can import it like so:</p>
+
+                    <pre class="line-numbers">
+                        <code class="language-sass">
+                            @include nu-object__grid();
+                        </code>
+                    </pre>
+
+                    <p>Or you can go anonymous and import the guts of the object without the parent class name, this is super useful when you want to make serious changes to a Neue Kit mixin.</p>
+
+                    <pre class="line-numbers">
+                        <code class="language-sass">
+                            .mySuperGrid {
+                                @include _nu-object__grid();
+                            }
+                        </code>
+                    </pre>
+
+                    <div class="u-h6  u-mT-32  u-mB-16" id="configuringthemixin">Configuring the mixin</div>
+
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Parameter</th>
+                                <th>Type</th>
+                                <th>Default</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>$gutter</td>
+                                <td>Pixel Value</td>
+                                <td>8px</td>
+                                <td>Sets the gap between grid items</td>
+                            </tr>
+                            <tr>
+                                <td>$gutterSmall</td>
+                                <td>Pixel Value</td>
+                                <td>8px</td>
+                                <td>Enables a different gap on mobile</td>
+                            </tr>
+                            <tr>
+                                <td>$mediumBreakpoint</td>
+                                <td>String</td>
+                                <td>m</td>
+                                <td>The point at which the gutter change happens</td>
+                            </tr>
+                            <tr>
+                                <td>$maxWidth</td>
+                                <td>Pixel Value</td>
+                                <td>1380px</td>
+                                <td>Sets the maximum width of the grid container</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
 
             </section>
 
