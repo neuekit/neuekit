@@ -7,6 +7,11 @@
 /// @param {String} $context [$nu-rootFontSize] - Root font size to base rem on
 
 @function nu-rem( $pixels, $context: $nu-rootFontSize ) {
+    
+    @if ( type-of($pixels) != 'number' ) {
+        
+        @return $pixels;
+    }
 
     @if ( unit($pixels) == '%' or $pixels == 0 ) {
 
