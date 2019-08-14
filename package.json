@@ -14,11 +14,6 @@
     "url": "https://github.com/neuekit/neuekit/issues"
   },
   "homepage": "https://github.com/neuekit/neuekit#readme",
-  "browserslist": [
-    ">0.5%",
-    "not op_mini all",
-    "not android <= 4.4.4"
-  ],
   "devDependencies": {
     "@babel/core": "7.5.5",
     "@babel/plugin-transform-runtime": "7.5.5",
