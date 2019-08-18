@@ -1,6 +1,6 @@
 {
   "name": "neuekit",
-  "version": "1.0.0-alpha.13",
+  "version": "1.0.0-alpha.14",
   "license": "MIT",
   "description": "Neue Kit is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with (we hope), and built for the future.",
   "main": "dist/neuekit.js",
@@ -38,7 +38,7 @@
     "scss": "node-sass --output-style compressed -x -r -o ./dist ./src/styles",
     "sassdoc": "sassdoc ./src/styles --theme default",
     "autoprefixer": "postcss --use autoprefixer --replace ./dist/style.css --no-map",
-    "build:css": "run-s 'sassdoc' 'scss' 'autoprefixer' 'mv ./dist/style.css ./dist/neuekit.css'",
+    "build:css": "run-s 'sassdoc' 'scss' 'autoprefixer' && mv ./dist/style.css ./dist/neuekit.css",
     "build:js": "rollup --config",
     "build": "run-s 'build:css' 'build:js'",
     "watch:css": "onchange './src/styles/**/*.scss' -- npm run build:css",

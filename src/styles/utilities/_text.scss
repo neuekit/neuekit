@@ -47,7 +47,8 @@
         text-lower,
         text-upper,
         text-caps,
-        text-nowrap
+        text-nowrap,
+        text-clamp
     )
 ) {
 
@@ -120,6 +121,35 @@
             text-transform: capitalize;
         }
     }
+
+    @if index($utilities, text-clamp) {
+
+      %clamp {
+         display: -webkit-box;
+         -webkit-box-orient: vertical;
+         overflow: hidden;
+      }
+
+      #{nu-chain('.u-textClamp-1')} {
+         @extend %clamp;
+         -webkit-line-clamp: 1;
+      }
+
+      #{nu-chain('.u-textClamp-2')} {
+         @extend %clamp;
+         -webkit-line-clamp: 2;
+      }
+
+      #{nu-chain('.u-textClamp-3')} {
+         @extend %clamp;
+         -webkit-line-clamp: 3;
+      }
+
+      #{nu-chain('.u-textClamp-4')} {
+         @extend %clamp;
+         -webkit-line-clamp: 4;
+      }
+   }
 
     @include nu-breakpoints( $responsive ) {
 
