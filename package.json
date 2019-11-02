@@ -1,6 +1,6 @@
 {
   "name": "@neuekit/neuekit",
-  "version": "1.0.0-alpha.15",
+  "version": "1.0.0",
   "license": "MIT",
   "description": "Neue Kit is a fully responsive framework crafted for scalability. Based on the principles of the ITCSS methodology this front-end springboard is flexible, fun to work with (we hope), and built for the future.",
   "main": "dist/neuekit.js",
@@ -14,6 +14,9 @@
     "url": "https://github.com/neuekit/neuekit/issues"
   },
   "homepage": "https://github.com/neuekit/neuekit#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "devDependencies": {
     "@babel/core": "7.6.4",
     "@babel/plugin-transform-runtime": "7.6.2",
