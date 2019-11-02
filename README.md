@@ -1,6 +1,6 @@
-# <a href="http://creativelittle.uk/neuekit" target="_blank">Neue Kit</a> - M1
+# <a href="https://neuekit.github.io/neuekit/" target="_blank">Neue Kit</a> - M1
 
-> THIS PROJECT IS IN ALPHA DUE TO THERE BEING MINIMAL ACCESSIBLE DOCUMENTATION;
+> WARNING MINIMAL ACCESSIBLE DOCUMENTATION;
 > Code works though 🙃
 
 
