@@ -1,6 +1,6 @@
 # <a href="https://neuekit.github.io/neuekit/" target="_blank">Neue Kit</a> - M1
 
-> WARNING MINIMAL ACCESSIBLE DOCUMENTATION;<br>
+> WARNING MINIMAL ACCESSIBLE DOCUMENTATION;  
 > Code works though 🙃
 
 
