@@ -42,7 +42,7 @@ export default function(options) {
         util.setInputTypes();
         util.sticky();
         util.standaloneLinks();
-        svg4everybody && svg4everybody();
+        window.svg4everybody && svg4everybody();
     }
 
     // Return public methods
