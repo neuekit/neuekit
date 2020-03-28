@@ -1,7 +1,7 @@
 /*--------------------------------------------------*\
     Core Module
 
-    MK1 @ Version 1.0
+    MK1 @ Version 1.0.1
 \*--------------------------------------------------*/
 
 import {S, SA, CN, ID, TN, extend} from './aliases';
@@ -42,7 +42,7 @@ export default function(options) {
         util.setInputTypes();
         util.sticky();
         util.standaloneLinks();
-        svg4everybody();
+        svg4everybody && svg4everybody();
     }
 
     // Return public methods

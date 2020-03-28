@@ -4,7 +4,7 @@
     - Version:      1.0
     - Author:       YOUR NAME
     - Site:         http://YOUR_SITE
-    - Copyright:    2019, YOUR COMPANY
+    - Copyright:    2020, YOUR COMPANY
     – License:      YOUR LICENSE
 \*----------------------------------------------------------------------------*/
 

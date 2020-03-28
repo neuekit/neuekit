@@ -40,4 +40,4 @@ Still in progress...
 
 ![Browsers](https://neuekit.github.io/neuekit/images/platforms.svg)
 
-Copyright © 2019 Creative Little Dots, ltd.
+Copyright © 2020 Creative Little Dots, ltd.
