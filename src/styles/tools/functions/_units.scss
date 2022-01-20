@@ -6,6 +6,8 @@
 /// @param {Length | Number} $pixels - Value to convert to rem
 /// @param {String} $context [$nu-rootFontSize] - Root font size to base rem on
 
+@use "sass:math";
+
 @function nu-rem( $pixels, $context: $nu-rootFontSize ) {
     
     @if ( type-of($pixels) != 'number' ) {
@@ -30,7 +32,7 @@
             $context: $context * 1px;
         }
 
-        @return $pixels / $context * 1rem;
+        @return math.div($pixels, $context) * 1rem;
     }
 }
 
@@ -59,7 +61,7 @@
             $context: $context * 1px;
         }
 
-        @return $pixels / $context * 1em;
+        @return math.div($pixels, $context) * 1em;
     }
 }
 

@@ -6,6 +6,7 @@
 /// @param {List} $responsive [(up, only)] - Breakpoint rules
 /// @require {mixin} nu-breakpoints
 
+@use "sass:math";
 @mixin nu-utility__offset(
     $responsive: (up, only)
 ) {
@@ -15,21 +16,21 @@
         @for $inset from 1 through $nu-gridColumns {
 
             .u-inset-#{ $inset }#{ $break } {
-                margin-left: floor( 100% / $nu-gridColumns * ( $inset * 1000 ) ) / 1000;
+                margin-left: math.div(floor( math.div(100%, $nu-gridColumns) * ( $inset * 1000 ) ), 1000);
             }
         }
 
         @for $outsetLeft from 1 through $nu-gridColumns {
 
             .u-outsetLeft-#{ $outsetLeft }#{ $break } {
-                margin-left: floor( -100% / $nu-gridColumns * ( $outsetLeft * 1000 ) ) / 1000;
+                margin-left: math.div(floor( math.div(-100%, $nu-gridColumns) * ( $outsetLeft * 1000 ) ), 1000);
             }
         }
 
         @for $outsetRight from 1 through $nu-gridColumns {
 
             .u-outsetRight-#{ $outsetRight }#{ $break } {
-                margin-right: floor( -100% / $nu-gridColumns * ( $outsetRight * 1000 ) ) / 1000;
+                margin-right: math.div(floor( math.div(-100%, $nu-gridColumns) * ( $outsetRight * 1000 ) ), 1000);
             }
         }
     }

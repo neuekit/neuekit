@@ -1,6 +1,7 @@
 /*----------------------------------------------------------------------------*\
     #GRID OBJECT
 \*----------------------------------------------------------------------------*/
+@use "sass:math";
 
 @mixin _nu-object__grid(
     $maxWidth:          $maxWidth,
@@ -91,7 +92,7 @@
 
         @for $grid from 1 through $nu-gridColumns {
 
-            $width: floor((100% / $grid) * 1000) / 1000;
+            $width: math.div(floor(math.div(100%, $grid) * 1000), 1000);
 
             &--items-#{$grid}#{$break} &__item { // .o-grid--items-2@m .o-grid__item
                 flex-basis: $width;

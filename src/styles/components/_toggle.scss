@@ -1,7 +1,7 @@
 /*----------------------------------------------------------------------------*\
     #TOGGLE
 \*----------------------------------------------------------------------------*/
-
+@use "sass:math";
 @mixin _nu-component__toggle(
     $colourOn:      dodgerblue,
     $colourOff:     lightgrey,
@@ -67,7 +67,7 @@
         &::before { // .c-toggle__label.c-toggle__label::before
             background: $handleColour;
             border-radius: 50%;
-            box-shadow: 0 $gap $size / 2 rgba(black, 0.1);
+            box-shadow: 0 $gap math.div($size,2) rgba(black, 0.1);
             content: '';
             display: block;
             @include nu-area($size - ($gap * 2));

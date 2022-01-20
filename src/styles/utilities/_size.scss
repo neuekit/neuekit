@@ -6,6 +6,7 @@
 /// @param {List} $responsive [(up)] - Breakpoint rules
 /// @require {mixin} nu-breakpoints
 
+@use "sass:math";
 @mixin nu-utility__size(
     $responsive: (up)
 ) {
@@ -24,7 +25,7 @@
             $width: if(
                 $grid == 0,
                 auto,
-                floor( 100% / $nu-gridColumns * ( $grid * 1000 ) ) / 1000
+                math.div(floor( math.div(100%, $nu-gridColumns) * ( $grid * 1000 ) ), 1000)
             );
 
             .u-size-#{ $grid }#{ $break } {
