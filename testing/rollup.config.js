@@ -1,12 +1,13 @@
-import babel from 'rollup-plugin-babel';
-import commonjs from 'rollup-plugin-commonjs';
-import resolve from 'rollup-plugin-node-resolve';
+import babel from '@rollup/plugin-babel';
+import commonjs from '@rollup/plugin-commonjs';
+import resolve from '@rollup/plugin-node-resolve';
 import { terser } from 'rollup-plugin-terser';
 
 export default () => {
 
     const plugins = [
         babel({
+            babelHelpers: 'bundled',
             exclude: [
                 /\/core-js\//,
                 'node_modules/**',
@@ -28,7 +29,7 @@ export default () => {
         }),
         commonjs(),
         resolve(),
-        terser({ sourcemap: false })
+        terser()
     ];
 
     const polyfills = {
@@ -36,12 +37,13 @@ export default () => {
         output: {
             file: './scripts/polyfills/polyfills.min.js',
             format: 'iife',
-            name: 'Polyfills'
+            name: 'Polyfills',
+            sourcemap: false
         },
         context: 'window',
         plugins: [
             resolve(),
-            terser({ sourcemap: false })
+            terser()
         ]
     };
 

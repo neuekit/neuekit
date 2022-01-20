@@ -218,24 +218,6 @@ export const removeStorage = (name, checkCookie) => {
 
 
 /*--------------------------------------------------*\
-    Sticky Position Polyfill Setup
-
-    This function sets the real type on inputs.
-\*--------------------------------------------------*/
-
-export const sticky = () => {
-
-    if ( Stickyfill ) {
-
-        Array.from(CN('u-sticky')).map(($el) => Stickyfill.add($el));
-
-        Array.from(CN('c-modal__close')).map(($el) => Stickyfill.add($el));
-    }
-};
-
-
-
-/*--------------------------------------------------*\
     Support for standalone links
 
     This stops webapps jumping out to Safari on iOS
